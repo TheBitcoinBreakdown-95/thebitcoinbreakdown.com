@@ -24,6 +24,7 @@ nul
 
 # Large files (exceed GitHub 100MB limit)
 *.zip
+*.xml
 
 # Environment
 .env
