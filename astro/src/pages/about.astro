@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="Learn about The Bitcoin Breakdown and our mission to make Bitcoin education accessible to everyone.">
+  <div class="about-page">
+    <h1>About</h1>
+
+    <div class="content">
+      <p>
+        <strong>The Bitcoin Breakdown</strong> is dedicated to making Bitcoin and cryptocurrency
+        education accessible to everyone. No jargon, no hype—just clear explanations.
+      </p>
+
+      <h2>Our Mission</h2>
+      <p>
+        We believe that understanding Bitcoin shouldn't require a computer science degree.
+        Our goal is to break down complex topics into digestible pieces that anyone can understand.
+      </p>
+
+      <h2>What We Cover</h2>
+      <ul>
+        <li>Bitcoin fundamentals and how it works</li>
+        <li>Lightning Network and scaling solutions</li>
+        <li>Security best practices</li>
+        <li>Market analysis and trends</li>
+        <li>Regulatory developments</li>
+      </ul>
+
+      <h2>Get in Touch</h2>
+      <p>
+        Have questions or suggestions? We'd love to hear from you.
+        Follow us on social media or reach out via email.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .about-page {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .about-page h1 {
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    line-height: 1.75;
+  }
+
+  .content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .content p {
+    margin-bottom: 1.25rem;
+    color: var(--color-text);
+  }
+
+  .content ul {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .content li {
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+</style>

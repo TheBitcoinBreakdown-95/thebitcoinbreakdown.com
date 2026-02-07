@@ -1,0 +1,39 @@
+# Obsidian
+TBB/.obsidian/*
+!TBB/.obsidian/community-plugins.json
+!TBB/.obsidian/plugins/
+TBB/.obsidian/plugins/*/node_modules/
+TBB/.obsidian-claude-code/
+TBB/.obsidian/plugins/obsidian-claude-code/
+TBB/drafts/
+TBB/Welcome.md
+
+# Astro
+astro/node_modules/
+astro/dist/
+astro/.astro/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+nul
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Claude Code local settings
+.claude/settings.local.json

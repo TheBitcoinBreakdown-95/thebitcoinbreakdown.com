@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+const recentPosts = allPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
+---
+
+<BaseLayout title="Home" description="The Bitcoin Breakdown - Your guide to understanding Bitcoin, Lightning Network, and cryptocurrency. Clear explanations for everyone.">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>The Bitcoin <span class="accent">Breakdown</span></h1>
+      <p class="hero-tagline">
+        Understanding Bitcoin doesn't have to be complicated. Get clear, honest explanations about cryptocurrency.
+      </p>
+      <a href="/blog" class="cta-button">Read the Blog</a>
+    </div>
+  </section>
+
+  <section class="recent-posts">
+    <div class="container">
+      <h2>Recent Posts</h2>
+      {recentPosts.length > 0 ? (
+        <div class="posts-grid">
+          {recentPosts.map((post) => (
+            <PostCard
+              title={post.data.title}
+              description={post.data.description}
+              pubDate={post.data.pubDate}
+              slug={post.id}
+              tags={post.data.tags}
+              image={post.data.image}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="no-posts">No posts yet. Check back soon!</p>
+      )}
+      {recentPosts.length > 0 && (
+        <div class="view-all">
+          <a href="/blog">View all posts &rarr;</a>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg) 100%);
+    padding: 6rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero-content {
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .accent {
+    color: var(--color-accent);
+  }
+
+  .hero-tagline {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-bg);
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .cta-button:hover {
+    background: var(--color-accent-hover);
+    color: var(--color-bg);
+  }
+
+  .recent-posts {
+    padding: 4rem 0;
+  }
+
+  .recent-posts h2 {
+    margin-bottom: 2rem;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .no-posts {
+    color: var(--color-text-muted);
+    text-align: center;
+    padding: 3rem;
+  }
+
+  .view-all {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .view-all a {
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 4rem 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.1rem;
+    }
+  }
+</style>
