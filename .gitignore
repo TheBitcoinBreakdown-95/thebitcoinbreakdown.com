@@ -22,6 +22,9 @@ Thumbs.db
 desktop.ini
 nul
 
+# Large files (exceed GitHub 100MB limit)
+*.zip
+
 # Environment
 .env
 .env.local

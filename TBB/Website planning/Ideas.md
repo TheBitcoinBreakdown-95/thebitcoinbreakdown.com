@@ -1,0 +1,16 @@
+- Putting my whole BTC notes on the site
+	- making it searchable obvi
+	- But also asking the ai to scrape each URL and provide a short summary, and have the link say, learn more here, or the title of the article 
+	- Scrape twitter for all of my follows for projects I might have missed, 
+- Having interactive pages
+	- for learning concepts, visuals or animations 
+	- Maybe even for simple concepts 
+- Lightning login for certain sections, called restricted 
+	- charge 100 sats or something
+- Turning content into audio, where I don't have to read it but it just has audio summaries
+-  Having a personal CRM? for 2112 or JC BTC or both
+	- All my twitter followers, trying to remember where I met people
+- Do I want to have a personal part of the site? Who I am, my philosophy, etc? Or maybe that's not meant for the open internet 
+- 2112 and JC BTC and Freedom Lab portfolio 
+- Obviously, all of the citations way easier
+- 

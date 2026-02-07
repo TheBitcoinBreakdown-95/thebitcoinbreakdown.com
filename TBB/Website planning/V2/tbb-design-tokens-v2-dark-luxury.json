@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "name": "The Bitcoin Breakdown — Design System v2",
+    "codename": "Dark Luxury",
+    "aesthetic": "Minimalist Art Deco · Cypherpunk · Greco-Futurism undertones",
+    "description": "Pure black base with bright gold accents. Elegant serif typography throughout. Subtle gold glow effects on interaction. Multi-layer parallax circuit-network backgrounds. Scroll-triggered reveal animations. Gold shimmer skeleton loading. Custom scrollbar, selection, and cursor treatments. 16px base spacing unit. Editorial single-column layout. Luxury through restraint.",
+    "created": "2026-02-06",
+    "version": "2.0.0"
+  },
+
+  "color": {
+    "primitive": {
+      "black": "#000000",
+      "black-soft": "#060606",
+      "black-card": "#0A0A0A",
+      "black-elevated": "#111111",
+      "gold": "#FFD700",
+      "gold-muted": "#C9A84C",
+      "cream": "#E8E4DC",
+      "muted": "#8A857D",
+      "dim": "#5A5650"
+    },
+    "semantic": {
+      "background": "#000000",
+      "surface": "#0A0A0A",
+      "surface-elevated": "#111111",
+      "accent": "#FFD700",
+      "accent-muted": "#C9A84C",
+      "text-primary": "#E8E4DC",
+      "text-secondary": "#8A857D",
+      "text-muted": "#5A5650",
+      "border-default": "rgba(255, 215, 0, 0.06)",
+      "border-hover": "rgba(255, 215, 0, 0.15)",
+      "border-divider": "rgba(255, 215, 0, 0.08)",
+      "glow": "rgba(255, 215, 0, 0.4)",
+      "glow-subtle": "rgba(255, 215, 0, 0.06)",
+      "glow-dim": "rgba(255, 215, 0, 0.15)",
+      "gold-overlay": "rgba(255, 215, 0, 0.04)",
+      "selection-bg": "rgba(255, 215, 0, 0.25)",
+      "selection-text": "#FFD700"
+    },
+    "gradient": {
+      "gold-divider": "linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.2) 50%, transparent 100%)",
+      "gold-underline": "linear-gradient(90deg, transparent, #FFD700, transparent)",
+      "ambient-glow": "radial-gradient(ellipse at 50% 0%, rgba(255, 215, 0, 0.04) 0%, transparent 70%)",
+      "hero-glow": "radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 70%)",
+      "scroll-progress": "linear-gradient(90deg, #FFD700, #C9A84C)",
+      "skeleton-shimmer": "linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.06) 40%, rgba(255, 215, 0, 0.12) 50%, rgba(255, 215, 0, 0.06) 60%, transparent 100%)",
+      "spacing-bar": "linear-gradient(90deg, #FFD700, #C9A84C)"
+    }
+  },
+
+  "typography": {
+    "font-family": {
+      "primary": "'Cormorant Garamond', Georgia, serif",
+      "google-import": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
+    },
+    "scale": {
+      "display": { "size": "clamp(36px, 7vw, 72px)", "weight": 300, "letter-spacing": "1px", "line-height": 1.08 },
+      "h1": { "size": "clamp(28px, 5vw, 52px)", "weight": 300, "letter-spacing": "1px", "line-height": 1.15 },
+      "h2": { "size": "clamp(24px, 4vw, 36px)", "weight": 400, "letter-spacing": "0.5px", "line-height": 1.2 },
+      "h3": { "size": "clamp(18px, 2.5vw, 26px)", "weight": 500, "letter-spacing": "0.3px", "line-height": 1.3 },
+      "body": { "size": "17px", "weight": 300, "letter-spacing": "0", "line-height": 1.85 },
+      "caption": { "size": "12px", "weight": 400, "letter-spacing": "4px", "line-height": 1.4, "text-transform": "uppercase" },
+      "overline": { "size": "11px", "weight": 400, "letter-spacing": "6px", "line-height": 1.4, "text-transform": "uppercase" },
+      "nav": { "size": "12px", "weight": 400, "letter-spacing": "3px", "text-transform": "uppercase" },
+      "section-label": { "size": "10px", "weight": 400, "letter-spacing": "5px", "text-transform": "uppercase" },
+      "tag": { "size": "10px", "weight": 400, "letter-spacing": "3px", "text-transform": "uppercase" },
+      "card-title": { "size": "22px", "weight": 400, "letter-spacing": "0.3px", "line-height": 1.35 },
+      "card-meta": { "size": "11px", "weight": 300, "letter-spacing": "2px" }
+    },
+    "prose": {
+      "max-width": "720px",
+      "paragraph-spacing": "24px",
+      "blockquote-font-size": "20px",
+      "blockquote-border": "2px solid #C9A84C",
+      "blockquote-padding-left": "24px",
+      "link-color": "#FFD700",
+      "link-underline": "1px solid rgba(255, 215, 0, 0.2)",
+      "link-underline-hover": "1px solid #FFD700",
+      "strong-weight": 600,
+      "strong-color": "#E8E4DC"
+    }
+  },
+
+  "spacing": {
+    "base-unit": "16px",
+    "scale": {
+      "space-1": "4px",
+      "space-2": "8px",
+      "space-3": "16px",
+      "space-4": "24px",
+      "space-5": "32px",
+      "space-6": "48px",
+      "space-7": "64px",
+      "space-8": "96px",
+      "space-9": "128px",
+      "space-10": "192px"
+    },
+    "usage": {
+      "inline-gap": "space-1 to space-2",
+      "element-gap": "space-3 to space-4",
+      "component-gap": "space-5 to space-6",
+      "section-padding": "space-8 (96px)",
+      "hero-padding": "space-10 (192px) top, space-8 bottom",
+      "card-padding": "space-5 vertical, space-4 horizontal",
+      "page-margin": "space-4 (24px), space-3 (20px) on mobile"
+    }
+  },
+
+  "layout": {
+    "containers": {
+      "content": { "max-width": "720px", "use": "Blog posts, editorial content, prose — single-column editorial" },
+      "wide": { "max-width": "1100px", "use": "Card grids, hero content, section containers" },
+      "full": { "max-width": "100%", "use": "Full-bleed backgrounds, hero sections" }
+    },
+    "grid": {
+      "type": "CSS Grid",
+      "columns": { "2-col": "repeat(2, 1fr)", "3-col": "repeat(3, 1fr)", "4-col": "repeat(4, 1fr)" },
+      "gap": "24px",
+      "responsive-collapse": {
+        "mobile": "All grids collapse to 1 column",
+        "tablet": "3-col and 4-col collapse to 2 columns",
+        "laptop+": "Full grid"
+      }
+    },
+    "breakpoints": {
+      "mobile": { "max": "480px", "columns": 1, "page-margin": "20px" },
+      "tablet": { "min": "481px", "max": "768px", "columns": "1-2" },
+      "laptop": { "min": "769px", "max": "1024px", "columns": "2-3" },
+      "desktop": { "min": "1025px", "max": "1440px", "columns": "full" },
+      "wide": { "min": "1441px", "columns": "full", "note": "Content capped at 1100px wide" }
+    },
+    "approach": "Simultaneously mobile and desktop intentional — not mobile-first or desktop-first, but content-first with both feeling designed"
+  },
+
+  "motion": {
+    "easing": {
+      "luxury": "cubic-bezier(0.23, 1, 0.32, 1)",
+      "out": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "ease": "ease"
+    },
+    "duration": {
+      "fast": "0.3s",
+      "mid": "0.5s",
+      "slow": "0.8s",
+      "reveal": "1.2s"
+    },
+    "scroll-reveals": {
+      "fade-up": {
+        "initial": { "opacity": 0, "translateY": "32px" },
+        "visible": { "opacity": 1, "translateY": "0" },
+        "duration": "1.2s",
+        "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "threshold": 0.15,
+        "root-margin": "0px 0px -40px 0px"
+      },
+      "glow-reveal": {
+        "initial": { "opacity": 0, "translateY": "24px", "box-shadow": "none" },
+        "visible": { "opacity": 1, "translateY": "0", "box-shadow": "0 0 60px rgba(255,215,0,0.04), 0 0 120px rgba(255,215,0,0.02)" },
+        "note": "Cards gain ambient gold glow as they enter viewport"
+      },
+      "text-reveal": {
+        "type": "Clip-mask slide up — text slides up from behind overflow:hidden container",
+        "initial": { "translateY": "110%" },
+        "visible": { "translateY": "0" },
+        "duration": "0.8s"
+      },
+      "stagger": {
+        "delay-increment": "0.1s",
+        "max-children": 5
+      }
+    },
+    "parallax": {
+      "layers": 3,
+      "speeds": {
+        "layer-1": { "factor": 0.02, "opacity": 0.025, "pattern-scale": "200px" },
+        "layer-2": { "factor": -0.035, "opacity": 0.015, "pattern-scale": "300px" },
+        "layer-3": { "factor": 0.05, "opacity": 0.01, "pattern-scale": "400px" }
+      },
+      "implementation": "requestAnimationFrame + translateY on scroll"
+    },
+    "page-transition": {
+      "type": "Black overlay with brand flash, clip-path reveal",
+      "total-duration": "1.2s",
+      "brand-visible": "30%-60% of duration"
+    },
+    "hover": {
+      "card-lift": "translateY(-3px)",
+      "cta-lift": "translateY(-2px)",
+      "nav-underline": "scaleX(0) → scaleX(1) from center"
+    },
+    "hero-glow-pulse": {
+      "type": "Radial gold gradient slowly pulsing scale and opacity",
+      "duration": "6s",
+      "easing": "ease-in-out",
+      "infinite": true
+    },
+    "skeleton-shimmer": {
+      "type": "Horizontal sweep of gold gradient across skeleton lines",
+      "duration": "2s",
+      "easing": "ease-in-out",
+      "infinite": true
+    },
+    "scroll-progress": {
+      "type": "Gold gradient bar fixed at top, width tracks scroll percentage",
+      "height": "2px",
+      "glow": "0 0 8px rgba(255, 215, 0, 0.3)"
+    },
+    "reduced-motion": {
+      "query": "prefers-reduced-motion: reduce",
+      "behavior": "All animations set to 0.01ms duration, transforms removed, page transition hidden, reveals show instantly"
+    }
+  },
+
+  "effects": {
+    "glow": {
+      "text-gold": "0 0 40px rgba(255, 215, 0, 0.4), 0 0 80px rgba(255, 215, 0, 0.12)",
+      "text-hover": "0 0 20px rgba(255, 215, 0, 0.4)",
+      "text-link-hover": "0 0 12px rgba(255, 215, 0, 0.15)",
+      "box-cta": "0 0 30px rgba(255, 215, 0, 0.3), 0 0 60px rgba(255, 215, 0, 0.1)",
+      "box-card-hover": "0 16px 48px rgba(0, 0, 0, 0.5)",
+      "box-card-ambient": "0 0 60px rgba(255, 215, 0, 0.04), 0 0 120px rgba(255, 215, 0, 0.02)",
+      "scroll-progress": "0 0 8px rgba(255, 215, 0, 0.3)"
+    }
+  },
+
+  "micro-details": {
+    "scrollbar": {
+      "width": "6px",
+      "track": "#000000",
+      "thumb": "#C9A84C",
+      "thumb-hover": "#FFD700",
+      "border-radius": "3px",
+      "firefox": "scrollbar-width: thin; scrollbar-color: #C9A84C #000000"
+    },
+    "text-selection": {
+      "background": "rgba(255, 215, 0, 0.25)",
+      "color": "#FFD700"
+    },
+    "scroll-indicator": {
+      "type": "\"Scroll\" text + 1px gold gradient line, bouncing animation",
+      "position": "Bottom center of hero",
+      "opacity": 0.4
+    },
+    "header": {
+      "position": "fixed",
+      "background": "rgba(0, 0, 0, 0.85)",
+      "backdrop-filter": "blur(12px)",
+      "border-bottom": "1px solid rgba(255, 215, 0, 0.06)"
+    },
+    "nav-active-indicator": {
+      "type": "Gold underline that scales from center on hover",
+      "height": "1px",
+      "active-state": "Gold text color"
+    }
+  },
+
+  "decorative": {
+    "circuit-pattern": {
+      "layers": 3,
+      "type": "SVG patterns with circuit lines, nodes, connection triangles",
+      "position": "fixed, covers full viewport",
+      "parallax": true,
+      "note": "Three layers at different scales (200px, 300px, 400px) and opacities (2.5%, 1.5%, 1%) moving at different parallax speeds"
+    },
+    "dividers": {
+      "type": "Gold gradient line fading from transparent edges",
+      "height": "1px",
+      "variants": {
+        "full": "max-width: 1100px",
+        "content": "max-width: 720px"
+      }
+    }
+  },
+
+  "loading": {
+    "skeleton": {
+      "background": "#0A0A0A",
+      "line-background": "#111111",
+      "line-border-radius": "2px",
+      "shimmer-gradient": "linear-gradient(90deg, transparent 0%, rgba(255,215,0,0.06) 40%, rgba(255,215,0,0.12) 50%, rgba(255,215,0,0.06) 60%, transparent 100%)",
+      "shimmer-duration": "2s",
+      "line-heights": { "title": "20px", "body": "12px" },
+      "line-widths": { "short": "40%", "medium": "70%", "long": "90%", "title": "60%" }
+    }
+  },
+
+  "css_variables": ":root {\n  /* Color */\n  --black: #000000;\n  --black-soft: #060606;\n  --black-card: #0A0A0A;\n  --black-elevated: #111111;\n  --gold: #FFD700;\n  --gold-muted: #C9A84C;\n  --gold-dim: rgba(255, 215, 0, 0.15);\n  --gold-glow: rgba(255, 215, 0, 0.4);\n  --gold-subtle: rgba(255, 215, 0, 0.06);\n  --gold-overlay: rgba(255, 215, 0, 0.04);\n  --text-primary: #E8E4DC;\n  --text-secondary: #8A857D;\n  --text-muted: #5A5650;\n  --border-default: rgba(255, 215, 0, 0.06);\n  --border-hover: rgba(255, 215, 0, 0.15);\n  --font: 'Cormorant Garamond', Georgia, serif;\n\n  /* Spacing — 16px base */\n  --space-1: 4px;\n  --space-2: 8px;\n  --space-3: 16px;\n  --space-4: 24px;\n  --space-5: 32px;\n  --space-6: 48px;\n  --space-7: 64px;\n  --space-8: 96px;\n  --space-9: 128px;\n  --space-10: 192px;\n\n  /* Layout */\n  --content-width: 720px;\n  --wide-width: 1100px;\n  --page-margin: 24px;\n\n  /* Motion */\n  --ease-luxury: cubic-bezier(0.23, 1, 0.32, 1);\n  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);\n  --duration-fast: 0.3s;\n  --duration-mid: 0.5s;\n  --duration-slow: 0.8s;\n  --duration-reveal: 1.2s;\n}"
+}

@@ -1,0 +1,75 @@
+---
+/**
+ * Fixed bottom data ticker — JetBrains Mono, scrolling Bitcoin network stats.
+ * Static placeholder data for now. Can be replaced with live API data later.
+ */
+const tickerData = [
+  { label: 'BLOCK HEIGHT', value: '883,241' },
+  { label: 'HASH RATE', value: '724.5 EH/s' },
+  { label: 'MEMPOOL', value: '14,832 TX' },
+  { label: 'DIFFICULTY', value: '110.45T' },
+  { label: 'AVG FEE', value: '12 sat/vB' },
+  { label: 'NODES', value: '19,847' },
+  { label: 'SUPPLY', value: '19,832,412 BTC' },
+];
+---
+
+<div class="data-ticker" aria-hidden="true">
+  <div class="data-ticker-track">
+    {/* Duplicate content for seamless loop */}
+    {[...tickerData, ...tickerData].map((item) => (
+      <span>
+        <span class="ticker-dot"></span>
+        {item.label} <span class="ticker-gold">{item.value}</span>
+      </span>
+    ))}
+  </div>
+</div>
+
+<style>
+  .data-ticker {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: var(--black-soft);
+    border-top: 1px solid var(--border-default);
+    padding: 6px 0;
+    overflow: hidden;
+    height: 28px;
+  }
+
+  .data-ticker-track {
+    display: flex;
+    gap: var(--space-6);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    animation: tickerScroll 40s linear infinite;
+  }
+
+  .ticker-dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold-muted);
+    opacity: 0.5;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+
+  .ticker-gold {
+    color: var(--gold-muted);
+  }
+
+  @media (max-width: 768px) {
+    .data-ticker {
+      display: none;
+    }
+  }
+</style>

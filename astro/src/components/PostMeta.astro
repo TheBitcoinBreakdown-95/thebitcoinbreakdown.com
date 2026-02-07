@@ -2,10 +2,11 @@
 interface Props {
   pubDate: Date;
   updatedDate?: Date;
-  author?: string;
+  readingTime?: string;
+  category?: string;
 }
 
-const { pubDate, updatedDate, author = 'The Bitcoin Breakdown' } = Astro.props;
+const { pubDate, updatedDate, readingTime, category } = Astro.props;
 
 const formatDate = (date: Date) => {
   return date.toLocaleDateString('en-US', {
@@ -16,37 +17,45 @@ const formatDate = (date: Date) => {
 };
 ---
 
-<div class="post-meta">
-  <span class="author">{author}</span>
-  <span class="separator">·</span>
-  <time datetime={pubDate.toISOString()}>
-    {formatDate(pubDate)}
-  </time>
+<div class="article-meta">
+  <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+  {readingTime && (
+    <>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <span>{readingTime}</span>
+    </>
+  )}
+  {category && (
+    <>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <span>{category}</span>
+    </>
+  )}
   {updatedDate && (
     <>
-      <span class="separator">·</span>
-      <span class="updated">
-        Updated <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate)}</time>
-      </span>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <span>Updated <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate)}</time></span>
     </>
   )}
 </div>
 
 <style>
-  .post-meta {
+  .article-meta {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 0.5rem;
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-default);
   }
 
-  .separator {
-    color: var(--color-border);
-  }
-
-  .updated {
-    font-style: italic;
+  .sep {
+    color: var(--border-hover);
   }
 </style>

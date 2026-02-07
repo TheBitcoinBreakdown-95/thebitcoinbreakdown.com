@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TBB — Complete Design System Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   DESIGN TOKENS
+   ═══════════════════════════════════════════════ */
+:root {
+  --black: #000000;
+  --black-card: #0A0A0A;
+  --black-elevated: #111111;
+  --black-soft: #060606;
+  --black-code: #0D0D0D;
+  --gold: #FFD700;
+  --gold-muted: #C9A84C;
+  --gold-dim: rgba(255,215,0,0.15);
+  --gold-glow: rgba(255,215,0,0.4);
+  --gold-subtle: rgba(255,215,0,0.06);
+  --gold-overlay: rgba(255,215,0,0.04);
+  --text-primary: #E8E4DC;
+  --text-secondary: #8A857D;
+  --text-muted: #5A5650;
+  --border-default: rgba(255,215,0,0.06);
+  --border-hover: rgba(255,215,0,0.15);
+  --border-focus: rgba(255,215,0,0.5);
+  --success: #4ADE80; --success-dim: rgba(74,222,128,0.1); --success-border: rgba(74,222,128,0.2);
+  --warning: #FACC15; --warning-dim: rgba(250,204,21,0.1); --warning-border: rgba(250,204,21,0.2);
+  --error: #F87171; --error-dim: rgba(248,113,113,0.1); --error-border: rgba(248,113,113,0.2);
+  --info: #60A5FA; --info-dim: rgba(96,165,250,0.1); --info-border: rgba(96,165,250,0.2);
+  --font: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --ease-luxury: cubic-bezier(0.23,1,0.32,1);
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+  --space-1:4px;--space-2:8px;--space-3:16px;--space-4:24px;--space-5:32px;
+  --space-6:48px;--space-7:64px;--space-8:96px;--space-9:128px;--space-10:192px;
+  --content-width: 720px;
+  --wide-width: 1100px;
+  --page-margin: 24px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scrollbar-width:thin;scrollbar-color:var(--gold-muted) var(--black);scroll-behavior:smooth}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--gold-muted);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+::selection{background:rgba(255,215,0,0.25);color:var(--gold)}
+body{background:var(--black);color:var(--text-primary);font-family:var(--font);font-weight:300;font-size:17px;line-height:1.75;overflow-x:hidden}
+*:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+*:focus:not(:focus-visible){outline:none}
+a,button,.interactive,.article-card,.scramble-text{cursor:crosshair}
+
+/* ═══════════════════════════════════════════════
+   CANVASES & OVERLAYS
+   ═══════════════════════════════════════════════ */
+#matrixCanvas{position:fixed;inset:0;z-index:10000;pointer-events:none;opacity:0.12;transition:opacity 1s ease}
+#matrixCanvas.dissolved{opacity:0}
+#lightningCanvas{position:fixed;inset:0;z-index:9999;pointer-events:none}
+/* Lightning page transition */
+#transitionOverlay{position:fixed;inset:0;z-index:10001;background:var(--black);pointer-events:none;opacity:0;transition:opacity 0.3s ease}
+#transitionOverlay.active{opacity:1}
+#boltCanvas{position:fixed;inset:0;z-index:10002;pointer-events:none}
+
+/* ═══════════════════════════════════════════════
+   SKIP LINK
+   ═══════════════════════════════════════════════ */
+.skip-link{position:absolute;top:-100px;left:var(--page-margin);background:var(--gold);color:var(--black);padding:8px 20px;font-family:var(--font);font-size:13px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;z-index:200;font-weight:500;transition:top 0.3s ease}
+.skip-link:focus{top:var(--space-3)}
+
+/* ═══════════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════════ */
+.container{max-width:var(--content-width);margin:0 auto;padding:0 var(--page-margin)}
+.container--wide{max-width:var(--wide-width);margin:0 auto;padding:0 var(--page-margin)}
+.section{padding:var(--space-8) 0}
+.section-label{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-muted);margin-bottom:var(--space-6);padding-bottom:var(--space-3);border-bottom:1px solid var(--border-default);font-weight:400;overflow:hidden}
+.section-desc{font-size:15px;font-weight:300;color:var(--text-muted);line-height:1.65;margin-bottom:var(--space-6);max-width:560px}
+.subsection-title{font-size:20px;font-weight:400;color:var(--text-primary);margin:var(--space-6) 0 var(--space-3);letter-spacing:0.3px}
+.subsection-note{font-size:13px;color:var(--text-muted);margin-bottom:var(--space-4);font-weight:300}
+.grid{display:grid;gap:var(--space-4)}
+.grid--2{grid-template-columns:repeat(2,1fr)}.grid--3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:768px){.grid--2,.grid--3{grid-template-columns:1fr}}
+
+/* ═══════════════════════════════════════════════
+   DIVIDERS — DECRYPT + SPARK
+   ═══════════════════════════════════════════════ */
+.divider{height:1px;max-width:var(--wide-width);margin:0 auto;position:relative;overflow:visible}
+.divider-line{height:1px;width:100%;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.2),transparent);transform:scaleX(0);transition:transform 1.2s var(--ease-luxury)}
+.divider.visible .divider-line{transform:scaleX(1)}
+.divider-dots{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;gap:3px;transition:opacity 0.8s ease}
+.divider-dots span{width:2px;height:2px;background:var(--gold-muted);opacity:0.3;border-radius:50%;animation:dotScatter 1.2s var(--ease-out) forwards}
+.divider.visible .divider-dots{opacity:0;transition-delay:0.8s}
+@keyframes dotScatter{0%{transform:translateX(var(--dx)) translateY(var(--dy));opacity:0.5}100%{transform:translateX(0) translateY(0);opacity:0}}
+.divider-spark{position:absolute;top:-2px;width:4px;height:5px;background:var(--gold);border-radius:50%;box-shadow:0 0 8px var(--gold),0 0 16px rgba(255,215,0,0.4);opacity:0;pointer-events:none;transition:opacity 0.15s ease}
+
+/* ═══════════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════════ */
+.site-header{position:sticky;top:0;z-index:100;padding:var(--space-4) 0;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-default)}
+.header-inner{max-width:var(--wide-width);margin:0 auto;padding:0 var(--page-margin);display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--font);font-size:16px;font-weight:400;letter-spacing:3px;color:var(--gold);text-decoration:none;text-transform:uppercase;display:inline-block}
+.logo.glitching{animation:logoGlitch 0.5s linear}
+@keyframes logoGlitch{0%,100%{transform:translate(0);filter:none}10%{transform:translate(-2px,1px);filter:hue-rotate(20deg)}30%{transform:translate(-1px,-1px)}50%{transform:translate(-2px,0);filter:brightness(1.5)}70%{transform:translate(0,-2px)}90%{transform:translate(1px,0)}}
+.nav-links{display:flex;gap:var(--space-5);list-style:none;align-items:center}
+.nav-links a{font-family:var(--font);font-size:12px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(--text-secondary);text-decoration:none;transition:color 0.3s ease,text-shadow 0.3s ease;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.5s var(--ease-luxury)}
+.nav-links a:hover{color:var(--gold);text-shadow:0 0 20px var(--gold-glow)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a.active{color:var(--gold)}
+.nav-spark{position:absolute;bottom:-4px;left:0;width:3px;height:3px;background:var(--gold);border-radius:50%;box-shadow:0 0 6px var(--gold),0 0 12px rgba(255,215,0,0.5);opacity:0;pointer-events:none}
+.nav-links a:hover .nav-spark{opacity:1;animation:navSparkFlash 0.4s ease forwards}
+@keyframes navSparkFlash{0%{opacity:1;transform:scale(1.5)}50%{opacity:0.8;transform:scale(1)}100%{opacity:0;transform:scale(0.5)}}
+@media(max-width:768px){.nav-links{display:none}}
+
+/* ═══════════════════════════════════════════════
+   SCROLL PROGRESS
+   ═══════════════════════════════════════════════ */
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-muted));z-index:101;width:0%;box-shadow:0 0 8px rgba(255,215,0,0.3)}
+
+/* ═══════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════ */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:var(--space-10) var(--page-margin);position:relative}
+.hero::before{content:'';position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(255,215,0,0.05),transparent 70%);pointer-events:none;animation:heroPulse 6s ease-in-out infinite}
+@keyframes heroPulse{0%,100%{opacity:0.5;transform:translate(-50%,-50%) scale(1)}33%{opacity:0.8;transform:translate(-50%,-50%) scale(1.06)}66%{opacity:0.6;transform:translate(-50%,-50%) scale(1.03)}}
+.hero-hash{font-family:var(--font-mono);font-size:10px;font-weight:300;letter-spacing:2px;color:var(--text-muted);opacity:0.2;margin-bottom:var(--space-5);user-select:none;overflow:hidden;white-space:nowrap;max-width:90vw}
+.hero-overline{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold-muted);margin-bottom:var(--space-5);font-weight:400}
+.hero-title{font-size:clamp(36px,7vw,72px);font-weight:300;line-height:1.08;letter-spacing:1px;color:var(--text-primary);margin-bottom:var(--space-4);max-width:800px}
+.hero-title em{font-style:italic;color:var(--gold);text-shadow:0 0 40px var(--gold-glow),0 0 80px rgba(255,215,0,0.12)}
+.hero-body{font-size:18px;font-weight:300;color:var(--text-secondary);max-width:520px;line-height:1.75;margin-bottom:var(--space-6)}
+.hero-cta-group{display:flex;gap:var(--space-3);flex-wrap:wrap;justify-content:center;padding-top:4px}
+.scroll-indicator{position:absolute;bottom:var(--space-6);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:var(--space-2);opacity:0.35;animation:scrollBob 2s ease-in-out infinite}
+.scroll-indicator span{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--text-muted)}
+.scroll-indicator .line{width:1px;height:32px;background:linear-gradient(to bottom,var(--gold-muted),transparent)}
+@keyframes scrollBob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.block-height{font-family:var(--font-mono);font-size:10px;font-weight:400;letter-spacing:2px;color:var(--gold-muted);opacity:0.35;display:flex;align-items:center;gap:8px}
+.block-height::before{content:'';display:inline-block;width:6px;height:6px;border:1px solid var(--gold-muted);animation:blockPulse 3s ease-in-out infinite}
+@keyframes blockPulse{0%,100%{opacity:0.3}50%{opacity:1;box-shadow:0 0 6px rgba(255,215,0,0.2)}}
+
+/* ═══════════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════════ */
+.btn{display:inline-block;font-family:var(--font);font-size:12px;font-weight:500;letter-spacing:4px;text-transform:uppercase;padding:16px 44px;text-decoration:none;border:none;transition:all 0.5s var(--ease-luxury)}
+.btn--primary{background:var(--gold);color:var(--black)}
+.btn--primary:hover{box-shadow:0 0 30px rgba(255,215,0,0.3),0 0 60px rgba(255,215,0,0.1);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--gold);border:1px solid rgba(255,215,0,0.25)}
+.btn--ghost:hover{border-color:var(--gold);background:rgba(255,215,0,0.04);box-shadow:0 0 20px rgba(255,215,0,0.08);transform:translateY(-2px)}
+.btn--small{padding:10px 24px;font-size:11px;letter-spacing:3px}
+
+/* ═══════════════════════════════════════════════
+   GLITCH
+   ═══════════════════════════════════════════════ */
+.glitch{position:relative;display:inline-block}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;right:0;overflow:hidden;color:var(--gold);clip-path:inset(0)}
+.glitch::before{text-shadow:-2px 0 rgba(255,215,0,0.3);animation:g1 4s linear infinite}
+.glitch::after{text-shadow:2px 0 rgba(255,215,0,0.2);animation:g2 4s linear infinite}
+@keyframes g1{0%,94%,100%{clip-path:inset(0 0 100% 0)}95%{clip-path:inset(20% 0 40% 0);transform:translateX(-3px)}96%{clip-path:inset(60% 0 10% 0);transform:translateX(2px)}97%{clip-path:inset(0 0 100% 0)}}
+@keyframes g2{0%,96%,100%{clip-path:inset(0 0 100% 0)}97%{clip-path:inset(30% 0 30% 0);transform:translateX(3px)}98%{clip-path:inset(70% 0 5% 0);transform:translateX(-2px)}99%{clip-path:inset(0 0 100% 0)}}
+.glitch-hover{position:relative;display:inline-block}
+.glitch-hover::before,.glitch-hover::after{content:attr(data-text);position:absolute;top:0;left:0;color:var(--gold);overflow:hidden;clip-path:inset(0 0 100% 0)}
+.glitch-hover:hover::before{text-shadow:-2px 0 rgba(255,215,0,0.4);animation:gh1 0.4s linear}
+.glitch-hover:hover::after{text-shadow:2px 0 rgba(255,215,0,0.3);animation:gh2 0.4s linear}
+@keyframes gh1{0%{clip-path:inset(0 0 100% 0)}20%{clip-path:inset(15% 0 45% 0);transform:translateX(-3px)}40%{clip-path:inset(55% 0 15% 0);transform:translateX(2px)}60%{clip-path:inset(25% 0 35% 0);transform:translateX(-1px)}80%{clip-path:inset(65% 0 5% 0);transform:translateX(1px)}100%{clip-path:inset(0 0 100% 0)}}
+@keyframes gh2{0%{clip-path:inset(0 0 100% 0)}15%{clip-path:inset(45% 0 20% 0);transform:translateX(2px)}35%{clip-path:inset(10% 0 55% 0);transform:translateX(-3px)}55%{clip-path:inset(70% 0 5% 0);transform:translateX(1px)}75%{clip-path:inset(30% 0 40% 0);transform:translateX(-2px)}100%{clip-path:inset(0 0 100% 0)}}
+
+/* ═══════════════════════════════════════════════
+   CARDS — LASER TRACE + SCRAMBLE
+   ═══════════════════════════════════════════════ */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-4)}
+.article-card{background:var(--black-card);border:1px solid transparent;padding:var(--space-5) var(--space-4);transition:transform 0.5s var(--ease-luxury),box-shadow 0.5s var(--ease-luxury);position:relative;overflow:visible}
+.article-card::before{content:'';position:absolute;inset:-1px;background:linear-gradient(90deg,var(--gold),var(--gold-muted),var(--gold));background-size:400% 400%;z-index:-1;opacity:0;transition:opacity 0.5s ease;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask-composite:xor;padding:1px}
+.article-card:hover::before{opacity:1;animation:laserTrace 1.5s linear infinite}
+@keyframes laserTrace{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.card-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,var(--gold-overlay),transparent 70%);opacity:0;transition:opacity 0.5s ease}
+.article-card:hover .card-glow{opacity:1}
+.article-card:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,0.5)}
+.card-underline{position:absolute;bottom:0;left:var(--space-4);right:var(--space-4);height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.4s ease}
+.article-card:hover .card-underline{opacity:0.3}
+.card-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-muted);margin-bottom:var(--space-2);font-weight:400;position:relative;z-index:1}
+.card-title{font-family:var(--font);font-size:22px;font-weight:400;color:var(--text-primary);line-height:1.35;margin-bottom:var(--space-2);position:relative;z-index:1;transition:color 0.3s ease;letter-spacing:0.3px}
+.article-card:hover .card-title{color:var(--gold)}
+.card-excerpt{font-size:14px;font-weight:300;color:var(--text-muted);line-height:1.65;position:relative;z-index:1}
+.card-meta{margin-top:var(--space-3);font-size:11px;letter-spacing:2px;color:var(--text-muted);position:relative;z-index:1;font-weight:300}
+.card-hash{font-family:var(--font-mono);font-size:8px;font-weight:300;color:var(--text-muted);opacity:0.15;margin-top:var(--space-3);letter-spacing:1px;position:relative;z-index:1;user-select:none}
+
+/* ═══════════════════════════════════════════════
+   PROSE
+   ═══════════════════════════════════════════════ */
+.prose{font-size:17px;font-weight:300;line-height:1.85;color:var(--text-secondary)}
+.prose p+p{margin-top:var(--space-4)}
+.prose strong{font-weight:600;color:var(--text-primary)}
+.prose em{font-style:italic;color:var(--text-primary)}
+.prose a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(255,215,0,0.2);transition:border-color 0.3s ease}
+.prose a:hover{border-color:var(--gold);text-shadow:0 0 12px rgba(255,215,0,0.15)}
+.prose h2{font-size:clamp(24px,4vw,36px);font-weight:400;color:var(--text-primary);letter-spacing:0.5px;margin:var(--space-7) 0 var(--space-4);line-height:1.2}
+.prose h3{font-size:clamp(18px,2.5vw,26px);font-weight:500;color:var(--text-primary);letter-spacing:0.3px;margin:var(--space-6) 0 var(--space-3);line-height:1.3}
+.prose blockquote{border-left:2px solid var(--gold-muted);padding-left:var(--space-4);margin:var(--space-6) 0;font-size:20px;font-weight:300;font-style:italic;color:var(--text-primary);line-height:1.6}
+.prose blockquote .bq-attr{font-size:13px;font-style:normal;color:var(--text-muted);margin-top:var(--space-2);letter-spacing:1px;font-weight:400}
+
+/* ═══════════════════════════════════════════════
+   PULL QUOTE (compile effect applied via JS)
+   ═══════════════════════════════════════════════ */
+.pull-quote{text-align:center;margin:var(--space-7) 0;padding:var(--space-6) var(--space-4);position:relative}
+.pull-quote::before,.pull-quote::after{content:'';position:absolute;left:50%;transform:translateX(-50%);width:60px;height:1px;background:var(--gold-muted)}
+.pull-quote::before{top:0}.pull-quote::after{bottom:0}
+.pull-quote-text{font-size:clamp(22px,3.5vw,32px);font-weight:300;font-style:italic;color:var(--gold);line-height:1.4;text-shadow:0 0 40px rgba(255,215,0,0.1)}
+.pull-quote-attribution{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-top:var(--space-4);font-weight:400;font-style:normal}
+
+/* ═══════════════════════════════════════════════
+   LINKS
+   ═══════════════════════════════════════════════ */
+.link-inline{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(255,215,0,0.2);transition:border-color 0.3s ease,text-shadow 0.3s ease}
+.link-inline:hover{border-color:var(--gold);text-shadow:0 0 12px rgba(255,215,0,0.15)}
+.link-inline:visited{color:var(--gold-muted);border-color:rgba(201,168,76,0.15)}
+.link-standalone{font-family:var(--font);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color 0.3s ease;font-weight:400}
+.link-standalone:hover{color:var(--gold)}
+.link-standalone::after{content:' →';display:inline-block;transition:transform 0.3s ease}
+.link-standalone:hover::after{transform:translateX(4px)}
+
+/* ═══════════════════════════════════════════════
+   FORMS
+   ═══════════════════════════════════════════════ */
+.form-group{margin-bottom:var(--space-4)}
+.form-label{display:block;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text-secondary);margin-bottom:var(--space-2);font-weight:400}
+.form-input{width:100%;padding:14px 18px;background:var(--black-card);border:1px solid var(--border-default);color:var(--text-primary);font-family:var(--font);font-size:16px;font-weight:300;transition:border-color 0.3s ease,box-shadow 0.3s ease;border-radius:0;appearance:none;-webkit-appearance:none}
+.form-input::placeholder{color:var(--text-muted);font-style:italic}
+.form-input:hover{border-color:var(--border-hover)}
+.form-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,215,0,0.1),0 0 20px rgba(255,215,0,0.05)}
+.form-input--error{border-color:var(--error)}.form-input--success{border-color:var(--success)}
+.form-hint{font-size:13px;color:var(--text-muted);margin-top:var(--space-1);font-weight:300;font-style:italic}
+.form-error{font-size:13px;color:var(--error);margin-top:var(--space-1);font-weight:400}
+.form-success-msg{font-size:13px;color:var(--success);margin-top:var(--space-1);font-weight:400}
+textarea.form-input{min-height:120px;resize:vertical;line-height:1.7}
+.search-wrapper{position:relative;max-width:400px}
+.search-wrapper .form-input{padding-left:44px}
+.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-muted);pointer-events:none;transition:color 0.3s ease}
+.search-wrapper:focus-within .search-icon{color:var(--gold)}
+.subscribe-row{display:flex;gap:var(--space-2)}
+.subscribe-row .form-input{flex:1}
+
+/* ═══════════════════════════════════════════════
+   TOASTS
+   ═══════════════════════════════════════════════ */
+.toast{display:flex;align-items:flex-start;gap:var(--space-3);padding:var(--space-3) var(--space-4);border-left:3px solid;font-size:15px;font-weight:300;line-height:1.6;margin-bottom:var(--space-3)}
+.toast-icon{flex-shrink:0;margin-top:2px;font-size:18px}
+.toast-content{flex:1}.toast-title{font-weight:500;font-size:14px;letter-spacing:1px;margin-bottom:2px}
+.toast-message{font-size:14px;font-weight:300}
+.toast--success{background:var(--success-dim);border-color:var(--success);color:var(--success)}
+.toast--error{background:var(--error-dim);border-color:var(--error);color:var(--error)}
+.toast--warning{background:var(--warning-dim);border-color:var(--warning);color:var(--warning)}
+.toast--info{background:var(--info-dim);border-color:var(--info);color:var(--info)}
+
+/* ═══════════════════════════════════════════════
+   CODE
+   ═══════════════════════════════════════════════ */
+code{font-family:var(--font-mono);font-size:0.85em;font-weight:400;background:var(--black-elevated);color:var(--gold);padding:2px 8px;border-radius:2px;border:1px solid var(--border-default)}
+pre{background:var(--black-code);border:1px solid var(--border-default);padding:var(--space-4);overflow-x:auto;margin:var(--space-5) 0;position:relative}
+pre code{background:none;border:none;padding:0;font-size:14px;line-height:1.7;color:var(--text-secondary);display:block}
+pre::before{content:attr(data-lang);position:absolute;top:0;right:0;font-family:var(--font);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);padding:6px 14px;background:var(--black-elevated);border-left:1px solid var(--border-default);border-bottom:1px solid var(--border-default)}
+.tok-kw{color:var(--gold);font-weight:500}.tok-str{color:#A8D8A8}.tok-cm{color:var(--text-muted);font-style:italic}.tok-fn{color:#A8C8F0}.tok-num{color:#F0A8A8}
+
+/* ═══════════════════════════════════════════════
+   TABLE
+   ═══════════════════════════════════════════════ */
+.table-wrapper{overflow-x:auto;margin:var(--space-5) 0}
+table{width:100%;border-collapse:collapse;font-size:15px;font-weight:300}
+thead th{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-muted);font-weight:400;padding:var(--space-3);border-bottom:1px solid rgba(255,215,0,0.15);text-align:left}
+tbody td{padding:var(--space-3);border-bottom:1px solid var(--border-default);color:var(--text-secondary)}
+tbody tr:hover{background:var(--gold-subtle)}tbody tr:hover td{color:var(--text-primary)}
+tbody td:first-child{color:var(--text-primary);font-weight:400}
+
+/* ═══════════════════════════════════════════════
+   TOC
+   ═══════════════════════════════════════════════ */
+.toc{border:1px solid var(--border-default);background:var(--black-card);padding:var(--space-4) var(--space-5);margin:var(--space-5) 0}
+.toc-title{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-muted);margin-bottom:var(--space-3);font-weight:400}
+.toc-list{list-style:none}.toc-list li{margin-bottom:var(--space-2)}
+.toc-list a{font-size:15px;font-weight:300;color:var(--text-secondary);text-decoration:none;display:flex;align-items:baseline;gap:var(--space-2);transition:color 0.3s ease}
+.toc-list a::before{content:'';display:inline-block;width:12px;height:1px;background:var(--border-default);flex-shrink:0;margin-top:8px;transition:background 0.3s ease,width 0.3s ease}
+.toc-list a:hover{color:var(--gold)}.toc-list a:hover::before{background:var(--gold);width:20px}
+.toc-list .toc-sub{padding-left:var(--space-4)}.toc-list .toc-sub a{font-size:14px;color:var(--text-muted)}
+.toc-list a.active{color:var(--gold)}.toc-list a.active::before{background:var(--gold);width:20px}
+
+/* ═══════════════════════════════════════════════
+   FOOTNOTES
+   ═══════════════════════════════════════════════ */
+.fn-ref{font-size:0.75em;vertical-align:super;color:var(--gold);text-decoration:none;font-weight:500;padding:0 2px;transition:text-shadow 0.3s ease}
+.fn-ref.flash{animation:fnFlash 0.6s ease}
+@keyframes fnFlash{0%{text-shadow:0 0 0 transparent}30%{text-shadow:0 0 12px var(--gold),0 0 24px rgba(255,215,0,0.3)}100%{text-shadow:0 0 0 transparent}}
+.footnotes{margin-top:var(--space-7);padding-top:var(--space-5);border-top:1px solid var(--border-default)}
+.footnotes-title{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-4);font-weight:400}
+.footnote-item{display:flex;gap:var(--space-2);margin-bottom:var(--space-3);font-size:14px;line-height:1.7;color:var(--text-muted);font-weight:300}
+.footnote-number{font-size:12px;color:var(--gold);font-weight:500;min-width:20px;flex-shrink:0}
+
+/* ═══════════════════════════════════════════════
+   TAGS
+   ═══════════════════════════════════════════════ */
+.tag{display:inline-flex;align-items:center;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:400;color:var(--gold-muted);padding:6px 14px;border:1px solid var(--border-default);text-decoration:none;transition:all 0.3s ease}
+.tag:hover{border-color:var(--border-hover);color:var(--gold);background:var(--gold-subtle)}
+.tag--active{border-color:var(--gold);color:var(--gold);background:rgba(255,215,0,0.06)}
+.tag-group{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+
+/* ═══════════════════════════════════════════════
+   ARTICLE META
+   ═══════════════════════════════════════════════ */
+.article-meta{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;font-size:12px;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase;font-weight:300;margin-bottom:var(--space-5);padding-bottom:var(--space-4);border-bottom:1px solid var(--border-default)}
+.article-meta .sep{color:var(--border-hover)}
+
+/* ═══════════════════════════════════════════════
+   ICONS
+   ═══════════════════════════════════════════════ */
+.icon{display:inline-block;width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.icon--sm{width:16px;height:16px}.icon--lg{width:32px;height:32px}
+
+/* ═══════════════════════════════════════════════
+   EMPTY STATE
+   ═══════════════════════════════════════════════ */
+.empty-state{text-align:center;padding:var(--space-8) var(--space-4)}
+.empty-icon{font-size:48px;margin-bottom:var(--space-4);opacity:0.3;color:var(--gold-muted)}
+.empty-title{font-size:24px;font-weight:300;color:var(--text-primary);margin-bottom:var(--space-2)}
+.empty-desc{font-size:15px;font-weight:300;color:var(--text-muted);max-width:400px;margin:0 auto var(--space-5);line-height:1.65}
+
+/* ═══════════════════════════════════════════════
+   404 PAGE
+   ═══════════════════════════════════════════════ */
+.page-404{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:var(--space-7) var(--page-margin);position:relative}
+.page-404::before{content:'';position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(255,215,0,0.04),transparent 70%);pointer-events:none}
+.error-code{font-size:clamp(80px,15vw,160px);font-weight:300;color:var(--gold);opacity:0.15;line-height:1;letter-spacing:8px;position:relative}
+.error-title{font-size:clamp(24px,4vw,40px);font-weight:300;color:var(--text-primary);margin-top:calc(-1 * var(--space-4));letter-spacing:1px;position:relative}
+.error-desc{font-size:16px;font-weight:300;color:var(--text-muted);margin-top:var(--space-3);max-width:420px;line-height:1.7;position:relative}
+.error-actions{margin-top:var(--space-6);position:relative}
+
+/* ═══════════════════════════════════════════════
+   COOKIE BANNER
+   ═══════════════════════════════════════════════ */
+.cookie-demo{background:var(--black-card);border:1px solid var(--border-default);padding:var(--space-4);display:flex;align-items:center;justify-content:center;gap:var(--space-5);flex-wrap:wrap}
+.cookie-text{font-size:14px;font-weight:300;color:var(--text-secondary);max-width:600px;line-height:1.6}
+.cookie-text a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(255,215,0,0.2)}
+.cookie-actions{display:flex;gap:var(--space-2);flex-shrink:0}
+
+/* ═══════════════════════════════════════════════
+   LOGO RULES
+   ═══════════════════════════════════════════════ */
+.logo-lockup{display:flex;align-items:center;gap:var(--space-5);flex-wrap:wrap}
+.logo-variant{display:flex;flex-direction:column;align-items:center;gap:var(--space-2);padding:var(--space-4);border:1px dashed var(--border-default);min-width:120px}
+.logo-variant-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);font-weight:400}
+.logo-full{font-family:var(--font);font-size:16px;font-weight:400;letter-spacing:3px;color:var(--gold);text-transform:uppercase;white-space:nowrap}
+.logo-abbr{font-family:var(--font);font-size:20px;font-weight:400;letter-spacing:4px;color:var(--gold)}
+.logo-icon-mark{width:32px;height:32px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font);font-size:16px;font-weight:600;color:var(--gold)}
+.logo-favicon{width:16px;height:16px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--black)}
+
+/* ═══════════════════════════════════════════════
+   PHOTO TREATMENT
+   ═══════════════════════════════════════════════ */
+.photo-treatment{position:relative;overflow:hidden;border:1px solid var(--border-default)}
+.photo-treatment img{display:block;width:100%;height:auto;filter:grayscale(70%) contrast(1.1) brightness(0.8);transition:filter 0.5s ease}
+.photo-treatment::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,215,0,0.08),rgba(201,168,76,0.15));mix-blend-mode:overlay;pointer-events:none}
+.photo-treatment:hover img{filter:grayscale(40%) contrast(1.05) brightness(0.85)}
+.photo-caption{font-size:12px;letter-spacing:2px;color:var(--text-muted);margin-top:var(--space-2);font-style:italic;font-weight:300}
+
+/* ═══════════════════════════════════════════════
+   SKELETON
+   ═══════════════════════════════════════════════ */
+.skeleton{background:var(--black-card);border:1px solid var(--border-default);padding:var(--space-5) var(--space-4);overflow:hidden}
+.skeleton-line{height:12px;background:var(--black-elevated);border-radius:2px;margin-bottom:var(--space-2);position:relative;overflow:hidden}
+.skeleton-line::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(255,215,0,0.06) 40%,rgba(255,215,0,0.12) 50%,rgba(255,215,0,0.06) 60%,transparent 100%);animation:shimmer 2s ease-in-out infinite}
+.skeleton-line--short{width:40%}.skeleton-line--medium{width:70%}.skeleton-line--long{width:90%}
+.skeleton-line--title{height:20px;width:60%;margin-bottom:var(--space-3)}
+@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(200%)}}
+
+/* ═══════════════════════════════════════════════
+   TERMINAL
+   ═══════════════════════════════════════════════ */
+.terminal{background:var(--black-soft);border:1px solid var(--border-default);font-family:var(--font-mono);font-size:13px;font-weight:400;padding:var(--space-4);margin:var(--space-5) 0}
+.terminal-bar{display:flex;align-items:center;gap:8px;margin-bottom:var(--space-3);padding-bottom:var(--space-2);border-bottom:1px solid var(--border-default)}
+.terminal-dot{width:8px;height:8px;border-radius:50%;border:1px solid;opacity:0.4}
+.terminal-dot--r{border-color:#F87171}.terminal-dot--y{border-color:#FACC15}.terminal-dot--g{border-color:#4ADE80}
+.terminal-title{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-left:auto}
+.terminal-line{color:var(--text-secondary);line-height:1.8;display:flex;gap:8px}
+.terminal-prompt{color:var(--gold);user-select:none}.terminal-output{color:var(--text-muted)}
+.terminal-cursor{display:inline-block;width:8px;height:14px;background:var(--gold);opacity:0.7;animation:cursorBlink 1.2s steps(1) infinite;vertical-align:middle;margin-left:2px}
+@keyframes cursorBlink{0%,50%{opacity:0.7}51%,100%{opacity:0}}
+
+/* ═══════════════════════════════════════════════
+   ENCRYPTION BAR
+   ═══════════════════════════════════════════════ */
+.encrypt-bar{width:100%;height:2px;background:var(--black-elevated);position:relative;overflow:hidden;margin:var(--space-3) 0}
+.encrypt-bar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold-muted));box-shadow:0 0 8px rgba(255,215,0,0.3)}
+.encrypt-bar-label{font-family:var(--font-mono);font-size:10px;font-weight:400;letter-spacing:2px;color:var(--text-muted);display:flex;justify-content:space-between;margin-top:var(--space-1)}
+
+/* ═══════════════════════════════════════════════
+   COUNT-UP & STATS
+   ═══════════════════════════════════════════════ */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:var(--space-4)}
+.stat-item{text-align:center;padding:var(--space-4)}
+.stat-number{font-family:var(--font);font-size:clamp(32px,5vw,48px);font-weight:300;color:var(--gold);letter-spacing:1px}
+.stat-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-top:var(--space-2);font-weight:400}
+
+/* ═══════════════════════════════════════════════
+   HASH / BLOCK
+   ═══════════════════════════════════════════════ */
+.hash-decoration{font-family:var(--font-mono);font-size:9px;font-weight:300;letter-spacing:2px;color:var(--text-muted);opacity:0.15;overflow:hidden;white-space:nowrap;user-select:none}
+
+/* ═══════════════════════════════════════════════
+   DATA TICKER
+   ═══════════════════════════════════════════════ */
+.data-ticker{position:fixed;bottom:0;left:0;right:0;z-index:50;background:var(--black-soft);border-top:1px solid var(--border-default);padding:6px 0;overflow:hidden;height:28px}
+.data-ticker-track{display:flex;gap:var(--space-6);font-family:var(--font-mono);font-size:10px;font-weight:400;letter-spacing:2px;color:var(--text-muted);white-space:nowrap;animation:tickerScroll 40s linear infinite}
+.ticker-dot{display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--gold-muted);opacity:0.5;vertical-align:middle;margin-right:6px}
+.ticker-gold{color:var(--gold-muted)}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ═══════════════════════════════════════════════
+   REVEALS
+   ═══════════════════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 1.2s var(--ease-luxury),transform 1.2s var(--ease-luxury)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.stagger>.reveal:nth-child(1){transition-delay:0s}.stagger>.reveal:nth-child(2){transition-delay:0.1s}.stagger>.reveal:nth-child(3){transition-delay:0.15s}.stagger>.reveal:nth-child(4){transition-delay:0.2s}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
+@media(max-width:768px){
+  :root{--page-margin:20px}
+  .hero{min-height:90vh}.hero-cta-group{flex-direction:column;align-items:center}
+  .btn{width:100%;max-width:280px;text-align:center}
+  .data-ticker{display:none}.subscribe-row{flex-direction:column}
+  .cookie-demo{flex-direction:column;text-align:center}.logo-lockup{justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+  .reveal{opacity:1;transform:none}#matrixCanvas{display:none}
+}
+
+.footer{text-align:center;padding:var(--space-7) var(--page-margin) calc(var(--space-7) + 28px)}
+.footer p{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--text-muted);font-weight:300}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<canvas id="matrixCanvas"></canvas>
+<canvas id="lightningCanvas"></canvas>
+<canvas id="boltCanvas"></canvas>
+<div id="transitionOverlay"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="logo" id="siteLogo">The Bitcoin Breakdown</a>
+    <nav><ul class="nav-links">
+      <li><a href="#" class="active">Home<span class="nav-spark"></span></a></li>
+      <li><a href="#">Articles<span class="nav-spark"></span></a></li>
+      <li><a href="#">Learn<span class="nav-spark"></span></a></li>
+      <li><a href="#">Resources<span class="nav-spark"></span></a></li>
+      <li><a href="#">About<span class="nav-spark"></span></a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="hero-hash" id="heroHash"></div>
+  <div class="hero-overline">Education · Clarity · Sovereignty</div>
+  <h1 class="hero-title">Understand Bitcoin.<br>Not the <em class="glitch" data-text="noise.">noise.</em></h1>
+  <p class="hero-body">Clear, rigorous breakdowns of the protocol, the economics, and the philosophy — for those who think for themselves.</p>
+  <div class="hero-cta-group">
+    <a href="#" class="btn btn--primary tbb-link">Start Learning</a>
+    <a href="#" class="btn btn--ghost tbb-link">Latest Articles</a>
+  </div>
+  <div class="block-height" style="position:absolute;bottom:100px;left:var(--page-margin);">BLOCK #881,247</div>
+  <div class="scroll-indicator"><span>Scroll</span><div class="line"></div></div>
+</section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ ARTICLE CARDS ═══════ -->
+<section class="section"><div class="container--wide">
+  <div class="section-label type-header" data-text="I · Article Cards">​</div>
+  <div class="card-grid stagger">
+    <div class="article-card reveal"><div class="card-glow"></div><div class="card-tag">Fundamentals</div><div class="card-title scramble-text" data-original="What Gives Bitcoin Its Value?">What Gives Bitcoin Its Value?</div><p class="card-excerpt">An exploration of monetary properties, network effects, and why 21 million matters.</p><div class="card-meta">Feb 2026 · 8 min</div><div class="card-hash">tx:a1b2c3d4e5f6a7b8c9d0e1f2</div><div class="card-underline"></div></div>
+    <div class="article-card reveal"><div class="card-glow"></div><div class="card-tag">Security</div><div class="card-title scramble-text" data-original="Self-Custody: Your Keys, Your Bitcoin">Self-Custody: Your Keys, Your Bitcoin</div><p class="card-excerpt">Why holding your own keys matters and how to do it without losing sleep.</p><div class="card-meta">Feb 2026 · 12 min</div><div class="card-hash">tx:f7e8d9c0b1a2f3e4d5c6b7a8</div><div class="card-underline"></div></div>
+    <div class="article-card reveal"><div class="card-glow"></div><div class="card-tag">Philosophy</div><div class="card-title scramble-text" data-original="The Cypherpunk Origins of Bitcoin">The Cypherpunk Origins of Bitcoin</div><p class="card-excerpt">From Chaum to Satoshi — the ideas that made digital cash inevitable.</p><div class="card-meta">Jan 2026 · 15 min</div><div class="card-hash">tx:0d1e2f3a4b5c6d7e8f9a0b1c</div><div class="card-underline"></div></div>
+  </div>
+  <div style="margin-top:var(--space-5)"><a href="#" class="link-standalone tbb-link">View all articles</a></div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ STATISTICS ═══════ -->
+<section class="section"><div class="container--wide">
+  <div class="section-label type-header" data-text="II · Network Statistics">​</div>
+  <div class="stat-grid stagger">
+    <div class="stat-item reveal"><div class="stat-number count-up" data-target="21000000" data-suffix="">0</div><div class="stat-label">Max Supply</div></div>
+    <div class="stat-item reveal"><div class="stat-number count-up" data-target="881247" data-suffix="">0</div><div class="stat-label">Current Block</div></div>
+    <div class="stat-item reveal"><div class="stat-number count-up" data-target="18247" data-suffix="">0</div><div class="stat-label">Active Nodes</div></div>
+    <div class="stat-item reveal"><div class="stat-number count-up" data-target="712" data-suffix=" EH/s">0</div><div class="stat-label">Hash Rate</div></div>
+  </div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ EDITORIAL CONTENT ═══════ -->
+<section class="section"><div class="container">
+  <div class="section-label type-header" data-text="III · Editorial Content">​</div>
+
+  <div class="article-meta reveal">
+    <span>February 7, 2026</span><span class="sep">·</span><span>15 min read</span><span class="sep">·</span><span>Philosophy</span>
+  </div>
+
+  <div class="toc reveal">
+    <div class="toc-title">In This Article</div>
+    <ul class="toc-list">
+      <li><a href="#" class="active">The Cypherpunk Movement</a></li>
+      <li><a href="#">Digital Cash Before Bitcoin</a></li>
+      <li class="toc-sub"><a href="#">DigiCash and David Chaum</a></li>
+      <li class="toc-sub"><a href="#">Hashcash and Proof of Work</a></li>
+      <li><a href="#">Satoshi's Breakthrough</a></li>
+      <li><a href="#">Legacy and Impact</a></li>
+    </ul>
+  </div>
+
+  <div class="prose">
+    <h2 class="reveal">The Cypherpunk Origins</h2>
+    <p class="reveal">Before Bitcoin, there was a dream. A loose collective of cryptographers, hackers, and privacy advocates spent decades attempting to create <strong>digital cash</strong> — money that could move across the internet without gatekeepers, without surveillance, without permission. They called themselves <a href="#" class="link-inline">cypherpunks</a>.</p>
+    <p class="reveal">Their mailing list, active through the 1990s, produced ideas that would eventually converge in Satoshi Nakamoto's 2008 whitepaper. The problems they faced were deep: how do you prevent double-spending without a central authority? How do you create digital scarcity in a world of infinite copies? How do you build trust between strangers who may never meet?</p>
+
+    <div class="pull-quote reveal" data-compile data-final="Privacy is necessary for an open society in the electronic age. Privacy is not secrecy.">
+      <div class="pull-quote-text">Privacy is necessary for an open society in the electronic age. Privacy is not secrecy.</div>
+      <div class="pull-quote-attribution">Eric Hughes, A Cypherpunk's Manifesto, 1993</div>
+    </div>
+
+    <p class="reveal">The tools they built — public-key cryptography, hash functions, digital signatures, zero-knowledge proofs — became the foundation of a monetary system that requires <a href="#" class="link-inline">no trusted third party</a>. Every transaction is verified by mathematics, not institutions. Every block is secured by energy expenditure, not promises<a href="#" class="fn-ref">1</a>.</p>
+
+    <h3 class="reveal">Digital Cash Before Bitcoin</h3>
+    <p class="reveal">David Chaum's DigiCash (1989) was the first serious attempt at anonymous digital money. It used blind signatures to protect user privacy, but it still required a central server to validate transactions<a href="#" class="fn-ref">2</a>. When DigiCash's parent company went bankrupt in 1998, the dream didn't die — it evolved.</p>
+    <p class="reveal">Adam Back's Hashcash (1997) introduced proof-of-work as an anti-spam mechanism. Wei Dai's b-money and Nick Szabo's Bit Gold proposed decentralized systems that bore striking resemblance to what Satoshi would later build. Hal Finney's Reusable Proofs of Work (RPOW) created a stepping stone between Hashcash and a full digital currency<a href="#" class="fn-ref">3</a>.</p>
+
+    <div class="pull-quote reveal" data-compile data-final="If you don't believe it or don't get it, I don't have the time to try to convince you, sorry.">
+      <div class="pull-quote-text">If you don't believe it or don't get it, I don't have the time to try to convince you, sorry.</div>
+      <div class="pull-quote-attribution">Satoshi Nakamoto, 2010</div>
+    </div>
+
+    <h3 class="reveal">The Breakthrough</h3>
+    <p class="reveal">On October 31, 2008, a person or group using the pseudonym Satoshi Nakamoto published a nine-page document titled <em>Bitcoin: A Peer-to-Peer Electronic Cash System</em>. The whitepaper solved the Byzantine Generals' Problem in a way no one had before — through a combination of proof-of-work, a distributed timestamp server, and economic incentives that made honest behavior more profitable than fraud.</p>
+    <p class="reveal">The genesis block was mined on January 3, 2009. Embedded in its coinbase transaction was a headline from <em>The Times</em>: "Chancellor on brink of second bailout for banks." Whether this was a timestamp, a political statement, or both, it anchored Bitcoin's creation to a moment of institutional failure.</p>
+
+    <h3 class="reveal">Why This Matters Now</h3>
+    <p class="reveal">In a world of increasing financial surveillance and monetary inflation, the cypherpunk vision of sovereign, private, sound money has never been more relevant. Bitcoin didn't emerge from Silicon Valley venture capital or government research labs. It emerged from people who believed that <strong>code could protect freedom</strong> — and who spent decades proving it.</p>
+
+    <blockquote class="reveal">
+      The computer can be used as a tool to liberate and protect people, rather than to control them.
+      <div class="bq-attr">— Hal Finney</div>
+    </blockquote>
+
+    <p class="reveal">The implications extend far beyond money. Bitcoin proved that decentralized consensus is possible — that millions of strangers can agree on a shared truth without trusting each other or any intermediary. This idea, once demonstrated, cannot be unlearned.</p>
+  </div>
+
+  <!-- Footnotes -->
+  <div class="footnotes reveal">
+    <div class="footnotes-title">References</div>
+    <div class="footnote-item"><span class="footnote-number">1</span><span>Nakamoto, S. (2008). <em>Bitcoin: A Peer-to-Peer Electronic Cash System.</em></span></div>
+    <div class="footnote-item"><span class="footnote-number">2</span><span>Chaum, D. (1983). <em>Blind Signatures for Untraceable Payments.</em> Advances in Cryptology.</span></div>
+    <div class="footnote-item"><span class="footnote-number">3</span><span>Back, A. (2002). <em>Hashcash — A Denial of Service Counter-Measure.</em></span></div>
+  </div>
+
+  <!-- Tags -->
+  <div style="margin-top:var(--space-6)" class="reveal">
+    <div class="tag-group">
+      <a href="#" class="tag tbb-link">Philosophy</a>
+      <a href="#" class="tag tbb-link">Cypherpunks</a>
+      <a href="#" class="tag tbb-link">History</a>
+      <a href="#" class="tag tbb-link">Fundamentals</a>
+    </div>
+  </div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ CODE BLOCK ═══════ -->
+<section class="section"><div class="container">
+  <div class="section-label type-header" data-text="IV · Technical Content">​</div>
+  <p class="reveal" style="color:var(--text-secondary);font-weight:300;margin-bottom:var(--space-4);">The genesis block contains the coinbase message <code>The Times 03/Jan/2009</code> embedded by Satoshi. Run <code>bitcoin-cli getblockcount</code> to check the current block height.</p>
+  <pre data-lang="python" class="reveal"><code><span class="tok-cm"># Simple SHA-256 double hashing — Bitcoin's core</span>
+<span class="tok-kw">import</span> hashlib
+
+<span class="tok-kw">def</span> <span class="tok-fn">double_sha256</span>(data):
+    <span class="tok-str">"""Bitcoin uses double SHA-256 for block hashing."""</span>
+    first = hashlib.sha256(data).digest()
+    <span class="tok-kw">return</span> hashlib.sha256(first).hexdigest()
+
+header = <span class="tok-str">b"sample_block_header"</span>
+<span class="tok-fn">print</span>(double_sha256(header))</code></pre>
+  <div class="terminal reveal">
+    <div class="terminal-bar"><span class="terminal-dot terminal-dot--r"></span><span class="terminal-dot terminal-dot--y"></span><span class="terminal-dot terminal-dot--g"></span><span class="terminal-title">bitcoin-cli</span></div>
+    <div class="terminal-line"><span class="terminal-prompt">$</span> bitcoin-cli getblockchaininfo</div>
+    <div class="terminal-line"><span class="terminal-output">{</span></div>
+    <div class="terminal-line"><span class="terminal-output">&nbsp;&nbsp;"chain": "main",</span></div>
+    <div class="terminal-line"><span class="terminal-output">&nbsp;&nbsp;"blocks": 881247,</span></div>
+    <div class="terminal-line"><span class="terminal-output">&nbsp;&nbsp;"bestblockhash": "00000000000000000002..."</span></div>
+    <div class="terminal-line"><span class="terminal-output">}</span></div>
+    <div class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-cursor"></span></div>
+  </div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ TABLE ═══════ -->
+<section class="section"><div class="container">
+  <div class="section-label type-header" data-text="V · Data Tables">​</div>
+  <div class="table-wrapper reveal">
+    <table>
+      <thead><tr><th>Halving</th><th>Date</th><th>Block Reward</th><th>Supply</th></tr></thead>
+      <tbody>
+        <tr><td>Genesis</td><td>Jan 2009</td><td>50 BTC</td><td>0 BTC</td></tr>
+        <tr><td>1st Halving</td><td>Nov 2012</td><td>25 BTC</td><td>10,500,000 BTC</td></tr>
+        <tr><td>2nd Halving</td><td>Jul 2016</td><td>12.5 BTC</td><td>15,750,000 BTC</td></tr>
+        <tr><td>3rd Halving</td><td>May 2020</td><td>6.25 BTC</td><td>18,375,000 BTC</td></tr>
+        <tr><td>4th Halving</td><td>Apr 2024</td><td>3.125 BTC</td><td>19,687,500 BTC</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ FORMS ═══════ -->
+<section class="section"><div class="container--wide">
+  <div class="section-label type-header" data-text="VI · Forms & Inputs">​</div>
+  <div class="grid grid--2">
+    <div>
+      <div class="form-group reveal"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="satoshi@bitcoin.org"><span class="form-hint">We'll never share your email.</span></div>
+      <div class="form-group reveal"><label class="form-label">Wallet Address</label><input type="text" class="form-input form-input--error" value="not-a-valid-address"><span class="form-error">Invalid Bitcoin address format</span></div>
+      <div class="form-group reveal"><label class="form-label">Display Name</label><input type="text" class="form-input form-input--success" value="Satoshi"><span class="form-success-msg">Looks good</span></div>
+    </div>
+    <div>
+      <div class="form-group reveal"><label class="form-label">Search</label><div class="search-wrapper"><svg class="icon icon--sm search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" class="form-input" placeholder="Search articles..."></div></div>
+      <div class="form-group reveal"><label class="form-label">Newsletter</label><div class="subscribe-row"><input type="email" class="form-input" placeholder="your@email.com"><button class="btn btn--primary btn--small">Subscribe</button></div></div>
+      <div class="form-group reveal"><label class="form-label">Message</label><textarea class="form-input" placeholder="What would you like to learn about?"></textarea></div>
+    </div>
+  </div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ TOASTS ═══════ -->
+<section class="section"><div class="container">
+  <div class="section-label type-header" data-text="VII · Status Notifications">​</div>
+  <div style="max-width:560px" class="reveal">
+    <div class="toast toast--success"><span class="toast-icon">✓</span><div class="toast-content"><div class="toast-title">Subscribed</div><div class="toast-message">You'll receive our weekly breakdown every Friday.</div></div></div>
+    <div class="toast toast--error"><span class="toast-icon">✕</span><div class="toast-content"><div class="toast-title">Invalid Address</div><div class="toast-message">That doesn't look like a valid Bitcoin address.</div></div></div>
+    <div class="toast toast--warning"><span class="toast-icon">⚠</span><div class="toast-content"><div class="toast-title">Unverified Source</div><div class="toast-message">This claim hasn't been independently verified.</div></div></div>
+    <div class="toast toast--info"><span class="toast-icon">ℹ</span><div class="toast-content"><div class="toast-title">New Article</div><div class="toast-message">We just published "The Lightning Network Explained."</div></div></div>
+  </div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ ENCRYPTION BARS ═══════ -->
+<section class="section"><div class="container">
+  <div class="section-label type-header" data-text="VIII · Verification">​</div>
+  <div class="reveal" id="encD1"><div class="encrypt-bar"><div class="encrypt-bar-fill" id="ef1"></div></div><div class="encrypt-bar-label"><span>DECRYPTING BLOCK DATA...</span><span id="ep1">0%</span></div></div>
+  <div style="margin-top:var(--space-5)" class="reveal" id="encD2"><div class="encrypt-bar"><div class="encrypt-bar-fill" id="ef2"></div></div><div class="encrypt-bar-label"><span>VERIFYING SHA-256 HASH...</span><span id="ep2">0%</span></div></div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ SKELETON LOADING ═══════ -->
+<section class="section"><div class="container--wide">
+  <div class="section-label type-header" data-text="IX · Loading States">​</div>
+  <div class="grid grid--3 stagger">
+    <div class="skeleton reveal"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--title"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--medium"></div><div class="skeleton-line skeleton-line--short" style="margin-top:16px"></div></div>
+    <div class="skeleton reveal"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--title"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--medium"></div><div class="skeleton-line skeleton-line--short" style="margin-top:16px"></div></div>
+    <div class="skeleton reveal"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--title"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--medium"></div><div class="skeleton-line skeleton-line--short" style="margin-top:16px"></div></div>
+  </div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ EMPTY STATES ═══════ -->
+<section class="section"><div class="container">
+  <div class="section-label type-header" data-text="X · Empty States">​</div>
+  <div class="grid grid--2">
+    <div class="empty-state reveal" style="border:1px dashed var(--border-default)"><div class="empty-icon"><svg class="icon icon--lg" viewBox="0 0 24 24" style="width:48px;height:48px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="empty-title">No results found</div><div class="empty-desc">Try a different search term or browse our categories.</div><a href="#" class="btn btn--ghost btn--small tbb-link">Browse Articles</a></div>
+    <div class="empty-state reveal" style="border:1px dashed var(--border-default)"><div class="empty-icon"><svg class="icon icon--lg" viewBox="0 0 24 24" style="width:48px;height:48px"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div><div class="empty-title">No saved articles</div><div class="empty-desc">Bookmark articles to build your personal reading list.</div><a href="#" class="btn btn--ghost btn--small tbb-link">Explore</a></div>
+  </div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ PHOTO TREATMENT ═══════ -->
+<section class="section"><div class="container">
+  <div class="section-label type-header" data-text="XI · Photography Treatment">​</div>
+  <div class="photo-treatment reveal" style="height:300px;background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460,#533483);display:flex;align-items:center;justify-content:center"><span style="font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--text-muted);z-index:1;position:relative">Desaturated + Gold Duotone Overlay</span></div>
+  <div class="photo-caption">Hover to see reduced desaturation.</div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ LOGO RULES ═══════ -->
+<section class="section"><div class="container--wide">
+  <div class="section-label type-header" data-text="XII · Logo & Favicon">​</div>
+  <div class="logo-lockup reveal">
+    <div class="logo-variant"><span class="logo-full">The Bitcoin Breakdown</span><span class="logo-variant-label">Full Wordmark</span></div>
+    <div class="logo-variant"><span class="logo-abbr">TBB</span><span class="logo-variant-label">Abbreviation</span></div>
+    <div class="logo-variant"><div class="logo-icon-mark">₿</div><span class="logo-variant-label">Icon Mark</span></div>
+    <div class="logo-variant"><div class="logo-favicon">B</div><span class="logo-variant-label">Favicon</span></div>
+  </div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ 404 ═══════ -->
+<section class="section"><div class="container" style="border:1px dashed var(--border-default)">
+  <div class="section-label">XIII · 404 Page</div>
+  <div class="page-404">
+    <div class="error-code">404</div>
+    <div class="error-title">Block Not Found</div>
+    <div class="error-desc">The page you're looking for doesn't exist — or has been moved to a different chain.</div>
+    <div class="error-actions"><a href="#" class="btn btn--primary btn--small tbb-link">Return Home</a></div>
+  </div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<!-- ═══════ COOKIE BANNER ═══════ -->
+<section class="section"><div class="container--wide">
+  <div class="section-label type-header" data-text="XIV · Cookie Banner">​</div>
+  <div class="cookie-demo reveal">
+    <p class="cookie-text">This site uses essential cookies only. No tracking, no analytics, no third parties. <a href="#">Privacy policy</a></p>
+    <div class="cookie-actions"><button class="btn btn--primary btn--small">Accept</button><button class="btn btn--ghost btn--small">Decline</button></div>
+  </div>
+</div></section>
+
+<div class="divider" data-decrypt><div class="divider-dots"></div><div class="divider-line"></div><div class="divider-spark"></div></div>
+
+<footer class="footer"><p>The Bitcoin Breakdown · Complete Design System · 2026</p></footer>
+</main>
+
+<div class="data-ticker"><div class="data-ticker-track" id="tickerTrack"></div></div>
+
+<script>
+// ── Matrix Rain (soft, 1.5s) ──
+const mC=document.getElementById('matrixCanvas'),mX=mC.getContext('2d');
+mC.width=innerWidth;mC.height=innerHeight;
+const ch='0123456789ABCDEF₿',fs=14,co=Math.floor(mC.width/fs);
+const dr=Array(co).fill(0).map(()=>Math.random()*-10|0);let mR=true;
+function drawM(){if(!mR)return;mX.fillStyle='rgba(0,0,0,0.12)';mX.fillRect(0,0,mC.width,mC.height);mX.fillStyle='#FFD700';mX.font=fs+'px monospace';for(let i=0;i<dr.length;i++){if(Math.random()>0.7){mX.globalAlpha=0.3+Math.random()*0.4;mX.fillText(ch[Math.random()*ch.length|0],i*fs,dr[i]*fs)}if(dr[i]*fs>mC.height&&Math.random()>0.99)dr[i]=0;dr[i]++}mX.globalAlpha=1;requestAnimationFrame(drawM)}
+drawM();setTimeout(()=>{mC.classList.add('dissolved');setTimeout(()=>mR=false,1000)},1500);
+
+// ── Static Discharge (text selection release only, subtle) ──
+const lC=document.getElementById('lightningCanvas'),lX=lC.getContext('2d');
+lC.width=innerWidth;lC.height=innerHeight;
+document.addEventListener('mouseup',e=>{
+  const sel=window.getSelection();
+  if(!sel||sel.toString().length<2)return;
+  const branches=2+Math.random()*2|0;let fr=0;
+  function draw(){lX.clearRect(0,0,lC.width,lC.height);if(fr>5)return;const a=1-fr/5;
+  for(let b=0;b<branches;b++){const ang=(Math.PI*2/branches)*b+(Math.random()-0.5)*0.8;
+  lX.strokeStyle=`rgba(255,215,0,${a*0.5})`;lX.lineWidth=0.5;lX.beginPath();lX.moveTo(e.clientX,e.clientY);
+  let px=e.clientX,py=e.clientY;for(let s=0;s<3;s++){px+=Math.cos(ang)*12+(Math.random()-0.5)*8;py+=Math.sin(ang)*12+(Math.random()-0.5)*8;lX.lineTo(px,py)}
+  lX.stroke()}fr++;requestAnimationFrame(draw)}draw()
+});
+
+// ── Lightning Bolt Page Transition ──
+const bC=document.getElementById('boltCanvas'),bX=bC.getContext('2d'),tO=document.getElementById('transitionOverlay');
+bC.width=innerWidth;bC.height=innerHeight;
+
+function buildBoltPath(startX, startY, endX, endY, displacement) {
+  if (displacement < 4) return [{x:endX, y:endY}];
+  const midX = (startX + endX) / 2 + (Math.random() - 0.5) * displacement;
+  const midY = (startY + endY) / 2 + (Math.random() - 0.5) * displacement * 0.3;
+  const left = buildBoltPath(startX, startY, midX, midY, displacement / 2);
+  const right = buildBoltPath(midX, midY, endX, endY, displacement / 2);
+  return [...left, ...right];
+}
+
+function drawBolt(clickX, clickY) {
+  bX.clearRect(0, 0, bC.width, bC.height);
+  const startX = clickX + (Math.random() - 0.5) * 60;
+  const startY = 0;
+  const points = buildBoltPath(startX, startY, clickX, clickY, 120);
+  points.unshift({x: startX, y: startY});
+
+  // Bright white-gold flash frame
+  bX.fillStyle = 'rgba(255, 245, 200, 0.08)';
+  bX.fillRect(0, 0, bC.width, bC.height);
+
+  // Draw multiple layers for power
+  const layers = [
+    {color: 'rgba(255,255,240,1)', width: 3, blur: 0},       // hot white core
+    {color: 'rgba(255,225,100,0.95)', width: 2.5, blur: 8},   // bright gold
+    {color: 'rgba(255,215,0,0.7)', width: 5, blur: 25},       // gold glow
+    {color: 'rgba(255,215,0,0.3)', width: 12, blur: 50},      // wide aura
+    {color: 'rgba(255,215,0,0.1)', width: 24, blur: 80},      // ambient bloom
+  ];
+
+  layers.forEach(layer => {
+    bX.save();
+    bX.strokeStyle = layer.color;
+    bX.lineWidth = layer.width;
+    bX.shadowColor = '#FFD700';
+    bX.shadowBlur = layer.blur;
+    bX.lineCap = 'round';
+    bX.lineJoin = 'round';
+    bX.beginPath();
+    bX.moveTo(points[0].x, points[0].y);
+    points.forEach(p => bX.lineTo(p.x, p.y));
+    bX.stroke();
+    bX.restore();
+  });
+
+  // Branch bolts (2-3 small forks off the main bolt)
+  const branchCount = 2 + (Math.random() * 2 | 0);
+  for (let b = 0; b < branchCount; b++) {
+    const forkIdx = Math.floor(Math.random() * points.length * 0.6) + 2;
+    if (forkIdx >= points.length) continue;
+    const forkPt = points[forkIdx];
+    const bEndX = forkPt.x + (Math.random() - 0.5) * 100;
+    const bEndY = forkPt.y + 20 + Math.random() * 60;
+    const branchPts = buildBoltPath(forkPt.x, forkPt.y, bEndX, bEndY, 30);
+    branchPts.unshift(forkPt);
+    bX.save();
+    bX.strokeStyle = 'rgba(255,225,100,0.6)';
+    bX.lineWidth = 1.5;
+    bX.shadowColor = '#FFD700';
+    bX.shadowBlur = 15;
+    bX.lineCap = 'round';
+    bX.beginPath();
+    bX.moveTo(branchPts[0].x, branchPts[0].y);
+    branchPts.forEach(p => bX.lineTo(p.x, p.y));
+    bX.stroke();
+    // Branch glow
+    bX.strokeStyle = 'rgba(255,215,0,0.2)';
+    bX.lineWidth = 5;
+    bX.shadowBlur = 30;
+    bX.stroke();
+    bX.restore();
+  }
+
+  // Impact flash at click point
+  const grad = bX.createRadialGradient(clickX, clickY, 0, clickX, clickY, 80);
+  grad.addColorStop(0, 'rgba(255,255,240,0.5)');
+  grad.addColorStop(0.3, 'rgba(255,215,0,0.2)');
+  grad.addColorStop(1, 'transparent');
+  bX.fillStyle = grad;
+  bX.fillRect(clickX - 80, clickY - 80, 160, 160);
+
+  // Fade out
+  let fade = 0;
+  function f() {
+    bX.fillStyle = 'rgba(0,0,0,0.12)';
+    bX.fillRect(0, 0, bC.width, bC.height);
+    fade++;
+    if (fade < 18) requestAnimationFrame(f);
+    else bX.clearRect(0, 0, bC.width, bC.height);
+  }
+  requestAnimationFrame(f);
+}
+
+document.querySelectorAll('.tbb-link').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    drawBolt(e.clientX, e.clientY);
+    tO.classList.add('active');
+    setTimeout(() => tO.classList.remove('active'), 800);
+  });
+});
+
+window.addEventListener('resize',()=>{lC.width=innerWidth;lC.height=innerHeight;mC.width=innerWidth;mC.height=innerHeight;bC.width=innerWidth;bC.height=innerHeight});
+
+// ── Logo Easter Egg ──
+const logo=document.getElementById('siteLogo');let lt;
+logo.addEventListener('mouseenter',()=>{lt=setTimeout(()=>{logo.classList.add('glitching');setTimeout(()=>logo.classList.remove('glitching'),500)},3000)});
+logo.addEventListener('mouseleave',()=>clearTimeout(lt));
+
+// ── Hero Hash ──
+function gH(n){const h='0123456789abcdef';let r='';for(let i=0;i<n;i++){r+=h[Math.random()*16|0];if(i%8===7&&i<n-1)r+=' '}return r}
+const hH=document.getElementById('heroHash');if(hH){hH.textContent='0x'+gH(80);setInterval(()=>hH.textContent='0x'+gH(80),4000)}
+
+// ── Card Scramble ──
+const sC='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&';
+document.querySelectorAll('.scramble-text').forEach(el=>{const o=el.dataset.original;let iv,it;
+el.closest('.article-card').addEventListener('mouseenter',()=>{it=0;clearInterval(iv);iv=setInterval(()=>{el.textContent=o.split('').map((c,i)=>c===' '?' ':i<it?o[i]:sC[Math.random()*sC.length|0]).join('');it+=1.5;if(it>=o.length){clearInterval(iv);el.textContent=o}},30)});
+el.closest('.article-card').addEventListener('mouseleave',()=>{clearInterval(iv);el.textContent=o})});
+
+// ── Typing Headers ──
+const tObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.typed){e.target.dataset.typed='1';const t=e.target.dataset.text;let i=0;e.target.textContent='';const iv=setInterval(()=>{e.target.textContent=t.slice(0,i+1);i++;if(i>=t.length)clearInterval(iv)},35)}})},{threshold:0.5});
+document.querySelectorAll('.type-header').forEach(el=>tObs.observe(el));
+
+// ── Count Up ──
+const cObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.counted){e.target.dataset.counted='1';const t=+e.target.dataset.target,s=e.target.dataset.suffix||'',d=1500,st=performance.now();
+function step(ts){const p=Math.min((ts-st)/d,1),ease=1-Math.pow(1-p,3);e.target.textContent=Math.floor(ease*t).toLocaleString()+s;if(p<1)requestAnimationFrame(step);else e.target.textContent=t.toLocaleString()+s}requestAnimationFrame(step)}})},{threshold:0.5});
+document.querySelectorAll('.count-up').forEach(el=>cObs.observe(el));
+
+// ── Pull Quote Compile (same font/color, just scrambles then resolves) ──
+const pqObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.compiled){e.target.dataset.compiled='1';
+const textEl=e.target.querySelector('.pull-quote-text');const final=e.target.dataset.final;
+const gibChars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,;:!? ';
+let fr=0;const iv=setInterval(()=>{textEl.textContent=final.split('').map((c,i)=>{if(c===' ')return' ';if(i<fr)return final[i];return gibChars[Math.random()*gibChars.length|0]}).join('');fr+=2;if(fr>=final.length){clearInterval(iv);textEl.textContent=final}},25)}})},{threshold:0.5});
+document.querySelectorAll('[data-compile]').forEach(el=>pqObs.observe(el));
+
+// ── Footnote Flash ──
+const fObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.flashed){e.target.dataset.flashed='1';e.target.classList.add('flash');setTimeout(()=>e.target.classList.remove('flash'),600)}})},{threshold:1});
+document.querySelectorAll('.fn-ref').forEach(el=>fObs.observe(el));
+
+// ── Divider Decrypt + Spark ──
+document.querySelectorAll('.divider-dots').forEach(c=>{for(let i=0;i<30;i++){const d=document.createElement('span');d.style.setProperty('--dx',(Math.random()-0.5)*200+'px');d.style.setProperty('--dy',(Math.random()-0.5)*20+'px');d.style.animationDelay=Math.random()*0.5+'s';c.appendChild(d)}});
+const dObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.5});
+document.querySelectorAll('.divider').forEach(el=>dObs.observe(el));
+function rSpark(){const ss=document.querySelectorAll('.divider-spark');const s=ss[Math.random()*ss.length|0];if(!s)return;s.style.left=Math.random()*s.parentElement.offsetWidth+'px';s.style.opacity='1';setTimeout(()=>s.style.opacity='0',150)}
+setInterval(rSpark,3000+Math.random()*4000);
+
+// ── Encryption Bars ──
+function aE(fId,pId){const f=document.getElementById(fId),p=document.getElementById(pId);const d=3000,st=performance.now();
+function step(ts){const pr=Math.min((ts-st)/d,1),ease=1-Math.pow(1-pr,4);f.style.width=ease*100+'%';p.textContent=Math.round(ease*100)+'%';if(pr<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
+const eObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!e.target.dataset.animated){e.target.dataset.animated='1';if(e.target.id==='encD1')aE('ef1','ep1');if(e.target.id==='encD2')setTimeout(()=>aE('ef2','ep2'),500)}})},{threshold:0.5});
+document.querySelectorAll('[id^="encD"]').forEach(el=>eObs.observe(el));
+
+// ── Scroll Progress ──
+const sp=document.getElementById('scrollProgress');
+window.addEventListener('scroll',()=>{const t=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;sp.style.width=(t/h*100)+'%'});
+
+// ── Data Ticker ──
+const tD=['<span class="ticker-dot"></span>BLOCK HEIGHT <span class="ticker-gold">881,247</span>','<span class="ticker-dot"></span>HASH RATE <span class="ticker-gold">712 EH/s</span>','<span class="ticker-dot"></span>MEMPOOL <span class="ticker-gold">24,891 tx</span>','<span class="ticker-dot"></span>DIFFICULTY <span class="ticker-gold">110.45T</span>','<span class="ticker-dot"></span>FEES <span class="ticker-gold">12 sat/vB</span>','<span class="ticker-dot"></span>NODES <span class="ticker-gold">18,247</span>','<span class="ticker-dot"></span>SUPPLY <span class="ticker-gold">19,812,500 BTC</span>'];
+const tT=document.getElementById('tickerTrack'),tHTML=tD.map(d=>`<span>${d}</span>`).join('');tT.innerHTML=tHTML+tHTML;
+
+// ── Scroll Reveals ──
+const rO=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>rO.observe(el));
+</script>
+</body>
+</html>

@@ -4,82 +4,278 @@ const navLinks = [
   { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
 ];
+
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="site-header">
-  <nav class="nav-container">
-    <a href="/" class="logo">
-      <span class="logo-icon">₿</span>
-      <span class="logo-text">The Bitcoin Breakdown</span>
-    </a>
-    <ul class="nav-links">
+  <div class="header-inner">
+    <a href="/" class="logo logo-full">The Bitcoin Breakdown</a>
+    <a href="/" class="logo logo-abbr">TBB</a>
+    <a href="/" class="logo logo-icon-mark" aria-label="The Bitcoin Breakdown home">&#8383;</a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        {navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[{ active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+            >
+              {link.label}
+              <span class="nav-spark" aria-hidden="true"></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <ul>
       {navLinks.map((link) => (
         <li>
-          <a href={link.href}>{link.label}</a>
+          <a
+            href={link.href}
+            class:list={[{ active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+          >
+            {link.label}
+          </a>
         </li>
       ))}
     </ul>
-  </nav>
+  </div>
 </header>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const mobileNav = document.getElementById('mobileNav');
+  if (toggle && mobileNav) {
+    toggle.addEventListener('click', () => {
+      const open = toggle.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      mobileNav.classList.toggle('open', open);
+      mobileNav.setAttribute('aria-hidden', String(!open));
+    });
+  }
+</script>
 
 <style>
   .site-header {
-    background: var(--color-bg-secondary);
-    border-bottom: 1px solid var(--color-border);
     position: sticky;
     top: 0;
     z-index: 100;
+    padding: var(--space-4) 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-default);
   }
 
-  .nav-container {
-    max-width: 72rem;
+  .header-inner {
+    max-width: var(--wide-width);
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0 var(--page-margin);
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
+  /* Logo variants */
   .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    font-family: var(--font);
+    font-weight: 400;
+    color: var(--gold);
     text-decoration: none;
-    color: var(--color-text);
-    font-weight: 700;
-    font-size: 1.25rem;
+    text-transform: uppercase;
+    display: inline-block;
   }
 
-  .logo-icon {
-    color: var(--color-accent);
-    font-size: 1.5rem;
+  .logo:hover {
+    text-shadow: none;
   }
 
+  .logo-full {
+    font-size: 16px;
+    letter-spacing: 3px;
+    white-space: nowrap;
+  }
+
+  .logo-abbr {
+    font-size: 20px;
+    letter-spacing: 4px;
+    display: none;
+  }
+
+  .logo-icon-mark {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--gold);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  /* Logo glitch easter egg — triggered via JS (Phase 4) */
+  .logo:global(.glitching) {
+    animation: logoGlitch 0.5s linear;
+  }
+
+  /* Nav links */
   .nav-links {
     display: flex;
+    gap: var(--space-5);
     list-style: none;
-    gap: 2rem;
+    align-items: center;
     margin: 0;
     padding: 0;
   }
 
   .nav-links a {
+    font-family: var(--font);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
     text-decoration: none;
-    color: var(--color-text-muted);
-    transition: color 0.2s;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease-luxury);
   }
 
   .nav-links a:hover {
-    color: var(--color-accent);
+    color: var(--gold);
+    text-shadow: 0 0 20px var(--gold-glow);
   }
 
-  @media (max-width: 640px) {
-    .logo-text {
-      display: none;
-    }
+  .nav-links a:hover::after {
+    transform: scaleX(1);
+  }
 
-    .nav-links {
-      gap: 1rem;
-    }
+  .nav-links a.active {
+    color: var(--gold);
+  }
+
+  /* Nav spark */
+  .nav-spark {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--gold), 0 0 12px rgba(255, 215, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav-links a:hover .nav-spark {
+    opacity: 1;
+    animation: navSparkFlash 0.4s ease forwards;
+  }
+
+  /* Hamburger toggle — hidden on desktop */
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--gold);
+    transition: transform 0.3s var(--ease-luxury), opacity 0.3s ease;
+  }
+
+  .nav-toggle.open .hamburger-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .nav-toggle.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.open .hamburger-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  /* Mobile nav drawer */
+  .mobile-nav {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.96);
+    border-bottom: 1px solid var(--border-default);
+    transition: max-height 0.4s var(--ease-luxury);
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: var(--space-4) var(--page-margin) var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .mobile-nav a {
+    display: block;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: var(--space-2) 0;
+    transition: color 0.3s ease;
+  }
+
+  .mobile-nav a:hover,
+  .mobile-nav a.active {
+    color: var(--gold);
+  }
+
+  /* Responsive: tablet — abbreviation + hamburger */
+  @media (max-width: 768px) {
+    .logo-full { display: none; }
+    .logo-abbr { display: inline-block; }
+    .nav-links { display: none; }
+    .nav-toggle { display: flex; }
+    .mobile-nav { display: block; }
+    .mobile-nav.open { max-height: 200px; }
+  }
+
+  /* Responsive: small mobile — icon mark */
+  @media (max-width: 480px) {
+    .logo-abbr { display: none; }
+    .logo-icon-mark { display: flex; }
   }
 </style>

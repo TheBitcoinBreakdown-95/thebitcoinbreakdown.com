@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bitcoin Breakdown — Design Mood Board</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000000;
+    --black-soft: #060606;
+    --black-card: #0A0A0A;
+    --black-elevated: #111111;
+    --gold: #FFD700;
+    --gold-muted: #C9A84C;
+    --gold-dim: rgba(255, 215, 0, 0.15);
+    --gold-glow: rgba(255, 215, 0, 0.4);
+    --gold-subtle: rgba(255, 215, 0, 0.06);
+    --text-primary: #E8E4DC;
+    --text-secondary: #8A857D;
+    --text-muted: #5A5650;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    overflow-x: hidden;
+  }
+
+  /* ============ CIRCUIT PATTERN BACKGROUND ============ */
+  .circuit-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.04;
+    pointer-events: none;
+  }
+  .circuit-bg svg { width: 100%; height: 100%; }
+
+  /* ============ HEADER ============ */
+  .mood-header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 60px 24px 40px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  }
+  .mood-header p {
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .mood-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 300;
+    color: var(--text-primary);
+    letter-spacing: 2px;
+  }
+  .mood-header h1 span {
+    color: var(--gold);
+    text-shadow: 0 0 40px var(--gold-glow), 0 0 80px rgba(255, 215, 0, 0.15);
+  }
+  .mood-header .subtitle {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
+    margin-top: 12px;
+    font-weight: 300;
+  }
+
+  /* ============ SECTIONS ============ */
+  .section {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.08);
+  }
+
+  /* ============ COLOR PALETTE ============ */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .swatch {
+    aspect-ratio: 1;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 14px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .swatch:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  }
+  .swatch-name {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .swatch-hex {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 4px;
+    font-weight: 300;
+  }
+  .swatch.dark-text .swatch-name,
+  .swatch.dark-text .swatch-hex { color: var(--black); }
+  .swatch.light-text .swatch-name,
+  .swatch.light-text .swatch-hex { color: var(--text-primary); }
+
+  .swatch-gold {
+    background: var(--gold);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+  }
+  .swatch-gold-muted { background: var(--gold-muted); }
+  .swatch-black { background: var(--black); border: 1px solid rgba(255,215,0,0.1); }
+  .swatch-soft { background: var(--black-soft); border: 1px solid rgba(255,215,0,0.06); }
+  .swatch-card { background: var(--black-card); border: 1px solid rgba(255,215,0,0.06); }
+  .swatch-elevated { background: var(--black-elevated); border: 1px solid rgba(255,215,0,0.06); }
+  .swatch-text { background: var(--text-primary); }
+  .swatch-secondary { background: var(--text-secondary); }
+
+  /* ============ TYPOGRAPHY ============ */
+  .type-specimen {
+    margin-bottom: 48px;
+  }
+  .type-row {
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255,215,0,0.04);
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: baseline;
+    gap: 24px;
+  }
+  .type-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+  .type-h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    color: var(--text-primary);
+  }
+  .type-h2 {
+    font-size: clamp(24px, 4vw, 40px);
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: var(--text-primary);
+  }
+  .type-h3 {
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    color: var(--text-primary);
+  }
+  .type-body {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    max-width: 600px;
+  }
+  .type-caption {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+  .type-gold { color: var(--gold); }
+
+  /* ============ GLOW EFFECTS SHOWCASE ============ */
+  .effects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .effect-card {
+    background: var(--black-card);
+    border: 1px solid rgba(255, 215, 0, 0.06);
+    border-radius: 2px;
+    padding: 40px 32px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .effect-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255,215,0,0.04) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .effect-card:hover::before {
+    opacity: 1;
+  }
+  .effect-card:hover {
+    border-color: rgba(255, 215, 0, 0.15);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.06), 0 20px 60px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+  }
+  .effect-card h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--gold);
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  .effect-card p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  /* ============ MOCK HOMEPAGE PREVIEW ============ */
+  .preview-frame {
+    background: var(--black);
+    border: 1px solid rgba(255,215,0,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  }
+  .preview-topbar {
+    background: var(--black-soft);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,215,0,0.06);
+  }
+  .preview-topbar .logo {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--gold);
+  }
+  .preview-topbar nav {
+    display: flex;
+    gap: 28px;
+  }
+  .preview-topbar nav a {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 400;
+  }
+  .preview-topbar nav a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 20px var(--gold-glow);
+  }
+
+  .preview-hero {
+    padding: 100px 60px;
+    text-align: center;
+    position: relative;
+  }
+  .preview-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,215,0,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .preview-hero .overline {
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+  .preview-hero h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 300;
+    color: var(--text-primary);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  .preview-hero h2 em {
+    font-style: italic;
+    color: var(--gold);
+    text-shadow: 0 0 30px rgba(255,215,0,0.2);
+  }
+  .preview-hero .hero-body {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--gold);
+    padding: 14px 40px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-weight: 500;
+  }
+  .cta-btn:hover {
+    box-shadow: 0 0 30px rgba(255,215,0,0.3), 0 0 60px rgba(255,215,0,0.1);
+    transform: translateY(-1px);
+  }
+  .cta-ghost {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid rgba(255,215,0,0.3);
+    margin-left: 16px;
+  }
+  .cta-ghost:hover {
+    border-color: var(--gold);
+    background: rgba(255,215,0,0.05);
+    box-shadow: 0 0 20px rgba(255,215,0,0.1);
+  }
+
+  /* ============ ARTICLE CARD PREVIEW ============ */
+  .preview-cards {
+    padding: 60px;
+    border-top: 1px solid rgba(255,215,0,0.04);
+  }
+  .preview-cards .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 36px;
+  }
+  .preview-cards .section-head h3 {
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    font-weight: 400;
+  }
+  .preview-cards .section-head a {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .preview-cards .section-head a:hover { color: var(--gold); }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .article-card {
+    background: var(--black-card);
+    border: 1px solid rgba(255,215,0,0.04);
+    padding: 32px 28px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+    position: relative;
+  }
+  .article-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 28px; right: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .article-card:hover::after { opacity: 0.3; }
+  .article-card:hover {
+    border-color: rgba(255,215,0,0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+  .article-card .tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+  .article-card h4 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.35;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+    transition: color 0.3s;
+  }
+  .article-card:hover h4 { color: var(--gold); }
+  .article-card .excerpt {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ============ DIVIDER ============ */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,215,0,0.2) 50%, transparent 100%);
+    margin: 0 auto;
+    max-width: 1100px;
+  }
+
+  /* ============ FOOTER NOTE ============ */
+  .board-footer {
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .board-footer p {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .mood-header { animation: fadeInUp 0.8s ease both; }
+  .section { animation: fadeInUp 0.8s ease both; }
+  .section:nth-child(2) { animation-delay: 0.1s; }
+  .section:nth-child(3) { animation-delay: 0.2s; }
+  .section:nth-child(4) { animation-delay: 0.3s; }
+  .preview-frame { animation: fadeInUp 1s ease 0.3s both; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 640px) {
+    .type-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .preview-hero { padding: 60px 24px; }
+    .preview-cards { padding: 40px 24px; }
+    .preview-topbar nav { display: none; }
+    .cta-ghost { margin-left: 0; margin-top: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Subtle circuit pattern background -->
+<div class="circuit-bg">
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <defs>
+      <pattern id="circuit" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+        <path d="M0 100 H60 M80 100 H120 M140 100 H200" stroke="#FFD700" stroke-width="0.5" fill="none"/>
+        <path d="M100 0 V40 M100 60 V140 M100 160 V200" stroke="#FFD700" stroke-width="0.5" fill="none"/>
+        <circle cx="60" cy="100" r="3" fill="none" stroke="#FFD700" stroke-width="0.5"/>
+        <circle cx="140" cy="100" r="3" fill="none" stroke="#FFD700" stroke-width="0.5"/>
+        <circle cx="100" cy="40" r="2" fill="#FFD700" opacity="0.5"/>
+        <circle cx="100" cy="160" r="2" fill="#FFD700" opacity="0.5"/>
+        <path d="M80 100 L100 60 L120 100" stroke="#FFD700" stroke-width="0.3" fill="none"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#circuit)"/>
+  </svg>
+</div>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="mood-header">
+  <p>Design Direction</p>
+  <h1>The Bitcoin <span>Breakdown</span></h1>
+  <div class="subtitle">Dark Luxury · Minimalist Art Deco · Cypherpunk</div>
+</header>
+
+<div class="gold-divider"></div>
+
+<!-- ═══════ COLOR PALETTE ═══════ -->
+<section class="section">
+  <div class="section-label">I · Color Palette</div>
+  <div class="palette-grid">
+    <div class="swatch swatch-gold dark-text">
+      <span class="swatch-name">Gold</span>
+      <span class="swatch-hex">#FFD700</span>
+    </div>
+    <div class="swatch swatch-gold-muted dark-text">
+      <span class="swatch-name">Antique Gold</span>
+      <span class="swatch-hex">#C9A84C</span>
+    </div>
+    <div class="swatch swatch-black light-text">
+      <span class="swatch-name">True Black</span>
+      <span class="swatch-hex">#000000</span>
+    </div>
+    <div class="swatch swatch-card light-text">
+      <span class="swatch-name">Card</span>
+      <span class="swatch-hex">#0A0A0A</span>
+    </div>
+    <div class="swatch swatch-elevated light-text">
+      <span class="swatch-name">Elevated</span>
+      <span class="swatch-hex">#111111</span>
+    </div>
+    <div class="swatch swatch-text dark-text">
+      <span class="swatch-name">Cream</span>
+      <span class="swatch-hex">#E8E4DC</span>
+    </div>
+    <div class="swatch swatch-secondary light-text">
+      <span class="swatch-name">Muted</span>
+      <span class="swatch-hex">#8A857D</span>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ═══════ TYPOGRAPHY ═══════ -->
+<section class="section">
+  <div class="section-label">II · Typography — Cormorant Garamond</div>
+  <div class="type-specimen">
+    <div class="type-row">
+      <span class="type-label">Display</span>
+      <span class="type-h1">Sound Money in a <span class="type-gold">Digital Age</span></span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Heading</span>
+      <span class="type-h2">Understanding the Protocol</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Subheading</span>
+      <span class="type-h3">Why Scarcity Matters</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Body</span>
+      <span class="type-body">Bitcoin represents the first truly scarce digital asset — a monetary network secured by mathematics rather than institutions, accessible to anyone with an internet connection.</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Caption</span>
+      <span class="type-caption">Published February 2026 · 8 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ═══════ GLOW & HOVER EFFECTS ═══════ -->
+<section class="section">
+  <div class="section-label">III · Glow Effects & Interactions</div>
+  <div class="effects-grid">
+    <div class="effect-card">
+      <h3>Ambient Gold Glow</h3>
+      <p>Subtle radial gradients that bloom on hover — light emerges from darkness, never overwhelming the content.</p>
+    </div>
+    <div class="effect-card">
+      <h3>Elevation on Interaction</h3>
+      <p>Cards lift gently and gain a whisper of gold at their borders. Movement is slow, deliberate, luxurious.</p>
+    </div>
+    <div class="effect-card">
+      <h3>Gold Line Reveals</h3>
+      <p>Thin gold dividers and underlines that fade in — Art Deco geometry expressed through restraint.</p>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ═══════ HOMEPAGE PREVIEW ═══════ -->
+<section class="section">
+  <div class="section-label">IV · Homepage Preview</div>
+  <div class="preview-frame">
+    <div class="preview-topbar">
+      <div class="logo">The Bitcoin Breakdown</div>
+      <nav>
+        <a href="#">Articles</a>
+        <a href="#">Learn</a>
+        <a href="#">Resources</a>
+        <a href="#">About</a>
+      </nav>
+    </div>
+    <div class="preview-hero">
+      <div class="overline">Education · Clarity · Sovereignty</div>
+      <h2>Understand Bitcoin.<br>Not the <em>noise</em>.</h2>
+      <p class="hero-body">Clear, rigorous breakdowns of the protocol, the economics, and the philosophy — for those who think for themselves.</p>
+      <div>
+        <a href="#" class="cta-btn">Start Learning</a>
+        <a href="#" class="cta-btn cta-ghost">Latest Articles</a>
+      </div>
+    </div>
+    <div class="preview-cards">
+      <div class="section-head">
+        <h3>Recent</h3>
+        <a href="#">View All →</a>
+      </div>
+      <div class="card-grid">
+        <div class="article-card">
+          <div class="tag">Fundamentals</div>
+          <h4>What Gives Bitcoin Its Value?</h4>
+          <p class="excerpt">An exploration of monetary properties, network effects, and digital scarcity.</p>
+        </div>
+        <div class="article-card">
+          <div class="tag">Security</div>
+          <h4>Self-Custody: Your Keys, Your Bitcoin</h4>
+          <p class="excerpt">Why holding your own keys matters and how to do it safely.</p>
+        </div>
+        <div class="article-card">
+          <div class="tag">Philosophy</div>
+          <h4>The Cypherpunk Origins of Bitcoin</h4>
+          <p class="excerpt">From Chaum to Satoshi — the ideas that made digital cash inevitable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<footer class="board-footer">
+  <p>Mood Board · The Bitcoin Breakdown · 2026</p>
+</footer>
+
+</body>
+</html>

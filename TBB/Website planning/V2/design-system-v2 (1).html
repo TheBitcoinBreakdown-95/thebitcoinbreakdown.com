@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bitcoin Breakdown — Design System v2: Layout, Motion & Micro-Details</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ════════════════════════════════════════
+     CSS CUSTOM PROPERTIES — DESIGN TOKENS
+     ════════════════════════════════════════ */
+  :root {
+    /* Color */
+    --black: #000000;
+    --black-soft: #060606;
+    --black-card: #0A0A0A;
+    --black-elevated: #111111;
+    --gold: #FFD700;
+    --gold-muted: #C9A84C;
+    --gold-dim: rgba(255, 215, 0, 0.15);
+    --gold-glow: rgba(255, 215, 0, 0.4);
+    --gold-subtle: rgba(255, 215, 0, 0.06);
+    --gold-overlay: rgba(255, 215, 0, 0.04);
+    --text-primary: #E8E4DC;
+    --text-secondary: #8A857D;
+    --text-muted: #5A5650;
+    --border-default: rgba(255, 215, 0, 0.06);
+    --border-hover: rgba(255, 215, 0, 0.15);
+
+    /* Typography */
+    --font: 'Cormorant Garamond', Georgia, serif;
+
+    /* Spacing — 16px base unit */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 16px;    /* base */
+    --space-4: 24px;
+    --space-5: 32px;
+    --space-6: 48px;
+    --space-7: 64px;
+    --space-8: 96px;
+    --space-9: 128px;
+    --space-10: 192px;
+
+    /* Layout */
+    --content-width: 720px;   /* editorial single-column */
+    --wide-width: 1100px;     /* wide sections */
+    --full-width: 100%;
+    --gutter: var(--space-3);
+    --page-margin: var(--space-4);
+
+    /* Motion */
+    --ease-luxury: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-fast: 0.3s;
+    --duration-mid: 0.5s;
+    --duration-slow: 0.8s;
+    --duration-reveal: 1.2s;
+  }
+
+  /* ════════════════════════════════════════
+     RESET & BASE
+     ════════════════════════════════════════ */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold-muted) var(--black);
+  }
+
+  /* Custom Scrollbar — Webkit */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--gold-muted);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+  }
+
+  /* Custom Text Selection */
+  ::selection {
+    background: rgba(255, 215, 0, 0.25);
+    color: var(--gold);
+  }
+  ::-moz-selection {
+    background: rgba(255, 215, 0, 0.25);
+    color: var(--gold);
+  }
+
+  body {
+    background: var(--black);
+    color: var(--text-primary);
+    font-family: var(--font);
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* Custom Cursor — gold crosshair on interactive elements */
+  a, button, .interactive {
+    cursor: pointer;
+  }
+
+  /* ════════════════════════════════════════
+     PARALLAX CIRCUIT BACKGROUNDS (3 layers)
+     ════════════════════════════════════════ */
+  .parallax-container {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .circuit-layer {
+    position: absolute;
+    inset: -10%;
+    width: 120%;
+    height: 120%;
+  }
+  .circuit-layer svg {
+    width: 100%;
+    height: 100%;
+  }
+  .circuit-layer-1 { opacity: 0.025; }
+  .circuit-layer-2 { opacity: 0.015; }
+  .circuit-layer-3 { opacity: 0.01; }
+
+  /* ════════════════════════════════════════
+     LAYOUT SYSTEM
+     ════════════════════════════════════════ */
+  .content-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Editorial single-column container */
+  .container {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 var(--page-margin);
+  }
+  .container--wide {
+    max-width: var(--wide-width);
+  }
+  .container--full {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Section spacing — generous, luxurious */
+  .section {
+    padding: var(--space-8) 0;
+  }
+  .section--hero {
+    padding: var(--space-10) 0 var(--space-8);
+  }
+
+  /* ════════════════════════════════════════
+     GRID SYSTEM — 12-column on wide, fluid
+     ════════════════════════════════════════ */
+  .grid {
+    display: grid;
+    gap: var(--space-4);
+  }
+  .grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .grid--4 { grid-template-columns: repeat(4, 1fr); }
+  .grid--12 { grid-template-columns: repeat(12, 1fr); }
+
+  @media (max-width: 768px) {
+    .grid--2, .grid--3, .grid--4 {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .grid--3 { grid-template-columns: repeat(2, 1fr); }
+    .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ════════════════════════════════════════
+     SCROLL-TRIGGERED REVEAL ANIMATIONS
+     ════════════════════════════════════════ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity var(--duration-reveal) var(--ease-luxury),
+                transform var(--duration-reveal) var(--ease-luxury);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Glow reveal — element gains gold ambient glow as it enters */
+  .reveal-glow {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity var(--duration-reveal) var(--ease-luxury),
+                transform var(--duration-reveal) var(--ease-luxury),
+                box-shadow var(--duration-slow) var(--ease-luxury);
+  }
+  .reveal-glow.visible {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.04), 0 0 120px rgba(255, 215, 0, 0.02);
+  }
+
+  /* Stagger children */
+  .stagger > .reveal:nth-child(1) { transition-delay: 0s; }
+  .stagger > .reveal:nth-child(2) { transition-delay: 0.1s; }
+  .stagger > .reveal:nth-child(3) { transition-delay: 0.2s; }
+  .stagger > .reveal:nth-child(4) { transition-delay: 0.3s; }
+  .stagger > .reveal:nth-child(5) { transition-delay: 0.4s; }
+
+  /* Text reveal — characters/words slide up from behind a mask */
+  .text-reveal {
+    overflow: hidden;
+    display: inline-block;
+  }
+  .text-reveal.visible {
+    overflow: visible;
+  }
+  .text-reveal-inner {
+    display: inline-block;
+    transform: translateY(110%);
+    transition: transform var(--duration-slow) var(--ease-out);
+  }
+  .text-reveal.visible .text-reveal-inner {
+    transform: translateY(0);
+  }
+
+  /* ════════════════════════════════════════
+     GOLD DIVIDERS
+     ════════════════════════════════════════ */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.2) 50%, transparent 100%);
+    max-width: var(--wide-width);
+    margin: 0 auto;
+  }
+  .divider--content {
+    max-width: var(--content-width);
+  }
+
+  /* ════════════════════════════════════════
+     HEADER / NAVIGATION
+     ════════════════════════════════════════ */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: var(--space-4) 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-default);
+    transition: background var(--duration-mid) ease;
+  }
+  .header-inner {
+    max-width: var(--wide-width);
+    margin: 0 auto;
+    padding: 0 var(--page-margin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: var(--font);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    gap: var(--space-5);
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--font);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--duration-fast) ease, text-shadow var(--duration-fast) ease;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform var(--duration-mid) var(--ease-luxury);
+    transform-origin: center;
+  }
+  .nav-links a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 20px var(--gold-glow);
+  }
+  .nav-links a:hover::after {
+    transform: scaleX(1);
+  }
+  .nav-links a.active {
+    color: var(--gold);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+  }
+
+  /* ════════════════════════════════════════
+     HERO — FULL VIEWPORT
+     ════════════════════════════════════════ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-10) var(--page-margin);
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    animation: heroPulse 6s ease-in-out infinite;
+  }
+  @keyframes heroPulse {
+    0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  }
+
+  .hero-overline {
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: var(--space-5);
+    font-weight: 400;
+  }
+  .hero-title {
+    font-size: clamp(36px, 7vw, 72px);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    max-width: 800px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+    text-shadow: 0 0 40px var(--gold-glow), 0 0 80px rgba(255, 215, 0, 0.12);
+  }
+  .hero-body {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    max-width: 520px;
+    line-height: 1.75;
+    margin-bottom: var(--space-6);
+  }
+  .hero-cta-group {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 4px;
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: var(--space-6);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    opacity: 0.4;
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+  .scroll-indicator span {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .scroll-indicator .line {
+    width: 1px;
+    height: 32px;
+    background: linear-gradient(to bottom, var(--gold-muted), transparent);
+  }
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* ════════════════════════════════════════
+     BUTTONS
+     ════════════════════════════════════════ */
+  .btn {
+    display: inline-block;
+    font-family: var(--font);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 16px 44px;
+    text-decoration: none;
+    border: none;
+    transition: all var(--duration-mid) var(--ease-luxury);
+  }
+  .btn--primary {
+    background: var(--gold);
+    color: var(--black);
+  }
+  .btn--primary:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3), 0 0 60px rgba(255, 215, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  .btn--ghost {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+  }
+  .btn--ghost:hover {
+    border-color: var(--gold);
+    background: rgba(255, 215, 0, 0.04);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  /* ════════════════════════════════════════
+     SECTION LABELS
+     ════════════════════════════════════════ */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--border-default);
+    font-weight: 400;
+  }
+
+  /* ════════════════════════════════════════
+     SPACING SYSTEM VISUAL
+     ════════════════════════════════════════ */
+  .spacing-demo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .spacing-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  .spacing-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    min-width: 100px;
+    text-align: right;
+    font-weight: 400;
+  }
+  .spacing-bar {
+    height: 8px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-muted));
+    border-radius: 1px;
+    opacity: 0.6;
+    transition: opacity var(--duration-fast) ease;
+  }
+  .spacing-row:hover .spacing-bar {
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.15);
+  }
+  .spacing-value {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    font-weight: 300;
+  }
+
+  /* ════════════════════════════════════════
+     GRID DEMO
+     ════════════════════════════════════════ */
+  .grid-demo-cell {
+    background: var(--black-card);
+    border: 1px solid var(--border-default);
+    padding: var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    min-height: 80px;
+    transition: all var(--duration-mid) var(--ease-luxury);
+  }
+  .grid-demo-cell:hover {
+    border-color: var(--border-hover);
+    background: var(--black-elevated);
+    color: var(--gold);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.03);
+  }
+
+  /* ════════════════════════════════════════
+     ARTICLE CARDS
+     ════════════════════════════════════════ */
+  .article-card {
+    background: var(--black-card);
+    border: 1px solid var(--border-default);
+    padding: var(--space-5) var(--space-4);
+    transition: all var(--duration-mid) var(--ease-luxury);
+    position: relative;
+    overflow: hidden;
+  }
+  .article-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, var(--gold-overlay) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity var(--duration-mid) ease;
+  }
+  .article-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: var(--space-4);
+    right: var(--space-4);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity var(--duration-mid) ease;
+  }
+  .article-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  }
+  .article-card:hover::before { opacity: 1; }
+  .article-card:hover::after { opacity: 0.3; }
+
+  .card-tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: var(--space-2);
+    position: relative;
+    font-weight: 400;
+  }
+  .card-title {
+    font-family: var(--font);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.35;
+    margin-bottom: var(--space-2);
+    letter-spacing: 0.3px;
+    position: relative;
+    transition: color var(--duration-fast) ease;
+  }
+  .article-card:hover .card-title { color: var(--gold); }
+  .card-excerpt {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.65;
+    position: relative;
+  }
+  .card-meta {
+    margin-top: var(--space-3);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    position: relative;
+    font-weight: 300;
+  }
+
+  /* ════════════════════════════════════════
+     SKELETON LOADING WITH GOLD SHIMMER
+     ════════════════════════════════════════ */
+  .skeleton {
+    background: var(--black-card);
+    border: 1px solid var(--border-default);
+    padding: var(--space-5) var(--space-4);
+    position: relative;
+    overflow: hidden;
+  }
+  .skeleton-line {
+    height: 12px;
+    background: var(--black-elevated);
+    border-radius: 2px;
+    margin-bottom: var(--space-2);
+    position: relative;
+    overflow: hidden;
+  }
+  .skeleton-line::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 215, 0, 0.06) 40%,
+      rgba(255, 215, 0, 0.12) 50%,
+      rgba(255, 215, 0, 0.06) 60%,
+      transparent 100%
+    );
+    animation: shimmer 2s ease-in-out infinite;
+  }
+  .skeleton-line--short { width: 40%; }
+  .skeleton-line--medium { width: 70%; }
+  .skeleton-line--long { width: 90%; }
+  .skeleton-line--title {
+    height: 20px;
+    width: 60%;
+    margin-bottom: var(--space-3);
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+
+  /* ════════════════════════════════════════
+     BREAKPOINT INDICATOR (DEMO ONLY)
+     ════════════════════════════════════════ */
+  .breakpoint-indicator {
+    position: fixed;
+    bottom: var(--space-3);
+    right: var(--space-3);
+    z-index: 200;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: var(--black-card);
+    border: 1px solid var(--border-default);
+    padding: 6px 14px;
+    font-family: var(--font);
+    font-weight: 400;
+  }
+  .breakpoint-indicator::before {
+    content: 'MOBILE';
+  }
+  @media (min-width: 481px) {
+    .breakpoint-indicator::before { content: 'TABLET'; }
+  }
+  @media (min-width: 769px) {
+    .breakpoint-indicator::before { content: 'LAPTOP'; }
+  }
+  @media (min-width: 1025px) {
+    .breakpoint-indicator::before { content: 'DESKTOP'; }
+  }
+  @media (min-width: 1441px) {
+    .breakpoint-indicator::before { content: 'WIDE'; }
+  }
+
+  /* ════════════════════════════════════════
+     EDITORIAL BODY CONTENT DEMO
+     ════════════════════════════════════════ */
+  .prose {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--text-secondary);
+  }
+  .prose p + p {
+    margin-top: var(--space-4);
+  }
+  .prose strong {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .prose em {
+    font-style: italic;
+    color: var(--text-primary);
+  }
+  .prose a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    transition: border-color var(--duration-fast) ease;
+  }
+  .prose a:hover {
+    border-color: var(--gold);
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.15);
+  }
+  .prose blockquote {
+    border-left: 2px solid var(--gold-muted);
+    padding-left: var(--space-4);
+    margin: var(--space-6) 0;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+  .prose h2 {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    margin: var(--space-7) 0 var(--space-4);
+    line-height: 1.2;
+  }
+  .prose h3 {
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: 0.3px;
+    margin: var(--space-6) 0 var(--space-3);
+    line-height: 1.3;
+  }
+
+  /* ════════════════════════════════════════
+     PAGE TRANSITION OVERLAY
+     ════════════════════════════════════════ */
+  .page-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pageReveal 1.2s var(--ease-out) forwards;
+    pointer-events: none;
+  }
+  .page-transition .brand {
+    font-family: var(--font);
+    font-size: 18px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0;
+    animation: brandFlash 1.2s ease forwards;
+  }
+  @keyframes pageReveal {
+    0% { clip-path: inset(0 0 0 0); }
+    60% { clip-path: inset(0 0 0 0); }
+    100% { clip-path: inset(0 0 100% 0); }
+  }
+  @keyframes brandFlash {
+    0% { opacity: 0; }
+    30% { opacity: 1; }
+    60% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  /* ════════════════════════════════════════
+     RESPONSIVE ADJUSTMENTS
+     ════════════════════════════════════════ */
+  @media (max-width: 768px) {
+    :root {
+      --page-margin: 20px;
+    }
+    .section { padding: var(--space-7) 0; }
+    .section--hero { padding: var(--space-9) 0 var(--space-7); }
+    .hero { min-height: 90vh; }
+    .hero-cta-group { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 280px; text-align: center; }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .hero-title { font-size: clamp(32px, 5.5vw, 56px); }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+    .text-reveal-inner { transform: none; }
+    .page-transition { display: none; }
+  }
+
+  /* ════════════════════════════════════════
+     DEMO SECTION HEADERS
+     ════════════════════════════════════════ */
+  .demo-title {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 300;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    margin-bottom: var(--space-3);
+  }
+  .demo-desc {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: var(--space-6);
+    max-width: 560px;
+  }
+
+  /* ════════════════════════════════════════
+     PROGRESS BAR (scroll progress)
+     ════════════════════════════════════════ */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-muted));
+    z-index: 101;
+    width: 0%;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+  }
+</style>
+</head>
+<body>
+
+<!-- Page Transition -->
+<div class="page-transition">
+  <div class="brand">The Bitcoin Breakdown</div>
+</div>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Parallax Circuit Backgrounds -->
+<div class="parallax-container">
+  <div class="circuit-layer circuit-layer-1" id="circuitLayer1">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs><pattern id="c1" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+        <path d="M0 100H60 M80 100H120 M140 100H200" stroke="#FFD700" stroke-width="0.5" fill="none"/>
+        <path d="M100 0V40 M100 60V140 M100 160V200" stroke="#FFD700" stroke-width="0.5" fill="none"/>
+        <circle cx="60" cy="100" r="3" fill="none" stroke="#FFD700" stroke-width="0.5"/>
+        <circle cx="140" cy="100" r="3" fill="none" stroke="#FFD700" stroke-width="0.5"/>
+        <circle cx="100" cy="40" r="2" fill="#FFD700" opacity="0.5"/>
+        <circle cx="100" cy="160" r="2" fill="#FFD700" opacity="0.5"/>
+      </pattern></defs>
+      <rect width="100%" height="100%" fill="url(#c1)"/>
+    </svg>
+  </div>
+  <div class="circuit-layer circuit-layer-2" id="circuitLayer2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs><pattern id="c2" x="50" y="50" width="300" height="300" patternUnits="userSpaceOnUse">
+        <path d="M0 150H100 M200 150H300" stroke="#FFD700" stroke-width="0.3" fill="none"/>
+        <path d="M150 0V100 M150 200V300" stroke="#FFD700" stroke-width="0.3" fill="none"/>
+        <circle cx="150" cy="150" r="4" fill="none" stroke="#FFD700" stroke-width="0.3"/>
+        <path d="M100 150L150 100L200 150" stroke="#FFD700" stroke-width="0.3" fill="none"/>
+      </pattern></defs>
+      <rect width="100%" height="100%" fill="url(#c2)"/>
+    </svg>
+  </div>
+  <div class="circuit-layer circuit-layer-3" id="circuitLayer3">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs><pattern id="c3" x="25" y="25" width="400" height="400" patternUnits="userSpaceOnUse">
+        <path d="M0 200H150 M250 200H400" stroke="#FFD700" stroke-width="0.2" fill="none"/>
+        <path d="M200 0V150 M200 250V400" stroke="#FFD700" stroke-width="0.2" fill="none"/>
+        <circle cx="200" cy="200" r="6" fill="none" stroke="#FFD700" stroke-width="0.2"/>
+      </pattern></defs>
+      <rect width="100%" height="100%" fill="url(#c3)"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ═══════ CONTENT ═══════ -->
+<div class="content-wrapper">
+
+  <!-- Fixed Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo">The Bitcoin Breakdown</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">Learn</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero">
+    <div class="hero-overline text-reveal"><span class="text-reveal-inner">Education · Clarity · Sovereignty</span></div>
+    <h1 class="hero-title text-reveal"><span class="text-reveal-inner">Understand Bitcoin.<br>Not the <em>noise</em>.</span></h1>
+    <p class="hero-body text-reveal"><span class="text-reveal-inner">Clear, rigorous breakdowns of the protocol, the economics, and the philosophy — for those who think for themselves.</span></p>
+    <div class="hero-cta-group text-reveal"><span class="text-reveal-inner">
+      <a href="#" class="btn btn--primary">Start Learning</a>
+      <a href="#" class="btn btn--ghost">Latest Articles</a>
+    </span></div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ SECTION: SPACING SYSTEM ═══════ -->
+  <section class="section">
+    <div class="container--wide" style="padding: 0 var(--page-margin);">
+      <div class="section-label reveal">I · Spacing System — 16px Base Unit</div>
+      <div class="demo-desc reveal">Every spatial decision is a multiple of 16px. This creates a mathematical rhythm — consistency that the eye feels but the mind doesn't consciously notice.</div>
+      <div class="spacing-demo reveal">
+        <div class="spacing-row">
+          <span class="spacing-label">space-1</span>
+          <div class="spacing-bar" style="width: 4px;"></div>
+          <span class="spacing-value">4px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">space-2</span>
+          <div class="spacing-bar" style="width: 8px;"></div>
+          <span class="spacing-value">8px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">space-3</span>
+          <div class="spacing-bar" style="width: 16px;"></div>
+          <span class="spacing-value">16px · base</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">space-4</span>
+          <div class="spacing-bar" style="width: 24px;"></div>
+          <span class="spacing-value">24px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">space-5</span>
+          <div class="spacing-bar" style="width: 32px;"></div>
+          <span class="spacing-value">32px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">space-6</span>
+          <div class="spacing-bar" style="width: 48px;"></div>
+          <span class="spacing-value">48px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">space-7</span>
+          <div class="spacing-bar" style="width: 64px;"></div>
+          <span class="spacing-value">64px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">space-8</span>
+          <div class="spacing-bar" style="width: 96px;"></div>
+          <span class="spacing-value">96px · section</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">space-9</span>
+          <div class="spacing-bar" style="width: 128px;"></div>
+          <span class="spacing-value">128px</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">space-10</span>
+          <div class="spacing-bar" style="width: 192px;"></div>
+          <span class="spacing-value">192px · hero</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ SECTION: RESPONSIVE GRID ═══════ -->
+  <section class="section">
+    <div class="container--wide" style="padding: 0 var(--page-margin);">
+      <div class="section-label reveal">II · Responsive Grid System</div>
+      <div class="demo-desc reveal">Resize your browser to see the grid adapt. Breakpoints: 480px (mobile), 768px (tablet), 1024px (laptop), 1440px (wide).</div>
+
+      <div class="demo-title reveal" style="margin-top: var(--space-6);">3-Column Grid</div>
+      <div class="grid grid--3 stagger" style="margin-bottom: var(--space-6);">
+        <div class="grid-demo-cell reveal">Col 1</div>
+        <div class="grid-demo-cell reveal">Col 2</div>
+        <div class="grid-demo-cell reveal">Col 3</div>
+      </div>
+
+      <div class="demo-title reveal">4-Column Grid</div>
+      <div class="grid grid--4 stagger" style="margin-bottom: var(--space-6);">
+        <div class="grid-demo-cell reveal">Col 1</div>
+        <div class="grid-demo-cell reveal">Col 2</div>
+        <div class="grid-demo-cell reveal">Col 3</div>
+        <div class="grid-demo-cell reveal">Col 4</div>
+      </div>
+
+      <div class="demo-title reveal">2-Column Grid</div>
+      <div class="grid grid--2 stagger">
+        <div class="grid-demo-cell reveal">Col 1</div>
+        <div class="grid-demo-cell reveal">Col 2</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ SECTION: EDITORIAL CONTENT ═══════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label reveal">III · Editorial Content — Single Column (720px)</div>
+      <div class="prose">
+        <h2 class="reveal">The Cypherpunk Origins</h2>
+        <p class="reveal">Before Bitcoin, there was a dream. A loose collective of cryptographers, hackers, and privacy advocates spent decades attempting to create <strong>digital cash</strong> — money that could move across the internet without gatekeepers, without surveillance, without permission.</p>
+        <p class="reveal">They called themselves <em>cypherpunks</em>. Their mailing list, active through the 1990s, produced ideas that would eventually converge in Satoshi Nakamoto's 2008 whitepaper.</p>
+        <blockquote class="reveal">
+          "Privacy is necessary for an open society in the electronic age. Privacy is not secrecy."
+        </blockquote>
+        <p class="reveal">The tools they built — public-key cryptography, hash functions, digital signatures — became the foundation of a monetary system that requires <a href="#">no trusted third party</a>. Every transaction is verified by mathematics, not institutions.</p>
+        <h3 class="reveal">Why This Matters Now</h3>
+        <p class="reveal">In a world of increasing financial surveillance and monetary inflation, the cypherpunk vision of sovereign, private, sound money has never been more relevant. Bitcoin didn't emerge from Silicon Valley venture capital. It emerged from people who believed that <strong>code could protect freedom</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ SECTION: CARD GRID WITH SCROLL REVEAL ═══════ -->
+  <section class="section">
+    <div class="container--wide" style="padding: 0 var(--page-margin);">
+      <div class="section-label reveal">IV · Article Cards — Scroll-Triggered Glow Reveals</div>
+      <div class="demo-desc reveal">Each card reveals with a fade-up animation and gains a subtle gold ambient glow as it enters the viewport. Hover to see full interaction.</div>
+      <div class="grid grid--3 stagger">
+        <div class="article-card reveal-glow">
+          <div class="card-tag">Fundamentals</div>
+          <div class="card-title">What Gives Bitcoin Its Value?</div>
+          <p class="card-excerpt">An exploration of monetary properties, network effects, and why 21 million matters.</p>
+          <div class="card-meta">Feb 2026 · 8 min</div>
+        </div>
+        <div class="article-card reveal-glow">
+          <div class="card-tag">Security</div>
+          <div class="card-title">Self-Custody: Your Keys, Your Bitcoin</div>
+          <p class="card-excerpt">Why holding your own keys matters and how to do it without losing sleep.</p>
+          <div class="card-meta">Feb 2026 · 12 min</div>
+        </div>
+        <div class="article-card reveal-glow">
+          <div class="card-tag">Philosophy</div>
+          <div class="card-title">The Cypherpunk Origins of Bitcoin</div>
+          <p class="card-excerpt">From Chaum to Satoshi — the decades of ideas that made digital cash inevitable.</p>
+          <div class="card-meta">Jan 2026 · 15 min</div>
+        </div>
+        <div class="article-card reveal-glow">
+          <div class="card-tag">Technical</div>
+          <div class="card-title">How Mining Actually Works</div>
+          <p class="card-excerpt">SHA-256, difficulty adjustments, and the thermodynamic security model explained.</p>
+          <div class="card-meta">Jan 2026 · 10 min</div>
+        </div>
+        <div class="article-card reveal-glow">
+          <div class="card-tag">Economics</div>
+          <div class="card-title">The Halvings and Supply Shock</div>
+          <p class="card-excerpt">Every four years, the new supply is cut in half. Here's why that's profound.</p>
+          <div class="card-meta">Dec 2025 · 7 min</div>
+        </div>
+        <div class="article-card reveal-glow">
+          <div class="card-tag">History</div>
+          <div class="card-title">Money Before Bitcoin</div>
+          <p class="card-excerpt">Shells, gold, fiat — the 5,000-year search for sound money.</p>
+          <div class="card-meta">Dec 2025 · 20 min</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ SECTION: SKELETON LOADING ═══════ -->
+  <section class="section">
+    <div class="container--wide" style="padding: 0 var(--page-margin);">
+      <div class="section-label reveal">V · Skeleton Loading — Gold Shimmer</div>
+      <div class="demo-desc reveal">While content loads, skeleton cards with a gold shimmer sweep maintain the luxury feel. No jarring spinners — the loading state itself is designed.</div>
+      <div class="grid grid--3 stagger">
+        <div class="skeleton reveal">
+          <div class="skeleton-line skeleton-line--short"></div>
+          <div class="skeleton-line skeleton-line--title"></div>
+          <div class="skeleton-line skeleton-line--long"></div>
+          <div class="skeleton-line skeleton-line--medium"></div>
+          <div class="skeleton-line skeleton-line--short" style="margin-top: 16px;"></div>
+        </div>
+        <div class="skeleton reveal">
+          <div class="skeleton-line skeleton-line--short"></div>
+          <div class="skeleton-line skeleton-line--title"></div>
+          <div class="skeleton-line skeleton-line--long"></div>
+          <div class="skeleton-line skeleton-line--medium"></div>
+          <div class="skeleton-line skeleton-line--short" style="margin-top: 16px;"></div>
+        </div>
+        <div class="skeleton reveal">
+          <div class="skeleton-line skeleton-line--short"></div>
+          <div class="skeleton-line skeleton-line--title"></div>
+          <div class="skeleton-line skeleton-line--long"></div>
+          <div class="skeleton-line skeleton-line--medium"></div>
+          <div class="skeleton-line skeleton-line--short" style="margin-top: 16px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ SECTION: BREAKPOINTS ═══════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label reveal">VI · Responsive Breakpoints</div>
+      <div class="spacing-demo reveal">
+        <div class="spacing-row">
+          <span class="spacing-label">Mobile</span>
+          <div class="spacing-bar" style="width: 60px; background: var(--gold-muted);"></div>
+          <span class="spacing-value">0 – 480px · 1 column</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">Tablet</span>
+          <div class="spacing-bar" style="width: 96px; background: var(--gold-muted);"></div>
+          <span class="spacing-value">481 – 768px · 1–2 columns</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">Laptop</span>
+          <div class="spacing-bar" style="width: 128px;"></div>
+          <span class="spacing-value">769 – 1024px · 2–3 columns</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">Desktop</span>
+          <div class="spacing-bar" style="width: 176px;"></div>
+          <span class="spacing-value">1025 – 1440px · full grid</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-label">Wide</span>
+          <div class="spacing-bar" style="width: 220px;"></div>
+          <span class="spacing-value">1441px+ · capped at 1100px</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════ SECTION: MICRO DETAILS ═══════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label reveal">VII · Micro-Details</div>
+      <div class="prose">
+        <p class="reveal"><strong>Custom scrollbar</strong> — Look right. Thin gold track, 6px wide. Brightens on hover.</p>
+        <p class="reveal"><strong>Text selection</strong> — Select any text on this page. Gold highlight with matching text color.</p>
+        <p class="reveal"><strong>Scroll progress</strong> — Gold bar at the very top of the viewport tracks reading progress.</p>
+        <p class="reveal"><strong>Breakpoint indicator</strong> — Bottom-right corner shows current responsive breakpoint (demo only, removed in production).</p>
+        <p class="reveal"><strong>Page transition</strong> — The brand name flashed in gold before the page revealed on load.</p>
+        <p class="reveal"><strong>Reduced motion</strong> — All animations respect <code style="color: var(--gold); font-size: 15px;">prefers-reduced-motion</code>. Users who need stillness get instant content with no transitions.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Footer -->
+  <footer style="text-align: center; padding: var(--space-7) var(--page-margin);">
+    <p style="font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--text-muted); font-weight: 300;">Design System v2 · The Bitcoin Breakdown · 2026</p>
+  </footer>
+
+</div>
+
+<!-- Breakpoint Indicator -->
+<div class="breakpoint-indicator"></div>
+
+<!-- ═══════ JAVASCRIPT ═══════ -->
+<script>
+  // ── Scroll-triggered reveals ──
+  const revealElements = document.querySelectorAll('.reveal, .reveal-glow, .text-reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // ── Parallax circuit layers on scroll ──
+  const layer1 = document.getElementById('circuitLayer1');
+  const layer2 = document.getElementById('circuitLayer2');
+  const layer3 = document.getElementById('circuitLayer3');
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        layer1.style.transform = `translateY(${scrollY * 0.02}px)`;
+        layer2.style.transform = `translateY(${scrollY * -0.035}px)`;
+        layer3.style.transform = `translateY(${scrollY * 0.05}px)`;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // ── Scroll progress bar ──
+  const progressBar = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    progressBar.style.width = progress + '%';
+  });
+
+  // ── Hero text reveals on load ──
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelectorAll('.hero .text-reveal').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), i * 150);
+      });
+    }, 1000); // wait for page transition
+  });
+</script>
+
+</body>
+</html>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import PostMeta from '../components/PostMeta.astro';
+import Divider from '../components/Divider.astro';
 
 interface Props {
   title: string;
@@ -14,15 +15,26 @@ interface Props {
 }
 
 const { title, description, pubDate, updatedDate, author, tags = [], image, imageAlt } = Astro.props;
+
+// Generate a decorative hash string from the title
+const hashStr = Array.from(title)
+  .reduce((acc, char) => ((acc << 5) - acc + char.charCodeAt(0)) | 0, 0)
+  .toString(16)
+  .replace('-', '')
+  .padStart(16, 'a3f7')
+  .slice(0, 16);
 ---
 
 <BaseLayout title={title} description={description} image={image}>
   <article class="blog-post">
-    <header class="post-header">
-      <h1>{title}</h1>
-      <PostMeta pubDate={pubDate} updatedDate={updatedDate} author={author} />
+    <header class="post-header container">
+      <div class="hash-decoration reveal" aria-hidden="true">0x{hashStr}...{hashStr.split('').reverse().join('')}</div>
+      <h1 class="reveal">{title}</h1>
+      <div class="reveal">
+        <PostMeta pubDate={pubDate} updatedDate={updatedDate} />
+      </div>
       {tags.length > 0 && (
-        <div class="tags">
+        <div class="tag-group reveal">
           {tags.map((tag) => (
             <span class="tag">{tag}</span>
           ))}
@@ -31,105 +43,64 @@ const { title, description, pubDate, updatedDate, author, tags = [], image, imag
     </header>
 
     {image && (
-      <div class="featured-image">
-        <img src={image} alt={imageAlt || title} />
+      <div class="featured-image container reveal">
+        <div class="photo-treatment">
+          <img src={image} alt={imageAlt || title} />
+        </div>
       </div>
     )}
 
-    <div class="post-content">
+    <div class="post-content prose container">
       <slot />
     </div>
+
+    <footer class="post-footer container">
+      <Divider />
+      <div class="hash-decoration reveal" aria-hidden="true">EOF::{hashStr}</div>
+    </footer>
   </article>
 </BaseLayout>
 
 <style>
   .blog-post {
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: var(--space-8) 0 var(--space-9);
   }
 
   .post-header {
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-6);
   }
 
   .post-header h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.15;
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
   }
 
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
+  .post-header .hash-decoration {
+    margin-bottom: var(--space-4);
   }
 
-  .tag {
-    background: var(--color-accent);
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.875rem;
+  .tag-group {
+    margin-top: var(--space-3);
   }
 
   .featured-image {
-    margin-bottom: 2rem;
-  }
-
-  .featured-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
+    margin-bottom: var(--space-6);
   }
 
   .post-content {
-    line-height: 1.75;
+    margin-bottom: var(--space-7);
   }
 
-  .post-content :global(h2) {
-    font-size: 1.75rem;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
+  .post-footer {
+    padding-top: var(--space-6);
   }
 
-  .post-content :global(h3) {
-    font-size: 1.375rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .post-content :global(p) {
-    margin-bottom: 1.25rem;
-  }
-
-  .post-content :global(pre) {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    overflow-x: auto;
-    margin-bottom: 1.25rem;
-  }
-
-  .post-content :global(code) {
-    font-family: 'Fira Code', monospace;
-  }
-
-  .post-content :global(blockquote) {
-    border-left: 4px solid var(--color-accent);
-    padding-left: 1rem;
-    margin: 1.5rem 0;
-    font-style: italic;
-    color: var(--color-text-muted);
-  }
-
-  .post-content :global(ul),
-  .post-content :global(ol) {
-    margin-bottom: 1.25rem;
-    padding-left: 1.5rem;
-  }
-
-  .post-content :global(li) {
-    margin-bottom: 0.5rem;
+  .post-footer .hash-decoration {
+    margin-top: var(--space-5);
+    text-align: center;
   }
 </style>

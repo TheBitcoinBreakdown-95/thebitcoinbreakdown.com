@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import DataTicker from '../components/DataTicker.astro';
 
 interface Props {
   title: string;
@@ -18,8 +19,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="canonical" href={canonicalURL} />
+
+  <!-- Google Fonts: Cormorant Garamond + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <!-- Primary Meta Tags -->
   <title>{title} | The Bitcoin Breakdown</title>
@@ -44,10 +50,26 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <link rel="alternate" type="application/rss+xml" title="The Bitcoin Breakdown RSS Feed" href="/rss.xml" />
 </head>
 <body>
+  <!-- Skip link for keyboard navigation -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Canvas layers for interactive effects (populated by interactions.js) -->
+  <canvas id="matrixCanvas" aria-hidden="true"></canvas>
+  <canvas id="lightningCanvas" aria-hidden="true"></canvas>
+  <canvas id="boltCanvas" aria-hidden="true"></canvas>
+  <div id="transitionOverlay" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
   <Header />
-  <main>
+  <main id="main">
     <slot />
   </main>
   <Footer />
+  <DataTicker />
+
+  <!-- Global interaction script -->
+  <script src="../scripts/interactions.js"></script>
 </body>
 </html>

@@ -2,65 +2,22 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-content">
-      <p class="copyright">
-        &copy; {currentYear} The Bitcoin Breakdown. All rights reserved.
-      </p>
-      <div class="footer-links">
-        <a href="/rss.xml">RSS Feed</a>
-        <a href="https://github.com/YOUR_USERNAME/thebitcoinbreakdown" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </div>
+<footer class="footer">
+  <p>The Bitcoin Breakdown &middot; {currentYear}</p>
 </footer>
 
 <style>
-  .site-footer {
-    background: var(--color-bg-secondary);
-    border-top: 1px solid var(--color-border);
-    margin-top: auto;
+  .footer {
+    text-align: center;
+    padding: var(--space-7) var(--page-margin) calc(var(--space-7) + 28px);
   }
 
-  .footer-container {
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
-
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .copyright {
-    color: var(--color-text-muted);
+  .footer p {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 300;
     margin: 0;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  .footer-links a {
-    color: var(--color-text-muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover {
-    color: var(--color-accent);
-  }
-
-  @media (max-width: 640px) {
-    .footer-content {
-      flex-direction: column;
-      text-align: center;
-    }
   }
 </style>

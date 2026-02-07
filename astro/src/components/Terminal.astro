@@ -1,0 +1,101 @@
+---
+interface Props {
+  title?: string;
+  lines: Array<{ prompt?: boolean; text: string }>;
+}
+
+const { title = 'terminal', lines } = Astro.props;
+---
+
+<div class="terminal">
+  <div class="terminal-bar">
+    <span class="terminal-dot terminal-dot--r" aria-hidden="true"></span>
+    <span class="terminal-dot terminal-dot--y" aria-hidden="true"></span>
+    <span class="terminal-dot terminal-dot--g" aria-hidden="true"></span>
+    <span class="terminal-title">{title}</span>
+  </div>
+  {lines.map((line, i) => (
+    <div class="terminal-line">
+      {line.prompt ? (
+        <>
+          <span class="terminal-prompt" aria-hidden="true">$</span>
+          <span>{line.text}</span>
+        </>
+      ) : (
+        <span class="terminal-output">{line.text}</span>
+      )}
+    </div>
+  ))}
+  <div class="terminal-line">
+    <span class="terminal-prompt" aria-hidden="true">$</span>
+    <span class="terminal-cursor" aria-hidden="true"></span>
+  </div>
+</div>
+
+<style>
+  .terminal {
+    background: var(--black-soft);
+    border: 1px solid var(--border-default);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 400;
+    padding: var(--space-4);
+    margin: var(--space-5) 0;
+  }
+
+  .terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border-default);
+  }
+
+  .terminal-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid;
+    opacity: 0.4;
+  }
+
+  .terminal-dot--r { border-color: #F87171; }
+  .terminal-dot--y { border-color: #FACC15; }
+  .terminal-dot--g { border-color: #4ADE80; }
+
+  .terminal-title {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+
+  .terminal-line {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    display: flex;
+    gap: 8px;
+  }
+
+  .terminal-prompt {
+    color: var(--gold);
+    user-select: none;
+  }
+
+  .terminal-output {
+    color: var(--text-muted);
+  }
+
+  .terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background: var(--gold);
+    opacity: 0.7;
+    animation: cursorBlink 1.2s steps(1) infinite;
+    vertical-align: middle;
+    margin-left: 2px;
+  }
+</style>

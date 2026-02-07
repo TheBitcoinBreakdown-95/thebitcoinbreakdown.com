@@ -1,0 +1,17 @@
+---
+/**
+ * Decrypting divider with dots that converge + gold line that scales on scroll.
+ * Add class="visible" via JS (IntersectionObserver) to trigger the animation.
+ * Sparks are triggered via interactions.js (Phase 4).
+ */
+---
+
+<div class="divider" data-decrypt>
+  <div class="divider-dots" aria-hidden="true">
+    {Array.from({ length: 30 }).map((_, i) => (
+      <span style={`--dx: ${(Math.random() - 0.5) * 200}px; --dy: ${(Math.random() - 0.5) * 20}px;`}></span>
+    ))}
+  </div>
+  <div class="divider-line"></div>
+  <div class="divider-spark" aria-hidden="true"></div>
+</div>

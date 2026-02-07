@@ -43,9 +43,11 @@ Rebuilding **thebitcoinbreakdown.com** from WordPress to a static site, managed 
 ## 2. Current Status (Feb 2026)
 
 - Site framework: COMPLETE (Astro installed, layouts, components, pages built)
-- Theme: Basic dark theme with Bitcoin orange — USER WANTS TO EXPERIMENT MORE
+- GitHub repo: LIVE at `TheBitcoinBreakdown-95/thebitcoinbreakdown.com`
+- Theme: V4 "Dark Luxury" redesign IN PROGRESS — see `tasks/v4-design-implementation-plan.md`
+- V4 Design guide: `TBB/Website planning/V4/tbb-master-design-guide.md`
 - WordPress export: SAVED at `TBB/thebitcoinbreakdown.WordPress.2026-02-05.xml` — needs conversion
-- GitHub/Deployment: NOT SET UP YET
+- Deployment: GitHub Actions workflow file created, FTP secrets NOT YET ADDED
 
 ---
 
