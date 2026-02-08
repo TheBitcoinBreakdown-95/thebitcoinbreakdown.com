@@ -69,21 +69,96 @@ Design guide: `TBB/Website planning/V4/tbb-master-design-guide.md`
 - [x] Convert 28 posts + 5 pages from WordPress XML → Markdown with frontmatter
 - [x] Remove placeholder welcome post
 - [x] Verify all content renders correctly (32 pages built, clean)
-- [ ] Fix image paths (currently pointing to WordPress CDN — need to download & localize)
+- [x] Fix image paths (images localized to `astro/public/images/`)
+
+## Phase 2c: Homepage Redesign + Content Enhancement
+- [x] Redesign homepage: owl hero image, "Start Here" section, featured quote, resources teaser
+- [x] Add lazy loading for all markdown images (custom rehype plugin)
+- [x] Add image sizing CSS utilities (.img-small, .img-medium, .img-half)
+- [x] Add prose image treatment (grayscale + gold overlay, full color on hover)
+- [x] Install Obsidian callout boxes (`@r4ai/remark-callout` + 13 callout types styled)
+- [x] Add image caption support (auto `<figure>`/`<figcaption>` from alt text)
+- [x] Add reading time calculation to all blog posts
+- [x] Add next/previous post navigation for series posts
+- [x] Add series progress bar (encrypt-bar style)
+- [x] Add auto table of contents for posts with 3+ headings
 
 ## Phase 4: GitHub Actions + Hostinger FTP Deploy
 - [x] Get Hostinger FTP credentials from hPanel
 - [x] Add FTP credentials as GitHub repository secrets
 - [x] Create GitHub Actions workflow file (`.github/workflows/deploy.yml`)
 - [x] Backup existing WordPress files on Hostinger
-- [ ] Test deployment (commit + push to trigger)
+- [x] Test deployment — pushed to GitHub, Actions workflow triggered
 
 ## Phase 5: Obsidian Workflow
 - [x] Set up Git credentials on Windows
 - [x] Create blog post template in `TBB/templates/blog-post.md`
 - [ ] Test full workflow: edit → commit/push → auto-deploy
 
+## Phase 2d: UX Polish (Round 1) — DONE
+- [x] Fix 1: Header nav — Blog, Learn More, About only
+- [x] Fix 2: Logo glitch — 1s trigger, dramatic animation (skew, RGB split, brightness)
+- [x] Fix 3: Homepage — 9-section interactive showcase (owl hero, terminal, stats, cards, quote, callout, articles, resources, glitch closer)
+- [x] Fix 4: "What is Bitcoin?" CTA → `/blog/2023/intro`
+- [x] Fix 5: TOC inside article column (720px)
+- [x] Fix 6: Images max-width 560px, centered
+- [x] Fix 7: Font weight 300 → 400 (body + prose)
+
+## Phase 2e: UX Polish (Round 2) — DONE
+- [x] Fix 8: TOC scroll offset — `scroll-margin-top: 80px` on headings
+- [x] Fix 9: Series progress bar — animate to correct % (was always 100%)
+- [x] Fix 10: Owl hero — higher position, buttons below owl, removed placeholder text
+- [x] Fix 11: Header always shows full name (never "TBB")
+- [x] Fix 12: Blog post content scroll reveal animations
+- [x] Fix 13: Learn More page — all 40+ real resources from WordPress
+- [x] Fix 14: About page — verified rendering (builds clean)
+
+## Phase 2f: UX Polish (Round 3) — DONE
+- [x] Fix 15: Homepage hero restructure — merged sections 1+2, "THE BITCOIN BREAKDOWN" is now the headline, buttons centered in viewport
+- [x] Fix 16: Scroll-margin-top increased from 80px → 140px (headings fully visible after TOC click)
+- [x] Fix 17: Static discharge enhanced — thicker lines (1.5px), longer branches (6 segments), brighter glow, 8 frames
+- [x] Fix 18: Blockquote styling enhanced — 3px gold border, gold text, tinted background
+
+## Phase 2g: Content Enhancement — DONE
+- [x] Apply V4 effects (data-compile, count-up, glitch, glitch-hover) to 6 high-priority posts (intro, absolute-scarcity, the-trust-machine, mystery-of-satoshi, bitcoin-is-money, bitcoin-is-digital-gold)
+- [x] Apply effects to 6 medium-priority posts (bitcoin-is-time, bitcoin-is-information, bitcoin-is-the-internet-of-money, bitcoin-is-ethical-money, bitcoin-will-save-the-world, why-was-bitcoin-invented)
+- [x] Apply effects to remaining 13 posts (what-is-bitcoin-2, what-is-bitcoin-3, great-excel-spreadsheet, bitcoin-is-a-network, why-should-you-care, why-will-bitcoin-win, orange-not-gold, other-peoples-definitions, manhattan-project, designed-money, unparalleled-new, about, trust-machine-speech)
+- [ ] Add new effect types: Satoshi callout, comparison encrypt-bars, terminology tooltips (future)
+
 ## Phase 6: Go Live
 - [ ] Test live site thoroughly
 - [ ] Set up redirects from old WordPress URLs
 - [ ] Document workflow for reference
+
+## Phase 7: WBIGAF Content Integration — "The Guide"
+WBIGAF = "Why Bitcoin Is Good As Fuck" — 83 markdown files in `WBIGAF/` organized into 9 chapters.
+**Decision: New `/guide/` section** — dedicated multi-chapter guide, separate from blog.
+Nav will become: Blog | Guide | Learn More | About
+
+### Phase 7a: Structure (build the template) — DONE
+- [x] Add `guide` content collection in `content.config.ts`
+- [x] Create `TBB/guide/` directory for processed markdown files
+- [x] Create guide landing page at `astro/src/pages/guide/index.astro` (9 chapter cards)
+- [x] Create dynamic chapter route at `astro/src/pages/guide/[...slug].astro`
+- [x] Add "Guide" to header nav (Blog | Guide | Learn More | About)
+- [x] Test with 2 placeholder chapters (what-is-bitcoin, why-bitcoin)
+
+### Phase 7b: Content (chapter by chapter)
+Pipeline per chapter: triage → consolidate → edit → frontmatter → effects → images → review
+- [x] Chapter 1: What is Bitcoin (2 source files → 1 polished page, ~2800 words, V4 effects applied)
+- [x] Chapter 2: Why Bitcoin (6 files → 1 polished page, ~3500 words, V4 effects applied)
+- [x] Chapter 3: Problems Bitcoin Solves (6 files → 1 polished page, ~3300 words, V4 effects applied)
+- [x] Chapter 4: Bitcoin Past (6 files → 1 polished page, ~3200 words, V4 effects applied)
+- [x] Chapter 5: Bitcoin Properties (21 files → 1 comprehensive page, ~4500 words, V4 effects applied)
+- [x] Chapter 6: What is Bitcoin Exactly (6 files → 1 polished page, ~3800 words, V4 effects applied)
+- [x] Chapter 7: Bitcoin Present (7 files → 1 polished page, ~3500 words, V4 effects applied)
+- [x] Chapter 8: Why BTC is Good AF (13 files → 1 polished page, ~4200 words, V4 effects applied)
+- [x] Chapter 9: Bitcoin Future (9 files + AI subdir → 1 polished page, ~2800 words, V4 effects applied)
+
+**Phase 7b COMPLETE — 83 source files processed into 9 polished guide chapters (~31,600 total words)**
+**Build: 59 pages, 0 errors, ~7.5s**
+
+### Phase 7c: Polish
+- [ ] Cross-link guide chapters with related blog posts
+- [ ] Add guide teaser to homepage
+- [ ] Review guide landing page chapter cards (update titles/descriptions)

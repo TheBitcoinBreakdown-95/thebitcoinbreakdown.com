@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Divider from '../../components/Divider.astro';
+import { getCollection } from 'astro:content';
+
+const allGuide = await getCollection('guide', ({ data }) => !data.draft);
+const publishedChapters = [...new Set(allGuide.map(g => g.data.chapter))].sort((a, b) => a - b);
+
+const chapters = [
+  { num: 1, title: 'What is Bitcoin?', desc: 'The fundamentals. What Bitcoin actually is — not what you think it is.', slug: 'what-is-bitcoin' },
+  { num: 2, title: 'Why Bitcoin?', desc: 'Why it matters. Why you should care. Why the world is paying attention.', slug: 'why-bitcoin' },
+  { num: 3, title: 'What Problems Does it Solve?', desc: 'Fiat capitalism, inflation, surveillance, censorship — and how Bitcoin fights back.', slug: 'problems-it-solves' },
+  { num: 4, title: 'Bitcoin Past', desc: 'The cypherpunks, Satoshi Nakamoto, the genesis block, and the path to here.', slug: 'bitcoin-history' },
+  { num: 5, title: 'Bitcoin Properties', desc: 'Scarce, censorship-resistant, permissionless, trustless — 21 properties that make it unstoppable.', slug: 'bitcoin-properties' },
+  { num: 6, title: 'So...What is Bitcoin Exactly?', desc: 'Proof of work, the timechain, sound money — the deeper technical truth.', slug: 'what-is-bitcoin-exactly' },
+  { num: 7, title: 'Bitcoin Present', desc: 'Where Bitcoin stands today. Network effect, culture, regulation, and adoption.', slug: 'bitcoin-present' },
+  { num: 8, title: 'Why Bitcoin is Good as Fuck', desc: 'Energy money, ethical money, freedom money — the core arguments.', slug: 'why-bitcoin-is-good-af' },
+  { num: 9, title: 'Bitcoin Future', desc: 'AI, de-financialization, the digital gold rush — what comes next.', slug: 'bitcoin-future' },
+];
+---
+
+<BaseLayout title="The Guide" description="Why Bitcoin Is Good As Fuck — a comprehensive, chapter-by-chapter guide to understanding Bitcoin from the ground up.">
+  <section class="guide-hero section">
+    <div class="container">
+      <header class="page-header reveal">
+        <h1 class="guide-title" data-type>The Guide</h1>
+        <p class="guide-subtitle">Why Bitcoin Is Good As Fuck</p>
+      </header>
+
+      <div class="guide-intro reveal">
+        <p>
+          A comprehensive, chapter-by-chapter journey through Bitcoin. From the basics to the big picture — everything you need to understand why this technology is changing the world.
+        </p>
+        <p class="guide-meta">9 chapters &middot; 83 source documents &middot; Years of research</p>
+      </div>
+    </div>
+  </section>
+
+  <Divider />
+
+  <section class="chapters-section section">
+    <div class="container--wide">
+      <div class="section-label">Chapters</div>
+
+      <div class="chapter-grid stagger">
+        {chapters.map((ch) => {
+          const isPublished = publishedChapters.includes(ch.num);
+          return (
+            <div class:list={['chapter-card', 'reveal', { 'chapter-card--draft': !isPublished }]}>
+              <div class="chapter-num" aria-hidden="true">
+                {String(ch.num).padStart(2, '0')}
+              </div>
+              <h2 class="chapter-title">{ch.title}</h2>
+              <p class="chapter-desc">{ch.desc}</p>
+              {isPublished ? (
+                <a href={`/guide/${ch.slug}`} class="chapter-link tbb-link">Read chapter &rarr;</a>
+              ) : (
+                <span class="chapter-status">Coming soon</span>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <Divider />
+
+  <section class="guide-closer section">
+    <div class="container">
+      <p class="closer-text reveal">
+        <span class="glitch" data-text="You are not ready. But that's ok.">You are not ready. But that's ok.</span>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .guide-hero {
+    padding: var(--space-9) 0 var(--space-6);
+  }
+
+  .page-header {
+    margin-bottom: var(--space-5);
+  }
+
+  .guide-title {
+    font-size: clamp(32px, 6vw, 56px);
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: var(--space-2);
+  }
+
+  .guide-subtitle {
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+  }
+
+  .guide-intro {
+    max-width: 620px;
+  }
+
+  .guide-intro p {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-2);
+  }
+
+  .guide-meta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  /* ── Chapters Grid ── */
+  .chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .chapter-card {
+    padding: var(--space-5) var(--space-4);
+    border: 1px solid var(--border-default);
+    background: var(--black-card);
+    position: relative;
+    transition: all 0.5s var(--ease-luxury);
+  }
+
+  .chapter-card:hover {
+    border-color: var(--gold);
+    background: rgba(255, 215, 0, 0.02);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.06);
+    transform: translateY(-3px);
+  }
+
+  .chapter-card--draft {
+    opacity: 0.5;
+  }
+
+  .chapter-card--draft:hover {
+    border-color: var(--border-default);
+    background: var(--black-card);
+    box-shadow: none;
+    transform: none;
+  }
+
+  .chapter-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold-muted);
+    opacity: 0.4;
+    margin-bottom: var(--space-3);
+  }
+
+  .chapter-title {
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+
+  .chapter-card:hover .chapter-title {
+    color: var(--gold);
+  }
+
+  .chapter-card--draft:hover .chapter-title {
+    color: var(--text-primary);
+  }
+
+  .chapter-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+  }
+
+  .chapter-link {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+
+  .chapter-link:hover {
+    color: var(--gold);
+  }
+
+  .chapter-status {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+
+  /* ── Closer ── */
+  .guide-closer {
+    padding: var(--space-8) 0;
+    text-align: center;
+  }
+
+  .closer-text {
+    font-size: clamp(24px, 4vw, 44px);
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .chapter-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .chapter-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

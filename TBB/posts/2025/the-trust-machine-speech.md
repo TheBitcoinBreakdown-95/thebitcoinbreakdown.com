@@ -4,6 +4,8 @@ description: "Ok to kick off this talk, I'm going to need everyone to take out s
 pubDate: 2025-06-21
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "money", "trust", "speech"]
+category: "speeches"
+order: 1
 ---
 
 Ok to kick off this talk, I'm going to need everyone to take out some cash, a $1 bill, $20 and if you don’t haven’t any please just share with your neighbor
@@ -70,7 +72,7 @@ But what if I told you there was a way to Trust god with our money? 
 
 Or a god-like computer algorithm
 
-A trust…machine?
+A <span class="glitch-hover" data-text="trust machine">trust…machine</span>?
 
 That's where bitcoin comes in. 
 
@@ -125,4 +127,4 @@ No Leaders. 
 
 No Rulers. 
 
-In Code We Trust.
+<span class="glitch" data-text="In Code We Trust">In Code We Trust</span>.

@@ -5,6 +5,8 @@ pubDate: 2023-06-02
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "money", "network", "digital-gold"]
 draft: true
+category: "why-bitcoin"
+order: 10
 ---
 
 Bitcoin is one of a kind and has no competition. There are no competitors in it's quest for digital gold.

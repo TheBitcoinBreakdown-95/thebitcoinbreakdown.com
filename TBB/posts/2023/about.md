@@ -4,9 +4,10 @@ description: "Bitcoin is one of the most amazing technological revolutions of ou
 pubDate: 2023-11-18
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "money"]
+draft: true
 ---
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/Giancarnevale_None_4b0fcad4-70f5-4ae9-9625-c903eafb1ae0-2-1024x1024.png)
+![](/images/2023/11/Giancarnevale_None_4b0fcad4-70f5-4ae9-9625-c903eafb1ae0-2-1024x1024.png)
 
 Bitcoin is one of the most amazing technological revolutions of our generation. Far to few understand its significance.
 
@@ -40,7 +41,7 @@ What I want to get across is that bitcoin is a tool of self sovereignty and a ch
 
 If you’re only here for the gains you should probably leave and invest in something you understand.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/Giancarnevale_None_7f0cd79e-fb9d-40fe-9987-a7162a743a97-1024x1024.png)
+![](/images/2023/11/Giancarnevale_None_7f0cd79e-fb9d-40fe-9987-a7162a743a97-1024x1024.png)
 
 ## Bitcoin is the number one cryptocurrency for a reason.
 
@@ -74,7 +75,7 @@ I’ve never been so sure about something in my entire life.
 
 I’ve since decided I am going to dedicate the rest of my life to the digital money project. The most ethical, transparent, unbiased, and peaceful money in history.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/Giancarnevale_None_3f5a0d8d-adf0-4b24-8bbb-81d2a6f2665f-1024x1024.png)
+![](/images/2023/11/Giancarnevale_None_3f5a0d8d-adf0-4b24-8bbb-81d2a6f2665f-1024x1024.png)
 
 ## Bitcoin solves some of the most important problems plaguing humanity.
 
@@ -90,7 +91,7 @@ Bitcoin is independent 21st century economic infrastructure existing outside of 
 
 There’s a lot more to bitcoin then you might realize.
 
-Bitcoin is the most important invention in economics and technology since the internet itself, it is the *internet of money* and it will do to money what the internet did to information.
+Bitcoin is the most important invention in economics and technology since the internet itself, it is the <span class="glitch-hover" data-text="internet of money">*internet of money*</span> and it will do to money what the internet did to information.
 
 Bitcoin is a trust machine and is obsoleting trusted human institutions, fundamentally altering existing power structures, it’s a revolutionary invention that has changed the course of human history.
 
@@ -98,7 +99,7 @@ Bitcoin is a trust machine and is obsoleting trusted human institutions, fundame
 
 The whole point of Bitcoin is to remove humans from the issuance and control of money. And the corruption that comes with it.
 
-Bitcoin is the separation of money and state.
+Bitcoin is the <span class="glitch" data-text="separation of money and state">separation of money and state</span>.
 
 Imagine the most powerful tool of civilization, pried from the clutches of the elite.
 

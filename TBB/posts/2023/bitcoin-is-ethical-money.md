@@ -5,6 +5,8 @@ pubDate: 2023-09-14
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "money", "network", "freedom", "ethics"]
 draft: true
+category: "why-bitcoin"
+order: 8
 ---
 
 It is a true peer-to-peer money system, controlled by the people, for the people. 

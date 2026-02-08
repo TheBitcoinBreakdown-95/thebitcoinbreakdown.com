@@ -1,0 +1,18 @@
+- Tacking onto the programmable money aspect, the layers of bitcoin and possibilities for it to shed its skin in case of an attack, or to add additional features and layers like The lightning network
+- “It is dynamic, upgradable and extendable. It does not need throwing out and replacing with each new iteration, it will continuously improve.” — Neil Woodfine
+- The key to programmability is that the base layer is simple and allows for programmability at the edges. Unlike centralized infrastructure like telecommunications, bitcoin is more like the internet where anyone, or anything, anywhere in the world can build applications, websites, tools, and financial infrastructure
+- While bitcoin script allows for complex transaction types, timelocks, and multisignature schemes, new soft forks like segwit and taproot have increased the programmatic capabilities on the base chain, unlocking new scaling capabilities like the lightning network, Taptrees, BitVM, DLCs etc. And further updates like covenants and ZK op codes could allow for even greater upgrades like shared UTXO schemes, and trustless bridges to higher layers with unlimited programmatic capabilities and unlimited scaling potential, thereby allowing bitcoin to become a global monetary system with the full range of financial services offered in our current system, and all of the programmatic potential of the entire crypto ecosystem.
+    
+[Bitcoin's Lightning Network: Why It's Changing The World (+ Free Bitcoin Giveaway)](https://youtu.be/V0oMEvB43Mc)
+ 
+Lighting network was built to integrate and program  
+“Lightning network enables free and fast peer to peer payments with no fraud or middlemen”
+   
+
+==Openly Programmable==  
+==Bitcoin is open-source; its design is public, it is usable by anyone/anywhere/anytime. Developers can freely program applications on top of the Bitcoin protocol without having to ask anyone for permission.==
+ \> From \<[https://danhedl.medium.com/planting-bitcoin-sound-money-72e80e40ff62](https://danhedl.medium.com/planting-bitcoin-sound-money-72e80e40ff62)\>     
+
+- **Low fee scaling** ==- Most wallets calculate on chain fees automatically but you can view== ==fee estimates== ==and== ==mempool activity== ==if you want to set your fee manually. On chain fees may rise occasionally due to network demand, however instant micropayments that do not require confirmations are happening via the== ==Lightning Network====, an open source second layer payment protocol built on top of the Bitcoin blockchain. The Lightning Network enables Bitcoin users to instantly send and receive bitcoin with fees so low that they are negligible.== \> From \<[https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/](https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/)\>   - **Scalable** ==- While the protocol is still being optimized for== ==increased transaction capacity====, blockchains do not scale very well, so most transaction volume is expected to occur on Layer 2 networks built on top of Bitcoin.== \> From \<[https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/](https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/)\>     
+ \> From \<[https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/](https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/)\>     
+\> From \<[https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/](https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/)\>

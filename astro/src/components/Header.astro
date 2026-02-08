@@ -1,7 +1,8 @@
 ---
 const navLinks = [
-  { href: '/', label: 'Home' },
   { href: '/blog', label: 'Blog' },
+  { href: '/guide', label: 'Guide' },
+  { href: '/learn-more', label: 'Learn More' },
   { href: '/about', label: 'About' },
 ];
 
@@ -129,7 +130,7 @@ const currentPath = Astro.url.pathname;
   /* Nav links */
   .nav-links {
     display: flex;
-    gap: var(--space-5);
+    gap: var(--space-4);
     list-style: none;
     align-items: center;
     margin: 0;
@@ -263,19 +264,17 @@ const currentPath = Astro.url.pathname;
     color: var(--gold);
   }
 
-  /* Responsive: tablet — abbreviation + hamburger */
-  @media (max-width: 768px) {
-    .logo-full { display: none; }
-    .logo-abbr { display: inline-block; }
+  /* Responsive: tablet — full name + hamburger */
+  @media (max-width: 1024px) {
     .nav-links { display: none; }
     .nav-toggle { display: flex; }
     .mobile-nav { display: block; }
-    .mobile-nav.open { max-height: 200px; }
+    .mobile-nav.open { max-height: 400px; }
   }
 
   /* Responsive: small mobile — icon mark */
   @media (max-width: 480px) {
-    .logo-abbr { display: none; }
+    .logo-full { display: none; }
     .logo-icon-mark { display: flex; }
   }
 </style>

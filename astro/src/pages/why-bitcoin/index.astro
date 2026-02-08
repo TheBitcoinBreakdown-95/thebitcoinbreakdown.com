@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts', ({ data }) =>
+  !data.draft && data.category === 'why-bitcoin'
+);
+const sortedPosts = posts.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+---
+
+<BaseLayout title="Why Bitcoin?" description="Why Bitcoin was invented, why it will win, and why you should care about the future of money.">
+  <section class="section-page section">
+    <div class="container--wide">
+      <header class="page-header reveal">
+        <h1>Why Bitcoin?</h1>
+        <p class="section-desc">Why Bitcoin was invented, why it matters, and why it can't be stopped.</p>
+      </header>
+
+      {sortedPosts.length > 0 ? (
+        <div class="card-grid stagger">
+          {sortedPosts.map((post) => (
+            <div class="reveal">
+              <PostCard
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                slug={post.id}
+                tags={post.data.tags}
+                image={post.data.image}
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <div class="empty-icon">&#8383;</div>
+          <h3 class="empty-title">Coming soon</h3>
+          <p class="empty-desc">Articles are on the way. Check back soon.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    margin-bottom: var(--space-6);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--space-3);
+  }
+</style>

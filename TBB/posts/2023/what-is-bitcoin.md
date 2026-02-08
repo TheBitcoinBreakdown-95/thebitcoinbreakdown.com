@@ -17,7 +17,7 @@ Be warned, there are more questions than answers that lie ahead of you.
 
 If you've ever watched the show Lost, you know what it's like to be sucked down a path of endless questions and an unquenchable thirst to know where it all leads.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-1.png)
+![](/images/2023/03/image-1.png)
 
 I want to make an all encompassing introduction to people, about what bitcoin actually is.
 
@@ -39,7 +39,7 @@ By being skeptical, it means you are a rational thinker and don't just blindly a
 
 We have a saying in bitcoin, don't trust, verify. I don't want you to trust what I'm telling you, I want you to be inspired to learn more and discover your own truth.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-2.png)
+![](/images/2023/03/image-2.png)
 
 I knew about bitcoin for a long time, but in hindsight I didn't know anything.
 
@@ -51,7 +51,7 @@ In bitcoin circles we call this phenomena falling down the rabbit hole. It’s t
 
 My job is to make your fall down the rabbit hole as easy as possible, if you're curious.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/rabbithole-1-300x290.png)
+![](/images/2023/04/rabbithole-1-300x290.png)
 
 You're journey begins…with a simple question..
 
@@ -61,7 +61,7 @@ It's a question everyone asks but no one seems to have a good answer for.
 
 John Oliver host of Last Week Tonight, said it best:
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-1024x807.png)
+![](/images/2023/03/image-1024x807.png)
 
 Usually, the nerds will give you the technical definition:
 
@@ -99,7 +99,7 @@ Bitcoin is the Manhattan project for human freedom. An escape hatch from our mon
 
 Imagine there's this huge elephant, and a group of blind monks all walk up to it and start feeling it up to try and make sense of it.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-3-1024x742.png)
+![](/images/2023/03/image-3-1024x742.png)
 
 Right so one monk is petting it's head, another is on its back feeling it's ridged spine, there's a monk clinging to one of its tusks, one pulling on it's ears, another is tossing around it's testicles, and yet another is rubbing on its toes.
 
@@ -117,7 +117,7 @@ My job of course is to lead you little monks all around the elephant, feeling al
 
 # What is bitcoin?
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-7-1024x683.png)
+![](/images/2023/03/image-7-1024x683.png)
 
 Bitcoin is the first and most popular cryptocurrency, it is the invention of digital scarcity i.e. digital property. It's a new form of money and an independent global monetary network. It was invented by a person or persons under the pseudonym Satoshi Nakamoto, and is an enormous breakthrough in computer science and cryptographic systems.
 
@@ -141,7 +141,7 @@ To steal another line from Andreas Antonopoulos:
 
 > Saying bitcoin is digital gold is like saying the internet is a fancy telephone
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-4.png)
+![](/images/2023/03/image-4.png)
 
 # What is bitcoin?
 
@@ -161,7 +161,7 @@ They all have the same ledger and everyone is in complete agreement with who sen
 
 If you're having trouble putting an image of bitcoin in your head just think of a long digital excel spreadsheet, a calculator that keeps track of everyone's money.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-5-1024x599.png)
+![](/images/2023/03/image-5-1024x599.png)
 
 So when people say, bitcoin isn’t real, it’s the same as saying your money in the bank isn’t real.
 
@@ -173,7 +173,7 @@ The big difference is that Bitcoin's ledger is a decentralized server. It's host
 
 *It's the great excel spreadsheet in the sky.*
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-6-1024x541.png)
+![](/images/2023/03/image-6-1024x541.png)
 
 Bitcoin is like an unstoppable PayPal, beaming digital super-gold around the world at the speed of light. It allows you to send and receive value, to and from anyone in the world, with nothing more than a smartphone and an internet connection.
 
@@ -193,7 +193,7 @@ It's technically just 1's and 0's computer code, and cool math! There aren't eve
 
 You can send a bitcoin transaction via QR code...or in a picture. You can store billions of dollars worth of bitcoin in your brain by memorizing 24 words.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/Giancarnevale_a_sloth_eating_an_ice_cream_cone_00dc77a9-6ea1-4a6b-878f-28892a4bf995-300x300.png)
+![](/images/2023/04/Giancarnevale_a_sloth_eating_an_ice_cream_cone_00dc77a9-6ea1-4a6b-878f-28892a4bf995-300x300.png)
 *There are 233 bitcoins ($7,000,000) embedded in this image*
 
 If you think about it from an adversarial perspective, this makes bitcoin extremely difficult to censor. You can send someone money with a meme!
@@ -212,7 +212,7 @@ Also with bitcoin, robots, self-driving cars, drones, refrigerators, smart homes
 
 This isn't possible within our current credit based monetary system, since that requires passing of personal information and creditworthiness, a regulatory and security nightmare. Bitcoin on the other hand can be settled instantly with cash finality, zapped around at the speed of light anywhere on earth.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/mgk.png)
+![](/images/2023/04/mgk.png)
 
 # What is bitcoin?
 
@@ -260,7 +260,7 @@ Because all nodes run the same software, all members of the network must adhere 
 
 You can think of the bitcoin network kind of like a big mushroom, where there's not really a brain. It's all just one big blob. Or you could even think of Bitcoin as the brain itself, with electricity pulsing throughout the network to build one self-sufficient, autonomous, system.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/Giancarnevale_a_golden_altgorithm_with_data_flows_computer_code_81d7b512-4231-41e8-b63e-30951471b354-768x768.png)
+![](/images/2023/04/Giancarnevale_a_golden_altgorithm_with_data_flows_computer_code_81d7b512-4231-41e8-b63e-30951471b354-768x768.png)
 *Ai interpretation of a golden network*
 
 And to confuse you even more, bitcoin is also the name of the software that the nodes are running on the network.
@@ -279,7 +279,7 @@ Bitcoin facilitates this decentralized variable time in a trustless manner, i.e.
 
 Obviously the problem of timekeeping is a big deal when dealing with a ledger, the order of who sent money to who is extremely important. If someone has control over the order of transactions they can literally control who has what money.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-9-1024x553.png)
+![](/images/2023/03/image-9-1024x553.png)
 
 The fancy term for this is Bitcoin is a distributed timestamp server, mitigating disputes in the order of transactions, completely autonomously, through a complex interplay of physics and game theory.
 
@@ -287,7 +287,7 @@ Bitcoin is automatic and can’t be shut off. No one controls the bitcoin time c
 
 It exists as permanently and beyond human control as time itself.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-10-1024x441.png)
+![](/images/2023/03/image-10-1024x441.png)
 
 ## Bitcoin is money
 
@@ -307,7 +307,7 @@ Money is by far the most important good in an economy. It's half of every single
 
 Which is why bitcoin - a money that can't be diluted or counterfeited - is so transformative as a monetary technology.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-11-1024x576.png)
+![](/images/2023/03/image-11-1024x576.png)
 
 There are two types of money - money can either be physical, like a coin, seashell, salt, cigarette, necklace bead, or paper bill. Or it can be a list of transactions and debts owed like a bank account, clay tablet, or credit card. 
 
@@ -410,7 +410,7 @@ The Manhattan project for human freedom
 
 It's an enormous, globally coordinated research and development initiative. An open source software project aimed at building an unstoppable monetary system. A tech stack which implements fair, neutral money and protects human rights for 8 billion people. Fighting back against authoritarianism and the encroachment of a digital Orwellian surveillance state.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/freedom.png)
+![](/images/2023/04/freedom.png)
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -498,7 +498,7 @@ WOW *a collection of concepts and technologies* how can you get any more confusi
 
 How do you describe something which is really a collection of many things? And not just a collection of many things...
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/mechanics-of-the-bitcoin-protocol-768x431.png)
+![](/images/2023/04/mechanics-of-the-bitcoin-protocol-768x431.png)
 
 ...bitcoin is *a collection of many ideas*.
 
@@ -636,7 +636,7 @@ Imagine the most powerful tool of civilization, pried from the clutches of the e
 
 Bitcoin frees humanity from the state monopoly on money and will usher an era of prosperity and freedom.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/image-7.png)
+![](/images/2023/11/image-7.png)
 
 Bitcoin is the manhattan project for human freedom in the digital age
 
@@ -644,7 +644,7 @@ Bitcoin is the manhattan project for human freedom in the digital age
 
 Bitcoin is the real occupy wall street
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/image-16.png)
+![](/images/2023/11/image-16.png)
 
 Bitcoin is the result of a fundamental breakthrough in computer science, and is the first accounting innovation in 700 years. It solved a decades old computer science problem enabling absolute, immutable scarcity. It's a highly-complex technological achievement and advancement for society.
 

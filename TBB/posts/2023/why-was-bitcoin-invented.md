@@ -4,6 +4,8 @@ description: "Let’s pull back the timechain for a moment here…"
 pubDate: 2023-11-22
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "satoshi", "time"]
+category: "why-bitcoin"
+order: 3
 ---
 
 ## Bitcoin’s History
@@ -16,13 +18,13 @@ Basically a bunch of computer nerds, back in the 90s, who saw the writing on the
 
 So they decided to take freedom into their own hands, creating technology that no government or corporation could stop.
 
-And digital money was their holy grail.
+And digital money was their <span class="glitch-hover" data-text="holy grail">holy grail</span>.
 
 The cypherpunks understood that without privacy and financial freedom all other rights are at stake.
 
 And their breakthrough in inventing bitcoin was aimed at securing human liberty far into our digital future.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/10/cypher.jpg)
+![](/images/2023/10/cypher.jpg)
 
 ## Bitcoin is Designed Money
 
@@ -36,8 +38,8 @@ So we used technology to invent a solution. It’s literally that simple.
 
 Bitcoin is just an invention, like email or smartphones. Except it’s a new kind of native internet money, one which has a programmatic supply cap and can’t be manipulated.
 
-Completely designed from the ground up to be the best money ever made, and is so powerful and unique that it has no competition.
+Completely designed from the ground up to be the <span class="glitch-hover" data-text="best money ever made">best money ever made</span>, and is so powerful and unique that it has no competition.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/10/image-1-1024x491.png)
+![](/images/2023/10/image-1-1024x491.png)
 
-[next post: why will bitcoin win?](https://thebitcoinbreakdown.com/why-will-bitcoin-win/)
+[next post: why will bitcoin win?](/blog/2023/why-will-bitcoin-win/)

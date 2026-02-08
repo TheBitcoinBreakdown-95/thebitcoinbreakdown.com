@@ -4,13 +4,15 @@ description: "It's a question everyone asks but no one seems to have a good answ
 pubDate: 2023-05-04
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "money", "network", "digital-gold"]
+category: "what-is-bitcoin"
+order: 2
 ---
 
 It's a question everyone asks but no one seems to have a good answer for.
 
 John Oliver host of Last Week Tonight, said it best:
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-1024x807.png)
+![](/images/2023/03/image-1024x807.png)
 
 Usually, the nerds will give you the technical definition:
 
@@ -45,13 +47,13 @@ Bitcoins are "*magic internet tokens*" that you can store inside an app on a sma
 
 *Silly little made up internet points, that for some reason people pay tens of thousands of dollars for...*
 
-Bitcoin is the Manhattan project for human freedom. An escape hatch from our monopolistic fiat-capitalist global economic system.
+Bitcoin is the <span class="glitch-hover" data-text="Manhattan project for human freedom">Manhattan project for human freedom</span>. An escape hatch from our monopolistic fiat-capitalist global economic system.
 
 ## My personal favorite analogy for explaining bitcoin goes a little like this:
 
 Imagine there's this huge elephant, and a group of blind monks all walk up to it and start feeling it up to try and make sense of it.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-3-1024x742.png)
+![](/images/2023/03/image-3-1024x742.png)
 
 Right so one monk is petting it's head, another is on its back feeling it's ridged spine, there's a monk clinging to one of its tusks, one pulling on it's ears, another is tossing around it's testicles, and yet another is rubbing on its toes.
 
@@ -59,9 +61,10 @@ The elephant of course is bitcoin in this analogy, there's so many different pie
 
 What makes it even more difficult to explain to new people is that there is no good elevator pitch for bitcoin, it truly depends on where you're coming from, your prerequisite knowledge, and personal values.
 
-> Ask three strangers what Bitcoin is, and you will probably get three very different answers. Any answer is necessarily shaped by past experience, political and economic beliefs, and an individual understanding of the world. Your personal set of ideas, your world view, defines where you are on the landscape of ideas.
-> 
-> Gigi
+<blockquote data-compile data-final="Ask three strangers what Bitcoin is, and you will probably get three very different answers. Any answer is necessarily shaped by past experience, political and economic beliefs, and an individual understanding of the world. Your personal set of ideas, your world view, defines where you are on the landscape of ideas.">
+<p>Ask three strangers what Bitcoin is, and you will probably get three very different answers. Any answer is necessarily shaped by past experience, political and economic beliefs, and an individual understanding of the world. Your personal set of ideas, your world view, defines where you are on the landscape of ideas.</p>
+<p class="bq-attr">— Gigi</p>
+</blockquote>
 
 Explaining to the monk touching the elephant's tusks what the testicles feel like is totally a lost cause.
 
@@ -77,4 +80,4 @@ My job of course is to lead you little monks all around the elephant, feeling al
 
 [https://www.reddit.com/r/Bitcoin/comments/vno0eg/describe\_bitcoin\_in\_12\_sentences\_in\_the\_most/](https://www.reddit.com/r/Bitcoin/comments/vno0eg/describe_bitcoin_in_12_sentences_in_the_most/)
 
-[Next Post: Bitcoin is Digital Gold](https://thebitcoinbreakdown.com/bitcoin-is-digital-gold/)
+[Next Post: Bitcoin is Digital Gold](/blog/2023/bitcoin-is-digital-gold/)

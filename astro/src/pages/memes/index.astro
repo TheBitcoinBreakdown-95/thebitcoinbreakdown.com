@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts', ({ data }) =>
+  !data.draft && data.category === 'memes'
+);
+const sortedPosts = posts.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+---
+
+<BaseLayout title="Memes" description="Bitcoin memes. Because sometimes the best way to learn is to laugh.">
+  <section class="section-page section">
+    <div class="container--wide">
+      <header class="page-header reveal">
+        <h1>Memes</h1>
+        <p class="section-desc">Because sometimes the best way to learn is to laugh.</p>
+      </header>
+
+      {sortedPosts.length > 0 ? (
+        <div class="card-grid stagger">
+          {sortedPosts.map((post) => (
+            <div class="reveal">
+              <PostCard
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                slug={post.id}
+                tags={post.data.tags}
+                image={post.data.image}
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <div class="empty-icon">&#8383;</div>
+          <h3 class="empty-title">Coming soon</h3>
+          <p class="empty-desc">Memes are on the way. Check back soon.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    margin-bottom: var(--space-6);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--space-3);
+  }
+</style>

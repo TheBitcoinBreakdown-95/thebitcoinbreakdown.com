@@ -1,30 +1,123 @@
 ---
 /**
  * Fixed bottom data ticker — JetBrains Mono, scrolling Bitcoin network stats.
- * Static placeholder data for now. Can be replaced with live API data later.
+ * Fetches live data from mempool.space API (client-side).
+ * Configurable API base URL for self-hosted node (Umbrel/Start9).
  */
-const tickerData = [
-  { label: 'BLOCK HEIGHT', value: '883,241' },
-  { label: 'HASH RATE', value: '724.5 EH/s' },
-  { label: 'MEMPOOL', value: '14,832 TX' },
-  { label: 'DIFFICULTY', value: '110.45T' },
-  { label: 'AVG FEE', value: '12 sat/vB' },
-  { label: 'NODES', value: '19,847' },
-  { label: 'SUPPLY', value: '19,832,412 BTC' },
+const tickerItems = [
+  { label: 'BLOCK HEIGHT', id: 'blockHeight', value: '---' },
+  { label: 'HASH RATE', id: 'hashRate', value: '---' },
+  { label: 'MEMPOOL', id: 'mempool', value: '---' },
+  { label: 'DIFFICULTY', id: 'difficulty', value: '---' },
+  { label: 'AVG FEE', id: 'avgFee', value: '---' },
+  { label: 'SUPPLY', id: 'supply', value: '---' },
 ];
 ---
 
 <div class="data-ticker" aria-hidden="true">
-  <div class="data-ticker-track">
+  <div class="data-ticker-track" id="tickerTrack">
     {/* Duplicate content for seamless loop */}
-    {[...tickerData, ...tickerData].map((item) => (
+    {[...tickerItems, ...tickerItems].map((item) => (
       <span>
         <span class="ticker-dot"></span>
-        {item.label} <span class="ticker-gold">{item.value}</span>
+        {item.label} <span class="ticker-gold" data-ticker={item.id}>{item.value}</span>
       </span>
     ))}
   </div>
 </div>
+
+<script>
+  (function () {
+    // Configurable API base — change this to your Umbrel/Start9 node's public URL
+    var API_BASE = 'https://mempool.space';
+
+    function formatNumber(n) {
+      return n.toLocaleString('en-US');
+    }
+
+    function formatHashRate(ehps) {
+      if (ehps >= 1000) return (ehps / 1000).toFixed(1) + ' ZH/s';
+      return ehps.toFixed(1) + ' EH/s';
+    }
+
+    function formatDifficulty(d) {
+      if (d >= 1e12) return (d / 1e12).toFixed(2) + 'T';
+      if (d >= 1e9) return (d / 1e9).toFixed(2) + 'G';
+      return d.toFixed(0);
+    }
+
+    // Calculate approximate supply from block height using halving schedule
+    function calculateSupply(blockHeight) {
+      var supply = 0;
+      var reward = 50;
+      var remaining = blockHeight;
+      while (remaining > 0) {
+        var blocksInEra = Math.min(remaining, 210000);
+        supply += blocksInEra * reward;
+        remaining -= blocksInEra;
+        reward /= 2;
+      }
+      return Math.min(supply, 21000000);
+    }
+
+    function updateTicker(id, value) {
+      var elements = document.querySelectorAll('[data-ticker="' + id + '"]');
+      elements.forEach(function (el) { el.textContent = value; });
+    }
+
+    function fetchStats() {
+      // Block height
+      fetch(API_BASE + '/api/blocks/tip/height')
+        .then(function (r) { return r.text(); })
+        .then(function (h) {
+          var height = parseInt(h, 10);
+          updateTicker('blockHeight', formatNumber(height));
+          // Calculate supply from height
+          var supply = calculateSupply(height);
+          updateTicker('supply', formatNumber(Math.floor(supply)) + ' BTC');
+          // Also update the hero block height if present
+          var heroBlock = document.getElementById('blockHeight');
+          if (heroBlock) heroBlock.textContent = 'BLOCK #' + formatNumber(height);
+        })
+        .catch(function () {});
+
+      // Hash rate + difficulty
+      fetch(API_BASE + '/api/v1/mining/hashrate/1m')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.currentHashrate) {
+            updateTicker('hashRate', formatHashRate(data.currentHashrate / 1e18));
+          }
+          if (data.currentDifficulty) {
+            updateTicker('difficulty', formatDifficulty(data.currentDifficulty));
+          }
+        })
+        .catch(function () {});
+
+      // Mempool
+      fetch(API_BASE + '/api/mempool')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var count = data.count || 0;
+          updateTicker('mempool', formatNumber(count) + ' TX');
+        })
+        .catch(function () {});
+
+      // Fees
+      fetch(API_BASE + '/api/v1/fees/recommended')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var fee = data.halfHourFee || data.hourFee || 0;
+          updateTicker('avgFee', fee + ' sat/vB');
+        })
+        .catch(function () {});
+    }
+
+    // Fetch immediately, then every 60 seconds
+    fetchStats();
+    setInterval(fetchStats, 60000);
+  })();
+</script>
 
 <style>
   .data-ticker {

@@ -1,0 +1,2 @@
+[https://bitcoinmagazine.com/culture/how-bitcoin-will-make-housing-affordable](https://bitcoinmagazine.com/culture/how-bitcoin-will-make-housing-affordable)  
+Bitcoin makes owning a home more affordable because it makes

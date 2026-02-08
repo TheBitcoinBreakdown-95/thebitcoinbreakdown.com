@@ -4,9 +4,11 @@ description: "All bitcoin is, is fake money. Why does it have any value at all?"
 pubDate: 2023-04-26
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "money"]
+category: "why-bitcoin"
+order: 7
 ---
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/08/Giancarnevale_a_hyper_realistic_photo_of_a_group_of_computer_sc_678df98a-91de-4af3-a728-7cfe7009dbb0.png)
+![](/images/2023/08/Giancarnevale_a_hyper_realistic_photo_of_a_group_of_computer_sc_678df98a-91de-4af3-a728-7cfe7009dbb0.png)
 
 All bitcoin is, is fake money. Why does it have any value at all?
 
@@ -48,7 +50,7 @@ Asking if bitcoin actually does anything is totally a legitimate question.
 
 The answer however, might make you go mad.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2024/02/IMG_9073-832x1024.jpg)
+![](/images/2024/02/IMG_9073-832x1024.jpg)
 
 ## Bitcoin is Designed Money
 
@@ -64,13 +66,14 @@ One of the most surprising things for me personally was to learn that there had 
 -   1998 again b-money
 -   2004 RPOW
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/image-1024x650.png)
+![](/images/2023/04/image-1024x650.png)
 
 The invention of bitcoin was truly revolutionary, but it built on the backs of great computer scientists and cryptographers.
 
-> Can a “digital coin” be made? The answer appears to be “no”...bits can always be duplicated...so must look elsewhere.
-> 
-> The Cyphernomicon - Timothy C. May September 10, 1994
+<blockquote data-compile data-final="Can a digital coin be made? The answer appears to be no...bits can always be duplicated...so must look elsewhere.">
+<p>Can a “digital coin” be made? The answer appears to be “no”...bits can always be duplicated...so must look elsewhere.</p>
+<p class="bq-attr">— The Cyphernomicon, Timothy C. May, September 10, 1994</p>
+</blockquote>
 
 it was thought to be impossible to create a money in cyberspace not physically tied to the real world. The original interpretation of ecash was private digital abstractions of physical assets in physical places.
 
@@ -94,9 +97,9 @@ The designers of bitcoin were experts in distributed systems engineering and eco
 
 They solved theses problem, combining 150 years of Austrian economic knowledge and Ancient Greek monetary theory to develop...
 
-The perfect money.
+The <span class="glitch-hover" data-text="perfect money">perfect money</span>.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2024/02/image-1.png)
+![](/images/2024/02/image-1.png)
 
 ## They Invented a Better Money (who does that??)
 
@@ -116,7 +119,7 @@ It doesn't actually do anything, it's just internet points. We have credit cards
 
 Once you learn what bitcoin is, who made it and why, you'll see how this argument completely falls apart.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/lebanon.png)
+![](/images/2023/11/lebanon.png)
 
 The reason Americans and those in the privileged western economic zones don’t understand bitcoin is because we don’t need to understand bitcoin.
 
@@ -142,11 +145,11 @@ It’s a money that can’t be corrupted by humans because no human is in contro
 
 Solving the concentrated-benefits and dispersed-costs problem affecting all other fiat monies, aka inflation.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/intrinsic-value-222.png)
+![](/images/2023/11/intrinsic-value-222.png)
 
 Bitcoin is the most neutral and fair money ever invented, and the consequences are profound.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/Untitled-picture-6-1.jpg)
+![](/images/2023/11/Untitled-picture-6-1.jpg)
 
 ## What is Bitcoin Backed by?
 
@@ -156,7 +159,7 @@ Bitcoin was designed from the ground up to have the strongest monetary propertie
 
 It solves the shortcomings of gold and fulfils the fundamental properties of money better than fiat.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/05/image-1.png)
+![](/images/2023/05/image-1.png)
 
 Fidelity's digital asset arm produced a great report on Bitcoin's monetary properties and why they are superior to all historical forms of money. This chart explains why bitcoin has value, you have to judge monetary goods on these monetary properties
 

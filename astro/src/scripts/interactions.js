@@ -45,6 +45,13 @@
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
     reveals.forEach(function (el) { rO.observe(el); });
+
+    // Auto-reveal blog post content children
+    document.querySelectorAll('.post-content.prose > *').forEach(function (el, i) {
+      el.classList.add('reveal');
+      el.style.transitionDelay = Math.min(i * 0.03, 0.3) + 's';
+      rO.observe(el);
+    });
   }
 
   // ── 3. Matrix Rain (soft, 1.5s) ──
@@ -102,27 +109,31 @@
       lC.width = innerWidth;
       lC.height = innerHeight;
 
-      var branches = 2 + Math.random() * 2 | 0;
+      var branches = 3 + Math.random() * 3 | 0;
       var fr = 0;
 
       function draw() {
         lX.clearRect(0, 0, lC.width, lC.height);
-        if (fr > 5) return;
-        var a = 1 - fr / 5;
+        if (fr > 8) return;
+        var a = 1 - fr / 8;
+        lX.shadowColor = 'rgba(255,215,0,' + (a * 0.6) + ')';
+        lX.shadowBlur = 8;
         for (var b = 0; b < branches; b++) {
           var ang = (Math.PI * 2 / branches) * b + (Math.random() - 0.5) * 0.8;
-          lX.strokeStyle = 'rgba(255,215,0,' + (a * 0.5) + ')';
-          lX.lineWidth = 0.5;
+          lX.strokeStyle = 'rgba(255,215,0,' + (a * 0.8) + ')';
+          lX.lineWidth = 1.5;
           lX.beginPath();
           lX.moveTo(e.clientX, e.clientY);
           var px = e.clientX, py = e.clientY;
-          for (var s = 0; s < 3; s++) {
-            px += Math.cos(ang) * 12 + (Math.random() - 0.5) * 8;
-            py += Math.sin(ang) * 12 + (Math.random() - 0.5) * 8;
+          for (var s = 0; s < 6; s++) {
+            px += Math.cos(ang) * 20 + (Math.random() - 0.5) * 14;
+            py += Math.sin(ang) * 20 + (Math.random() - 0.5) * 14;
             lX.lineTo(px, py);
           }
           lX.stroke();
         }
+        lX.shadowColor = 'transparent';
+        lX.shadowBlur = 0;
         fr++;
         requestAnimationFrame(draw);
       }
@@ -260,7 +271,7 @@
         lt = setTimeout(function () {
           logo.classList.add('glitching');
           setTimeout(function () { logo.classList.remove('glitching'); }, 500);
-        }, 3000);
+        }, 1000);
       });
       logo.addEventListener('mouseleave', function () {
         clearTimeout(lt);
@@ -478,14 +489,16 @@
 
     function animateBar(fillEl, percentEl) {
       if (!fillEl) return;
+      var targetWidth = parseFloat(fillEl.style.width) || 100;
+      fillEl.style.width = '0%';
       var d = 3000;
       var st = performance.now();
 
       function step(ts) {
         var pr = Math.min((ts - st) / d, 1);
         var ease = 1 - Math.pow(1 - pr, 4);
-        fillEl.style.width = ease * 100 + '%';
-        if (percentEl) percentEl.textContent = Math.round(ease * 100) + '%';
+        fillEl.style.width = ease * targetWidth + '%';
+        if (percentEl) percentEl.textContent = Math.round(ease * targetWidth) + '%';
         if (pr < 1) requestAnimationFrame(step);
       }
 

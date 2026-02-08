@@ -4,11 +4,13 @@ description: "Bitcoin is the first and most popular cryptocurrency!"
 pubDate: 2023-05-04
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "satoshi", "money", "digital-gold"]
+category: "what-is-bitcoin"
+order: 3
 ---
 
 ## So, what exactly is Bitcoin?
 
-![](http://thebitcoinbreakdown.com/wp-content/uploads/2023/05/Logo.png)
+![](/images/2023/05/Logo.png)
 
 *Bitcoin is the first and most popular cryptocurrency!*
 
@@ -36,7 +38,7 @@ I like this comparison because calling bitcoin digital gold tells you it's one o
 
 Bitcoin is better than gold because it was specifically designed to fix all of its shortfalls. Including verifiability, portability, and divisibility.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/05/Digital-Gold-1024x640-1.jpeg)
+![](/images/2023/05/Digital-Gold-1024x640-1.jpeg)
 
 ## The Gold Story
 
@@ -48,7 +50,7 @@ As civilization became global, and information moved at the speed of light, the 
 
 The temptation to corrupt this system was too great for humanity to handle, and eventually more paper certificates were distributed than the underlying gold they were backed by. Eventually this system broke down and only unbacked paper/digital money was left.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/08/image-4-1024x1024.png)
+![](/images/2023/08/image-4-1024x1024.png)
 
 ## Why Bitcoin is Digital Gold
 
@@ -70,8 +72,11 @@ The crazy thing about bitcoin is though, this definition of "digital gold" is un
 
 To steal another line from Andreas Antonopoulos:
 
-> Saying bitcoin is digital gold is like saying the internet is a fancy telephone
+<blockquote data-compile data-final="Saying bitcoin is digital gold is like saying the internet is a fancy telephone.">
+<p>Saying bitcoin is digital gold is like saying the internet is a fancy telephone</p>
+<p class="bq-attr">— Andreas Antonopoulos</p>
+</blockquote>
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/image-1024x576.png)
+![](/images/2023/11/image-1024x576.png)
 
-[Next Post: The Great Excel Spreadsheet in the Sky](https://thebitcoinbreakdown.com/the-great-excel-spreadsheet-in-the-sky/)
+[Next Post: The Great Excel Spreadsheet in the Sky](/blog/2023/the-great-excel-spreadsheet-in-the-sky/)

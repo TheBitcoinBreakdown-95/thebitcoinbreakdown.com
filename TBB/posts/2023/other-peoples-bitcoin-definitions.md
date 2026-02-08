@@ -4,9 +4,11 @@ description: "Even though I've spent years amassing tons of bitcoin knowledge, a
 pubDate: 2023-09-17
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "scarcity", "network"]
+category: "what-is-bitcoin"
+order: 11
 ---
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/09/Giancarnevale_None_dd96ba52-e4bf-4ffa-95b4-e605f88ce3c8-1024x1024.png)
+![](/images/2023/09/Giancarnevale_None_dd96ba52-e4bf-4ffa-95b4-e605f88ce3c8-1024x1024.png)
 
 Even though I've spent years amassing tons of bitcoin knowledge, and pondered over the nature of this invention for hundreds of hours, I still find it valuable to read and digest how other people define bitcoin.
 
@@ -128,10 +130,10 @@ WOW *a collection of concepts and technologies* how can you get any more confu
 
 How do you describe something which is really a collection of many things? And not just a collection of many things…
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/mechanics-of-the-bitcoin-protocol-768x431.png)
+![](/images/2023/04/mechanics-of-the-bitcoin-protocol-768x431.png)
 
 …bitcoin is *a collection of many ideas*.
 
 Neutrality, Transparency, Privacy, Security, Equality, Freedom, Autonomy, Trust, Cosmopolitanism, Justice, Peace, Human rights, etc.
 
-Bitcoin is more than just a money, it’s a cryptographic digital money ecosystem *and a belief system*.
+Bitcoin is more than just a money, it’s a cryptographic digital money ecosystem *and <span class="glitch-hover" data-text="a belief system">a belief system</span>*.

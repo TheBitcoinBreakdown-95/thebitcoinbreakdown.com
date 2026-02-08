@@ -1,0 +1,2 @@
+- Business models other than advertising
+- [https://bitcoinmagazine.com/culture/nostr-and-bitcoin-can-change-social-media](https://bitcoinmagazine.com/culture/nostr-and-bitcoin-can-change-social-media)

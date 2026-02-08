@@ -4,11 +4,13 @@ description: "In order to understand what bitcoin is, you have to understand wha
 pubDate: 2023-05-04
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "money", "energy"]
+category: "what-is-bitcoin"
+order: 9
 ---
 
 In order to understand what bitcoin is, you have to understand what money is.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-11-1024x576.png)
+![](/images/2023/03/image-11-1024x576.png)
 
 Money is a technology to move value across space, time and scales. Money stores your time and energy to be used in the future.
 
@@ -28,9 +30,10 @@ Everyone intuitively understands that it's always about the money. Always has be
 
 Because the value of money derives not from it's consumption, but for the use to trade it for something later, money really is completely made up. It's an abstraction, it's a shared hallucination, it's not real.
 
-> Money is a shared cultural hallucination. It's a shared delusion. We walk around and associate with other people on the basis of germ-ridden pieces of cotton printed with green ink...just by exchanging these pieces of cotton, you could create social relationships, transactions and trade-- you could feed yourself, shelter yourself, etc. It's based on the assumption that if you give me a dollar today, someone else will accept that dollar in exchange for something of value tomorrow. Value comes from the assumption that I can use it again.
-> 
-> Andreas Antonopoulos
+<blockquote data-compile data-final="Money is a shared cultural hallucination. It's a shared delusion. We walk around and associate with other people on the basis of germ-ridden pieces of cotton printed with green ink.">
+<p>Money is a shared cultural hallucination. It's a shared delusion. We walk around and associate with other people on the basis of germ-ridden pieces of cotton printed with green ink...just by exchanging these pieces of cotton, you could create social relationships, transactions and trade-- you could feed yourself, shelter yourself, etc. It's based on the assumption that if you give me a dollar today, someone else will accept that dollar in exchange for something of value tomorrow. Value comes from the assumption that I can use it again.</p>
+<p class="bq-attr">— Andreas Antonopoulos</p>
+</blockquote>
 
 Without the shared belief that something is money, it no longer becomes money. Money is the belief itself.
 
@@ -48,7 +51,7 @@ For one, money is location dependent. Just because you can't buy a soda in Pitts
 
 Additionally, money sometimes specializes in one of the three functions (think of gold as a store of value and Pesos as a medium of exchange). This is because even though gold has served as money and a store of value for thousands of years, it's heavy and not easily accepted by merchants.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/08/image-2-1024x535.png)
+![](/images/2023/08/image-2-1024x535.png)
 
 All money throughout history has taken one of two forms - either physical, like a coin, seashell, salt, cigarette, necklace bead, or paper bill. Or as information in the form of a list of transactions and debts owed. A spreadsheet if you will, like a bank account, clay tablet, or credit card. 
 
@@ -64,7 +67,7 @@ The true innovation of bitcoin was inventing a way to prevent digital money from
 
 This makes Bitcoin the invention of digital property. A scarce resource which is also digital.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/08/image-1-1024x546.png)
+![](/images/2023/08/image-1-1024x546.png)
 
 The cool thing about digital property though is that you can build applications with it because it's programmable. Property where you don't need permission to launch a new tool or application, where there are no gatekeepers or barriers to entry, and where an open market of ideas can flourish.
 
@@ -72,14 +75,14 @@ Bitcoin is programmable money with so many use cases we haven't even thought of 
 
 ## Bitcoin is Designed Money
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/08/image-3-621x1024.png)
+![](/images/2023/08/image-3-621x1024.png)
 *https://www.fidelitydigitalassets.com/bin-public/060_www_fidelity_com/documents/FDAS/bitcoin-first.pdf*
 
 Not only is bitcoin digital, decentralized, programmable, commodity money, but it is also designed money.
 
 Designed from the ground up with Austrian Economic sound money principles. Designed to have all of the best monetary properties, and designed to fix all of the shortcomings of gold.
 
-Bitcoin isn’t just any money, it's the best money ever made.
+Bitcoin isn't just any money, it's the <span class="glitch-hover" data-text="best money ever made">best money ever made</span>.
 
 It's sound money, it's unstoppable money, it's portable, verifiable, divisible, durable, fungible, and easily verifiable money.
 
@@ -93,8 +96,8 @@ Not only does bitcoin perfectly fit all of the traditional properties of good mo
 
 Bitcoin has perfect supply inelasticity, it's programmable, it's fully transparent, it's unforgeable, unconfiscateable, trustless, and immutable.
 
-Bitcoin isn't just money, it's the reinvention of money itself.
+Bitcoin isn't just money, it's the <span class="glitch-hover" data-text="reinvention of money itself">reinvention of money itself</span>.
 
-[next post: bitcoin is the internet of money](https://thebitcoinbreakdown.com/bitcoin-is-the-internet-of-money/)
+[next post: bitcoin is the internet of money](/blog/2023/bitcoin-is-the-internet-of-money/)
 
 ## References:

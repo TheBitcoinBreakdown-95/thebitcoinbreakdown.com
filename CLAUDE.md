@@ -42,12 +42,16 @@ Rebuilding **thebitcoinbreakdown.com** from WordPress to a static site, managed 
 
 ## 2. Current Status (Feb 2026)
 
-- Site framework: COMPLETE (Astro installed, layouts, components, pages built)
+- Site framework: COMPLETE (Astro, layouts, components, pages, RSS, sitemap)
 - GitHub repo: LIVE at `TheBitcoinBreakdown-95/thebitcoinbreakdown.com`
-- Theme: V4 "Dark Luxury" redesign IN PROGRESS — see `tasks/v4-design-implementation-plan.md`
-- V4 Design guide: `TBB/Website planning/V4/tbb-master-design-guide.md`
-- WordPress export: SAVED at `TBB/thebitcoinbreakdown.WordPress.2026-02-05.xml` — needs conversion
-- Deployment: GitHub Actions workflow file created, FTP secrets NOT YET ADDED
+- Theme: V4 "Dark Luxury" COMPLETE — all 5 phases done (Foundation, Components, Pages, JS Effects, Polish)
+- WordPress migration: COMPLETE — 28 posts + 5 pages converted from XML to Markdown
+- Deployment: GitHub Actions + FTP to Hostinger CONFIGURED — first deploy pushed, check Actions tab for status
+- Content enhancement (Phase 2c): COMPLETE — callout boxes, reading time, series nav, TOC, image treatment
+- UX polish round 1 (Phase 2d): COMPLETE — header nav, logo glitch, homepage redesign, TOC fix, images, font weight
+- UX polish round 2 (Phase 2e): COMPLETE — scroll offset, progress bar, owl position, header logo, content reveal, Learn More page
+- **WBIGAF content:** 83 markdown files in `WBIGAF/` directory (9 chapters). Planning phase — not yet integrated into website.
+- **Next steps:** Decide WBIGAF structure, verify live site, set up redirects, commit/push changes
 
 ---
 

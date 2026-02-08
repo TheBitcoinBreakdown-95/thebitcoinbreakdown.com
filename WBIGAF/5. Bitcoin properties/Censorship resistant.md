@@ -1,0 +1,12 @@
+- [https://notgrubles.medium.com/one-does-not-simply-censor-bitcoin-89dc4a32ba2b](https://notgrubles.medium.com/one-does-not-simply-censor-bitcoin-89dc4a32ba2b)
+- Talk about tornado cash
+
+- ![Jeremy Maire jerallaire 2h I Yesterday US Treasury...](Exported%20image%2020251228194653-0.png)
+      
+
+No one can prevent you from interacting with the bitcoin network and no one can censor, alter or block transactions that they disagree with, see ==Operation Chokepoint==.
+ \> From \<[https://www.reddit.com/r/Bitcoin/](https://www.reddit.com/r/Bitcoin/)\>        
+
+One of the most significant sources of early demand for bitcoins was their use in the illicit drug trade. Many subsequently surmised, mistakenly, that the primary demand for bitcoins was due to their ostensible anonymity. Bitcoin, however, is far from an anonymous currency; every transaction transmitted on the Bitcoin network is forever recorded on a public blockchain. The historical record of transactions allows for later forensic analysis to identify the source of a flow of funds. It was ==such an analysis== that led to the apprehending of a perpetrator of the infamous MtGox heist. While it is true that a sufficiently careful and diligent person can conceal their identity when using Bitcoin, this is not why Bitcoin was so popular for trading drugs. The key attribute that makes Bitcoin valuable for proscribed activities is that it is “permissionless” at the network level. When bitcoins are transmitted on the Bitcoin network, there is no human intervention deciding whether the transaction should be allowed. As a distributed peer-to-peer network, Bitcoin is, by its very nature, designed to be censorship-resistant. This is in stark contrast to the fiat banking system, where states regulate banks and the other gatekeepers of money transmission to report and prevent outlawed uses of monetary goods. A classic example of regulated money transmission is capital controls. A wealthy millionaire, for instance, may find it very hard to transfer their wealth to a new domicile if they wish to flee an oppressive regime. Although gold is not issued by states, its physical nature makes it difficult to transmit at distance, making it far more susceptible to state regulation than Bitcoin. India’s ==Gold Control Act== is an example of such regulation.
+ \> From \<[https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1](https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1)\>        
+![Exported image](Exported%20image%2020251228194653-1.jpeg)

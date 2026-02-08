@@ -1,0 +1,54 @@
+==In 2008, Satoshi Nakamoto invented the world's first cryptocurrency====— Bitcoin, on the principle that we can free ourselves from the regulation and control of banks and middlemen, and move money in a much more== ==decentralized fashion.==
+    
+Protestant reformation and separation of church and state
+    
+[https://dergigi.com/2021/06/13/bitcoin-is-an-idea/](https://dergigi.com/2021/06/13/bitcoin-is-an-idea/)  
+On October 31st, 2008, the future trajectory of our global society has forever changed. A breakthrough was made, and an unstoppable idea was let loose on the world. An idea so profound, so outrageous, that it was ignored by almost everyone for the first couple of years - and is still dismissed by most: _Bitcoin: A Peer-to-Peer Electronic Cash System_.  
+The whitepaper released by Satoshi Nakamoto on this Halloween night describes an idea that will inevitably take the world by storm. While most people still think of Bitcoin as nothing more than a get-rich-quick scheme — completely missing the profound change it will continue to have on society — it becomes more obvious every day that it won’t go away.  
+On this fateful night in 2008, Satoshi let the genie out of the bottle. We went from a world where digital cash was just an idea to a world where Bitcoin exists. Not only is the idea here to stay, but with every passing block, Bitcoin reminds us that this idea is now a reality. As we shall see, this new reality is more powerful than one might think at first. It is powerful because it will usher in a new economic paradigm. It is powerful because the time is ripe for it. It is powerful because it can’t be stopped. As Victor Hugo reminds us: nothing is as powerful as an idea whose time has come. Bitcoin is here to stay; and Bitcoin’s time is now.
+       
+[https://x.com/wclementeiii/status/1704235831685169608?s=46](https://x.com/wclementeiii/status/1704235831685169608?s=46)  
+It is widely known that Bitcoin was created out of the 2008 financial crisis, with the foresight of Satoshi that the moral hazard and incentives set in place during that time period of central bank intervention would cause an alteration in the fabric of financial perception due to continued monetary expansion. In the 15 years since, federal debt as a percentage of GDP (The US economy's output) has risen from 60% to 120% today
+       
+[https://bitcoinmagazine.com/culture/why-bitcoin-resembles-the-protestant-reformation](https://bitcoinmagazine.com/culture/why-bitcoin-resembles-the-protestant-reformation)
+      
+
+The Protestant Reformation was responsible for much of the social and political liberation in Europe, paving the way for a number of advantages for the people of that time and their descendants. These benefits include a weakening of the centralized political power (the Roman Catholic Church), the increase of localized (decentralized) church organization, seeding the concept of separation of church and state, and the lawful printing of the Bible in common languages, which enabled the intellectual freedom to choose the faith or not
+ 
+The renowned “95 Theses” of Luther was posted on the church door in Wittenberg, Germany on October 31, 1517
+ 
+Bitcoin's creator, Satoshi Nakamoto, is often compared to Johannes Gutenberg because they both invented technologies that empower the masses against central authority. I propose a more accurate comparison to Satoshi would actually be Martin Luther. Both provided a spark to the latent energy in groups of people that grew tired of the wholesale theft that defined the systems of their respective times. The Bitcoin Revolution and the Protestant Reformation both provide a way to opt out of the oppression in authority.
+   
+
+[https://blog.bitcoin.org.hk/the-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc](https://blog.bitcoin.org.hk/the-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc)
+ 
+Satoshi was not the first one to use the symbolism of this day of renewal for a political agenda. On 31 October 1517 Martin Luther nailed his Ninety-five Theses onto the doors of the Castle Church (dedicated to All Saints) of Wittenberg.  
+Where Satoshi took offense with bank bail-outs, central banking and possibly the debt nature of money, Luther took offense with a different kind of debt: He was outraged at the concept of plenary indulgences, where _sinners_ would be able to reduce their time in purgatory through payments or unpaid work. Under Pope Clement VI these indulgences were considered ‘treasury of the church’, essentially financially keeping the lavish lifestyle of the Vatican afloat with the ‘sins’ of the believers.  
+Both Satoshi and Luther chose October 31st to announce their ideas to their respective audiences. Both carefully chose this day for its symbolism of death and renewal. Both saw the bondage that had constraint the people, and both suggested to get rid of the central authority to ‘forgive us of our debt.’  
+Luther’s ideas became incredibly popular, spread around the world through the newly invented printing press. They were eventually brutally fought over between 1618 and 1648, a time that killed as many of 30% of Europe’s inhabitants and changed the course of Europe forever. Hopefully Bitcoin can spread around the world in a more peaceful way, but it remains highly likely that Satoshi consciously followed into Luther’s steps of symbolically announcing a Reformation of the world.
+   
+
+Bitcoin is not smooth jazz Bitcoin is punk rock deal with it it is disruptive and the reason it is disruptive is precisely why it's so difficult to swallow and swaddle in traditional investment terms bitcoin is the first completely decentralized transnational platform for exchanging value it has no borders it doesn't care whether you like the transaction or not it is entirely based on mathematical verifiability it is the Internet Unleashed unvarnished unpolished and unsensible   
+-Andreas
+ \> From \<[https://www.youtube.com/watch?v=A6kJfvuNqtg](https://www.youtube.com/watch?v=A6kJfvuNqtg)\>      
+[https://medium.com/@nic__carter/bitcoin-at-12-f6fce39cb9bb](https://medium.com/@nic__carter/bitcoin-at-12-f6fce39cb9bb)  
+The Satoshean critique  
+Martin Luther had ninety-five critiques. Satoshi had, effectively, one. Satoshi’s animus lay with the centralized nature of banking, credit, and base money itself.  
+_The root problem with conventional currency is all the trust that’s required to make it work. The central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust. Banks must be trusted to hold our money and transfer it electronically, but they lend it out in waves of credit bubbles with barely a fraction in reserve. We have to trust them with our privacy, trust them not to let identity thieves drain our accounts._  
+Martin Luther sought to reform the Church, to return it to a truer, earlier state. Aside from presenting us with a rubric and then a first implementation of a system, Satoshi was not as forthcoming. The Bitcoin whitepaper is probably one of the most semantically dense documents in history. Not a word is wasted. Satoshi was famously terse on forum posts, only sparingly opining on the political and economic objectives of the system. The blanks have been left to us to fill in.  
+And we have been doing so with gusto. Bitcoiners, through the mechanism of novel technology, seek to restore a monetary arrangement of the past. Bitcoin is new technology designed to pursue baroque ideas. It hearkens back to the era of sound money, in particular the harmonious period from 1880 to 1914 when the international order was largely united on a gold standard and free trade flourished. In the minds of bitcoiners, we sit at an epochal turning point. With any luck, future historians will speak of the bitcoinist restoration, which reversed the losses suffered in the fiat interregnum of 1971–2020. I call it an interregnum because a fully fiat standard is a historical anomaly rather than the default. In this manner, Bitcoin can be understood as revanchist or restorative. We are reclaiming lost territory, discarded ideas, and lost time.
+   
+
+[https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther](https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther)
+    
+[Satoshi's Halloween](https://www.youtube.com/watch?v=QaCQkvUdpcw)  
+ Some people prefer to appear a little further back in history and examine the more Pagan roots of Halloween this uh Gaelic Festival of sawin in which uh you sort of Mark the end of the harvest season and the beginning of the darker Time of the Year this is one theory that I like it's it's probably not a onetoone correspondence but this idea that Satoshi knew that we were entering something like the fourth turning and this was really the beginning of the end for this particular cycle and so he wanted his paper to be published right as we were entering what this Wikipedia article calls the beginning of winter or the darker half of the year
+ 
+the release of the Bitcoin white paper on October 31st … really marks a seminal event not just in the history of money but also in the history of human freedom and human invention and a discovery really on par with things like the publication of the US Constitution
+      
+
+==This matters, because October 31, 2008 was the first time Bitcoin’s core qualities were sketched out, and paired with the name. This makes the system known as ‘Bitcoin’ rather specific. It’s not simply a generic name assigned to the first successful digital cash implementation. It’s the name that Satoshi bestowed upon a system with a predefined monetary schedule, 21 million units, based on proof of work, and so on. Other digital cash systems have existed and will exist. But this one is special, and it’s opinionated. It’s not just a way to move value through a communications medium. It’s an entire monetary manifesto. An affront to the fiat system.==  
+==Bitcoin has often confused people. It’s perhaps one of the most misunderstood phenomena of the last decade. If you lack sufficient ideological and historical context, you most likely consider it a complete boondoggle or a bizarre, unnecessary waste of computing power and effort. This is the default position. Most people in the West rarely give any thought to monetary policy or banking — why should they? Their currencies depreciate at a slow, barely perceptible rate. Their bank arrangements work fairly well, and they don’t find themselves frozen out of the financial system too often.==
+ \> From \<[https://medium.com/@nic__carter/bitcoin-at-12-f6fce39cb9bb](https://medium.com/@nic__carter/bitcoin-at-12-f6fce39cb9bb)\>         
+![Exported image](Exported%20image%2020251228194619-0.png)  
+![Exported image](Exported%20image%2020251228194620-1.png)

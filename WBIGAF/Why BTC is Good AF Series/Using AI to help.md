@@ -1,0 +1,5 @@
+- No matter what I try it's quite difficult to get ai to help write this book.
+- The only real way might be to fine tune my own model
+- I'm afraid of using notebook lm for privacy reasons, and only the satoshi bot on chatgpt really knows how to speak the bitcoin language
+- I think the ultimate fate is to just write and research myself, and use ai to enhance my creation, as in design images, make slides look cooler, and help with research, or voice record my text into a podcast
+- In a way this is kind of freeing, because either I have to wait for better solutions to come out, or two I still retain the human element of thinking and designing my own curriculum

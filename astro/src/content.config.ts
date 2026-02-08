@@ -13,6 +13,19 @@ const posts = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     draft: z.boolean().default(false),
+    category: z.string().optional(),
+    order: z.number().optional(),
+  })
+});
+
+const guide = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: '../TBB/guide' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    chapter: z.number(),
+    order: z.number().default(1),
+    draft: z.boolean().default(false),
   })
 });
 
@@ -24,4 +37,4 @@ const pages = defineCollection({
   })
 });
 
-export const collections = { posts, pages };
+export const collections = { posts, pages, guide };

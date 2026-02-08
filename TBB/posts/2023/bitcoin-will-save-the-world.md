@@ -4,9 +4,11 @@ description: "Most bitcoiners would disagree that I start off the bitcoin story 
 pubDate: 2023-10-18
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "energy"]
+category: "why-bitcoin"
+order: 2
 ---
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/governed-by-a-protocol.png)
+![](/images/2023/11/governed-by-a-protocol.png)
 
 ## **So, why is Bitcoin Important?**
 
@@ -18,7 +20,7 @@ I bet you didn't know this, but Bitcoin is by far the most important project in 
 
 For you see, digital money is a whole new evolution for how money can be exploited for political ends. The potential for corruption has far reaching consequences.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/10/image-2.png)
+![](/images/2023/10/image-2.png)
 
 I'm passionate about bitcoin because it's literally our only hope.
 
@@ -26,7 +28,7 @@ Either bitcoin succeeds or the human race irrevocably falls into a technocratic 
 
 Digital money is a uniquely novel tool where those who wield it can completely manipulate every aspect of a person's life. Never before in history could you turn off someone's money at will.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/image-2-1024x560.png)
+![](/images/2023/11/image-2-1024x560.png)
 
 ## The ability to control people's money, and therefore controlling all of their actions in society, is an ultimate power unique to digital money.
 
@@ -40,15 +42,16 @@ A system of this kind would be the most powerful system of centralized control t
 
 That power should never be trusted with the human race.
 
-> Money is a system of control, those who control money have great power over the people who use it. As a result kings and governments have historically kept a tight control over money, just as they used to keep tight control over religion, and for the same reasons
-> 
-> *Andreas* Antonopoulos
+<blockquote data-compile data-final="Money is a system of control, those who control money have great power over the people who use it. As a result kings and governments have historically kept a tight control over money, just as they used to keep tight control over religion, and for the same reasons.">
+<p>Money is a system of control, those who control money have great power over the people who use it. As a result kings and governments have historically kept a tight control over money, just as they used to keep tight control over religion, and for the same reasons.</p>
+<p class="bq-attr">— Andreas Antonopoulos</p>
+</blockquote>
 
 Without monetary freedom and securing of property rights, there can be no freedom of speech, of assembly, of religion, of self-defense, of privacy. Democracy itself is in risk of collapse.
 
 This was actually my personal lightbulb moment which led me to devote my life to bitcoin.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/george.jpg)
+![](/images/2023/11/george.jpg)
 
 You may think these things would be highly unconstitutional, and that they could never happen to us.
 
@@ -70,11 +73,11 @@ Bitcoin is the encoding of human rights into software. Rights which are enforced
 
 Bitcoin is a techno-economic experiment to provide an escape hatch from the monopoly of corruptible centralized money.
 
-The separation of money and state.
+<span class="glitch" data-text="The separation of money and state">The separation of money and state</span>.
 
 By creating apolitical, transparent, and open-source digital monetary infrastructure, bitcoin protects human freedom in our new digital age. It's an all powerful freedom technology that seeds the destruction of digital authoritarianism.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/image-4-746x1024.png)
+![](/images/2023/11/image-4-746x1024.png)
 
 ## Sound Money is a Human Right
 
@@ -96,7 +99,7 @@ Bitcoin offers immutable private property rights, a savings account, and peer t
 
 Bitcoin is unstoppable decentralized freedom technology for humans all over the world to escape authoritarian capital controls and financial repression.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/10/image-4.png)
+![](/images/2023/10/image-4.png)
 
 ## Money is the Bedrock of Society
 
@@ -106,7 +109,7 @@ Money coordinates practically all economic activity, and economic activity coord
 
 Many civilizations throughout history have crumbled under monetary collapse, like hyperinflation, where the value of the currency is quickly destroyed.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/image-3.png)
+![](/images/2023/11/image-3.png)
 
 Bitcoin is important because it is insurance for the global economy.
 
@@ -124,7 +127,7 @@ Bitcoin offers a way out of this nonsense. An escape hatch to a better future.
 
 Bitcoin is like Noah's ark, it’s a parallel economic system that could absorb all of the wealth on the planet and still function as money in case of a global systematic monetary collapse.
 
-Literally saving the fucking world.
+<span class="glitch" data-text="Literally saving the fucking world">Literally saving the fucking world</span>.
 
 Which in my opinion, makes it one of the most important projects in history.
 
@@ -152,7 +155,7 @@ A tech stack which implements fair, neutral, digital money, available for all of
 
 There's a lot more to bitcoin then you might realize.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/10/image-3-768x1024.png)
+![](/images/2023/10/image-3-768x1024.png)
 
 The things that are being built are truly mind blowing, and combine to form an unstoppable network of financial services. Multi-layer scaling, privacy solutions, multi party custody, atomic swaps, batch transactions, time locks, micropayments, money streaming, insurance and options smart contracts, decentralized exchanges, decentralized market places, sovereign identity, liquidity services...
 
@@ -160,4 +163,4 @@ Not to bore you any more but here is a non exhaustive list of world changing bit
 
 Lightning, Liquid, ARK, Federated Chaumian mints, eCash, Ordinals, L402, Web 5, Stablesats, Taproot assets, Whirlpool, CTV/APO/Covenants, BitVM, Stratum V2, MPC, DLCs, Eltoo, Ark, Coinpools, Statechains/Mercury layer, Spacechains, Splicing, Channel Factories, Hierarchical channels, Spiderchains, The Enigma Network, Chainway/ZK Rollups, RGB, Radient, Prime, Miniscript, Tapscript, Spirit of Satoshi, BOLT12, LSP, Carbonado, Prisms, BTC Pay server, Munstr, Rootstock, Sovereign defi, CivKit and Nostr marketplaces etc.
 
-[next post: why was bitcoin invented?](https://thebitcoinbreakdown.com/why-was-bitcoin-invented/)
+[next post: why was bitcoin invented?](/blog/2023/why-was-bitcoin-invented/)

@@ -1,0 +1,215 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Divider from '../../components/Divider.astro';
+
+export async function getStaticPaths() {
+  const guide = await getCollection('guide');
+  return guide.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+
+// Calculate reading time
+const wordCount = entry.body ? entry.body.split(/\s+/).length : 0;
+const minutes = Math.ceil(wordCount / 200);
+const readingTime = minutes <= 1 ? '1 min read' : `${minutes} min read`;
+
+// Get all guide entries for chapter navigation
+const allGuide = await getCollection('guide', ({ data }) => !data.draft);
+const chapterEntries = allGuide
+  .filter((g) => g.data.chapter === entry.data.chapter)
+  .sort((a, b) => (a.data.order || 1) - (b.data.order || 1));
+
+// Find prev/next chapters
+const allChapters = [...new Set(allGuide.map(g => g.data.chapter))].sort((a, b) => a - b);
+const currentChapterIndex = allChapters.indexOf(entry.data.chapter);
+const prevChapter = currentChapterIndex > 0
+  ? allGuide.find(g => g.data.chapter === allChapters[currentChapterIndex - 1])
+  : null;
+const nextChapter = currentChapterIndex < allChapters.length - 1
+  ? allGuide.find(g => g.data.chapter === allChapters[currentChapterIndex + 1])
+  : null;
+
+// Build TOC from headings (3+ required)
+const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
+const showToc = tocHeadings.length >= 3;
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <article class="guide-article section">
+    <div class="container">
+      <header class="guide-header reveal">
+        <div class="guide-chapter-label">
+          Chapter {entry.data.chapter}
+        </div>
+        <h1>{entry.data.title}</h1>
+        <p class="guide-description">{entry.data.description}</p>
+        <div class="guide-meta">
+          <span>{readingTime}</span>
+        </div>
+      </header>
+
+      <div class="post-content prose">
+        {showToc && (
+          <nav class="toc" aria-label="Table of contents">
+            <details open>
+              <summary class="toc-title">Contents</summary>
+              <ul class="toc-list">
+                {tocHeadings.map((h) => (
+                  <li class:list={[`toc-depth-${h.depth}`]}>
+                    <a href={`#${h.slug}`}>{h.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          </nav>
+        )}
+
+        <Content />
+      </div>
+
+      <Divider />
+
+      <nav class="guide-nav reveal" aria-label="Chapter navigation">
+        <div class="guide-nav-inner">
+          {prevChapter ? (
+            <a href={`/guide/${prevChapter.id}`} class="guide-nav-link guide-nav-prev tbb-link">
+              <span class="guide-nav-label">&larr; Previous</span>
+              <span class="guide-nav-title">Ch. {prevChapter.data.chapter}: {prevChapter.data.title}</span>
+            </a>
+          ) : (
+            <a href="/guide" class="guide-nav-link guide-nav-prev tbb-link">
+              <span class="guide-nav-label">&larr; Back</span>
+              <span class="guide-nav-title">All Chapters</span>
+            </a>
+          )}
+
+          {nextChapter ? (
+            <a href={`/guide/${nextChapter.id}`} class="guide-nav-link guide-nav-next tbb-link">
+              <span class="guide-nav-label">Next &rarr;</span>
+              <span class="guide-nav-title">Ch. {nextChapter.data.chapter}: {nextChapter.data.title}</span>
+            </a>
+          ) : (
+            <a href="/guide" class="guide-nav-link guide-nav-next tbb-link">
+              <span class="guide-nav-label">Complete &rarr;</span>
+              <span class="guide-nav-title">All Chapters</span>
+            </a>
+          )}
+        </div>
+      </nav>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .guide-header {
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--border-default);
+  }
+
+  .guide-chapter-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: var(--space-3);
+  }
+
+  .guide-header h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+    letter-spacing: 0.5px;
+  }
+
+  .guide-description {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+  }
+
+  .guide-meta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── Chapter Navigation ── */
+  .guide-nav {
+    padding: var(--space-6) 0;
+  }
+
+  .guide-nav-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  .guide-nav-link {
+    display: block;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--border-default);
+    background: var(--black-card);
+    text-decoration: none;
+    transition: all 0.5s var(--ease-luxury);
+    max-width: 48%;
+  }
+
+  .guide-nav-link:hover {
+    border-color: var(--gold);
+    background: rgba(255, 215, 0, 0.02);
+  }
+
+  .guide-nav-next {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  .guide-nav-label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: var(--space-1);
+    font-weight: 400;
+  }
+
+  .guide-nav-title {
+    display: block;
+    font-size: 15px;
+    color: var(--text-primary);
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+
+  .guide-nav-link:hover .guide-nav-title {
+    color: var(--gold);
+  }
+
+  @media (max-width: 600px) {
+    .guide-nav-inner {
+      flex-direction: column;
+    }
+
+    .guide-nav-link {
+      max-width: 100%;
+    }
+
+    .guide-nav-next {
+      text-align: left;
+    }
+  }
+</style>

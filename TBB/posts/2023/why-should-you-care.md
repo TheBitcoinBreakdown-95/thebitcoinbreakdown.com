@@ -4,9 +4,11 @@ description: "The truth is, bitcoin doesn’t give a fuck about you."
 pubDate: 2023-11-22
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin"]
+category: "why-bitcoin"
+order: 1
 ---
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/image-5.png)
+![](/images/2023/11/image-5.png)
 
 The truth is, bitcoin doesn’t give a fuck about you.
 
@@ -24,7 +26,7 @@ Bitcoin is also a voluntary system, you don’t have to use it, or like it, or b
 
 *Why bitcoin?* is not about why it makes a unique uncorrelated diversification hedge *blah blah blah*
 
-This is a common misconception, bitcoin’s main purpose isn’t to be a speculative investment. What you have to understand is that it’s not about making money, it’s about fixing money.
+This is a common misconception, bitcoin’s main purpose isn’t to be a speculative investment. What you have to understand is that it’s not about making money, it’s about <span class="glitch-hover" data-text="fixing money">fixing money</span>.
 
 *Why bitcoin?* More so helps explain the basics in a way that I wish someone had laid out for me.
 
@@ -36,7 +38,7 @@ This is a common misconception, bitcoin’s main purpose isn’t to be a specula
 
 WARNING: The passages that follow are only for the intellectually curious.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/10/image.png)
+![](/images/2023/10/image.png)
 
 Bitcoin is a greatly misunderstood technological revolution, often getting lumped in with monkey NFT’s, dog joke coins, and scams like FTX. You often hear pundits comment that it has no intrinsic value, or that it’s only use is to be traded. I don’t blame them, bitcoin is really difficult to understand.
 
@@ -56,4 +58,4 @@ And it’s platform of inalienable human rights will safeguard liberty and the p
 
 But I’m getting a bit ahead of myself.
 
-[next post: bitcoin will save the world](https://thebitcoinbreakdown.com/bitcoin-will-save-the-world/)
+[next post: bitcoin will save the world](/blog/2023/bitcoin-will-save-the-world/)

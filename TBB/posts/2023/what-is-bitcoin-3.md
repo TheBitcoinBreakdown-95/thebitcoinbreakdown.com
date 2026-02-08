@@ -4,25 +4,28 @@ description: "Bitcoin is the next evolution in money. It’s a 21st century mone
 pubDate: 2023-05-04
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "money", "network", "time"]
+category: "what-is-bitcoin"
+order: 6
 ---
 
 Bitcoin is the next evolution in money. It’s a 21st century monetary technology that will outlast our fiat currency system. Bitcoin is money for a type one civilization.
 
 Bitcoin is not just a currency, it is a complete reworking of our global monetary system.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/05/btccity-1024x1024.png)
+![](/images/2023/05/btccity-1024x1024.png)
 
 It is the first digital system of money that is completely decentralized.
 
 Decentralized means its spread out, it exists everywhere, and no one is in control. This is the biggest differentiator between bitcoin and everything else that has ever existed.
 
-> Bitcoin is an electronic peer-to-peer cash system based on a distributed digital ledger called a blockchain or timechain. The ledger includes transactions approved by the peer-to-peer network instead of a central authority.
-> 
-> Bitcoin Magazine
+<blockquote data-compile data-final="Bitcoin is an electronic peer-to-peer cash system based on a distributed digital ledger called a blockchain or timechain. The ledger includes transactions approved by the peer-to-peer network instead of a central authority.">
+<p>Bitcoin is an electronic peer-to-peer cash system based on a distributed digital ledger called a blockchain or timechain. The ledger includes transactions approved by the peer-to-peer network instead of a central authority.</p>
+<p class="bq-attr">— Bitcoin Magazine</p>
+</blockquote>
 
 Bitcoin is a decentralized P2P transaction technology. It's Peer-to-peer because there's no one in the middle of the person you're transacting with. Bitcoin is self running computer code which facilitates transactions automatically. It's an independent third party software which holds no allegiances, and runs completely on its own. 
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/09/btchead-1024x1024.png)
+![](/images/2023/09/btchead-1024x1024.png)
 
 So, what is bitcoin?
 
@@ -38,6 +41,6 @@ The reason bitcoin is so revolutionary is because it's so unique. There's never 
 
 One which was engineered from the ground up to have all around superior monetary properties, and exist within an entire network of trust minimized protocols facilitating payments and contracts all open source, transparent, and available to all. No exceptions.
 
-Bitcoin is the reinvention of money itself.
+Bitcoin is the <span class="glitch-hover" data-text="reinvention of money itself">reinvention of money itself</span>.
 
-[next post: Bitcoin is a network](https://thebitcoinbreakdown.com/bitcoin-is-a-network/)
+[next post: Bitcoin is a network](/blog/2023/bitcoin-is-a-network/)

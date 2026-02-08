@@ -1,0 +1,50 @@
+---
+interface Props {
+  categoryLabel: string;
+  currentIndex: number;
+  totalPosts: number;
+}
+
+const { categoryLabel, currentIndex, totalPosts } = Astro.props;
+const progress = ((currentIndex + 1) / totalPosts) * 100;
+---
+
+<div class="series-progress reveal">
+  <div class="series-progress-label">
+    <span class="series-progress-category">{categoryLabel}</span>
+    <span class="series-progress-count">Part {currentIndex + 1} of {totalPosts}</span>
+  </div>
+  <div class="encrypt-bar">
+    <div class="encrypt-bar-fill" style={`width: ${progress}%`}></div>
+  </div>
+</div>
+
+<style>
+  .series-progress {
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-2);
+  }
+
+  .series-progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2);
+  }
+
+  .series-progress-category {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    font-weight: 400;
+  }
+
+  .series-progress-count {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+</style>

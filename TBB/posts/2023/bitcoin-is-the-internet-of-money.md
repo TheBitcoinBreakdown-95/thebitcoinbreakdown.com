@@ -4,13 +4,15 @@ description: "Money is just the base layer of an economic system, just like BTC 
 pubDate: 2023-08-07
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "money", "network", "technology"]
+category: "what-is-bitcoin"
+order: 10
 ---
 
 Money is just the base layer of an economic system, just like BTC is the base layer of the bitcoin economy. The difference is bitcoin is also a network, a tech stack, and a protocol. Digital and programmable monetary infrastructure.
 
 BTC is the native money of the internet, but bitcoin is much more than that. Bitcoin is the internet of money.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/08/image-5-1024x1024.png)
+![](/images/2023/08/image-5-1024x1024.png)
 
 In order for you to understand what bitcoin is, you unfortunately have to understand what the internet is.
 
@@ -34,13 +36,14 @@ There's no one in charge of the internet, there's no central governing body dict
 
 Bitcoin is less like an app, like AOL or Myspace, and more like TCP/IP, or UDP or SMTP. It's part of the internet infrastructure responsible for transferring value. With bitcoin the information is the money, making it fully integrable into the internet stack.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/08/image-6-987x1024.png)
+![](/images/2023/08/image-6-987x1024.png)
 
 Of course a monetary system not only needs money. It needs transfer services, it needs storage, accounting systems, exchanges, options contracts, trading platforms, insurance, crowdfunding, payment infrastructure, liquidity services, interoperable financial infrastructure etc. Bitcoin is the money but it's also the platform where all other monetary system functionalities can be built.
 
-> Bitcoin is the Internet of money. Currency is only the first application. And it’s core, Bitcoin is a revolutionary technology that will change the world forever
-> 
->  Andreas Antonopoulos -The internet of Money vol. 1
+<blockquote data-compile data-final="Bitcoin is the Internet of money. Currency is only the first application. At its core, Bitcoin is a revolutionary technology that will change the world forever.">
+<p>Bitcoin is the Internet of money. Currency is only the first application. At its core, Bitcoin is a revolutionary technology that will change the world forever.</p>
+<p class="bq-attr">— Andreas Antonopoulos, The Internet of Money vol. 1</p>
+</blockquote>
 
 Bitcoin's design allows for apps to be built on it's periphery completely without permission. It's open source and anyone can build a program that uses bitcoin and adds functionality to the network.
 
@@ -70,7 +73,7 @@ The reason this is so revolutionary is because it’s a system that’s based on
 
 A revolutionary economic system, built with technology. Based on rules not rulers.
 
-The separation of money and state.
+<span class="glitch-hover" data-text="The separation of money and state">The separation of money and state</span>.
 
 ## Why is bitcoin the internet of money and not the larger crypto ecosystem?
 

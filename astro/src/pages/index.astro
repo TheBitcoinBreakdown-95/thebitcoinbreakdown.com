@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
+import Terminal from '../components/Terminal.astro';
 import Divider from '../components/Divider.astro';
 import { getCollection } from 'astro:content';
 
@@ -11,42 +12,119 @@ const recentPosts = allPosts
 ---
 
 <BaseLayout title="Home" description="The Bitcoin Breakdown - Your guide to understanding Bitcoin. Clear explanations, no hype, no jargon.">
-  <!-- Hero -->
+  <!-- Section 1: Hero — Headline, Owl, CTAs, Terminal -->
   <section class="hero">
-    <div class="hero-hash hash-decoration" aria-hidden="true" id="heroHash">
-      0xf4a7c3d8e1b905263f8c7d4a2e1b0f9d3c8a7e6b
+    <div class="hero-owl" aria-hidden="true">
+      <img src="/images/owl-hero.png" alt="" />
     </div>
 
-    <p class="hero-overline">Education &middot; Clarity &middot; Sovereignty</p>
+    <div class="hero-glow" aria-hidden="true"></div>
 
-    <h1 class="hero-title">
-      Understand Bitcoin.<br />
-      Not the <em class="glitch" data-text="noise.">noise.</em>
-    </h1>
-
-    <p class="hero-body">
-      Clear, honest explanations about Bitcoin and cryptocurrency.
-      No jargon. No hype. Just signal.
-    </p>
+    <h1 class="hero-headline reveal" data-type>THE BITCOIN BREAKDOWN</h1>
 
     <div class="hero-cta-group">
-      <a href="/blog" class="btn btn--primary tbb-link">Start Learning</a>
-      <a href="/blog" class="btn btn--ghost tbb-link">Latest Articles</a>
+      <a href="/blog/2023/intro" class="btn btn--primary tbb-link">What is Bitcoin?</a>
+      <a href="/why-bitcoin" class="btn btn--ghost tbb-link">Why Bitcoin?</a>
     </div>
 
-    <div class="block-height" id="blockHeight" aria-hidden="true">
-      BLOCK #883,241
-    </div>
-
-    <div class="scroll-indicator" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="line"></div>
+    <div class="hero-terminal reveal">
+      <Terminal
+        title="thebitcoinbreakdown.com"
+        lines={[
+          { prompt: true, text: 'bitcoin --explain' },
+          { text: '> Decentralizing money since 2009...' },
+          { text: '> 21 million. No more. Ever.' },
+          { text: '> You are not ready. But that\'s ok.' },
+        ]}
+      />
     </div>
   </section>
 
   <Divider />
 
-  <!-- Recent Articles -->
+  <!-- Section 3: Stats with Count-Up -->
+  <section class="stats-section section">
+    <div class="container">
+      <div class="stat-grid reveal">
+        <div class="stat-item">
+          <div class="stat-number count-up" data-target="28">0</div>
+          <div class="stat-label">Articles</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number count-up" data-target="5">0</div>
+          <div class="stat-label">Series</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Resources</div>
+        </div>
+      </div>
+      <div class="encrypt-bar reveal" style="margin-top: var(--space-5);">
+        <div class="encrypt-bar-fill"></div>
+      </div>
+    </div>
+  </section>
+
+  <Divider />
+
+  <!-- Section 4: Start Here — Dual Path Cards -->
+  <section class="start-here section">
+    <div class="container--wide">
+      <div class="section-label">Start Here</div>
+
+      <div class="path-grid stagger">
+        <a href="/blog/2023/intro" class="path-card reveal tbb-link">
+          <div class="path-number" aria-hidden="true">01</div>
+          <h2 class="path-title">What is Bitcoin?</h2>
+          <p class="path-desc">
+            Begin from the beginning. A guided series that takes you from zero to a deep understanding of what Bitcoin actually is.
+          </p>
+          <span class="path-cta">Start the series &rarr;</span>
+        </a>
+
+        <a href="/why-bitcoin" class="path-card reveal tbb-link">
+          <div class="path-number" aria-hidden="true">02</div>
+          <h2 class="path-title">Why Bitcoin?</h2>
+          <p class="path-desc">
+            Why does Bitcoin matter? Why should you care? Explore the reasons people around the world are paying attention.
+          </p>
+          <span class="path-cta">Explore &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Divider />
+
+  <!-- Section 5: McAfee Quote -->
+  <section class="quote-section section">
+    <div class="container">
+      <aside class="home-quote reveal" data-compile data-final="You can't stop things like Bitcoin. It will be everywhere and the world will have to readjust. World governments will have to readjust.">
+        <p class="home-quote-text">
+          You can't stop things like Bitcoin. It will be everywhere and the world will have to readjust. World governments will have to readjust.
+        </p>
+        <p class="home-quote-attr">&mdash; John McAfee</p>
+      </aside>
+    </div>
+  </section>
+
+  <Divider />
+
+  <!-- Section 6: Callout Demo -->
+  <section class="callout-demo section">
+    <div class="container">
+      <div class="callout reveal" data-callout="tip">
+        <div class="callout-title">This site is different</div>
+        <div class="callout-content">
+          <p>No jargon. No hype. No financial advice. Just clear, honest explanations about the most important invention of the 21st century.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Divider />
+
+  <!-- Section 7: Latest Articles -->
   <section class="articles-section section">
     <div class="container--wide">
       <div class="section-label">Latest Articles</div>
@@ -81,10 +159,37 @@ const recentPosts = allPosts
       )}
     </div>
   </section>
+
+  <Divider />
+
+  <!-- Section 8: Resources Teaser -->
+  <section class="resources-section section">
+    <div class="container">
+      <div class="resources-inner reveal">
+        <div class="section-label">Go Deeper</div>
+        <h2 class="resources-title">Resources &amp; Recommended Reading</h2>
+        <p class="resources-desc">
+          Books, websites, videos, and tools curated from years of research. Everything you need to continue your Bitcoin education.
+        </p>
+        <a href="/learn-more" class="btn btn--ghost tbb-link">Browse Resources</a>
+      </div>
+    </div>
+  </section>
+
+  <Divider />
+
+  <!-- Section 9: Glitch Closer -->
+  <section class="closer-section section">
+    <div class="container">
+      <p class="closer-text reveal">
+        <span class="glitch" data-text="Fix the money. Fix the world.">Fix the money. Fix the world.</span>
+      </p>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
-  /* Hero */
+  /* ── Section 1: Hero — Headline, Owl, CTAs, Terminal ── */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -94,58 +199,53 @@ const recentPosts = allPosts
     text-align: center;
     padding: var(--space-10) var(--page-margin);
     position: relative;
+    overflow: hidden;
+    gap: var(--space-4);
   }
 
-  .hero::before {
-    content: '';
+  .hero-headline {
+    font-size: clamp(24px, 5vw, 48px);
+    font-weight: 300;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--gold);
+    position: relative;
+    z-index: 1;
+    margin: 0;
+  }
+
+  .hero-owl {
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.05), transparent 70%);
+    width: 800px;
+    max-width: 95vw;
     pointer-events: none;
+    z-index: 0;
+    animation: owlFloat 8s ease-in-out infinite;
+  }
+
+  .hero-owl img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(40%) brightness(0.4) contrast(1.1);
+    opacity: 0.55;
+    mask-image: radial-gradient(ellipse 75% 65% at center, black 35%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 75% 65% at center, black 35%, transparent 80%);
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.08), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
     animation: heroPulse 6s ease-in-out infinite;
-  }
-
-  .hero-hash {
-    margin-bottom: var(--space-5);
-    max-width: 90vw;
-  }
-
-  .hero-overline {
-    font-size: 11px;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: var(--gold-muted);
-    margin-bottom: var(--space-5);
-    font-weight: 400;
-  }
-
-  .hero-title {
-    font-size: clamp(36px, 7vw, 72px);
-    font-weight: 300;
-    line-height: 1.08;
-    letter-spacing: 1px;
-    color: var(--text-primary);
-    margin-bottom: var(--space-4);
-    max-width: 800px;
-  }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold);
-    text-shadow: 0 0 40px var(--gold-glow), 0 0 80px rgba(255, 215, 0, 0.12);
-  }
-
-  .hero-body {
-    font-size: 18px;
-    font-weight: 300;
-    color: var(--text-secondary);
-    max-width: 520px;
-    line-height: 1.75;
-    margin-bottom: var(--space-6);
   }
 
   .hero-cta-group {
@@ -153,42 +253,154 @@ const recentPosts = allPosts
     gap: var(--space-3);
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 4px;
+    position: relative;
+    z-index: 1;
   }
 
-  .block-height {
-    position: absolute;
-    bottom: 100px;
-    left: var(--page-margin);
+  .hero-terminal {
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
   }
 
-  .scroll-indicator {
-    position: absolute;
-    bottom: var(--space-6);
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-2);
-    opacity: 0.35;
-    animation: scrollBob 2s ease-in-out infinite;
+  @keyframes owlFloat {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -51%) scale(1.01); opacity: 0.95; }
   }
 
-  .scroll-indicator span {
-    font-size: 10px;
-    letter-spacing: 4px;
+  /* ── Section 3: Stats ── */
+  .stats-section {
+    padding: var(--space-7) 0;
+  }
+
+  /* ── Section 4: Start Here ── */
+  .start-here {
+    padding-bottom: var(--space-8);
+  }
+
+  .path-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .path-card {
+    display: block;
+    padding: var(--space-6) var(--space-5);
+    border: 1px solid var(--border-default);
+    background: var(--black-card);
+    text-decoration: none;
+    transition: all 0.5s var(--ease-luxury);
+    position: relative;
+    cursor: crosshair;
+  }
+
+  .path-card:hover {
+    border-color: var(--gold);
+    background: rgba(255, 215, 0, 0.02);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.06);
+    transform: translateY(-3px);
+    text-shadow: none;
+  }
+
+  .path-number {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold-muted);
+    opacity: 0.4;
+    margin-bottom: var(--space-4);
+  }
+
+  .path-title {
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+
+  .path-card:hover .path-title {
+    color: var(--gold);
+  }
+
+  .path-desc {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .path-cta {
+    font-size: 12px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--text-muted);
+    font-weight: 400;
+    transition: color 0.3s ease;
   }
 
-  .scroll-indicator .line {
-    width: 1px;
-    height: 32px;
-    background: linear-gradient(to bottom, var(--gold-muted), transparent);
+  .path-card:hover .path-cta {
+    color: var(--gold);
   }
 
-  /* Articles section */
+  /* ── Section 5: Quote ── */
+  .quote-section {
+    padding: var(--space-8) 0;
+  }
+
+  .home-quote {
+    text-align: center;
+    padding: var(--space-6) var(--space-4);
+    position: relative;
+  }
+
+  .home-quote::before,
+  .home-quote::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--gold-muted);
+  }
+
+  .home-quote::before { top: 0; }
+  .home-quote::after { bottom: 0; }
+
+  .home-quote-text {
+    font-size: clamp(20px, 3.5vw, 30px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 1.45;
+    text-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
+    margin: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-quote-attr {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: var(--space-4);
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* ── Section 6: Callout Demo ── */
+  .callout-demo {
+    padding: var(--space-6) 0;
+  }
+
+  /* ── Section 7: Articles ── */
   .articles-section {
     padding-bottom: var(--space-9);
   }
@@ -198,10 +410,67 @@ const recentPosts = allPosts
     margin-top: var(--space-6);
   }
 
-  /* Responsive */
+  /* ── Section 8: Resources ── */
+  .resources-section {
+    padding-bottom: var(--space-9);
+  }
+
+  .resources-inner {
+    text-align: center;
+    padding: var(--space-7) var(--space-5);
+    border: 1px solid var(--border-default);
+    background: var(--black-card);
+  }
+
+  .resources-inner .section-label {
+    border-bottom: none;
+    margin-bottom: var(--space-4);
+    padding-bottom: 0;
+  }
+
+  .resources-title {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+    letter-spacing: 0.5px;
+  }
+
+  .resources-desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto var(--space-5);
+  }
+
+  /* ── Section 9: Glitch Closer ── */
+  .closer-section {
+    padding: var(--space-9) 0;
+    text-align: center;
+  }
+
+  .closer-text {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
+
+  /* ── Responsive ── */
   @media (max-width: 768px) {
     .hero {
       min-height: 90vh;
+    }
+
+    .hero-owl {
+      width: 600px;
+    }
+
+    .hero-headline {
+      letter-spacing: 4px;
     }
 
     .hero-cta-group {
@@ -215,8 +484,8 @@ const recentPosts = allPosts
       text-align: center;
     }
 
-    .block-height {
-      display: none;
+    .path-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

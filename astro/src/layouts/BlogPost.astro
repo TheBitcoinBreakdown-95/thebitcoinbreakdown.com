@@ -2,6 +2,23 @@
 import BaseLayout from './BaseLayout.astro';
 import PostMeta from '../components/PostMeta.astro';
 import Divider from '../components/Divider.astro';
+import SeriesNav from '../components/SeriesNav.astro';
+import SeriesProgress from '../components/SeriesProgress.astro';
+
+interface HeadingItem {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface SeriesPost {
+  id: string;
+  data: {
+    title: string;
+    order?: number;
+    category?: string;
+  };
+}
 
 interface Props {
   title: string;
@@ -12,9 +29,28 @@ interface Props {
   tags?: string[];
   image?: string;
   imageAlt?: string;
+  category?: string;
+  readingTime?: string;
+  headings?: HeadingItem[];
+  seriesPosts?: SeriesPost[];
+  currentPostId?: string;
 }
 
-const { title, description, pubDate, updatedDate, author, tags = [], image, imageAlt } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  author,
+  tags = [],
+  image,
+  imageAlt,
+  category,
+  readingTime,
+  headings = [],
+  seriesPosts = [],
+  currentPostId = '',
+} = Astro.props;
 
 // Generate a decorative hash string from the title
 const hashStr = Array.from(title)
@@ -23,6 +59,25 @@ const hashStr = Array.from(title)
   .replace('-', '')
   .padStart(16, 'a3f7')
   .slice(0, 16);
+
+// TOC: only show for posts with 3+ headings
+const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
+const showToc = tocHeadings.length >= 3;
+
+// Series progress
+const hasSeries = seriesPosts.length > 1;
+const currentIndex = hasSeries ? seriesPosts.findIndex((p) => p.id === currentPostId) : -1;
+
+// Human-readable category label
+const categoryLabels: Record<string, string> = {
+  'what-is-bitcoin': 'What is Bitcoin?',
+  'why-bitcoin': 'Why Bitcoin?',
+  'memes': 'Memes',
+  'speeches': 'Speeches',
+  'guides': 'Guides',
+  'learn-more': 'Learn More',
+};
+const categoryLabel = category ? (categoryLabels[category] || category) : '';
 ---
 
 <BaseLayout title={title} description={description} image={image}>
@@ -31,14 +86,17 @@ const hashStr = Array.from(title)
       <div class="hash-decoration reveal" aria-hidden="true">0x{hashStr}...{hashStr.split('').reverse().join('')}</div>
       <h1 class="reveal">{title}</h1>
       <div class="reveal">
-        <PostMeta pubDate={pubDate} updatedDate={updatedDate} />
+        <PostMeta pubDate={pubDate} updatedDate={updatedDate} readingTime={readingTime} category={categoryLabel} />
       </div>
       {tags.length > 0 && (
         <div class="tag-group reveal">
           {tags.map((tag) => (
-            <span class="tag">{tag}</span>
+            <a href={`/tags/${tag}`} class="tag">{tag}</a>
           ))}
         </div>
+      )}
+      {hasSeries && currentIndex >= 0 && (
+        <SeriesProgress categoryLabel={categoryLabel} currentIndex={currentIndex} totalPosts={seriesPosts.length} />
       )}
     </header>
 
@@ -51,10 +109,25 @@ const hashStr = Array.from(title)
     )}
 
     <div class="post-content prose container">
+      {showToc && (
+        <nav class="toc reveal" aria-label="Table of contents">
+          <div class="toc-title">Contents</div>
+          <ol class="toc-list">
+            {tocHeadings.map((heading) => (
+              <li class={heading.depth === 3 ? 'toc-sub' : ''}>
+                <a href={`#${heading.slug}`}>{heading.text}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )}
       <slot />
     </div>
 
     <footer class="post-footer container">
+      {hasSeries && (
+        <SeriesNav seriesPosts={seriesPosts} currentPostId={currentPostId} />
+      )}
       <Divider />
       <div class="hash-decoration reveal" aria-hidden="true">EOF::{hashStr}</div>
     </footer>

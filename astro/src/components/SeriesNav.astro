@@ -1,0 +1,105 @@
+---
+interface SeriesPost {
+  id: string;
+  data: {
+    title: string;
+    order?: number;
+    category?: string;
+  };
+}
+
+interface Props {
+  seriesPosts: SeriesPost[];
+  currentPostId: string;
+}
+
+const { seriesPosts, currentPostId } = Astro.props;
+
+const currentIndex = seriesPosts.findIndex((p) => p.id === currentPostId);
+const prevPost = currentIndex > 0 ? seriesPosts[currentIndex - 1] : null;
+const nextPost = currentIndex < seriesPosts.length - 1 ? seriesPosts[currentIndex + 1] : null;
+---
+
+{(prevPost || nextPost) && (
+  <nav class="series-nav" aria-label="Series navigation">
+    <div class="series-nav-inner">
+      {prevPost ? (
+        <a href={`/blog/${prevPost.id}`} class="series-link series-link--prev tbb-link">
+          <span class="series-link-label">&larr; Previous</span>
+          <span class="series-link-title">{prevPost.data.title}</span>
+        </a>
+      ) : (
+        <div />
+      )}
+
+      {nextPost ? (
+        <a href={`/blog/${nextPost.id}`} class="series-link series-link--next tbb-link">
+          <span class="series-link-label">Next &rarr;</span>
+          <span class="series-link-title">{nextPost.data.title}</span>
+        </a>
+      ) : (
+        <div />
+      )}
+    </div>
+  </nav>
+)}
+
+<style>
+  .series-nav {
+    margin-top: var(--space-6);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--border-default);
+  }
+
+  .series-nav-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+
+  .series-link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--border-default);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: crosshair;
+  }
+
+  .series-link:hover {
+    border-color: var(--gold);
+    background: rgba(255, 215, 0, 0.02);
+    text-shadow: none;
+  }
+
+  .series-link--next {
+    text-align: right;
+  }
+
+  .series-link-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  .series-link-title {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+  }
+
+  .series-link:hover .series-link-title {
+    color: var(--gold);
+  }
+
+  @media (max-width: 768px) {
+    .series-nav-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

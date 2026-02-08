@@ -4,15 +4,17 @@ description: "You can think of Bitcoin as a kind of clock, it keeps track of tim
 pubDate: 2023-05-04
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "satoshi", "network", "trust", "time"]
+category: "what-is-bitcoin"
+order: 8
 ---
 
 You can think of Bitcoin as a kind of clock, it keeps track of time across the tens of thousands of computers that make up its network. A decentralized clock if you will, keeping track of which transactions came first. Ticking away for eternity.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-9-1024x553.png)
+![](/images/2023/03/image-9-1024x553.png)
 
 Not only does bitcoin tell time, but Bitcoin is an invention of a new kind of time.
 
-Blocktime.
+<span class="glitch-hover" data-text="Blocktime">Blocktime</span>.
 
 Consider each new block added to the blockchain as a tick or a tock. The nodes within the bitcoin network come to a consensus of what the blocktime is and what transactions are included in each block.
 
@@ -20,9 +22,10 @@ Bitcoin facilitates this decentralized variable time in a trustless manner, i.e.
 
 Obviously the problem of timekeeping is a big deal when dealing with a ledger, the order of who sent money to who is extremely important. If someone has control over the order of transactions they can literally control who has what money.
 
-> It must be stressed that the *impos­si­bility of associ­ating events with points in time* in distrib­uted systems was the unsolved problem that precluded a decen­tral­ized ledger from ever being possible until Satoshi Nakamoto invented a solution.
-> 
-> Gregory Trubet­skoy
+<blockquote data-compile data-final="It must be stressed that the impossibility of associating events with points in time in distributed systems was the unsolved problem that precluded a decentralized ledger from ever being possible until Satoshi Nakamoto invented a solution.">
+<p>It must be stressed that the <em>impossibility of associating events with points in time</em> in distributed systems was the unsolved problem that precluded a decentralized ledger from ever being possible until Satoshi Nakamoto invented a solution.</p>
+<p class="bq-attr">— Gregory Trubetskoy</p>
+</blockquote>
 
 The fancy term for this is Bitcoin is a distributed timestamp server, mitigating disputes in the order of transactions, completely autonomously, through a complex interplay of physics and game theory.
 
@@ -30,9 +33,9 @@ Bitcoin is automatic and can’t be shut off. No one controls the bitcoin time c
 
 It exists as permanently and beyond human control as time itself.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/03/image-10-1024x441.png)
+![](/images/2023/03/image-10-1024x441.png)
 
-[next post: bitcoin is money](https://thebitcoinbreakdown.com/bitcoin-is-money/)
+[next post: bitcoin is money](/blog/2023/bitcoin-is-money/)
 
 Refrences:
 

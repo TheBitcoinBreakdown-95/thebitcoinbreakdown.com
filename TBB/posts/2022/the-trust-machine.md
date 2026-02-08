@@ -4,13 +4,15 @@ description: "> Bitcoin is a system for electronic transactions without relying 
 pubDate: 2022-11-11
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "satoshi", "money", "trust"]
+category: "why-bitcoin"
+order: 6
 ---
 
 > Bitcoin is a system for electronic transactions without relying on trust
 > 
 > Satoshi Nakamoto
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2022/11/image.png)
+![](/images/2022/11/image.png)
 
 ## Why is Bitcoin Revolutionary?
 
@@ -18,9 +20,10 @@ Money at its core is a system of trust, a social construct if you will. But as w
 
 In the wise words of Satoshi:
 
-> The root problem with conventional currency is all the trust that’s required to make it work. The central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust. Banks must be trusted to hold our money and transfer it electronically, but they lend it out in waves of credit bubbles with barely a fraction in reserve.
-> 
-> Satoshi Nakamoto
+<blockquote data-compile data-final="The root problem with conventional currency is all the trust that's required to make it work. The central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust.">
+<p>The root problem with conventional currency is all the trust that's required to make it work. The central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust. Banks must be trusted to hold our money and transfer it electronically, but they lend it out in waves of credit bubbles with barely a fraction in reserve.</p>
+<p class="bq-attr">— Satoshi Nakamoto</p>
+</blockquote>
 
 The truth is, the trust in our global monetary system is broken. Wherever you look you'll find a slow erosion of faith in our institutions.
 
@@ -34,11 +37,11 @@ Not only are the poor and middle class of the western world trapped in this hams
 
 Unfortunately none of this is new. Throughout history, trust in money has been abused and manipulated, leading to breakdowns and inefficiencies in society.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/leban-300x295.jpg)
+![](/images/2023/04/leban-300x295.jpg)
 
 That's where Bitcoin comes in.
 
-Bitcoin is revolutionary because it’s a trust machine. Bitcoin manufactures trust because there are no humans that run it or rule over it. Instead you are trusting in math, physics, code, and probabilities.
+Bitcoin is revolutionary because it's a <span class="glitch" data-text="trust machine">trust machine</span>. Bitcoin manufactures trust because there are no humans that run it or rule over it. Instead you are trusting in math, physics, code, and probabilities.
 
 Bitcoin's trust is based on a globally decentralized network of tens of thousands of computers that maintain the integrity of the system. Bitcoin is the largest and most secure supercomputer on earth by many magnitudes. Transactions are recorded on an immutable ledger, a record that can't be changed or destroyed and is constantly being audited. Bitcoin is money which is held in the most secure vaults in human history, money which can't be controlled or debased, and money which can't be unfairly counterfeited to insiders.
 
@@ -46,7 +49,7 @@ It's kind of like putting a calculator in charge of a global financial and monet
 
 Unlike today’s currency which is maintained by banks, corporations, and governments, bitcoin is open source software, a banking system that is instead run on top of the internet.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/Picture4.jpg)
+![](/images/2023/04/Picture4.jpg)
 
 Bitcoin is a global economic project maintained by developers all over the world, permissionlessly built on by entrepreneurs and academics, and run by human rights groups, democracy protesters and money nerds.
 
@@ -56,7 +59,7 @@ Bitcoin is truth because all transactions are made without trust. All disputes a
 
 *The entire point of bitcoin* is to remove the distribution, production, and control over money from humanity. And the corruption that comes with it.
 
-**This is trust in math, trust in code, not in humans.**
+**<span class="glitch-hover" data-text="This is trust in math, trust in code, not in humans.">This is trust in math, trust in code, not in humans.</span>**
 
 The trust machine is a revolutionary new technology that has the potential to completely upend our existing financial system.
 
@@ -70,7 +73,7 @@ You can trust that bitcoin won’t cheat you, because bitcoin is code. Bitcoin�
 
 Bitcoin is a whole new monetary and financial system that’s based on uncontrollable money. The temptation of unlimited wealth has been taken away from human beings and because of that society will flourish.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/Picture1.png)
+![](/images/2023/04/Picture1.png)
 
 ## The Byzantine Generals Problem
 
@@ -88,7 +91,7 @@ To accomplish this task, he created a decentralized ledger, the first accounting
 
 And to secure this ledger, she had to program a global game theoretic competition, a lottery where players inadvertently help create a force field around the network, protecting it from bad actors.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/12/image.png)
+![](/images/2023/12/image.png)
 
 Bitcoin is special because this had never been done before, and has yet to be replicated since. Every other blockchain can be changed by some powerful special interests. Bitcoin is unique in the cryptocurrency space because it's the only immutable unchanging immortal and invincible network in the world.
 
@@ -110,7 +113,7 @@ Ok that’s all well and good, but this great excel spreadsheet in the sky, why 
 
 Ok well let’s spice up the metaphor a bit - bitcoin is digital gold right? So instead of the excel sheet in the sky, think of it more like a golden tablet in the clouds, or on cyberspace mountain. This is some Moses shit. Carved into the enormous golden tablet is a list of all of the bitcoin in the world, who sent it to who and who owns it now.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/Giancarnevale_a_golden_tablet_that_looks_like_the_10_commandmen_259a15c5-2daf-450a-a920-cc56e6485f65-1024x1024.png)
+![](/images/2023/04/Giancarnevale_a_golden_tablet_that_looks_like_the_10_commandmen_259a15c5-2daf-450a-a920-cc56e6485f65-1024x1024.png)
 
 Once you send some bitcoin to someone, a new line is magically carved into the tablet and it stays there forever. Anyone can see this golden tablet, it’s open and transparent and visible to all, but no one can undo transactions once they're carved. No one can actually touch this tablet and no one can change the rules. It exists beyond the clutches of humanity. We've created something we can't stop.
 

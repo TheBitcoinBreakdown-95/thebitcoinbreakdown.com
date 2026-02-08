@@ -106,7 +106,7 @@ body {
   background: var(--black);
   color: var(--text-primary);
   font-family: var(--font);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 17px;
   line-height: 1.75;
   overflow-x: hidden;
@@ -157,6 +157,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font);
   color: var(--text-primary);
   line-height: 1.2;
+  scroll-margin-top: 140px;
 }
 
 h1 {
@@ -289,7 +290,7 @@ a:hover {
 
 .prose {
   font-size: 17px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.85;
   color: var(--text-secondary);
 }
@@ -339,14 +340,15 @@ a:hover {
 }
 
 .prose blockquote {
-  border-left: 2px solid var(--gold-muted);
-  padding-left: var(--space-4);
-  margin: var(--space-6) 0;
+  border-left: 3px solid var(--gold);
+  padding: var(--space-4) var(--space-5);
+  margin: var(--space-6) var(--space-3);
   font-size: 20px;
   font-weight: 300;
   font-style: italic;
-  color: var(--text-primary);
+  color: var(--gold);
   line-height: 1.6;
+  background: rgba(255, 215, 0, 0.03);
 }
 
 .prose blockquote .bq-attr {
@@ -359,7 +361,9 @@ a:hover {
 }
 
 .prose img {
-  margin: var(--space-5) 0;
+  max-width: 560px;
+  margin: var(--space-5) auto;
+  display: block;
 }
 
 .prose hr {
@@ -367,6 +371,63 @@ a:hover {
   height: 1px;
   background: var(--border-default);
   margin: var(--space-6) 0;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-5) 0;
+  font-size: 0.95em;
+}
+
+.prose th,
+.prose td {
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.prose th {
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.85em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.prose td {
+  color: var(--text-secondary);
+}
+
+.prose tr:hover td {
+  color: var(--text-primary);
+}
+
+.prose .footnotes {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border-default);
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+.prose .footnotes ol {
+  padding-left: var(--space-4);
+}
+
+.prose .footnotes li {
+  margin-bottom: var(--space-2);
+}
+
+.prose sup a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.prose sup a:hover {
+  text-shadow: 0 0 12px var(--gold-glow);
 }
 
 
@@ -1303,12 +1364,19 @@ textarea.form-input {
 }
 
 @keyframes logoGlitch {
-  0%, 100% { transform: translate(0); filter: none; }
-  10% { transform: translate(-2px, 1px); filter: hue-rotate(20deg); }
-  30% { transform: translate(-1px, -1px); }
-  50% { transform: translate(-2px, 0); filter: brightness(1.5); }
-  70% { transform: translate(0, -2px); }
-  90% { transform: translate(1px, 0); }
+  0%, 100% { transform: translate(0); filter: none; text-shadow: none; }
+  5% { transform: translate(-4px, 2px) skewX(-2deg); filter: hue-rotate(40deg); }
+  10% { transform: translate(3px, -2px) skewX(3deg); text-shadow: -3px 0 #ff0000, 3px 0 #00ffff; }
+  15% { transform: translate(-2px, 0); filter: brightness(2); }
+  20% { transform: translate(0, 3px) skewX(-1deg); text-shadow: 2px 0 #ff0000, -2px 0 #00ffff; }
+  25% { transform: translate(4px, -1px); filter: hue-rotate(-30deg); }
+  30% { transform: translate(-3px, 2px) skewX(2deg); text-shadow: none; }
+  40% { transform: translate(0); filter: none; }
+  50% { transform: translate(-5px, -2px) skewX(-4deg); text-shadow: -4px 0 rgba(255,0,0,0.5), 4px 0 rgba(0,255,255,0.5); filter: brightness(1.8); }
+  55% { transform: translate(3px, 1px) skewX(2deg); }
+  60% { transform: translate(0); filter: none; text-shadow: none; }
+  80% { transform: translate(-2px, -1px); text-shadow: 2px 0 rgba(255,215,0,0.4); }
+  90% { transform: translate(1px, 0); filter: none; text-shadow: none; }
 }
 
 @keyframes navSparkFlash {
@@ -1481,4 +1549,230 @@ textarea.form-input {
     color: #333;
     text-shadow: none;
   }
+}
+
+
+/* ==========================================================================
+   31. PROSE IMAGE TREATMENT
+   ========================================================================== */
+
+.prose img {
+  filter: grayscale(30%) contrast(1.05) brightness(0.9);
+  transition: filter 0.5s ease;
+  border: 1px solid var(--border-default);
+}
+
+.prose img:hover {
+  filter: grayscale(0%) contrast(1) brightness(1);
+}
+
+/* Image sizing utilities (use via HTML in markdown) */
+.img-small { max-width: 300px; margin-left: auto; margin-right: auto; }
+.img-medium { max-width: 500px; margin-left: auto; margin-right: auto; }
+.img-half { max-width: 50%; }
+
+/* Figure / Caption (auto-generated from alt text by rehype plugin) */
+.image-figure {
+  margin: var(--space-5) 0;
+}
+
+.image-figure img {
+  margin-bottom: 0;
+}
+
+.image-figure figcaption {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-top: var(--space-2);
+  font-style: italic;
+  font-weight: 300;
+  text-align: center;
+}
+
+
+/* ==========================================================================
+   32. OBSIDIAN CALLOUT BOXES
+   ========================================================================== */
+
+/* Base callout structure (generated by @r4ai/remark-callout) */
+.callout {
+  margin: var(--space-5) 0;
+  padding: 0;
+  border-left: 3px solid var(--gold-muted);
+  background: var(--black-card);
+  overflow: hidden;
+}
+
+.callout-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.callout-content {
+  padding: var(--space-3) var(--space-4);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.callout-content > :first-child { margin-top: 0; }
+.callout-content > :last-child { margin-bottom: 0; }
+
+.callout-content p + p {
+  margin-top: var(--space-3);
+}
+
+/* Callout type variants */
+
+/* Note / Info / Todo */
+.callout[data-callout="note"],
+.callout[data-callout="info"],
+.callout[data-callout="todo"] {
+  border-left-color: var(--info);
+}
+
+.callout[data-callout="note"] .callout-title,
+.callout[data-callout="info"] .callout-title,
+.callout[data-callout="todo"] .callout-title {
+  color: var(--info);
+  background: var(--info-dim);
+}
+
+/* Tip / Hint / Important */
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-callout="important"] {
+  border-left-color: var(--gold);
+}
+
+.callout[data-callout="tip"] .callout-title,
+.callout[data-callout="hint"] .callout-title,
+.callout[data-callout="important"] .callout-title {
+  color: var(--gold);
+  background: var(--gold-subtle);
+}
+
+/* Warning / Caution / Attention */
+.callout[data-callout="warning"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"] {
+  border-left-color: var(--warning);
+}
+
+.callout[data-callout="warning"] .callout-title,
+.callout[data-callout="caution"] .callout-title,
+.callout[data-callout="attention"] .callout-title {
+  color: var(--warning);
+  background: var(--warning-dim);
+}
+
+/* Danger / Error */
+.callout[data-callout="danger"],
+.callout[data-callout="error"] {
+  border-left-color: var(--error);
+}
+
+.callout[data-callout="danger"] .callout-title,
+.callout[data-callout="error"] .callout-title {
+  color: var(--error);
+  background: var(--error-dim);
+}
+
+/* Success / Check / Done */
+.callout[data-callout="success"],
+.callout[data-callout="check"],
+.callout[data-callout="done"] {
+  border-left-color: var(--success);
+}
+
+.callout[data-callout="success"] .callout-title,
+.callout[data-callout="check"] .callout-title,
+.callout[data-callout="done"] .callout-title {
+  color: var(--success);
+  background: var(--success-dim);
+}
+
+/* Question / Help / FAQ */
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"] {
+  border-left-color: var(--gold);
+}
+
+.callout[data-callout="question"] .callout-title,
+.callout[data-callout="help"] .callout-title,
+.callout[data-callout="faq"] .callout-title {
+  color: var(--gold);
+  background: var(--gold-subtle);
+}
+
+/* Quote / Cite */
+.callout[data-callout="quote"],
+.callout[data-callout="cite"] {
+  border-left-color: var(--gold-muted);
+  background: transparent;
+}
+
+.callout[data-callout="quote"] .callout-title,
+.callout[data-callout="cite"] .callout-title {
+  color: var(--gold-muted);
+  background: transparent;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.callout[data-callout="quote"] .callout-content,
+.callout[data-callout="cite"] .callout-content {
+  font-style: italic;
+  color: var(--text-primary);
+  font-size: 17px;
+}
+
+/* Abstract / Summary / TLDR */
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"] {
+  border-left-color: var(--gold);
+}
+
+.callout[data-callout="abstract"] .callout-title,
+.callout[data-callout="summary"] .callout-title,
+.callout[data-callout="tldr"] .callout-title {
+  color: var(--gold);
+  background: var(--gold-subtle);
+}
+
+/* Example */
+.callout[data-callout="example"] {
+  border-left-color: var(--gold-muted);
+}
+
+.callout[data-callout="example"] .callout-title {
+  color: var(--gold-muted);
+  background: var(--gold-overlay);
+}
+
+/* Bug / Failure */
+.callout[data-callout="bug"],
+.callout[data-callout="failure"],
+.callout[data-callout="fail"],
+.callout[data-callout="missing"] {
+  border-left-color: var(--error);
+}
+
+.callout[data-callout="bug"] .callout-title,
+.callout[data-callout="failure"] .callout-title,
+.callout[data-callout="fail"] .callout-title,
+.callout[data-callout="missing"] .callout-title {
+  color: var(--error);
+  background: var(--error-dim);
 }

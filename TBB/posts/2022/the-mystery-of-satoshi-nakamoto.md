@@ -4,13 +4,15 @@ description: "The mystery of Satoshi Nakamoto is not a story the Sith would tell
 pubDate: 2022-10-31
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "satoshi"]
+category: "speeches"
+order: 2
 ---
 
 *The mystery of Satoshi Nakamoto is not a story the Sith would tell you*
 
 *And yet it is one of the most fascinating legends ever told*
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2022/10/satoshi-mystery4.jpg)
+![](/images/2022/10/satoshi-mystery4.jpg)
 
 It's the story of a cryptic computer scientist, an unknown person or a group of people whose invention has changed human civilization forever.
 
@@ -22,7 +24,7 @@ In the midst of a global financial crisis, the worst economic emergency since th
 
 A shadowy figure quietly emerges
 
-They call them-self Satoshi Nakamoto
+They call them-self <span class="glitch" data-text="Satoshi Nakamoto">Satoshi Nakamoto</span>
 
 To calm markets and suppress a meltdown, emergency measures are taken by world governments, flooding the economy to the tune of hundreds of billions of dollars in bailouts.
 
@@ -32,9 +34,10 @@ Our political and economic leaders barely save us from catastrophe, as the entir
 
 On a Halloween night, against the backdrop of this global crisis, this mad computer scientist quietly published the instructions to a new kind of money. A digital money, an unstoppable money, ruled by no human being. An invention they call bitcoin.
 
-> A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution.
-> 
-> Satoshi Nakamoto
+<blockquote data-compile data-final="A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution.">
+<p>A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution.</p>
+<p class="bq-attr">— Satoshi Nakamoto</p>
+</blockquote>
 
 In a time where overleveraged financial institutions had risked the solvency of the global economy, the seeds of rebellion were planted. A revolutionary new economic system was born.
 
@@ -112,7 +115,7 @@ We will probably never know who invented bitcoin. The moral of the story isn't t
 
 Satoshi gave bitcoin as a gift to humanity. We run bitcoin and we decide it's future. There's no one in charge now, bitcoin belongs to everyone. We are all equal participants in the network.
 
-We are all Satoshi
+<span class="glitch" data-text="We are all Satoshi">We are all Satoshi</span>
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 

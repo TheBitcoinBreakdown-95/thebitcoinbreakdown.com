@@ -4,6 +4,8 @@ description: "Gold was independently chosen by every society as money for thousa
 pubDate: 2023-11-22
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "money", "digital-gold"]
+category: "why-bitcoin"
+order: 4
 ---
 
 ## Bitcoin is Digital Gold
@@ -14,7 +16,7 @@ It will be chosen voluntarily by the market because of it’s monetary superiori
 
 That’s why I don’t care about convincing you to buy any. If I’m right, you’ll demand to be paid in bitcoin someday.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/10/Giancarnevale_None_d19b2e2b-e60f-4802-a990-bfd5271d130b.png)
+![](/images/2023/10/Giancarnevale_None_d19b2e2b-e60f-4802-a990-bfd5271d130b.png)
 
 ## Bitcoin is Obvious
 
@@ -24,7 +26,7 @@ Bitcoin is shorting government currency, and going long on technology and free m
 
 If you don’t understand the problem with our current monetary system, and you don’t understand what bitcoin is, of course you wouldn’t understand why bitcoin is the solution. But for those who have ventured down the rabbit hole and come out believers there’s no going back.
 
-Bitcoin is the greatest monetary asset ever developed and has no competition.
+Bitcoin is the <span class="glitch-hover" data-text="greatest monetary asset ever developed">greatest monetary asset ever developed</span> and has no competition.
 
 I can’t believe so many people have their heads in the sand.
 
@@ -34,7 +36,7 @@ After years and years and hundreds and hundreds of hours of rigorous study, I ha
 
 This is why I’m dedicating my life to educating others and helping them with the difficult technical challenges of bitcoin onboarding.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/image-1-963x1024.png)
+![](/images/2023/11/image-1-963x1024.png)
 *One of my favorite tweets of all time*
 
 ## We’re Still so Early
@@ -53,7 +55,7 @@ By that time, the UX of bitcoin adoption will be basically flawless and it’ll 
 
 The management of bitcoin too will improve. Personal private Ai assistants that we can run on a home server will become ubiquitous and will be able to manage our bitcoin for us. Maximize privacy in transactions, work to manage liquidity and sidechain staking, and overall work with the myriad of decentralized protocols, defi, bifi, nostr, for full financial sovereignty, even for people who don’t have the time to learn themselves.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/Giancarnevale_None_14e8a946-4045-460b-b563-ca7eb66c8e75.png)
+![](/images/2023/11/Giancarnevale_None_14e8a946-4045-460b-b563-ca7eb66c8e75.png)
 
 ## Bitcoin is Immortal
 
@@ -91,4 +93,4 @@ If we’re talking about international settlement then we’re talking quadrilli
 
 You see, we’re aiming for everything. Worst case scenario is still revolutionary, and there’s no going back now. 
 
-[next post: absolute scarcity](https://thebitcoinbreakdown.com/absolute-scarcity/)
+[next post: absolute scarcity](/blog/2022/absolute-scarcity/)

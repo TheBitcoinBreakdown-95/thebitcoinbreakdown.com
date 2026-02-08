@@ -4,15 +4,17 @@ description: "Money doesn’t grow on trees, because if it did we would call it 
 pubDate: 2022-10-23
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "scarcity", "money", "digital-gold"]
+category: "why-bitcoin"
+order: 5
 ---
 
 *Money doesn’t grow on trees, because if it did we would call it leaves.*
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/Giancarnevale_money_tree_69733849-e2aa-4759-99d7-050ca608ab2b-1024x1024.png)
+![](/images/2023/04/Giancarnevale_money_tree_69733849-e2aa-4759-99d7-050ca608ab2b-1024x1024.png)
 
 Everyone intuitively understands that in order for something to have value it must also be scarce, or hard to come by. It’s the same reason air is free and a Denny’s Grand SlamTM isn’t.
 
-Bitcoin has value because it is absolutely scarce - there is a cap of 21 million bitcoins that can ever be mined. Before bitcoin was invented, digital assets could be infinitely copied, there was no such thing as digital property, and scarcity in the digital realm was thought to be impossible.
+Bitcoin has value because it is absolutely scarce - there is a cap of <span class="count-up" data-target="21000000">0</span> bitcoins that can ever be mined. Before bitcoin was invented, digital assets could be infinitely copied, there was no such thing as digital property, and scarcity in the digital realm was thought to be impossible.
 
 The invention of Bitcoin marked a fundamental breakthrough in computer science and cryptographic systems, enabling absolute scarcity. And after 15 years and thousands of other cryptocurrencies, bitcoin remains the only money that is perfectly scarce and verifiably finite.
 
@@ -26,7 +28,7 @@ You can think of bitcoin as the Mona Lisa, or a plot of land in Manhattan, or Wu
 
 The reason this is so special is because no other money or digital asset possesses an unchangeable absolutely scarce monetary policy on the level of bitcoin. Bitcoin’s rules are set in stone, it’s the most certain, reliable, and credible monetary policy of any digital asset and of any currency.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/dollabtc-768x435.png)
+![](/images/2023/04/dollabtc-768x435.png)
 
 Bitcoin is backed by its unique value proposition as being the only monetary good that ever has, and will ever be, absolutely scarce. This certainty of its supply and supply schedule is unique to bitcoin and can’t be recreated.
 
@@ -48,7 +50,7 @@ The sectors that bitcoin aims to disrupt are MUCH larger than you could possibly
 
 The 2020’s have so far seen massive institutional adoption as bitcoin’s supply cap, security, immutability, and revolutionary potential have been recognized by the larger financial ecosystem.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/image-12.png)
+![](/images/2023/11/image-12.png)
 
 If scarcity makes money a good store of value, and the better the store of value the harder the currency, absolute scarcity makes bitcoin the hardest money ever invented.
 
@@ -64,7 +66,7 @@ In a similar way anyone can copy the game of chess and make up new rules, expand
 
 People will continue to value bitcoin specifically because of its unique and unchanging properties. Bitcoin has the largest network effect, highest liquidity, most reliable monetary policy, and is provably finite. It’s the most secure blockchain by many orders of magnitude and is the only cryptocurrency undeniably classified as a commodity. Once you understand that bitcoin has no competition, its unique value proposition of absolute scarcity will cut through the noise.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/image-10-1024x485.png)
+![](/images/2023/11/image-10-1024x485.png)
 *https://www.fidelitydigitalassets.com/research-and-insights/bitcoin-first-revisited*
 
 # **Why Bitcoin is the Only Money with Absolute Scarcity**
@@ -89,7 +91,7 @@ It’s now commonly understood in the crypto ecosystem that bitcoin is the sound
 
 Because of the unique launch of the bitcoin protocol, and the centralizing force of bootstrapping a new cryptocurrency, absolute scarcity can’t be replicated and is a once a human history event.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/abscarc.png)
+![](/images/2023/04/abscarc.png)
 
 # **Why is Bitcoin Scarce?**
 
@@ -103,7 +105,7 @@ The problem with money is that those who control it are incentivized to make mor
 
 The beauty of bitcoin is that there is no trust required of a central institution, bitcoin’s scarcity is encoded in software. Satoshi designed bitcoin to be decentralized, trustless, and absolutely scarce to prevent humans from debasing the currency and inflating its supply.
 
-The whole point of bitcoin is to remove the control and issuance of money from the hands of humans.
+The whole point of bitcoin is to remove the control and issuance of money from the hands of humans. <span class="glitch-hover" data-text="Absolute scarcity.">Absolute scarcity.</span>
 
 Bitcoin’s absolute scarcity is a guarantee that your money can’t be diluted by central banks or by special interests. It’s a protest against debasement, and a revolution in property rights.
 
@@ -127,9 +129,9 @@ In fact this game theoretic outcome has been tested and validated, when, in 2017
 
 ### **Bitcoin’s Source Code**
 
-Bitcoin’s hard cap is mathematically determined due to a process known as the Halving. About every 4 years, or every 210,000 blocks, the mining reward is cut in half. That means the number of total bitcoin that enter circulation once a block is mined gets smaller and smaller as the total number of bitcoin approaches 21 million.
+Bitcoin’s hard cap is mathematically determined due to a process known as the Halving. About every 4 years, or every <span class="count-up" data-target="210000">0</span> blocks, the mining reward is cut in half. That means the number of total bitcoin that enter circulation once a block is mined gets smaller and smaller as the total number of bitcoin approaches 21 million.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/Picture255-1024x538.png)
+![](/images/2023/04/Picture255-1024x538.png)
 
 The timing of these halving events is assured by another hard coded bitcoin process known as the difficulty adjustment. Even if the number of miners multiplied by trillions in a couple of days, bitcoin’s difficulty adjustment would just change how much processing power it takes to mine a block, acting as an automatic pacemaker to keep the supply perfectly inelastic regardless of demand. Bitcoins difficulty adjustment is so powerful, all of the energy of the Sun could be funneled towards mining blocks and still no more bitcoin could be created any faster. The last ever bitcoin will take close to forty years to mine, and the final block reward will be sometime around the year 2140.
 
@@ -137,7 +139,7 @@ The timing of these halving events is assured by another hard coded bitcoin proc
 
 Bitcoin is money. It’s not a company or a product, therefore it doesn’t have cash flows and its value can’t be derived through familiar methods. Bitcoin is what’s known as a monetary good, and its value is instead derived from its ability to better satisfy the characteristics of good money. Some of these monetary attributes were described thousands of years ago by Aristotle and they still hold true to this day. They include durability, divisibility, fungibility, portability, verifiability, acceptability, and of course, scarcity.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/Properties.png)
+![](/images/2023/04/Properties.png)
 *https://www.fidelitydigitalassets.com/research-and-insights/bitcoin-first-revisited*
 
 Bitcoin has many qualities that make it good at being money and bitcoin’s absolute scarcity is one of the main differentiators. It is bitcoin’s superiority in satisfying these monetary attributes which makes it a better money than anything that has come before or since. Bitcoin’s mathematically provable absolutely scarce supply cap is the greatest assurance that value will be preserved into the future and can’t be diluted.
@@ -158,7 +160,7 @@ Bitcoin’s halving events reduce the rate at which bitcoin is mined, where ever
 
 In fact, there is only about 10% left of the bitcoin supply to be mined over the next 118 years, as the rate of bitcoin grinds to a halt. This in effect means that the total number of bitcoin (the stock) is much greater than new bitcoin being created (the flow).
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/Picture23.png)
+![](/images/2023/04/Picture23.png)
 
 This ratio of stock-to-flow is what gives a money it’s hardness, since this rate determines how much more currency will enter the market and dilute the existing stockpile. The harder the money, the more resistant it is to change in supply.
 
@@ -182,7 +184,7 @@ Eventually it was gold that succeeded over silver as the global reserve asset, a
 
 # **Price Impact**
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/fidelbill.png)
+![](/images/2023/04/fidelbill.png)
 
 In the short run bitcoin’s supply issuance halvings historically have correlated with a cycle of price appreciation.
 
@@ -196,7 +198,7 @@ These cycles of user adoption, accumulation, supply decrease, and price apprecia
 
 However, the slowly dwindling new supply issuance isn't the full story. The vast majority of bitcoin has already been mined so the largest amount of supply that could enter the market and dampen price appreciation would come from existing holders. A lot of great work has been done to examine the long term and short term holder supply and the potential impact on the market, specifically the work done by [glassnode](https://www.youtube.com/watch?v=fnAa8AbZ7Ac) and [The Rational Root](https://www.youtube.com/watch?v=HT9x5oU6yYo). If you would like to explore those metrics further I can't recommend their work highly enough.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/11/image-13-1024x589.png)
+![](/images/2023/11/image-13-1024x589.png)
 
 In summary however, existing long term holders are the least likely to sell the majority of their holdings since these are exactly the people who understand bitcoin the most and are the most adamant of the evergreen price appreciation.
 
@@ -210,7 +212,7 @@ Bitcoin’s number-go-up (NGU) technology is driven by its absolute scarcity and
 
 Bitcoin has no competition. No other money could ever match bitcoin’s level of scarcity. Its absolute scarcity will pull in value from all other store of value assets.
 
-![](https://thebitcoinbreakdown.com/wp-content/uploads/2023/04/IMG_5027-1024x573.jpg)
+![](/images/2023/04/IMG_5027-1024x573.jpg)
 
 Money is a winner take all system, where the fewer monies to exchange is always preferred. And of course society will also have the incentive to adopt a good money over a bad ones. Government fiat currencies have failed over and over again over the course of hundreds of years, with the current epoch only existing for 50 years, a relatively short term economic experiment. They are prone to unsustainable leverage and inflation. Nation states have shown time and time again that they will always sacrifice monetary sustainability with short term political gain. This has ensured that government monies will always diminish in value over time.
 
@@ -228,7 +230,7 @@ It’s also important to note that prices are set by marginal sellers and buyers
 
 As adoption climbs towards critical mass, and as bitcoin is identified as the global money with the greatest relative scarcity, bitcoin will shift more and more from a store of value asset into a medium of exchange. Its price will stabilize in an ‘S’ curve adoption fashion as its used less as a savings vehicle and more for the purchase of goods and services. This will cause the price to become moderately deflationary, matching the growth rate of the economy at large.
 
-[next post: The trust machine](https://thebitcoinbreakdown.com/the-trust-machine/)
+[next post: The trust machine](/blog/2022/the-trust-machine/)
 
 ## References
 
