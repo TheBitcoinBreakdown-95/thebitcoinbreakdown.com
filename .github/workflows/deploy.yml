@@ -35,3 +35,15 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./astro/dist/
           server-dir: /public_html/
+          timeout: 60000
+
+      - name: Retry deploy on failure
+        if: failure()
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./astro/dist/
+          server-dir: /public_html/
+          timeout: 120000
