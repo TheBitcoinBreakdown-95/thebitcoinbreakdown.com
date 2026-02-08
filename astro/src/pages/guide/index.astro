@@ -7,15 +7,15 @@ const allGuide = await getCollection('guide', ({ data }) => !data.draft);
 const publishedChapters = [...new Set(allGuide.map(g => g.data.chapter))].sort((a, b) => a - b);
 
 const chapters = [
-  { num: 1, title: 'What is Bitcoin?', desc: 'The fundamentals. What Bitcoin actually is — not what you think it is.', slug: 'what-is-bitcoin' },
-  { num: 2, title: 'Why Bitcoin?', desc: 'Why it matters. Why you should care. Why the world is paying attention.', slug: 'why-bitcoin' },
-  { num: 3, title: 'What Problems Does it Solve?', desc: 'Fiat capitalism, inflation, surveillance, censorship — and how Bitcoin fights back.', slug: 'problems-it-solves' },
-  { num: 4, title: 'Bitcoin Past', desc: 'The cypherpunks, Satoshi Nakamoto, the genesis block, and the path to here.', slug: 'bitcoin-history' },
-  { num: 5, title: 'Bitcoin Properties', desc: 'Scarce, censorship-resistant, permissionless, trustless — 21 properties that make it unstoppable.', slug: 'bitcoin-properties' },
-  { num: 6, title: 'So...What is Bitcoin Exactly?', desc: 'Proof of work, the timechain, sound money — the deeper technical truth.', slug: 'what-is-bitcoin-exactly' },
-  { num: 7, title: 'Bitcoin Present', desc: 'Where Bitcoin stands today. Network effect, culture, regulation, and adoption.', slug: 'bitcoin-present' },
-  { num: 8, title: 'Why Bitcoin is Good as Fuck', desc: 'Energy money, ethical money, freedom money — the core arguments.', slug: 'why-bitcoin-is-good-af' },
-  { num: 9, title: 'Bitcoin Future', desc: 'AI, de-financialization, the digital gold rush — what comes next.', slug: 'bitcoin-future' },
+  { num: 1, title: 'What is Bitcoin?', desc: 'Your journey begins with a deceptively simple question — one that even the experts struggle to answer.', slug: 'what-is-bitcoin' },
+  { num: 2, title: 'Why Bitcoin?', desc: "Bitcoin's main purpose isn't to be a speculative investment. It's not about making money — it's about fixing money.", slug: 'why-bitcoin' },
+  { num: 3, title: 'What Problems Does Bitcoin Solve?', desc: "Bitcoin isn't a solution looking for a problem. It's the answer to the most dangerous and deeply rooted problems plaguing civilization.", slug: 'problems-bitcoin-solves' },
+  { num: 4, title: "Bitcoin's Past", desc: 'A mysterious figure, a breakthrough invention, and a disappearance that changed everything.', slug: 'bitcoin-past' },
+  { num: 5, title: "Bitcoin's Properties", desc: 'A collection of revolutionary properties that have never existed together in a single asset — the hardest, most secure, and most fair money ever created.', slug: 'bitcoin-properties' },
+  { num: 6, title: 'So...What is Bitcoin Exactly?', desc: 'Strip away the buzzwords and look under the hood. Pure information, sound money, proof of work, a new kind of time, and the internet of money.', slug: 'what-is-bitcoin-exactly' },
+  { num: 7, title: "Bitcoin's Present", desc: 'Wall Street is in. Regulators are adapting. The narrative has shifted from speculation to inevitability.', slug: 'bitcoin-present' },
+  { num: 8, title: 'Why Bitcoin is Good as Fuck', desc: 'Freedom money. Ethical money. Energy money. A Trojan horse for human liberty disguised as a get-rich-quick scheme.', slug: 'why-bitcoin-is-good-af' },
+  { num: 9, title: "Bitcoin's Future", desc: "The macro forces are unstoppable. The technology is unstoppable. The adoption is unstoppable. It's a question of how fast.", slug: 'bitcoin-future' },
 ];
 ---
 

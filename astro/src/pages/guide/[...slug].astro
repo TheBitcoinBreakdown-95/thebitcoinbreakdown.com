@@ -38,6 +38,25 @@ const nextChapter = currentChapterIndex < allChapters.length - 1
 // Build TOC from headings (3+ required)
 const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 const showToc = tocHeadings.length >= 3;
+
+// Related blog posts mapping (guide chapter → blog post slugs)
+const relatedPostMap: Record<number, string[]> = {
+  1: ['2023/intro', '2023/what-is-bitcoin-2', '2023/what-is-bitcoin-3', '2023/bitcoin-is-digital-gold'],
+  2: ['2023/why-should-you-care', '2023/bitcoin-will-save-the-world', '2023/why-was-bitcoin-invented'],
+  3: ['2023/why-was-bitcoin-invented', '2023/bitcoin-is-ethical-money', '2023/the-manhattan-project-for-human-freedom'],
+  4: ['2022/the-mystery-of-satoshi-nakamoto', '2022/the-trust-machine', '2023/why-was-bitcoin-invented'],
+  5: ['2022/absolute-scarcity', '2023/bitcoin-is-digital-gold', '2023/bitcoin-is-money', '2023/bitcoin-is-a-network'],
+  6: ['2023/bitcoin-is-information', '2023/bitcoin-is-time', '2023/bitcoin-is-the-internet-of-money', '2023/the-great-excel-spreadsheet-in-the-sky'],
+  7: ['2023/why-will-bitcoin-win', '2022/absolute-scarcity', '2023/orange-not-gold'],
+  8: ['2023/bitcoin-is-ethical-money', '2023/the-manhattan-project-for-human-freedom', '2023/they-invented-a-better-money-who-does-that'],
+  9: ['2023/why-will-bitcoin-win', '2023/bitcoin-is-the-internet-of-money'],
+};
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+const relatedSlugs = relatedPostMap[entry.data.chapter] || [];
+const relatedPosts = relatedSlugs
+  .map(slug => allPosts.find(p => p.id === slug))
+  .filter((p): p is NonNullable<typeof p> => p != null);
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
@@ -72,6 +91,20 @@ const showToc = tocHeadings.length >= 3;
 
         <Content />
       </div>
+
+      {relatedPosts.length > 0 && (
+        <aside class="related-articles reveal">
+          <div class="related-label">Related Articles</div>
+          <div class="related-list">
+            {relatedPosts.map((post) => (
+              <a href={`/blog/${post.id}`} class="related-link tbb-link">
+                <span class="related-title">{post.data.title}</span>
+                <span class="related-arrow">&rarr;</span>
+              </a>
+            ))}
+          </div>
+        </aside>
+      )}
 
       <Divider />
 
@@ -144,6 +177,70 @@ const showToc = tocHeadings.length >= 3;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--text-muted);
+  }
+
+  /* ── Related Articles ── */
+  .related-articles {
+    margin-top: var(--space-6);
+    padding: var(--space-5) var(--space-4);
+    border: 1px solid var(--border-default);
+    background: var(--black-card);
+  }
+
+  .related-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: var(--space-3);
+  }
+
+  .related-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .related-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) var(--space-3);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.06);
+    transition: all 0.3s ease;
+  }
+
+  .related-link:last-child {
+    border-bottom: none;
+  }
+
+  .related-link:hover {
+    background: rgba(255, 215, 0, 0.03);
+  }
+
+  .related-title {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+  }
+
+  .related-link:hover .related-title {
+    color: var(--gold);
+  }
+
+  .related-arrow {
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+    margin-left: var(--space-3);
+  }
+
+  .related-link:hover .related-arrow {
+    color: var(--gold);
   }
 
   /* ── Chapter Navigation ── */

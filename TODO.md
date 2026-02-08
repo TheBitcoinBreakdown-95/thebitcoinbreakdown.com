@@ -158,7 +158,7 @@ Pipeline per chapter: triage → consolidate → edit → frontmatter → effect
 **Phase 7b COMPLETE — 83 source files processed into 9 polished guide chapters (~31,600 total words)**
 **Build: 59 pages, 0 errors, ~7.5s**
 
-### Phase 7c: Polish
-- [ ] Cross-link guide chapters with related blog posts
-- [ ] Add guide teaser to homepage
-- [ ] Review guide landing page chapter cards (update titles/descriptions)
+### Phase 7c: Polish — DONE
+- [x] Cross-link guide chapters with related blog posts (2-4 related articles per chapter)
+- [x] Add guide teaser to homepage (new section between Start Here and McAfee quote)
+- [x] Review guide landing page chapter cards (fixed broken slugs for Ch 3 & 4, updated all titles/descriptions)

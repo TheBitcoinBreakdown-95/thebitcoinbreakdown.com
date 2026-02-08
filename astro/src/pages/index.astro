@@ -96,7 +96,23 @@ const recentPosts = allPosts
 
   <Divider />
 
-  <!-- Section 5: McAfee Quote -->
+  <!-- Section 5: Guide Teaser -->
+  <section class="guide-teaser section">
+    <div class="container">
+      <div class="guide-teaser-inner reveal">
+        <div class="section-label">The Guide</div>
+        <h2 class="guide-teaser-title">Why Bitcoin Is Good As Fuck</h2>
+        <p class="guide-teaser-desc">
+          9 chapters. 83 source documents. Years of research — distilled into a comprehensive, chapter-by-chapter journey through Bitcoin.
+        </p>
+        <a href="/guide" class="btn btn--primary tbb-link">Read the Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <Divider />
+
+  <!-- Section 6: McAfee Quote -->
   <section class="quote-section section">
     <div class="container">
       <aside class="home-quote reveal" data-compile data-final="You can't stop things like Bitcoin. It will be everywhere and the world will have to readjust. World governments will have to readjust.">
@@ -347,7 +363,43 @@ const recentPosts = allPosts
     color: var(--gold);
   }
 
-  /* ── Section 5: Quote ── */
+  /* ── Section 5: Guide Teaser ── */
+  .guide-teaser {
+    padding: var(--space-7) 0;
+  }
+
+  .guide-teaser-inner {
+    text-align: center;
+    padding: var(--space-7) var(--space-5);
+    border: 1px solid var(--border-default);
+    background: var(--black-card);
+  }
+
+  .guide-teaser-inner .section-label {
+    border-bottom: none;
+    margin-bottom: var(--space-4);
+    padding-bottom: 0;
+  }
+
+  .guide-teaser-title {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: var(--space-3);
+    letter-spacing: 0.5px;
+  }
+
+  .guide-teaser-desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto var(--space-5);
+  }
+
+  /* ── Section 6: Quote ── */
   .quote-section {
     padding: var(--space-8) 0;
   }
