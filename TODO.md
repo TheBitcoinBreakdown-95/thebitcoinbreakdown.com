@@ -125,9 +125,9 @@ Design guide: `TBB/Website planning/V4/tbb-master-design-guide.md`
 - [x] Apply effects to remaining 13 posts (what-is-bitcoin-2, what-is-bitcoin-3, great-excel-spreadsheet, bitcoin-is-a-network, why-should-you-care, why-will-bitcoin-win, orange-not-gold, other-peoples-definitions, manhattan-project, designed-money, unparalleled-new, about, trust-machine-speech)
 - [ ] Add new effect types: Satoshi callout, comparison encrypt-bars, terminology tooltips (future)
 
-## Phase 6: Go Live
-- [ ] Test live site thoroughly
-- [ ] Set up redirects from old WordPress URLs
+## Phase 6: Go Live — DONE
+- [x] Test live site thoroughly (homepage, guide, blog posts, about page all verified live)
+- [x] Set up redirects from old WordPress URLs (`.htaccess` with RewriteRules)
 - [ ] Document workflow for reference
 
 ## Phase 7: WBIGAF Content Integration — "The Guide"

@@ -1,0 +1,24 @@
+# Redirects from old WordPress URLs to new Astro URLs
+# WordPress pattern: /{year}/{month}/{day}/{slug}/
+# Astro pattern: /blog/{year}/{slug}/
+
+RewriteEngine On
+
+# WordPress blog posts → Astro blog posts
+# Matches /{year}/{month}/{day}/{slug}/ and redirects to /blog/{year}/{slug}/
+RewriteRule ^(\d{4})/\d{2}/\d{2}/(.+?)/?$ /blog/$1/$2/ [R=301,L]
+
+# WordPress category pages → blog listing
+RewriteRule ^category/(.+)/?$ /blog/ [R=301,L]
+
+# WordPress tag pages → blog listing
+RewriteRule ^tag/(.+)/?$ /blog/ [R=301,L]
+
+# WordPress feed → RSS
+RewriteRule ^feed/?$ /rss.xml [R=301,L]
+
+# WordPress wp-content uploads (images still at same paths)
+# No redirect needed — images are at /images/ now
+
+# Custom 404
+ErrorDocument 404 /404.html
