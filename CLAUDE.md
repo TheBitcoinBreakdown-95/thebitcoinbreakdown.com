@@ -42,16 +42,15 @@ Rebuilding **thebitcoinbreakdown.com** from WordPress to a static site, managed 
 
 ## 2. Current Status (Feb 2026)
 
-- Site framework: COMPLETE (Astro, layouts, components, pages, RSS, sitemap)
-- GitHub repo: LIVE at `TheBitcoinBreakdown-95/thebitcoinbreakdown.com`
-- Theme: V4 "Dark Luxury" COMPLETE — all 5 phases done (Foundation, Components, Pages, JS Effects, Polish)
-- WordPress migration: COMPLETE — 28 posts + 5 pages converted from XML to Markdown
-- Deployment: GitHub Actions + FTP to Hostinger CONFIGURED — first deploy pushed, check Actions tab for status
-- Content enhancement (Phase 2c): COMPLETE — callout boxes, reading time, series nav, TOC, image treatment
-- UX polish round 1 (Phase 2d): COMPLETE — header nav, logo glitch, homepage redesign, TOC fix, images, font weight
-- UX polish round 2 (Phase 2e): COMPLETE — scroll offset, progress bar, owl position, header logo, content reveal, Learn More page
-- **WBIGAF content:** 83 markdown files in `WBIGAF/` directory (9 chapters). Planning phase — not yet integrated into website.
-- **Next steps:** Decide WBIGAF structure, verify live site, set up redirects, commit/push changes
+- **Site: LIVE** at thebitcoinbreakdown.com
+- Site framework: COMPLETE (Astro v5.17.1, 59 pages, builds in ~7s)
+- GitHub repo: `TheBitcoinBreakdown-95/thebitcoinbreakdown.com`
+- Theme: V4 "Dark Luxury" COMPLETE
+- WordPress migration: COMPLETE — 28 posts + 5 pages, 2,316 images localized
+- Deployment: GitHub Actions → FTP → Hostinger (auto-deploys on push)
+- Content enhancement (Phases 2c-2g): COMPLETE — V4 effects on all blog posts
+- Guide section (Phases 7a-7c): COMPLETE — 9 chapters, ~31,600 words from 83 WBIGAF sources
+- Redirects: `.htaccess` handles old WordPress URLs → new Astro URLs
 
 ---
 
@@ -74,21 +73,25 @@ Rebuilding **thebitcoinbreakdown.com** from WordPress to a static site, managed 
 c:\Users\GC\Documents\TBB\
 ├── TBB/                    ← Obsidian vault (CONTENT GOES HERE)
 │   ├── posts/              ← Blog posts as Markdown
+│   ├── guide/              ← Guide chapters as Markdown (9 chapters)
 │   ├── pages/              ← Static pages
 │   ├── drafts/             ← WIP (gitignored)
-│   ├── templates/          ← New post template
-│   ├── assets/images/      ← Images and media
-│   └── *.xml               ← WordPress export to convert
+│   └── templates/          ← New post template
+│
+├── WBIGAF/                 ← Source research notes (83 files, 9 chapters)
 │
 ├── astro/                  ← Site generator
+│   ├── public/images/      ← Localized images (~510 MB)
+│   ├── public/.htaccess    ← WordPress redirect rules
 │   ├── src/styles/global.css    ← COLORS/FONTS HERE
 │   ├── src/layouts/             ← Page templates
 │   ├── src/components/          ← Header, footer, etc.
 │   ├── src/pages/               ← Routes
+│   ├── src/scripts/interactions.js ← V4 JS effects
 │   ├── src/content.config.ts    ← Content collection schemas
-│   └── dist/                    ← Built HTML (upload to Hostinger)
+│   └── dist/                    ← Built HTML (deployed to Hostinger)
 │
-├── .github/workflows/deploy.yml ← Auto-deploy (needs FTP secrets)
+├── .github/workflows/deploy.yml ← Auto-deploy on push
 ├── CLAUDE.md               ← This file
 └── TODO.md                 ← Task checklist
 ```
@@ -101,16 +104,30 @@ c:\Users\GC\Documents\TBB\
 | Footer | `astro/src/components/Footer.astro` |
 | Homepage | `astro/src/pages/index.astro` |
 | Blog post look | `astro/src/layouts/BlogPost.astro` |
-| New post | `TBB/posts/YYYY/filename.md` |
+| Guide chapter look | `astro/src/pages/guide/[...slug].astro` |
+| Guide landing page | `astro/src/pages/guide/index.astro` |
+| JS effects | `astro/src/scripts/interactions.js` |
+| New blog post | `TBB/posts/YYYY/filename.md` |
+| New guide chapter | `TBB/guide/filename.md` |
 
 ---
 
-## 5. Workflow (When Complete)
+## 5. Workflow
 
-1. Write in Obsidian (`TBB/posts/`)
-2. Manually commit & push to GitHub (via Claude Code plugin)
-3. GitHub Actions auto-builds Astro and FTPs to Hostinger
-4. Live at thebitcoinbreakdown.com in ~2-3 minutes
+### Publishing a new blog post
+1. Create `TBB/posts/YYYY/slug-name.md` in Obsidian with standard frontmatter
+2. Add images to `astro/public/images/YYYY/MM/` and reference as `/images/YYYY/MM/filename.png`
+3. Commit & push to GitHub
+4. GitHub Actions auto-builds and FTPs to Hostinger (~40s)
+5. Live at thebitcoinbreakdown.com
+
+### Publishing a guide chapter update
+1. Edit `TBB/guide/chapter-slug.md` in Obsidian
+2. Commit & push → auto-deploys
+
+### Content collections
+- **Blog posts:** `TBB/posts/` → loaded via `content.config.ts` as `posts` collection
+- **Guide chapters:** `TBB/guide/` → loaded as `guide` collection (schema: title, description, chapter, order, draft)
 
 ---
 
@@ -167,12 +184,9 @@ Astro is a tool that converts Markdown files into HTML websites. It's just one o
 
 ---
 
-## 9. Next Steps
-1. Tweak theme/design (user wants to experiment)
-2. Convert WordPress XML → Markdown
-3. Create GitHub repo, push code
-4. Add Hostinger FTP secrets to GitHub
-5. Go live
+## 9. Site Status
+
+**LIVE** at thebitcoinbreakdown.com. All core features complete. Ongoing work is content creation and refinement.
 
 ---
 ---

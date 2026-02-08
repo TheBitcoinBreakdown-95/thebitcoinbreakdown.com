@@ -128,7 +128,7 @@ Design guide: `TBB/Website planning/V4/tbb-master-design-guide.md`
 ## Phase 6: Go Live — DONE
 - [x] Test live site thoroughly (homepage, guide, blog posts, about page all verified live)
 - [x] Set up redirects from old WordPress URLs (`.htaccess` with RewriteRules)
-- [ ] Document workflow for reference
+- [x] Document workflow for reference (updated CLAUDE.md with current status, architecture, workflow)
 
 ## Phase 7: WBIGAF Content Integration — "The Guide"
 WBIGAF = "Why Bitcoin Is Good As Fuck" — 83 markdown files in `WBIGAF/` organized into 9 chapters.
