@@ -171,13 +171,11 @@
       bX.fillStyle = 'rgba(255, 245, 200, 0.08)';
       bX.fillRect(0, 0, bC.width, bC.height);
 
-      // Draw multiple layers for power
+      // Draw crisp layers — vibrant core, no fuzz
       var layers = [
-        { color: 'rgba(255,255,240,1)', width: 3, blur: 0 },
-        { color: 'rgba(255,225,100,0.95)', width: 2.5, blur: 8 },
-        { color: 'rgba(255,215,0,0.7)', width: 5, blur: 25 },
-        { color: 'rgba(255,215,0,0.3)', width: 12, blur: 50 },
-        { color: 'rgba(255,215,0,0.1)', width: 24, blur: 80 }
+        { color: 'rgba(255,215,0,0.5)', width: 4, blur: 10 },
+        { color: 'rgba(255,235,140,1)', width: 1.5, blur: 3 },
+        { color: 'rgba(255,255,250,1)', width: 0.8, blur: 0 }
       ];
 
       layers.forEach(function (layer) {
@@ -206,29 +204,29 @@
         var branchPts = buildBoltPath(forkPt.x, forkPt.y, bEndX, bEndY, 30);
         branchPts.unshift(forkPt);
         bX.save();
-        bX.strokeStyle = 'rgba(255,225,100,0.6)';
-        bX.lineWidth = 1.5;
+        bX.strokeStyle = 'rgba(255,215,0,0.4)';
+        bX.lineWidth = 2;
         bX.shadowColor = '#FFD700';
-        bX.shadowBlur = 15;
+        bX.shadowBlur = 6;
         bX.lineCap = 'round';
         bX.beginPath();
         bX.moveTo(branchPts[0].x, branchPts[0].y);
         branchPts.forEach(function (p) { bX.lineTo(p.x, p.y); });
         bX.stroke();
-        bX.strokeStyle = 'rgba(255,215,0,0.2)';
-        bX.lineWidth = 5;
-        bX.shadowBlur = 30;
+        bX.strokeStyle = 'rgba(255,255,240,0.9)';
+        bX.lineWidth = 0.5;
+        bX.shadowBlur = 0;
         bX.stroke();
         bX.restore();
       }
 
-      // Impact flash at click point
-      var grad = bX.createRadialGradient(clickX, clickY, 0, clickX, clickY, 80);
-      grad.addColorStop(0, 'rgba(255,255,240,0.5)');
-      grad.addColorStop(0.3, 'rgba(255,215,0,0.2)');
+      // Impact flash at click point — tight and bright
+      var grad = bX.createRadialGradient(clickX, clickY, 0, clickX, clickY, 40);
+      grad.addColorStop(0, 'rgba(255,255,250,0.7)');
+      grad.addColorStop(0.4, 'rgba(255,215,0,0.25)');
       grad.addColorStop(1, 'transparent');
       bX.fillStyle = grad;
-      bX.fillRect(clickX - 80, clickY - 80, 160, 160);
+      bX.fillRect(clickX - 40, clickY - 40, 80, 80);
 
       // Fade out over 18 frames
       var fade = 0;
