@@ -2,37 +2,24 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Divider from '../../components/Divider.astro';
 import { getCollection } from 'astro:content';
+import { chapters } from '../../data/chapters';
 
 const allGuide = await getCollection('guide', ({ data }) => !data.draft);
-const publishedChapters = [...new Set(allGuide.map(g => g.data.chapter))].sort((a, b) => a - b);
 
-// Count subchapters per chapter (entries with order > 1)
+// Count sub-chapters per chapter
 const subchapterCounts: Record<number, number> = {};
 allGuide.forEach(g => {
   const ch = g.data.chapter;
-  const ord = g.data.order || 1;
-  if (ord > 1) subchapterCounts[ch] = (subchapterCounts[ch] || 0) + 1;
+  subchapterCounts[ch] = (subchapterCounts[ch] || 0) + 1;
 });
-
-const chapters = [
-  { num: 1, title: 'What is Bitcoin?', desc: 'Your journey begins with a deceptively simple question — one that even the experts struggle to answer.', slug: 'what-is-bitcoin' },
-  { num: 2, title: 'Why Bitcoin?', desc: "Bitcoin's main purpose isn't to be a speculative investment. It's not about making money — it's about fixing money.", slug: 'why-bitcoin' },
-  { num: 3, title: 'What Problems Does Bitcoin Solve?', desc: "Bitcoin isn't a solution looking for a problem. It's the answer to the most dangerous and deeply rooted problems plaguing civilization.", slug: 'problems-bitcoin-solves' },
-  { num: 4, title: "Bitcoin's Past", desc: 'A mysterious figure, a breakthrough invention, and a disappearance that changed everything.', slug: 'bitcoin-past' },
-  { num: 5, title: "Bitcoin's Properties", desc: 'A collection of revolutionary properties that have never existed together in a single asset — the hardest, most secure, and most fair money ever created.', slug: 'bitcoin-properties' },
-  { num: 6, title: 'So...What is Bitcoin Exactly?', desc: 'Strip away the buzzwords and look under the hood. Pure information, sound money, proof of work, a new kind of time, and the internet of money.', slug: 'what-is-bitcoin-exactly' },
-  { num: 7, title: "Bitcoin's Present", desc: 'Wall Street is in. Regulators are adapting. The narrative has shifted from speculation to inevitability.', slug: 'bitcoin-present' },
-  { num: 8, title: 'Why Bitcoin is Good as Fuck', desc: 'Freedom money. Ethical money. Energy money. A Trojan horse for human liberty disguised as a get-rich-quick scheme.', slug: 'why-bitcoin-is-good-af' },
-  { num: 9, title: "Bitcoin's Future", desc: "The macro forces are unstoppable. The technology is unstoppable. The adoption is unstoppable. It's a question of how fast.", slug: 'bitcoin-future' },
-];
 ---
 
-<BaseLayout title="Why Bitcoin Is Good As Fuck" description="A comprehensive, chapter-by-chapter guide to understanding Bitcoin from the ground up.">
+<BaseLayout title="Why Bitcoin Is Good As Fuck" description="A comprehensive, chapter-by-chapter compendium to understanding Bitcoin from the ground up.">
   <section class="guide-hero section">
     <div class="container">
       <header class="page-header reveal">
         <h1 class="guide-title" data-type>Why Bitcoin Is Good As Fuck</h1>
-        <p class="guide-subtitle">The Guide</p>
+        <p class="guide-subtitle">The Compendium</p>
       </header>
 
       <div class="guide-intro reveal">
@@ -52,23 +39,23 @@ const chapters = [
 
       <div class="chapter-grid stagger">
         {chapters.map((ch) => {
-          const isPublished = publishedChapters.includes(ch.num);
+          const count = subchapterCounts[ch.num] || 0;
           return (
-            <div class:list={['chapter-card', 'reveal', { 'chapter-card--draft': !isPublished }]}>
+            <a href={`/guide/chapter/${ch.num}`} class="chapter-card reveal tbb-link">
               <div class="chapter-num" aria-hidden="true">
                 {String(ch.num).padStart(2, '0')}
               </div>
               <h2 class="chapter-title">{ch.title}</h2>
               <p class="chapter-desc">{ch.desc}</p>
-              {subchapterCounts[ch.num] && (
-                <div class="chapter-subcount">+ {subchapterCounts[ch.num]} deep {subchapterCounts[ch.num] === 1 ? 'dive' : 'dives'}</div>
-              )}
-              {isPublished ? (
-                <a href={`/guide/${ch.slug}`} class="chapter-link tbb-link">Read chapter &rarr;</a>
+              {count > 0 ? (
+                <div class="chapter-subcount">{count} {count === 1 ? 'sub-chapter' : 'sub-chapters'}</div>
               ) : (
-                <span class="chapter-status">Coming soon</span>
+                <div class="chapter-status">Coming soon</div>
               )}
-            </div>
+              <span class="chapter-cta">
+                {count > 0 ? 'View chapter \u2192' : 'Coming soon'}
+              </span>
+            </a>
           );
         })}
       </div>
@@ -139,11 +126,14 @@ const chapters = [
   }
 
   .chapter-card {
+    display: block;
     padding: var(--space-5) var(--space-4);
     border: 1px solid var(--border-default);
     background: var(--black-card);
+    text-decoration: none;
     position: relative;
     transition: all 0.5s var(--ease-luxury);
+    cursor: crosshair;
   }
 
   .chapter-card:hover {
@@ -151,17 +141,6 @@ const chapters = [
     background: rgba(255, 215, 0, 0.02);
     box-shadow: 0 0 40px rgba(255, 215, 0, 0.06);
     transform: translateY(-3px);
-  }
-
-  .chapter-card--draft {
-    opacity: 0.5;
-  }
-
-  .chapter-card--draft:hover {
-    border-color: var(--border-default);
-    background: var(--black-card);
-    box-shadow: none;
-    transform: none;
   }
 
   .chapter-num {
@@ -186,10 +165,6 @@ const chapters = [
     color: var(--gold);
   }
 
-  .chapter-card--draft:hover .chapter-title {
-    color: var(--text-primary);
-  }
-
   .chapter-desc {
     font-size: 14px;
     font-weight: 400;
@@ -207,20 +182,6 @@ const chapters = [
     margin-bottom: var(--space-2);
   }
 
-  .chapter-link {
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    text-decoration: none;
-    font-weight: 400;
-    transition: color 0.3s ease;
-  }
-
-  .chapter-link:hover {
-    color: var(--gold);
-  }
-
   .chapter-status {
     font-family: var(--font-mono);
     font-size: 11px;
@@ -228,6 +189,20 @@ const chapters = [
     text-transform: uppercase;
     color: var(--text-muted);
     opacity: 0.5;
+    margin-bottom: var(--space-2);
+  }
+
+  .chapter-cta {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+
+  .chapter-card:hover .chapter-cta {
+    color: var(--gold);
   }
 
   /* ── Closer ── */

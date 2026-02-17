@@ -3,15 +3,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Terminal from '../components/Terminal.astro';
 import Divider from '../components/Divider.astro';
 import { getCollection } from 'astro:content';
+import { chapters } from '../data/chapters';
 
 const allGuide = await getCollection('guide', ({ data }) => !data.draft);
-const featuredChapters = allGuide
-  .filter((g) => g.data.order === 1)
-  .sort((a, b) => a.data.chapter - b.data.chapter);
+
+// Count sub-chapters per chapter
+const subchapterCounts: Record<number, number> = {};
+allGuide.forEach(g => {
+  const ch = g.data.chapter;
+  subchapterCounts[ch] = (subchapterCounts[ch] || 0) + 1;
+});
 ---
 
 <BaseLayout title="Home" description="The Bitcoin Breakdown - Your guide to understanding Bitcoin. Clear explanations, no hype, no jargon.">
-  <!-- Section 1: Hero — Headline, Owl, CTAs, Terminal -->
+  <!-- Section 1: Hero — Headline, Owl, CTAs -->
   <section class="hero">
     <div class="hero-owl" aria-hidden="true">
       <img src="/images/owl-hero.png" alt="" />
@@ -23,35 +28,84 @@ const featuredChapters = allGuide
 
     <div class="hero-cta-group">
       <a href="/guide/intro" class="btn btn--primary tbb-link">What is Bitcoin?</a>
-      <a href="/why-bitcoin" class="btn btn--ghost tbb-link">Why Bitcoin?</a>
-    </div>
-
-    <div class="hero-terminal reveal">
-      <Terminal
-        title="thebitcoinbreakdown.com"
-        lines={[
-          { prompt: true, text: 'bitcoin --explain' },
-          { text: '> Decentralizing money since 2009...' },
-          { text: '> 21 million. No more. Ever.' },
-          { text: '> You are not ready. But that\'s ok.' },
-        ]}
-      />
+      <a href="/guide/chapter/2" class="btn btn--ghost tbb-link">Why Bitcoin?</a>
     </div>
   </section>
 
   <Divider />
 
-  <!-- Section 3: Stats with Count-Up -->
+  <!-- Section 2: McAfee Quote -->
+  <section class="quote-section section">
+    <div class="container">
+      <aside class="home-quote reveal" data-compile data-final="You can't stop things like Bitcoin. It will be everywhere and the world will have to readjust. World governments will have to readjust.">
+        <p class="home-quote-text">
+          You can't stop things like Bitcoin. It will be everywhere and the world will have to readjust. World governments will have to readjust.
+        </p>
+        <p class="home-quote-attr">&mdash; John McAfee</p>
+      </aside>
+    </div>
+  </section>
+
+  <Divider />
+
+  <!-- Section 3: WBIGAF Compendium Tile -->
+  <section class="guide-teaser section">
+    <div class="container">
+      <div class="guide-teaser-inner reveal">
+        <div class="section-label">The Compendium</div>
+        <h2 class="guide-teaser-title">Why Bitcoin Is Good As Fuck</h2>
+        <p class="guide-teaser-desc">
+          9 chapters. 83 source documents. Years of research — distilled into a comprehensive, chapter-by-chapter journey through Bitcoin.
+        </p>
+        <a href="/guide" class="btn btn--primary tbb-link">Read the Compendium</a>
+      </div>
+    </div>
+  </section>
+
+  <Divider />
+
+  <!-- Section 4: Featured Chapters -->
+  <section class="articles-section section">
+    <div class="container--wide">
+      <div class="section-label">Featured Chapters</div>
+
+      <div class="chapter-list stagger">
+        {chapters.map((ch) => {
+          const count = subchapterCounts[ch.num] || 0;
+          return (
+            <a href={`/guide/chapter/${ch.num}`} class="chapter-row reveal tbb-link">
+              <span class="chapter-row-num">{String(ch.num).padStart(2, '0')}</span>
+              <span class="chapter-row-title">{ch.title}</span>
+              {count > 0 ? (
+                <span class="chapter-row-count">{count}</span>
+              ) : (
+                <span class="chapter-row-soon">Soon</span>
+              )}
+              <span class="chapter-row-arrow">&rarr;</span>
+            </a>
+          );
+        })}
+      </div>
+
+      <div class="view-all">
+        <a href="/guide" class="link-standalone tbb-link">View all chapters</a>
+      </div>
+    </div>
+  </section>
+
+  <Divider />
+
+  <!-- Section 5: Stats with Count-Up -->
   <section class="stats-section section">
     <div class="container">
       <div class="stat-grid reveal">
         <div class="stat-item">
-          <div class="stat-number count-up" data-target="28">0</div>
-          <div class="stat-label">Articles</div>
+          <div class="stat-number count-up" data-target="21">0</div>
+          <div class="stat-label">Sub-Chapters</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number count-up" data-target="5">0</div>
-          <div class="stat-label">Series</div>
+          <div class="stat-number count-up" data-target="9">0</div>
+          <div class="stat-label">Chapters</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">50+</div>
@@ -66,103 +120,26 @@ const featuredChapters = allGuide
 
   <Divider />
 
-  <!-- Section 4: Start Here — Dual Path Cards -->
-  <section class="start-here section">
-    <div class="container--wide">
-      <div class="section-label">Start Here</div>
-
-      <div class="path-grid stagger">
-        <a href="/guide/intro" class="path-card reveal tbb-link">
-          <div class="path-number" aria-hidden="true">01</div>
-          <h2 class="path-title">What is Bitcoin?</h2>
-          <p class="path-desc">
-            Begin from the beginning. A guided series that takes you from zero to a deep understanding of what Bitcoin actually is.
-          </p>
-          <span class="path-cta">Start the series &rarr;</span>
-        </a>
-
-        <a href="/why-bitcoin" class="path-card reveal tbb-link">
-          <div class="path-number" aria-hidden="true">02</div>
-          <h2 class="path-title">Why Bitcoin?</h2>
-          <p class="path-desc">
-            Why does Bitcoin matter? Why should you care? Explore the reasons people around the world are paying attention.
-          </p>
-          <span class="path-cta">Explore &rarr;</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <Divider />
-
-  <!-- Section 5: Guide Teaser -->
-  <section class="guide-teaser section">
+  <!-- Section 6: Terminal -->
+  <section class="terminal-section section">
     <div class="container">
-      <div class="guide-teaser-inner reveal">
-        <div class="section-label">The Guide</div>
-        <h2 class="guide-teaser-title">Why Bitcoin Is Good As Fuck</h2>
-        <p class="guide-teaser-desc">
-          9 chapters. 83 source documents. Years of research — distilled into a comprehensive, chapter-by-chapter journey through Bitcoin.
-        </p>
-        <a href="/guide" class="btn btn--primary tbb-link">Read the Guide</a>
+      <div class="terminal-wrapper reveal">
+        <Terminal
+          title="thebitcoinbreakdown.com"
+          lines={[
+            { prompt: true, text: 'bitcoin --explain' },
+            { text: '> Decentralizing money since 2009...' },
+            { text: '> 21 million. No more. Ever.' },
+            { text: '> You are not ready. But that\'s ok.' },
+          ]}
+        />
       </div>
     </div>
   </section>
 
   <Divider />
 
-  <!-- Section 6: McAfee Quote -->
-  <section class="quote-section section">
-    <div class="container">
-      <aside class="home-quote reveal" data-compile data-final="You can't stop things like Bitcoin. It will be everywhere and the world will have to readjust. World governments will have to readjust.">
-        <p class="home-quote-text">
-          You can't stop things like Bitcoin. It will be everywhere and the world will have to readjust. World governments will have to readjust.
-        </p>
-        <p class="home-quote-attr">&mdash; John McAfee</p>
-      </aside>
-    </div>
-  </section>
-
-  <Divider />
-
-  <!-- Section 6: Callout Demo -->
-  <section class="callout-demo section">
-    <div class="container">
-      <div class="callout reveal" data-callout="tip">
-        <div class="callout-title">This site is different</div>
-        <div class="callout-content">
-          <p>No jargon. No hype. No financial advice. Just clear, honest explanations about the most important invention of the 21st century.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <Divider />
-
-  <!-- Section 7: Featured Chapters -->
-  <section class="articles-section section">
-    <div class="container--wide">
-      <div class="section-label">Featured Chapters</div>
-
-      <div class="chapter-list stagger">
-        {featuredChapters.map((ch) => (
-          <a href={`/guide/${ch.id}`} class="chapter-row reveal tbb-link">
-            <span class="chapter-row-num">{String(ch.data.chapter).padStart(2, '0')}</span>
-            <span class="chapter-row-title">{ch.data.title}</span>
-            <span class="chapter-row-arrow">&rarr;</span>
-          </a>
-        ))}
-      </div>
-
-      <div class="view-all">
-        <a href="/guide" class="link-standalone tbb-link">View all chapters</a>
-      </div>
-    </div>
-  </section>
-
-  <Divider />
-
-  <!-- Section 8: Resources Teaser -->
+  <!-- Section 7: Resources Teaser -->
   <section class="resources-section section">
     <div class="container">
       <div class="resources-inner reveal">
@@ -178,7 +155,7 @@ const featuredChapters = allGuide
 
   <Divider />
 
-  <!-- Section 9: Glitch Closer -->
+  <!-- Section 8: Glitch Closer -->
   <section class="closer-section section">
     <div class="container">
       <p class="closer-text reveal">
@@ -189,7 +166,7 @@ const featuredChapters = allGuide
 </BaseLayout>
 
 <style>
-  /* ── Section 1: Hero — Headline, Owl, CTAs, Terminal ── */
+  /* ── Section 1: Hero — Headline, Owl, CTAs ── */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -257,133 +234,12 @@ const featuredChapters = allGuide
     z-index: 1;
   }
 
-  .hero-terminal {
-    max-width: 500px;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-  }
-
   @keyframes owlFloat {
     0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
     50% { transform: translate(-50%, -51%) scale(1.01); opacity: 0.95; }
   }
 
-  /* ── Section 3: Stats ── */
-  .stats-section {
-    padding: var(--space-7) 0;
-  }
-
-  /* ── Section 4: Start Here ── */
-  .start-here {
-    padding-bottom: var(--space-8);
-  }
-
-  .path-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-  }
-
-  .path-card {
-    display: block;
-    padding: var(--space-6) var(--space-5);
-    border: 1px solid var(--border-default);
-    background: var(--black-card);
-    text-decoration: none;
-    transition: all 0.5s var(--ease-luxury);
-    position: relative;
-    cursor: crosshair;
-  }
-
-  .path-card:hover {
-    border-color: var(--gold);
-    background: rgba(255, 215, 0, 0.02);
-    box-shadow: 0 0 40px rgba(255, 215, 0, 0.06);
-    transform: translateY(-3px);
-    text-shadow: none;
-  }
-
-  .path-number {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: var(--gold-muted);
-    opacity: 0.4;
-    margin-bottom: var(--space-4);
-  }
-
-  .path-title {
-    font-size: clamp(22px, 3vw, 30px);
-    font-weight: 300;
-    color: var(--text-primary);
-    margin-bottom: var(--space-3);
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
-  }
-
-  .path-card:hover .path-title {
-    color: var(--gold);
-  }
-
-  .path-desc {
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: var(--space-4);
-  }
-
-  .path-cta {
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    font-weight: 400;
-    transition: color 0.3s ease;
-  }
-
-  .path-card:hover .path-cta {
-    color: var(--gold);
-  }
-
-  /* ── Section 5: Guide Teaser ── */
-  .guide-teaser {
-    padding: var(--space-7) 0;
-  }
-
-  .guide-teaser-inner {
-    text-align: center;
-    padding: var(--space-7) var(--space-5);
-    border: 1px solid var(--border-default);
-    background: var(--black-card);
-  }
-
-  .guide-teaser-inner .section-label {
-    border-bottom: none;
-    margin-bottom: var(--space-4);
-    padding-bottom: 0;
-  }
-
-  .guide-teaser-title {
-    font-size: clamp(24px, 4vw, 36px);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--gold);
-    margin-bottom: var(--space-3);
-    letter-spacing: 0.5px;
-  }
-
-  .guide-teaser-desc {
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    max-width: 520px;
-    margin: 0 auto var(--space-5);
-  }
-
-  /* ── Section 6: Quote ── */
+  /* ── Section 2: Quote ── */
   .quote-section {
     padding: var(--space-8) 0;
   }
@@ -431,12 +287,43 @@ const featuredChapters = allGuide
     font-style: normal;
   }
 
-  /* ── Section 6: Callout Demo ── */
-  .callout-demo {
-    padding: var(--space-6) 0;
+  /* ── Section 3: Guide Teaser ── */
+  .guide-teaser {
+    padding: var(--space-7) 0;
   }
 
-  /* ── Section 7: Featured Chapters ── */
+  .guide-teaser-inner {
+    text-align: center;
+    padding: var(--space-7) var(--space-5);
+    border: 1px solid var(--border-default);
+    background: var(--black-card);
+  }
+
+  .guide-teaser-inner .section-label {
+    border-bottom: none;
+    margin-bottom: var(--space-4);
+    padding-bottom: 0;
+  }
+
+  .guide-teaser-title {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: var(--space-3);
+    letter-spacing: 0.5px;
+  }
+
+  .guide-teaser-desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto var(--space-5);
+  }
+
+  /* ── Section 4: Featured Chapters ── */
   .articles-section {
     padding-bottom: var(--space-9);
   }
@@ -487,6 +374,25 @@ const featuredChapters = allGuide
     color: var(--gold);
   }
 
+  .chapter-row-count {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--gold-muted);
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  .chapter-row-soon {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+
   .chapter-row-arrow {
     font-size: 14px;
     color: var(--text-muted);
@@ -503,7 +409,22 @@ const featuredChapters = allGuide
     margin-top: var(--space-6);
   }
 
-  /* ── Section 8: Resources ── */
+  /* ── Section 5: Stats ── */
+  .stats-section {
+    padding: var(--space-7) 0;
+  }
+
+  /* ── Section 6: Terminal ── */
+  .terminal-section {
+    padding: var(--space-7) 0;
+  }
+
+  .terminal-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* ── Section 7: Resources ── */
   .resources-section {
     padding-bottom: var(--space-9);
   }
@@ -538,7 +459,7 @@ const featuredChapters = allGuide
     margin: 0 auto var(--space-5);
   }
 
-  /* ── Section 9: Glitch Closer ── */
+  /* ── Section 8: Glitch Closer ── */
   .closer-section {
     padding: var(--space-9) 0;
     text-align: center;
@@ -575,10 +496,6 @@ const featuredChapters = allGuide
       width: 100%;
       max-width: 280px;
       text-align: center;
-    }
-
-    .path-grid {
-      grid-template-columns: 1fr;
     }
   }
 </style>

@@ -361,7 +361,7 @@ a:hover {
 }
 
 .prose img {
-  max-width: 560px;
+  max-width: min(560px, 100%);
   margin: var(--space-5) auto;
   display: block;
 }

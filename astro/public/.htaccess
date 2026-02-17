@@ -44,5 +44,16 @@ RewriteRule ^blog/2023/they-invented-a-better-money-who-does-that/?$ /guide/they
 RewriteRule ^blog/2023/unparalleled-new/?$ /guide/unparalleled-new/ [R=301,L]
 RewriteRule ^blog/2023/orange-not-gold/?$ /guide/orange-not-gold/ [R=301,L]
 
+# Deleted overview chapters → chapter landing pages
+RewriteRule ^guide/what-is-bitcoin/?$ /guide/chapter/1 [R=301,L]
+RewriteRule ^guide/why-bitcoin/?$ /guide/chapter/2 [R=301,L]
+RewriteRule ^guide/problems-bitcoin-solves/?$ /guide/chapter/3 [R=301,L]
+RewriteRule ^guide/bitcoin-past/?$ /guide/chapter/4 [R=301,L]
+RewriteRule ^guide/bitcoin-properties/?$ /guide/chapter/5 [R=301,L]
+RewriteRule ^guide/what-is-bitcoin-exactly/?$ /guide/chapter/6 [R=301,L]
+RewriteRule ^guide/bitcoin-present/?$ /guide/chapter/7 [R=301,L]
+RewriteRule ^guide/why-bitcoin-is-good-af/?$ /guide/chapter/8 [R=301,L]
+RewriteRule ^guide/bitcoin-future/?$ /guide/chapter/9 [R=301,L]
+
 # Custom 404
 ErrorDocument 404 /404.html

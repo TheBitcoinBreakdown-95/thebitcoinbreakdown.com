@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Divider from '../../../components/Divider.astro';
+import { getCollection } from 'astro:content';
+import { chapters } from '../../../data/chapters';
+
+export function getStaticPaths() {
+  return chapters.map((ch) => ({
+    params: { num: String(ch.num) },
+    props: { chapter: ch },
+  }));
+}
+
+const { chapter } = Astro.props;
+
+const allGuide = await getCollection('guide', ({ data }) => !data.draft);
+const subchapters = allGuide
+  .filter((g) => g.data.chapter === chapter.num)
+  .sort((a, b) => (a.data.order || 1) - (b.data.order || 1));
+
+const hasContent = subchapters.length > 0;
+---
+
+<BaseLayout title={`Chapter ${chapter.num}: ${chapter.title}`} description={chapter.desc}>
+  <section class="ch-hero section">
+    <div class="container">
+      <header class="page-header reveal">
+        <div class="ch-label">Chapter {String(chapter.num).padStart(2, '0')}</div>
+        <h1 class="ch-title" data-type>{chapter.title}</h1>
+        <p class="ch-desc">{chapter.desc}</p>
+      </header>
+    </div>
+  </section>
+
+  <Divider />
+
+  {hasContent ? (
+    <section class="subchapters-section section">
+      <div class="container--wide">
+        <div class="section-label">Sub-Chapters</div>
+
+        <div class="subchapter-grid stagger">
+          {subchapters.map((sc, i) => {
+            const scNum = `${chapter.num}.${(sc.data.order || 1) - 1}`;
+            const wordCount = sc.body ? sc.body.split(/\s+/).length : 0;
+            const minutes = Math.ceil(wordCount / 200);
+            return (
+              <a href={`/guide/${sc.id}`} class="subchapter-card reveal tbb-link">
+                <div class="sc-num" aria-hidden="true">{scNum}</div>
+                <h2 class="sc-title">{sc.data.title}</h2>
+                <p class="sc-desc">{sc.data.description}</p>
+                <div class="sc-meta">
+                  <span>{minutes} min read</span>
+                  {i === 0 && <span class="sc-badge">Start here</span>}
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  ) : (
+    <section class="coming-soon-section section">
+      <div class="container">
+        <div class="coming-soon reveal">
+          <div class="coming-soon-icon" aria-hidden="true">&#8383;</div>
+          <h2 class="coming-soon-title">Coming Soon</h2>
+          <p class="coming-soon-desc">
+            This chapter is being written through the WBIGAF book pipeline. Sub-chapters will appear here as they're completed.
+          </p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Divider />
+
+  <nav class="ch-back section" aria-label="Back to compendium">
+    <div class="container">
+      <a href="/guide" class="link-standalone tbb-link">All Chapters</a>
+    </div>
+  </nav>
+</BaseLayout>
+
+<style>
+  .ch-hero {
+    padding: var(--space-9) 0 var(--space-6);
+  }
+
+  .ch-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: var(--space-3);
+  }
+
+  .ch-title {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: var(--space-3);
+  }
+
+  .ch-desc {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 620px;
+  }
+
+  /* ── Sub-Chapter Grid ── */
+  .subchapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .subchapter-card {
+    display: block;
+    padding: var(--space-5) var(--space-4);
+    border: 1px solid var(--border-default);
+    background: var(--black-card);
+    text-decoration: none;
+    transition: all 0.5s var(--ease-luxury);
+    cursor: crosshair;
+  }
+
+  .subchapter-card:hover {
+    border-color: var(--gold);
+    background: rgba(255, 215, 0, 0.02);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.06);
+    transform: translateY(-3px);
+  }
+
+  .sc-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold-muted);
+    opacity: 0.4;
+    margin-bottom: var(--space-3);
+  }
+
+  .sc-title {
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+
+  .subchapter-card:hover .sc-title {
+    color: var(--gold);
+  }
+
+  .sc-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+  }
+
+  .sc-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .sc-badge {
+    color: var(--gold);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    padding: 2px 8px;
+  }
+
+  /* ── Coming Soon ── */
+  .coming-soon {
+    text-align: center;
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .coming-soon-icon {
+    font-size: 48px;
+    margin-bottom: var(--space-4);
+    opacity: 0.3;
+    color: var(--gold-muted);
+  }
+
+  .coming-soon-title {
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+    letter-spacing: 1px;
+  }
+
+  .coming-soon-desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ── Back Link ── */
+  .ch-back {
+    padding: var(--space-6) 0 var(--space-8);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .subchapter-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Divider from '../../components/Divider.astro';
+import { chapters } from '../../data/chapters';
 
 export async function getStaticPaths() {
   const guide = await getCollection('guide');
@@ -19,9 +20,10 @@ const wordCount = entry.body ? entry.body.split(/\s+/).length : 0;
 const minutes = Math.ceil(wordCount / 200);
 const readingTime = minutes <= 1 ? '1 min read' : `${minutes} min read`;
 
-// Get all guide entries for chapter navigation
+// Get all guide entries for navigation
 const allGuide = await getCollection('guide', ({ data }) => !data.draft);
-// Sort all entries by (chapter, order) for linear navigation
+
+// Sort all entries by (chapter, order) for linear prev/next navigation
 const sortedGuide = [...allGuide].sort((a, b) => {
   if (a.data.chapter !== b.data.chapter) return a.data.chapter - b.data.chapter;
   return (a.data.order || 1) - (b.data.order || 1);
@@ -30,16 +32,25 @@ const currentIndex = sortedGuide.findIndex(g => g.id === entry.id);
 const prevEntry = currentIndex > 0 ? sortedGuide[currentIndex - 1] : null;
 const nextEntry = currentIndex < sortedGuide.length - 1 ? sortedGuide[currentIndex + 1] : null;
 
-// Format chapter label (e.g., "Chapter 3" for overview, "Chapter 3.1" for subchapters)
+// Get siblings (same chapter) for sub-chapter navigation
+const siblings = allGuide
+  .filter(g => g.data.chapter === entry.data.chapter)
+  .sort((a, b) => (a.data.order || 1) - (b.data.order || 1));
+const showSiblingNav = siblings.length > 1;
+
+// Chapter metadata
+const chapterMeta = chapters.find(c => c.num === entry.data.chapter);
+
+// Format chapter label
 function chapterLabel(e: typeof entry) {
   const ch = e.data.chapter;
   const ord = e.data.order || 1;
-  return ord === 1 ? `Ch. ${ch}` : `Ch. ${ch}.${ord - 1}`;
+  return `Ch. ${ch}.${ord - 1}`;
 }
 function chapterHeading(e: typeof entry) {
   const ch = e.data.chapter;
   const ord = e.data.order || 1;
-  return ord === 1 ? `Chapter ${ch}` : `Chapter ${ch}.${ord - 1}`;
+  return `Chapter ${ch}.${ord - 1}`;
 }
 
 // Build TOC from headings (3+ required)
@@ -78,6 +89,37 @@ const showToc = tocHeadings.length >= 3;
           </nav>
         )}
 
+        {showSiblingNav && chapterMeta && (
+          <nav class="chapter-nav" aria-label="Chapter sub-chapters">
+            <div class="chapter-nav-title">
+              <a href={`/guide/chapter/${entry.data.chapter}`} class="chapter-nav-link tbb-link">
+                Chapter {entry.data.chapter} &mdash; {chapterMeta.title}
+              </a>
+            </div>
+            <ul class="chapter-nav-list">
+              {siblings.map((sib) => {
+                const isCurrent = sib.id === entry.id;
+                const sibNum = `${sib.data.chapter}.${(sib.data.order || 1) - 1}`;
+                return (
+                  <li class:list={[{ 'chapter-nav-current': isCurrent }]}>
+                    {isCurrent ? (
+                      <span class="chapter-nav-item">
+                        <span class="chapter-nav-num">{sibNum}</span>
+                        {sib.data.title}
+                      </span>
+                    ) : (
+                      <a href={`/guide/${sib.id}`} class="chapter-nav-item tbb-link">
+                        <span class="chapter-nav-num">{sibNum}</span>
+                        {sib.data.title}
+                      </a>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        )}
+
         <Content />
       </div>
 
@@ -91,9 +133,9 @@ const showToc = tocHeadings.length >= 3;
               <span class="guide-nav-title">{chapterLabel(prevEntry)}: {prevEntry.data.title}</span>
             </a>
           ) : (
-            <a href="/guide" class="guide-nav-link guide-nav-prev tbb-link">
+            <a href={`/guide/chapter/${entry.data.chapter}`} class="guide-nav-link guide-nav-prev tbb-link">
               <span class="guide-nav-label">&larr; Back</span>
-              <span class="guide-nav-title">All Chapters</span>
+              <span class="guide-nav-title">Chapter {entry.data.chapter}</span>
             </a>
           )}
 
@@ -154,7 +196,80 @@ const showToc = tocHeadings.length >= 3;
     color: var(--text-muted);
   }
 
-  /* ── Chapter Navigation ── */
+  /* ── Chapter Sub-Chapter Navigation ── */
+  .chapter-nav {
+    border: 1px solid var(--border-default);
+    background: var(--black-card);
+    padding: var(--space-4) var(--space-5);
+    margin: var(--space-3) 0 var(--space-5);
+  }
+
+  .chapter-nav-title {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: var(--space-3);
+    font-weight: 400;
+  }
+
+  .chapter-nav-title a {
+    color: var(--gold-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .chapter-nav-title a:hover {
+    color: var(--gold);
+  }
+
+  .chapter-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .chapter-nav-list li {
+    margin-bottom: var(--space-1);
+  }
+
+  .chapter-nav-item {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.3s ease;
+  }
+
+  a.chapter-nav-item:hover {
+    color: var(--gold);
+  }
+
+  .chapter-nav-current .chapter-nav-item {
+    color: var(--gold);
+    font-weight: 400;
+  }
+
+  .chapter-nav-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--gold-muted);
+    opacity: 0.5;
+    min-width: 28px;
+    flex-shrink: 0;
+  }
+
+  .chapter-nav-current .chapter-nav-num {
+    opacity: 1;
+    color: var(--gold);
+  }
+
+  /* ── Prev/Next Navigation ── */
   .guide-nav {
     padding: var(--space-6) 0;
   }

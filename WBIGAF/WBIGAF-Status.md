@@ -1,14 +1,14 @@
 # WBIGAF Status
 
-> **Last updated:** February 16, 2026
+> **Last updated:** February 17, 2026
 
 ---
 
 ## Current Work
 
-**Chapter 3: Problems Bitcoin Solves** — Sub-Chapter 3.1 (Fiat Capitalism) — **Step 6: DRAFT — READY TO BEGIN**
+**Chapter 3: Problems Bitcoin Solves** — Sub-Chapter 3.2 (Inflation & the Cantillon Effect) — **Step 4: ARGUMENT BLOCKS — COMPLETE**
 
-Steps 1-5 complete. **23 argument blocks + 10 amendments** approved. **705 inventory items**, **52 bibliography sources**. User review added Farrington "Capital Strip Mine" (23 items) and Austrian "recession as cure" argument (17 items from Mises, Rothbard, Woods, Garrison). Amendments system operational. Ready to draft.
+Ch3.1 COMPLETE (deployed). Ch3.2 Steps 1-4 done: 152 items, 17 argument blocks, 25 bibliography sources. Ready for Step 5 (User Review).
 `WBIGAF/3. What Problems Does it solve/Chapter 3 Metadata/transition-ch3.md`
 
 ---
@@ -47,7 +47,7 @@ Steps 1-5 complete. **23 argument blocks + 10 amendments** approved. **705 inven
 
 | Chapter | Transition Doc | Sub-Chapters Started |
 |---------|---------------|---------------------|
-| Ch 3 | `WBIGAF/3. What Problems Does it solve/Chapter 3 Metadata/transition-ch3.md` | 3.1 (Steps 1-5 COMPLETE — 23 blocks + 10 amendments, 705 items, 52 sources — Step 6 Draft READY) |
+| Ch 3 | `WBIGAF/3. What Problems Does it solve/Chapter 3 Metadata/transition-ch3.md` | 3.1 COMPLETE (deployed), 3.2 at Step 4 (Argument Blocks DONE — 152 items, 17 blocks, 25 bib sources) |
 | Ch 4-9 | Not yet created | None |
 
 ---
@@ -68,6 +68,11 @@ Full author voice profile built from 28-post corpus (~37,000 words of original w
 **Validation:** Two test passages scored perfectly (Mining 15/15, Separation of Money & State 19/19)
 
 **All Voice DNA files:** `WBIGAF/0. Project/Voice DNA/`
+
+### Chapter 3.1 Fiat Capitalism — COMPLETE (Steps 1-7)
+
+**Step 6 — Draft:** ~10,000 words, 23 sections, 241 endnotes, V4 effects applied
+**Step 7 — Published:** Draft deployed to website at `/guide/fiat-capitalism` (Feb 16, 2026)
 
 ### Chapter 3.1 Steps 1-5 — ALL COMPLETE
 

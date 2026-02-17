@@ -1,16 +1,16 @@
 # Chapter 3 Transition: Problems Bitcoin Solves
 
-**Last updated:** February 16, 2026
+**Last updated:** February 17, 2026
 **Purpose:** Progress snapshot for Chapter 3. Read after `WBIGAF/WBIGAF.md` and `WBIGAF/WBIGAF-Status.md`.
 
 ---
 
 ## Where We Are
 
-**Current sub-chapter:** Chapter 3, Sub-Chapter 1: **Fiat Capitalism**
-**Current pipeline step:** Step 6 — **DRAFT** — READY TO BEGIN
+**Current sub-chapter:** Chapter 3, Sub-Chapter 2: **Inflation & the Cantillon Effect**
+**Current pipeline step:** Step 5 — **USER REVIEW** — READY
 
-Steps 1-5 complete. 23 argument blocks + 10 amendments approved. Ready to draft.
+Ch3.1 COMPLETE (deployed). Ch3.2 Steps 1-4 done: 152 items across 23 themes, 17 argument blocks, 25 bibliography sources. No orphans routed out (all items fit scope).
 
 ---
 
@@ -67,27 +67,56 @@ Steps 1-5 complete. 23 argument blocks + 10 amendments approved. Ready to draft.
 
 ---
 
-## Next Step: Draft (Step 6) — READY
+## Ch3.1 Fiat Capitalism — COMPLETE
+
+- **Steps 1-5:** 705 items, 23 blocks + 10 amendments, 52 bibliography sources
+- **Step 6 (Draft):** ~10,000 words, 23 sections, 241 endnotes, V4 effects applied
+- **Step 7 (Published):** Deployed to website at `/guide/fiat-capitalism` (Feb 16, 2026)
+
+---
+
+### Ch3.2 — Steps 2-4 (completed this session)
+
+**Step 2 — Scraping:**
+- 9 links attempted: 4 DONE (WebFetch/WebSearch), 2 PARTIAL, 2 SKIPPED, 1 reused from 3.1
+- 27 new items extracted (#200-235)
+- Inventory expanded from 69 → 96 items
+
+**Step 3 — Deep Research:**
+- 10 gaps identified (Cantillon biography, historical debasement, hyperinflation cases, CPI manipulation, purchasing power data, technology deflation, time preference, money mechanics, political instability, counterarguments)
+- Claude WebSearch supplement filled 8 of 10 gaps
+- 56 new items (#500-555): Cantillon bio, Roman debasement, Weimar/Hungary/Zimbabwe/Venezuela data, CPI mechanics, EPI wage data, Booth/Ammous theory, Keynes/Lenin quote
+- Off-platform prompt written in `research.md` Part 2 (Gaps 8 + 10 still thin)
+- Inventory expanded from 96 → 152 items
+
+**Step 4 — Argument Blocks:**
+- **17 blocks** built with polemic sequencing (escalating impact)
+- Sequence: historical grounding → mechanism → personal impact → data → theory → case studies → consequences → political → current → kill shot
+- No orphans routed out — all items fit Ch3.2 scope
+- **Part 1.5 (Amendments)** reserved for Step 5
+
+---
+
+## Next Step: User Review (Step 5) — READY
 
 ### What to do:
-1. **Load Voice DNA profile** (`WBIGAF/0. Project/Voice DNA/voice-dna-profile.md`)
-2. **Read catalog.md** — all 23 blocks + 10 amendments in Part 1.5
-3. **Draft one block at a time** — each block → one section of the sub-chapter
-4. Merge amendments into their target blocks during drafting
-5. Apply **Chicago-style endnotes** for every claim, quote, and data point
-6. Follow **polemic sequence** (blocks in draft order, with 22 after 12 and 23 after 14)
-7. Apply V4 effects where appropriate
-8. **Output:** `3.1 Fiat Capitalism/draft.md`
+1. Review the 17 Argument Blocks in `catalog.md` Part 1
+2. Reorder blocks for narrative momentum (if needed)
+3. Cut blocks that belong elsewhere / merge blocks that overlap
+4. Flag blocks that need more evidence
+5. Add color, quotes, personal anecdotes, last-minute research
+6. All changes go in Part 1.5 (Amendments) — never edit blocks directly
+7. Approve the structural sequence for drafting
 
-### Draft order (blocks):
-1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 → 11 → 12 → **22** → 13 → 14 → **23** → 15 → 16 → 17 → 18 → 19 → 20 → 21
+### Optional: Run off-platform deep research
+- Copy prompt from `research.md` Part 2 into Gemini/ChatGPT
+- Paste results back — Claude will extract additional items (#600+)
+- Particularly useful for Gap 8 (money creation mechanics) and Gap 10 (counterarguments)
 
-### Key principles:
-- Block thesis → section topic sentence; logic chain → paragraph structure; key quotes pre-selected
-- No padding — length driven by argument depth
-- Sequence for escalating impact, not taxonomy
-- Voice DNA profile governs all stylistic choices
-- catalog.md is the draft blueprint — don't invent arguments not in the inventory
+### Key files for Step 5:
+- `3.2 Inflation and the Cantillon Effect/catalog.md` — Part 1: 17 Argument Blocks + Part 2: 152 items
+- `3.2 Inflation and the Cantillon Effect/research.md` — Gap analysis + off-platform prompt
+- `3.2 Inflation and the Cantillon Effect/sources.md` — Scraped content (reference)
 
 ---
 
@@ -95,8 +124,7 @@ Steps 1-5 complete. 23 argument blocks + 10 amendments approved. Ready to draft.
 
 - **Scraped content → `sources.md`** (full text, one section per link)
 - **Link metadata → `links.md`** (registry, status, bibliography)
-- **New inventory items → `catalog.md`** Part 2, numbering from #706+
-- **Amendments → `catalog.md`** Part 1.5 (append-only, merged at draft time)
-- **Source files are read-only** — never modify `Fiat Capitalism.md`
-- **One sub-chapter at a time** — don't work ahead to 3.2
+- **New inventory items → `catalog.md`** Part 2, numbering from #200+
+- **Source files are read-only** — never modify original .md files
+- **One sub-chapter at a time** — don't work ahead to 3.3
 - **Chicago 18th ed. Notes-Bibliography** for all citations

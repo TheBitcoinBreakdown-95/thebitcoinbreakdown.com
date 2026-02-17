@@ -2,8 +2,9 @@
 
 > **Purpose:** Tracks catalog items found in one sub-chapter's pipeline that belong in a different sub-chapter (or chapter). Each destination sub-chapter imports its orphans at Step 1 (Triage).
 >
-> **Last updated:** February 16, 2026
+> **Last updated:** February 17, 2026
 > **Source:** Ch 3.1 Fiat Capitalism (Step 4 Argument Blocks)
+> **Consumed:** Ch 3.2 items consumed at Step 1 (Feb 17)
 
 ---
 
@@ -11,11 +12,11 @@
 
 | Item # | From | Text | Source |
 |--------|------|------|--------|
-| 227 | 3.1 | Price inflation is 5.3% from baseline of -2.2% (technology deflation masked by fiat) — not the reported 3.1% | Lyn Alden, Link #5 |
-| 228 | 3.1 | Gold appreciated ~4% per year over 150+ years — buys more copper, oil, wheat than it did, unlike fiat | Lyn Alden, Link #5 |
-| 262 | 3.1 | Cantillon Effect: "When the government can print money, the people that benefit the most are the people that get access to that money first… rich people get richer without adding much" | Jimmy Song, Link #15 |
-| 350 | 3.1 | During pandemic, trickle-down stimulus pushed new money to banks/institutions who bought hard assets knowing inflation would follow | Rufas Kamau, Link #17 |
-| 351 | 3.1 | Hard asset polarization: the 1% own most hard assets that 99% must continue to pay for — resulting in "The Great Resignation" | Rufas Kamau, Link #17 |
+| 227 | 3.1 | Price inflation is 5.3% from baseline of -2.2% (technology deflation masked by fiat) — not the reported 3.1% | Lyn Alden, Link #5 | [CONSUMED by 3.2 — merged into #40] |
+| 228 | 3.1 | Gold appreciated ~4% per year over 150+ years — buys more copper, oil, wheat than it did, unlike fiat | Lyn Alden, Link #5 | [CONSUMED by 3.2 — merged into #49] |
+| 262 | 3.1 | Cantillon Effect: "When the government can print money, the people that benefit the most are the people that get access to that money first… rich people get richer without adding much" | Jimmy Song, Link #15 | [CONSUMED by 3.2 — item #67] |
+| 350 | 3.1 | During pandemic, trickle-down stimulus pushed new money to banks/institutions who bought hard assets knowing inflation would follow | Rufas Kamau, Link #17 | [CONSUMED by 3.2 — item #68] |
+| 351 | 3.1 | Hard asset polarization: the 1% own most hard assets that 99% must continue to pay for — resulting in "The Great Resignation" | Rufas Kamau, Link #17 | [CONSUMED by 3.2 — item #69] |
 
 ---
 
