@@ -98,3 +98,14 @@ When the world transitions to a bitcoin standard, a lot of things change forever
 <span class="glitch" data-text="Bitcoin is a wrecking ball to the powers that be">Bitcoin is a wrecking ball to the powers that be</span> because it destroys corruption and restores freedom and sovereignty to the people. It's money of the people, by the people, and for the people.
 
 And there's nothing anyone can do to stop it.
+
+
+## Deep Dives
+
+Each section below goes deep on a specific problem that Bitcoin solves. This is where the overview becomes the evidence.
+
+- [3.1: Fiat Capitalism](/guide/fiat-capitalism) — The system isn't broken. It's working exactly as designed — just not for you.
+- 3.2: Inflation & the Cantillon Effect — *Coming soon*
+- 3.3: CBDCs, Surveillance & Control — *Coming soon*
+- 3.4: Systematic Economic Risk — *Coming soon*
+- 3.5: For the Billions, Not the Billionaires — *Coming soon*

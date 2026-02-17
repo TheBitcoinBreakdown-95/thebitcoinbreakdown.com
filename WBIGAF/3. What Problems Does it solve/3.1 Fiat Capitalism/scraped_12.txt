@@ -1,0 +1,139 @@
+HOMEMARKETSINVESTOR FOCUS MISDIRECTS FIDELITY ‘BITCOIN FIRST’ REPORT
+MARKETS
+Investor Focus Misdirects Fidelity ‘Bitcoin First’ Report
+By
+Shawn Amick
+February 8, 2022
+ ShareFacebookTwitterLinkedinReddIt
+
+On January 18, financial services giant Fidelity published “Bitcoin First: Why Investors Need To Consider Bitcoin Separately From Digital Assets,” written by Director Of Research Chris Kuiper and Research Analyst Jack Neureuter.
+
+For many in the space, institutional recognition of bitcoin being a separate entity from what is commonly referred to as “crypto” was seen as a net-positive for Bitcoin. Fidelity should be commended for this recognition, and its attempt at due diligence to understand bitcoin as a digital asset in its own class. However, this report shows that institutional education still has a long way to go.
+
+‘Which One?’
+
+The paper opens with the dilemma of choosing which digital assets to invest in:
+
+“Once investors have decided to invest in digital assets, the next question becomes, ‘Which one?’”
+
+With the aptly chosen title of the report, Fidelity presents an articulated outline to guide its investors on a path of digital scarcity. Among the outline, Fidelity makes the following points:
+
+-“BITCOIN IS BEST UNDERSTOOD AS A MONETARY GOOD, AND ONE OF THE PRIMARY INVESTMENT THESES FOR BITCOIN IS AS THE STORE OF VALUE ASSET IN AN INCREASINGLY DIGITAL WORLD.
+-BITCOIN IS FUNDAMENTALLY DIFFERENT FROM ANY OTHER DIGITAL ASSET.
+-THERE IS NOT NECESSARILY MUTUAL EXCLUSIVITY BETWEEN THE SUCCESS OF THE BITCOIN NETWORK AND ALL OTHER DIGITAL ASSET NETWORKS.
+-OTHER NON-BITCOIN PROJECTS SHOULD BE EVALUATED FROM A DIFFERENT PERSPECTIVE THAN BITCOIN.
+-BITCOIN SHOULD BE CONSIDERED AN ENTRY POINT FOR TRADITIONAL ALLOCATORS LOOKING TO GAIN EXPOSURE TO DIGITAL ASSETS.
+-INVESTORS SHOULD HOLD TWO DISTINCTLY SEPARATE FRAMEWORKS FOR CONSIDERING INVESTMENT IN THIS DIGITAL ASSET ECOSYSTEM.”
+
+After defining the outline, Fidelity moves to the first point: defining bitcoin as a monetary good.
+
+What Is Bitcoin?
+
+Fidelity discerns the difference between Bitcoin, the network, and bitcoin, the asset, commonly represented through capitalization of the “B” when referring to the network. Then, the authors begin to discuss bitcoin as a monetary good and as a network.
+
+They discuss, on page five, how bitcoin has a (roughly) 1.8% calculable inflation rate that is inherently finite, and tied to a fixed amount of 21 million coins. This programmatic issuance ensures the first and only manifestation of digital scarcity that has ever existed as it relates to monetary goods — this scarcity drives the value of bitcoin in a way that cannot be replicated. Why can it not be replicated?
+
+“Because Bitcoin is currently the most decentralized and secure monetary network (relative to all other digital assets), a newer blockchain network and digital asset that tries to improve upon bitcoin as a monetary good will necessarily have to differentiate itself by sacrificing one or both of these properties,” as the Fidelity report explains.
+
+Fidelity, paraphrasing Vitalik Buterin, the founder of Ethereum, reports that this is in part due to the understanding that a database “can only deliver on two of three guarantees at one time: decentralization, security, or scalability.” This requires a sacrifice in order to attempt the replacement of Bitcoin which ultimately guarantees its failure.
+
+When referencing the success and endurance of the network’s capacity to prevail against unforeseen obstacles, they provided a list of events in Bitcoin’s history that Fidelity views as negative, which were ultimately overcome. Here is the list:
+
+Some of these events were actually net positives for Bitcoin, not negatives.
+
+First, the anonymous creator was necessary to the success of the network. Having no target, no political associations, no beliefs attached to the protocol, are what allowed it to become an opt-out form of money that gives sovereignty of money back to the individual. A leader or creator assigns their identity’s system of beliefs upon the network, and Satoshi Nakamoto knew this, which is why they stayed pseudonymous.
+
+Second, the “civil war,” also known in the space as “the blocksize wars,” established a true ethos to a programmatic and decentralized form of money, asserting that the amount of data stored within Bitcoin blocks should remain small enough to allow participation in the network with the relatively easy hosting of nodes, a critical aspect of Bitcoin’s decentralization. This was a proving ground, and vital to the story of Bitcoin, a tale of vision and consensus that would ultimately shape the protocol.
+
+After discussing the “civil war,” the authors of the report move on to discussing hard forks (when consensus of the protocol splits, resulting in the creation of a new token) that were created in the name of scalability. Why does the issue of scalability matter for a digital asset?
+
+Bitcoin Scaling
+
+“SCALABILITY HAS NOTABLY BEEN THE ACHILLES HEEL OF THE BITCOIN NETWORK AS IT MAXIMIZES DECENTRALIZATION AND SECURITY, BUT AS A RESULT IS THE NETWORK WITH ONE OF THE SLOWEST TRANSACTION THROUGHPUTS.”
+
+–FIDELITY
+
+This is not an accurate representation of the Bitcoin network. As Fidelity mentions multiple times in this paper, Bitcoin puts the focus on decentralization and security above all else. This means a slow-moving base layer, which is intentionally slow and not built to scale. Bitcoin was always meant to scale off-chain.
+
+“Off chain” refers to the placement of applications built on top of Bitcoin, utilizing the ledger of Bitcoin for record keeping and use of bitcoin, the currency in ways that do not require every transaction to be processed on the base layer as soon as it happens. The most successful iteration of Layer 2 applications to date is the Lightning Network, which only receives a small paragraph of focus in this paper, which you’ll find below:
+
+In the paper, Lightning is mentioned as a passerby in the conversation, yet it has led to El Salvador being able to adopt bitcoin as legal tender because of its capacity to scale at a nation-state level.
+
+To claim scalability is an “Achilles heel” for Bitcoin is to question why gold was not capable of instant settlement on a global scale. The base layer of an asset must move slowly and securely, and systems are meant to be built on top of that base layer.
+
+Now, I’m sure you’re wondering why the text in the above picture was highlighted? After discussing scalability and the iterations of Bitcoin that spawned due to hard forks focused on changing this scalability, the Fidelity report presents a Bitcoin versus Ethereum comparison that discusses smart contracts.
+
+Ethereum Vs. Bitcoin
+
+Below you will find a graphic showing the differences between Ethereum and Bitcoin. Note that in the previous picture referencing Lightning, the report authors stated that this Layer 2 application was “built using smart contract functionality.”
+
+In this comparison, the Fidelity authors paint an inaccurate picture of whether the Bitcoin network can host smart contracts. Smart contracts have always been on Bitcoin, they’ve just been more limited than those on other platforms. Typically, protocols like Ethereum use the terminology of “Turing-complete” smart contracts. This means the code can simulate a Turing machine and is considered computationally more expressive, allowing for grander use cases.
+
+Taproot, a protocol upgrade from last year, allows for more expansive use of smart contracts on Bitcoin. It does not enable the use of smart contracts, because smart contracts already existed on Bitcoin. This is a consistent misnomer in understanding Bitcoin, as many people think that smart contracts are not, or were not possible, until Taproot. In actuality, Taproot further expanded existing applications.
+
+It may seem like the intention in highlighting this is to simply show where the Fidelity authors are wrong, but that’s not the case because they got a lot right in this paper, which is primarily focused on institutional adoption. The material of this report can certainly drive the narrative Fidelity wants to achieve.
+
+But let’s go over one last, crucial component necessary to understanding Bitcoin.
+
+Bitcoin’s Purpose
+
+As mentioned earlier, Fidelity sees the primary reason for creation and technological innovation as a monetary good. As a financial services company, this perspective makes sense, and is demonstrated by the below excerpt:
+
+“The first-mover advantage [of Bitcoin] led to a lack of true competition for bitcoin’s primary use case as a monetary asset and a store of value and creates a drastically different return profile for bitcoin investors.”
+
+The primary use case is not as a monetary asset and it is worth noting that, upon its creation, there was no value to speak of that allowed for a store-of-value use case. Bitcoin’s true primary use case is as a tool for protest. Demonstrating this in the genesis block, the first block mined on Bitcoin, this text is etched in digital stone: “The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.”
+
+Bitcoin is a direct response to the financial crisis of 2008 and the inability of our centralized systems to take proper action. Bitcoin is an opt-out monetary good that allows the user to exit the nation-state system and take sovereignty of their own wealth. It is a voice against wrongful and misguided authority and the embodiment of protest.
+
+What Can We Conclude From Fidelity’s Take On Bitcoin?
+
+“TRADITIONAL INVESTORS TYPICALLY APPLY A TECHNOLOGY INVESTING FRAMEWORK TO BITCOIN, LEADING TO THE CONCLUSION BITCOIN AS A FIRST-MOVER TECHNOLOGY WILL EASILY BE SUPPLANTED BY A SUPERIOR ONE OR HAVE LOWER RETURNS. HOWEVER, AS WE HAVE ARGUED HERE, BITCOIN’S FIRST TECHNOLOGICAL BREAKTHROUGH WAS NOT AS A SUPERIOR PAYMENT TECHNOLOGY BUT AS A SUPERIOR FORM OF MONEY.”
+
+–FIDELITY
+
+In this report, Fidelity got a lot of things right: bitcoin being considered separate from crypto, the Lindy effect showing that Bitcoin grows stronger by the day, the network’s enforceable scarcity as a highlight, why Bitcoin can’t be supplanted, struggles Bitcoin has endured, presenting bitcoin as a starting point for digital portfolios and the risks associated.
+
+It’s clear that Fidelity meant for this report to target institutional buy-in, so it makes sense that it would tailor the narrative to one that entices long-term investment strategies built on the continued success of this new monetary good. But that does not mean that we should not, at all times, be vigilant and purposeful around the proper guidance of what Bitcoin is, and what it is truly capable of.
+
+This is a guest post by Shawn Amick. Opinions expressed are entirely their own and do not necessarily reflect those of BTC Inc or Bitcoin Magazine.
+
+TAGScryptoFeatureFidelitygenesis blockInstitutionsLightning networkSatoshi NakamotoScaling
+ ShareFacebookTwitterLinkedinReddIt
+Previous article
+Wells Fargo Says It Is Not Too Late to Buy Bitcoin
+Next article
+Fiat Fundraising Fiasco Sparks Bitcoin Donation Drive For Freedom Truckers
+	
+Shawn Amick
+Shawn Amick is an author "Dick, Stan Greene", podcast Co-host for Citizens of Blockchain, Substack blogger, and Bitcoin Magazine Contributor.
+RELATED ARTICLES
+MARKETS
+Bitcoin Price Reclaims $70,000 After Deep February Slide
+MARKETS
+Coinbase (COIN) Surges 18%, Strategy (MSTR) Jumps 10% as Crypto Stocks Jump 
+MARKETS
+Bitcoin’s Next Stop Might Be $50,000, Not the Moon, Says Standard Chartered Analyst
+Bitcoin Portfolio Tracker & Media Updates
+Bitcoin
+BTC/USD
+$68,520.00
+24hr %:
+-3.0%
+24hr High:
+$70,898.00
+24hr Low:
+$68,096.00
+VIEW 150+ BITCOIN CHARTS
+LATEST NEWS
+Bitcoin Price Reclaims $70,000 After Deep February Slide
+February 15, 2026
+ 
+How Silent.Link Solves SIM-Swap Risks and Roaming Hassles for Traveling Bitcoiners
+February 13, 2026
+ 
+Coinbase (COIN) Surges 18%, Strategy (MSTR) Jumps 10% as Crypto Stocks Jump 
+February 13, 2026
+ 
+White House Executive Director: Trillions Are Waiting To Enter Bitcoin And Crypto, Working Hard on Market Structure Bill
+February 13, 2026
+Load more

@@ -142,3 +142,17 @@ To be honest, I don't think you should be allowed an opinion on bitcoin if you c
 Either bitcoin succeeds or the human race irrevocably falls into a technocratic dystopia.
 
 The stakes are that high.
+
+## Deep Dives
+
+Each section below goes deeper into why bitcoin matters. This is where the overview becomes the conviction.
+
+- [2.1: Why Should You Care?](/guide/why-should-you-care) — Bitcoin doesn't give a fuck about you. So why should you give a fuck about it?
+- [2.2: Bitcoin Will Save the World](/guide/bitcoin-will-save-the-world) — The most important project in the world for securing our freedoms in a digital age.
+- [2.3: Why was Bitcoin Invented?](/guide/why-was-bitcoin-invented) — Pull back the timechain and understand the forces that made bitcoin inevitable.
+- [2.4: Why Will Bitcoin Win?](/guide/why-will-bitcoin-win) — Gold was independently chosen by every society for thousands of years. Bitcoin is better.
+- [2.5: Absolute Scarcity](/guide/absolute-scarcity) — Money doesn't grow on trees, because if it did we would call it leaves.
+- [2.6: The Trust Machine](/guide/the-trust-machine) — A system for electronic transactions without relying on trust.
+- [2.7: Designed Money](/guide/they-invented-a-better-money-who-does-that) — All bitcoin is, is fake money. So why does it have any value at all?
+- [2.8: Bitcoin is Unparalleled](/guide/unparalleled-new) — There are no competitors in its quest for digital gold.
+- [2.9: Orange Not Gold](/guide/orange-not-gold) — On a Halloween night, 15 years ago, everything changed.

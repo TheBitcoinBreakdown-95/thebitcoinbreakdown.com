@@ -1,14 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PostCard from '../components/PostCard.astro';
 import Terminal from '../components/Terminal.astro';
 import Divider from '../components/Divider.astro';
 import { getCollection } from 'astro:content';
 
-const allPosts = await getCollection('posts', ({ data }) => !data.draft);
-const recentPosts = allPosts
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 6);
+const allGuide = await getCollection('guide', ({ data }) => !data.draft);
+const featuredChapters = allGuide
+  .filter((g) => g.data.order === 1)
+  .sort((a, b) => a.data.chapter - b.data.chapter);
 ---
 
 <BaseLayout title="Home" description="The Bitcoin Breakdown - Your guide to understanding Bitcoin. Clear explanations, no hype, no jargon.">
@@ -23,7 +22,7 @@ const recentPosts = allPosts
     <h1 class="hero-headline reveal" data-type>THE BITCOIN BREAKDOWN</h1>
 
     <div class="hero-cta-group">
-      <a href="/blog/2023/intro" class="btn btn--primary tbb-link">What is Bitcoin?</a>
+      <a href="/guide/intro" class="btn btn--primary tbb-link">What is Bitcoin?</a>
       <a href="/why-bitcoin" class="btn btn--ghost tbb-link">Why Bitcoin?</a>
     </div>
 
@@ -73,7 +72,7 @@ const recentPosts = allPosts
       <div class="section-label">Start Here</div>
 
       <div class="path-grid stagger">
-        <a href="/blog/2023/intro" class="path-card reveal tbb-link">
+        <a href="/guide/intro" class="path-card reveal tbb-link">
           <div class="path-number" aria-hidden="true">01</div>
           <h2 class="path-title">What is Bitcoin?</h2>
           <p class="path-desc">
@@ -140,39 +139,24 @@ const recentPosts = allPosts
 
   <Divider />
 
-  <!-- Section 7: Latest Articles -->
+  <!-- Section 7: Featured Chapters -->
   <section class="articles-section section">
     <div class="container--wide">
-      <div class="section-label">Latest Articles</div>
+      <div class="section-label">Featured Chapters</div>
 
-      {recentPosts.length > 0 ? (
-        <div class="card-grid stagger">
-          {recentPosts.map((post) => (
-            <div class="reveal">
-              <PostCard
-                title={post.data.title}
-                description={post.data.description}
-                pubDate={post.data.pubDate}
-                slug={post.id}
-                tags={post.data.tags}
-                image={post.data.image}
-              />
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div class="empty-state">
-          <div class="empty-icon">&#8383;</div>
-          <h3 class="empty-title">No blocks mined yet</h3>
-          <p class="empty-desc">Articles are on the way. Check back soon.</p>
-        </div>
-      )}
+      <div class="chapter-list stagger">
+        {featuredChapters.map((ch) => (
+          <a href={`/guide/${ch.id}`} class="chapter-row reveal tbb-link">
+            <span class="chapter-row-num">{String(ch.data.chapter).padStart(2, '0')}</span>
+            <span class="chapter-row-title">{ch.data.title}</span>
+            <span class="chapter-row-arrow">&rarr;</span>
+          </a>
+        ))}
+      </div>
 
-      {recentPosts.length > 0 && (
-        <div class="view-all">
-          <a href="/blog" class="link-standalone tbb-link">View all articles</a>
-        </div>
-      )}
+      <div class="view-all">
+        <a href="/guide" class="link-standalone tbb-link">View all chapters</a>
+      </div>
     </div>
   </section>
 
@@ -452,9 +436,66 @@ const recentPosts = allPosts
     padding: var(--space-6) 0;
   }
 
-  /* ── Section 7: Articles ── */
+  /* ── Section 7: Featured Chapters ── */
   .articles-section {
     padding-bottom: var(--space-9);
+  }
+
+  .chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .chapter-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.06);
+    transition: all 0.3s ease;
+  }
+
+  .chapter-row:first-child {
+    border-top: 1px solid rgba(255, 215, 0, 0.06);
+  }
+
+  .chapter-row:hover {
+    background: rgba(255, 215, 0, 0.03);
+  }
+
+  .chapter-row-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold-muted);
+    opacity: 0.4;
+    flex-shrink: 0;
+    width: 30px;
+  }
+
+  .chapter-row-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    flex: 1;
+  }
+
+  .chapter-row:hover .chapter-row-title {
+    color: var(--gold);
+  }
+
+  .chapter-row-arrow {
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .chapter-row:hover .chapter-row-arrow {
+    color: var(--gold);
   }
 
   .view-all {

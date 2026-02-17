@@ -21,42 +21,31 @@ const readingTime = minutes <= 1 ? '1 min read' : `${minutes} min read`;
 
 // Get all guide entries for chapter navigation
 const allGuide = await getCollection('guide', ({ data }) => !data.draft);
-const chapterEntries = allGuide
-  .filter((g) => g.data.chapter === entry.data.chapter)
-  .sort((a, b) => (a.data.order || 1) - (b.data.order || 1));
+// Sort all entries by (chapter, order) for linear navigation
+const sortedGuide = [...allGuide].sort((a, b) => {
+  if (a.data.chapter !== b.data.chapter) return a.data.chapter - b.data.chapter;
+  return (a.data.order || 1) - (b.data.order || 1);
+});
+const currentIndex = sortedGuide.findIndex(g => g.id === entry.id);
+const prevEntry = currentIndex > 0 ? sortedGuide[currentIndex - 1] : null;
+const nextEntry = currentIndex < sortedGuide.length - 1 ? sortedGuide[currentIndex + 1] : null;
 
-// Find prev/next chapters
-const allChapters = [...new Set(allGuide.map(g => g.data.chapter))].sort((a, b) => a - b);
-const currentChapterIndex = allChapters.indexOf(entry.data.chapter);
-const prevChapter = currentChapterIndex > 0
-  ? allGuide.find(g => g.data.chapter === allChapters[currentChapterIndex - 1])
-  : null;
-const nextChapter = currentChapterIndex < allChapters.length - 1
-  ? allGuide.find(g => g.data.chapter === allChapters[currentChapterIndex + 1])
-  : null;
+// Format chapter label (e.g., "Chapter 3" for overview, "Chapter 3.1" for subchapters)
+function chapterLabel(e: typeof entry) {
+  const ch = e.data.chapter;
+  const ord = e.data.order || 1;
+  return ord === 1 ? `Ch. ${ch}` : `Ch. ${ch}.${ord - 1}`;
+}
+function chapterHeading(e: typeof entry) {
+  const ch = e.data.chapter;
+  const ord = e.data.order || 1;
+  return ord === 1 ? `Chapter ${ch}` : `Chapter ${ch}.${ord - 1}`;
+}
 
 // Build TOC from headings (3+ required)
 const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 const showToc = tocHeadings.length >= 3;
 
-// Related blog posts mapping (guide chapter → blog post slugs)
-const relatedPostMap: Record<number, string[]> = {
-  1: ['2023/intro', '2023/what-is-bitcoin-2', '2023/what-is-bitcoin-3', '2023/bitcoin-is-digital-gold'],
-  2: ['2023/why-should-you-care', '2023/bitcoin-will-save-the-world', '2023/why-was-bitcoin-invented'],
-  3: ['2023/why-was-bitcoin-invented', '2023/bitcoin-is-ethical-money', '2023/the-manhattan-project-for-human-freedom'],
-  4: ['2022/the-mystery-of-satoshi-nakamoto', '2022/the-trust-machine', '2023/why-was-bitcoin-invented'],
-  5: ['2022/absolute-scarcity', '2023/bitcoin-is-digital-gold', '2023/bitcoin-is-money', '2023/bitcoin-is-a-network'],
-  6: ['2023/bitcoin-is-information', '2023/bitcoin-is-time', '2023/bitcoin-is-the-internet-of-money', '2023/the-great-excel-spreadsheet-in-the-sky'],
-  7: ['2023/why-will-bitcoin-win', '2022/absolute-scarcity', '2023/orange-not-gold'],
-  8: ['2023/bitcoin-is-ethical-money', '2023/the-manhattan-project-for-human-freedom', '2023/they-invented-a-better-money-who-does-that'],
-  9: ['2023/why-will-bitcoin-win', '2023/bitcoin-is-the-internet-of-money'],
-};
-
-const allPosts = await getCollection('posts', ({ data }) => !data.draft);
-const relatedSlugs = relatedPostMap[entry.data.chapter] || [];
-const relatedPosts = relatedSlugs
-  .map(slug => allPosts.find(p => p.id === slug))
-  .filter((p): p is NonNullable<typeof p> => p != null);
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
@@ -64,7 +53,7 @@ const relatedPosts = relatedSlugs
     <div class="container">
       <header class="guide-header reveal">
         <div class="guide-chapter-label">
-          Chapter {entry.data.chapter}
+          {chapterHeading(entry)}
         </div>
         <h1 data-type>{entry.data.title}</h1>
         <p class="guide-description">{entry.data.description}</p>
@@ -92,28 +81,14 @@ const relatedPosts = relatedSlugs
         <Content />
       </div>
 
-      {relatedPosts.length > 0 && (
-        <aside class="related-articles reveal">
-          <div class="related-label">Related Articles</div>
-          <div class="related-list">
-            {relatedPosts.map((post) => (
-              <a href={`/blog/${post.id}`} class="related-link tbb-link">
-                <span class="related-title">{post.data.title}</span>
-                <span class="related-arrow">&rarr;</span>
-              </a>
-            ))}
-          </div>
-        </aside>
-      )}
-
       <Divider />
 
       <nav class="guide-nav reveal" aria-label="Chapter navigation">
         <div class="guide-nav-inner">
-          {prevChapter ? (
-            <a href={`/guide/${prevChapter.id}`} class="guide-nav-link guide-nav-prev tbb-link">
+          {prevEntry ? (
+            <a href={`/guide/${prevEntry.id}`} class="guide-nav-link guide-nav-prev tbb-link">
               <span class="guide-nav-label">&larr; Previous</span>
-              <span class="guide-nav-title">Ch. {prevChapter.data.chapter}: {prevChapter.data.title}</span>
+              <span class="guide-nav-title">{chapterLabel(prevEntry)}: {prevEntry.data.title}</span>
             </a>
           ) : (
             <a href="/guide" class="guide-nav-link guide-nav-prev tbb-link">
@@ -122,10 +97,10 @@ const relatedPosts = relatedSlugs
             </a>
           )}
 
-          {nextChapter ? (
-            <a href={`/guide/${nextChapter.id}`} class="guide-nav-link guide-nav-next tbb-link">
+          {nextEntry ? (
+            <a href={`/guide/${nextEntry.id}`} class="guide-nav-link guide-nav-next tbb-link">
               <span class="guide-nav-label">Next &rarr;</span>
-              <span class="guide-nav-title">Ch. {nextChapter.data.chapter}: {nextChapter.data.title}</span>
+              <span class="guide-nav-title">{chapterLabel(nextEntry)}: {nextEntry.data.title}</span>
             </a>
           ) : (
             <a href="/guide" class="guide-nav-link guide-nav-next tbb-link">
@@ -177,70 +152,6 @@ const relatedPosts = relatedSlugs
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--text-muted);
-  }
-
-  /* ── Related Articles ── */
-  .related-articles {
-    margin-top: var(--space-6);
-    padding: var(--space-5) var(--space-4);
-    border: 1px solid var(--border-default);
-    background: var(--black-card);
-  }
-
-  .related-label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold-muted);
-    margin-bottom: var(--space-3);
-  }
-
-  .related-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  .related-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-2) var(--space-3);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 215, 0, 0.06);
-    transition: all 0.3s ease;
-  }
-
-  .related-link:last-child {
-    border-bottom: none;
-  }
-
-  .related-link:hover {
-    background: rgba(255, 215, 0, 0.03);
-  }
-
-  .related-title {
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--text-secondary);
-    transition: color 0.3s ease;
-  }
-
-  .related-link:hover .related-title {
-    color: var(--gold);
-  }
-
-  .related-arrow {
-    font-size: 14px;
-    color: var(--text-muted);
-    transition: color 0.3s ease;
-    flex-shrink: 0;
-    margin-left: var(--space-3);
-  }
-
-  .related-link:hover .related-arrow {
-    color: var(--gold);
   }
 
   /* ── Chapter Navigation ── */

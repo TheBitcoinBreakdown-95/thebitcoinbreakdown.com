@@ -134,3 +134,19 @@ It might take 5-10 years of ignoring it and multiple exposures before you realiz
 Bitcoin doesn't need you, but it'll be there when you need bitcoin.
 
 Your journey down the rabbit hole has just begun.
+
+## Deep Dives
+
+Each section below explores a different angle of what bitcoin is. This is where the overview becomes the deep understanding.
+
+- [1.1: Intro](/guide/intro) — Forget everything you know about bitcoin. Your fall down the rabbit hole starts here.
+- [1.2: What is bitcoin???](/guide/what-is-bitcoin-2) — The question everyone asks but no one seems to have a good answer for.
+- [1.3: Bitcoin is Digital Gold](/guide/bitcoin-is-digital-gold) — The first and most popular cryptocurrency — and why that label barely scratches the surface.
+- [1.4: The Great Excel Spreadsheet in the Sky](/guide/the-great-excel-spreadsheet-in-the-sky) — Think of bitcoin like the ultimate Google Doc — a shared ledger in the cloud.
+- [1.5: Bitcoin is Information](/guide/bitcoin-is-information) — Because bitcoin is just an internet ledger, bitcoin is pure information.
+- [1.6: What is Bitcoin?](/guide/what-is-bitcoin-3) — The next evolution in money. A 21st century monetary technology that will outlast fiat.
+- [1.7: Bitcoin is a Network](/guide/bitcoin-is-a-network) — A global interconnected computer network made up of tens of thousands of nodes.
+- [1.8: Bitcoin is Time](/guide/bitcoin-is-time) — A decentralized clock keeping track of time across tens of thousands of computers.
+- [1.9: Bitcoin is Money](/guide/bitcoin-is-money) — To understand what bitcoin is, you have to understand what money is.
+- [1.10: Bitcoin is the Internet of Money](/guide/bitcoin-is-the-internet-of-money) — Not money for the internet — the internet of money.
+- [1.11: Other Bitcoin Definitions](/guide/other-peoples-bitcoin-definitions) — How the experts define the undefinable.

@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Divider from '../../components/Divider.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+const speeches = allPosts.filter(p => p.data.category === 'speeches').sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+const memes = allPosts.filter(p => p.data.category === 'memes');
+---
+
+<BaseLayout title="Media" description="Speeches, talks, memes, and other Bitcoin content from The Bitcoin Breakdown.">
+  <section class="media-hero section">
+    <div class="container">
+      <header class="page-header reveal">
+        <h1 class="media-title" data-type>Media</h1>
+        <p class="media-subtitle">Speeches, talks, memes, and other content.</p>
+      </header>
+    </div>
+  </section>
+
+  <Divider />
+
+  <section class="media-section section">
+    <div class="container--wide">
+      <div class="media-grid stagger">
+        <a href="/speeches" class="media-card reveal tbb-link">
+          <div class="media-num" aria-hidden="true">01</div>
+          <h2 class="media-card-title">Speeches</h2>
+          <p class="media-card-desc">Talks, speeches, and important moments in Bitcoin history.</p>
+          <div class="media-card-count">{speeches.length} {speeches.length === 1 ? 'entry' : 'entries'}</div>
+          <span class="media-card-cta">View speeches &rarr;</span>
+        </a>
+
+        <a href="/memes" class="media-card reveal tbb-link">
+          <div class="media-num" aria-hidden="true">02</div>
+          <h2 class="media-card-title">Memes</h2>
+          <p class="media-card-desc">The best Bitcoin memes, curated for your entertainment and education.</p>
+          <div class="media-card-count">{memes.length} {memes.length === 1 ? 'entry' : 'entries'}</div>
+          <span class="media-card-cta">View memes &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .media-hero {
+    padding: var(--space-9) 0 var(--space-6);
+  }
+
+  .media-title {
+    font-size: clamp(32px, 6vw, 56px);
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: var(--space-2);
+  }
+
+  .media-subtitle {
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+  }
+
+  /* ── Media Grid ── */
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .media-card {
+    display: block;
+    padding: var(--space-6) var(--space-5);
+    border: 1px solid var(--border-default);
+    background: var(--black-card);
+    text-decoration: none;
+    transition: all 0.5s var(--ease-luxury);
+    position: relative;
+    cursor: crosshair;
+  }
+
+  .media-card:hover {
+    border-color: var(--gold);
+    background: rgba(255, 215, 0, 0.02);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.06);
+    transform: translateY(-3px);
+  }
+
+  .media-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold-muted);
+    opacity: 0.4;
+    margin-bottom: var(--space-4);
+  }
+
+  .media-card-title {
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+
+  .media-card:hover .media-card-title {
+    color: var(--gold);
+  }
+
+  .media-card-desc {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-3);
+  }
+
+  .media-card-count {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: var(--space-3);
+  }
+
+  .media-card-cta {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+
+  .media-card:hover .media-card-cta {
+    color: var(--gold);
+  }
+
+  @media (max-width: 600px) {
+    .media-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

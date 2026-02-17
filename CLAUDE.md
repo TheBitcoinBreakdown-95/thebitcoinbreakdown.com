@@ -2,7 +2,7 @@
 
 This file defines how Claude Code should think, plan, execute, verify, and improve itself while working in this repository. It is the root authority for behavior, navigation, and project context.
 
-> **Session start reminder**: Consult `TODO.md` for current progress and next steps before beginning new work.
+> **Session start reminder**: For **website** work, consult `tasks/TODO.md`. For **WBIGAF book** work, consult `WBIGAF/WBIGAF.md`.
 
 ---
 ---
@@ -78,7 +78,11 @@ c:\Users\GC\Documents\TBB\
 │   ├── drafts/             ← WIP (gitignored)
 │   └── templates/          ← New post template
 │
-├── WBIGAF/                 ← Source research notes (83 files, 9 chapters)
+├── WBIGAF/                 ← Book project (separate from website)
+│   ├── WBIGAF.md           ← Book project operating manual
+│   ├── WBIGAF-Status.md    ← Book progress tracker
+│   ├── 0. Project/         ← Voice DNA profile + planning docs
+│   └── 1-9. [chapters]/    ← Source research + pipeline files
 │
 ├── astro/                  ← Site generator
 │   ├── public/images/      ← Localized images (~510 MB)
@@ -91,9 +95,12 @@ c:\Users\GC\Documents\TBB\
 │   ├── src/content.config.ts    ← Content collection schemas
 │   └── dist/                    ← Built HTML (deployed to Hostinger)
 │
+├── tasks/                  ← Task tracking
+│   ├── TODO.md             ← Website task checklist (Phases 1-8)
+│   └── lessons.md          ← Cross-session learning log
+│
 ├── .github/workflows/deploy.yml ← Auto-deploy on push
-├── CLAUDE.md               ← This file
-└── TODO.md                 ← Task checklist
+└── CLAUDE.md               ← This file (website operating manual)
 ```
 
 ### Key Files to Edit
@@ -109,6 +116,8 @@ c:\Users\GC\Documents\TBB\
 | JS effects | `astro/src/scripts/interactions.js` |
 | New blog post | `TBB/posts/YYYY/filename.md` |
 | New guide chapter | `TBB/guide/filename.md` |
+| Book project context | `WBIGAF/WBIGAF.md` |
+| Voice DNA profile | `WBIGAF/0. Project/Voice DNA/voice-dna-profile.md` |
 
 ---
 
@@ -269,8 +278,9 @@ When given a bug report or issue:
 - Mark tasks complete as they are finished — do not batch completions
 
 ### Cross-Session Tracking
-- Maintain `TODO.md` as the persistent task list
-- Update it as tasks are completed or new ones are discovered
+- **Website tasks:** `tasks/TODO.md` (Phases 1-8)
+- **Book tasks:** `WBIGAF/WBIGAF-Status.md` + per-chapter transition docs
+- Update the relevant tracker as tasks are completed or new ones are discovered
 
 ### Cross-Session Learning
 - Maintain `tasks/lessons.md` as a persistent log of corrections and patterns
@@ -281,7 +291,7 @@ When given a bug report or issue:
 - Promote recurring patterns to CLAUDE.md rules
 
 ### Execution Order
-1. **Check TODO.md** — Know where you left off
+1. **Check task tracker** — `tasks/TODO.md` for website, `WBIGAF/WBIGAF-Status.md` for book
 2. **Plan First** — Write a checklist before implementing
 3. **Verify Plan** — Review plan before starting
 4. **Track Progress** — Mark items complete as you go

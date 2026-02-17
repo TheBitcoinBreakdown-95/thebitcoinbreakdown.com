@@ -20,5 +20,29 @@ RewriteRule ^feed/?$ /rss.xml [R=301,L]
 # WordPress wp-content uploads (images still at same paths)
 # No redirect needed — images are at /images/ now
 
+# Blog posts moved to guide (Chapter 1 — What is Bitcoin?)
+RewriteRule ^blog/2023/intro/?$ /guide/intro/ [R=301,L]
+RewriteRule ^blog/2023/what-is-bitcoin-2/?$ /guide/what-is-bitcoin-2/ [R=301,L]
+RewriteRule ^blog/2023/bitcoin-is-digital-gold/?$ /guide/bitcoin-is-digital-gold/ [R=301,L]
+RewriteRule ^blog/2023/the-great-excel-spreadsheet-in-the-sky/?$ /guide/the-great-excel-spreadsheet-in-the-sky/ [R=301,L]
+RewriteRule ^blog/2023/bitcoin-is-information/?$ /guide/bitcoin-is-information/ [R=301,L]
+RewriteRule ^blog/2023/what-is-bitcoin-3/?$ /guide/what-is-bitcoin-3/ [R=301,L]
+RewriteRule ^blog/2023/bitcoin-is-a-network/?$ /guide/bitcoin-is-a-network/ [R=301,L]
+RewriteRule ^blog/2023/bitcoin-is-time/?$ /guide/bitcoin-is-time/ [R=301,L]
+RewriteRule ^blog/2023/bitcoin-is-money/?$ /guide/bitcoin-is-money/ [R=301,L]
+RewriteRule ^blog/2023/bitcoin-is-the-internet-of-money/?$ /guide/bitcoin-is-the-internet-of-money/ [R=301,L]
+RewriteRule ^blog/2023/other-peoples-bitcoin-definitions/?$ /guide/other-peoples-bitcoin-definitions/ [R=301,L]
+
+# Blog posts moved to guide (Chapter 2 — Why Bitcoin?)
+RewriteRule ^blog/2023/why-should-you-care/?$ /guide/why-should-you-care/ [R=301,L]
+RewriteRule ^blog/2023/bitcoin-will-save-the-world/?$ /guide/bitcoin-will-save-the-world/ [R=301,L]
+RewriteRule ^blog/2023/why-was-bitcoin-invented/?$ /guide/why-was-bitcoin-invented/ [R=301,L]
+RewriteRule ^blog/2023/why-will-bitcoin-win/?$ /guide/why-will-bitcoin-win/ [R=301,L]
+RewriteRule ^blog/2022/absolute-scarcity/?$ /guide/absolute-scarcity/ [R=301,L]
+RewriteRule ^blog/2022/the-trust-machine/?$ /guide/the-trust-machine/ [R=301,L]
+RewriteRule ^blog/2023/they-invented-a-better-money-who-does-that/?$ /guide/they-invented-a-better-money-who-does-that/ [R=301,L]
+RewriteRule ^blog/2023/unparalleled-new/?$ /guide/unparalleled-new/ [R=301,L]
+RewriteRule ^blog/2023/orange-not-gold/?$ /guide/orange-not-gold/ [R=301,L]
+
 # Custom 404
 ErrorDocument 404 /404.html
