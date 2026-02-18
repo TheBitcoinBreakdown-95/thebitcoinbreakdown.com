@@ -1,6 +1,6 @@
 # The Bitcoin Breakdown
 
-**Bitcoin education. No hype. No jargon. No paywalls.**
+Helping you breakdown the complexity of the digital monetary revolution. 
 
 [thebitcoinbreakdown.com](https://thebitcoinbreakdown.com)
 
