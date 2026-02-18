@@ -1,6 +1,6 @@
 # The Bitcoin Breakdown
 
-Helping you breakdown the complexity of the digital monetary revolution. 
+Helping breakdown the complexity of the digital monetary revolution. 
 
 [thebitcoinbreakdown.com](https://thebitcoinbreakdown.com)
 
