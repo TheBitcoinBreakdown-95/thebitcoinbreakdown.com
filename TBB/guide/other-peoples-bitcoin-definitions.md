@@ -9,8 +9,6 @@ draft: false
 
 ![](/images/2023/09/Giancarnevale_None_dd96ba52-e4bf-4ffa-95b4-e605f88ce3c8-1024x1024.png)
 
-Even though I've spent years amassing tons of bitcoin knowledge, and pondered over the nature of this invention for hundreds of hours, I still find it valuable to read and digest how other people define bitcoin.
-
 Below you'll find some of my favorite and most popular definitions, which combined with my own writings, paint a holistic picture of this enigma.
 
 * * *

@@ -1,14 +1,10 @@
 ---
 title: "The Mystery of Satoshi Nakamoto"
 description: "The mystery of Satoshi Nakamoto is not a story the Sith would tell you"
-pubDate: 2022-10-31
-author: "The Bitcoin Breakdown"
-tags: ["bitcoin", "satoshi"]
-category: "speeches"
-order: 2
+chapter: 4
+order: 3
+draft: false
 ---
-
-*The mystery of Satoshi Nakamoto is not a story the Sith would tell you*
 
 *And yet it is one of the most fascinating legends ever told*
 
@@ -81,15 +77,15 @@ Bitcoin went on to become the fastest trillion dollar valuation of any asset in 
 
 The invention of bitcoin marked a fundamental breakthrough in computer science, information theory, economics, fintech and cryptographic systems.
 
-Now the largest supercomputer on earth, bitcoin is completely immortal. It can’t be shut down, it can’t be hacked, it can't be banned, it can’t be changed, and it can’t be controlled. Even the most powerful governments, corporations and institutions in the world are powerless to stop it.
+Now the largest supercomputer on earth, bitcoin is completely immortal. It can't be shut down, it can't be hacked, it can't be banned, it can't be changed, and it can't be controlled. Even the most powerful governments, corporations and institutions in the world are powerless to stop it.
 
 It is a self-running software program designed to last forever.
 
-No one knows how it’s possible for Satoshi to both solve this unsolvable computer science problem and build an all-powerful, self-sustaining monetary system at the same time.
+No one knows how it's possible for Satoshi to both solve this unsolvable computer science problem and build an all-powerful, self-sustaining monetary system at the same time.
 
 To be a polymath, specialized across multiple academic disciplines, and yet evade detection. The field of experts in distributed systems engineering is so small you would think it would be simple to nail them down, and yet there have been no definitive leads.
 
-Is Satoshi an alien? A time traveler? A secret government organization? A libertarian nerd in his mother’s basement? It’s very possible that Satoshi isn’t even alive anymore. It's been well over a decade and still no one can unmask her Halloween disguise.
+Is Satoshi an alien? A time traveler? A secret government organization? A libertarian nerd in his mother's basement? It's very possible that Satoshi isn't even alive anymore. It's been well over a decade and still no one can unmask her Halloween disguise.
 
 By disappearing Satoshi left behind ultimate fame, power, and fortune. Adding to the mystery.
 
@@ -105,13 +101,13 @@ Because bitcoin's blockchain is completely transparent, the wallets that hold Sa
 
 Satoshi's treasure lies there mocking the old guard of money, the financial institutions he so adamantly dismayed. It lies there as a testament to the power of the individual, proving that anything is possible. And it lies there taunting those who are driven by greed, selfish minds who only seek out fortune and fame, proving that humans are capable of throwing it all away for the good of humanity.
 
-It lies there forever jeering: "Here lies Satoshi’s legendary treasure — take it, if you can"
+It lies there forever jeering: "Here lies Satoshi's legendary treasure — take it, if you can"
 
 …
 
 For many years to come, the mystery of Satoshi Nakamoto will continue to incite awe and astonishment as people first learn about bitcoin's humble origins. People from around the world will marvel at the genius of Satoshi and speculate on their identity and motivation. Classes will be taught on bitcoin and the chapter dedicated to Satoshi will inspire generation after generation.
 
-We will probably never know who invented bitcoin. The moral of the story isn't to speculate on who Satoshi is, but to understand that it doesn't matter. 
+We will probably never know who invented bitcoin. The moral of the story isn't to speculate on who Satoshi is, but to understand that it doesn't matter.
 
 Satoshi gave bitcoin as a gift to humanity. We run bitcoin and we decide it's future. There's no one in charge now, bitcoin belongs to everyone. We are all equal participants in the network.
 

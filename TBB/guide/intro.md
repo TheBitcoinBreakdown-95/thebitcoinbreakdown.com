@@ -6,8 +6,6 @@ order: 2
 draft: false
 ---
 
-Forget everything you know about bitcoin. Forget everything you know about blockchain, and crypto.
-
 Once you begin this journey there's no going back. Those who venture down this path rarely return.
 
 Once you understand bitcoin in all of its complexity, your life and your view of the world will change forever.

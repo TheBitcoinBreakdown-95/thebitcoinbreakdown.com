@@ -1,8 +1,11 @@
 ---
 title: "Orange Not Gold"
 description: "On a Halloween night, 15 years ago"
-chapter: 2
-order: 10
+pubDate: 2023-10-31
+author: "The Bitcoin Breakdown"
+tags: ["bitcoin", "satoshi"]
+category: "speeches"
+image: ""
 draft: false
 ---
 
@@ -35,7 +38,7 @@ Set loose into cyberspace!
 
 ![](/images/2023/08/Giancarnevale_a_computer_cancer_in_cyberspace_456fc155-f56f-4c58-ad8f-9075cc304448-1024x1024.png)
 
-*What’s even more scary is -*
+*What's even more scary is -*
 
 *This shadowy mastermind...this mad computer scientist*...
 
@@ -63,7 +66,7 @@ Is real.
 
 The invention I was talking about ^
 
-Well you *probably* know it best as “digital gold”
+Well you *probably* know it best as "digital gold"
 
 but isn't gold at all…
 
@@ -99,9 +102,9 @@ This is trust in math, trust in code, not in humans.
 
 ![](/images/2023/09/Giancarnevale_an_untrolable_and_digital_monetary_network_looks__c01d8bd1-d60c-45a9-81fd-936fd2b2bc5c-1024x1024.png)
 
-Bitcoin is the number one cryptocurrency for a reason, it’s the largest and most secure supercomputer on earth.
+Bitcoin is the number one cryptocurrency for a reason, it's the largest and most secure supercomputer on earth.
 
-Bitcoin is immortal. It can’t be shut down, it can't be banned, it can’t be hacked, it can’t be changed, and it can’t be controlled.
+Bitcoin is immortal. It can't be shut down, it can't be banned, it can't be hacked, it can't be changed, and it can't be controlled.
 
 Bitcoin runs on its own without anyone in charge.
 

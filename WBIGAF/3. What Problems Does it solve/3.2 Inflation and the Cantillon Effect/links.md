@@ -18,6 +18,7 @@
 | 7 | https://thedailyeconomy.org/article/what-progressives-miss-in-the-bitcoin-energy-debate/ | Article | DONE | WebFetch (redirected from AIER). Waugh — Carter/Stevens quotes, Nigeria data. |
 | 8 | https://eh.net/encyclopedia/the-economics-of-the-american-revolutionary-war/ | Article | DONE | WebFetch. Baack — Continental dollar depreciation, British counterfeiting. |
 | 9 | https://x.com/MartyBent/status/2005349198204444736 | Tweet | PARTIAL | X requires JavaScript. Full tweet text already in source notes (#61). |
+| 10 | https://www.youtube.com/watch?v=YtFOxNbmD38 | YouTube | DONE | Transcript via youtube-transcript-api. Joe Bryan — "What's The Problem?" — full inflation consequence chain via Big Red Button allegory. 35 Ch3.2 items + 8 orphan candidates extracted. |
 
 ---
 
@@ -80,3 +81,9 @@
 24. "Home Price-to-Income Ratio Reaches Record High." Joint Center for Housing Studies, Harvard University. https://www.jchs.harvard.edu/blog/home-price-income-ratio-reaches-record-high-0. [WebSearch]
 
 25. "Boskin Commission Report." Bureau of Labor Statistics. https://www.bls.gov/pir/journal/gj10.pdf. [WebSearch]
+
+26. Bryan, Joe. "What's The Problem?" YouTube video. https://www.youtube.com/watch?v=YtFOxNbmD38. [Transcript extracted via youtube-transcript-api]
+
+27. Hayek, Friedrich A. *The Fatal Conceit: The Errors of Socialism.* Chicago: University of Chicago Press, 1988. [Referenced in Bryan, Link #10]
+
+28. Hayek, Friedrich A. Interview, 1984. [Referenced in Bryan, Link #10; "I don't believe we shall ever have good money again..."]

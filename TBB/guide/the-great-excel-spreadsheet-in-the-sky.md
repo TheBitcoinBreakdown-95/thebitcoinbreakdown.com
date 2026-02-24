@@ -9,8 +9,6 @@ draft: false
 
 ![](/images/2023/09/image.png)
 
-To understand how bitcoin works under the hood, you can think of it like an ultimate google doc, a shared spreadsheet in the cloud which is just a list of transactions. That's literally all bitcoin is, it's just a ledger, a list of who sent money to who.
-
 At the most basic and fundamental level, bitcoin is just a ledger.
 
 But instead of existing on the computers of banks, it exists on hundreds of thousands of computers all around the globe.

@@ -6,9 +6,6 @@ order: 8
 draft: false
 ---
 
-
-Bitcoin is a global interconnected computer network made up of tens of thousands of nodes.
-
 > A computer network comprises two or more computers that are connected—either by cables (wired) or WiFi (wireless)—with the purpose of transmitting, exchanging, or sharing data and resources. 
 > 
 > IBM

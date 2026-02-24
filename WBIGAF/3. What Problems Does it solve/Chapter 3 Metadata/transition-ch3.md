@@ -1,16 +1,16 @@
 # Chapter 3 Transition: Problems Bitcoin Solves
 
-**Last updated:** February 17, 2026
+**Last updated:** February 19, 2026
 **Purpose:** Progress snapshot for Chapter 3. Read after `WBIGAF/WBIGAF.md` and `WBIGAF/WBIGAF-Status.md`.
 
 ---
 
 ## Where We Are
 
-**Current sub-chapter:** Chapter 3, Sub-Chapter 2: **Inflation & the Cantillon Effect**
-**Current pipeline step:** Step 5 — **USER REVIEW** — READY
+**Current sub-chapters:** Chapter 3, Sub-Chapters 3.3, 3.4, 3.5 — **Steps 1-3A COMPLETE**
+**Current pipeline step:** Step 3 Part B — **AWAITING USER** (run research prompts off-platform)
 
-Ch3.1 COMPLETE (deployed). Ch3.2 Steps 1-4 done: 152 items across 23 themes, 17 argument blocks, 25 bibliography sources. No orphans routed out (all items fit scope).
+Ch3.1 COMPLETE (deployed). Ch3.2 Draft complete (Step 7 user review deferred). Ch3.3, 3.4, 3.5 all have: catalog.md, links.md, sources.md, research.md (Part A: gap analysis + prompt). User runs 3 research prompts through Gemini/ChatGPT/Perplexity and pastes results back.
 
 ---
 
@@ -97,26 +97,118 @@ Ch3.1 COMPLETE (deployed). Ch3.2 Steps 1-4 done: 152 items across 23 themes, 17 
 
 ---
 
-## Next Step: User Review (Step 5) — READY
+## Step 5: User Review — COMPLETE
 
-### What to do:
-1. Review the 17 Argument Blocks in `catalog.md` Part 1
-2. Reorder blocks for narrative momentum (if needed)
-3. Cut blocks that belong elsewhere / merge blocks that overlap
-4. Flag blocks that need more evidence
-5. Add color, quotes, personal anecdotes, last-minute research
-6. All changes go in Part 1.5 (Amendments) — never edit blocks directly
-7. Approve the structural sequence for drafting
+### What was done (Feb 18):
+- User reviewed 17 argument blocks
+- **Joe Bryan "What's The Problem?" (Link #10)** added as new source — YouTube transcript extracted, 43 items (#600-642): 35 for Ch3.2, 8 orphan candidates for 3.3/3.4
+- **+Block 10.1: The Social Wreckage** — NEW standalone block (shrinkflation → obesity → family breakdown → demographic crisis → addiction → ratchet)
+- **+Block 15.1: Industrialized Theft** — NEW standalone block (four-tier class analysis: poor/middle/wealthy/insiders + crony corporatism)
+- **Amendments to existing blocks:** +Block 3 (three consequences framework), +Block 7 (US fiscal doom data), +Block 11 (saving futility), +Block 15 (parasitic industries), +Block 17 (Satoshi full quote, Hayek ×2, "fix the money fix the world")
+- **Final totals:** 197 items, 19 blocks (17 + 2 new), 28 bibliography sources
 
-### Optional: Run off-platform deep research
-- Copy prompt from `research.md` Part 2 into Gemini/ChatGPT
-- Paste results back — Claude will extract additional items (#600+)
-- Particularly useful for Gap 8 (money creation mechanics) and Gap 10 (counterarguments)
+---
 
-### Key files for Step 5:
-- `3.2 Inflation and the Cantillon Effect/catalog.md` — Part 1: 17 Argument Blocks + Part 2: 152 items
-- `3.2 Inflation and the Cantillon Effect/research.md` — Gap analysis + off-platform prompt
-- `3.2 Inflation and the Cantillon Effect/sources.md` — Scraped content (reference)
+## Ch3.2 Draft (Step 6) — COMPLETE (Step 7 deferred)
+
+- **~5,850 words**, 19 sections, 161 Chicago endnotes
+- User elected to defer Step 7 review and proceed with Ch3.3-3.5 research pipeline
+- 8 Bryan orphan candidates (#635-642) routed to orphan registry for Ch3.3/3.4
+
+---
+
+## Ch3.3 CBDCs, Surveillance, Censorship & Control — Steps 1-3A COMPLETE
+
+### Step 1 (Triage):
+- Source: `CBDCSurveillanceCensorshipControl.md` (~93 lines)
+- **75 items** across 12 themes (A-L), including 6 Ch3.1 orphans + 7 Ch3.2 Bryan orphans
+- **12 links** documented, **4 images** referenced
+
+### Step 2 (Scrape):
+- 8 links attempted: 2 DONE, 6 PARTIAL (WebSearch fallback for 403/JS), 2 SKIPPED (audio), 1 PENDING (Google Doc)
+- **45 new items** extracted (#200-279) across 8 new themes (M-T)
+- **Inventory expanded: 75 → 120 items**
+- Richest new material: R3 CBDC infrastructure (10 items), CoinDesk censorship resistance (8 items), Canada protest specifics (5 items)
+
+### Step 3 Part A (Gap Analysis + Research Prompt):
+- **13 gaps** identified across 3 priority tiers
+- Priority 1 (major): global CBDC rollout status, China digital yuan data, eNaira failure, Europe digital euro, India digital rupee, historical deplatforming precedents
+- Priority 2 (depth): privacy vs transparency paradox, counterarguments ("but crime"), corporate surveillance, cash elimination
+- Priority 3 (data): civil liberties orgs, BIS/Carstens full context, successful resistance examples
+- **Research prompt ready** in `research.md` Part 2
+
+### Key files:
+- `3.3 CBDCs.../catalog.md` — 120 items, 20 themes
+- `3.3 CBDCs.../links.md` — 12 links + 3 embedded, 16 bibliography entries
+- `3.3 CBDCs.../sources.md` — Full scraped content
+- `3.3 CBDCs.../research.md` — Gap analysis + prompt (Parts 3-4 awaiting user)
+
+---
+
+## Ch3.4 Systematic Economic Risk — Steps 1-3A COMPLETE
+
+### Step 1 (Triage):
+- Source: `Systematic economic risk.md` (~146 lines)
+- **72 items** across 11 themes (A-K), including 1 Ch3.1 orphan + 3 Ch3.2 Bryan orphans
+- **12 links** documented
+
+### Step 2 (Scrape):
+- 8 links attempted: 2 DONE, 4 PARTIAL, 2 FAILED (1 paywall, 1 unfindable video)
+- **66 new items** extracted (#200-265) across 7 new themes (L-R)
+- **Inventory expanded: 72 → 138 items**
+- Richest new material: Lavish debt spiral fiscal data (8 items), Pines geopolitical framework (7 items), Foss CDS model (6 items), Volcker comparison (6 items)
+
+### Step 3 Part A (Gap Analysis + Research Prompt):
+- **13 gaps** identified across 3 priority tiers
+- Priority 1 (major): global debt/derivatives numbers, derivatives explained (author request), March 2020 Treasury seizure, 2008 crisis specifics, moral hazard history, Minsky framework
+- Priority 2 (depth): repo market, Japan as preview, Bitcoin crisis performance data, "all paths lead to Bitcoin" logic tree
+- Priority 3 (data): current interest expense, counterarguments, historical sovereign debt crises (Reinhart & Rogoff)
+- **Research prompt ready** in `research.md` Part 2
+
+### Key files:
+- `3.4 Systematic.../catalog.md` — 138 items, 19 themes
+- `3.4 Systematic.../links.md` — 12 links, 15 bibliography entries
+- `3.4 Systematic.../sources.md` — Full scraped content
+- `3.4 Systematic.../research.md` — Gap analysis + prompt (Parts 3-4 awaiting user)
+
+---
+
+## Ch3.5 For the Billions, Not the Billionaires — Steps 1-3A COMPLETE
+
+### Step 1 (Triage):
+- Source: `For the billions, not the billionaires.md` (~106 lines)
+- **111 items** across 9 themes (A-I), including **55 Gladstein orphans** from Ch3.1 (massive structural adjustment material)
+- **18 links** documented
+
+### Step 2 (Scrape):
+- 15 links attempted: 10 DONE, 5 PARTIAL, 0 FAILED
+- **96 new items** extracted (#200-300) across 11 new themes (J-T)
+- **Inventory expanded: 111 → 207 items** (largest catalog)
+- Richest new material: Lebanon full article (13 items), eNaira collapse timeline (16 items), Africa adoption data (11 items)
+
+### Step 3 Part A (Gap Analysis + Research Prompt):
+- **13 gaps** identified across 3 priority tiers
+- Priority 1 (major): global unbanked statistics, remittance cost data, Hernando de Soto property rights, Jack Dorsey Africa trip (author request), Daniel Batten thread, M-Pesa comparison
+- Priority 2 (depth): "check your privilege" framework, Bitcoin mining in developing nations, counterarguments (volatility/environment/scams), CFA franc monetary colonialism
+- Priority 3 (data): Chainalysis adoption rankings, remittance corridor stories, India demonetization 2016, additional adoption stories (Venezuela, Afghanistan, Myanmar, Ukraine)
+- **Research prompt ready** in `research.md` Part 2
+
+### Key files:
+- `3.5 For the Billions.../catalog.md` — 207 items, 20 themes
+- `3.5 For the Billions.../links.md` — 18 links + 3 embedded, 25 bibliography entries
+- `3.5 For the Billions.../sources.md` — Full scraped content
+- `3.5 For the Billions.../research.md` — Gap analysis + prompt (Parts 3-4 awaiting user)
+
+---
+
+## What's Next
+
+1. **User runs 3 research prompts** through Gemini Deep Research / ChatGPT / Perplexity:
+   - `3.3 CBDCs.../research.md` Part 2 → paste results into Part 3
+   - `3.4 Systematic.../research.md` Part 2 → paste results into Part 3
+   - `3.5 For the Billions.../research.md` Part 2 → paste results into Part 3
+2. **Claude processes results** → extract #500+ items into catalogs, update bibliographies
+3. **Steps 4-7** (Argument Blocks → User Review → Draft → Publish) — saved for later per user request
 
 ---
 

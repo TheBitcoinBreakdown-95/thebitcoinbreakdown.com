@@ -6,9 +6,6 @@ order: 9
 draft: false
 ---
 
-
-You can think of Bitcoin as a kind of clock, it keeps track of time across the tens of thousands of computers that make up its network. A decentralized clock if you will, keeping track of which transactions came first. Ticking away for eternity.
-
 ![](/images/2023/03/image-9-1024x553.png)
 
 Not only does bitcoin tell time, but Bitcoin is an invention of a new kind of time.

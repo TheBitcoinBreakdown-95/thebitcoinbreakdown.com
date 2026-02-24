@@ -6,8 +6,6 @@ order: 3
 draft: false
 ---
 
-It's a question everyone asks but no one seems to have a good answer for.
-
 John Oliver host of Last Week Tonight, said it best:
 
 ![](/images/2023/03/image-1024x807.png)

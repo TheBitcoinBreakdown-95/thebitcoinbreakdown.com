@@ -9,8 +9,6 @@ draft: false
 
 ![](/images/2023/08/Giancarnevale_a_hyper_realistic_photo_of_a_group_of_computer_sc_678df98a-91de-4af3-a728-7cfe7009dbb0.png)
 
-All bitcoin is, is fake money. Why does it have any value at all?
-
 Anyone can literally just make up their own money!
 
 I could print a ton of monopoly dollars and start selling them to people saying something like, "trust me it'll be really valuable someday!!!!"

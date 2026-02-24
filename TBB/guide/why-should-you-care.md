@@ -8,8 +8,6 @@ draft: false
 
 ![](/images/2023/11/image-5.png)
 
-The truth is, bitcoin doesn’t give a fuck about you.
-
 Bitcoin is software, not sentient. It operates automatically and asks no human for praise. It already has over a hundred million adopters, is one of the largest assets in the world and settles trillions of dollars in value annually.
 
 Bitcoin doesn’t need you, and bitcoin doesn’t ask for your approval.

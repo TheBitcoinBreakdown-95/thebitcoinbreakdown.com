@@ -6,10 +6,6 @@ order: 7
 draft: false
 ---
 
-> Bitcoin is a system for electronic transactions without relying on trust
-> 
-> Satoshi Nakamoto
-
 ![](/images/2022/11/image.png)
 
 ## Why is Bitcoin Revolutionary?

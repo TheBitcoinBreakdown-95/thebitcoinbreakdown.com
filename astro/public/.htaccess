@@ -42,7 +42,11 @@ RewriteRule ^blog/2022/absolute-scarcity/?$ /guide/absolute-scarcity/ [R=301,L]
 RewriteRule ^blog/2022/the-trust-machine/?$ /guide/the-trust-machine/ [R=301,L]
 RewriteRule ^blog/2023/they-invented-a-better-money-who-does-that/?$ /guide/they-invented-a-better-money-who-does-that/ [R=301,L]
 RewriteRule ^blog/2023/unparalleled-new/?$ /guide/unparalleled-new/ [R=301,L]
-RewriteRule ^blog/2023/orange-not-gold/?$ /guide/orange-not-gold/ [R=301,L]
+# Guide → Blog (reclassified as speech)
+RewriteRule ^guide/orange-not-gold/?$ /blog/2023/orange-not-gold/ [R=301,L]
+
+# Blog → Guide (reclassified as compendium 4.2)
+RewriteRule ^blog/2022/the-mystery-of-satoshi-nakamoto/?$ /guide/the-mystery-of-satoshi-nakamoto/ [R=301,L]
 
 # Deleted overview chapters → chapter landing pages
 RewriteRule ^guide/what-is-bitcoin/?$ /guide/chapter/1 [R=301,L]

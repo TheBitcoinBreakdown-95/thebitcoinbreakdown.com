@@ -6,9 +6,6 @@ order: 11
 draft: false
 ---
 
-
-Money is just the base layer of an economic system, just like BTC is the base layer of the bitcoin economy. The difference is bitcoin is also a network, a tech stack, and a protocol. Digital and programmable monetary infrastructure.
-
 BTC is the native money of the internet, but bitcoin is much more than that. Bitcoin is the internet of money.
 
 ![](/images/2023/08/image-5-1024x1024.png)

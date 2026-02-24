@@ -551,9 +551,139 @@
 
 ## Part 1.5: Amendments
 
-> Reserved for Step 5 (User Review). No amendments yet.
+### +Block 17: Satoshi Quote — "Escape the arbitrary inflation risk"
+
+**ADD** the full two-line Satoshi quote as a key quote in Block 17, positioned prominently (opening or closing the section):
+
+> "Escape the arbitrary inflation risk of centrally managed currencies!
+> Bitcoin's total circulation is limited to 21 million coins"
+> — Satoshi Nakamoto
+
+Already in inventory as #1 and #2. Currently only the "21 million" half is listed as a key quote — the "Escape the arbitrary inflation risk" line needs equal weight. Together they form the kill shot: the problem statement AND the solution in two lines from the creator himself.
 
 ---
+
+### +Block 10.1: The Social Wreckage — What Broken Money Does to People
+
+**NEW STANDALONE BLOCK** — drafts after Block 10 (Your Wages Are a Lie). You've just shown the reader the wage theft; now show them what that theft does to their lives, families, and bodies.
+
+**THESIS:** Inflation doesn't just steal your wages — it degrades your food, breaks your family, shortens your planning horizon, and drives entire populations into addiction and despair. Every social crisis we blame on greed or moral failure traces back to the money printer.
+
+**LOGIC CHAIN:**
+1. Businesses facing higher input costs respond three ways: raise prices, shrink the product (shrinkflation), or reduce input quality — all three make the population poorer (#607-608)
+2. The most insidious: reducing food quality → "fresh ingredients replaced with industrialized sludge" → obesity epidemic → secondary health crisis (#609)
+3. Cost-cutting via firing → unemployment → government must solve that too (#610)
+4. Asset inflation → higher rent → homelessness → more government intervention (#613)
+5. Housing unaffordable on one income → both parents forced to work → less time together → breakdown of the nuclear family (#614)
+6. Two-income trap → fewer children → declining birth rates → demographic crisis: "fewer children being born while older generations live longer" (#615)
+7. Demographic doom: pension and retirement promises become undeliverable (#616)
+8. Renters can't plan long-term — horizon shrinks from 3-5 years to 1-2 → putting off marriage, children → "prioritize today at the expense of tomorrow" (#617)
+9. Saving becomes futile — asset prices outrun savings → "if you'll never be able to buy a house then prioritize living your best life" (#618)
+10. For those on the "treadmill of decline" → addiction, opioids → health crisis → mental health crisis (#619)
+11. One-way ratchet: each crisis requires more government → more spending → bigger deficit → press the button again → ever bigger crisis (#620)
+
+**KEY QUOTES:**
+- "Instead of 100 grams it's now 90 grams but for the same price" — Bryan (shrinkflation)
+- "You start to prioritize today at the expense of tomorrow" — Bryan (forced high time preference)
+- "People see that saving never gets them anywhere... so prioritize living your best life" — Bryan
+- "He's lurching from crisis to ever bigger crisis" — Bryan (the ratchet)
+
+**EVIDENCE:**
+- Shrinkflation documented across consumer goods (same price, smaller package)
+- US obesity rates tripled since 1960s — correlates with food industry cost-cutting
+- US birth rate: 3.65 (1960) → 1.62 (2023) — below replacement
+- Opioid epidemic: 500,000+ deaths since 1999
+
+**RHETORICAL MOVES:**
+- Each step in the chain is a sentence or two — the cascade is relentless, undeniable
+- "Industrialized sludge" — visceral, angry
+- The family breakdown chain is devastating for any parent reading this
+- End on the ratchet: there is no escape valve in fiat — each fix creates the next crisis
+
+**SOURCE REFS:** Inventory #607-620
+
+---
+
+### +Block 15.1: Industrialized Theft — Who Actually Wins
+
+**NEW STANDALONE BLOCK** — drafts after Block 15 (Unelected Tax Collectors). You've just shown the mechanism of undemocratic taxation; now show the class breakdown of who loses and who wins.
+
+**THESIS:** Inflation isn't random damage — it's a systematic wealth transfer with clear winners and losers. The poor get poorer. The middle class becomes the new poor. Even the wealthy bleed out slowly. Only those connected to the money printer gain. It's industrialized theft.
+
+**LOGIC CHAIN:**
+1. The poor: fixed wages, no assets, low income security — "they just get poorer every single year." No escape. (#623)
+2. The middle: fixed salaries, often own a home but "can never sell and realize any gain because you've got to live somewhere" — they are "becoming the new poor" (#624)
+3. The wealthy: income from asset yields, but yields below the rate of money printing — "death by a thousand cuts." Wealth numbers go up but purchasing power goes down. "Slowly having their wealth siphoned away by the politically connected." (#625)
+4. Government insiders: "their income goes up and becomes even more valuable as society continues to decline because the government needs more and more intervention." (#626)
+5. The result: "It's really just industrialized theft at this point from everyone else in society." (#626)
+6. Government spawns parasitic industries — Big Pharma, Big Food, MIC, Wall Street — crony corporatism: "very hard to see where the government ends and these industries begin" (#621)
+7. Regulatory capture: industries demand regulation "to protect the public" but it blocks competition. Revolving door between regulator and regulated. Quality declines, prices rise, profits soar. (#622)
+
+**KEY QUOTES:**
+- "They are becoming the new poor" — Bryan (on the middle class)
+- "Death by a thousand cuts" — Bryan (on the wealthy)
+- "It's really just industrialized theft at this point from everyone else in society" — Bryan
+- "Very hard to see where the government ends and these industries begin" — Bryan (crony corporatism)
+
+**EVIDENCE:**
+- Bottom 50% of Americans own 2.6% of total wealth (Federal Reserve, 2023)
+- Top 1% own more wealth than entire middle class (Fed distributional accounts)
+- Revolving door: 65% of ex-regulators go to firms they regulated (Project on Government Oversight)
+
+**RHETORICAL MOVES:**
+- Walk through each class in order — the reader identifies with one of them and realizes they're losing too
+- The wealthy losing is the surprise — "even the rich are getting robbed, just slower"
+- "Industrialized theft" is the phrase to plant — sticky, quotable, enraging
+- End on crony corporatism: the theft isn't passive, it's an active machine with beneficiaries
+
+**SOURCE REFS:** Inventory #621-626
+
+---
+
+### +Block 3: Bryan — Three Consequences Framework
+
+**ADD** to Block 3 (How the Money Printer Actually Works):
+- Three consequences taxonomy: (1) price signal distortion, (2) increased business input costs, (3) asset inflation (#603)
+- New money enters via government → flows to connected companies first → false supply/demand signals → capital misallocation (#604)
+- Human capital misallocation: "smart people get sucked in closer to the government and not servicing the rest of the economy" (#605)
+- "This is the only source of consumer inflation — is the money printer" (#606)
+- Government only has three options for a deficit: raise taxes, cut spending, or print. They always print because the others cost votes. (#601)
+
+---
+
+### +Block 7: Bryan — US Fiscal Doom Data
+
+**ADD** to Block 7 (The Dollar is Dying):
+- US 2024 budget: ~$2T deficit on ~$6T spend — "they'd have to double individual income taxes just to balance that" (#632)
+- US debt: $36T + unfunded liabilities (Social Security, Medicare, Medicaid): $50-200T depending on calculation — "the only way to solve that is more money printing" (#633)
+- World currencies vs dollar over 10 years: "some have ceased to exist. The people who saved their economic energy in those currencies have seen them vanish." (#634)
+- Lyn Alden: "Nothing Stops This Train" — no way out for governments (#631)
+
+---
+
+### +Block 11: Bryan — Saving Futility as Forced High Time Preference
+
+**ADD** to Block 11 (Hard Money Builds Civilization):
+- Bryan makes the time preference argument concrete: renters can't plan 3-5 years ahead because rent increases too fast, so they plan 1-2 years → put off marriage, children → "prioritize today at the expense of tomorrow" (#617-618)
+- Cross-ref to Block 10.1 where these items are developed fully — Block 11 can reference the social wreckage as *proof* that fiat money restructures psychology
+
+---
+
+### +Block 15: Bryan — Parasitic Industries & Regulatory Capture
+
+**ADD** to Block 15 (Unelected Tax Collectors):
+- Cross-ref to Block 15.1 for the full class breakdown and crony corporatism chain
+- "Parasitic industries" framing (#621) and revolving door (#622) strengthen the "undemocratic" thesis
+
+---
+
+### +Block 17: Bryan — Hayek Quotes & "Fix the Money"
+
+**ADD** to Block 17 (21 Million — The End of Debasement):
+- Hayek (1988): "The history of government management of money has except for a few short happy periods been one of incessant fraud and deception." (#628)
+- Hayek (1984): "I don't believe we shall ever have good money again until we take it out of the hands of government. We can't take it violently out of their hands. All we can do is by some sly, roundabout way introduce something they just can't stop." (#629)
+- "If we fix the money, we'll fix the world." (#630)
+- "On a [fiat] standard your money is stealing from you whereas on a [Bitcoin] standard the whole world is working 24/7 to increase your purchasing power." (#627)
 
 ## Part 2: Source Inventory
 
@@ -779,13 +909,106 @@
 554. Note: scholarly debate about whether Lenin actually said this — Keynes may have based it on newspaper reports from April 1919. Attribution uncertain but insight devastating regardless. (AEA, JEP)
 555. Keynes's own words condemn the system built in his name — modern Keynesians advocate for the very inflation that Keynes himself called "no subtler, no surer means of overturning the existing basis of Society." (Synthesis)
 
+### X. Joe Bryan — "What's The Problem?" — Inflation Mechanics & Consequences (items 600-634, Link #10)
+
+**600.** In a free market with sound money, "prices go down forever and quality goes up forever" — specialization, competition, and innovation naturally drive costs down and quality up for everyone, not just the productive. (Bryan)
+
+**601.** Government will inevitably hit a deficit. Only three choices: raise taxes, cut spending, or press "The Big Red Button" (print money). Politicians always choose the button because the other two cost votes. (Bryan)
+
+**602.** Printing money increases the money supply overnight without increasing goods and services — more currency units chasing the same output. "He's increased the amount of money in the economy overnight but he hasn't increased the amount of goods and services available." (Bryan)
+
+**603.** Three major consequences of printing money: (1) distortion of price signals, (2) increased business input costs, (3) asset inflation. (Bryan)
+
+**604.** New money enters via the government → flows to "companies and people connected directly or indirectly to the government" → price increases in those sectors first → false signal of supply/demand imbalance → misallocation of capital by entrepreneurs responding to distorted signals. (Bryan — Cantillon Effect as price signal distortion)
+
+**605.** Misallocation of human capital: "smart people, active people who are trying to be productive — they get sucked in closer to the government and not servicing the rest of the economy." (Bryan)
+
+**606.** "This is the only source of consumer inflation — is the money printer, causing businesses to make these changes." Consumer inflation is not mysterious — it's businesses responding to higher input costs caused by money printing. (Bryan)
+
+**607.** Three business responses to higher input costs from money printing: (1) pass on price increase to customer, (2) shrinkflation — keep price and quality same but shrink the product ("instead of 100 grams it's now 90 grams"), (3) reduce input quality. All three make the population poorer. (Bryan)
+
+**608.** Shrinkflation: same price, same quality, smaller product — customer needs to buy more to get the same amount they got yesterday. "Both of those things reduce affordability. So the population is becoming poorer." (Bryan)
+
+**609.** The most insidious response: reducing input *quality*. In food → "fresh and high quality ingredients replaced with ever lower quality ingredients and more industrialized sludge" → rise in obesity → secondary health crisis → government must step in → more spending. (Bryan — NOVEL argument: money printer → food quality decline → obesity epidemic)
+
+**610.** Cost-cutting via firing → unemployment → population can afford even less → government now has a second problem to solve (supporting the unemployed). (Bryan)
+
+**611.** Asset prices rise not because of real value creation but because there are more currency units in the system — "anybody who knows that there are more [dollars] in the system of course wouldn't sell their asset for the same as they did yesterday." (Bryan)
+
+**612.** "This asset increase is good for the people who own the assets but not for the people who don't." Wealth inequality emerges not from productivity differences but from proximity to new money. (Bryan)
+
+**613.** Higher house prices → higher rent → increased homelessness → more government intervention required. (Bryan)
+
+**614.** Both parents now forced to work because one earner can no longer afford house + mortgage → "people spend less time together" → breakdown of nuclear family. (Bryan — NOVEL: money printer → dual-income necessity → family breakdown)
+
+**615.** Two-income households → less time with children → can afford fewer children → declining birth rates → demographic shift: "fewer children are being born whereas the older generations are living longer." (Bryan — NOVEL: money printer → demographic crisis)
+
+**616.** Demographic doom: declining births + longer lifespans → government pension/retirement promises become undeliverable. "He now starts to realize that the promises he made to these older generations about being able to retire at a certain age... can't be delivered upon." (Bryan)
+
+**617.** Renters lose the ability to plan long-term — rent increases too fast, planning horizon shrinks from 3-5 years to 1-2 years. "You're planning less for the future, maybe you're putting off getting married, putting off having children. You start to prioritize today at the expense of tomorrow." (Bryan — vivid expression of high time preference)
+
+**618.** Saving futility → consumerism: "People see that saving their [money] never gets them anywhere because the asset prices are going up too quickly — they'll never be able to buy a house. So if you'll never be able to buy a house then prioritize 'living your best life' and going on holiday and spending more." (Bryan — high time preference as logical response to broken money)
+
+**619.** For those on the "treadmill of decline" — daily struggle to feed and house families → growth in addiction, including opioids → health crisis → mental health crisis across the population. (Bryan — NOVEL: money printer → addiction/opioid crisis → mental health crisis)
+
+**620.** One-way ratchet: money printing creates secondary crises (unemployment, homelessness, health, addiction) → government must intervene → more spending → bigger deficit → press the button again → ever bigger crises. "He's lurching from crisis to ever bigger crisis." (Bryan)
+
+**621.** Government spawns "parasitic industries" — Big Pharma (incentivized to treat, never cure — "a healthy customer is a lost customer"), Big Food (pushes for lower food standards), Military-Industrial Complex, Wall Street (too leveraged to fail). All become crony corporatism: "very hard to see where the government ends and these industries begin." (Bryan)
+
+**622.** Regulatory capture: industries ask government to regulate them "to protect the public" — but regulation blocks competition. Revolving door: "They supply the people for the regulator, when the regulators end their tenure they go back and work for these companies." Quality declines, prices rise, profit margins go up. (Bryan)
+
+**623.** Class analysis — the poor: fixed wages, low income security, no assets — "they just get poorer every single year." (Bryan)
+
+**624.** Class analysis — the middle: fixed salaries, often own a home but "can never sell and realize any gain because you've got to live somewhere" — they "are becoming the new poor." (Bryan)
+
+**625.** Class analysis — the wealthy: income from asset yields, but yields below the rate of money printing — "death by a thousand cuts." They see wealth numbers increase but "feel like they're getting poorer" because wealth is "slowly having their wealth siphoned away by the politically connected." (Bryan)
+
+**626.** Class analysis — government insiders: "their income goes up and becomes even more valuable as society continues to decline because the government needs more and more intervention. It's really just industrialized theft at this point from everyone else in society." (Bryan — "industrialized theft")
+
+**627.** "On a Fiatello standard your money is stealing from you whereas on a Satoshi standard the whole world is working 24/7 to increase your purchasing power." (Bryan)
+
+**628.** Hayek (1988): "The history of government management of money has except for a few short happy periods been one of incessant fraud and deception." (Bryan citing Hayek, *The Fatal Conceit*)
+
+**629.** Hayek (1984): "I don't believe we shall ever have good money again until we take it out of the hands of government. We can't take it violently out of their hands. All we can do is by some sly, roundabout way introduce something they just can't stop." (Bryan citing Hayek, interview)
+
+**630.** "If we fix the money, we'll fix the world." (Bryan — closing thesis)
+
+**631.** Lyn Alden: "Nothing Stops This Train" — there is no way out for governments. The only solution is to keep pressing The Big Red Button. (Bryan citing Alden)
+
+**632.** US 2024 budget: deficit of almost $2 trillion on spend just over $6 trillion — "they'd have to double the amount of individual income taxes for everybody in the US just to balance that." (Bryan)
+
+**633.** US government debt: $36 trillion + unfunded liabilities (Social Security, Medicare, Medicaid): $50-200 trillion depending on calculation. "The only way to solve that is more money printing." (Bryan)
+
+**634.** World currencies vs dollar over last 10 years: "some have near enough disappeared completely and some absolutely have, they've ceased to exist. The people who saved their economic energy in those currencies have seen them vanish." (Bryan)
+
+### X.1 Joe Bryan — Orphan Candidates for Other Sub-Chapters
+
+> Items from the Bryan transcript that belong in other sub-chapters. Route to orphan registry at Step 4 amendment or during next sub-chapter triage.
+
+**635.** [→ 3.3] CBDCs as programmable money: "A specific dollar may have an expiration date — you need to spend it before this period of time elapses or else it disappears. Or a dollar may have only specific use cases — you must spend this dollar on X or Y." (Bryan)
+
+**636.** [→ 3.3] Government removes censorship resistance: "you're no longer allowed to hold it yourselves. You have to put it in the banks" — population "feel that they are guilty until proven innocent for making any transaction." (Bryan)
+
+**637.** [→ 3.3] Capital controls: banks refuse transactions, explicit bans on buying Bitcoin — "but people always find a way." (Bryan)
+
+**638.** [→ 3.3/3.4] Asset seizures: Cyprus 2013 — if you held over €100,000 in the bank, overnight 45% went to the government. "The public was effectively bailed in to bailout the banks and the government." (Bryan)
+
+**639.** [→ 3.3/3.4] US 1933 gold confiscation: individual gold holdings made illegal for almost 40 years. Over $100 of gold: $10,000 fine or 10 years in prison. (Bryan)
+
+**640.** [→ 3.3] Media capture: government can't allow "free speech, dissent, alternative opinions" — biggest advertisers are government-connected companies — media won't upset advertisers. (Bryan)
+
+**641.** [→ 3.4] "Forever Wars" — military-industrial complex "fomenting strife on foreign shores," supported by captured media: "we have to do this because it's the right thing to do." Funded by money printer. (Bryan)
+
+**642.** [→ 3.3] Government never explains the root cause to the population — blames "greedy businessmen," "billionaires," "that foreign dictator." People then vote for more government involvement, which is the very thing causing the problems. (Bryan)
+
 ---
 
 **Inventory Summary:**
-- **152 items** across 23 themes (A-W)
-- **9 links** documented in `links.md` (4 DONE, 2 PARTIAL, 2 SKIPPED, 1 SCRAPED IN 3.1)
+- **197 items** across 25 themes (A-X.1)
+- **10 links** documented in `links.md` (5 DONE, 2 PARTIAL, 2 SKIPPED, 1 SCRAPED IN 3.1)
 - **5 orphans** imported from Ch3.1 (2 merged as duplicates, 3 net new)
 - **27 items** from scraping (#200-235)
 - **56 items** from WebSearch research (#500-555)
+- **43 items** from Joe Bryan transcript (#600-642, of which 35 are Ch3.2-scope, 8 are orphan candidates)
 - All 10 identified gaps now have material; **Gap 8 (money creation mechanics) and Gap 10 (counterarguments) still thin** — best covered by off-platform deep research
 - **Off-platform prompt ready** in `research.md` Part 2 — user should run through Gemini/ChatGPT for comprehensive coverage

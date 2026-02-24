@@ -6,8 +6,6 @@ order: 6
 draft: false
 ---
 
-Because bitcoin is just an internet ledger, bitcoin is <span class="glitch-hover" data-text="pure information">pure information</span>.
-
 Bitcoin is a broadcast network where <span class="glitch-hover" data-text="the message is the money">*the message is the money*</span>. It's is a software program for sending and receiving text messages (transactions).
 
 It's technically just 1's and 0's computer code, and cool math! There aren't even any coins, it's just a list of transactions and units.

@@ -6,8 +6,6 @@ order: 10
 draft: false
 ---
 
-In order to understand what bitcoin is, you have to understand what money is.
-
 ![](/images/2023/03/image-11-1024x576.png)
 
 Money is a technology to move value across space, time and scales. Money stores your time and energy to be used in the future.

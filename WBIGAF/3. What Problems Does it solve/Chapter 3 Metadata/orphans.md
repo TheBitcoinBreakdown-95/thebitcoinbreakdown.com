@@ -2,9 +2,9 @@
 
 > **Purpose:** Tracks catalog items found in one sub-chapter's pipeline that belong in a different sub-chapter (or chapter). Each destination sub-chapter imports its orphans at Step 1 (Triage).
 >
-> **Last updated:** February 17, 2026
-> **Source:** Ch 3.1 Fiat Capitalism (Step 4 Argument Blocks)
-> **Consumed:** Ch 3.2 items consumed at Step 1 (Feb 17)
+> **Last updated:** February 19, 2026
+> **Sources:** Ch 3.1 Fiat Capitalism (Step 4 Argument Blocks), Ch 3.2 Bryan orphan candidates (Step 5)
+> **Consumed:** Ch 3.2 items consumed at Step 1 (Feb 17), Ch 3.3 items consumed at Step 1 (Feb 19)
 
 ---
 
@@ -30,6 +30,13 @@
 | 291 | 3.1 | ECB working paper: CBDCs to "better control illicit payments and allow for deeper negative interest rate policy, especially if physical banknotes are removed" | Lyn Alden, Link #5 |
 | 293 | 3.1 | Canada used emergency powers to freeze bank accounts of protestors AND donors — those who self-custodied bitcoin could still use their money | Lyn Alden, Link #5 |
 | 294 | 3.1 | Bank Secrecy Act (1970): reporting >$10K — never adjusted for inflation, now equivalent to ~$75K, surveillance net tightened without new legislation | Lyn Alden, Link #5 |
+| 635 | 3.2 | CBDCs as programmable money: "A specific dollar may have an expiration date — you need to spend it before this period of time elapses or else it disappears. Or a dollar may have only specific use cases" | Bryan, Link #10 in 3.2 |
+| 636 | 3.2 | Government removes censorship resistance: "you're no longer allowed to hold it yourselves. You have to put it in the banks" — population "feel that they are guilty until proven innocent for making any transaction" | Bryan, Link #10 in 3.2 |
+| 637 | 3.2 | Capital controls: banks refuse transactions, explicit bans on buying Bitcoin — "but people always find a way" | Bryan, Link #10 in 3.2 |
+| 638 | 3.2 | Asset seizures: Cyprus 2013 — if you held over €100,000 in the bank, overnight 45% went to the government. "The public was effectively bailed in to bailout the banks and the government." | Bryan, Link #10 in 3.2 | [also routed to 3.4] |
+| 639 | 3.2 | US 1933 gold confiscation: individual gold holdings made illegal for almost 40 years. Over $100 of gold: $10,000 fine or 10 years in prison | Bryan, Link #10 in 3.2 | [also routed to 3.4] |
+| 640 | 3.2 | Media capture: government can't allow "free speech, dissent, alternative opinions" — biggest advertisers are government-connected companies — media won't upset advertisers | Bryan, Link #10 in 3.2 |
+| 642 | 3.2 | Government never explains root cause — blames "greedy businessmen," "billionaires," "that foreign dictator." People vote for more government involvement, which is the very thing causing the problems | Bryan, Link #10 in 3.2 |
 
 ---
 
@@ -38,6 +45,9 @@
 | Item # | From | Text | Source |
 |--------|------|------|--------|
 | 514 | 3.1 | Hyman Minsky: economy dominated by finance → prone to instability and crisis | Research FF (Gemini) |
+| 638 | 3.2 | Asset seizures: Cyprus 2013 — if you held over €100,000 in the bank, overnight 45% went to the government. "The public was effectively bailed in to bailout the banks and the government." | Bryan, Link #10 in 3.2 | [also routed to 3.3] |
+| 639 | 3.2 | US 1933 gold confiscation: individual gold holdings made illegal for almost 40 years. Over $100 of gold: $10,000 fine or 10 years in prison | Bryan, Link #10 in 3.2 | [also routed to 3.3] |
+| 641 | 3.2 | "Forever Wars" — military-industrial complex "fomenting strife on foreign shores," supported by captured media. Funded by money printer. | Bryan, Link #10 in 3.2 |
 
 ---
 

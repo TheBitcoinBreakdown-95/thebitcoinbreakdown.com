@@ -167,4 +167,40 @@ Pipeline per chapter: triage → consolidate → edit → frontmatter → effect
 
 ---
 
+## Phase 10: Compendium Restructure — DONE
+- [x] Fix mobile image overflow (`.prose img` → `max-width: min(560px, 100%)`)
+- [x] Create shared chapter metadata (`astro/src/data/chapters.ts`)
+- [x] Create chapter landing page template (`astro/src/pages/guide/chapter/[num].astro`)
+- [x] Update guide landing page — all chapters link to landing pages, subtitle "The Compendium"
+- [x] Delete all 9 Claude-written overview chapters from `TBB/guide/`
+- [x] Add sub-chapter sibling navigation to article template (`[...slug].astro`)
+- [x] Rename Guide → Compendium in nav (`Header.astro`) and homepage
+- [x] Rearrange homepage: Hero → Quote → Compendium tile → Chapters → Stats → Terminal → Resources → Closer
+- [x] Remove "This site is different" callout and "Start Here" dual cards from homepage
+- [x] Add 9 redirect rules to `.htaccess` for deleted overview chapter URLs
+- [x] Add `README.md` to GitHub repo (project overview + design philosophy)
+- [x] Build verified — 55 pages, 0 errors
+
+---
+
+## Phase 11: Compendium Fixes (8 Issues) — IN PROGRESS
+Plan: `.claude/plans/compiled-puzzling-lecun.md`
+
+### Tier 1: Quick Fixes — DONE
+- [x] Issue 1: Homepage "Resources" stat → count-up "110+" (was static "50+")
+- [x] Issue 2: Homepage "Sub-Chapters" stat → "77+" total planned (was "21")
+- [x] Issue 3: "Orange Not Gold" moved from compendium to blog posts (speech, not sub-chapter)
+- [x] Issue 4: "Mystery of Satoshi" moved from blog posts to compendium 4.2 (chapter 4, order 3)
+- [x] Issue 5: Removed duplicated opening sentences from 14 guide articles (76% had duplication)
+- [x] Build verified — 55 pages, 7.32s, 0 errors
+
+### Tier 2: Frontend Rearchitecture
+- [ ] Issue 6: Unified TOC + Chapter Guide navigation (single nav panel, expandable current sub-chapter)
+
+### Tier 3: Content & Voice Strategy
+- [ ] Issue 7: V4 effects audit + integration guide document
+- [ ] Issue 8: Voice DNA / 3.1 draft revision (needs user input on "off" passages)
+
+---
+
 > **Voice DNA** and **WBIGAF Book Project** have their own tracking system. See [`WBIGAF/WBIGAF-Status.md`](../WBIGAF/WBIGAF-Status.md) for all book-related progress.

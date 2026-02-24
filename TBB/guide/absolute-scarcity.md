@@ -6,8 +6,6 @@ order: 6
 draft: false
 ---
 
-*Money doesn’t grow on trees, because if it did we would call it leaves.*
-
 ![](/images/2023/04/Giancarnevale_money_tree_69733849-e2aa-4759-99d7-050ca608ab2b-1024x1024.png)
 
 Everyone intuitively understands that in order for something to have value it must also be scarce, or hard to come by. It’s the same reason air is free and a Denny’s Grand SlamTM isn’t.

@@ -1,14 +1,19 @@
 # WBIGAF Status
 
-> **Last updated:** February 17, 2026
+> **Last updated:** February 24, 2026
 
 ---
 
 ## Current Work
 
-**Chapter 3: Problems Bitcoin Solves** — Sub-Chapter 3.2 (Inflation & the Cantillon Effect) — **Step 4: ARGUMENT BLOCKS — COMPLETE**
+**Chapter 3: Problems Bitcoin Solves** — Sub-Chapters 3.3, 3.4, 3.5 — **Step 3 Part A COMPLETE (Gap Analysis + Research Prompts)**
 
-Ch3.1 COMPLETE (deployed). Ch3.2 Steps 1-4 done: 152 items, 17 argument blocks, 25 bibliography sources. Ready for Step 5 (User Review).
+Ch3.1 COMPLETE (deployed). Ch3.2 Draft complete (Step 6), Step 7 user review deferred. Ch3.3, 3.4, 3.5 all through Steps 1-2 (Triage + Scrape) and Step 3 Part A (Gap Analysis + Research Prompt). Research prompts ready for user to run through Gemini/ChatGPT/Perplexity.
+
+**Next action:** User runs 3 research prompts (one per sub-chapter) through off-platform deep research tools, then pastes results back.
+
+**Website:** Compendium restructure COMPLETE. See `tasks/TODO.md` Phase 10.
+
 `WBIGAF/3. What Problems Does it solve/Chapter 3 Metadata/transition-ch3.md`
 
 ---
@@ -19,8 +24,8 @@ Ch3.1 COMPLETE (deployed). Ch3.2 Steps 1-4 done: 152 items, 17 argument blocks, 
 |---|---------|-------------|-------------|--------|
 | 1 | What is Bitcoin | 2 | 12,063 | Existing guide chapter — surgical edits later |
 | 2 | Why Bitcoin | 6 | 17,050 | Existing guide chapter — surgical edits later |
-| **3** | **Problems Bitcoin Solves** | **6** | **11,616** | **IN PROGRESS — 3.1 at Step 6 (Draft)** |
-| 4 | Bitcoin Past | 6 | 8,392 | Pending |
+| **3** | **Problems Bitcoin Solves** | **6** | **11,616** | **IN PROGRESS — 3.1 DONE, 3.2 Draft done (Step 7 deferred), 3.3/3.4/3.5 at Step 3A (research prompts ready)** |
+| **4** | **Bitcoin Past** | **6** | **8,392** | **IN PROGRESS — Step 1 DONE (all 5 sub-chapters triaged), 4.2 Step 2 DONE (user scraped)** |
 | 5 | Bitcoin Properties | 21 | 16,134 | Pending |
 | 6 | What is Bitcoin Exactly | 7 | 8,590 | Pending (add "How Bitcoin Works" sub-chapter) |
 | 7 | Bitcoin Present | 7 | 5,687 | Pending |
@@ -47,8 +52,9 @@ Ch3.1 COMPLETE (deployed). Ch3.2 Steps 1-4 done: 152 items, 17 argument blocks, 
 
 | Chapter | Transition Doc | Sub-Chapters Started |
 |---------|---------------|---------------------|
-| Ch 3 | `WBIGAF/3. What Problems Does it solve/Chapter 3 Metadata/transition-ch3.md` | 3.1 COMPLETE (deployed), 3.2 at Step 4 (Argument Blocks DONE — 152 items, 17 blocks, 25 bib sources) |
-| Ch 4-9 | Not yet created | None |
+| Ch 3 | `WBIGAF/3. What Problems Does it solve/Chapter 3 Metadata/transition-ch3.md` | 3.1 COMPLETE (deployed), 3.2 Draft done (Step 7 deferred), 3.3 Step 3A done (120 items, 13 gaps, prompt ready), 3.4 Step 3A done (138 items, 13 gaps, prompt ready), 3.5 Step 3A done (207 items, 13 gaps, prompt ready) |
+| Ch 4 | `WBIGAF/4. Bitcoin Past/Chapter 4 Metadata/transition-ch4.md` | 4.1 Step 1 done (59 items, 8 links), 4.2 Step 2 done (105 items, 10 links — user scraped), 4.3 Step 1 done (29 items, 4 links), 4.4 Step 1 done (47 items, 11 links), 4.5 Step 1 done (74 items, 12 links) |
+| Ch 5-9 | Not yet created | None |
 
 ---
 

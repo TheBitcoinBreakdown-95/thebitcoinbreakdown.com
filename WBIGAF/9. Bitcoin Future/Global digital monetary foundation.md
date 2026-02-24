@@ -21,3 +21,13 @@ It’s not just a way to move value through a communications medium. It’s an e
          
 
 The critique that the blockchain doesn't scale is nullified by the fact that different layers could always settle back to the main chain, and if we had a scheme where it was just a few large shared UTXO's then we could theoretically settle trillions and trillions in a single block. The network scales with value in a way that gold can't, even if the main chain does have a data cap/bidding structure in a way that gold doesn't.
+
+
+
+Nik Bhatia
+@timevalueofbtc
+·
+13h
+I used to think a Strategic Bitcoin Reserve was meant for the US to hold bitcoin as a reserve asset.
+
+Now, I understand that it is ALSO meant for global settlement between nations therefore alleviating the need for the world to hold US Treasuries as the reserve asset.

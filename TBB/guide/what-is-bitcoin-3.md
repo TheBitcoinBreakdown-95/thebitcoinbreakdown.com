@@ -6,9 +6,6 @@ order: 7
 draft: false
 ---
 
-
-Bitcoin is the next evolution in money. It’s a 21st century monetary technology that will outlast our fiat currency system. Bitcoin is money for a type one civilization.
-
 Bitcoin is not just a currency, it is a complete reworking of our global monetary system.
 
 ![](/images/2023/05/btccity-1024x1024.png)
