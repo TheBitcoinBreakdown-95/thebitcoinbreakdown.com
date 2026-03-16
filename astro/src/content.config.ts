@@ -25,6 +25,7 @@ const guide = defineCollection({
     description: z.string(),
     chapter: z.number(),
     order: z.number().default(1),
+    layout: z.enum(['prose', 'blocks']).default('prose'),
     draft: z.boolean().default(false),
   })
 });
