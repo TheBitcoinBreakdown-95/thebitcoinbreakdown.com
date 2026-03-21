@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArkPool: A BTC-Native Liquidity Market for Ark Service Providers</title>
+  <meta name="description" content="Protocol specification for ArkPool v0.1 -- a BTC-for-BTC lending protocol that moves idle BTC from liquidity providers to capital-constrained Ark Service Providers." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* === TBB V4 Dark Luxury Theme === */
+    :root {
+      --black: #000000;
+      --black-soft: #060606;
+      --black-card: #0A0A0A;
+      --black-elevated: #111111;
+      --black-code: #0D0D0D;
+      --gold: #FFD700;
+      --gold-muted: #C9A84C;
+      --gold-glow: rgba(255, 215, 0, 0.4);
+      --gold-dim: rgba(255, 215, 0, 0.15);
+      --gold-subtle: rgba(255, 215, 0, 0.06);
+      --gold-overlay: rgba(255, 215, 0, 0.04);
+      --text-primary: #E8E4DC;
+      --text-secondary: #8A857D;
+      --text-muted: #5A5650;
+      --border-default: rgba(255, 215, 0, 0.06);
+      --border-hover: rgba(255, 215, 0, 0.15);
+      --font: 'Cormorant Garamond', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --content-width: 720px;
+      --wide-width: 1100px;
+      --ease-luxury: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    ::selection {
+      background: rgba(255, 215, 0, 0.25);
+      color: var(--gold);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--text-secondary);
+      font-family: var(--font);
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold-glow); }
+
+    /* Scroll Progress */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-muted));
+      box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+      z-index: 101;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-default);
+      padding: 20px 24px;
+    }
+
+    .header-inner {
+      max-width: var(--wide-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s var(--ease-luxury);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease-luxury);
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* Container */
+    .container {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Article */
+    article { padding: 96px 0 128px; }
+
+    .post-header { margin-bottom: 64px; }
+
+    .hash-decoration {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 300;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      opacity: 0.4;
+      margin-bottom: 24px;
+      user-select: none;
+    }
+
+    h1 {
+      font-family: var(--font);
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .article-meta {
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .tag-group { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .tag {
+      font-family: var(--font);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-muted);
+      border: 1px solid var(--gold-dim);
+      padding: 4px 12px;
+      text-decoration: none;
+      transition: all 0.3s var(--ease-luxury);
+    }
+
+    .tag:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: var(--gold-overlay);
+    }
+
+    /* Prose */
+    .prose { color: var(--text-secondary); }
+
+    .prose h2 {
+      font-family: var(--font);
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: var(--text-primary);
+      margin: 64px 0 24px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-default);
+    }
+
+    .prose h3 {
+      font-family: var(--font);
+      font-size: clamp(18px, 2.5vw, 26px);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: var(--text-primary);
+      margin: 48px 0 16px;
+    }
+
+    .prose h4 {
+      font-family: var(--font);
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      color: var(--text-primary);
+      margin: 32px 0 12px;
+    }
+
+    .prose p { margin-bottom: 20px; }
+
+    .prose strong { color: var(--text-primary); font-weight: 600; }
+    .prose em { color: var(--text-primary); }
+
+    .prose a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      transition: border-color 0.3s var(--ease-luxury);
+    }
+
+    .prose a:hover { border-bottom-color: var(--gold); }
+
+    .prose ul, .prose ol {
+      margin: 0 0 20px 24px;
+    }
+
+    .prose li { margin-bottom: 8px; }
+
+    .prose li strong { color: var(--text-primary); }
+
+    .prose blockquote {
+      border-left: 3px solid var(--gold);
+      background: rgba(255, 215, 0, 0.03);
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--gold-muted);
+    }
+
+    .prose hr {
+      border: none;
+      height: 1px;
+      background: var(--border-default);
+      margin: 48px 0;
+    }
+
+    /* Code */
+    .prose code {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      background: var(--black-code);
+      color: var(--gold-muted);
+      padding: 2px 6px;
+      border-radius: 3px;
+      border: 1px solid var(--border-default);
+    }
+
+    .prose pre {
+      background: var(--black-code);
+      border: 1px solid var(--border-default);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+
+    .prose pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* Tables */
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 15px;
+    }
+
+    .prose thead th {
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-muted);
+      border-bottom: 1px solid var(--gold-dim);
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    .prose td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-default);
+      vertical-align: top;
+    }
+
+    .prose tr:hover td { background: var(--gold-overlay); }
+
+    /* ASCII Diagrams */
+    .diagram {
+      background: var(--black-code);
+      border: 1px solid var(--border-default);
+      border-radius: 4px;
+      padding: 24px;
+      margin: 24px 0;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--gold-muted);
+      white-space: pre;
+    }
+
+    /* Script Block */
+    .script-block {
+      background: var(--black-code);
+      border: 1px solid var(--gold-dim);
+      border-radius: 4px;
+      padding: 24px;
+      margin: 24px 0;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--gold);
+      white-space: pre;
+    }
+
+    /* Section label */
+    .section-label {
+      font-family: var(--font);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--black-card);
+      border: 1px solid var(--border-default);
+      padding: 32px;
+      margin: 0 0 48px;
+    }
+
+    .toc-title {
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc li {
+      counter-increment: toc;
+      margin-bottom: 8px;
+    }
+
+    .toc li::before {
+      content: counter(toc, decimal-leading-zero) ".";
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-right: 12px;
+    }
+
+    .toc a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 15px;
+      border-bottom: none;
+      transition: color 0.3s var(--ease-luxury);
+    }
+
+    .toc a:hover { color: var(--gold); }
+
+    /* Principle cards */
+    .principle {
+      border-left: 2px solid var(--gold-dim);
+      padding: 16px 0 16px 20px;
+      margin-bottom: 16px;
+    }
+
+    .principle-id {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .principle p {
+      margin: 4px 0 0;
+    }
+
+    /* Phase cards */
+    .phase-card {
+      background: var(--black-card);
+      border: 1px solid var(--border-default);
+      padding: 32px;
+      margin: 24px 0;
+      transition: border-color 0.3s var(--ease-luxury);
+    }
+
+    .phase-card:hover { border-color: var(--border-hover); }
+
+    .phase-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .phase-card h4 { margin-top: 0; }
+
+    /* Footer */
+    .footer {
+      padding: 64px 24px;
+      text-align: center;
+      border-top: 1px solid var(--border-default);
+    }
+
+    .footer p {
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s var(--ease-luxury);
+    }
+
+    .footer a:hover { color: var(--gold); border-bottom-color: var(--gold-dim); }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 1.2s var(--ease-luxury), transform 1.2s var(--ease-luxury);
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .prose table { font-size: 13px; }
+      .prose td, .prose thead th { padding: 8px 10px; }
+      .diagram, .script-block { font-size: 11px; padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="https://thebitcoinbreakdown.com" class="logo">The Bitcoin Breakdown</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="https://thebitcoinbreakdown.com/guide/">Compendium</a></li>
+        <li><a href="https://thebitcoinbreakdown.com/blog/">Blog</a></li>
+        <li><a href="https://thebitcoinbreakdown.com/about/">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article>
+
+<!-- Post Header -->
+<header class="post-header container">
+  <div class="hash-decoration reveal">0xA7C4F0::ARKPOOL::SPEC::v0.1::4032blk</div>
+  <h1 class="reveal">ArkPool: A BTC-Native Liquidity Market for Ark Service Providers</h1>
+  <div class="article-meta reveal">Version 0.1 &middot; March 2026 &middot; Draft Specification</div>
+  <div class="tag-group reveal">
+    <a class="tag" href="https://ark-protocol.org/index.html">Ark Protocol</a>
+    <a class="tag" href="https://bitcoinops.org/en/topics/ark/">Bitcoin Optech</a>
+    <a class="tag">BTC-for-BTC</a>
+    <a class="tag">Liquidity</a>
+    <a class="tag">ASP Capital</a>
+  </div>
+</header>
+
+<!-- Content -->
+<div class="post-content prose container">
+
+<!-- TOC -->
+<nav class="toc reveal">
+  <div class="toc-title">Contents</div>
+  <ol>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#problem">Problem Statement</a></li>
+    <li><a href="#principles">Design Principles</a></li>
+    <li><a href="#architecture">Architecture Overview</a></li>
+    <li><a href="#liquidity">Liquidity Sources</a></li>
+    <li><a href="#flows">Transaction Flows</a></li>
+    <li><a href="#escrow">Escrow Construction</a></li>
+    <li><a href="#rates">Rate Discovery</a></li>
+    <li><a href="#guardrails">Leverage Guardrails</a></li>
+    <li><a href="#settlement">Settlement Rails</a></li>
+    <li><a href="#interface">Interface to Ark</a></li>
+    <li><a href="#comparison">Comparison of Approaches</a></li>
+    <li><a href="#risk">Risk Analysis</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#questions">Open Questions</a></li>
+    <li><a href="#references">References</a></li>
+  </ol>
+</nav>
+
+<!-- Abstract -->
+<h2 id="abstract">Abstract</h2>
+
+<p><a href="https://ark-protocol.org/index.html">Ark</a> Service Providers lock fresh BTC into VTXO covenant trees each round while previously committed BTC remains inaccessible for 14-28 days. Even with <a href="https://brqgoo.medium.com/introducing-ark-v2-2e7ab378e87b">V2 revocation</a> recovering 30-60% of locked capital early, a residual working capital gap persists that grows with throughput. ArkPool is a BTC-for-BTC lending protocol that moves idle BTC from liquidity providers to capital-constrained ASPs, secured by on-chain escrow. The ASP repays principal from its capital cycle (BTC returning from expired trees) and interest from accumulated fee revenue. Same-asset lending eliminates haircut complexity, mark-to-market requirements, and fire-sale cascades -- the three mechanisms that make traditional repo systemically fragile. All terms are denominated in BTC and enforced at block heights -- no oracles, no clock time, no fiat reference points.</p>
+
+<hr />
+
+<!-- 1. Problem Statement -->
+<h2 id="problem">1. Problem Statement</h2>
+
+<h3>1.1 The Working Capital Gap</h3>
+
+<p>An ASP processing $10M/week in throughput must maintain approximately $26M in locked capital under V2 mechanics (50% spend rate, 28-day expiry, 1.3x change multiplier). The capital multiplier is driven by a structural fact: every in-Ark transaction commits fresh BTC to a new covenant tree while the old BTC remains locked until the previous tree expires.</p>
+
+<p>The gross ROI on this locked capital is approximately 6% at a <a href="https://second.tech/docs/learn/fees">0.3% blended fee rate</a> -- marginal compared to passive BTC lending alternatives (2-5.25% on <a href="https://www.ledn.io/post/bitcoin-loan-rates">Ledn</a>, 2.6% median on <a href="https://blog.second.tech/diving-deeper-into-lightning-liquidity-amboss-magma-2/">Magma</a>). After operating costs (~$350K/year for a medium ASP), net ROI drops to 1.7%. The business model works, but it requires $26M in patient capital that most potential ASP operators do not have.</p>
+
+<h3>1.2 Why Protocol-Level Solutions Are Necessary but Insufficient</h3>
+
+<p>V2 revocation reduces lockup by 30-60% depending on user spending patterns. Shorter VTXO expiry (28 to 14 days) halves the requirement again. Combined, these cut the gap by 60-85%. For a medium ASP, the residual capital need drops from $52M (V1) to $9-15M (V2 + 14-day expiry). This is a dramatic improvement -- but $15M is still $15M.</p>
+
+<p>Protocol-level improvements have a ceiling. You cannot reduce expiry below ~7 days without destroying UX. You cannot force users to spend faster to generate revocation secrets. The residual gap after optimization is the addressable market for external liquidity.</p>
+
+<h3>1.3 Prior Art</h3>
+
+<ul>
+  <li><strong><a href="https://blog.second.tech/ark-liquidity-research-01/">Second's research series</a></strong> (3 parts, 2025): Quantifies the problem, benchmarks opportunity cost at 1-4% APR. Does not propose a financing mechanism.</li>
+  <li><strong><a href="https://stacker.news/items/192040">Burak (Stacker News AMA)</a></strong>: "One must own a large chunk of BTC to run an ASP infra. Otherwise, it's better to join an ASP federation." No specification of how federation would work financially.</li>
+  <li><strong><a href="https://github.com/arkade-os/arkd/issues/197">ben2077, GitHub issue #197</a></strong> (arkade-os/arkd): Sketches per-round liquidity requests from external providers. Concept only -- associated PR #198 was closed.</li>
+  <li><strong>reardencode (Stacker News AMA)</strong>: "ASPs would likely pursue lines of bitcoin credit to bridge times of low expiration flow." One sentence. No follow-through.</li>
+  <li><strong><a href="https://whitepaper.lendasat.com/lendasat-whitepaper.pdf">Lendasat</a></strong>: DLC VTXOs for user-facing P2P lending ON Ark. Does not provide capital TO ASPs, but the DLC VTXO primitive is potentially adaptable.</li>
+</ul>
+
+<p><strong>Nobody has published a protocol specification for a financial-market solution to ASP working capital.</strong></p>
+
+<hr />
+
+<!-- 2. Design Principles -->
+<h2 id="principles">2. Design Principles</h2>
+
+<div class="principle">
+  <div class="principle-id">P1</div>
+  <p><strong>Unilateral exit is sacrosanct.</strong> BTC committed to a <a href="https://bitcoinops.org/en/topics/ark/">VTXO</a> tree cannot be clawed back by any lender, under any circumstances. The lender's security comes from assets SEPARATE from tree-committed funds. Without it, Ark reduces to a custodial service.</p>
+</div>
+
+<div class="principle">
+  <div class="principle-id">P2</div>
+  <p><strong>BTC-for-BTC only.</strong> Same-asset lending eliminates FX risk, mark-to-market, and the haircut spiral that makes traditional repo systemically fragile. Haircuts drop from 10-20% (BTC-vs-USD) to 1-3% (covering only on-chain execution risk). No fiat, no stablecoins in the core protocol.</p>
+</div>
+
+<div class="principle">
+  <div class="principle-id">P3</div>
+  <p><strong>Non-custodial.</strong> Escrow is enforced by Bitcoin script. The LP's BTC is held in a timelocked multisig, not in the ASP's wallet. If the ASP defaults, the LP claims the escrow after timeout -- no bankruptcy proceedings, no creditor queue.</p>
+</div>
+
+<div class="principle">
+  <div class="principle-id">P4</div>
+  <p><strong>No credit creation.</strong> Every BTC lent is a real BTC that exists on-chain. No fractional reserves, no rehypothecation, no collateral reuse. Each BTC escrowed against exactly one loan.</p>
+</div>
+
+<div class="principle">
+  <div class="principle-id">P5</div>
+  <p><strong>Progressive decentralization.</strong> Start bilateral (two parties, direct negotiation), evolve to protocol (auction, matching, automated settlement). The bilateral phase proves demand and builds trust.</p>
+</div>
+
+<div class="principle">
+  <div class="principle-id">P6</div>
+  <p><strong>Composability with existing infrastructure.</strong> Lightning for settlement. On-chain for escrow. No new tokens, no sidechains, no bridges.</p>
+</div>
+
+<div class="principle">
+  <div class="principle-id">P7</div>
+  <p><strong>Block time, not clock time.</strong> All ArkPool terms, escrow timeouts, and maturity dates are specified in block heights, not calendar dates. "28 days" means ~4,032 blocks. The escrow timeout, loan maturity, and VTXO expiry all reference the same block height coordinate system.</p>
+</div>
+
+<hr />
+
+<!-- 3. Architecture -->
+<h2 id="architecture">3. Architecture Overview</h2>
+
+<p>Two approaches address the problem from different angles. This spec recommends a phased hybrid.</p>
+
+<h3>3.1 Approach A: Standalone Liquidity Market</h3>
+
+<p>The ASP borrows BTC from an LP via a separate protocol. The lending relationship is decoupled from <a href="https://ark-protocol.org/intro/index.html">Ark's round mechanics</a>.</p>
+
+<div class="diagram">LP                          ASP                         Ark Users
+ |                           |                            |
+ |--- BTC to escrow -------->|                            |
+ |                           |--- BTC into round -------->|
+ |                           |   (new VTXO tree)          |
+ |                           |                            |
+ |                      [14-28 days pass]                 |
+ |                           |                            |
+ |                           |<-- BTC from expired tree --|
+ |<-- principal + fee -------|                            |
+ |<-- escrow released -------|                            |</div>
+
+<p><strong>How it works:</strong></p>
+<ol>
+  <li>ASP posts a borrowing request: amount, term, max rate, collateral offered</li>
+  <li>LP evaluates the ASP: on-chain balance sheet, tree expiry schedule, reputation</li>
+  <li>Terms agreed: rate, term (matching VTXO expiry), collateral ratio</li>
+  <li>Escrow setup: ASP locks collateral BTC in a timelocked 2-of-2 multisig</li>
+  <li>LP sends BTC to ASP (Lightning or on-chain)</li>
+  <li>ASP uses borrowed BTC to fund rounds normally</li>
+  <li>When VTXO trees expire, ASP reclaims BTC</li>
+  <li>ASP repays LP: principal + fee via Lightning or on-chain</li>
+  <li>Both parties cooperatively close the escrow, returning collateral to ASP</li>
+</ol>
+
+<p><strong>Advantages:</strong> No Ark protocol changes required. Works with any Ark implementation (<a href="https://docs.arkadeos.com">Arkade</a>, <a href="https://docs.second.tech/">Bark</a>, future implementations). LP does not need to understand Ark internals. Buildable today with existing Bitcoin primitives.</p>
+
+<p><strong>Disadvantages:</strong> Borrowed BTC enters a tree and becomes untouchable by the lender. Two separate transactions rather than one atomic operation. LP must trust the ASP to repay from expired tree proceeds.</p>
+
+<h3>3.2 Approach B: Per-Round Liquidity Integration</h3>
+
+<p>Based on <a href="https://github.com/arkade-os/arkd/issues/197">ben2077's issue #197</a>. External LPs participate directly in Ark rounds. When an ASP's batch exceeds its available capital, it solicits external funds that enter the round's commitment transaction.</p>
+
+<div class="diagram">LP                          ASP                         Ark Users
+ |                           |                            |
+ |                           |<-- round batch request ----|
+ |                           |   (exceeds ASP capital)    |
+ |                           |                            |
+ |<-- liquidity request -----|                            |
+ |   "Need X BTC, Y% fee"   |                            |
+ |                           |                            |
+ |--- UTXO for round ------->|                            |
+ |                           |--- poolTx (includes LP) -->|
+ |                           |   LP's UTXO in tree        |
+ |                           |                            |
+ |                      [users refresh VTXOs]             |
+ |                           |                            |
+ |<-- forfeit proceeds ------|                            |
+ |   (paid to LP, not ASP)   |                            |</div>
+
+<p><strong>Advantages:</strong> LP has a direct claim on specific forfeit proceeds. Lending is atomic with the round. Eliminates the circular risk problem.</p>
+
+<p><strong>Disadvantages:</strong> Requires Ark protocol changes. Tighter coupling between lending and round mechanics. LP must understand Ark internals. Not buildable today.</p>
+
+<h3>3.3 Recommended: Phased Hybrid</h3>
+
+<p><strong>Phase 1 (buildable now): Approach A.</strong> Standalone bilateral lending. No protocol changes. Proves demand, establishes rate benchmarks, builds LP relationships.</p>
+
+<p><strong>Phase 2 (Ark protocol matures): Approach B.</strong> Per-round integration for tighter security and atomicity. The standalone market bootstraps liquidity; per-round integration optimizes it.</p>
+
+<p>Both approaches coexist. Approach A serves longer-term lending (14-28 day) and LPs who prefer simplicity. Approach B serves same-round, just-in-time capital needs.</p>
+
+<hr />
+
+<!-- 4. Liquidity Sources -->
+<h2 id="liquidity">4. Liquidity Sources</h2>
+
+<h3>4.1 Inter-ASP Lending (The Interbank Analogue)</h3>
+
+<p>ASPs with recently expired trees hold surplus BTC. ASPs facing large onboarding rounds need BTC urgently. Rather than each ASP maintaining enormous buffers, they lend surplus to each other.</p>
+
+<ul>
+  <li><strong>Term:</strong> 1-7 days (bridging finance)</li>
+  <li><strong>Rate:</strong> 1-3% annualized (lowest of three sources)</li>
+  <li><strong>Settlement:</strong> Lightning</li>
+  <li><strong>Minimum participants:</strong> 3-5 ASPs with differentiated round schedules</li>
+</ul>
+
+<p>This is how the U.S. federal funds market started in the 1920s. Two banks in New York called each other. The rate was whatever they agreed on.</p>
+
+<h3>4.2 Lightning Liquidity Providers</h3>
+
+<p>Lightning routing nodes with idle channel capacity redeploy BTC for higher yield.</p>
+
+<ul>
+  <li><strong>Term:</strong> 14-28 days (matches VTXO expiry and <a href="https://lightning.engineering/lightning-pool-whitepaper.pdf">Lightning Pool</a> lease conventions)</li>
+  <li><strong>Rate:</strong> Must beat ~2.6% <a href="https://blog.second.tech/diving-deeper-into-lightning-liquidity-amboss-magma-2/">Magma median</a>. Target: 3-5% annualized.</li>
+  <li><strong>The pitch:</strong> "You're earning 1.5% routing payments through idle channels. Close those underperforming channels and lend to us at 3.5% for 28 days, secured by on-chain escrow."</li>
+</ul>
+
+<h3>4.3 HODLers (Passive BTC Holders)</h3>
+
+<ul>
+  <li><strong>Term:</strong> 14-28 days, fixed</li>
+  <li><strong>Rate:</strong> 2-3% annualized with on-chain escrow security</li>
+  <li><strong>Trust model:</strong> On-chain escrow eliminates custodial risk. The HODLer's BTC is locked in a timelocked multisig, not transferred to the ASP.</li>
+</ul>
+
+<p><strong>The BlockFi/Celsius lesson:</strong> ArkPool's escrow is enforced by Bitcoin script, not by corporate policy. The HODLer's private keys never leave their control. If the ASP defaults, the timelock expires and the HODLer claims the ASP's collateral. No bankruptcy proceedings, no creditor queue.</p>
+
+<p>This cohort is the largest BTC capital pool but the hardest to activate. Long-term source, not a launch source.</p>
+
+<hr />
+
+<!-- 5. Transaction Flows -->
+<h2 id="flows">5. Transaction Flows</h2>
+
+<h3>5.1 Approach A: Standalone Lending Flow</h3>
+
+<p><strong>Worked example:</strong> An ASP processing 100 BTC/week needs to borrow 30 BTC at 3% annualized for 28 days. The LP earns 0.069 BTC in fees.</p>
+
+<p><strong>Step 1: Request.</strong> ASP publishes:</p>
+
+<pre><code>BORROW_REQUEST {
+  amount: 30 BTC
+  term: 28 days (block height 890,000 to 894,032)
+  max_rate: 4% annualized
+  collateral_offered: 32 BTC (106.7% ratio)
+  collateral_utxos: [txid:vout, txid:vout, ...]
+  asp_pubkey: &lt;key&gt;
+  tree_expiry_schedule: [
+    {amount: 45 BTC, expires: block 891,200},
+    {amount: 38 BTC, expires: block 892,400},
+    ...
+  ]
+}</code></pre>
+
+<p><strong>Step 2: Evaluation.</strong> The LP verifies collateral UTXOs exist on-chain, tree expiry schedule is consistent, and ASP's total borrowing does not exceed 50% of its verifiable balance sheet.</p>
+
+<p><strong>Step 3: Agreement.</strong> Both parties sign a term sheet:</p>
+
+<pre><code>LOAN_TERMS {
+  principal: 30 BTC
+  rate: 3% annualized
+  fee: 0.069 BTC
+  term: blocks 890,000 - 894,032
+  collateral: 32 BTC
+  escrow_script: &lt;see Section 6&gt;
+  repayment: principal + fee by block 894,032
+  default_trigger: no repayment by block 894,032
+}</code></pre>
+
+<p><strong>Steps 4-9:</strong> Escrow funding (ASP locks 32 BTC) &#8594; Principal transfer (LP sends 30 BTC via Lightning) &#8594; ASP operations (normal round funding) &#8594; Tree expiry returns locked BTC to ASP (principal source), while fee revenue accumulates continuously from processing rounds (interest source) &#8594; Repayment (30.069 BTC to LP) &#8594; Cooperative escrow release.</p>
+
+<p><strong>Step 10: Default path.</strong> If the ASP does not repay by block 894,032, the escrow's timeout path activates. The LP broadcasts the timeout transaction and claims 32 BTC. The 1.931 BTC surplus covers on-chain fees and execution risk.</p>
+
+<h3>5.2 Approach B: Per-Round Integration Flow</h3>
+
+<p><strong>Worked example:</strong> An ASP constructing a round with 50 BTC in user demand has 35 BTC available. It needs 15 BTC from an external LP.</p>
+
+<p>The LP contributes a UTXO to the round's commitment transaction. Forfeit transactions direct expired VTXO proceeds to the LP's address. If 5% of users exit unilaterally, the LP receives approximately 14.288 BTC instead of 15.040 BTC. The fee (3.5% annualized) compensates for this actuarial risk.</p>
+
+<hr />
+
+<!-- 6. Escrow -->
+<h2 id="escrow">6. Escrow Construction (Approach A)</h2>
+
+<h3>6.1 Timelocked 2-of-2 Multisig (Recommended for Phase 1)</h3>
+
+<div class="script-block">OP_IF
+  &lt;ASP_pubkey&gt; OP_CHECKSIGVERIFY
+  &lt;LP_pubkey&gt; OP_CHECKSIG
+OP_ELSE
+  &lt;timeout_blockheight&gt; OP_CHECKLOCKTIMEVERIFY OP_DROP
+  &lt;LP_pubkey&gt; OP_CHECKSIG
+OP_ENDIF</div>
+
+<p><strong>Cooperative path (OP_IF):</strong> Both ASP and LP sign. Used when the ASP repays on time. This is the normal, expected path.</p>
+
+<p><strong>Timeout path (OP_ELSE):</strong> LP signs alone after <code>timeout_blockheight</code>. Used when the ASP defaults. No ASP cooperation needed.</p>
+
+<p><strong>Why this works:</strong> The ASP cannot prevent the LP from claiming after timeout. The LP cannot claim before timeout. The escrow is enforced by Bitcoin consensus, not by either party's goodwill. Uses well-understood opcodes in production <a href="https://bitcoinops.org/en/topics/covenants/">since 2015</a> (CLTV via BIP 65).</p>
+
+<h3>6.2 DLC-Based Escrow (Phase 2 Option)</h3>
+
+<p>A <a href="https://whitepaper.lendasat.com/lendasat-whitepaper.pdf">Discreet Log Contract</a> uses an oracle to attest to whether the ASP repaid. Handles partial repayment and complex term structures. Requires a trusted oracle -- Phase 2 only.</p>
+
+<h3>6.3 What Serves as Collateral?</h3>
+
+<p>The collateral must be SEPARATE from any tree-committed BTC (Principle P1):</p>
+
+<ol>
+  <li><strong>ASP's on-chain reserves</strong> -- BTC not yet committed to trees. Most straightforward. Verifiable on-chain.</li>
+  <li><strong>Near-term tree expiry claims</strong> -- BTC returning from trees expiring within 7 days. A forward claim, discounted 10-20%.</li>
+  <li><strong>Lightning channel balances</strong> -- Verifiable via public channel state. Weak collateral (force-close is destructive).</li>
+  <li><strong>A combination</strong> -- 70% on-chain reserves, 30% near-term expiry claims.</li>
+</ol>
+
+<p><strong>Collateral ratio:</strong> 105-110% for established ASPs. 120-130% for new ASPs.</p>
+
+<h3>6.4 Trust Model Summary</h3>
+
+<table>
+  <thead>
+    <tr><th>Component</th><th>Trust Assumption</th><th>Oracle?</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Approach A, timelocked multisig</strong></td><td>Bitcoin consensus only</td><td>No</td></tr>
+    <tr><td><strong>Approach A, DLC escrow</strong></td><td>Trusted oracle must correctly attest to repayment</td><td>Yes</td></tr>
+    <tr><td><strong>Approach B, per-round forfeit</strong></td><td>Ark's existing forfeit mechanism. Actuarial risk, not trust risk.</td><td>No</td></tr>
+  </tbody>
+</table>
+
+<hr />
+
+<!-- 7. Rates -->
+<h2 id="rates">7. Rate Discovery</h2>
+
+<h3>7.1 Phase 1: Bilateral Negotiation (2-5 ASPs)</h3>
+
+<p>ASP messages LP directly: "I need 30 BTC for 28 days. My trees expire on Thursday. I'll pay you 3%." They agree. This is how the fed funds market worked in the 1920s.</p>
+
+<h3>7.2 Phase 2: Bulletin Board (5-15 ASPs)</h3>
+
+<pre><code>BOARD:
+  BORROW: ASP-Alpha needs 30 BTC, 28 days, max 4%
+  BORROW: ASP-Beta needs 15 BTC, 14 days, max 3.5%
+  LEND:   LP-River offers 50 BTC, 28 days, min 3%
+  LEND:   LP-Node42 offers 10 BTC, 14 days, min 2.5%</code></pre>
+
+<h3>7.3 Phase 3: Batch Auction (10+ ASPs)</h3>
+
+<p>Periodic sealed-bid auctions with uniform clearing price. Modeled on <a href="https://lightning.engineering/lightning-pool-whitepaper.pdf">Lightning Pool's architecture</a>. Same mechanism the U.S. Treasury uses for bond auctions -- promotes truthful bidding.</p>
+
+<h3>7.4 The Natural Rate Band</h3>
+
+<table>
+  <thead>
+    <tr><th>Bound</th><th>Rate</th><th>Driver</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Floor</strong></td><td>~1.5-2.5%</td><td>Below this, LPs earn more on <a href="https://voltage.cloud/blog/where-does-lightning-network-yield-come-from">Lightning</a> or <a href="https://blog.second.tech/diving-deeper-into-lightning-liquidity-amboss-magma-2/">Magma</a></td></tr>
+    <tr><td><strong>Ceiling</strong></td><td>~5-6%</td><td>Above this, ASP gross ROI is consumed by borrowing costs</td></tr>
+    <tr><td><strong>Expected clearing</strong></td><td>2.5-4%</td><td>Above Lightning yield, below ASP ROI</td></tr>
+  </tbody>
+</table>
+
+<hr />
+
+<!-- 8. Guardrails -->
+<h2 id="guardrails">8. Leverage Guardrails</h2>
+
+<h3>8.1 Maximum Borrowing Ratio</h3>
+
+<table>
+  <thead>
+    <tr><th>Risk Tier</th><th>Max Borrowing</th><th>Who</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Conservative</td><td>30%</td><td>New ASPs, no repayment history</td></tr>
+    <tr><td>Moderate</td><td>50%</td><td>Established ASPs, 3+ successful repayment cycles</td></tr>
+    <tr><td>Extended</td><td>70%</td><td>Proven ASPs with 6+ months of history</td></tr>
+  </tbody>
+</table>
+
+<h3>8.2 Proof of Reserves</h3>
+
+<ol>
+  <li><strong>On-chain UTXOs:</strong> ASP signs a message with each UTXO's key, proving ownership.</li>
+  <li><strong>Tree expiry schedule:</strong> ASP shares round commitment TxIDs. LP verifies on-chain.</li>
+  <li><strong>Lightning channels:</strong> Public channel data from gossip protocol.</li>
+</ol>
+
+<h3>8.3 No Rehypothecation</h3>
+
+<p>Each BTC is escrowed against exactly one loan. Maximum collateral velocity is 1.0x. Every claim is backed by real, unencumbered BTC. This eliminates the cascade risk that Singh identified in traditional repo (collateral velocity of 2.5-3.0x).</p>
+
+<h3>8.4 Reputation</h3>
+
+<p>With 3-10 ASPs, reputation is powerful. Default = never borrow again. Graduated trust model with slow limit increases. The bulletin board (Phase 2) makes repayment records visible to all participants.</p>
+
+<hr />
+
+<!-- 9. Settlement -->
+<h2 id="settlement">9. Settlement Rails</h2>
+
+<table>
+  <thead>
+    <tr><th>Step</th><th>Rail</th><th>Reason</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Escrow setup</td><td>On-chain</td><td>The trust anchor</td></tr>
+    <tr><td>Principal transfer</td><td>Lightning (if within capacity)</td><td>Fast, cheap</td></tr>
+    <tr><td>Interest/fee payments</td><td>Lightning</td><td>Small, routes easily</td></tr>
+    <tr><td>Principal return</td><td>Lightning or on-chain</td><td>Amount-dependent</td></tr>
+    <tr><td>Escrow release</td><td>On-chain</td><td>Cooperative close</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Why not Ark-native settlement?</strong> An ASP receiving borrowed BTC as a VTXO would need to exit the VTXO (expensive, slow) to convert it into an on-chain UTXO before using it to fund a new round. The ASP needs raw on-chain BTC or Lightning BTC, not a claim within an existing tree.</p>
+
+<hr />
+
+<!-- 10. Interface -->
+<h2 id="interface">10. Interface to Ark</h2>
+
+<h3>10.1 Approach A: No Ark Changes Required</h3>
+
+<div class="diagram">[ArkPool Client]  &lt;--&gt;  [LP / Bulletin Board / Auction]
+       |
+       v
+  ASP's BTC wallet
+       |
+       v
+   [arkd / bark]  &lt;--&gt;  Ark Users</div>
+
+<p>ArkPool is a separate application. The ASP operator runs it alongside their <a href="https://github.com/arkade-os">arkd</a> or <a href="https://gitlab.com/ark-bitcoin">bark</a> server. They interact only through the ASP's BTC wallet.</p>
+
+<h3>10.2 Approach B: Ark Protocol Changes Required</h3>
+
+<p>New message types (<code>LiquidityRequest</code>, <code>LiquidityOffer</code>), modified round construction (accept external UTXOs), and modified forfeit construction (configurable recipients). These require community buy-in from both <a href="https://docs.arkadeos.com">Ark Labs</a> and <a href="https://docs.second.tech/">Second</a>. Realistic timeline: 1-2 years after proposal acceptance.</p>
+
+<hr />
+
+<!-- 11. Comparison -->
+<h2 id="comparison">11. Comparison of Approaches</h2>
+
+<table>
+  <thead>
+    <tr><th>Dimension</th><th>Approach A (Standalone)</th><th>Approach B (Per-Round)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Ark protocol changes</td><td>None</td><td>Significant</td></tr>
+    <tr><td>LP security model</td><td>On-chain escrow (ASP's separate BTC)</td><td>Direct forfeit claim (stronger)</td></tr>
+    <tr><td>Atomicity</td><td>Not atomic with round</td><td>Atomic with round</td></tr>
+    <tr><td>Circular risk</td><td>Present</td><td>Eliminated</td></tr>
+    <tr><td>Implementation complexity</td><td>Lower</td><td>Higher</td></tr>
+    <tr><td>Time to deploy</td><td>Now</td><td>1-2 years</td></tr>
+    <tr><td>LP knowledge required</td><td>Basic Bitcoin</td><td>Must understand Ark internals</td></tr>
+    <tr><td>Collateral source</td><td>ASP's non-tree BTC</td><td>Forfeit proceeds themselves</td></tr>
+    <tr><td>Unilateral exit impact</td><td>None on lender</td><td>LP bears actuarial risk</td></tr>
+  </tbody>
+</table>
+
+<hr />
+
+<!-- 12. Risk -->
+<h2 id="risk">12. Risk Analysis</h2>
+
+<h3>12.1 ASP Default</h3>
+<p><strong>Approach A:</strong> LP claims the timelocked escrow after timeout. If collateral ratio is 110%, LP recovers principal plus a buffer. Risk is bounded.</p>
+<p><strong>Approach B:</strong> LP sweeps expired VTXOs via pre-signed forfeit transactions. Recourse does not depend on ASP cooperation post-round.</p>
+
+<h3>12.2 Mass Unilateral Exits</h3>
+<p><strong>Approach A:</strong> Does not directly affect the lender (escrow is separate). ASP's ability to repay may be impaired.</p>
+<p><strong>Approach B:</strong> Directly reduces LP's forfeit proceeds. At 5% exit rate, LP receives ~14.3 BTC on a 15 BTC loan -- a 4.7% loss, partially offset by the fee.</p>
+
+<h3>12.3 On-Chain Fee Spikes</h3>
+<p>Mitigation: set escrow timeout with 2-3 day buffer. Use RBF on claim transactions. Collateral surplus covers fee costs.</p>
+
+<h3>12.4 ASP Over-Leverage</h3>
+<p>Mitigated by: maximum borrowing ratios, proof of reserves, no rehypothecation, and reputation. In a 3-10 ASP market, over-leveraging is observable.</p>
+
+<h3>12.5 LP Concentration</h3>
+<p>Single-LP withdrawal is a localized liquidity event. Mitigation: ASPs diversify across multiple LPs. Bulletin board and auction phases distribute capital naturally.</p>
+
+<h3>12.6 Script Bugs</h3>
+<p>The timelocked 2-of-2 multisig uses opcodes in production since 2015. Risk is low. Mitigation: formal review, established templates, small initial loans.</p>
+
+<h3>12.7 Reputation Gaming</h3>
+<p>Graduated trust with slow limit increases. 3+ months for conservative-to-moderate transition. Bounded by escrow collateral even in worst case.</p>
+
+<hr />
+
+<!-- 13. Roadmap -->
+<h2 id="roadmap">13. Roadmap</h2>
+
+<div class="phase-card">
+  <div class="phase-label">Phase 1 -- Year 1</div>
+  <h4>Bilateral Lending (Buildable Now)</h4>
+  <p><strong>Participants:</strong> 2-3 ASPs, 3-10 LPs</p>
+  <p><strong>Mechanism:</strong> Direct negotiation, manual terms, on-chain escrow</p>
+  <p><strong>Deliverables:</strong> Standardized term sheet, reference escrow script, CLI tool, proof-of-reserves format</p>
+  <p><strong>Volume:</strong> &lt;$10M/month</p>
+</div>
+
+<div class="phase-card">
+  <div class="phase-label">Phase 2 -- Year 1-2</div>
+  <h4>Bulletin Board and Standardization</h4>
+  <p><strong>Participants:</strong> 5-10 ASPs, 20-50 LPs</p>
+  <p><strong>Mechanism:</strong> Public board, standardized terms, transparent rate history</p>
+  <p><strong>Deliverables:</strong> Web interface, standardized 7/14/28-day terms, public rate history, integrated proof-of-reserves</p>
+  <p><strong>Volume:</strong> $10-50M/month</p>
+</div>
+
+<div class="phase-card">
+  <div class="phase-label">Phase 3 -- Year 2-3</div>
+  <h4>Batch Auction and DLC Escrow</h4>
+  <p><strong>Participants:</strong> 10-20 ASPs, 50+ LPs</p>
+  <p><strong>Mechanism:</strong> Sealed-bid auctions with uniform clearing price</p>
+  <p><strong>Deliverables:</strong> Auction protocol, DLC escrow, automated management, ASP software integration</p>
+  <p><strong>Volume:</strong> $50-200M/month</p>
+</div>
+
+<div class="phase-card">
+  <div class="phase-label">Phase 4 -- Year 3+</div>
+  <h4>Per-Round Integration</h4>
+  <p><strong>Participants:</strong> Broad market</p>
+  <p><strong>Mechanism:</strong> Approach B -- LP UTXOs in round commitment transactions</p>
+  <p><strong>Trigger:</strong> Ark protocol supports required changes AND Phase 1-3 demonstrate sufficient demand</p>
+</div>
+
+<hr />
+
+<!-- 14. Open Questions -->
+<h2 id="questions">14. Open Questions</h2>
+
+<ol>
+  <li><strong>Minimum ASP count for a functioning inter-ASP market?</strong> Is 5 enough for price discovery, or does it remain bilateral until 10+?</li>
+  <li><strong>Proof of reserves format?</strong> UTXO key signing is standard. Forward claims on expiring trees need a new attestation format.</li>
+  <li><strong>Can <a href="https://whitepaper.lendasat.com/lendasat-whitepaper.pdf">Lendasat's DLC VTXO primitive</a> be adapted for ASP-facing lending?</strong></li>
+  <li><strong>Standalone app, Ark plugin, or Lightning Pool extension?</strong> Deployment model depends on which LPs adopt first.</li>
+  <li><strong>Legal classification</strong> of a BTC-for-BTC fixed-term loan -- security, swap, or repo?</li>
+  <li><strong>Covenant interaction:</strong> How does ArkPool interact with <a href="https://bitcoinops.org/en/topics/op_checktemplateverify/">CTV</a> / <a href="https://bitcoinops.org/en/topics/covenants/">OP_CAT</a>?</li>
+  <li><strong>Stablecoin scaling:</strong> Does the architecture handle 10-100x capital requirements?</li>
+  <li><strong>Oracle design for DLC escrow:</strong> Federation of LPs, third-party attestor, or on-chain verification?</li>
+</ol>
+
+<hr />
+
+<!-- 15. References -->
+<h2 id="references">15. References</h2>
+
+<h3>Ark Protocol</h3>
+<ul>
+  <li><a href="https://ark-protocol.org/index.html">Ark Protocol specification</a> -- VTXO mechanics, round structure</li>
+  <li><a href="https://ark-protocol.org/intro/index.html">Introduction to Ark</a> -- Technical overview</li>
+  <li><a href="https://bitcoinops.org/en/topics/ark/">Bitcoin Optech: Ark topic</a> -- Newsletter coverage, technical summary</li>
+  <li><a href="https://blog.arklabs.xyz/">Ark Labs blog</a> -- Liquidity requirements, delegation, Tether investment</li>
+  <li><a href="https://blog.second.tech/">Second blog</a> -- Liquidity research series (3 parts), yield survey</li>
+  <li><a href="https://brqgoo.medium.com/introducing-ark-v2-2e7ab378e87b">Burak: Introducing Ark V2</a> -- Revocation mechanism</li>
+  <li><a href="https://github.com/arkade-os/arkd/issues/197">ben2077, issue #197</a> -- Per-round external liquidity concept</li>
+</ul>
+
+<h3>Implementations</h3>
+<ul>
+  <li><a href="https://github.com/arkade-os">Arkade</a> (<a href="https://docs.arkadeos.com">docs</a>) -- Ark Labs, Go implementation</li>
+  <li><a href="https://gitlab.com/ark-bitcoin">Bark</a> (<a href="https://docs.second.tech/">docs</a>) -- Second, Rust implementation</li>
+</ul>
+
+<h3>Lightning Liquidity Markets</h3>
+<ul>
+  <li><a href="https://lightning.engineering/lightning-pool-whitepaper.pdf">Lightning Pool whitepaper</a> -- Batch auction architecture</li>
+  <li><a href="https://old-docs.amboss.tech/docs/magma/intro">Amboss Magma</a> -- Median 2.6% APR benchmark</li>
+  <li><a href="https://voltage.cloud/blog/where-does-lightning-network-yield-come-from">Voltage LINER data</a> -- 1.2-1.7% network yield</li>
+</ul>
+
+<h3>BTC Lending</h3>
+<ul>
+  <li><a href="https://whitepaper.lendasat.com/lendasat-whitepaper.pdf">Lendasat whitepaper</a> -- DLC VTXOs on Ark</li>
+  <li><a href="https://www.coindesk.com/business/2025/08/27/lygos-aims-to-banish-ghosts-of-crypto-lending-collapse-with-non-custodial-bitcoin-model">Lygos Finance</a> -- Non-custodial DLC lending</li>
+  <li><a href="https://www.ledn.io/post/bitcoin-loan-rates">Ledn</a> -- 2-5.25% APY benchmark</li>
+</ul>
+
+<h3>Traditional Repo</h3>
+<ul>
+  <li>Pozsar, Z. (2014). "Shadow Banking: The Money View." OFR Working Paper 14-04</li>
+  <li>Gorton, G. and Metrick, A. (2012). "Securitized Banking and the Run on Repo." JFE 104(3)</li>
+  <li>Singh, M. (2011). "Velocity of Pledged Collateral." IMF Working Paper 11/256</li>
+</ul>
+
+<h3>Related Optech Coverage</h3>
+<ul>
+  <li><a href="https://bitcoinops.org/en/topics/op_checktemplateverify/">OP_CHECKTEMPLATEVERIFY</a> -- Key to Ark efficiency and future VTXO scripting</li>
+  <li><a href="https://bitcoinops.org/en/topics/joinpools/">Joinpools</a> -- Ark is a form of joinpool</li>
+  <li><a href="https://bitcoinops.org/en/topics/covenants/">Covenants</a> -- Foundational dependency for trustless Ark</li>
+  <li><a href="https://bitcoinops.org/en/newsletters/2026/03/06/#a-standard-for-stateless-vtxo-verification">V-PACK standard</a> (Mar 2026) -- Stateless VTXO verification</li>
+  <li><a href="https://bitcoinops.org/en/newsletters/2026/02/20/#second-releases-hark-based-ark-software">hArk release</a> (Feb 2026) -- Second's latest implementation</li>
+  <li><a href="https://bitcoinops.org/en/newsletters/2025/11/21/#arkade-launches">Arkade launches</a> (Nov 2025) -- Ark Labs public beta</li>
+</ul>
+
+</div><!-- /prose -->
+
+<footer class="post-footer container" style="margin-top: 64px;">
+  <hr />
+  <div class="hash-decoration">EOF::A7C4F0::ARKPOOL::v0.1::16docs::7200lines</div>
+</footer>
+
+</article>
+</main>
+
+<footer class="footer">
+  <p><a href="https://thebitcoinbreakdown.com">The Bitcoin Breakdown</a> &middot; 2026</p>
+</footer>
+
+<script>
+  // Scroll progress
+  window.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;
+    const progress = docHeight > 0 ? (scrolled / docHeight) * 100 : 0;
+    document.getElementById('scrollProgress').style.width = progress + '%';
+  });
+
+  // Reveal on scroll
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Auto-reveal prose children with stagger
+  const proseChildren = document.querySelectorAll('.prose > *');
+  proseChildren.forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.transitionDelay = Math.min(i * 0.03, 0.3) + 's';
+    revealObserver.observe(el);
+  });
+</script>
+
+</body>
+</html>
