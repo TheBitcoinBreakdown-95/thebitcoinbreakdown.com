@@ -30,6 +30,23 @@ const guide = defineCollection({
   })
 });
 
+const ai = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: '../TBB/ai' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    author: z.string().default('The Bitcoin Breakdown'),
+    tags: z.array(z.string()).default([]),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    draft: z.boolean().default(false),
+    category: z.string().optional(),
+    order: z.number().optional(),
+  })
+});
+
 const pages = defineCollection({
   loader: glob({ pattern: '**/*.md', base: '../TBB/pages' }),
   schema: z.object({
@@ -38,4 +55,4 @@ const pages = defineCollection({
   })
 });
 
-export const collections = { posts, pages, guide };
+export const collections = { posts, pages, guide, ai };

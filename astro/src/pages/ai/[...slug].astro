@@ -1,0 +1,39 @@
+---
+import { getCollection, render } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+
+export async function getStaticPaths() {
+  const aiPosts = await getCollection('ai');
+  return aiPosts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+
+// Calculate reading time (~200 words per minute)
+const wordCount = post.body ? post.body.split(/\s+/).length : 0;
+const minutes = Math.ceil(wordCount / 200);
+const readingTime = minutes <= 1 ? '1 min read' : `${minutes} min read`;
+
+// Get series posts if this post has a category
+let seriesPosts: any[] = [];
+if (post.data.category) {
+  const allPosts = await getCollection('ai', ({ data }) => !data.draft);
+  seriesPosts = allPosts
+    .filter((p) => p.data.category === post.data.category)
+    .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+}
+---
+
+<BlogPost
+  {...post.data}
+  readingTime={readingTime}
+  headings={headings}
+  seriesPosts={seriesPosts}
+  currentPostId={post.id}
+>
+  <Content />
+</BlogPost>

@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('ai', ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout title="AI" description="Guides and tutorials for using AI agents -- from setup to mastery.">
+  <section class="blog-page section">
+    <div class="container--wide">
+      <header class="page-header reveal">
+        <h1>AI</h1>
+        <p class="section-desc">Guides and tutorials for using AI agents. No coding required.</p>
+      </header>
+
+      {sortedPosts.length > 0 ? (
+        <div class="card-grid stagger">
+          {sortedPosts.map((post) => (
+            <div class="reveal">
+              <PostCard
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                slug={post.id}
+                tags={post.data.tags}
+                image={post.data.image}
+                basePath="/ai"
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <div class="empty-icon">&#9881;</div>
+          <h3 class="empty-title">No guides yet</h3>
+          <p class="empty-desc">AI guides are on the way. Check back soon.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    margin-bottom: var(--space-6);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--space-3);
+  }
+</style>

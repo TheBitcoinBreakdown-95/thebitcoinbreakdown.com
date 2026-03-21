@@ -6,9 +6,10 @@ interface Props {
   slug: string;
   tags?: string[];
   image?: string;
+  basePath?: string;
 }
 
-const { title, description, pubDate, slug, tags = [], image } = Astro.props;
+const { title, description, pubDate, slug, tags = [], image, basePath = '/blog' } = Astro.props;
 
 const formatDate = (date: Date) => {
   return date.toLocaleDateString('en-US', {
@@ -28,7 +29,7 @@ const hashString = Array.from(title)
 ---
 
 <article class="article-card">
-  <a href={`/blog/${slug}`} class="card-link">
+  <a href={`${basePath}/${slug}`} class="card-link">
     <div class="card-glow" aria-hidden="true"></div>
     {tags.length > 0 && (
       <span class="card-tag">{tags[0]}</span>
