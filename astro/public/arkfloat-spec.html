@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArkFloat: Liquidity Protocol for Ark Service Providers — v0.3 Draft</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --page-width: 760px;
+      --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      --font-mono: 'Source Code Pro', 'Courier New', monospace;
+      --color-text: #1a1a1a;
+      --color-muted: #555;
+      --color-light: #888;
+      --color-border: #ccc;
+      --color-border-light: #e0e0e0;
+      --color-bg: #ffffff;
+      --color-bg-code: #f6f6f6;
+      --color-bg-table-head: #f0f0f0;
+      --color-accent: #1a1a1a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--color-text);
+      background: var(--color-bg);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Page layout */
+    .page {
+      max-width: var(--page-width);
+      margin: 0 auto;
+      padding: 72px 40px 96px;
+    }
+
+    /* Cover */
+    .cover {
+      text-align: center;
+      padding-bottom: 56px;
+      border-bottom: 2px solid var(--color-text);
+      margin-bottom: 48px;
+    }
+
+    .cover-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-light);
+      margin-bottom: 32px;
+    }
+
+    .cover h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.25;
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .cover-tagline {
+      font-size: 1.15rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-muted);
+      margin: 0 0 32px;
+    }
+
+    .cover-meta {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      line-height: 1.9;
+    }
+
+    .cover-meta strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    /* Abstract */
+    .abstract {
+      background: #f9f9f9;
+      border-left: 3px solid var(--color-text);
+      padding: 20px 24px;
+      margin-bottom: 48px;
+    }
+
+    .abstract-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--color-muted);
+      margin-bottom: 8px;
+    }
+
+    .abstract p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      margin: 0;
+      color: var(--color-muted);
+    }
+
+    /* TOC */
+    .toc {
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .toc h2 {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--color-muted);
+      margin: 0 0 16px;
+      border: none;
+      padding: 0;
+    }
+
+    .toc ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      counter-reset: toc-main;
+    }
+
+    .toc > ol > li {
+      counter-increment: toc-main;
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+    }
+
+    .toc > ol > li::before {
+      content: counter(toc-main) ".";
+      font-variant-numeric: tabular-nums;
+      min-width: 2rem;
+      color: var(--color-light);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .toc a {
+      color: var(--color-text);
+      text-decoration: none;
+      flex: 1;
+    }
+
+    .toc a:hover { text-decoration: underline; }
+
+    .toc .toc-page {
+      color: var(--color-light);
+      font-size: 0.8rem;
+      margin-left: auto;
+      padding-left: 16px;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 56px;
+    }
+
+    /* Headings */
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 56px 0 16px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text);
+    }
+
+    h2 .section-num {
+      font-variant-numeric: tabular-nums;
+      color: var(--color-light);
+      margin-right: 0.5em;
+      font-weight: 400;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 32px 0 10px;
+      color: var(--color-text);
+    }
+
+    h3 .section-num {
+      font-variant-numeric: tabular-nums;
+      color: var(--color-light);
+      margin-right: 0.5em;
+      font-weight: 400;
+    }
+
+    h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 24px 0 8px;
+      color: var(--color-text);
+    }
+
+    /* Body text */
+    p {
+      margin: 0 0 1em;
+    }
+
+    strong { font-weight: 600; }
+
+    em { font-style: italic; }
+
+    a {
+      color: var(--color-text);
+      text-decoration: underline;
+      text-decoration-color: var(--color-border);
+      text-underline-offset: 2px;
+    }
+
+    a:hover {
+      text-decoration-color: var(--color-text);
+    }
+
+    /* Lists */
+    ul, ol {
+      margin: 0 0 1em 1.5em;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.3em;
+    }
+
+    li > p { margin: 0; }
+
+    /* Code */
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.82em;
+      background: var(--color-bg-code);
+      padding: 1px 5px;
+      border-radius: 3px;
+      border: 1px solid var(--color-border-light);
+    }
+
+    pre {
+      background: var(--color-bg-code);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 16px 20px;
+      overflow-x: auto;
+      margin: 1em 0 1.5em;
+      line-height: 1.5;
+    }
+
+    pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.82rem;
+      color: var(--color-text);
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 1em 0 1.5em;
+    }
+
+    thead tr {
+      background: var(--color-bg-table-head);
+    }
+
+    thead th {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 8px 12px;
+      border: 1px solid var(--color-border);
+      color: var(--color-muted);
+    }
+
+    td {
+      padding: 8px 12px;
+      border: 1px solid var(--color-border);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    /* Diagrams */
+    .diagram {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      background: var(--color-bg-code);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 1em 0 1.5em;
+      overflow-x: auto;
+      white-space: pre;
+      line-height: 1.5;
+      color: var(--color-text);
+    }
+
+    /* Callout / note box */
+    .note {
+      background: #fafafa;
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-muted);
+      padding: 14px 18px;
+      margin: 1em 0 1.5em;
+      font-size: 0.9rem;
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+
+    /* Changelog */
+    .changelog {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      border: 1px solid var(--color-border-light);
+      padding: 12px 16px;
+      margin-bottom: 40px;
+      background: #fafafa;
+    }
+
+    .changelog strong {
+      color: var(--color-text);
+    }
+
+    /* Risk table shading */
+    .risk-stress td { background: #fff8f8; }
+
+    /* References section */
+    .references h3 {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--color-border-light);
+      padding-bottom: 4px;
+      margin: 24px 0 10px;
+    }
+
+    .references ul {
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 2px solid var(--color-text);
+      font-size: 0.78rem;
+      color: var(--color-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    /* Print */
+    @media print {
+      html { font-size: 11pt; }
+      .page { padding: 0; }
+      h2 { page-break-after: avoid; }
+      pre, table, .diagram { page-break-inside: avoid; }
+      a { text-decoration: none; color: inherit; }
+      footer { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 40px 20px 64px; }
+      h2 { font-size: 1.1rem; }
+      table { font-size: 0.8rem; }
+      td, thead th { padding: 6px 8px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Cover -->
+  <header class="cover">
+    <p class="cover-label">Draft Specification &mdash; For Review</p>
+    <h1>ArkFloat: Liquidity Protocol for Ark Service Providers</h1>
+    <p class="cover-tagline">Float capital. Float the Ark.</p>
+    <div class="cover-meta">
+      <strong>Version:</strong> 0.3 (Draft)<br>
+      <strong>Date:</strong> March 2026<br>
+      <strong>Status:</strong> Specification for review<br>
+      <strong>Published by:</strong> <a href="https://thebitcoinbreakdown.com">thebitcoinbreakdown.com</a>
+    </div>
+  </header>
+
+  <!-- Changelog -->
+  <div class="changelog">
+    <strong>Changelog &mdash;</strong> v0.3: revised LP security framing, corrected protocol change scope, expanded exit risk section, removed unverified design directions, updated open questions based on source code review.
+  </div>
+
+  <!-- Abstract -->
+  <div class="abstract">
+    <div class="abstract-label">Abstract</div>
+    <p>ArkFloat is a protocol proposal for a BTC-native lending system that funds Ark rounds with external capital. Ark Service Providers (ASPs) face a structural capital constraint: every round they run locks BTC into a covenant tree for 7&ndash;30 days, and new rounds require fresh capital while prior trees have not yet expired. ArkFloat addresses this by enabling external liquidity providers (LPs) to contribute BTC directly into Ark rounds. LP repayment is secured by the round&rsquo;s own forfeit mechanism &mdash; the same pre-signed Bitcoin transactions that protect ASP capital &mdash; routed to the LP&rsquo;s address instead. No custodian, no oracle, no new trust assumptions. LP recovery does depend on user refresh behavior rather than ASP solvency; this risk is detailed in Section 6.</p>
+  </div>
+
+  <!-- TOC -->
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#cause">The Cause</a></li>
+      <li><a href="#solution">The Solution</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#viability">Viability</a></li>
+      <li><a href="#risks">Risks and Failure Modes</a></li>
+      <li><a href="#questions">Open Questions</a></li>
+      <li><a href="#references">References</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1. Introduction -->
+  <section id="introduction">
+    <h2><span class="section-num">1.</span> Introduction</h2>
+    <p>Ark is a Bitcoin Layer 2 protocol where a central server (the ASP) locks BTC into shared UTXO trees on behalf of users. Users hold virtual UTXOs (VTXOs) &mdash; off-chain claims within those trees &mdash; and transact by participating in rounds or sending out-of-round (OOR) payments. VTXOs expire after a configurable period, at which point the ASP recovers the locked BTC.</p>
+    <p>Ark needs capital to grow. Every round an ASP runs locks BTC into a covenant tree for 7&ndash;30 days. The next round needs fresh BTC while the last round&rsquo;s capital is still frozen. Run enough rounds and you outgrow your own balance sheet.</p>
+    <p>Today, that ceiling is the binding constraint on how many ASPs can operate and at what scale. A well-run ASP with 300 BTC hits the wall at 230 BTC/week throughput (7-day expiry) or 55 BTC/week (30-day expiry). To go further, they either shorten expiry (worse user experience), stop growing, or find outside capital.</p>
+    <p>ArkFloat is a proposal for an Ark-native lending system that funds rounds with external capital. External liquidity providers contribute BTC directly into Ark rounds. Their repayment is secured by the round&rsquo;s own forfeit mechanism &mdash; the same pre-signed Bitcoin transactions that already protect the ASP&rsquo;s capital &mdash; routed to the LP&rsquo;s address instead. No custodian. No oracle. No added counterparty risk. ArkFloat is a lending protocol between Ark operators and external capital providers, built directly into Ark&rsquo;s round construction.</p>
+    <p>For LPs, this creates something that barely exists in Bitcoin: a non-custodial, fixed-term yield product. The LP&rsquo;s BTC goes into an Ark round, earns 1&ndash;3% annualized, and is returned at expiry whether the ASP is operational or not. The security comes from Bitcoin script, not from trusting the ASP to pay up.</p>
+    <p>For the Ark ecosystem, it removes the &ldquo;only Tether can afford to run an ASP&rdquo; problem. Smaller operators can borrow the capital gap, grow with demand, and compete on service quality rather than balance sheet size.</p>
+    <p>Ark exists to bring Bitcoin to people who don&rsquo;t have a UTXO &mdash; the unbanked, the underserved, anyone priced out of on-chain fees. But the Ark is fully reserved by design: every satoshi an ASP serves must be locked on-chain first. That&rsquo;s what makes it trustless. It&rsquo;s also what limits how many people can board. People who already hold UTXOs can change that. By lending idle capital to ASPs, they float the operators who serve the people who have nothing yet. The capital circulates. The Ark grows. More people board before the tide rises.</p>
+    <p>The mechanism works by extending what Ark already does. It does not add a new trust layer &mdash; it redirects an existing one. The open design problem is LP exposure to unilateral exit risk: if users in a funded round exit on-chain rather than refreshing, those forfeit proceeds are voided. This risk is priced into the fee and bounded by diversification, but it is real and is addressed in detail in Section 7.</p>
+  </section>
+
+  <!-- 2. The Problem -->
+  <section id="problem">
+    <h2><span class="section-num">2.</span> The Problem</h2>
+    <p>Every Ark round creates a new covenant tree. The ASP funds the tree with BTC from its wallet. That BTC is frozen until the tree expires.</p>
+    <div class="diagram">Round 1: ASP locks 10 BTC into Tree A     (expires in 7-30 days)
+Round 2: ASP locks 10 BTC into Tree B     (expires in 7-30 days)
+Round 3: ASP locks 10 BTC into Tree C     (expires in 7-30 days)
+...
+Trees overlap. All are locked simultaneously.</div>
+    <p>The lockup multiplier equals the expiry period divided by the capital cycling time. With more trees active at once, more BTC is frozen.</p>
+    <p><strong>Table 1.</strong> Shipping defaults from source code (March 2026):</p>
+    <table>
+      <thead><tr><th>Implementation</th><th>VTXO Expiry</th><th>Lockup Multiplier</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Arkade (arkd)</td><td>7 days (<code>ARKD_VTXO_TREE_EXPIRY = 604672</code> sec)</td><td>~1.3&times; weekly throughput</td><td><code>internal/config/config.go:241</code></td></tr>
+        <tr><td>Bark (captaind)</td><td>30 days (<code>vtxo_lifetime = 4320</code> blocks)</td><td>~5.6&times; weekly throughput</td><td><code>server/captaind.default.toml:14</code></td></tr>
+      </tbody>
+    </table>
+    <p>Both are operator-configurable. The choice is a tradeoff: shorter expiry is more capital-efficient but requires users to refresh more often. Longer expiry is better UX but locks more capital.</p>
+    <p><strong>Table 2.</strong> Capital requirement by throughput:</p>
+    <table>
+      <thead><tr><th>ASP Throughput</th><th>Capital Needed (7-day expiry)</th><th>Capital Needed (30-day expiry)</th></tr></thead>
+      <tbody>
+        <tr><td>100 BTC/week</td><td>~130 BTC</td><td>~560 BTC</td></tr>
+        <tr><td>500 BTC/week</td><td>~650 BTC</td><td>~2,800 BTC</td></tr>
+        <tr><td>1,000 BTC/week</td><td>~1,300 BTC</td><td>~5,600 BTC</td></tr>
+      </tbody>
+    </table>
+    <p>At some throughput level &mdash; sooner for longer expiry, later for shorter &mdash; the ASP&rsquo;s own BTC is not enough.</p>
+  </section>
+
+  <!-- 3. The Cause -->
+  <section id="cause">
+    <h2><span class="section-num">3.</span> The Cause</h2>
+    <p>The capital gap is structural, not a bug. It comes from three properties of Ark&rsquo;s design:</p>
+    <ol>
+      <li><strong>Trees overlap.</strong> New trees are created every round while old trees haven&rsquo;t expired yet. The ASP must fund all active trees simultaneously.</li>
+      <li><strong>Expiry is the only recovery mechanism.</strong> Under V1 (all shipping implementations), the ASP gets its BTC back only when the tree&rsquo;s absolute timelock expires. V2 revocation (proposed by Burak, not implemented, requires an unspecified ZK-based VPU) could enable early recovery. Until then, capital is locked for the full expiry period.</li>
+      <li><strong>Change outputs inflate the requirement.</strong> When a user spends part of a VTXO, the remainder becomes a change output in the new tree &mdash; requiring additional capital from the ASP without generating additional fees.</li>
+    </ol>
+    <p>Protocol-level improvements help but don&rsquo;t eliminate the gap. Shorter expiry reduces it. Delegation (Arkade) and hArk (Second) improve UX and throughput efficiency. But the multiplier is always greater than 1&times;. At meaningful throughput, external capital is needed.</p>
+  </section>
+
+  <!-- 4. The Solution -->
+  <section id="solution">
+    <h2><span class="section-num">4.</span> The Solution</h2>
+    <p>External LPs contribute BTC directly into Ark rounds. When a round&rsquo;s demand exceeds the ASP&rsquo;s available capital, the ASP solicits LP funding. The LP&rsquo;s UTXO enters the round&rsquo;s commitment transaction. The LP&rsquo;s repayment comes from forfeit proceeds on LP-funded VTXOs.</p>
+
+    <p><strong>Figure 1.</strong> ArkFloat round flow:</p>
+    <div class="diagram">LP                          ASP                         Ark Users
+ |                           |                            |
+ |                           |&lt;-- round batch request ----|
+ |                           |   (exceeds ASP capital)    |
+ |                           |                            |
+ |&lt;-- liquidity request -----|                            |
+ |   "Need X BTC, Y% fee"   |                            |
+ |                           |                            |
+ |--- UTXO for round -------&gt;|                            |
+ |                           |--- poolTx (includes LP) --&gt;|
+ |                           |   LP's UTXO in tree        |
+ |                           |                            |
+ |                      [users refresh VTXOs]             |
+ |                           |                            |
+ |&lt;-- forfeit proceeds ------|                            |
+ |   (paid to LP, not ASP)   |                            |</div>
+
+    <h3><span class="section-num">4.1</span> How It Works</h3>
+    <ol>
+      <li>ASP begins round construction. The batch exceeds available capital by X BTC.</li>
+      <li>ASP sends a <code>LiquidityRequest</code> to known LPs: amount needed, round details, proposed fee.</li>
+      <li>LP responds with a <code>LiquidityOffer</code>: UTXO to contribute, accepted rate, LP pubkey, forfeit recipient address.</li>
+      <li>ASP includes the LP&rsquo;s UTXO in the round&rsquo;s commitment transaction (<code>poolTx</code>).</li>
+      <li>Forfeit transactions for LP-funded VTXOs are constructed with the LP&rsquo;s address as recipient rather than the ASP&rsquo;s.</li>
+      <li>When users refresh into future rounds, their old VTXOs become claimable. The LP sweeps its share &mdash; receiving principal plus fee.</li>
+    </ol>
+
+    <h3><span class="section-num">4.2</span> What the LP&rsquo;s Security Actually Is</h3>
+    <p>The LP holds pre-signed Bitcoin transactions. These are valid on-chain regardless of ASP cooperation after the round is constructed. The LP can broadcast them at expiry without asking anyone&rsquo;s permission.</p>
+    <p>However, each forfeit transaction spends a specific VTXO output. That output only becomes a real UTXO when the user&rsquo;s leaf transaction is confirmed on-chain &mdash; either because the user exited unilaterally (broadcasting their path through the tree) or because the ASP sweeps at expiry. The LP&rsquo;s claim is therefore on forfeit proceeds from specific VTXOs in a specific round. It is not a general claim on the round&rsquo;s capital.</p>
+    <p>This distinction matters: the LP&rsquo;s recovery depends on how users in that round behave. Users who refresh into a new round make their old VTXOs available for the LP to claim via forfeit. Users who exit unilaterally spend their VTXO through the exit path, which voids the forfeit. The LP gets nothing on VTXOs that exit.</p>
+    <ul>
+      <li>No external escrow</li>
+      <li>No oracle</li>
+      <li>No ASP cooperation required after round construction</li>
+      <li>Recovery does depend on user behavior (refresh vs. unilateral exit)</li>
+      <li>All terms in BTC, all timelocks in block heights</li>
+    </ul>
+
+    <h3><span class="section-num">4.3</span> What the LP Needs to Understand</h3>
+    <p>The LP&rsquo;s claim is proportional to the refresh rate in the funded round, not to the round&rsquo;s total capital. At a 5% unilateral exit rate on a 30 BTC LP position, the LP recovers ~28.5 BTC before fee. The fee is priced to cover expected exit rates.</p>
+    <p>The 2&ndash;5% figure is the base case. Exit rates are not random &mdash; they cluster around specific triggers. When an ASP misbehaves, raises fees sharply, or a competing ASP launches with better terms, exit rates can reach 30&ndash;60% within a single expiry period. The LP faces correlated tail risk: the same event that causes exits in one round typically affects all active rounds with that ASP simultaneously. Diversification across rounds with the same ASP does not reduce this tail risk.</p>
+    <p>The fee compensates for expected-case exits. The tail risk is managed by LP position sizing and multi-ASP diversification, not by the protocol.</p>
+
+    <h3><span class="section-num">4.4</span> Required Protocol Changes</h3>
+    <p>Both Arkade and Bark would need the following changes. These are not minor additions &mdash; they touch the core round construction, forfeit construction, and verification paths in both implementations.</p>
+    <h4>New message types</h4>
+    <ul>
+      <li><code>LiquidityRequest</code>: ASP to LP network. Contains round ID, amount needed, proposed fee, round expiry block height.</li>
+      <li><code>LiquidityOffer</code>: LP to ASP. Contains UTXO, accepted rate, LP pubkey, forfeit recipient address.</li>
+    </ul>
+    <h4>Modified round construction</h4>
+    <ul>
+      <li><code>poolTx</code> must accept external UTXOs from LPs alongside the ASP&rsquo;s own inputs. Currently both implementations fund the poolTx exclusively from the ASP wallet (Arkade: <code>builder.go:776&ndash;847</code>; Bark: <code>round/mod.rs:766&ndash;784</code>). Arkade has an existing boarding input path that may be repurposable; Bark does not.</li>
+      <li>The tree&rsquo;s leaf structures must carry LP-funding metadata. Neither implementation currently supports per-leaf funding provenance (Arkade: flat leaf list at <code>builder.go:508</code>; Bark: <code>VtxoLeafSpec</code> at <code>tree/signed.rs:78&ndash;93</code>).</li>
+    </ul>
+    <h4>Modified forfeit construction</h4>
+    <ul>
+      <li>Forfeit transactions must support per-VTXO recipient addresses.</li>
+      <li>In Arkade: the low-level <code>BuildForfeitTx</code> primitive (<code>pkg/ark-lib/tree/forfeit_tx.go:9&ndash;22</code>) already accepts any script as a parameter. The calling layer (<code>VerifyForfeitTxs</code>, <code>getForfeitScript</code> at <code>builder.go:272&ndash;1186</code>) is hardcoded to the ASP&rsquo;s address and must be refactored to accept per-VTXO scripts.</li>
+      <li>In Bark: the connector forfeit path (<code>lib/src/forfeit.rs:288&ndash;321</code>) hardcodes the server pubkey as output recipient and requires a function signature change. The hArk forfeit path (<code>lib/src/forfeit.rs:38&ndash;64</code>) uses a protocol-defined taproot encoding a musig sighash &mdash; changing the recipient changes the sighash, which requires users to co-sign a different transaction. The interaction between the hArk unlock preimage mechanism and a modified forfeit output is an open question (see Section 8).</li>
+    </ul>
+    <p>Rounds without LP participation continue to work exactly as they do today. The changes are additive at the protocol level but require meaningful implementation work.</p>
+  </section>
+
+  <!-- 5. Impact -->
+  <section id="impact">
+    <h2><span class="section-num">5.</span> Impact</h2>
+
+    <h3><span class="section-num">5.1</span> For ASPs</h3>
+    <p>External capital removes the growth ceiling. An ASP with 300 BTC that would otherwise cap at 230 BTC/week (7-day expiry) or 55 BTC/week (30-day expiry) can serve whatever demand arrives, borrowing the difference from LPs. The borrowing cost (1&ndash;3% annualized on the LP-funded portion) is covered by transaction fees earned during the round.</p>
+    <p>The ASP doesn&rsquo;t need to choose between capital efficiency and user experience. It can run longer expiry (better UX, higher fees per refresh) and fund the larger capital requirement externally.</p>
+
+    <h3><span class="section-num">5.2</span> For LPs</h3>
+    <p>A non-custodial BTC yield product. The LP&rsquo;s BTC goes into an Ark round, secured by pre-signed forfeit transactions. If the ASP vanishes, the forfeit transactions are still valid &mdash; the LP claims when VTXOs expire. No platform custody. Counterparty risk is limited to actuarial exit risk.</p>
+    <p>The comparison is cold storage at 0%. At 1&ndash;3% annualized for a 7&ndash;30 day term with Bitcoin-script-enforced security, the product is competitive for any BTC holder who isn&rsquo;t actively deploying capital elsewhere &mdash; provided they understand that recovery is not guaranteed and scales with the refresh rate of the funded round.</p>
+
+    <h3><span class="section-num">5.3</span> For the Ark Ecosystem</h3>
+    <p>The capital constraint is the binding limit on how many ASPs can operate and at what scale. Removing it means:</p>
+    <ul>
+      <li>Established ASPs can grow with demand instead of capping at their capital</li>
+      <li>More competitive ASPs at scale means better fees for users and geographic diversity</li>
+      <li>The &ldquo;only Tether can afford to run an ASP at scale&rdquo; scenario is avoided</li>
+    </ul>
+    <p>ArkFloat solves the <strong>throughput ceiling</strong> problem: an ASP that already has users and fee revenue but cannot fund additional rounds. It does not solve the <strong>bootstrapping problem</strong>: getting a new ASP to critical mass in the first place. An ASP without throughput cannot generate the fee revenue to service LP borrowing costs &mdash; capital access without utilization is debt. The cold start problem is addressed in Section 7.4.</p>
+  </section>
+
+  <!-- 6. Viability -->
+  <section id="viability">
+    <h2><span class="section-num">6.</span> Viability</h2>
+
+    <h3><span class="section-num">6.1</span> Implementation Comparison</h3>
+    <p><strong>Table 3.</strong> Current ASP implementation parameters (March 2026):</p>
+    <table>
+      <thead><tr><th>Parameter</th><th>Arkade (arkd)</th><th>Bark (captaind)</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>VTXO expiry default</td><td>604,672 sec (~7 days)</td><td>4,320 blocks (~30 days)</td><td><code>config.go:241</code> / <code>captaind.default.toml:14</code></td></tr>
+        <tr><td>Lockup multiplier</td><td>~1.3&times;</td><td>~5.6&times;</td><td>Derived</td></tr>
+        <tr><td>Round frequency</td><td>30s sessions, continuous</td><td>10s round interval</td><td><code>config.go:228</code> / <code>captaind.default.toml:68</code></td></tr>
+        <tr><td>Max VTXOs per round</td><td>128 participants</td><td>65,536 leaf VTXOs</td><td>config / <code>nb_round_nonces=8</code>, radix^8</td></tr>
+        <tr><td>Fee model</td><td>CEL expression programs (operator-set, zero default)</td><td>PPM tiers by VTXO age (0&ndash;0.8%)</td><td><code>arkfee/README.md</code> / <code>captaind.default.toml:188</code></td></tr>
+        <tr><td>Refresh fee near expiry</td><td>Operator-defined</td><td>~0% (0 ppm, 150 sat base)</td><td><code>fees.rs</code></td></tr>
+        <tr><td>Refresh fee on new VTXOs</td><td>Operator-defined</td><td>0.8% (8000 ppm)</td><td><code>fees.rs</code></td></tr>
+        <tr><td>Delegation</td><td>Yes (BIP322, shipping)</td><td>No</td><td>Arkade &ldquo;Adios Expiry&rdquo; feature</td></tr>
+        <tr><td>hArk (async rounds)</td><td>No</td><td>Yes (shipping)</td><td>bark v0.1.0-beta.6</td></tr>
+        <tr><td>V2 revocation</td><td>Not implemented</td><td>Not implemented</td><td>Blog post only (Burak, Medium)</td></tr>
+        <tr><td>Forfeit recipient parameterized</td><td>Low-level yes, calling layer no</td><td>No (hardcoded)</td><td><code>forfeit_tx.go:9&ndash;22</code> / <code>forfeit.rs:314</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="section-num">6.2</span> Fee Adequacy</h3>
+    <p>The LP math clears at a blended user fee rate of ~0.35&ndash;0.40%. Whether ASPs can sustain that rate is a competitive question, not a technical one.</p>
+    <p>The relevant comparison is not Lightning routing fees. Lightning routing nodes earn fees on capital that both sides of the channel contribute &mdash; the routing node&rsquo;s capital is matched by the peer&rsquo;s. Ark ASPs front 100% of the locked capital unilaterally. That asymmetry justifies a structural premium.</p>
+    <p>More importantly, users paying Ark fees are buying a managed service: no node to run, no channel to open, no on-chain UTXOs required to receive payments. The implicit alternative for most Ark users is not &ldquo;run a Lightning node at 0.01 sat/tx&rdquo; &mdash; it is &ldquo;don&rsquo;t use Lightning at all.&rdquo; The fee ceiling is what a user would pay to avoid self-custody infrastructure entirely, which is substantially higher than Lightning routing fees.</p>
+    <p>Bark&rsquo;s fee schedule already supports 0.8% on VTXOs refreshed early (more than ~15 days before expiry). The blended rate is an operator choice. ASPs that compete on service quality &mdash; reliability, geographic reach, compliance, customer support &mdash; rather than pure fee minimization can sustain rates that clear the LP spread.</p>
+    <p>At scale, on-chain economics improve further. OOR transactions between users on the same ASP have no on-chain footprint &mdash; one poolTx per round regardless of how many payments happen inside it. An ASP facilitating millions of daily transactions incurs the same on-chain construction cost as one facilitating ten. As transaction volume grows, the ASP&rsquo;s on-chain cost per transaction approaches zero, improving margin even at stable or declining fee rates. LP economics get progressively more viable as adoption grows. This benefit accrues disproportionately to high-volume ASPs, which is a further argument for LP capital concentration at established operators rather than new entrants.</p>
+
+    <h3><span class="section-num">6.3</span> When Is This Needed?</h3>
+    <p>At 7-day expiry: ArkFloat becomes relevant when an ASP&rsquo;s throughput exceeds ~75% of its BTC holdings per week. An operator with 500 BTC can self-fund ~380 BTC/week. Beyond that, borrow or stop growing.</p>
+    <p>At 30-day expiry: ArkFloat becomes relevant much sooner. An operator with 500 BTC can self-fund only ~90 BTC/week.</p>
+    <p>The trigger is observable: ASPs report that capital constraints are limiting their throughput.</p>
+
+    <h3><span class="section-num">6.4</span> The Expiry Tradeoff</h3>
+    <p>Operators choosing longer expiry (for better UX) need ArkFloat sooner but also earn more per unit of throughput &mdash; Bark&rsquo;s lockup-weighted fee tiers (up to 0.8%) compensate for the capital cost. The higher fee revenue makes borrowing costs more affordable.</p>
+    <p>Operators choosing shorter expiry (for capital efficiency) need ArkFloat later but earn less per transaction. They may never need it at moderate throughput.</p>
+    <p>Both strategies are viable. ArkFloat serves long-expiry ASPs first, then short-expiry ASPs as throughput scales.</p>
+  </section>
+
+  <!-- 7. Risks -->
+  <section id="risks">
+    <h2><span class="section-num">7.</span> Risks and Failure Modes</h2>
+
+    <h3><span class="section-num">7.1</span> Unilateral Exit Risk (LP-specific)</h3>
+    <p>This is the primary risk. If users in an LP-funded round exit unilaterally instead of refreshing, the LP&rsquo;s forfeit proceeds on those VTXOs are voided.</p>
+    <p><strong>How unilateral exit works</strong> (verified in Bark source, <code>bark/src/exit/</code>): The exiting user broadcasts the transaction chain from the round TX root down to their own leaf. This confirms every intermediate node on their path on-chain. Other users in sibling subtrees are not affected &mdash; their branches remain off-chain and can still be swept by the ASP at expiry. The exiting user&rsquo;s VTXO is spent through the exit path, making the forfeit transaction for that VTXO unspendable.</p>
+    <p><strong>Base case:</strong> Exits are expensive for users &mdash; multiple on-chain transactions with CSV delays at each tree level. Day-to-day exit rates of 1&ndash;3% are realistic.</p>
+    <p><strong>Stress case:</strong> Exits cluster. The scenarios that drive exits above 5% are correlated with ASP distress:</p>
+    <table>
+      <thead><tr><th>Scenario</th><th>Likely Exit Rate</th></tr></thead>
+      <tbody>
+        <tr><td>Normal operation</td><td>1&ndash;3%</td></tr>
+        <tr><td>ASP raises fees significantly</td><td>10&ndash;20%</td></tr>
+        <tr><td>Competing ASP launches with better terms</td><td>20&ndash;40%</td></tr>
+        <tr class="risk-stress"><td>ASP misbehavior (attempted theft)</td><td>50&ndash;80%</td></tr>
+        <tr class="risk-stress"><td>ASP goes offline permanently</td><td>80&ndash;100%</td></tr>
+      </tbody>
+    </table>
+    <p>When a stress event occurs, it typically affects all of the ASP&rsquo;s active rounds simultaneously. Diversifying across rounds with the same ASP does not protect against this tail risk &mdash; all positions are affected in the same event.</p>
+    <p><strong>Fee pricing and the break-even problem:</strong> At a 5% expected exit rate, an LP lending 30 BTC needs ~1.5 BTC in fee just to break even on expected value. That is 5% of principal for a 14&ndash;30 day term. Annualized, this exceeds any realistic ASP fee revenue. The fee structure only works actuarially at scale &mdash; an LP running many rounds across multiple ASPs, where base-case exits average out and no single stress event dominates the portfolio.</p>
+    <div class="note"><strong>Note</strong>Single-round LP positions are speculative, not actuarial. The product requires LP scale and diversification to function as designed.</div>
+    <p><strong>Mitigation options:</strong></p>
+    <ul>
+      <li>LP diversifies across multiple ASPs (reduces correlation)</li>
+      <li>LP caps position size per round (bounds single-event loss)</li>
+      <li>ASP provides proof of reserves (UTXO ownership + tree expiry schedule) so LP can evaluate ASP health before lending</li>
+      <li>Partial collateral posted by ASP to cover stress scenarios (a hybrid approach, outside current spec scope)</li>
+    </ul>
+
+    <h3><span class="section-num">7.2</span> ASP Goes Offline After Round Construction</h3>
+    <p>The LP&rsquo;s forfeit transactions are pre-signed and valid on-chain regardless of ASP operational status. The LP can broadcast them at expiry without the ASP. ASP cooperation is not required after the round is built.</p>
+
+    <h3><span class="section-num">7.3</span> On-Chain Fee Spikes</h3>
+    <p>High fees affect Ark rounds (the ASP may reduce round frequency) but do not affect LP recovery. Forfeit transactions are pre-signed &mdash; the LP broadcasts them when fees are acceptable. At 500 sat/vB, a forfeit sweep costs a fraction of a percent of the LP&rsquo;s claim.</p>
+
+    <h3><span class="section-num">7.4</span> Cold Start</h3>
+    <p>With 2 ASP implementations on mainnet and no established LP base, the market doesn&rsquo;t exist yet. The protocol changes need to be proposed, accepted by Ark Labs and/or Second, and implemented. This is a social and coordination challenge, not a technical one.</p>
+    <p>A subtler cold start problem affects small ASPs specifically. ArkFloat helps once an ASP is established &mdash; an ASP needs throughput to generate the fee revenue to afford LP borrowing costs, but throughput requires users, and users require an operational ASP that can fund rounds. The two conditions are circular. An ASP that borrows capital before reaching adequate utilization faces a debt service burden on top of an already-thin margin.</p>
+    <p>One mitigation available within the protocol&rsquo;s existing design: introductory LP relationships at below-market rates in exchange for priority deal flow as the ASP scales. An LP willing to accept 0.5&ndash;1% annual on an early-stage ASP secures preferential access to that ASP&rsquo;s deal flow at 2&ndash;3% once throughput is established. This is how Lightning Pool seeded its early market &mdash; initial channel leases were underpriced to build volume. The rate discovery mechanism (Open Question 4) should account for this tiering explicitly.</p>
+    <p>In practice, this mitigation may not function. Sophisticated LPs evaluating an early-stage ASP face a tail risk that dominates expected value: if the ASP fails before reaching throughput, the resulting mass unilateral exits void forfeit proceeds entirely. No introductory rate compensates for that outcome. Early LPs may simply avoid small ASPs regardless of pricing, leaving the bootstrapping problem structurally unsolved by this protocol. An ASP-side partial collateral mechanism &mdash; the ASP posts collateral covering stress-scenario losses &mdash; is a more robust mitigation but is outside the current spec scope.</p>
+
+    <h3><span class="section-num">7.5</span> Over-Leverage</h3>
+    <p>An ASP that borrows too much relative to its own capital and operational capacity could fail to maintain operations, triggering mass unilateral exits that harm LPs. Mitigation: LPs evaluate the ASP&rsquo;s balance sheet before lending. Proof of reserves (UTXO ownership attestation + tree expiry schedule) gives LPs visibility into the ASP&rsquo;s position.</p>
+  </section>
+
+  <!-- 8. Open Questions -->
+  <section id="questions">
+    <h2><span class="section-num">8.</span> Open Questions</h2>
+    <ol>
+      <li><p><strong>Bark hArk forfeit compatibility.</strong> The hArk forfeit path in Bark uses a musig sighash computed over a protocol-defined output taproot. Changing the forfeit recipient changes the sighash, requiring users to co-sign a modified transaction. How does this interact with the hArk unlock preimage mechanism? Can an LP-addressed forfeit be constructed without breaking the hArk protocol guarantees?</p></li>
+      <li><p><strong>Arkade forfeit verification refactor scope.</strong> <code>VerifyForfeitTxs</code> currently rebuilds every forfeit with the ASP&rsquo;s own script and rejects any that don&rsquo;t match. Supporting per-VTXO LP recipients requires per-VTXO script threading through round construction. What is the minimal change to the verification path?</p></li>
+      <li><p><strong>LP discovery.</strong> How do ASPs find LPs? Initially bilateral (direct relationships). At scale, a bulletin board or batch auction modeled on <a href="https://lightning.engineering/lightning-pool-whitepaper.pdf">Lightning Pool</a>.</p></li>
+      <li><p><strong>Rate discovery.</strong> What sets the lending rate? Initially bilateral negotiation. The natural band is above 0% (cold storage alternative) and below the ASP&rsquo;s fee revenue per unit of capital. In practice, 1&ndash;3% annualized is the likely range given Lightning liquidity market benchmarks (~2.6% on Amboss Magma, 1.2&ndash;1.7% on Voltage).</p></li>
+      <li><p><strong>Proof of reserves format.</strong> What attestation of tree expiry schedules is sufficient for LPs to evaluate an ASP&rsquo;s capital position and leverage?</p></li>
+      <li><p><strong>Covenant interaction.</strong> If Bitcoin adopts <a href="https://bitcoinops.org/en/topics/op_checktemplateverify/">CTV</a> or <a href="https://bitcoinops.org/en/topics/covenants/">OP_CAT</a>, richer VTXO scripts could encode LP claims directly as a spending condition &mdash; eliminating the need for modified forfeit construction entirely.</p></li>
+      <li><p><strong>Legal classification.</strong> Is a BTC-for-BTC fixed-term loan structured as round participation a security, a swap, or something else?</p></li>
+    </ol>
+  </section>
+
+  <!-- 9. References -->
+  <section id="references" class="references">
+    <h2><span class="section-num">9.</span> References</h2>
+
+    <h3>Ark Protocol</h3>
+    <ul>
+      <li><a href="https://ark-protocol.org/index.html">Ark Protocol specification</a> &mdash; VTXO mechanics, round structure, OOR payments</li>
+      <li><a href="https://ark-protocol.org/intro/index.html">Introduction to Ark</a> &mdash; Shared UTXOs, forfeit mechanism, connectors</li>
+      <li><a href="https://ark-protocol.org/intro/vtxos/index.html">VTXOs</a> &mdash; Covenant trees, forfeit clause, expiry/refresh</li>
+      <li><a href="https://ark-protocol.org/intro/connectors/index.html">Connectors</a> &mdash; Round atomicity, connector outputs</li>
+      <li><a href="https://ark-protocol.org/intro/oor/index.html">OOR Payments</a> &mdash; Arkoor mechanics, trust model</li>
+      <li><a href="https://bitcoinops.org/en/topics/ark/">Bitcoin Optech: Ark</a> &mdash; Technical summary, newsletter coverage</li>
+      <li><a href="https://blog.arklabs.xyz/">Ark Labs blog</a> &mdash; Liquidity requirements, delegation (&ldquo;Adios Expiry&rdquo;)</li>
+      <li><a href="https://blog.second.tech/">Second blog</a> &mdash; Liquidity research series (3 parts), yield survey, hArk</li>
+      <li><a href="https://brqgoo.medium.com/introducing-ark-v2-2e7ab378e87b">Burak: Introducing Ark V2</a> &mdash; Revocation mechanism (not implemented)</li>
+      <li><a href="https://github.com/arkade-os/arkd/issues/197">ben2077, issue #197</a> &mdash; Per-round external liquidity concept (this spec builds on it)</li>
+    </ul>
+
+    <h3>Implementations (Source Code)</h3>
+    <ul>
+      <li><a href="https://github.com/arkade-os">Arkade (arkd)</a> (<a href="https://docs.arkadeos.com">docs</a>) &mdash; Go, 7-day default expiry, CEL fee programs, delegation</li>
+      <li><a href="https://gitlab.com/ark-bitcoin">Bark (captaind)</a> (<a href="https://docs.second.tech/">docs</a>) &mdash; Rust, 30-day default expiry, PPM fee tiers, hArk async rounds</li>
+    </ul>
+
+    <h3>Lightning Liquidity Markets (Precedent)</h3>
+    <ul>
+      <li><a href="https://lightning.engineering/lightning-pool-whitepaper.pdf">Lightning Pool whitepaper</a> &mdash; Batch auction architecture for channel leases</li>
+      <li><a href="https://old-docs.amboss.tech/docs/magma/intro">Amboss Magma</a> &mdash; P2P Lightning liquidity marketplace, ~2.6% APR median</li>
+      <li><a href="https://voltage.cloud/blog/where-does-lightning-network-yield-come-from">Voltage LINER data</a> &mdash; 1.2&ndash;1.7% network yield benchmark</li>
+    </ul>
+
+    <h3>Adjacent Projects</h3>
+    <ul>
+      <li><a href="https://whitepaper.lendasat.com/lendasat-whitepaper.pdf">Lendasat</a> &mdash; DLC VTXOs for user-facing lending on Ark</li>
+      <li><a href="https://www.coindesk.com/business/2025/08/27/lygos-aims-to-banish-ghosts-of-crypto-lending-collapse-with-non-custodial-bitcoin-model">Lygos Finance</a> &mdash; Non-custodial DLC-based BTC lending</li>
+    </ul>
+
+    <h3>Bitcoin Optech Coverage</h3>
+    <ul>
+      <li><a href="https://bitcoinops.org/en/newsletters/2026/03/06/#a-standard-for-stateless-vtxo-verification">V-PACK standard</a> &mdash; Stateless VTXO verification (Mar 2026)</li>
+      <li><a href="https://bitcoinops.org/en/newsletters/2026/02/20/#second-releases-hark-based-ark-software">hArk release</a> &mdash; Second&rsquo;s async round implementation (Feb 2026)</li>
+      <li><a href="https://bitcoinops.org/en/newsletters/2025/11/21/#arkade-launches">Arkade launches</a> &mdash; Public beta (Nov 2025)</li>
+      <li><a href="https://bitcoinops.org/en/topics/op_checktemplateverify/">OP_CHECKTEMPLATEVERIFY</a> &mdash; Covenant proposal relevant to future LP claim scripting</li>
+      <li><a href="https://bitcoinops.org/en/topics/covenants/">Covenants</a> &mdash; Foundational dependency for richer VTXO scripts</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>ArkFloat v0.3 &mdash; Draft Specification &mdash; March 2026</span>
+    <span><a href="https://thebitcoinbreakdown.com">thebitcoinbreakdown.com</a></span>
+  </footer>
+
+</div>
+
+<script>
+  // Smooth scroll offset for sticky headers (none here, but keeps anchor links clean)
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
