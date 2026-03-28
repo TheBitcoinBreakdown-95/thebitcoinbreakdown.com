@@ -5,10 +5,9 @@ pubDate: 2026-03-28
 author: "The Bitcoin Breakdown"
 tags: ["bitcoin", "ark", "lightning", "protocol", "layer2"]
 category: "blog"
+subtitle: "Float capital. Float the Ark."
 draft: false
 ---
-
-Float capital. Float the Ark.
 
 **Version:** 0.3 (Draft)
 **Date:** March 2026

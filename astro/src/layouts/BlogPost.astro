@@ -34,6 +34,7 @@ interface Props {
   headings?: HeadingItem[];
   seriesPosts?: SeriesPost[];
   currentPostId?: string;
+  subtitle?: string;
 }
 
 const {
@@ -50,6 +51,7 @@ const {
   headings = [],
   seriesPosts = [],
   currentPostId = '',
+  subtitle,
 } = Astro.props;
 
 // Generate a decorative hash string from the title
@@ -85,6 +87,7 @@ const categoryLabel = category ? (categoryLabels[category] || category) : '';
     <header class="post-header container">
       <div class="hash-decoration reveal" aria-hidden="true">0x{hashStr}...{hashStr.split('').reverse().join('')}</div>
       <h1 class="reveal">{title}</h1>
+      {subtitle && <p class="post-subtitle reveal">{subtitle}</p>}
       <div class="reveal">
         <PostMeta pubDate={pubDate} updatedDate={updatedDate} readingTime={readingTime} category={categoryLabel} />
       </div>
@@ -148,8 +151,18 @@ const categoryLabel = category ? (categoryLabels[category] || category) : '';
     font-weight: 300;
     letter-spacing: 1px;
     line-height: 1.15;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-2);
     color: var(--text-primary);
+  }
+
+  .post-subtitle {
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold-muted);
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-4);
+    line-height: 1.4;
   }
 
   .post-header .hash-decoration {

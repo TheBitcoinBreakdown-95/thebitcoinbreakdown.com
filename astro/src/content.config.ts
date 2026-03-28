@@ -15,6 +15,7 @@ const posts = defineCollection({
     draft: z.boolean().default(false),
     category: z.string().optional(),
     order: z.number().optional(),
+    subtitle: z.string().optional(),
   })
 });
 
