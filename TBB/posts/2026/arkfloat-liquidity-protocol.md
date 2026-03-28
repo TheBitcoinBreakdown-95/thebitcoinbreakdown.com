@@ -176,10 +176,11 @@ The comparison is cold storage at 0%. At 1-3% annualized for a 7-30 day term wit
 ### For the Ark Ecosystem
 
 The capital constraint is the binding limit on how many ASPs can operate and at what scale. Removing it means:
-- Smaller operators can compete (don't need 500+ BTC to start)
-- ASPs can grow with demand instead of capping at their capital
-- More ASPs means more competition, better fees for users, and geographic diversity
-- The "only Tether can afford to run an ASP" scenario is avoided
+- Established ASPs can grow with demand instead of capping at their capital
+- More competitive ASPs at scale means better fees for users and geographic diversity
+- The "only Tether can afford to run an ASP at scale" scenario is avoided
+
+ArkFloat solves the **throughput ceiling** problem: an ASP that already has users and fee revenue but cannot fund additional rounds. It does not solve the **bootstrapping problem**: getting a new ASP to critical mass in the first place. An ASP without throughput cannot generate the fee revenue to service LP borrowing costs -- capital access without utilization is debt. The cold start problem is addressed separately in the Risks section.
 
 ---
 
@@ -200,6 +201,18 @@ The capital constraint is the binding limit on how many ASPs can operate and at 
 | hArk (async rounds) | No | Yes (shipping) | bark v0.1.0-beta.6 |
 | V2 revocation | Not implemented | Not implemented | Blog post only (Burak, Medium) |
 | Forfeit recipient parameterized | Low-level yes, calling layer no | No (hardcoded) | forfeit_tx.go:9-22 / forfeit.rs:314 |
+
+### Fee Adequacy
+
+The LP math clears at a blended user fee rate of ~0.35-0.40%. Whether ASPs can sustain that rate is a competitive question, not a technical one.
+
+The relevant comparison is not Lightning routing fees. Lightning routing nodes earn fees on capital that both sides of the channel contribute -- the routing node's capital is matched by the peer's. Ark ASPs front 100% of the locked capital unilaterally. That asymmetry justifies a structural premium.
+
+More importantly, users paying Ark fees are buying a managed service: no node to run, no channel to open, no on-chain UTXOs required to receive payments. The implicit alternative for most Ark users is not "run a Lightning node at 0.01 sat/tx" -- it is "don't use Lightning at all." The fee ceiling is what a user would pay to avoid self-custody infrastructure entirely, which is substantially higher than Lightning routing fees.
+
+Bark's fee schedule already supports 0.8% on VTXOs refreshed early (more than ~15 days before expiry). The blended rate is an operator choice. ASPs that compete on service quality -- reliability, geographic reach, compliance, customer support -- rather than pure fee minimization can sustain rates that clear the LP spread.
+
+At scale, on-chain economics improve further. OOR transactions between users on the same ASP have no on-chain footprint -- one poolTx per round regardless of how many payments happen inside it. An ASP facilitating millions of daily transactions incurs the same on-chain construction cost as one facilitating ten. As transaction volume grows, the ASP's on-chain cost per transaction approaches zero, improving margin even at stable or declining fee rates. LP economics get progressively more viable as adoption grows. This benefit accrues disproportionately to high-volume ASPs, which is a further argument for LP capital concentration at established operators rather than new entrants.
 
 ### When Is This Needed?
 
@@ -262,6 +275,12 @@ High fees affect Ark rounds (the ASP may reduce round frequency) but do not affe
 ### Cold Start
 
 With 2 ASP implementations on mainnet and no established LP base, the market doesn't exist yet. The protocol changes need to be proposed, accepted by Ark Labs and/or Second, and implemented. This is a social and coordination challenge, not a technical one.
+
+A subtler cold start problem affects small ASPs specifically. ArkFloat helps once an ASP is established -- an ASP needs throughput to generate the fee revenue to afford LP borrowing costs, but throughput requires users, and users require an operational ASP that can fund rounds. The two conditions are circular. An ASP that borrows capital before reaching adequate utilization faces a debt service burden on top of an already-thin margin.
+
+One mitigation available within the protocol's existing design: introductory LP relationships at below-market rates in exchange for priority deal flow as the ASP scales. An LP willing to accept 0.5-1% annual on an early-stage ASP secures preferential access to that ASP's deal flow at 2-3% once throughput is established. This is how Lightning Pool seeded its early market -- initial channel leases were underpriced to build volume. The rate discovery mechanism (Open Question 4) should account for this tiering explicitly.
+
+In practice, this mitigation may not function. Sophisticated LPs evaluating an early-stage ASP face a tail risk that dominates expected value: if the ASP fails before reaching throughput, the resulting mass unilateral exits void forfeit proceeds entirely. No introductory rate compensates for that outcome. Early LPs may simply avoid small ASPs regardless of pricing, leaving the bootstrapping problem structurally unsolved by this protocol. An ASP-side partial collateral mechanism -- the ASP posts collateral covering stress-scenario losses -- is a more robust mitigation but is outside the current spec scope.
 
 ### Over-Leverage
 
