@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 const allPosts = await getCollection('posts', ({ data }) => !data.draft);
 const speeches = allPosts.filter(p => p.data.category === 'speeches').sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 const memes = allPosts.filter(p => p.data.category === 'memes');
+const blogPosts = allPosts.filter(p => p.data.category === 'blog');
 ---
 
 <BaseLayout title="Media" description="Speeches, talks, memes, and other Bitcoin content from The Bitcoin Breakdown.">
@@ -13,7 +14,7 @@ const memes = allPosts.filter(p => p.data.category === 'memes');
     <div class="container">
       <header class="page-header reveal">
         <h1 class="media-title" data-type>Media</h1>
-        <p class="media-subtitle">Speeches, talks, memes, and other content.</p>
+        <p class="media-subtitle">Speeches, talks, memes, and blog posts.</p>
       </header>
     </div>
   </section>
@@ -37,6 +38,14 @@ const memes = allPosts.filter(p => p.data.category === 'memes');
           <p class="media-card-desc">The best Bitcoin memes, curated for your entertainment and education.</p>
           <div class="media-card-count">{memes.length} {memes.length === 1 ? 'entry' : 'entries'}</div>
           <span class="media-card-cta">View memes &rarr;</span>
+        </a>
+
+        <a href="/blog" class="media-card reveal tbb-link">
+          <div class="media-num" aria-hidden="true">03</div>
+          <h2 class="media-card-title">Blog</h2>
+          <p class="media-card-desc">Research, protocol proposals, and long-form writing on Bitcoin and its ecosystem.</p>
+          <div class="media-card-count">{blogPosts.length} {blogPosts.length === 1 ? 'entry' : 'entries'}</div>
+          <span class="media-card-cta">View posts &rarr;</span>
         </a>
       </div>
     </div>
@@ -67,7 +76,7 @@ const memes = allPosts.filter(p => p.data.category === 'memes');
   /* ── Media Grid ── */
   .media-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-4);
   }
 
@@ -139,6 +148,12 @@ const memes = allPosts.filter(p => p.data.category === 'memes');
 
   .media-card:hover .media-card-cta {
     color: var(--gold);
+  }
+
+  @media (max-width: 900px) {
+    .media-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (max-width: 600px) {
