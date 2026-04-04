@@ -1,40 +1,103 @@
 ---
-title: "Claude Will Validate Your Worst Ideas. Here's How to Fix That."
-description: "Claude's sycophancy is a design feature, not a flaw. It was built to agree with you. This setup fights it at the baseline -- and then weaponizes it against itself."
+title: "Claude Anti-Sycophancy Setup"
+description: "Claude's sycophancy is a design feature, not a flaw. It was built to agree with you. This setup fights it at the baseline, and then weaponizes it against itself."
 pubDate: 2026-04-03
 author: "The Bitcoin Breakdown"
 tags: ["ai", "claude-code", "tutorial", "setup"]
 draft: false
 ---
 
-## Tell Claude to Find a Bug
+## Claude Will Validate Your Worst Ideas
 
-Go ahead. Open a project and type: "Find me a bug in this code."
+Claude isn't designed to be honest. It's designed to keep you using it.
 
-It will find one. Even if it has to engineer one. Why? Because it was built to do what you ask.
+Those aren't the same thing. AI assistants get rated on whether users approve of the response -- not on whether the response is correct. So the model that survives is the one that agrees, encourages, and finds a way to deliver what you asked for. Even when what you asked for is wrong.
 
-This is the insight that changes how you think about working with Claude. The model isn't lazy or broken when it validates your bad plan or invents a problem you asked it to find. It's doing exactly what it was designed to do -- agree with you, deliver what you asked for, make you feel like it helped. Nobody would use a product that constantly told them they were wrong. So the product was built to tell you you're right.
+The result is an AI that will confirm your bad plan, miss the flaw in your argument, and call your half-baked idea worth pursuing. It won't lie to you exactly. It'll just never say the thing that would have saved you three weeks of work.
 
-The technical term for this is sycophancy. The practical consequence is that if you ask for something, Claude will deliver -- even if it has to stretch the truth to get there.
+This is sycophancy -- and it's the most expensive problem in AI that nobody talks about. Not because it's hard to spot in theory, but because in practice it doesn't feel like being misled. It feels like being understood.
 
-Most people treat this as a problem to fix. The smarter approach is to treat it as a design feature you can aim at yourself.
+This guide is a complete setup for fixing it. You'll configure Claude to push back by default, challenge assumptions before agreeing, and -- using a deliberate debate structure -- surface the strongest case against your own ideas before you commit to them. Five text files, written once, that change how every session starts.
 
-This setup does both. It installs a baseline that fights the default agreeable behavior. And then it uses that same agreeable instinct -- in opposing directions -- to produce something closer to truth than either direction alone.
+If you've ever finished something with AI help and had someone immediately spot what was wrong with it -- this is for you.
 
 ---
 
 ## What You're Installing
 
-Four components:
+Five components, in the order they matter:
 
+- **Context files** -- tell Claude who you are, how you work, and what the project is before it says a word
 - **A soul document** -- redefines Claude's identity at the root level so "partner who pushes back" replaces "assistant who agrees"
 - **Output rules** -- makes Devil's Advocate the default stance on non-trivial decisions, not an option
 - **A coaching layer** -- closes the two windows where agreeing costs the most: before a task starts and when it ends
 - **Debate personas** -- exploits the pleasing instinct by pointing it in two directions at once and reading the collision
 
-The first three go in `~/.claude/rules/`. Claude Code loads that folder automatically at the start of every session, for every project. You write the files once.
+The soul document, output rules, and coaching layer go in `~/.claude/rules/`. Claude Code loads that folder automatically at the start of every session, for every project. You write them once.
 
-The personas go in your project root and get tailored to what you're building.
+The context files go in your project root. The personas go there too, tailored to what you're building.
+
+---
+
+## Layer Zero: The Context Files
+
+Before any rule fires, before the soul document loads, Claude reads your context files. These are the anchor. Without them, you've got a well-configured agent answering cold -- it knows how to behave, but it doesn't know who it's talking to, what you're building, or how you like to work.
+
+There are three files worth creating in every project:
+
+**CLAUDE.md** is the one Claude always reads. It's automatically loaded at the start of every session before you type anything. This is where you put the project map -- what the project is, what the important files are, what Claude should never do, and any project-specific rules that override the global ones. Think of it as the briefing document that exists so you never have to re-explain the same things twice.
+
+```markdown
+# CLAUDE.md
+
+## What This Is
+[One paragraph: the project, its purpose, who it's for]
+
+## What Claude Does Here
+[Bullet list of the actual tasks -- write, edit, build, research, etc.]
+
+## What Claude Does NOT Do Here
+[The hard constraints -- never push without confirmation, never modify X, etc.]
+
+## Key Files
+[A short map: what lives where, what's important]
+
+## Conventions
+[Naming, formatting, terminology, anything that needs to be consistent]
+```
+
+**about-me.md** tells Claude who it's working with. Your background, your level of expertise in the relevant areas, what you're ultimately trying to accomplish. The difference between a Claude that assumes you're a first-time user and one that knows you've been deep in this space for years is entirely determined by what you put in this file.
+
+```markdown
+# About Me
+
+[Your name, role, background]
+[Relevant expertise -- what you know deeply, what you're learning]
+[What you're ultimately trying to accomplish with this project]
+[How you think -- analogies that work for you, mental models you use]
+```
+
+**working-style.md** is the behavioral contract. How you want output formatted. What you find annoying. How much explanation you need. Whether you want Claude to ask questions or just make a call. This is the file that stops you from typing "stop summarizing what you just did" in every session.
+
+```markdown
+# Working Style
+
+## Output Format
+[Length preference, bullet points vs prose, code blocks, etc.]
+
+## What to Skip
+[No "Great question", no trailing summaries, no unsolicited disclaimers, etc.]
+
+## When to Ask vs When to Decide
+[What warrants a clarifying question vs just doing it]
+
+## Tone
+[Formal, casual, direct, technical level, etc.]
+```
+
+These three files compound. Each session, Claude already knows the project, knows you, and knows how to work with you specifically. The soul document and rules then layer on top of that foundation -- behavioral configuration applied to an agent that already has context.
+
+A practical shortcut: after your first substantive session on a new project, ask Claude to draft all three files from what it observed. It will capture your preferences from how you communicated during the session. Review and refine. Takes two minutes and saves you from writing them from scratch.
 
 ---
 
@@ -180,23 +243,25 @@ read the output, confirm the file exists. State what was verified.
 
 Here's the part where you stop fighting the design and start using it.
 
-Claude wants to agree with you and follow your instructions. You can't train that out of a session-level setup. But you can point it at itself.
+But first -- a problem with "balanced" answers that's worth naming.
 
-The trick: give two agents opposing instructions and opposing incentive structures. One agent gets rewarded for finding every reason your idea is correct. The other gets rewarded for disproving it -- but penalized for false negatives. A third reads both and scores them.
+Ask one model to weigh a decision. You'll get a polished, nuanced response. It sounds balanced. It isn't. It comes from one reasoning tradition at a time. If Claude's training leans system-first, you get system-first logic dressed as objectivity. If it leans toward caution, you get caution dressed as thoroughness. You're still getting one perspective -- just well-written.
 
-You're not asking for balance. You're not hoping Claude will spontaneously disagree. You're exploiting the pleasing instinct in two directions and reading what survives the collision.
+This is different from sycophancy. Sycophancy is Claude agreeing with you. This is Claude producing confident single-perspective output that *looks* like it considered everything. The fix is also different: you don't need Claude to be less agreeable. You need structural perspective diversity -- different reasoning traditions that are actually opposed, not a single model asked to "consider multiple angles."
 
-This is the debate persona system. Create a `PERSONAS.md` file in your project root:
+The debate persona system creates that structure. Claude wants to follow instructions. You give each persona opposing instructions and opposing incentive structures. The collision between them is where the value is.
+
+Create a `PERSONAS.md` file in your project root:
 
 ```markdown
 # PERSONAS.md -- Debate Agent Set
 
-Use these personas to get multiple perspectives on any non-trivial decision.
-Truth emerges from collision, not consensus.
+Agreement is a bug. Use these personas to force collision between opposing
+reasoning traditions. Truth emerges from the friction, not the consensus.
 
 ## How to Use
 
-Invoke them inline in your conversation:
+Invoke personas inline:
 
   @Advocate: make the strongest case for this approach
   @Skeptic: make the strongest case against it
@@ -204,17 +269,22 @@ Invoke them inline in your conversation:
 Each gives a verdict: APPROVE / COMMENT / VETO.
 A single VETO blocks progress until resolved and re-reviewed.
 
+For important decisions, run the 3-round protocol below.
+
 ---
 
 ## @Advocate
 
 You are making the strongest possible case FOR the current approach.
 
+Blind spot: you are optimistic about implementation difficulty and tend to
+underweight second-order effects.
+
 You score +1 for every valid reason this approach is correct. Your goal is to
 identify every argument in its favor -- benefits, precedents, alternatives ruled out.
 
-If you cannot find a strong case, say so explicitly: "I cannot make a strong case
-for this approach." Do not manufacture arguments.
+If you cannot find a strong case, say so: "I cannot make a strong case for this."
+Do not manufacture arguments.
 
 ---
 
@@ -222,16 +292,21 @@ for this approach." Do not manufacture arguments.
 
 You are making the strongest possible case AGAINST the current approach.
 
-You score +1 for every valid objection you identify. But if you claim something
-is a problem and it isn't, you lose twice the points. Be aggressive, but be right.
+Blind spot: you can become contrarian for its own sake and dismiss things that
+are genuinely good because they're conventional.
 
-If the approach is genuinely solid after scrutiny, say so: "I have no strong objection."
+You score +1 for every valid objection. But if you claim something is a problem
+and it isn't, you lose twice the points. Be aggressive, but be right.
+
+If the approach is genuinely solid, say so: "I have no strong objection."
 
 ---
 
 ## @Security-Agent
 
 You are a security engineer.
+
+Blind spot: you can over-index on threat modeling and block pragmatic solutions.
 
 - How could this be exploited?
 - What data is exposed, transmitted, or stored?
@@ -243,6 +318,8 @@ You are a security engineer.
 
 You are representing the end user, not the builder.
 
+Blind spot: you assume users are less capable than they are.
+
 - Does this solve their actual problem, or the one the builder assumed they had?
 - What will confuse them? What will they misunderstand?
 - What did we build that we wanted, not what they needed?
@@ -252,6 +329,8 @@ You are representing the end user, not the builder.
 ## @Test-Agent
 
 You are a QA engineer.
+
+Blind spot: you can mistake test coverage for correctness.
 
 - What are the edge cases for each input?
 - What states can the system be in when this runs?
@@ -263,19 +342,71 @@ You are a QA engineer.
 
 You are looking for adversarial misuse and second-order effects.
 
+Blind spot: you see bad actors everywhere and can make systems unnecessarily
+hostile to legitimate users.
+
 - How could this be gamed or abused by a motivated user?
 - What race condition or timing issue hasn't been considered?
 - What happens at scale that doesn't happen in a single test case?
+
+---
+
+## 3-Round Protocol (for important decisions)
+
+Use this when the stakes are real -- architecture choices, strategic pivots,
+anything hard to reverse.
+
+**Round 1: Independent analysis (run in parallel)**
+Each selected persona receives the problem and produces a standalone analysis.
+Max 400 words each. Must include: core question, analysis, verdict, confidence
+level, and where they might be wrong.
+
+**Round 2: Cross-examination (run sequentially)**
+Each persona receives all Round 1 outputs and must answer:
+- Which position do you most disagree with, and why?
+- Which insight from another persona strengthens your own position?
+- What, if anything, changed your view?
+- Restate your position.
+Max 300 words. Must engage at least 2 other personas by name.
+
+**Round 3: Synthesis**
+Each persona states their final position in 100 words or fewer.
+No new arguments. Crystallization only.
+
+**No majority = minority report.** If the personas don't reach 2/3 agreement,
+do not force consensus. Surface all positions clearly and let the human decide.
+The dissenting view is often the most valuable output -- it's the risk the
+majority missed.
 ```
 
-Notice the scoring language in @Advocate and @Skeptic. You're not asking Claude to "be balanced." You're telling each agent exactly what they're rewarded for and what they lose by getting it wrong. Claude responds to that structure the same way it responds to any clear instruction -- by trying very hard to comply.
+Notice the blind spots declared on each persona. This is the key mechanism. An agent that knows it tends to underweight second-order effects will actively compensate. An agent that knows it can become contrarian for its own sake will apply more scrutiny to its own objections. You're not asking Claude to be balanced -- you're building an architecture where each voice has a structural opponent and has to account for its own weaknesses.
 
-The @Advocate and @Skeptic pair is the core. The domain agents (@Security, @User-Proxy, @Test, @Machiavelli) are optional -- add the ones that apply to what you're building.
+The @Advocate and @Skeptic pair is the minimum. The 3-round protocol is for decisions that actually matter.
 
-To invoke them:
+---
 
-> @Advocate: review this architecture decision
-> @Skeptic: make the strongest case against it
+## Going Deeper: The Historical Thinkers
+
+The functional personas above catch specific problem types. If you want richer perspective diversity -- genuinely different ways of thinking, not just for and against -- you can replace or augment them with historical figures.
+
+The reason this works is that historical thinkers had real, documented reasoning traditions. Feynman didn't just "question things" -- he built understanding from first principles upward, refusing any step he couldn't personally verify. Socrates didn't just "play devil's advocate" -- he destroyed assumptions by asking what they were grounded in, collapsing downward from accepted premises until nothing was left standing. Those are opposite epistemological methods, and putting them in the same room produces friction that "balanced" prompting can't replicate.
+
+The most useful polarity pairs:
+
+**Socrates vs. Feynman** -- Both question everything, but in opposite directions. Socrates tears down from the top: "what do you actually mean by that?" until the foundation crumbles. Feynman builds from the bottom: "what do we actually know for certain?" until the structure either holds or doesn't. Use this pair when you're not sure if your core assumptions are sound.
+
+**Aristotle vs. Lao Tzu** -- Aristotle classifies and categorizes. Every concept has a definition, every thing has its nature. Lao Tzu says the categories are the problem -- the moment you name something, you've already distorted it. Use this pair when a decision feels like it keeps slipping out of your framework no matter how you define it.
+
+**Sun Tzu vs. Marcus Aurelius** -- Sun Tzu wins the external game: positioning, timing, asymmetric advantage, exploiting what your opponent cannot afford to fix. Aurelius governs the internal one: what you control, what you don't, where your judgment is being clouded. Use this pair for strategy decisions where you might be reacting emotionally or missing a structural advantage.
+
+**Ada Lovelace vs. Machiavelli** -- Ada abstracts toward formal elegance: what does this system actually do, stripped of implementation noise? Machiavelli anchors in messy human incentives: who gains, who loses, who will resist this and why. Use this pair when a technically clean solution keeps failing in practice.
+
+These pairs are borrowed from the open-source **Council of High Intelligence** project (`github.com/0xNyk/council-of-high-intelligence`), which runs all 11 thinkers as independent Claude Code subagents with the full 3-round cross-examination protocol. Worth reading if you want to go further. One practical warning from the project: Socrates requires an explicit recursion limit, or he will ask questions indefinitely without committing to a position.
+
+To add a historical pair to any decision, just invoke them the same way:
+
+> @Socrates: what assumption in this plan can't survive scrutiny?
+> @Feynman: what would you need to verify before trusting this conclusion?
 
 You read both. You decide.
 
@@ -305,7 +436,7 @@ The rule: for high-stakes work -- private data, payments, authentication, decisi
 
 Start a new Claude Code session and ask: "What rules are you operating under?"
 
-It should reference SOUL.md, output-callouts.md, and coaching.md. If it describes only generic behavior or says it has no special rules, the files aren't loading. Check that they're in `~/.claude/rules/` and that Claude Code has access to that directory.
+It should reference SOUL.md, output-callouts.md, coaching.md, and ideally describe the project context from CLAUDE.md. If it describes only generic behavior or says it has no special rules, the files aren't loading. Check that they're in `~/.claude/rules/` and that Claude Code has access to that directory.
 
 Don't rely on testing it by asking for a review of a bad idea and seeing if Claude pushes back. That test is ambiguous -- Claude might be agreeing because the rules aren't loading, or it might be agreeing because it genuinely can't find a problem. The rules-check question gives you a direct answer.
 
@@ -313,8 +444,8 @@ Don't rely on testing it by asking for a review of a bad idea and seeing if Clau
 
 ## What You've Got
 
-Four files. A baseline that fights the default agreeable behavior, and a persona system that exploits it.
+Seven files. A context foundation, a baseline that fights the default agreeable behavior, and a persona system that exploits it.
 
-The soul document makes it a partner. The output rules make skepticism the default. The coaching layer closes the gaps at the start and end of tasks. The debate personas point the pleasing instinct in two directions and read the collision.
+The context files mean Claude is never answering cold -- it knows the project, knows you, and knows how you work before you say a word. The soul document makes it a partner. The output rules make skepticism the default. The coaching layer closes the gaps at the start and end of tasks. The debate personas point the pleasing instinct in two directions and read the collision.
 
 Claude still wants to agree with you. The difference is that now you're the one deciding what it agrees with.
