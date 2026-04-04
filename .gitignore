@@ -44,3 +44,6 @@ npm-debug.log*
 
 # Reference repos (cloned for learning, not project dependencies)
 references/
+
+# CRM -- private repo containing PII, never commit to public TBB repo
+JC Bitcoin/JC BTC/CRM/
