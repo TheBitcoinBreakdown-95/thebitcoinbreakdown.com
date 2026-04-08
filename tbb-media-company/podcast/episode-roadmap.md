@@ -7,7 +7,7 @@
 ## Launch Series (First 5 Episodes)
 
 ### EP01: The Golden Rules of Bitcoin (FIRST PODCAST)
-- **Status:** Script near-complete (brain dump in `The Bitcoin Breakdown (old)/Lessons/Golden Rules Video/`)
+- **Status:** Script near-complete (brain dump in `the-bitcoin-breakdown-old/Lessons/Golden Rules Video/`)
 - **Format:** Podcast (audio only, oratory delivery)
 - **Length:** 15-25 min
 - **Source:** Golden Rules Brain Dump.md, GR Script.md

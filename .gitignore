@@ -44,19 +44,19 @@ npm-debug.log*
 
 # Cloned repos and embedded git repos (separate git histories)
 references/
-Ark/Ark Labs/ark/
-Ark/Ark Labs/arkd/
+Ark/ark-labs/ark/
+Ark/ark-labs/arkd/
 Ark/Second/bark/
 FreedomLab/
-JC Bitcoin/barkgui/
-JC Bitcoin/Bitcoin-Meetups/
+jc-bitcoin/barkgui/
+jc-bitcoin/Bitcoin-Meetups/
 
 # Obsidian plugins with their own git repos
 TBB/.obsidian/plugins/obsidian-claude-code/
-JC Bitcoin/JC BTC/.obsidian/plugins/obsidian-claude-code/
+jc-bitcoin/jc-btc/.obsidian/plugins/obsidian-claude-code/
 
 # Obsidian internals for JC Bitcoin vault
-JC Bitcoin/JC BTC/.obsidian/
+jc-bitcoin/jc-btc/.obsidian/
 
 # CRM -- private repo containing PII, never commit to public TBB repo
-JC Bitcoin/JC BTC/CRM/
+jc-bitcoin/jc-btc/CRM/

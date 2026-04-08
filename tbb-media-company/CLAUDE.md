@@ -3,9 +3,9 @@
 > The Bitcoin Breakdown as a media, education, and consulting business under 2112 Capital Solutions LLC. Podcast, YouTube, newsletter, social, courses, consulting, workshops, and the production system that ties them together.
 
 **Master TODO:** All tasks tracked in [tasks/TODO.md](tasks/TODO.md) (Phase 14). This file covers workflows, tools, and channel specs.
-**Synthesis:** [synthesis.md](TBB Media Company/business/synthesis.md) -- full strategic context extracted from legacy archives.
-**Teaching Framework:** [teaching-framework.md](TBB Media Company/business/teaching-framework.md) -- pedagogical principles for content design.
-**Episode Roadmap:** [episode-roadmap.md](TBB Media Company/podcast/episode-roadmap.md) -- ordered episode plan with production checklists.
+**Synthesis:** [synthesis.md](tbb-media-company/business/synthesis.md) -- full strategic context extracted from legacy archives.
+**Teaching Framework:** [teaching-framework.md](tbb-media-company/business/teaching-framework.md) -- pedagogical principles for content design.
+**Episode Roadmap:** [episode-roadmap.md](tbb-media-company/podcast/episode-roadmap.md) -- ordered episode plan with production checklists.
 
 ---
 
@@ -85,7 +85,7 @@ The production and services arm of The Bitcoin Breakdown. Two goals:
    AI pulls relevant material from files.
    AI drafts a speakable outline (talking points, not prose) using Voice DNA profile.
    User reads, marks up, adds riffs, cuts what's wrong.
-   Voice DNA location: WBIGAF/0. Project/Voice DNA/voice-dna-profile.md
+   Voice DNA location: WBIGAF/0-project/voice-dna/voice-dna-profile.md
    Style: brain-dumping > scripting. Don't over-script.
 
 3. RECORD (30-45 min)
@@ -218,14 +218,14 @@ Charge what the time is worth ($100/hr). Don't undercut. Offer a charity track (
 | TBB compendium | `TBB/guide/` | ~31,600 | Polished explainers, adapted for audio |
 | TBB blog posts | `TBB/posts/` | ~9 posts | Adapted readings, updated takes |
 | Bibliography | `WBIGAF/bibliography.md` | 66 sources | Citation-backed episodes |
-| Node SSH course | `content/Node SSH/` | 7 lessons | Technical walkthrough episodes |
+| Node SSH course | `Content/node-ssh/` | 7 lessons | Technical walkthrough episodes |
 | Ark research | `Ark/` | Multiple docs | L2/Ark explainer series |
-| Voice DNA | `WBIGAF/0. Project/Voice DNA/` | 761 lines | Script generation reference |
-| Golden Rules script | `The Bitcoin Breakdown (old)/Lessons/Golden Rules Video/` | Near-complete | Episode 1 source |
-| Bitcoin 101 outline | `The Bitcoin Breakdown (old)/TBB/Bitcoin 101/` | 16 sections | Series outline |
+| Voice DNA | `WBIGAF/0-project/voice-dna/` | 761 lines | Script generation reference |
+| Golden Rules script | `the-bitcoin-breakdown-old/Lessons/Golden Rules Video/` | Near-complete | Episode 1 source |
+| Bitcoin 101 outline | `the-bitcoin-breakdown-old/TBB/Bitcoin 101/` | 16 sections | Series outline |
 | Hardware wallet guide | `2112 (old)/Hardware wallet Guidebest practices.md` | 10K+ words | Workshop/episode source |
 | Teaching framework | `business/teaching-framework.md` | Full framework | Content design reference |
-| Personal journey | `The Bitcoin Breakdown (old)/TBB/My history with bitcoin.md` | Narrative | About/bio, EP02 source |
+| Personal journey | `the-bitcoin-breakdown-old/TBB/My history with bitcoin.md` | Narrative | About/bio, EP02 source |
 
 ---
 
@@ -261,7 +261,7 @@ Three folders of planning/strategy material preserved for reference:
 |--------|----------|-----------|
 | `2025-2035 (old)/` | 74 files. Personal goals, 10-year plan, teaching pedagogy research, AI project ideas, income planning | 5-Year Roadmap, GOAL CONSOLIDATION, How to Teach, Inspiration Example |
 | `2112 (old)/` | ~40 files. LLC formation, business services, pricing, hardware wallet guides, Ark missionary vision | Company Info, What I charge, Mission, Services, Hardware wallet guide |
-| `The Bitcoin Breakdown (old)/` | 164 files. Content strategy, Golden Rules series, Bitcoin 101 curriculum, production workflows, social media | Golden Rules scripts, Bitcoin 101.md, Purpose.md, North Star.md, My style.md |
+| `the-bitcoin-breakdown-old/` | 164 files. Content strategy, Golden Rules series, Bitcoin 101 curriculum, production workflows, social media | Golden Rules scripts, Bitcoin 101.md, Purpose.md, North Star.md, My style.md |
 
 **Do not delete these folders.** They are primary source material. Key learnings have been extracted into:
 - `business/synthesis.md` -- strategic context, corporate details, revenue model, journey, patterns
@@ -273,7 +273,7 @@ Three folders of planning/strategy material preserved for reference:
 ## Directory Structure
 
 ```
-TBB Media Company/
+tbb-media-company/
   CLAUDE.md                       -- This file
   business/
     blueprint.md                  -- North star business plan
@@ -295,5 +295,5 @@ TBB Media Company/
     logo/                         -- Logo assets and design explorations
   2025-2035 (old)/                -- Legacy: goals, pedagogy, AI projects
   2112 (old)/                     -- Legacy: LLC, services, pricing, guides
-  The Bitcoin Breakdown (old)/    -- Legacy: content strategy, scripts, curriculum
+  the-bitcoin-breakdown-old/    -- Legacy: content strategy, scripts, curriculum
 ```

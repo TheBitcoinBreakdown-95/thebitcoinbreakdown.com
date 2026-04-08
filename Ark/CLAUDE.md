@@ -10,18 +10,18 @@
 
 | Folder | Purpose |
 |--------|---------|
-| `Ark Labs/` | Ark Labs research + cloned repos (ark, arkd) |
+| `ark-labs/` | Ark Labs research + cloned repos (ark, arkd) |
 | `Second/` | Second research + cloned repo (bark) |
-| `Repo idea/` | Protocol spec, prior art tracking |
-| `Repo idea/Repo notes/` | Research documents (16 files, ~7,200 lines) |
+| `repo-idea/` | Protocol spec, prior art tracking |
+| `repo-idea/repo-notes/` | Research documents (16 files, ~7,200 lines) |
 
 ## Key Documents
 
 ### Protocol Spec
-- `Repo idea/protocol-spec.md` -- **ArkPool v0.1 draft.** Two-phase architecture: standalone bilateral lending (now) -> per-round integration (future). Timelocked multisig escrow. BTC-for-BTC. Block-height denominated terms.
+- `repo-idea/protocol-spec.md` -- **ArkPool v0.1 draft.** Two-phase architecture: standalone bilateral lending (now) -> per-round integration (future). Timelocked multisig escrow. BTC-for-BTC. Block-height denominated terms.
 
 ### Prior Art + Resources
-- `Repo idea/prior-art-and-resources.md` -- Tracks existing work, discussion venues (GitHub issue #197), adjacent projects (Lendasat, Lightning Pool, Lygos), and the gap we're filling.
+- `repo-idea/prior-art-and-resources.md` -- Tracks existing work, discussion venues (GitHub issue #197), adjacent projects (Lendasat, Lightning Pool, Lygos), and the gap we're filling.
 
 ### Research (by topic)
 | Topic | Files |
@@ -37,8 +37,8 @@
 
 | Repo | Local Path |
 |------|-----------|
-| ark-network/ark | `Ark Labs/ark/` |
-| arkade-os/arkd | `Ark Labs/arkd/` |
+| ark-network/ark | `ark-labs/ark/` |
+| arkade-os/arkd | `ark-labs/arkd/` |
 | ark-bitcoin/bark | `Second/bark/` |
 
 ## Key Design Decisions

@@ -42,7 +42,7 @@ The site is fully static — no JavaScript frameworks, no client-side rendering,
 │   └── pages/                    # Static pages (About, Learn More, etc.)
 │
 ├── WBIGAF/                       # Book project (research & pipeline)
-│   ├── 0. Project/               # Voice DNA profile, planning docs
+│   ├── 0-project/                # Voice DNA profile, planning docs
 │   └── 1-9. [chapters]/          # Source research per chapter
 │
 ├── astro/                        # Site generator
@@ -139,7 +139,7 @@ The absence of barriers IS the freedom statement.
 - No CSS frameworks — every line of CSS is custom and purposeful
 - Fully responsive from 375px mobile to ultrawide desktop
 
-The complete design system is documented in [`TBB/Website planning/V4/tbb-master-design-guide.md`](TBB/Website%20planning/V4/tbb-master-design-guide.md) (731 lines covering color theory, typography, spacing, components, accessibility, semiotics, and cognitive load rules).
+The complete design system is documented in [`TBB/website-planning/V4/tbb-master-design-guide.md`](TBB/website-planning/V4/tbb-master-design-guide.md) (731 lines covering color theory, typography, spacing, components, accessibility, semiotics, and cognitive load rules).
 
 ---
 

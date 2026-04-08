@@ -29,7 +29,7 @@ Open http://localhost:4321 - See [CLAUDE.md](../CLAUDE.md) for full context.
 - [x] Experiment with theme/design (edit `astro/src/styles/global.css`)
 
 ## Phase 2b: V4 "Dark Luxury" Design System
-Design guide: `TBB/Website planning/V4/tbb-master-design-guide.md`
+Design guide: `TBB/website-planning/V4/tbb-master-design-guide.md`
 
 ### Step 1: Foundation (CSS + Fonts + Base Layout)
 - [x] Rewrite `global.css` with V4 design tokens (gold/black palette, Cormorant Garamond + JetBrains Mono)
@@ -208,7 +208,7 @@ Plan: `.claude/plans/nested-cooking-kernighan.md`
 
 Source folder: `content/` (standalone guides and courses, not tied to the Astro site yet)
 
-### Node SSH Course (`content/Node SSH/`)
+### Node SSH Course (`Content/node-ssh/`)
 A 7-part guide for node runners on SSHing into a Bitcoin node and using bitcoin-cli.
 
 - [x] 01 - Security Concerns (risks, mitigations, checklist)
@@ -225,7 +225,7 @@ A 7-part guide for node runners on SSHing into a Bitcoin node and using bitcoin-
 ### RPC Direct Access (research)
 - [ ] Investigate if StartOS exposes Bitcoin Core RPC to LAN
 - [ ] If possible: set up direct RPC access from Claude Code (no SSH needed for queries)
-- [ ] Document RPC setup in SSH Instructions.md
+- [ ] Document RPC setup in ssh-instructions.md
 
 ### Merchants Onboarding Guide (`content/Merchants/`)
 A practical guide for businesses that want to accept bitcoin without Square/Strike/third-party processors.
@@ -365,9 +365,9 @@ Only proceed after 13b is built and quality is verified against the 10 test ques
 
 ## Phase 14: TBB Business Foundation
 
-The Bitcoin Breakdown as a media, education, and consulting business under 2112 Capital Solutions LLC. Operating manual: [TBB Media Company/CLAUDE.md](TBB Media Company/CLAUDE.md). Synthesis: [synthesis.md](TBB Media Company/business/synthesis.md). Episode roadmap: [episode-roadmap.md](TBB Media Company/podcast/episode-roadmap.md). Teaching framework: [teaching-framework.md](TBB Media Company/business/teaching-framework.md).
+The Bitcoin Breakdown as a media, education, and consulting business under 2112 Capital Solutions LLC. Operating manual: [tbb-media-company/CLAUDE.md](tbb-media-company/CLAUDE.md). Synthesis: [synthesis.md](tbb-media-company/business/synthesis.md). Episode roadmap: [episode-roadmap.md](tbb-media-company/podcast/episode-roadmap.md). Teaching framework: [teaching-framework.md](tbb-media-company/business/teaching-framework.md).
 
-Directory: `TBB Media Company/` -- podcast, YouTube, newsletter, social, brand, consulting, and business planning. Legacy archives preserved in three `(old)` subfolders.
+Directory: `tbb-media-company/` -- podcast, YouTube, newsletter, social, brand, consulting, and business planning. Legacy archives preserved in three `-old` subfolders.
 
 ### Legal & Compliance
 
@@ -395,9 +395,9 @@ Directory: `TBB Media Company/` -- podcast, YouTube, newsletter, social, brand, 
 
 ### Episode 1: Golden Rules of Bitcoin (SHIP THIS FIRST)
 
-- [ ] Pull Golden Rules brain dump script from `The Bitcoin Breakdown (old)/Lessons/Golden Rules Video/`
+- [ ] Pull Golden Rules brain dump script from `the-bitcoin-breakdown-old/Lessons/golden-rules-video/`
 - [ ] Edit into speakable outline (talking points, not prose)
-- [ ] AI polish pass using Voice DNA profile
+- [ ] AI polish pass using voice-dna profile
 - [ ] User read-through: add riffs, cut what's wrong, mark emphasis points
 - [ ] Set up Spotify for Podcasters account
 - [ ] Record EP01 (OBS, audio-only, one take)
@@ -422,7 +422,7 @@ Directory: `TBB Media Company/` -- podcast, YouTube, newsletter, social, brand, 
 - [ ] Newsletters: Bitcoin education newsletters -- subscriber counts, sponsorship rates, platforms (Beehiiv, Substack, ConvertKit)
 - [ ] Consulting/Training: Corporate Bitcoin education providers -- pricing, positioning, client types
 - [ ] Gap analysis: What's missing in the market that TBB can uniquely fill (dense scripted content, Ark/L2 explainers, funny + educational)
-- [ ] Deliverable: competitive landscape summary doc in `TBB Media Company/business/competitive-research.md`
+- [ ] Deliverable: competitive landscape summary doc in `tbb-media-company/business/competitive-research.md`
 
 ### Content Channels (launch order)
 
@@ -488,7 +488,7 @@ Add a Lightning Network tipping widget so readers can zap sats directly from the
 
 ## JC Bitcoin CRM
 
-Repo: `Jersey-City-Bitcoin/jcbtc-crm` (private) | Local: `JC Bitcoin/JC BTC/CRM/`
+Repo: `Jersey-City-Bitcoin/jcbtc-crm` (private) | Local: `jc-bitcoin/jc-btc/CRM/`
 Scripts: `CRM/scripts/import_luma.py`, `import_organizers.py` | Command: `/import-contacts`
 
 ### Seeding

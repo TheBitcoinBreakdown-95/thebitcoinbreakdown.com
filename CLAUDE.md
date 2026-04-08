@@ -37,19 +37,19 @@ This is the master workspace for all educational content created by The Bitcoin 
 | Project | Directory | Operating Manual | Status |
 |---------|-----------|-----------------|--------|
 | **TBB Website** | `TBB/` + `astro/` | Section 5 below | LIVE at thebitcoinbreakdown.com |
-| **TBB Media Company** | `TBB Media Company/` | `TBB Media Company/CLAUDE.md` | Active -- EP01 Golden Rules in production, 2112 LLC active |
+| **TBB Media Company** | `tbb-media-company/` | `tbb-media-company/CLAUDE.md` | Active -- EP01 Golden Rules in production, 2112 LLC active |
 | **WBIGAF Book** | `WBIGAF/` | `WBIGAF/WBIGAF.md` | Ch1-2 done, Ch3 in progress |
 | **FreedomLab** | `FreedomLab/` | `FreedomLab/CLAUDE.md` | Skills built, slide deck active |
-| **JC Bitcoin** | `JC Bitcoin/` | `JC Bitcoin/JC BTC/CLAUDE.md` | Active (vault + meetup materials) |
-| **Node SSH Course** | `content/Node SSH/` | -- | 7/7 files written, review pending |
-| **How to Learn and Do Anything** | `content/How to Learn and Do Anything/` | -- | Planning phase |
+| **JC Bitcoin** | `jc-bitcoin/` | `jc-bitcoin/jc-btc/CLAUDE.md` | Active (vault + meetup materials) |
+| **Node SSH Course** | `Content/node-ssh/` | -- | 7/7 files written, review pending |
+| **How to Learn and Do Anything** | `Content/how-to-learn-and-do-anything/` | -- | Planning phase |
 | **Merchants Onboarding Guide** | -- | -- | Not started |
-| **AI Fluency for Educators** | `AI Fluency for educators/` | -- | Early stage (4 framework docs) |
+| **AI Fluency for Educators** | `ai-fluency-for-educators/` | -- | Early stage (4 framework docs) |
 
 ### Inactive/Archive
 | Directory | Notes |
 |-----------|-------|
-| `Automating TBB/` | Archived -- logo work moved to `TBB Media Company/brand/logo/` |
+| `automating-tbb/` | Archived -- logo work moved to `tbb-media-company/brand/logo/` |
 | `references/` | Claude Code best practices, supermemory docs |
 
 ---
@@ -75,7 +75,7 @@ Each project tracks its own work. The master index:
 | Component | Location | Purpose |
 |-----------|----------|---------|
 | GitHub Actions | `.github/workflows/deploy.yml` | Auto-build + FTP deploy to Hostinger on push |
-| SSH access | `SSH Instructions.md` | Windows SSH to StartOS Bitcoin node |
+| SSH access | `ssh-instructions.md` | Windows SSH to StartOS Bitcoin node |
 | Scripts | `scripts/` | Build/deployment automation |
 | References | `references/` | Claude Code best practices docs |
 

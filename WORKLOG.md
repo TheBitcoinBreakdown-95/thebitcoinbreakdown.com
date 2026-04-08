@@ -10,7 +10,7 @@
 **EP01 Golden Rules Script -- First Draft (COMPLETE)**
 - Read and synthesized 3 archive source files: Golden Rules Brain Dump.md, GR Script.md, Da Rules.md
 - Read Voice DNA profile and teaching framework to inform script structure
-- Created `TBB Media Company/podcast/episodes/ep01-golden-rules/script.md` -- speakable outline format
+- Created `tbb-media-company/podcast/episodes/ep01-golden-rules/script.md` -- speakable outline format
   - Cold open + intro + 6 rules + close (~15-20 min target)
   - Each rule has bullet-point talking points + one-liner drop (Voice DNA pattern: long build-up -> short declarative payoff)
   - Cold open uses teaching framework Phase 1: Inspire ("burning question" tactic)

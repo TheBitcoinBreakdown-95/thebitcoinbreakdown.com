@@ -79,9 +79,9 @@
 
 | Sub-Ch | Prompt Location | Items | Gaps |
 |--------|----------------|-------|------|
-| 3.3 | `WBIGAF/3. What Problems Does it solve/3.3 CBDCs Surveillance Censorship Control/research.md` Part 2 | 120 | 13 |
-| 3.4 | `WBIGAF/3. What Problems Does it solve/3.4 Systematic Economic Risk/research.md` Part 2 | 138 | 13 |
-| 3.5 | `WBIGAF/3. What Problems Does it solve/3.5 For the Billions Not the Billionaires/research.md` Part 2 | 207 | 13 |
+| 3.3 | `WBIGAF/3-what-problems-does-it-solve/3.3-cbdcs-surveillance-censorship-control/research.md` Part 2 | 120 | 13 |
+| 3.4 | `WBIGAF/3-what-problems-does-it-solve/3.4-systematic-economic-risk/research.md` Part 2 | 138 | 13 |
+| 3.5 | `WBIGAF/3-what-problems-does-it-solve/3.5-for-the-billions-not-the-billionaires/research.md` Part 2 | 207 | 13 |
 
 Run each prompt through Gemini Deep Research / ChatGPT / Perplexity. Paste results back into the corresponding `research.md` Part 3. Say "[sub-chapter] research done" to unblock.
 

@@ -43,8 +43,8 @@ WBIGAF/
 ├── bibliography.md                    ← Master bibliography (de-duplicated Chicago citations)
 ├── glossary.md                        ← Glossary of terms (back-burner, populate during drafting)
 │
-├── 0. Project/                        ← Project-level docs
-│   ├── Voice DNA/                     ← Author's voice profile + working files
+├── 0-project/                         ← Project-level docs
+│   ├── voice-dna/                     ← Author's voice profile + working files
 │   │   ├── voice-dna-profile.md       ← THE profile (761 lines — load during drafting)
 │   │   ├── voice-dna-framework.md     ← Condensed L1-L7 framework
 │   │   ├── voice-validation-test.md   ← Test passages + scores
@@ -55,31 +55,31 @@ WBIGAF/
 │       ├── Why Bitcoin is good as fuck.md  ← Master overview/outline
 │       └── Book.md, Structure.md, etc.     ← Early planning docs
 │
-├── 1. What is bitcoin/               ← Ch1 source files (2 files)
-├── 2. Why bitcoin/                   ← Ch2 source files (6 files)
-├── 3. What Problems Does it solve/   ← Ch3 (reorganized into sub-chapter dirs)
-│   ├── Chapter 3 Metadata/
+├── 1-what-is-bitcoin/                 ← Ch1 source files (2 files)
+├── 2-why-bitcoin/                     ← Ch2 source files (6 files)
+├── 3-what-problems-does-it-solve/     ← Ch3 (reorganized into sub-chapter dirs)
+│   ├── chapter-3-metadata/
 │   │   ├── 3. What Problems Does it solve.md  ← Overview/intro source
 │   │   ├── ch3-triage.md                       ← Original triage (reference)
 │   │   ├── transition-ch3.md                   ← Chapter progress snapshot
 │   │   └── orphans.md                          ← Cross-sub-chapter orphan registry
-│   ├── 3.1 Fiat Capitalism/
+│   ├── 3.1-fiat-capitalism/
 │   │   ├── Fiat Capitalism.md        ← Source (read-only, never modified)
 │   │   ├── catalog.md                ← Pipeline: 199 inventory items (Argument Blocks added at Step 4)
 │   │   ├── links.md                  ← Pipeline: 22 links documented
 │   │   ├── sources.md                ← Pipeline: scraped content (created during scraping)
 │   │   ├── research.md               ← Pipeline: (created during deep research)
 │   │   └── draft.md                  ← Pipeline: (created during drafting)
-│   ├── 3.2 Inflation and the Cantillon Effect/
-│   ├── 3.3 CBDCs Surveillance Censorship Control/
-│   ├── 3.4 Systematic Economic Risk/
-│   └── 3.5 For the Billions Not the Billionaires/
-├── 4. Bitcoin Past/                   ← Flat source files (reorganize when pipeline starts)
-├── 5. Bitcoin properties/
-├── 6. So…what is bitcoin exactly/
-├── 7. Bitcoin Present/
-├── 8. Why bitcoin is good as fuck/
-└── 9. Bitcoin Future/
+│   ├── 3.2-inflation-and-the-cantillon-effect/
+│   ├── 3.3-cbdcs-surveillance-censorship-control/
+│   ├── 3.4-systematic-economic-risk/
+│   └── 3.5-for-the-billions-not-the-billionaires/
+├── 4-bitcoin-past/                    ← Flat source files (reorganize when pipeline starts)
+├── 5-bitcoin-properties/
+├── 6-so-what-is-bitcoin-exactly/
+├── 7-bitcoin-present/
+├── 8-why-bitcoin-is-good-as-fuck/
+└── 9-bitcoin-future/
 ```
 
 ### Per-Sub-Chapter File Structure
@@ -102,7 +102,7 @@ When the pipeline starts for a sub-chapter, its directory gets up to 5 working f
 
 **Do NOT write content without loading the Voice DNA profile first.**
 
-Profile: `WBIGAF/0. Project/Voice DNA/voice-dna-profile.md` (761 lines, 8 sections)
+Profile: `WBIGAF/0-project/voice-dna/voice-dna-profile.md` (761 lines, 8 sections)
 
 Quick summary (the profile contains the full rules):
 - **Tone:** Passionate educator with urgency. Emotionally invested, never detached.
@@ -126,7 +126,7 @@ Read the source file. Create a **Source Inventory** — every distinct claim, qu
 
 - Create sub-chapter directory if not exists
 - Move source file into directory if not already there
-- **Check the orphan registry** (`Chapter N Metadata/orphans.md`) for items routed to this sub-chapter from earlier sub-chapters — import them into the catalog
+- **Check the orphan registry** (`chapter-N-metadata/orphans.md`) for items routed to this sub-chapter from earlier sub-chapters — import them into the catalog
 - **Output:** `catalog.md` (Source Inventory) + `links.md`
 
 ### Step 2: SCRAPE
@@ -172,12 +172,12 @@ Build **Argument Blocks** from the Source Inventory. Each block = one thesis wit
 - **Run Refutation Analysis** early in this step — scan each thesis for counter-mainstream claims, identify strongest objections, determine which blocks (if any) need the REFUTATION field and what placement (Upfront/Inline/Deferred). Most sub-chapters flag 0 blocks. See argument-block-model.md Section 3.3.
 - Restructure `catalog.md` into Part 1 (Argument Blocks) + Part 2 (Source Inventory)
 - Flag orphan inventory items (don't fit any block — may be cuttable or belong in another sub-chapter)
-- **Route orphans to the orphan registry** (`Chapter N Metadata/orphans.md`) — each orphan gets: item #, text, source sub-chapter, destination sub-chapter, and the source link/citation it came from
+- **Route orphans to the orphan registry** (`chapter-N-metadata/orphans.md`) — each orphan gets: item #, text, source sub-chapter, destination sub-chapter, and the source link/citation it came from
 - Flag cross-sub-chapter duplicates
 - Present blocks to user in proposed sequence
 - Update `toc.md` with the sub-chapter's block titles from the Chapter Grid
-- **Full model spec:** `WBIGAF/0. Project/Planning/argument-block-model.md` (v2.2)
-- **Architectural decisions:** `WBIGAF/0. Project/Planning/decisions.md`
+- **Full model spec:** `WBIGAF/0-project/Planning/argument-block-model.md` (v2.2)
+- **Architectural decisions:** `WBIGAF/0-project/Planning/decisions.md`
 
 ### Step 5: USER REVIEW
 User reviews the Argument Blocks:
@@ -200,7 +200,7 @@ All Step 5 changes go into the Amendments section — never edit existing blocks
 
 ### Step 6: DRAFT
 Write using Voice DNA profile — each Argument Block becomes one section of the draft:
-- **Load `WBIGAF/0. Project/Voice DNA/voice-dna-profile.md` before writing**
+- **Load `WBIGAF/0-project/voice-dna/voice-dna-profile.md` before writing**
 - Block thesis → section topic sentence; logic chain → paragraph structure; key quotes pre-selected
 - Chicago-style endnotes for every claim, quote, and data point
 - No padding — length driven by argument depth
@@ -246,12 +246,12 @@ User reviews:
 
 ### Chapter Reorganization
 When the pipeline starts for a new chapter:
-1. Create numbered sub-chapter directories (`N.M Sub-Chapter Name/`)
+1. Create numbered sub-chapter directories (`N.M-sub-chapter-name/`)
 2. Move each source file into its sub-chapter directory
-3. Create `Chapter N Metadata/` for chapter-level docs (overview source, triage, transition)
+3. Create `chapter-N-metadata/` for chapter-level docs (overview source, triage, transition)
 
 ### Transition Documents
-One per chapter, in `Chapter N Metadata/transition-chN.md`. Tracks:
+One per chapter, in `chapter-N-metadata/transition-chN.md`. Tracks:
 - Current sub-chapter and pipeline step
 - Files to read for context
 - What's done, what's next
@@ -276,7 +276,7 @@ One per chapter, in `Chapter N Metadata/transition-chN.md`. Tracks:
 Items scraped from Gladstein's IMF article that are detailed case studies of country-level exploitation → mostly 3.5, not 3.1. Items about inflation as invisible tax → mostly 3.2, not 3.1. The sub-chapter's source notes are the authoritative scope definition.
 
 ### Orphan Registry
-One file per chapter: `Chapter N Metadata/orphans.md`. Tracks catalog items that were found in one sub-chapter's scraping/research but belong in a different sub-chapter.
+One file per chapter: `chapter-N-metadata/orphans.md`. Tracks catalog items that were found in one sub-chapter's scraping/research but belong in a different sub-chapter.
 
 **Format:**
 ```markdown
@@ -314,7 +314,7 @@ One file per chapter: `Chapter N Metadata/orphans.md`. Tracks catalog items that
 
 1. **Read this file** (`WBIGAF/WBIGAF.md`) — understand the project and pipeline
 2. **Read `WBIGAF/WBIGAF-Status.md`** — find the current chapter and pipeline step
-3. **Read the chapter's transition doc** (e.g., `WBIGAF/3.../Chapter 3 Metadata/transition-ch3.md`) — get detailed context
+3. **Read the chapter's transition doc** (e.g., `WBIGAF/3-what-problems-does-it-solve/chapter-3-metadata/transition-ch3.md`) — get detailed context
 4. **Load ONLY the files needed for the current pipeline step:**
    - Triage → source file only
    - Scraping → `links.md` + `catalog.md` (scraped content goes to `sources.md`)
@@ -336,13 +336,13 @@ One file per chapter: `Chapter N Metadata/orphans.md`. Tracks catalog items that
 | Table of contents | `WBIGAF/toc.md` |
 | Master bibliography | `WBIGAF/bibliography.md` |
 | Glossary | `WBIGAF/glossary.md` |
-| Voice DNA profile | `WBIGAF/0. Project/Voice DNA/voice-dna-profile.md` |
-| Voice DNA framework | `WBIGAF/0. Project/Voice DNA/voice-dna-framework.md` |
-| Source methodology | `WBIGAF/0. Project/Voice DNA/Voice DNA Forensic Stylometry and Production System.md` |
-| Argument block model | `WBIGAF/0. Project/Planning/argument-block-model.md` |
-| Architectural decisions | `WBIGAF/0. Project/Planning/decisions.md` |
-| Master book outline | `WBIGAF/0. Project/Planning/Why Bitcoin is good as fuck.md` |
-| Ch3 transition doc | `WBIGAF/3. What Problems Does it solve/Chapter 3 Metadata/transition-ch3.md` |
+| Voice DNA profile | `WBIGAF/0-project/voice-dna/voice-dna-profile.md` |
+| Voice DNA framework | `WBIGAF/0-project/voice-dna/voice-dna-framework.md` |
+| Source methodology | `WBIGAF/0-project/voice-dna/Voice DNA Forensic Stylometry and Production System.md` |
+| Argument block model | `WBIGAF/0-project/Planning/argument-block-model.md` |
+| Architectural decisions | `WBIGAF/0-project/Planning/decisions.md` |
+| Master book outline | `WBIGAF/0-project/Planning/Why Bitcoin is good as fuck.md` |
+| Ch3 transition doc | `WBIGAF/3-what-problems-does-it-solve/chapter-3-metadata/transition-ch3.md` |
 | Website project | `CLAUDE.md` (repo root) |
 | Website tasks | `tasks/TODO.md` |
 
@@ -409,7 +409,7 @@ await browser.close();
 - **Non-headless:** Shows browser window, less likely to be bot-detected. Required for sites that check for headless Chrome (Medium, Lyn Alden). Use `headless: false` and add scrolling + `domcontentloaded` wait.
 
 ### File Organization After Scraping
-- **Scraped text files** (`scraped_N.txt`): Store in the sub-chapter directory (e.g., `3.1 Fiat Capitalism/`), NOT in the TBB root.
+- **Scraped text files** (`scraped_N.txt`): Store in the sub-chapter directory (e.g., `3.1-fiat-capitalism/`), NOT in the TBB root.
 - **Small-medium articles** (<5k words): Store full text directly in `sources.md`.
 - **Large articles** (>5k words): Store key excerpts + direct quotes in `sources.md`, full text in separate `scraped_N.txt` file. Reference the file from sources.md.
 - **Temp files to clean up:** Scrape scripts (`.mjs`), `package.json`, `package-lock.json`, `node_modules/` in TBB root — delete after all scraping is done.

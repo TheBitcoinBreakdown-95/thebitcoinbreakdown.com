@@ -24,7 +24,7 @@ Ch3.1 COMPLETE (deployed, catalog retrofitted to v2). Ch3.2 Draft complete (Step
 
 **Ch3.1 Voice DNA Review:** 4 items flagged (2 duplications, 1 jargon, 1 self-quote). User has additional opinions — next session will focus on rewriting one argument block together as a voice calibration exercise, then extrapolate to the rest.
 
-`WBIGAF/3. What Problems Does it solve/Chapter 3 Metadata/transition-ch3.md`
+`WBIGAF/3-what-problems-does-it-solve/chapter-3-metadata/transition-ch3.md`
 
 ---
 
@@ -62,8 +62,8 @@ Ch3.1 COMPLETE (deployed, catalog retrofitted to v2). Ch3.2 Draft complete (Step
 
 | Chapter | Transition Doc | Sub-Chapters Started |
 |---------|---------------|---------------------|
-| Ch 3 | `WBIGAF/3. What Problems Does it solve/Chapter 3 Metadata/transition-ch3.md` | 3.1 COMPLETE (deployed), 3.2 Draft done (Step 7 deferred), 3.3 Step 3A done (120 items, 13 gaps, prompt ready), 3.4 Step 3A done (138 items, 13 gaps, prompt ready), 3.5 Step 3A done (207 items, 13 gaps, prompt ready) |
-| Ch 4 | `WBIGAF/4. Bitcoin Past/Chapter 4 Metadata/transition-ch4.md` | 4.1 Step 1 done (59 items, 8 links), 4.2 Step 2 done (105 items, 10 links — user scraped), 4.3 Step 1 done (29 items, 4 links), 4.4 Step 1 done (47 items, 11 links), 4.5 Step 1 done (74 items, 12 links) |
+| Ch 3 | `WBIGAF/3-what-problems-does-it-solve/chapter-3-metadata/transition-ch3.md` | 3.1 COMPLETE (deployed), 3.2 Draft done (Step 7 deferred), 3.3 Step 3A done (120 items, 13 gaps, prompt ready), 3.4 Step 3A done (138 items, 13 gaps, prompt ready), 3.5 Step 3A done (207 items, 13 gaps, prompt ready) |
+| Ch 4 | `WBIGAF/4-bitcoin-past/chapter-4-metadata/transition-ch4.md` | 4.1 Step 1 done (59 items, 8 links), 4.2 Step 2 done (105 items, 10 links — user scraped), 4.3 Step 1 done (29 items, 4 links), 4.4 Step 1 done (47 items, 11 links), 4.5 Step 1 done (74 items, 12 links) |
 | Ch 5-9 | Not yet created | None |
 
 ---
@@ -80,10 +80,10 @@ Full author voice profile built from 28-post corpus (~37,000 words of original w
 - [x] **8d:** Validation — test passage reviewed, voice/rhythm confirmed
 - [x] **8e:** Methodology integration — 17 improvements applied (469 → 761 lines)
 
-**Profile:** `WBIGAF/0. Project/Voice DNA/voice-dna-profile.md` (761 lines, 8 sections)
+**Profile:** `WBIGAF/0-project/voice-dna/voice-dna-profile.md` (761 lines, 8 sections)
 **Validation:** Two test passages scored perfectly (Mining 15/15, Separation of Money & State 19/19)
 
-**All Voice DNA files:** `WBIGAF/0. Project/Voice DNA/`
+**All Voice DNA files:** `WBIGAF/0-project/voice-dna/`
 
 ### Chapter 3.1 Fiat Capitalism — COMPLETE (Steps 1-7)
 
