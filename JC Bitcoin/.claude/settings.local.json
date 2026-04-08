@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(del \"c:\\\\Users\\\\GC\\\\Documents\\\\JC Bitcoin\\\\JC BTC\\\\CLAUDE.md.draft\")",
+      "Bash(dir \"c:\\\\Users\\\\GC\\\\Documents\\\\JC Bitcoin\\\\JC BTC\"\" /s /b)",
+      "Bash(dir:*)",
+      "Bash(python -c \":*)",
+      "Read(//c/Users/GC/.claude/projects/c--Users-GC-Documents-JC-Bitcoin/**)",
+      "WebFetch(domain:docs.google.com)",
+      "WebFetch(domain:gitlab.com)",
+      "Bash(cargo build:*)",
+      "Bash(source \"$HOME/.cargo/env\")",
+      "Bash(export PATH=\"$HOME/.cargo/bin:$PATH\")",
+      "Bash(cargo --version)",
+      "Bash(source $HOME/.cargo/env)",
+      "Bash(export PATH=$HOME/.cargo/bin:$PATH)",
+      "Bash(cargo install:*)",
+      "Bash(where choco:*)",
+      "Bash(where winget:*)",
+      "Bash(winget install:*)",
+      "Bash(where protoc:*)",
+      "Read(//c/Users/GC/Documents/Ai Playground/TBB/JC Bitcoin/$HOME/AppData/Local/Microsoft/WinGet/Links/**)",
+      "Read(//c/Users/GC/AppData/Local/**)",
+      "Read(//c/Program Files/**)",
+      "Bash(cmd.exe /c \"where protoc\")",
+      "Bash(find \"/c\" -name \"protoc.exe\" -path \"*/protobuf*\")",
+      "Bash(find \"/c\" -name \"protoc.exe\" -path \"*/protoc*\")",
+      "Bash(find \"/c\" -name \"protoc.exe\" -path \"*/WinGet*\")",
+      "WebFetch(domain:second.tech)",
+      "WebFetch(domain:arkdev.info)",
+      "WebFetch(domain:docs.arklabs.xyz)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\GC\\Documents\\JC Bitcoin\\JC BTC",
+      "c:\\Users\\GC\\Documents\\JC Bitcoin\\JC BTC\\Presentation",
+      "C:\\Users\\GC\\.claude\\projects\\c--Users-GC-Documents-JC-Bitcoin",
+      "c:\\Users\\GC\\Documents\\JC Bitcoin\\Bitcoin-Meetups\\content"
+    ]
+  }
+}

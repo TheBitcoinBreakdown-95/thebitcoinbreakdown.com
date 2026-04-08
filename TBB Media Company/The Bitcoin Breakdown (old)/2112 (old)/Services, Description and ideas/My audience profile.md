@@ -1,0 +1,5 @@
+- I should start with low hanging fruit, people that already know and buy bitcoin
+- I should offer my services to companies that already are on orange pill app
+- I should find high net worth clients that don't know where to get started
+    - This is probably my best bet
+-

@@ -260,12 +260,18 @@
 299. Key finding: Bitcoin is the ONLY asset maintaining low correlations consistently with every other asset — gold, S&P 500, bonds, real estate, oil, emerging markets (ARK/Coinbase)
 300. Bitcoin's average daily liquidity nearly matched SPDR Gold Shares ETF and was 3× the Vanguard REIT ETF (ARK/Coinbase)
 
+### U. Author One-Liner — Bitcoin's Civilizational Value Proposition (items 301-302)
+
+301. Author one-liner (full): "Bitcoin solves several immense problems for civilization; it protects property rights for 8 billion people and banks the underprivileged classes of the planet, it solves financial crises, inflation, and debt slavery, it defends civil rights in a future surveillance state, it solves the shortcomings of gold, returning financial sovereignty to the individual, it puts the spending power of state actors and large corporations in check, it de-financializes our Ponzi scheme fiat-capitalist economy and gives everyone in the world access to the best savings technology ever invented, and permissionless global economic infrastructure" (Author — master Bitcoin value proposition)
+302. Claims routing to this sub-chapter (4 of 12 -- heaviest routing in Ch3): "it protects property rights for 8 billion people," "banks the underprivileged classes of the planet," "returning financial sovereignty to the individual," "gives everyone in the world access to the best savings technology ever invented." This sub-chapter carries the most individual claims from the one-liner -- it is the human face of Bitcoin's civilizational case. (Author)
+
 ---
 
 **Inventory Summary:**
-- **207 items** across 20 themes (A-T)
+- **209 items** across 21 themes (A-U)
 - **111 items** from source notes + orphan imports (A-I)
 - **96 items** from scraping (J-T, #200-300)
+- **2 items** from author one-liner (U, #301-302)
 - **18 links** documented in `links.md` (10 DONE, 5 PARTIAL, 0 FAILED)
 - **55 orphans** imported from Ch3.1 (section I)
 - **Richest scraped material:** Lebanon full article (13 items), Africa adoption data (11 items), eNaira collapse (16 items)

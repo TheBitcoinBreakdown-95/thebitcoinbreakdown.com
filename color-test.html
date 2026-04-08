@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TBB Text Color Test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000000;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.85;
+      padding: 60px 24px;
+    }
+
+    /* ---- Color swatches ---- */
+
+    .swatches {
+      max-width: 680px;
+      margin: 0 auto 80px;
+    }
+
+    .swatch { margin-bottom: 40px; }
+
+    .label {
+      font-family: monospace;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #444;
+      margin-bottom: 8px;
+    }
+
+    .primary   { color: #E8E4DC; }
+    .secondary { color: #8A857D; }
+    .muted     { color: #5A5650; }
+    .opt-a     { color: #A8A39A; }
+    .opt-b     { color: #B0AA9F; }
+
+    /* ---- Divider ---- */
+
+    .divider {
+      max-width: 680px;
+      margin: 0 auto 60px;
+      border: none;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .section-title {
+      max-width: 680px;
+      margin: 0 auto 48px;
+      font-family: monospace;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    /* ---- Article mock ---- */
+
+    .article {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .article-meta {
+      font-family: monospace;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #5A5650;
+      margin-bottom: 24px;
+    }
+
+    .article h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 400;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+      color: #E8E4DC;
+      margin-bottom: 32px;
+    }
+
+    .article .deck {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #8A857D;
+      border-left: 3px solid #C9A84C;
+      padding-left: 20px;
+      margin-bottom: 48px;
+    }
+
+    /* THE COLOR UNDER TEST */
+    .article p {
+      color: #8A857D;
+      margin-bottom: 28px;
+    }
+
+    .article strong {
+      color: #E8E4DC;
+      font-weight: 600;
+    }
+
+    .article blockquote {
+      border-left: 3px solid #C9A84C;
+      padding: 16px 24px;
+      margin: 32px 0;
+      background: rgba(255, 215, 0, 0.02);
+    }
+
+    .article blockquote p {
+      color: #8A857D;
+      font-style: italic;
+      margin: 0 0 8px;
+    }
+
+    .article blockquote .attr {
+      color: #5A5650;
+      font-size: 13px;
+      font-style: normal;
+      font-family: monospace;
+      letter-spacing: 1px;
+    }
+
+    .article h2 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #E8E4DC;
+      margin: 56px 0 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Color reference swatches -->
+  <div class="swatches">
+    <div class="label">Color reference</div>
+
+    <div class="swatch">
+      <div class="label">--text-primary &nbsp; #E8E4DC &nbsp; (headings, bold)</div>
+      <p class="primary">Knowing about bitcoin, and realizing what bitcoin is, are two completely different things.</p>
+    </div>
+
+    <div class="swatch">
+      <div class="label">--text-secondary &nbsp; #8A857D &nbsp; (proposed body)</div>
+      <p class="secondary">Knowing about bitcoin, and realizing what bitcoin is, are two completely different things.</p>
+    </div>
+
+    <div class="swatch">
+      <div class="label">--text-muted &nbsp; #5A5650 &nbsp; (current body)</div>
+      <p class="muted">Knowing about bitcoin, and realizing what bitcoin is, are two completely different things.</p>
+    </div>
+
+    <div class="swatch">
+      <div class="label">#A8A39A &nbsp; (option A &mdash; 7.2:1 contrast)</div>
+      <p class="opt-a">Knowing about bitcoin, and realizing what bitcoin is, are two completely different things.</p>
+    </div>
+
+    <div class="swatch">
+      <div class="label">#B0AA9F &nbsp; (option B &mdash; 7.9:1 contrast)</div>
+      <p class="opt-b">Knowing about bitcoin, and realizing what bitcoin is, are two completely different things.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <p class="section-title">Article mock &mdash; body text at #8A857D (--text-secondary)</p>
+
+  <!-- Article mock using real content -->
+  <article class="article">
+
+    <div class="article-meta">Mar 23, 2023 &nbsp;&middot;&nbsp; The Bitcoin Breakdown</div>
+
+    <h1>What is Bitcoin?</h1>
+
+    <p class="deck">Forget everything you know about bitcoin. Forget everything you know about blockchain, and crypto.</p>
+
+    <p>Once you begin this journey there's no going back. Those who venture down this path rarely return. Once you understand bitcoin in all its complexity your life and your view of the world will change forever.</p>
+
+    <p>Be warned, there are more questions than answers that lie ahead of you. If you've ever watched the show Lost, you know what it's like to be sucked down a path of endless questions and an unquenchable thirst to know where it all leads.</p>
+
+    <p>I want to make an all encompassing introduction to people, about what bitcoin actually is. I know how revolutionary bitcoin is, but it's a <strong>really</strong> tough subject to explain.</p>
+
+    <p>It took me a hundred hours to understand it, hundreds more just addressing my questions, and another few hundred after that trying to find the catch. I want to break it all down so you can understand in much less time than it took me. There's a lot of misinformation out there, and there needs to be more honest and dependable voices in the space.</p>
+
+    <blockquote>
+      <p>Even after a couple of years exploring what is bitcoin you'll find that you are still learning, still trying to understand what it is.</p>
+      <span class="attr">Andreas Antonopoulos</span>
+    </blockquote>
+
+    <p>You should not be taking things at face value. Do not trust what you read without rationalizing it for yourself and always look for counter arguments. Read all the sources and then weigh each as unbiased as you can.</p>
+
+    <p>By being skeptical, it means you are a rational thinker and don't just blindly accept things as they are. Which is an integral part of bitcoin, and a foundational value of all bitcoiners. We have a saying in bitcoin: <strong>don't trust, verify.</strong></p>
+
+    <h2>What is Bitcoin?</h2>
+
+    <p>It's a question everyone asks but no one seems to have a good answer for. Usually, the nerds will give you the technical definition: <em>Bitcoin is an open monetary transmission protocol</em> — blah blah blah. They'll tell you what it does and how it works, but these jargon-filled definitions repeated for years never helped me. In fact, they all made bitcoin seem boring and underwhelming.</p>
+
+    <p>Because of all of these definitions, Bitcoin is very misunderstood. I can tell you it's not what you think it is. It's a totally new invention, a revolutionary invention, and yet it's shrouded in complex terminologies and elitist jargon.</p>
+
+    <blockquote>
+      <p>At a very basic level you have to try to understand what is bitcoin. I can answer that question in four words. Bitcoin is digital money. But that doesn't really capture it. It's more like the Internet of money. But really it's a consensus decentralized network... and oh my, it immediately goes off a cliff.</p>
+      <span class="attr">Andreas Antonopoulos</span>
+    </blockquote>
+
+    <p>Knowing about bitcoin, and <strong>realizing</strong> what bitcoin is, are two completely different things. In bitcoin circles we call this phenomena falling down the rabbit hole — the process of slowly realizing what bitcoin is and then spending months and hundreds of hours obsessively learning as much as you can.</p>
+
+    <p>My job is to make your fall down the rabbit hole as easy as possible, if you're curious. Your journey begins with a simple question.</p>
+
+  </article>
+
+  <hr class="divider" style="margin-top: 80px;">
+  <p class="section-title">Article mock &mdash; body text at #A8A39A (option A &mdash; 7.2:1)</p>
+
+  <article class="article" style="--prose-color: #A8A39A;">
+
+    <div class="article-meta">Mar 23, 2023 &nbsp;&middot;&nbsp; The Bitcoin Breakdown</div>
+
+    <h1>What is Bitcoin?</h1>
+
+    <p class="deck">Forget everything you know about bitcoin. Forget everything you know about blockchain, and crypto.</p>
+
+    <p style="color: #A8A39A;">Once you begin this journey there's no going back. Those who venture down this path rarely return. Once you understand bitcoin in all its complexity your life and your view of the world will change forever.</p>
+
+    <p style="color: #A8A39A;">Be warned, there are more questions than answers that lie ahead of you. If you've ever watched the show Lost, you know what it's like to be sucked down a path of endless questions and an unquenchable thirst to know where it all leads.</p>
+
+    <p style="color: #A8A39A;">I want to make an all encompassing introduction to people, about what bitcoin actually is. I know how revolutionary bitcoin is, but it's a <strong>really</strong> tough subject to explain.</p>
+
+    <p style="color: #A8A39A;">It took me a hundred hours to understand it, hundreds more just addressing my questions, and another few hundred after that trying to find the catch. I want to break it all down so you can understand in much less time than it took me. There's a lot of misinformation out there, and there needs to be more honest and dependable voices in the space.</p>
+
+    <blockquote>
+      <p style="color: #A8A39A;">Even after a couple of years exploring what is bitcoin you'll find that you are still learning, still trying to understand what it is.</p>
+      <span class="attr">Andreas Antonopoulos</span>
+    </blockquote>
+
+    <p style="color: #A8A39A;">You should not be taking things at face value. Do not trust what you read without rationalizing it for yourself and always look for counter arguments. Read all the sources and then weigh each as unbiased as you can.</p>
+
+    <p style="color: #A8A39A;">By being skeptical, it means you are a rational thinker and don't just blindly accept things as they are. Which is an integral part of bitcoin, and a foundational value of all bitcoiners. We have a saying in bitcoin: <strong>don't trust, verify.</strong></p>
+
+    <h2>What is Bitcoin?</h2>
+
+    <p style="color: #A8A39A;">It's a question everyone asks but no one seems to have a good answer for. Usually, the nerds will give you the technical definition: <em>Bitcoin is an open monetary transmission protocol</em> — blah blah blah. They'll tell you what it does and how it works, but these jargon-filled definitions repeated for years never helped me. In fact, they all made bitcoin seem boring and underwhelming.</p>
+
+    <p style="color: #A8A39A;">Knowing about bitcoin, and <strong>realizing</strong> what bitcoin is, are two completely different things. In bitcoin circles we call this phenomena falling down the rabbit hole — the process of slowly realizing what bitcoin is and then spending months and hundreds of hours obsessively learning as much as you can.</p>
+
+  </article>
+
+  <hr class="divider" style="margin-top: 80px;">
+  <p class="section-title">Article mock &mdash; body text at #B0AA9F (option B &mdash; 7.9:1)</p>
+
+  <article class="article">
+
+    <div class="article-meta">Mar 23, 2023 &nbsp;&middot;&nbsp; The Bitcoin Breakdown</div>
+
+    <h1>What is Bitcoin?</h1>
+
+    <p class="deck">Forget everything you know about bitcoin. Forget everything you know about blockchain, and crypto.</p>
+
+    <p style="color: #B0AA9F;">Once you begin this journey there's no going back. Those who venture down this path rarely return. Once you understand bitcoin in all its complexity your life and your view of the world will change forever.</p>
+
+    <p style="color: #B0AA9F;">Be warned, there are more questions than answers that lie ahead of you. If you've ever watched the show Lost, you know what it's like to be sucked down a path of endless questions and an unquenchable thirst to know where it all leads.</p>
+
+    <p style="color: #B0AA9F;">I want to make an all encompassing introduction to people, about what bitcoin actually is. I know how revolutionary bitcoin is, but it's a <strong>really</strong> tough subject to explain.</p>
+
+    <p style="color: #B0AA9F;">It took me a hundred hours to understand it, hundreds more just addressing my questions, and another few hundred after that trying to find the catch. I want to break it all down so you can understand in much less time than it took me. There's a lot of misinformation out there, and there needs to be more honest and dependable voices in the space.</p>
+
+    <blockquote>
+      <p style="color: #B0AA9F;">Even after a couple of years exploring what is bitcoin you'll find that you are still learning, still trying to understand what it is.</p>
+      <span class="attr">Andreas Antonopoulos</span>
+    </blockquote>
+
+    <p style="color: #B0AA9F;">You should not be taking things at face value. Do not trust what you read without rationalizing it for yourself and always look for counter arguments. Read all the sources and then weigh each as unbiased as you can.</p>
+
+    <p style="color: #B0AA9F;">By being skeptical, it means you are a rational thinker and don't just blindly accept things as they are. Which is an integral part of bitcoin, and a foundational value of all bitcoiners. We have a saying in bitcoin: <strong>don't trust, verify.</strong></p>
+
+    <h2>What is Bitcoin?</h2>
+
+    <p style="color: #B0AA9F;">It's a question everyone asks but no one seems to have a good answer for. Usually, the nerds will give you the technical definition: <em>Bitcoin is an open monetary transmission protocol</em> — blah blah blah. They'll tell you what it does and how it works, but these jargon-filled definitions repeated for years never helped me. In fact, they all made bitcoin seem boring and underwhelming.</p>
+
+    <p style="color: #B0AA9F;">Knowing about bitcoin, and <strong>realizing</strong> what bitcoin is, are two completely different things. In bitcoin circles we call this phenomena falling down the rabbit hole — the process of slowly realizing what bitcoin is and then spending months and hundreds of hours obsessively learning as much as you can.</p>
+
+  </article>
+
+</body>
+</html>

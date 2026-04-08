@@ -42,8 +42,21 @@ npm-debug.log*
 # Claude Code local settings
 .claude/settings.local.json
 
-# Reference repos (cloned for learning, not project dependencies)
+# Cloned repos and embedded git repos (separate git histories)
 references/
+Ark/Ark Labs/ark/
+Ark/Ark Labs/arkd/
+Ark/Second/bark/
+FreedomLab/
+JC Bitcoin/barkgui/
+JC Bitcoin/Bitcoin-Meetups/
+
+# Obsidian plugins with their own git repos
+TBB/.obsidian/plugins/obsidian-claude-code/
+JC Bitcoin/JC BTC/.obsidian/plugins/obsidian-claude-code/
+
+# Obsidian internals for JC Bitcoin vault
+JC Bitcoin/JC BTC/.obsidian/
 
 # CRM -- private repo containing PII, never commit to public TBB repo
 JC Bitcoin/JC BTC/CRM/

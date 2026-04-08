@@ -1,0 +1,7 @@
+- Youtube song/album reviews
+    - Explaining the meaning behind a certain song, or album,
+        - Can make a bunch since I have so much to say on everything
+        - Can make it super GC, it can basically be whatever I want it to be
+        - Can also go through my own playlists, and give rational for word choice
+            - [When you accidentally write songs that already exist](https://www.youtube.com/watch?v=xD-IQaxHcE4) this guy was my inspiration
+            - 5 metalcore songs you haven't heard but you need to listen to

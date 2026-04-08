@@ -1,0 +1,1 @@
+[https://twitter.com/markgadala/status/1671179623550316546?s=46&t=KWxEkTiQ4L9C3lu9s4hJJw](https://twitter.com/markgadala/status/1671179623550316546?s=46&t=KWxEkTiQ4L9C3lu9s4hJJw)

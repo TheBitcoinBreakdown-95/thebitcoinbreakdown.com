@@ -373,7 +373,35 @@ High fees affect ArkPool indirectly:
 | Ark adoption stalls | High (no demand) | Medium | ArkPool investment is minimal until Ark proves traction. |
 | HODLers don't trust "earn yield on BTC" after Celsius/BlockFi | Medium (slow LP onboarding) | Medium | The escrow is non-custodial and verifiable on-chain. Education problem, not mechanism problem. |
 
-### 5.3 What Does NOT Kill It
+### 5.3 LP Unilateral Exit Risk (Per-Round Integration)
+
+The per-round integration model (protocol-spec.md v0.2) exposes LPs to a risk that the standalone escrow model does not: when users in an LP-funded round unilaterally exit (broadcast the pre-signed exit transaction chain on-chain instead of refreshing), the LP's forfeit claim on those VTXOs is voided. The LP's principal recovery depends on user behavior the LP cannot control.
+
+**Why this is the central design problem:**
+
+The spec assumes 2-5% exit rates during normal operations. But the scenario that matters is correlated exits -- ASP misbehavior, a competing ASP launching with better terms, a fee spike making refreshing uneconomical. In those cases, exit rates are 30-80%, not 5%. The LP's real risk is the tail, not the average.
+
+**Three models explored, none fully satisfactory:**
+
+| Model | LP Protection | ASP Capital Gain | Problem |
+|-------|--------------|-----------------|---------|
+| Secured loan (old Approach A) | Full -- ASP posts 110% collateral | Net negative -- posting 110% to borrow 100% | Only works if ASP has idle reserves separate from operating capital |
+| Unsecured round participation (Approach B) | None -- LP bears exit risk | Full -- ASP gets fresh capital with no collateral | LP principal not guaranteed in stress scenarios |
+| Hybrid (partial collateral) | Partial | Partial | Collapses into one of the above depending on ratio. Not a real third option |
+
+**Directions investigated and their status:**
+
+**REJECTED: Tree-structural seniority.** Initial idea: place LP claims at higher tree levels so leaf-level exits don't affect them. **Disproven after code review.** Unilateral exit broadcasts the entire path from root to leaf -- every intermediate transaction in the path is spent on-chain. A claim at a higher tree level is voided by ANY exit in the subtree below it, making the LP MORE exposed, not less. The covenant tree concentrates risk upward, not downward. (Verified: Arkade `builder.go:256-318`, Bark `exit/vtxo.rs:45-60`.)
+
+**REJECTED: LP-payback output in poolTx.** Idea: add a time-locked output in the poolTx that pays the LP independently of user behavior. **Fails on funding.** If the LP contributes X BTC and we add X+fee as a separate output, the poolTx needs ~2X total -- the LP's contribution doesn't reduce the ASP's capital requirement, it increases it. The payback output must be funded from somewhere other than the LP's own contribution, which means the ASP needs separate capital anyway. (Verified: poolTx structure at Arkade `builder.go:708-769` -- outputs are batch, connector, on-chain exits, change.)
+
+**UNDER INVESTIGATION: Fee-funded insurance pool.** The ASP earns fees on every refresh. Over the LP's term (~7-30 days), the ASP's cumulative fee revenue could backstop LP losses from exits. The ASP pre-funds a multisig UTXO (LP + ASP) sized to the LP's tail risk. If forfeit proceeds fall short, the LP claims from the insurance pool after tree expiry + grace period. The ASP's cost: locking fee revenue (~10-20% of LP contribution) as insurance, far less than 110% collateral. Open questions: (a) Can the insurance pool be structured as a Bitcoin script without new trust assumptions? (b) Does the ASP's fee revenue reliably cover tail exit scenarios (30%+ correlated exits)? (c) Does this create circular dependency if the ASP's overall position deteriorates? See `lp-exit-risk-analysis.md` for detailed treatment.
+
+**UNDER INVESTIGATION: Actuarial pricing with structural caps.** Accept the risk but bound it. The LP funds at most X% of any single round, diversified across N rounds. Fee pricing assumes 10-15% expected exit rate (not 2-5%), so the LP's expected return remains positive even in moderate stress. Open question: whether the higher fee makes ArkPool uncompetitive versus ASP self-funding.
+
+**The core tension:** Full collateral = LP safe but ASP gains nothing. No collateral = ASP gains capital but LP exposed. The insurance pool model is the most promising middle ground -- the ASP posts partial collateral from operating revenue rather than idle reserves. Resolution of this problem is required before the protocol spec can advance beyond draft. Full analysis in `lp-exit-risk-analysis.md`.
+
+### 5.4 What Does NOT Kill It
 
 - **Fee compression.** Even at 0.15% ASP fees, the spread works if lenders accept 1-2% (idle BTC yield). The spread analysis only fails if lenders demand returns that exceed ASP revenue, which requires lender expectations above ~8%.
 - **BTC price volatility.** Everything is BTC-denominated. The ASP borrows BTC, locks BTC collateral, earns BTC fees, repays BTC. No FX exposure in the core protocol.

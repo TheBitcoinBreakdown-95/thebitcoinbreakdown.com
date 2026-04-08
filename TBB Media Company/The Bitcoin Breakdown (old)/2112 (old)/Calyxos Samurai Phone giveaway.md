@@ -1,0 +1,3 @@
+- Raise a lot of money, find a really cheap phone and mass give them away for free with privacy focused software on it
+- Basically giving everyone burner phones for free
+- This is of course when bitcoin takes off a little more

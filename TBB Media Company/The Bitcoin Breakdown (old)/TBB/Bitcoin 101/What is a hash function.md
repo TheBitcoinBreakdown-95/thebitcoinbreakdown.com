@@ -1,0 +1,3 @@
+A cryptographic hash function is basically just a math problem that transforms any data you throw at it in a predictable way. Any time you feed a hash function a particular cat picture, you will always, always get the same number as the result. We call that result the “hash” of that picture, and feeding the cat picture into that math problem “hashing” the picture. The key concept to understand is that if you give the very same hash function a slightly different cat picture, or the same cat picture with even the tiniest modification, you will get a WILDLY different number (“hash”) as the result.
+ 
+BW: And you can throw any kind of data into a hash function? You can hash a blog post or a financial transaction or Moby-Dick?

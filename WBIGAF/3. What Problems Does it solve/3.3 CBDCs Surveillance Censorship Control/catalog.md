@@ -207,12 +207,17 @@
 - `Exported image 20251228194557-2.jpeg` — Fundamentals / THE INVESTORS comparison chart
 - `Exported image 20251228194558-3.png` — r/Bitcoin "Head of Bitcoin Marketing" meme
 
+### U. Author One-Liner — Bitcoin's Civilizational Value Proposition (item 280)
+
+280. Author one-liner (full): "Bitcoin solves several immense problems for civilization; it protects property rights for 8 billion people and banks the underprivileged classes of the planet, it solves financial crises, inflation, and debt slavery, it defends civil rights in a future surveillance state, it solves the shortcomings of gold, returning financial sovereignty to the individual, it puts the spending power of state actors and large corporations in check, it de-financializes our Ponzi scheme fiat-capitalist economy and gives everyone in the world access to the best savings technology ever invented, and permissionless global economic infrastructure" (Author — master Bitcoin value proposition. Claim routing to this sub-chapter: "it defends civil rights in a future surveillance state." Full one-liner routes across all Ch3 sub-chapters + Ch5, Ch7, Ch8, Ch9.)
+
 ---
 
 **Inventory Summary:**
-- **120 items** across 20 themes (A-T)
+- **121 items** across 21 themes (A-U)
 - **75 items** from source notes + orphan imports (A-L)
 - **45 items** from scraping (M-T, #200-279)
+- **1 item** from author one-liner (U, #280)
 - **12 links** documented in `links.md` (2 DONE, 6 PARTIAL, 2 SKIPPED, 1 PENDING, 1 PARTIAL tweet)
 - **6 orphans** imported from Ch3.1 (#272, #289-291, #293-294)
 - **7 orphans** imported from Ch3.2 Bryan (#635-640, #642)

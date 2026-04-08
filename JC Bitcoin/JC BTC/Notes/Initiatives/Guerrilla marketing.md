@@ -1,0 +1,2 @@
+Our focus is on education and awareness though real-life visibility on the ground, mainly by distributing Texas Bitcoin decals, lawn signs, magnets, merch, stickers, swag, signage, pamphlets, and more. Coupled with grass-roots outreach at Farmer's Markets and outdoor display advertising, we plan to reach as many Texans as possible - most of which can't be done from behind a screen!
+ \> From \<[https://thetexasbitcoinproject.com/](https://thetexasbitcoinproject.com/)\>

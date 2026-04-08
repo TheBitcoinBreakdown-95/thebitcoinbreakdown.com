@@ -1,0 +1,106 @@
+{
+  "slides": [
+    {
+      "layout": "cover",
+      "title": "JC Bitcoin",
+      "subtitle": "Socratic Seminar \u2014 Layout Test"
+    },
+    {
+      "layout": "title",
+      "title": "Welcome to JC Bitcoin",
+      "subtitle": "Monthly Socratic Seminar",
+      "footer": "Jersey City Bitcoin \u2022 Every 3rd Wednesday \u2022 jcbitcoin.org"
+    },
+    {
+      "layout": "section",
+      "label": "SECTION 1",
+      "title": "Getting Started with Bitcoin"
+    },
+    {
+      "layout": "content",
+      "title": "What is Bitcoin?",
+      "bullets": [
+        "A peer-to-peer electronic cash system",
+        "Created in 2009 by Satoshi Nakamoto",
+        "Open-source, decentralized, and permissionless",
+        "Fixed supply of 21 million bitcoin"
+      ]
+    },
+    {
+      "layout": "content",
+      "title": "Why Bitcoin Matters (Stress Test)",
+      "bullets": [
+        "Censorship-resistant money that no government can freeze",
+        "Borderless payments settled in minutes, not days",
+        "Self-custody: you hold your own keys, you hold your own money",
+        "Transparent monetary policy enforced by code",
+        "Growing adoption by institutions, nations, and individuals",
+        "The hardest money ever created \u2014 harder than gold"
+      ]
+    },
+    {
+      "layout": "content",
+      "title": "Key Concepts",
+      "bullets": [
+        "Blockchain: a chain of blocks containing transaction data",
+        "Mining: the process of securing the network and issuing new bitcoin"
+      ]
+    },
+    {
+      "layout": "section",
+      "label": "SECTION 2",
+      "title": "How Bitcoin Works"
+    },
+    {
+      "layout": "content",
+      "title": "The Bitcoin Network",
+      "bullets": [
+        "Thousands of nodes validate every transaction independently",
+        "Miners compete to find the next block using proof-of-work",
+        "Difficulty adjusts every 2,016 blocks (~2 weeks) to maintain 10-minute target",
+        "Block reward halves every 210,000 blocks (~4 years)"
+      ]
+    },
+    {
+      "layout": "comparison",
+      "title": "Bitcoin vs. Traditional Finance",
+      "left_title": "Bitcoin",
+      "left_bullets": [
+        "Open 24/7/365",
+        "Permissionless access",
+        "Fixed supply (21M)"
+      ],
+      "right_title": "Traditional Finance",
+      "right_bullets": [
+        "Business hours only",
+        "Requires approval",
+        "Unlimited supply"
+      ]
+    },
+    {
+      "layout": "content",
+      "title": "Getting Your First Bitcoin",
+      "bullets": [
+        "Choose a reputable exchange or peer-to-peer marketplace",
+        "Complete identity verification if required",
+        "Start small \u2014 you can buy a fraction of a bitcoin",
+        "Transfer to your own wallet for self-custody"
+      ]
+    },
+    {
+      "layout": "qa",
+      "title": "Questions & Discussion",
+      "bullets": [
+        "What surprised you most about Bitcoin?",
+        "What concerns do you still have?",
+        "How would you explain Bitcoin to a friend?"
+      ]
+    },
+    {
+      "layout": "title",
+      "title": "Thank You!",
+      "subtitle": "See you next month",
+      "footer": "Jersey City Bitcoin \u2022 jcbitcoin.org \u2022 @jcbitcoin"
+    }
+  ]
+}

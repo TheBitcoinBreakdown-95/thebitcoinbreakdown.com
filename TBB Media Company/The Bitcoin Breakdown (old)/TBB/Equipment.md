@@ -1,0 +1,4 @@
+- Look into a teleprompter monitor
+- OOOORRR do I do podcast only to start??
+    - I actually know how to audio edit, I know nothing about video
+- Camtasia

@@ -1,0 +1,1 @@
+[https://www.entrepreneur.com/article/349297](https://www.entrepreneur.com/article/349297)

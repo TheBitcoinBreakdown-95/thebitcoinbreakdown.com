@@ -37,7 +37,11 @@
 ```
 WBIGAF/
 ├── WBIGAF.md                          ← THIS FILE (read first)
-├── WBIGAF-Status.md                   ← Progress tracker (read second)
+├── WBIGAF-Status.md                   ← Progress overview (read second)
+├── TRACKER.md                         ← Pipeline state tracker (coordinator reads this)
+├── toc.md                             ← Table of contents (all chapters, sub-chapters, block titles)
+├── bibliography.md                    ← Master bibliography (de-duplicated Chicago citations)
+├── glossary.md                        ← Glossary of terms (back-burner, populate during drafting)
 │
 ├── 0. Project/                        ← Project-level docs
 │   ├── Voice DNA/                     ← Author's voice profile + working files
@@ -136,6 +140,7 @@ Scrape all links that lack full extracted content:
 - Update `catalog.md` with new arguments found during scraping (numbering from #200+)
 - Every link gets a Chicago citation in `links.md` — even ones not scraped
 - Every SKIPPED or FAILED link gets a documented reason in `links.md`
+- Update `bibliography.md` with any new sources added to `links.md`
 
 ### Step 3: DEEP RESEARCH
 Identify gaps in the inventory and find new material. Two-part process:
@@ -157,18 +162,22 @@ Identify gaps in the inventory and find new material. Two-part process:
 - Update `links.md` bibliography with new sources
 
 **Full methodology:** See Section 10 (Deep Research Playbook) for detailed process.
+- Update `bibliography.md` with new sources from research results
 - **Output:** `research.md` (gap analysis + prompt + results + new items)
 
 ### Step 4: ARGUMENT MAP
 Build **Argument Blocks** from the Source Inventory. Each block = one thesis with its logic chain, key quotes, evidence, rhetorical moves, and source refs. Sequence blocks for **escalating persuasive impact** (polemic structure, not taxonomy).
 
 - **Threshold:** If inventory exceeds 30 items → formal Argument Blocks required. Under 30 → organize directly with a simple outline.
+- **Run Refutation Analysis** early in this step — scan each thesis for counter-mainstream claims, identify strongest objections, determine which blocks (if any) need the REFUTATION field and what placement (Upfront/Inline/Deferred). Most sub-chapters flag 0 blocks. See argument-block-model.md Section 3.3.
 - Restructure `catalog.md` into Part 1 (Argument Blocks) + Part 2 (Source Inventory)
 - Flag orphan inventory items (don't fit any block — may be cuttable or belong in another sub-chapter)
 - **Route orphans to the orphan registry** (`Chapter N Metadata/orphans.md`) — each orphan gets: item #, text, source sub-chapter, destination sub-chapter, and the source link/citation it came from
 - Flag cross-sub-chapter duplicates
 - Present blocks to user in proposed sequence
-- **Full model spec:** `WBIGAF/0. Project/Planning/argument-block-model.md`
+- Update `toc.md` with the sub-chapter's block titles from the Chapter Grid
+- **Full model spec:** `WBIGAF/0. Project/Planning/argument-block-model.md` (v2.2)
+- **Architectural decisions:** `WBIGAF/0. Project/Planning/decisions.md`
 
 ### Step 5: USER REVIEW
 User reviews the Argument Blocks:
@@ -187,6 +196,7 @@ All Step 5 changes go into the Amendments section — never edit existing blocks
 - New inventory items continue sequential numbering in Part 2
 - At draft time (Step 6), amendments merge into their target blocks
 - This keeps all block numbers and inventory references stable throughout review
+- If blocks were reordered, cut, merged, or added, update `toc.md` to match
 
 ### Step 6: DRAFT
 Write using Voice DNA profile — each Argument Block becomes one section of the draft:
@@ -194,6 +204,7 @@ Write using Voice DNA profile — each Argument Block becomes one section of the
 - Block thesis → section topic sentence; logic chain → paragraph structure; key quotes pre-selected
 - Chicago-style endnotes for every claim, quote, and data point
 - No padding — length driven by argument depth
+- Add any newly defined terms to `glossary.md`
 - Sequence for escalating impact, not taxonomy
 - V4 effects applied where appropriate
 - **Output:** `draft.md`
@@ -320,10 +331,16 @@ One file per chapter: `Chapter N Metadata/orphans.md`. Tracks catalog items that
 | Need | File |
 |------|------|
 | Book project context | `WBIGAF/WBIGAF.md` (this file) |
-| Progress/status | `WBIGAF/WBIGAF-Status.md` |
+| Progress overview | `WBIGAF/WBIGAF-Status.md` |
+| Pipeline tracker | `WBIGAF/TRACKER.md` (coordinator reads this for dispatch) |
+| Table of contents | `WBIGAF/toc.md` |
+| Master bibliography | `WBIGAF/bibliography.md` |
+| Glossary | `WBIGAF/glossary.md` |
 | Voice DNA profile | `WBIGAF/0. Project/Voice DNA/voice-dna-profile.md` |
 | Voice DNA framework | `WBIGAF/0. Project/Voice DNA/voice-dna-framework.md` |
 | Source methodology | `WBIGAF/0. Project/Voice DNA/Voice DNA Forensic Stylometry and Production System.md` |
+| Argument block model | `WBIGAF/0. Project/Planning/argument-block-model.md` |
+| Architectural decisions | `WBIGAF/0. Project/Planning/decisions.md` |
 | Master book outline | `WBIGAF/0. Project/Planning/Why Bitcoin is good as fuck.md` |
 | Ch3 transition doc | `WBIGAF/3. What Problems Does it solve/Chapter 3 Metadata/transition-ch3.md` |
 | Website project | `CLAUDE.md` (repo root) |

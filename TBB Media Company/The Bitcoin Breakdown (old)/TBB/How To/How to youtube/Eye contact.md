@@ -1,0 +1,5 @@
+- Do I buy a teleprompter to look directly at the script?
+- Do I do more 'winging it' videos and rant with eye contact
+- Do I have notes that I look at and then do one sentence bursts, 
+	- only if there is some way for the ai to edit my videos to get rid of long pauses, and I can practice just going line by line and pausing a lot inbetween
+- 

@@ -1,0 +1,46 @@
+{
+  "id": "conv-1772419832043-jkny30poh",
+  "sessionId": "dfae3b86-3add-4baf-a57d-83c530fc9397",
+  "title": "@[[tasks/To Do JC BTC/Ai Marketing Workflow.md]]",
+  "createdAt": 1772419832043,
+  "updatedAt": 1772419882901,
+  "messageCount": 2,
+  "metadata": {
+    "totalTokens": 0,
+    "totalCostUsd": 0
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "@[[tasks/To Do JC BTC/Ai Marketing Workflow.md]]\n\nread this document and make suggestions, how we should go about doing this"
+    }
+  ],
+  "displayMessages": [
+    {
+      "id": "msg-1772419832040-rioy419xi",
+      "role": "user",
+      "content": "@[[tasks/To Do JC BTC/Ai Marketing Workflow.md]]\n\nread this document and make suggestions, how we should go about doing this",
+      "timestamp": 1772419832040
+    },
+    {
+      "id": "msg-1772419832075-c8jbkkr6k",
+      "role": "assistant",
+      "content": "Great document! This outlines a solid foundation for an automated marketing workflow. Let me provide structured suggestions on how to approach this.\n\n## Strategic Recommendations\n\n### 1. **Start with Content → Distribution Pipeline**\n\nYour vault should be the single source of truth. The workflow should be:\n```\nVault Content Creation → Content Adaptation → Channel Distribution → Tracking\n```\n\nThis means:\n- Create event announcements, educational content, and updates in your vault\n- Use AI agents to adapt content for different platforms (character limits, tone, format)\n- Automate posting across channels\n- Track engagement and attendance\n\n### 2. **Recommended Architecture**\n\n**Option A: Claude Code + n8n (Recommended)**\n- Use Claude Code to draft and organize content in your vault\n- Use n8n to handle automation, scheduling, and posting\n- This separates content creation (Claude) from distribution (n8n)\n\n**Option B: Full n8n Solution**\n- n8n can monitor your vault for new/updated content\n- AI nodes in n8n can adapt content for different platforms\n- More technical setup but fully automated\n\n### 3. **Immediate Quick Wins**\n\nBefore building full automation, implement these manual-first workflows:\n\n1. **Event Content Templates** - Create a template that Claude fills out for each meetup:\n   - Event basics (date, time, location, RSVP links)\n   - Discussion topics with brief descriptions\n   - Beginner-friendly hook (\"Why this matters\")\n   - Call-to-action tailored per platform\n\n2. **Content Calendar** - Track what's posted where and when\n   - Prevents duplicate posting\n   - Ensures consistent cadence\n   - Shows gaps in coverage\n\n3. **Platform-Specific Adaptations** - Claude generates variations:\n   - Twitter: Short, punchy, thread format\n   - LinkedIn: Professional, educational angle\n   - Reddit: Community-focused, detailed\n   - Instagram: Visual-first with caption\n   - Email: Comprehensive with links\n\n### 4. **Phased Implementation Plan**\n\n**Phase 1: Content Foundation (Week 1-2)**\n- Create event announcement template in vault\n- Build content library of evergreen Bitcoin education posts\n- Organize CRM with contact segmentation (attended once, regular, prospects)\n\n**Phase 2: Semi-Automated Workflows (Week 3-4)**\n- Set up n8n with basic workflows:\n  - RSS/webhook trigger when new event content is added to vault\n  - AI adaptation for each platform\n  - Manual approval step before posting\n- Create email list from Luma/Eventbrite/Meetup exports\n\n**Phase 3: Full Automation (Month 2)**\n- Automated posting with scheduling\n- Automated email reminders (7 days before, 1 day before, day-of)\n- Engagement tracking and response monitoring\n\n**Phase 4: Expansion (Month 3+)**\n- Add local marketing channels\n- Implement zapertizing workflow for rewarding attendees\n- Partner outreach automation\n\n### 5. **Specific Channel Strategy**\n\n**High-Priority Channels** (focus here first):\n- **Twitter/Nostr**: Daily presence, event reminders, Bitcoin education threads\n- **Email**: Monthly newsletter + event-specific reminders\n- **Telegram**: Cross-posting to NJ/NY groups (build relationships first)\n- **Meetup.com/Eventbrite/Luma**: Ensure event pages are always updated\n\n**Medium-Priority**:\n- **LinkedIn**: Bi-weekly educational content, partner outreach\n- **Reddit**: Weekly participation in relevant subreddits (r/Bitcoin, r/jerseycity, r/BitcoinBeginners)\n- **Instagram/Facebook**: Weekly posts with visual content\n\n**Lower-Priority** (until you have bandwidth):\n- **Club Orange**: DM outreach (high-touch, manual for now)\n- **Local newsletters**: Quarterly partnerships\n\n### 6. **Workflow Examples**\n\n**Example 1: Monthly Event Reminder Sequence**\n```\nDay -14: Announcement across all channels\nDay -7: \"One week away\" reminder + topic deep-dive\nDay -3: \"Don't forget\" + speaker/topic highlight\nDay -1: \"Tomorrow!\" + logistics reminder\nDay 0: \"Happening now\" + last-minute RSVP\nDay +1: \"Thank you\" + recap + next month teaser\n```\n\n**Example 2: Educational Content Drip**\n```\nMonday: Bitcoin basics post (beginner)\nWednesday: Current events / news analysis\nFriday: Meetup reminder + discussion preview\n```\n\n### 7. **Technical Setup Recommendations**\n\n**n8n Workflows to Build:**\n1. **Event Publisher**: Reads event note from vault → adapts for each platform → posts/schedules\n2. **Email Reminder Bot**: Triggers based on event date → sends segmented emails\n3. **Content Recycler**: Resurfaces evergreen educational content on rotation\n4. **Contact Sync**: Pulls new contacts from Luma/Eventbrite/Meetup → adds to CRM in vault\n\n**Vault Structure Additions:**\n```\nMarketing/\n  ├── Campaigns/           ← Multi-post campaigns\n  ├── Content-Library/     ← Evergreen educational posts\n  ├── Event-Announcements/ ← Monthly event content\n  ├── Templates/           ← Platform-specific templates\n  └── Analytics/           ← Engagement tracking\n```\n\n### 8. **Content Strategy Tips**\n\n- **Hook + Education + CTA**: Every post should have a hook (why this matters), education (what you'll learn), and call-to-action (come to the meetup)\n- **Progressive Disclosure**: Social posts tease → detailed blog/email → meetup delivers deep dive\n- **Repurpose Everything**: One meetup topic → 10+ pieces of content (thread, video clip, email, blog post, meme)\n- **Local Angle**: \"Jersey City's Bitcoin Community\" — lean into local identity\n\n### 9. **Metrics to Track**\n\n- Event attendance (new vs returning)\n- Email open/click rates\n- Social engagement per platform\n- Top-performing content topics\n- Conversion: follower → attendee\n\n### 10. **Next Steps**\n\nWould you like me to:\n\nA. **Create the vault structure** for marketing automation (folders, templates, example content)?\n\nB. **Draft a detailed n8n workflow specification** that you can implement?\n\nC. **Build example event announcement content** adapted for each platform to show what the output should look like?\n\nD. **Create a content calendar template** for planning posts across channels?\n\nE. **Set up the email contact consolidation workflow** to merge Luma/Eventbrite/Meetup contacts into your CRM?\n\nLet me know which would be most helpful to start with, or if you'd like me to tackle multiple in parallel.",
+      "timestamp": 1772419882899,
+      "toolCalls": [
+        {
+          "id": "toolu_01JwABj5D6QLJD3YeEsjANXP",
+          "name": "Read",
+          "input": {
+            "file_path": "C:\\Users\\GC\\Documents\\JC Bitcoin\\JC BTC\\tasks\\To Do JC BTC\\Ai Marketing Workflow.md"
+          },
+          "status": "success",
+          "startTime": 1772419841737,
+          "endTime": 1772419882405,
+          "output": ""
+        }
+      ],
+      "isStreaming": false
+    }
+  ]
+}

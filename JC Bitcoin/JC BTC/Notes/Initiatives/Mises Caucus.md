@@ -1,0 +1,36 @@
+- What's the initiative?
+- Are you working with NJ LP? What's your relationship to those guys?
+    - They're more the woke guys lmao
+- She cold emailed library's
+- She's working on winnable issues
+    - Bitcoin, maha,
+    - DOJ overreach
+- Recruiting delegates,
+    - Bitcoin meetup groups, infultrate with a bitcoin perception, having a bitcoin party
+- She started as a bitcoiner to take her into libertarian
+- In michigan – created a 501c6 – michigan trade
+- Lake satoshi bitcoin conference, she partners with the chairman, it's about creating the community and making michigan a more bitcoin friendly state
+- She's focued on having the states protect it, federal could be overturned
+- Angela's greater goal for the LP – to run a bitcoin candidate, in 2028,
+    - And then having them drop out for concessions
+- National convention this year – is in May in Michigan, big bitcoin ball which Thomas is helping with, 5/21st-24th
+- Those are the goals – also have a bitcoin survey, get it out to our people
+- She can zoom in to the meetup
+
+Linus meeting
+- getting delegates at the convention - 
+	- you can just go, you might not be allowed to vote, you can just propose to be voted for
+	- NJLP.org have to be a paying member 
+	- voting for the national 
+- in order to get votes for NJ
+- State LP - to vote you need to have been a member in good standing, used to do convention in March, and moved it up to Feb
+- Mises cucaus has been more focused in community, building community and educational events
+- To get on the mailing list for zoom calls - takehumanaction.com
+	- fill out the form, to get into their CRM
+- Current efforts on education - taking part in parallel economy, non kyc 
+- Aaron Day - trying to do an event at the convention, crypto related, getting pardons
+- Where do they hold their events?
+	- State convention Rutgers
+	- Typically central
+- Within the state it's tense with certain people, leadership board is a little mixed
+	- Mises people got sick of dealing with some leadership, 

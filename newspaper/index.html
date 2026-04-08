@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bitcoin Breakdown -- Weekend Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #f5f0e8;
+    --paper-aged: #efe9dd;
+    --rule: #2a2a2a;
+    --rule-light: #c8c0b0;
+    --gold: #b8860b;
+    --gold-bright: #d4a017;
+    --accent: #8b0000;
+    --text-primary: #1a1a1a;
+    --text-secondary: #3a3a3a;
+    --text-muted: #6a6a6a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--text-primary);
+    font-family: 'Libre Baskerville', 'Georgia', serif;
+    font-size: 15px;
+    line-height: 1.65;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* --- MASTHEAD --- */
+  .masthead {
+    text-align: center;
+    padding: 30px 0 20px;
+    border-bottom: 4px double var(--rule);
+    position: relative;
+  }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    font-family: 'Libre Baskerville', serif;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .masthead h1 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-weight: 700;
+    font-size: clamp(42px, 7vw, 72px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--ink);
+    margin: 8px 0;
+  }
+
+  .masthead-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .masthead-rule {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .masthead-rule span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .masthead-rule::before,
+  .masthead-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule-light);
+  }
+
+  /* --- SECTION HEADERS --- */
+  .section-header {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold);
+    border-bottom: 1px solid var(--rule-light);
+    padding-bottom: 4px;
+    margin-bottom: 16px;
+  }
+
+  /* --- LAYOUT --- */
+  .lead-section {
+    padding: 28px 0;
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .lead-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 32px;
+  }
+
+  .mid-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 24px 0;
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .mid-article {
+    padding: 0 24px;
+  }
+
+  .mid-article:first-child {
+    padding-left: 0;
+    border-right: 1px solid var(--rule-light);
+  }
+
+  .mid-article:last-child {
+    padding-right: 0;
+  }
+
+  .bottom-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    padding: 24px 0;
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .bottom-article {
+    padding: 0 20px;
+    border-right: 1px solid var(--rule-light);
+  }
+
+  .bottom-article:first-child { padding-left: 0; }
+  .bottom-article:last-child { padding-right: 0; border-right: none; }
+
+  /* --- TYPOGRAPHY --- */
+  .headline-lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .headline-mid {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .headline-small {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .deck {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+
+  .byline {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  .byline strong {
+    color: var(--text-secondary);
+  }
+
+  .article-body {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-primary);
+  }
+
+  .article-body p { margin-bottom: 12px; }
+
+  .drop-cap::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 700;
+    float: left;
+    line-height: 0.65;
+    padding-right: 8px;
+    padding-top: 8px;
+    color: var(--ink);
+  }
+
+  .article-body .pullquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.35;
+    color: var(--text-secondary);
+    border-left: 3px solid var(--gold);
+    padding: 8px 0 8px 20px;
+    margin: 20px 0;
+  }
+
+  /* --- SIDEBAR --- */
+  .sidebar {
+    border-left: 1px solid var(--rule-light);
+    padding-left: 24px;
+  }
+
+  .sidebar-box {
+    background: var(--paper-aged);
+    border: 1px solid var(--rule-light);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule-light);
+    color: var(--ink);
+  }
+
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--rule-light);
+    font-size: 13px;
+  }
+
+  .stat-row:last-child { border-bottom: none; }
+
+  .stat-label { color: var(--text-muted); }
+  .stat-value {
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+  }
+
+  .stat-value.positive { color: #2d6a30; }
+
+  /* --- DATA TABLE --- */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin: 12px 0;
+  }
+
+  .data-table th {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    border-bottom: 2px solid var(--rule);
+    padding: 6px 8px;
+    text-align: left;
+  }
+
+  .data-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--rule-light);
+    vertical-align: top;
+  }
+
+  .data-table td:last-child {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-align: right;
+  }
+
+  /* --- FIGURE --- */
+  .figure-box {
+    background: var(--paper-aged);
+    border: 1px solid var(--rule-light);
+    padding: 16px;
+    margin: 16px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .figure-box .caption {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  /* --- FOOTER --- */
+  .paper-footer {
+    padding: 24px 0;
+    text-align: center;
+  }
+
+  .paper-footer p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  .colophon {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule-light);
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  /* --- IDEAS SECTION --- */
+  .ideas-section {
+    padding: 28px 0;
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .ideas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .idea-card {
+    background: var(--paper-aged);
+    border: 1px solid var(--rule-light);
+    padding: 20px;
+  }
+
+  .idea-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .idea-card p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .idea-card .idea-tag {
+    display: inline-block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 860px) {
+    .lead-grid { grid-template-columns: 1fr; }
+    .sidebar { border-left: none; padding-left: 0; border-top: 1px solid var(--rule-light); padding-top: 20px; }
+    .mid-section { grid-template-columns: 1fr; }
+    .mid-article { padding: 16px 0; border-right: none; }
+    .mid-article:first-child { border-right: none; border-bottom: 1px solid var(--rule-light); }
+    .bottom-section { grid-template-columns: 1fr; }
+    .bottom-article { padding: 16px 0; border-right: none; border-bottom: 1px solid var(--rule-light); }
+    .bottom-article:last-child { border-bottom: none; }
+    .ideas-grid { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    body { max-width: 100%; padding: 0; font-size: 11pt; }
+    .masthead h1 { font-size: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== MASTHEAD ========== -->
+<header class="masthead">
+  <div class="masthead-top">
+    <span>Volume I, No. 1</span>
+    <span>thebitcoinbreakdown.com</span>
+    <span>Weekend Edition -- March 21, 2026</span>
+  </div>
+  <h1>The Bitcoin Breakdown</h1>
+  <p class="masthead-subtitle">Dispatches from the workshop</p>
+  <div class="masthead-rule">
+    <span>All the sovereignty that's fit to print</span>
+  </div>
+</header>
+
+<!-- ========== LEAD STORY ========== -->
+<section class="lead-section">
+  <div class="section-header">Lead Story</div>
+  <div class="lead-grid">
+    <div class="lead-main">
+      <h2 class="headline-lead">A Liquidity Market for Bitcoin's Next Layer: Inside the ArkPool Protocol</h2>
+      <p class="deck">Researcher proposes BTC-native lending mechanism to fuel Ark Service Providers -- no oracles, no DLCs, seven opcodes.</p>
+      <p class="byline">By <strong>The Bitcoin Breakdown</strong> | Protocol Design Desk</p>
+      <div class="article-body">
+        <p class="drop-cap">The Ark protocol promises a future where Bitcoin transactions are private, batched, and cheap -- but the operators who make it work face a capital problem that could throttle growth before it starts. A new research effort, documented across 17 files and roughly 7,200 lines of analysis, proposes a solution: ArkPool, a trustless lending market where holders of idle bitcoin can finance Ark Service Providers using nothing more than timelocked multisig escrow.</p>
+
+        <p>The mechanism is deliberately boring. A lender deposits BTC into a 2-of-2 multisig with a block-height timeout. The ASP borrows the funds, uses them to operate payment rounds, and repays principal plus a fee before the timeout. If the ASP defaults, the lender claims collateral unilaterally -- Bitcoin consensus enforces it, no third party required. Seven opcodes, all in production since 2015.</p>
+
+        <div class="pullquote">"The spread is not the bottleneck. The mechanism works economically across a wide range of lending rates -- 1 to 6 percent conservatively, 1 to 8 percent with shorter expiry periods."</div>
+
+        <p>The viability assessment, completed this week, stress-tests the design against sustained 500 sat/vB fee environments and finds that ArkPool's on-chain footprint -- two transactions per loan cycle, roughly 260 virtual bytes total -- makes it more fee-resilient than Ark itself. At 500 sat/vB, closing an escrow on a 30 BTC loan costs 0.004% of principal.</p>
+
+        <p>The critical finding: external financing becomes structurally necessary when an ASP's weekly throughput exceeds 20-40% of its total BTC holdings. At 28-day VTXO expiry, the lockup multiplier demands 5.2x throughput in locked capital. An operator with 100 BTC hits the wall at roughly 20 BTC per week.</p>
+
+        <p>Phase 1 -- a CLI toolkit covering the escrow library, term sheet format, and proof-of-reserves tool -- is scoped at 5-8 weeks of development. No smart contracts, no sidechains, no new infrastructure. Publication of the research, including a post on Delving Bitcoin and a comment on GitHub issue #197, is planned to establish priority and invite scrutiny.</p>
+
+        <p>Nobody else is building this. A prior art search across Lightning Pool, Lendasat, Lygos, and Lava Loans confirms the gap. Whether it stays empty depends on whether Ark reaches the throughput threshold where external capital is needed -- a question the market will answer on its own timeline.</p>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <h3>ArkPool at a Glance</h3>
+        <div class="stat-row">
+          <span class="stat-label">Research docs</span>
+          <span class="stat-value">17 files</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Analysis volume</span>
+          <span class="stat-value">~7,200 lines</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Opcodes used</span>
+          <span class="stat-value">7</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">On-chain txs/loan</span>
+          <span class="stat-value">2</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Phase 1 scope</span>
+          <span class="stat-value">5-8 weeks</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Oracles required</span>
+          <span class="stat-value">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Competitors</span>
+          <span class="stat-value">0</span>
+        </div>
+      </div>
+
+      <div class="sidebar-box">
+        <h3>Capital Lockup Model</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Weekly Throughput</th>
+              <th>Locked (28d)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>10 BTC/wk</td><td>52 BTC</td></tr>
+            <tr><td>50 BTC/wk</td><td>260 BTC</td></tr>
+            <tr><td>100 BTC/wk</td><td>520 BTC</td></tr>
+            <tr><td>500 BTC/wk</td><td>2,600 BTC</td></tr>
+            <tr><td>1,000 BTC/wk</td><td>5,200 BTC</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size: 10px; color: var(--text-muted); margin-top: 8px; font-style: italic;">
+          V1 lockup at 28-day expiry (5.2x multiplier). V2 revocation, not yet implemented, could reduce to ~2x.
+        </p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ========== MID SECTION ========== -->
+<section class="mid-section">
+  <article class="mid-article">
+    <div class="section-header">Education</div>
+    <h2 class="headline-mid">Open-Source AI Course Puts Personal Computing Back in Users' Hands</h2>
+    <p class="deck">A 12-module curriculum teaches non-technical learners to set up and run their own AI assistant on a personal computer -- no cloud accounts required.</p>
+    <p class="byline">By <strong>The Bitcoin Breakdown</strong> | Education Desk</p>
+    <div class="article-body">
+      <p class="drop-cap">Twelve modules. Thirty-six files. One goal: take someone who has never opened a terminal and walk them to a fully operational, self-hosted AI assistant running on their own hardware.</p>
+
+      <p>The OpenClaw course, now complete in both a self-paced and a three-class instructor-led format, covers the full stack -- from "why does this matter" to configuring cron jobs that run an AI sleep cycle at 2 AM. The personal instance, named Jinn, runs on an Ubuntu laptop with a dashboard featuring seven tabs, calendar integration for 262 yearly events, and automated memory consolidation overnight.</p>
+
+      <p>A quality audit caught 11 factual errors across 22 files. Every slide was measured against a visual weight budget (13 units maximum) to prevent information overload. The CLI reference was verified line-by-line against official documentation.</p>
+
+      <p>The course recommends OpenRouter as the primary API path -- US-based, zero markup, free models available -- with local Ollama models as an advanced option. MiniMax M2.5 was chosen as Jinn's personal default at $10/month, a decision that traded theoretical distillation concerns for practical cost efficiency.</p>
+
+      <div class="figure-box">
+        <div class="caption">Course Architecture</div>
+        12 Modules (Lesson + Slides + Script each)<br>
+        3-Class instructor version (69 slides)<br>
+        CLI Reference (verified against official docs)<br>
+        Incident Response Card (mandatory update protocol)<br>
+        Theme: Tidepool ocean watercolor
+      </div>
+
+      <p>Next up: walking through Modules 04-11 on a live machine and testing the overnight sleep cycle results for quality degradation over time.</p>
+    </div>
+  </article>
+
+  <article class="mid-article">
+    <div class="section-header">Infrastructure</div>
+    <h2 class="headline-mid">160 Sources, 12 Files: A Knowledge Distillery for the AI Age</h2>
+    <p class="deck">A verified, cross-referenced knowledge base compresses hundreds of AI best-practice sources into a searchable system with its own semantic search engine.</p>
+    <p class="byline">By <strong>The Bitcoin Breakdown</strong> | Systems Desk</p>
+    <div class="article-body">
+      <p class="drop-cap">Most AI knowledge lives in scattered blog posts, Twitter threads, and YouTube transcripts. The Knowledge Distillery takes a different approach: ingest everything, synthesize ruthlessly, and give every concept exactly one home with cross-references to the rest.</p>
+
+      <p>The result is 12 topic files covering prompt engineering, context management, agent design, memory persistence, testing and verification, failure patterns, and more -- backed by a LanceDB-powered search engine that combines BM25 keyword matching with vector embeddings for semantic queries.</p>
+
+      <p>The system enforces its own integrity. Hooks validate structural changes to topic files. Cross-references are checked after every edit. A bookmark pipeline built on Bird CLI automatically ingests new sources from Twitter, classifies them, and appends findings to the appropriate topic files -- with a hard March 2026 cutoff to prevent retroactive processing.</p>
+
+      <div class="pullquote">"Synthesized, not curated. Each concept has one primary home with cross-references, ruthlessly deduplicated."</div>
+
+      <p>The latest session consolidated nine recent additions across four files, created a comprehensive SOUL.md defining the system's agent identity, and unified the project's documentation into a single README. Six commits were pushed to the public GitHub repository.</p>
+
+      <p>The Distillery is now mature enough that its primary value comes from use, not further construction. A coaching layer -- three active rules covering adaptive kickoff, specificity nudging, and verification before completion -- is being tested across all projects in the workspace.</p>
+    </div>
+  </article>
+</section>
+
+<!-- ========== BOTTOM SECTION ========== -->
+<section class="bottom-section">
+  <article class="bottom-article">
+    <div class="section-header">Platform</div>
+    <h3 class="headline-small">TBB Website: 55 Pages, One Theme, Zero Frameworks</h3>
+    <p class="byline">By <strong>The Bitcoin Breakdown</strong></p>
+    <div class="article-body">
+      <p>The site that started as a WordPress blog is now a custom Astro build serving 55 pages in under 8 seconds. The V4 "Dark Luxury" design system -- black elevations, gold accents, Cormorant Garamond serif -- ships as a static site deployed automatically via GitHub Actions to Hostinger on every push.</p>
+
+      <p>The compendium has grown to 21 sub-chapters across 4 chapters, with the Fiat Capitalism section recently published as 23 argument blocks with CSS grid layout and anchor link navigation.</p>
+
+      <p>A meta-agent orchestration system is being designed to scale the remaining 67 sub-chapters through a 7-step pipeline, with parallel execution allowed for up to 3 chapters simultaneously.</p>
+    </div>
+  </article>
+
+  <article class="bottom-article">
+    <div class="section-header">Community</div>
+    <h3 class="headline-small">Freedom Lab NYC: Teaching Freedom Tech with Hands and Hardware</h3>
+    <p class="byline">By <strong>The Bitcoin Breakdown</strong></p>
+    <div class="article-body">
+      <p>Freedom Lab is a physical space in New York City where people learn by doing: setting up Bitcoin and Lightning nodes, configuring Tor and VPNs, running Linux, and now deploying personal AI infrastructure.</p>
+
+      <p>A 35-slide presentation deck -- built programmatically via the Google Slides API in an Ollama teal color scheme -- introduces OpenClaw through Freedom Lab's lens. Two custom slash commands, <code>/create-lesson</code> and <code>/export-lesson</code>, transform raw educator materials into structured HTML lesson pages and branded PowerPoint exports.</p>
+
+      <p>The website hosts 26 lesson pages and counting, each following a standardized schema with outcomes, agendas, hands-on content, and instructor notes.</p>
+    </div>
+  </article>
+
+  <article class="bottom-article">
+    <div class="section-header">Books</div>
+    <h3 class="headline-small">WBIGAF: The Bitcoin Book Taking Shape One Block at a Time</h3>
+    <p class="byline">By <strong>The Bitcoin Breakdown</strong></p>
+    <div class="article-body">
+      <p>"Why Bitcoin Is Going to Absorb Fiat" is being written as a comprehensive argument structured like the network it describes -- modular, verifiable, and designed to stand on its own at any scale.</p>
+
+      <p>Chapters 1 and 2 are complete. Chapter 3 is in active development, with 23 argument blocks already published to the web as navigable HTML with reading-order annotations. The full book scope spans dozens of sub-chapters covering monetary history, fiat mechanics, Bitcoin's technical architecture, and the convergence thesis.</p>
+
+      <p>A coordinator system is being designed to manage the remaining pipeline at scale -- triage, research, drafting, editing, and web publication -- with automated batch processing for mechanical tasks and human review for substantive content decisions.</p>
+    </div>
+  </article>
+</section>
+
+<!-- ========== IDEAS SECTION ========== -->
+<section class="ideas-section">
+  <div class="section-header">The Workshop -- More Ways to Share the Work</div>
+  <div class="ideas-grid">
+    <div class="idea-card">
+      <span class="idea-tag">Format</span>
+      <h4>Project Changelog / Release Notes</h4>
+      <p>A "What Shipped This Week" page on thebitcoinbreakdown.com -- a simple running log styled like software release notes. Each entry covers what changed, what's next, and one thing learned. Auto-generated from WORKLOG.md files across projects. Low-effort, high-transparency.</p>
+    </div>
+    <div class="idea-card">
+      <span class="idea-tag">Format</span>
+      <h4>Build-in-Public Thread Generator</h4>
+      <p>A script that reads the latest WORKLOG entries and drafts a Twitter/X thread. One thread per project per week. Pulls stats (pages built, files processed, lines written) automatically. You review and post -- the machine does the boring summarization.</p>
+    </div>
+    <div class="idea-card">
+      <span class="idea-tag">Interactive</span>
+      <h4>Terminal Dashboard</h4>
+      <p>A live status page on the TBB site styled like the existing terminal section on the homepage. Shows real project data: build status, KB health metrics, course module count, chapter completion percentages. Visitors see the work in progress, not just the finished product.</p>
+    </div>
+    <div class="idea-card">
+      <span class="idea-tag">Interactive</span>
+      <h4>Project Map / Constellation View</h4>
+      <p>An interactive visualization where each project is a node and connections show shared infrastructure (hooks, rules, the KB). Click a node to see its status, recent activity, and next milestones. Could be a simple SVG or a lightweight canvas animation. Lives at /projects on the site.</p>
+    </div>
+    <div class="idea-card">
+      <span class="idea-tag">Content</span>
+      <h4>Quarterly "State of the Workshop" Report</h4>
+      <p>A longer-form piece (1,500-2,000 words) published as a blog post every 3 months. Covers all projects, key decisions made, lessons learned, and direction for the next quarter. More reflective than the newspaper -- less "what shipped" and more "what we figured out."</p>
+    </div>
+    <div class="idea-card">
+      <span class="idea-tag">Content</span>
+      <h4>Decision Log Digest</h4>
+      <p>A curated selection of the most interesting architectural and design decisions across all projects, published as short case studies. "We chose X over Y because Z, and here's what happened." Useful for other builders, positions TBB as a thoughtful operation, and forces good decision hygiene internally.</p>
+    </div>
+    <div class="idea-card">
+      <span class="idea-tag">Fun</span>
+      <h4>Crossword / Puzzle Page</h4>
+      <p>A Bitcoin-themed crossword or word puzzle that ships with each newspaper edition. Clues drawn from the projects -- "7 opcodes secure this escrow (7 letters)" or "The AI course mascot (4 letters)." Printable. Low-effort to generate, surprisingly engaging.</p>
+    </div>
+    <div class="idea-card">
+      <span class="idea-tag">Fun</span>
+      <h4>The Back Page: Overheard in the Workshop</h4>
+      <p>A collection of the most absurd, out-of-context quotes from Claude sessions, commit messages, and debug logs. "The sleep cycle generated a dream about deprecated API endpoints." "Escrow script bug: 7 well-understood opcodes. What could go wrong." Pure entertainment value.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="paper-footer">
+  <p>"All the sovereignty that's fit to print."</p>
+  <div class="colophon">
+    The Bitcoin Breakdown Weekend Edition is generated from live project data across the TBB workspace.
+    <br>
+    Published March 21, 2026. Volume I, Number 1.
+    <br><br>
+    thebitcoinbreakdown.com
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+- Speech
+    - Months of research and refining
+- Podcast
+    - Months of notes organized and compiled
+- Node
+    - Build and maintain
+- Breaking UTXO deterministic links
+- Dex
+- Daily news following
+- Massive amount of research
+    - 4 books
+    - So much Youtube
+    - 5-7 different Podcasts
+    - Several Articles a day
+    - Social media following
+    - Meme collecting
+- My notes and ambitions
+    - Journaling
+    - Writing
+    - Thinking
+- Electrum setup
+- Sparrow wallet
+- 3 hardware wallets
+- Blue wallet
+- Gemini Christmas tutorial
+- Coinbase setup for friends
+- Educating friends and family
+    - Sending, teaching, talking
+
+Things I want to do
+
+- Have a complete note set on why bitcoin is good as fuck
+- Practice speaking to all of them, and have a recorded podcast finished
+- Memorize and deliver my speech all over
+    - Maybe a few different versions
+- Have a full brand fleshed out, with symbols, slogans, logo, music
+- Have a website up and running with content
+    - Writing
+    - Podcast
+    - Presentations/Videos
+    - Resource library
+- Start a youtube channel
+    - Do how to videos on common things
+    - Bitcoin 101's
+- Practice with multisig
+- Practice with seedsigner and coldcard
+- Start a lighting node
+- Run a fedimint
+- Learn so much more and see where I can best help
+- JC bitcoin (also nyc)
+    - Help onboard businesses and people in my community
+    - Maybe do some public talks, lessons, classes

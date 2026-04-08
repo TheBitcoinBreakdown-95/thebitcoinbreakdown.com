@@ -1,0 +1,71 @@
+It's all about making it easy, reducing intimidation, reducing friction
+ 
+- Raise your hand if you've used bitcoin before
+    - Going through the steps of how to use bitcoin for the first time, setting up people with wallets in under 15 minutes
+- People have a tendency to think that bitcoin is extremely complicated
+    - The cool part about bitcoin is that it's actually really simple and easy to use
+- On the surface bitcoin is just a money
+    - It's a money that is independent of governments and corporations
+    - That you can use between two people
+    - That you can do transactions all over the world, or to someone right next to you, without any middle men or people in between
+- To use bitcoin is as simple as downloading an app on your phone
+    - There is hardly a sign up process
+        - You don't need to use your email address
+        - You don't have to provide identity or a drivers license
+        - You simply download an app, you get this bitcoin wallet and you can receive bitcoin instantly
+        - Once you get some bitcoin, you can send it instantly
+    - No middle men involved
+        - no company in the middle taking fees, CC fees can be 3-5%
+        - No company you have to rely on to settle the transaction in 30 days
+        - No chargeback risk
+- Bitcoin is extremely empowering for individuals
+    - With great power comes great responsibility
+    - Bitcoin is a movement of personal responsibility
+    - There's no customer support line you can contact, it's on you to secure it
+    - But with properly secured bitcoin, your money is in your hands, you can spend, you can save without anyone's permission
+    - No one can debase bitcoin, no Federal reserve, or board of human beings who can change the price and quantity
+- Bitcoin is a 14 year old project
+    - It's open source code
+    - Why is that important? Open source code is not owned by anyone, it is viral in nature, no company controls it, no one has copy rights on it, trademarks, anyone can take that code, inspect it, download it, do whatever they want with it
+- But changes are extremely hard to happen to bitcoin itself
+    - By design it's very difficult to change,
+    - (GC chess example)
+    - That is a value not a negative, because if you can have changes, people are financially incentivized to change the rules in their favor.
+        - In that way bitcoin is very resilient to corruption
+- Bitcoin is a voluntary movement
+    - It's based on consent
+    - I will never tell anyone that they should use bitcoin, or call you an idiot for not using it
+    - I love talking about it, and if you have questions I will answer all of your questions
+- People will eventually realize they need bitcoin
+    - And when they do we need to have the education and tools available to them
+    - There are potentially billions of people who have a need for sound money already, and they're being underserved, so why spend the time trying to convince people that have no desire, no need to discover this thing, there's no need it's a waste of time.
+    - This is an opt in movement, you either want personal responsibility or you don't, that's not for me to decide or push on to you
+- The narrative has been perverted to a degree
+    - A lot of people mainly think of it as an investment asset, that you buy sell and trade
+    - Bitcoin is definitely a great way to save and store wealth
+        - It's the best savings technology ever invented
+    - But thinking of it like a stock is a perversion of the movement
+    - Centralized entities have taken over, requiring KYC, people 3rd party custody
+        - People have started thinking of bitcoin in this light, like FTX, when ironically the core ethos of bitcoin is to eliminate third parties
+    - Because bitcoin is open source, Penny stocks, spin offs of bitcoin, alternative coins, altcoins, shitcoins if you will, have taken off
+        - These include many scams, where you can create a shitcoin in a day, market some convoluted use case and pump to unknowing retail investors, dump your equity and make a quick profit
+        - This is completely separate from the bitcoin movement, the promoters might make it seem like it's similar, and it uses a lot of the same technology, but these are completely separate projects - The dollar is broken, and I think a lot of people don't realize that yet
+    - It's important we have an alternative set up, that isn't captured, when that reality starts to set in for people
+    - Bitcoin can be thought of
+    - Our dollar is the number one shitty currency
+    - If you talk to people in Argentina they want dollars
+        - Their currencies are breaking first and then the dollar
+-   
+                  
+[Beef Initiative 2022: Bitcoin Basics with Odell](https://open.spotify.com/episode/4bz7AbRQDSnMEEyzBB8OgN?si=ce648a251963445d)
+
+- Muun wallet
+- Backup method is an email reset which most people are familiar with
+- It's a good first step
+- Bluewallet or one with seed phrase is a good next step
+- Then cold card
+   
+
+- Offer to give people bitcoin with no strings attached, set up a wallet for them if they've never used it, say it's a tip
+    - They'll start wondering and using, getting comfortable on their own
+    -

@@ -1,110 +1,133 @@
-# CLAUDE.md — Operating Manual
+# CLAUDE.md -- Master Educational Hub
 
-This file defines how Claude Code should think, plan, execute, verify, and improve itself while working in this repository. It is the root authority for behavior, navigation, and project context.
+This file is the root authority for all educational projects in this repository. Each project has its own operating manual (linked below). This file covers project discovery, cross-cutting concerns, and shared infrastructure.
 
-> **Session start reminder**: For **website** work, consult `tasks/TODO.md`. For **WBIGAF book** work, consult `WBIGAF/WBIGAF.md`.
-
----
----
-
-# PART 1: PROJECT CONTEXT
+> **Session start reminder**: Check `WORKLOG.md` for where you left off. For specific projects, consult their operating manuals listed below.
 
 ---
+---
 
-## 1. Project Identity
+# PART 1: PROJECT MAP
 
-Rebuilding **thebitcoinbreakdown.com** from WordPress to a static site, managed from an Obsidian vault integrated with Claude Code.
+---
 
-### Tech Stack
-- **Obsidian** as the content editor (write posts in Markdown)
-- **Astro** as the site generator (converts Markdown → HTML)
-- **GitHub** for version control (open source)
-- **Hostinger** for hosting (existing host, FTP deploy)
-- **GitHub Actions** for auto-build and deploy on push
+## 1. Identity
+
+This is the master workspace for all educational content created by The Bitcoin Breakdown. It houses the website, a book, educational courses, community materials, and the tooling that ties them together.
 
 ### What Claude Does Here
-- Build and maintain the Astro website (layouts, components, pages, styles)
-- Help write and edit blog content about Bitcoin
-- Convert WordPress export to Markdown files
-- Manage site deployment workflow (GitHub Actions → FTP → Hostinger)
-- Experiment with theme, design, and styling
-- Organize vault structure and content
-- Maintain documentation and project context
+- Build and maintain the TBB website (Astro, Obsidian, GitHub Actions)
+- Write and edit Bitcoin educational content (blog posts, compendium, book)
+- Develop standalone courses (Node SSH, AI onboarding, merchant guides)
+- Support educator training projects (FreedomLab, AI Fluency)
+- Manage community education materials (JC Bitcoin meetups)
+- Maintain documentation, project context, and cross-session memory
 
 ### What Claude Does NOT Do Here
 - Provide financial advice or investment recommendations
 - Generate or handle private keys, seed phrases, or wallet credentials
 - Push to GitHub or deploy without user confirmation
 - Over-engineer or add features the user didn't ask for
-- Create files unnecessarily — prefer editing existing files
+- Create files unnecessarily -- prefer editing existing files
 
 ---
 
-## 2. Current Status (Feb 2026)
+## 2. Projects
 
+| Project | Directory | Operating Manual | Status |
+|---------|-----------|-----------------|--------|
+| **TBB Website** | `TBB/` + `astro/` | Section 5 below | LIVE at thebitcoinbreakdown.com |
+| **TBB Media Company** | `TBB Media Company/` | `TBB Media Company/CLAUDE.md` | Active -- EP01 Golden Rules in production, 2112 LLC active |
+| **WBIGAF Book** | `WBIGAF/` | `WBIGAF/WBIGAF.md` | Ch1-2 done, Ch3 in progress |
+| **FreedomLab** | `FreedomLab/` | `FreedomLab/CLAUDE.md` | Skills built, slide deck active |
+| **JC Bitcoin** | `JC Bitcoin/` | `JC Bitcoin/JC BTC/CLAUDE.md` | Active (vault + meetup materials) |
+| **Node SSH Course** | `content/Node SSH/` | -- | 7/7 files written, review pending |
+| **How to Learn and Do Anything** | `content/How to Learn and Do Anything/` | -- | Planning phase |
+| **Merchants Onboarding Guide** | -- | -- | Not started |
+| **AI Fluency for Educators** | `AI Fluency for educators/` | -- | Early stage (4 framework docs) |
+
+### Inactive/Archive
+| Directory | Notes |
+|-----------|-------|
+| `Automating TBB/` | Archived -- logo work moved to `TBB Media Company/brand/logo/` |
+| `references/` | Claude Code best practices, supermemory docs |
+
+---
+
+## 3. Task Tracking
+
+Each project tracks its own work. The master index:
+
+| Project | Task File |
+|---------|-----------|
+| TBB Website | `tasks/TODO.md` |
+| TBB Media Company | `tasks/TODO.md` (Phase 14) |
+| WBIGAF Book | `WBIGAF/WBIGAF-Status.md` |
+| FreedomLab | `FreedomLab/tasks/` |
+| Content courses | `tasks/TODO.md` (Phase 12) |
+| Cross-session log | `WORKLOG.md` |
+| Lessons learned | `tasks/lessons.md` |
+
+---
+
+## 4. Infrastructure
+
+| Component | Location | Purpose |
+|-----------|----------|---------|
+| GitHub Actions | `.github/workflows/deploy.yml` | Auto-build + FTP deploy to Hostinger on push |
+| SSH access | `SSH Instructions.md` | Windows SSH to StartOS Bitcoin node |
+| Scripts | `scripts/` | Build/deployment automation |
+| References | `references/` | Claude Code best practices docs |
+
+---
+---
+
+# PART 2: TBB WEBSITE
+
+> This section covers the primary project -- thebitcoinbreakdown.com. For other projects, see their operating manuals in the project map above.
+
+---
+
+## 5. TBB Website Details
+
+### Tech Stack
+- **Obsidian** as the content editor (write posts in Markdown)
+- **Astro** as the site generator (converts Markdown to HTML)
+- **GitHub** for version control (open source)
+- **Hostinger** for hosting (existing host, FTP deploy)
+- **GitHub Actions** for auto-build and deploy on push
+
+### Current Status (Mar 2026)
 - **Site: LIVE** at thebitcoinbreakdown.com
-- Site framework: COMPLETE (Astro v5.17.1, 55 pages, builds in ~9.5s)
+- Site framework: COMPLETE (Astro v5.17.1, 55 pages, builds in ~7.8s)
 - GitHub repo: `TheBitcoinBreakdown-95/thebitcoinbreakdown.com`
 - Theme: V4 "Dark Luxury" COMPLETE
-- WordPress migration: COMPLETE — 28 posts + 5 pages, 2,316 images localized
-- Deployment: GitHub Actions → FTP → Hostinger (auto-deploys on push)
-- Content enhancement (Phases 2c-2g): COMPLETE — V4 effects on all blog posts
-- Compendium: Restructured — 9 chapter landing pages, 21 sub-chapters (Ch1: 11, Ch2: 8, Ch3: 1, Ch4: 1)
-- Guide renamed to "Compendium" in nav and homepage (URLs still `/guide/...`)
-- Homepage: 8 sections (Hero → Quote → Compendium tile → Featured Chapters → Stats → Terminal → Resources → Closer)
-- Homepage stats: 77+ sub-chapters (planned total), 9 chapters, 110+ resources (count-up animations)
-- Redirects: `.htaccess` handles old WordPress URLs + 9 deleted overview chapter redirects + 2 content reclassifications
+- WordPress migration: COMPLETE -- 28 posts + 5 pages, 2,316 images localized
+- Deployment: GitHub Actions to FTP to Hostinger (auto-deploys on push)
+- Compendium: 9 chapter landing pages, 21 sub-chapters (Ch1: 11, Ch2: 8, Ch3: 1, Ch4: 1)
+- Homepage: 8 sections (Hero, Quote, Compendium tile, Featured Chapters, Stats, Terminal, Resources, Closer)
 
----
-
-## 3. How to Resume a Session
-
-1. Open this folder (`c:\Users\GC\Documents\TBB`) in Claude Code
-2. Start the dev server:
-   ```bash
-   cd c:\Users\GC\Documents\TBB\astro
-   npm run dev
-   ```
-3. Open http://localhost:4321 in browser
-4. Tell Claude what you want to work on (theme, content, etc.)
-
----
-
-## 4. Architecture
+### Architecture
 
 ```
-c:\Users\GC\Documents\TBB\
-├── TBB/                    ← Obsidian vault (CONTENT GOES HERE)
-│   ├── posts/              ← Blog posts as Markdown
-│   ├── guide/              ← Compendium sub-chapters as Markdown (21 files)
-│   ├── pages/              ← Static pages
-│   ├── drafts/             ← WIP (gitignored)
-│   └── templates/          ← New post template
-│
-├── WBIGAF/                 ← Book project (separate from website)
-│   ├── WBIGAF.md           ← Book project operating manual
-│   ├── WBIGAF-Status.md    ← Book progress tracker
-│   ├── 0. Project/         ← Voice DNA profile + planning docs
-│   └── 1-9. [chapters]/    ← Source research + pipeline files
-│
-├── astro/                  ← Site generator
-│   ├── public/images/      ← Localized images (~510 MB)
-│   ├── public/.htaccess    ← WordPress redirect rules
-│   ├── src/styles/global.css    ← COLORS/FONTS HERE
-│   ├── src/layouts/             ← Page templates
-│   ├── src/components/          ← Header, footer, etc.
-│   ├── src/data/chapters.ts          ← Shared chapter metadata
-│   ├── src/pages/               ← Routes
-│   ├── src/scripts/interactions.js ← V4 JS effects
-│   ├── src/content.config.ts    ← Content collection schemas
-│   └── dist/                    ← Built HTML (deployed to Hostinger)
-│
-├── tasks/                  ← Task tracking
-│   ├── TODO.md             ← Website task checklist (Phases 1-8)
-│   └── lessons.md          ← Cross-session learning log
-│
-├── .github/workflows/deploy.yml ← Auto-deploy on push
-└── CLAUDE.md               ← This file (website operating manual)
+TBB/                         -- Obsidian vault (CONTENT)
+  posts/                     -- Blog posts as Markdown
+  guide/                     -- Compendium sub-chapters (21 files)
+  pages/                     -- Static pages
+  drafts/                    -- WIP (gitignored)
+  templates/                 -- New post template
+
+astro/                       -- Site generator
+  src/styles/global.css      -- Colors, fonts, theme
+  src/layouts/               -- Page templates
+  src/components/            -- Header, footer, etc.
+  src/pages/                 -- Routes
+  src/scripts/interactions.js -- V4 JS effects
+  src/data/chapters.ts       -- Shared chapter metadata
+  src/content.config.ts      -- Content collection schemas
+  public/images/             -- Localized images (~510 MB)
+  public/.htaccess           -- Redirect rules
+  dist/                      -- Built HTML (deployed to Hostinger)
 ```
 
 ### Key Files to Edit
@@ -122,35 +145,22 @@ c:\Users\GC\Documents\TBB\
 | JS effects | `astro/src/scripts/interactions.js` |
 | New blog post | `TBB/posts/YYYY/filename.md` |
 | New compendium sub-chapter | `TBB/guide/filename.md` |
-| Book project context | `WBIGAF/WBIGAF.md` |
-| Voice DNA profile | `WBIGAF/0. Project/Voice DNA/voice-dna-profile.md` |
 
----
+### Workflows
 
-## 5. Workflow
+**Publishing a blog post:**
+1. Create `TBB/posts/YYYY/slug-name.md` with standard frontmatter
+2. Add images to `astro/public/images/YYYY/MM/`
+3. Commit and push -- GitHub Actions auto-deploys (~40s)
 
-### Publishing a new blog post
-1. Create `TBB/posts/YYYY/slug-name.md` in Obsidian with standard frontmatter
-2. Add images to `astro/public/images/YYYY/MM/` and reference as `/images/YYYY/MM/filename.png`
-3. Commit & push to GitHub
-4. GitHub Actions auto-builds and FTPs to Hostinger (~40s)
-5. Live at thebitcoinbreakdown.com
-
-### Publishing a compendium sub-chapter
+**Publishing a compendium sub-chapter:**
 1. Create/edit `TBB/guide/slug-name.md` with frontmatter (title, description, chapter, order, draft)
-2. Commit & push → auto-deploys
+2. Commit and push -- auto-deploys
 3. Sub-chapter appears on its chapter landing page (`/guide/chapter/N`)
 
-### Content collections
-- **Blog posts:** `TBB/posts/` → loaded via `content.config.ts` as `posts` collection
-- **Compendium:** `TBB/guide/` → loaded as `guide` collection (schema: title, description, chapter, order, draft)
-- **Chapter landing pages:** Generated from `astro/src/data/chapters.ts` (9 chapters)
+### Content Conventions
 
----
-
-## 6. Content Conventions
-
-### Post Frontmatter Format
+**Frontmatter format:**
 ```yaml
 ---
 title: "Post Title"
@@ -163,202 +173,69 @@ draft: false
 ---
 ```
 
-### Bitcoin Terminology
+**Bitcoin terminology:**
 - **Bitcoin** (capital B) = the network, protocol, and system
 - **bitcoin** (lowercase b) = the unit of currency (BTC)
-- Use standard terminology from bitcoin.org and the Bitcoin whitepaper
 - Define technical terms on first use in educational content
 
-### Tone
+**Tone:**
 - Clear, accessible, non-intimidating
 - Assume the reader is smart but new to the topic
 - No jargon without explanation
 - No price predictions or financial advice
 
----
-
-## 7. Commands
+### Commands
 ```bash
 npm run dev      # Live preview at localhost:4321
 npm run build    # Generate HTML to dist/
 ```
 
----
-
-## 8. What is Astro?
-
-Astro is a tool that converts Markdown files into HTML websites. It's just one option among many (Hugo, Jekyll, Next.js, etc.). The folder is named "astro" after the tool.
-
-**Why use it instead of plain HTML?**
-- Write header/footer once, reuse on all pages
-- Add new posts by creating simple Markdown files
-- Auto-generates RSS feed and sitemap
-- Still outputs plain HTML in the end
-
-**The `node_modules` folder**: Contains library code Astro needs. Never edit it — it's auto-generated.
-
-**The `dist` folder**: Contains the final HTML output. This is what gets uploaded to Hostinger.
-
----
-
-## 9. Site Status
-
-**LIVE** at thebitcoinbreakdown.com. All core features complete. Ongoing work is content creation and refinement.
+### What is Astro?
+Astro converts Markdown files into HTML websites. Write header/footer once, reuse on all pages. Add new posts by creating simple Markdown files. Outputs plain HTML. The `node_modules` folder is auto-generated library code (never edit). The `dist` folder is the final HTML output deployed to Hostinger.
 
 ---
 ---
 
-# PART 2: OPERATING PRINCIPLES
+# PART 3: OPERATING PRINCIPLES
 
-> These principles are project-agnostic and guide how Claude works in any session.
-
----
-
-## 10. Workflow Orchestration
-
-### 10.1 Plan Mode (Default for Non-Trivial Work)
-
-Enter plan mode for any task involving:
-- Architectural decisions or system design
-- Multi-file changes (5+ files)
-- Theme or design overhauls
-- WordPress content migration
-- Deployment or infrastructure changes
-- Any change where the approach isn't obvious
-
-Write detailed specs upfront to reduce ambiguity.
-If execution deviates from plan, STOP and re-plan.
-
-### 10.2 Subagent Strategy
-
-Use subagents to:
-- Offload research and exploration
-- Run parallel searches
-- Protect the main context window
-
-Keep one task per subagent.
-
-### 10.3 Specification Quality
-- Prefer explicit specs over implied intent
-- Ask clarifying questions when ambiguity exists
-- Do not proceed on unclear requirements
+> General principles (verification, security, coding style, git workflow, subagents) are defined in workspace rules at `.claude/rules/`. The sections below cover project-specific details only.
 
 ---
 
-## 11. Verification Before Done
+## 6. Verification
 
-Never mark work complete without demonstrating correctness:
-- Validate output against the request
-- Check that frontmatter, file placement, and naming follow conventions
-- Run `npm run build` to verify the site still builds
-- Ask: "Would a senior developer approve this?"
-- Prefer proof over explanation
+- Run `npm run build` after any Astro file change to verify the site still builds
+- Check that frontmatter, file placement, and naming follow content conventions
+- For Bitcoin content: verify terminology matches conventions (capital B = network, lowercase b = currency)
+- For other projects: defer to their operating manuals for verification steps
 
 ---
 
-## 12. Quality Bar
+## 7. Task Management
 
-For non-trivial changes, pause and ask:
-> "Is there a more elegant solution?"
+### In-Session
+- Use Claude Code's built-in todo system. Mark tasks complete as they are finished.
 
-If something feels hacky:
-> "Knowing everything I know now, implement the elegant solution"
-
-- Skip elegance checks for trivial or mechanical fixes — do not over-engineer
-- Challenge your own work before presenting it
-- Find root causes, not temporary fixes
-
----
-
-## 13. Autonomous Problem Solving
-
-When given a bug report or issue:
-- Fix it without asking for hand-holding
-- Point at specific evidence: build errors, broken links, malformed content
-- Resolve issues end-to-end without requiring user context switching
-
----
-
-## 14. Task Management
-
-### In-Session Tracking
-- Use Claude Code's built-in todo system for in-session task tracking
-- Mark tasks complete as they are finished — do not batch completions
-
-### Cross-Session Tracking
-- **Website tasks:** `tasks/TODO.md` (Phases 1-8)
-- **Book tasks:** `WBIGAF/WBIGAF-Status.md` + per-chapter transition docs
-- Update the relevant tracker as tasks are completed or new ones are discovered
-
-### Cross-Session Learning
-- Maintain `tasks/lessons.md` as a persistent log of corrections and patterns
-- After ANY correction, update with:
-  - What went wrong
-  - The specific rule that prevents recurrence
-  - Date of the lesson
-- Promote recurring patterns to CLAUDE.md rules
+### Cross-Session
+- Check the project map (section 3) for the right task file
+- **Lessons log:** `tasks/lessons.md` -- update after any correction with what went wrong, the fix, and the date
 
 ### Execution Order
-1. **Check task tracker** — `tasks/TODO.md` for website, `WBIGAF/WBIGAF-Status.md` for book
-2. **Plan First** — Write a checklist before implementing
-3. **Verify Plan** — Review plan before starting
-4. **Track Progress** — Mark items complete as you go
-5. **Explain Changes** — Provide a high-level summary per step
-6. **Capture Lessons** — Update `tasks/lessons.md` when corrections occur
+1. Check the relevant task tracker
+2. Plan before implementing
+3. Track progress -- mark items complete as you go
+4. Capture lessons in `tasks/lessons.md` when corrections occur
 
 ---
 
-## 15. Sensitive Content
+## 8. Security
 
 - NEVER generate, display, or store private keys, seed phrases, or wallet mnemonics
 - NEVER include real wallet addresses belonging to individuals
-- NEVER expose personal contact information
-- NEVER include passwords, API keys, or credentials in notes or code
-- When creating examples, use clearly labeled test/dummy data
+- General security rules (secrets, credentials, OWASP) are in workspace `rules/security.md`
 
 ---
 
-## 16. Self-Modification Rules
+## 9. Self-Modification Rules
 
-Claude is allowed to modify `CLAUDE.md` when:
-- A mistake reveals a missing rule
-- A recurring failure pattern appears
-- A clarification would prevent future errors
-
-### Disclosure Requirement
-Claude MUST:
-- Explicitly state what changed
-- Explain why the change was made
-- Summarize the new rule in plain language
-
-Changes must be minimal and targeted. Do not reorganize or reformat unrelated sections.
-
----
-
-## 17. Context Window Management
-
-At **≥80% context usage** (when the system begins compressing earlier messages or you sense the conversation is approaching limits), **immediately**:
-
-1. Stop current work mid-task if necessary
-2. Send this message to the user:
-   > "I need to stop here. This session exceeded 80% of context capacity."
-3. Execute the full `/transition` handoff:
-   - Read all status documents
-   - Update each to reflect work completed this session
-   - Generate a one-sentence transition prompt for the next session
-
-This is **not optional**. Do not attempt to "finish one more thing" — context overflow causes lost work and broken transitions. Stop, save state, hand off.
-
----
-
-## Final Principles
-
-**Simplicity First**: Make every change as simple as possible. Minimal files touched.
-
-**No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
-
-**Minimal Impact**: Changes should only touch what's necessary. Avoid introducing errors.
-
-**Documentation Over Memory**: Write it down. Future sessions cannot remember past conversations.
-
-**Don't Over-Build**: Only make changes that are directly requested or clearly necessary. Don't add features, refactor code, or make "improvements" beyond what was asked.
+Claude may modify this CLAUDE.md when a mistake reveals a missing rule, a recurring failure appears, or a clarification would prevent future errors. Must disclose: what changed, why, and the new rule in plain language. Changes must be minimal and targeted.

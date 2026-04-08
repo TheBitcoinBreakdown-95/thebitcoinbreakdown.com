@@ -1,0 +1,13 @@
+- How does this affect them personally?
+- Funny way to say like and subscribe, timed at a lower funnel moment
+- Sell your own thing, or find a sponsor
+- Bitcoin is a REVOLUTION
+    - It's not just a channel about ngu, but a heavy focus on politics, venture where other channels might not go
+- Include the ethical code of bitcoin
+    - Low time preference
+    - Slow and safe
+    - Don't trust, verify
+    - Cypherpunks write code!
+    - Vires in numeris
+    - We're separating money and state. Full stop.
+    - Laser eyes until fiat dies

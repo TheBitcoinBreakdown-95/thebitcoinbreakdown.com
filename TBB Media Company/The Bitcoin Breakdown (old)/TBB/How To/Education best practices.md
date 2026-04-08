@@ -1,0 +1,2 @@
+- Was listening to the matt odel bitcoin park beef initiative episode and he went through his 5 min bitcoin spiel, not pitch, on bitcoin basics
+- I mostly wanted to go through his talking points and integrate them into my own pitch on what bitcoin is for newbies

@@ -1,0 +1,1 @@
+Do an episode contrasting the communism domino effect with bitcoin, how we were really never in any danger because communism doesn’t work, but how the sound money and free market wealth generation of bitcoin is a real concern to multinational economic institutions, trying to maintain control over the economies of third world countries

@@ -1,0 +1,33 @@
+{
+  "id": "conv-1769997656470-12yg6b65h",
+  "sessionId": "c8f48a0d-4cd6-4a31-86a1-be7b5e288f2b",
+  "title": "hi",
+  "createdAt": 1769997656470,
+  "updatedAt": 1769997664913,
+  "messageCount": 2,
+  "metadata": {
+    "totalTokens": 0,
+    "totalCostUsd": 0
+  },
+  "history": [
+    {
+      "role": "user",
+      "content": "hi"
+    }
+  ],
+  "displayMessages": [
+    {
+      "id": "msg-1769997656468-sk24qcbep",
+      "role": "user",
+      "content": "hi",
+      "timestamp": 1769997656468
+    },
+    {
+      "id": "msg-1769997656497-acg9uz9tb",
+      "role": "assistant",
+      "content": "Hello! I'm Claude Code, an AI assistant that can help you with software engineering tasks. I can help you:\n\n- Write, read, and edit code\n- Debug issues and fix bugs\n- Search through codebases\n- Run commands and tests\n- Work with git and GitHub\n- And much more\n\nI'm currently in your working directory: `C:\\Users\\GC\\Documents\\JC Bitcoin\\JC BTC`\n\nWhat would you like help with today?",
+      "timestamp": 1769997664912,
+      "isStreaming": false
+    }
+  ]
+}

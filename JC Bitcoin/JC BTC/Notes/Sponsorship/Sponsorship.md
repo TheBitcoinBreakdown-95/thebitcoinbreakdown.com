@@ -1,0 +1,5 @@
+- Before I can create a stripe invoice I need a bank
+- I was going to use venmo as a bank but I need an EIN
+- To get an EIN you need to be a registered legal entity 
+- https://www.irs.gov/businesses/employer-identification-number#before
+- 

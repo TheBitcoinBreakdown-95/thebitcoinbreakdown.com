@@ -1,0 +1,21 @@
+- Bitcoin pitch
+- Phone wallet
+    - Blue wallet is probably best, even if it's on chain. Can transfer to cold storage later
+    -   
+        
+- Buying bitcoin, DCA'ing
+    - River or swan?
+    - I want to try out river and see what I like better, take screenshots
+    - I don't like the swan single wallet thing tbh
+- Setting up hardware wallet + self-custody
+    - Maybe make a video series, or a ppt to walk through why should someone store via cold storage2
+    - During the buying bitcoin walkthrough consultation, I direct the client to buy a hardware wallet – that way it gets delivered in a few weeks and after DCA we can have a follow up call on how to move bitcoin to cold storage
+    - Now the trouble is – what one do I recommend?
+        - Maybe Jade – which means I have to get it and try it out
+            - Might be more beginner friendly than cold card, and even though ledger is the apple of hardware wallets and I like it a lot, maybe I move to bitcoin only companies
+        - Maybe cold card – and I help verify sparrow download, only sending files that check out
+            - https://coldcard.com/docs/beginner
+            - It's my job to follow bitcoin best practices – even if it's a little harder
+- Zoom calls
+    - Maybe have them recorded so clients can always go back and re watch if they need a quick reminder on how to start up cold card and move funds
+    -

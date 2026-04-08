@@ -1,0 +1,1 @@
+[https://bitcoinmagazine.com/culture/this-group-of-bitcoiners-is-spreading-adoption-on-the-ground](https://bitcoinmagazine.com/culture/this-group-of-bitcoiners-is-spreading-adoption-on-the-ground)

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/GC/.claude/rules/**)",
+      "Bash(mkdir -p part2-source)",
+      "Bash(mv 02-why-this-works.md 03-what-you-need-and-how-to-install-it.md 04-your-first-project.md 05-teaching-your-computer-who-you-are.md 06-learning-with-it.md 07-organizing-with-it.md 08-planning-and-activating-with-it.md 09-connecting-to-the-outside-world.md 10-what-ai-is-bad-at.md 11-where-to-go-from-here.md part2-source/)",
+      "mcp__kb-retrieval__search_kb"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\GC\\Documents\\Ai Playground\\.claude\\rules",
+      "C:\\Users\\GC\\.claude\\rules",
+      "c:\\Users\\GC\\Documents\\Ai Playground\\Thinking Space"
+    ]
+  }
+}

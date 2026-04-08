@@ -1,0 +1,2 @@
+- This video script is good, worth editing but good
+- [What is Bitcoin and Why is it Better Money?](https://www.youtube.com/watch?v=hjePMCy61YA&t=176s)

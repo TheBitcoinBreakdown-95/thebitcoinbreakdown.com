@@ -1,0 +1,31 @@
+- Here to help save money on taxes
+- EIN – need to open a business bank account
+    - Co mingling – don't use personal bank account
+- Distributions
+    - How you pay yourself
+    - Transfer money from business account to personal account
+- Owners contribution
+    - Whenver you put your personal money to the business bank account, you have to make it clear that money isn't income earned by the business, but it's my own money
+    - Any money that goes in will be considered income by the business, and could be taxed
+- Saving
+    - Put aside 20-25% of net income to make sure that I withold
+- Bookeeping
+- Business Expenses are considered write offs
+    - Any startup costs – things I buy and services I pay for
+    - Phone bill, internet
+    - Won't be taxed
+- They will do bookeeping, and accounting software – with Mazuma
+    - They will do financial reports, profits and loss statements, balance sheets
+    - Unlimited access to accountants and bookeepers
+    - Can talk to an expert
+    - If I decide to start the free trial
+    - $95 per month but they do taxes for free
+        - This cost is also a write off
+    - Can call at 801 – 617 – 0660
+- 1040 form
+    - Need to file as a single member LLC
+    - Business and personal tax returns can be filed together
+    - Business activity is on form C
+- Any other questions ask an accountant
+    - Free trial includes access to an account
+-

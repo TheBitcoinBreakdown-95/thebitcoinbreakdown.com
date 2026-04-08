@@ -1,0 +1,7 @@
+- I've been thinking that the best way I can help bitcoin is inspiring curiosity, but I also wanted to find a niche, somewhere I can stop climbing on the mountain, set up camp, and be satisfied that I'm helping save humanity
+    - I've gone back and forth between Fedi and Ark and other projects, like BTC pay server, Lightning labs etc.
+- I do believe trustless bitcoin bridging is the "technical" way to bring bitcoin to its full potential, and there's no guarantee it'll be merged before ossification.
+- [The Bitcoin Meta Problem](https://www.youtube.com/watch?v=sbs3ssDbOSk)
+    - Honestly for a super technical guy, John light does a great job breaking down the problem and solution
+    - Maybe It's just me going on a crusade and educating bitcoiners and crypto bros idk
+    - Marketing? Education? Inspiring curiosity? Fundraising?

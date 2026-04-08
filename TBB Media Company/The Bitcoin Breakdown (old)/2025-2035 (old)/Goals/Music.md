@@ -1,0 +1,1 @@
+- One medium interval training takes about 5 mins

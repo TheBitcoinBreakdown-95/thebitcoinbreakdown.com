@@ -1,0 +1,5 @@
+- What if I learned to code and or vibe coded some financial infrastructure on ark?
+- Could be liquidity services, like a repo market where there could be bitcoin native collateral, like vtxo’s or LN swaps, or maybe something to underpin ark/taproot asset liquidity to make all asset swaps cleaner
+- I have no idea how any of this works under the hood or what the challenges are or if a market like this would even work but it’s an idea
+- Repo and collateral underpins the entire fiat system, and I know there are liquidity challenges in Lightning and ark so maybe there’s something here
+- I would really be interested in building open source bitcoin native capital markets with ark

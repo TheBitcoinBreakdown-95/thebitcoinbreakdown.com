@@ -1,0 +1,1 @@
+**Maybe I don't make the podcast monetized so I can say whatever I want without getting sued

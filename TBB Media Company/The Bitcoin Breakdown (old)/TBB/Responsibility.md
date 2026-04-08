@@ -1,0 +1,3 @@
+It is my responsibility to espouse best practices and be an ethical shaman  
+Literally going over the top and repeating warnings and best practices over and over  
+It's like [THIS](https://www.youtube.com/watch?v=ePjR2z6s-Tg&list=PLCRbH-IWlcW0KP8DxyWWrqahGafZyV2HR&index=12) episode of the my node series where the guy talks a lot about understanding everything that is in the upgrade to make sure you know what you're doing. It inspired me a bit I guess.

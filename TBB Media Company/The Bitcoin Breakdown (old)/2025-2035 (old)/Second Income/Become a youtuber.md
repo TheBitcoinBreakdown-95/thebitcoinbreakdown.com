@@ -1,0 +1,3 @@
+[https://turbo.intuit.com/blog/relationships/how-much-do-youtubers-make-5035/#:~:text=In%20order%20to%20get%20paid,through%20advertisements%20on%20your%20page](https://turbo.intuit.com/blog/relationships/how-much-do-youtubers-make-5035/#:~:text=In%20order%20to%20get%20paid,through%20advertisements%20on%20your%20page).
+ 
+- How much do YouTubers make? Anywhere between $0.01 to $0.03 per view, which translates to $3-$5 per 1000 views, and up to $5,000 for 1,000,000 views.

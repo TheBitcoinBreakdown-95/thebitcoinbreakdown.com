@@ -1,0 +1,18 @@
+- Money can either be an object or a ledger
+    - Physical items keep track of themselves, and ledgers keep track of who owes what to who
+    - In gold coins, physics keeps the integrity of the money system,
+        - Gold became the best money because you can't cheat the physics
+        - Physical items are decentralized by their very nature, they are timeless
+    - If you have a ledger, the order becomes important, it can be cheated, it's the informational realm
+        - The order of events is super important, if your ledger is A gave a coin to B and B gave it to C, if you mess with that order you mess up everything
+        - Ledgers therefore can't be decentralized because everyone could just change the order to benefit themselves, money is a trust replacement technology that's its purpose. If the ledger can't keep time itself it can't be decentralized. That's why banks and financial companies have central servers that keep time, which transactions came in first etc.
+        - This is where time comes in, the problem that bitcoin solves is time, on earth there is no central time, as Einstein says time is relative, telling time in a decentralized system is basically impossible, bitcoin solves this with financial incentives and probabilities in a roundabout 'good enough' sort of way
+            - There's no such thing as simultaneous, it's all about perception, the speed of light is the speed limit of physics and therefore in the informational realm there will always be events happening in different order, again just emphasizing the fact that time is relative
+        - In bitcoin, if two people send legitimate transactions (of the same money) at the same time, bitcoin will solve the conflict
+            - You will always run into this kind of conflict because of the physical realities of time in nature
+            - Proof of stake requires a centralized time server because of this really hard time problem
+            - There's no central authority to determine the order of events in the case of a conflict in a decentralized system
+            - Nakamoto consensus is what this is all about, it will all resolve itself probabilistically, the longest chain with the most work will be chosen
+                - Bitcoin solves these conflicts, of who owes what to whom, in a peaceful way, unlike all other systems of money in history
+    - Bitcoin's difficulty adjusted proof of work is what allows for an immutable timechain
+        -

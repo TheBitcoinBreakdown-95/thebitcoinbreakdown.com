@@ -1,0 +1,216 @@
+{
+  "slides": [
+    {
+      "layout": "copy",
+      "source_index": 0,
+      "_note": "Cover -- copied from #4, update title to #5 manually"
+    },
+    {
+      "layout": "copy",
+      "source_index": 1,
+      "_note": "Sponsor slide -- same sponsor image"
+    },
+    {
+      "layout": "copy",
+      "source_index": 2,
+      "_note": "Photo from last meetup"
+    },
+    {
+      "layout": "content",
+      "title": "Agenda:",
+      "bullets": [
+        "Number Time",
+        "Quick Mempool Check",
+        "Library & Book Sharing Program",
+        "Bitcoin Price Update",
+        "Macro Update: War, Debt, Tariffs",
+        "Podcast Spotlight: Luke Gromen",
+        "Book of the Month",
+        "Meme of the Month",
+        "History Moment: The Cypherpunk Manifesto",
+        "Freedom Tech Spotlight: White Noise",
+        "Freedom Tech Spotlight: Bark/Ark",
+        "Demo: White Noise live walkthrough",
+        "Club Direction Socratic Discussion",
+        "Appendix"
+      ],
+      "speaker_notes": "Welcome everyone. Quick rundown of tonight -- we've got a packed agenda. We'll start with the numbers and a mempool check, then price and macro. There's a lot happening: war, debt spiral accelerating, tariffs in legal limbo. Our podcast spotlight ties right into the macro section -- Luke Gromen breaks down why AI + debt = a ticking time bomb. Then we get into two freedom tech spotlights: White Noise for encrypted messaging on Nostr, and Bark which is a new Bitcoin Layer 2 that might actually fix the onboarding problem. We'll do a live White Noise demo, then open it up for discussion."
+    },
+    {
+      "layout": "copy",
+      "source_index": 4,
+      "_note": "JC Bitcoin Meetup General Guidelines"
+    },
+    {
+      "layout": "copy",
+      "source_index": 5,
+      "_note": "Number Time"
+    },
+    {
+      "layout": "copy",
+      "source_index": 6,
+      "_note": "Quick Mempool Check"
+    },
+    {
+      "layout": "copy",
+      "source_index": 7,
+      "_note": "Library & Book Sharing Program"
+    },
+    {
+      "layout": "content",
+      "title": "Bitcoin Price Update",
+      "bullets": [
+        "Current: ~$70,800 (down 44% from $126K ATH)",
+        "YTD 2026: -19.5%",
+        "Feb crash: -15% in one day (6-sigma event), bounced +11% next day",
+        "ETF flows flipping positive: +$568M net in early March",
+        "Strategy (Saylor): 738,731 BTC across 101 purchases"
+      ],
+      "speaker_notes": "Bitcoin is sitting around $70,800. Down 44% from the October ATH of $126K. The big story was February -- a flash crash dropped BTC 15% in a single day to $60K. That was a 6-sigma move, one of the most extreme in crypto history. It wasn't a crypto fundamental breakdown -- it was a TradFi-driven forced deleveraging event. Leverage unwinding, tech stock selloff, massive ETF outflows. But the bounce was violent: +11% the next day back above $70K. Good news: ETF inflows are back. $568M net in early March, IBIT leading with $109M in a single day. Institutional buyers are cautiously re-entering. And Saylor is still stacking -- 738,731 BTC now across 101 purchases, bought $1.3B last week alone. He's pursuing the \"42/42 Plan\" to raise $84B over two years."
+    },
+    {
+      "layout": "content",
+      "title": "BTC vs Gold vs S&P 500",
+      "bullets": [
+        "Gold: +19% (~$5,170/oz)",
+        "S&P 500: ~flat (~6,709)",
+        "Bitcoin: -19.5% (~$70,800)"
+      ],
+      "speaker_notes": "Here's the scoreboard nobody wants to see. Gold is the clear winner in 2026 -- up 19%, safe haven bid from the Iran war and debt fears. S&P is flat. Bitcoin is down almost 20%. The uncomfortable truth: bitcoin is still trading as a risk asset, not digital gold. Polymarket has 47% chance gold is 2026's best performer vs 39% for BTC. Key levels to watch: $65K support near-term, $62,300 is critical -- break below opens $56,800. Resistance at $73,300 then $79K for a major breakout."
+    },
+    {
+      "layout": "content",
+      "title": "Macro -- The Big Picture",
+      "bullets": [
+        "We are at war (Iran, Day 20 as of March 19)",
+        "National debt: $38.86 trillion, growing $7.23B/day",
+        "Interest payments now exceed defense spending",
+        "Recession probability: 42-52%",
+        "DOGE winding down -- Musk leaving by July 4"
+      ],
+      "speaker_notes": "Let's zoom out. We're in a war with Iran -- Operation Epic Fury, Day 20 as of tonight. The Supreme Leader was killed in initial strikes, Iran launched 90+ counter-strikes, Strait of Hormuz under threat. Oil surged past $100, currently around $87-92. Gas is $3.45 and climbing. Meanwhile the national debt hit $38.86 trillion, growing $7.23 billion per day. Interest payments on that debt now exceed what we spend on defense. The FY2026 deficit through 5 months is already over $1 trillion -- we're borrowing $50 billion a week. CBO projects $1.9T for the full year. And DOGE? Musk's $2T savings goal became $1T, then $150B, and analysis shows the cuts actually cost taxpayers $135B. He's leaving by July 4."
+    },
+    {
+      "layout": "content",
+      "title": "Macro -- Fiscal Doom Loop",
+      "bullets": [
+        "Fed rate: 3.50-3.75% (99% chance of no change at March meeting)",
+        "Feb CPI: 2.4% YoY -- BUT this is pre-war data",
+        "The Fed is trapped: cut = fuel inflation, hold = recession, raise = economy breaks",
+        "Supreme Court struck down IEEPA tariffs -- Trump pivoted to Section 122",
+        "New tariffs on Canada, Mexico, China + Section 301 investigations"
+      ],
+      "speaker_notes": "The Fed is in an impossible position. Rates at 3.50-3.75%, almost certainly holding at the March meeting. CPI came in at 2.4% -- sounds fine, right? But that's pre-war data. Once the oil spike from Iran flows through, March CPI will be significantly higher. So what does the Fed do? Cut rates and fuel inflation from the oil shock? Hold and risk recession? Raise rates? Warsh might want to, but the economy can't handle it. On tariffs: the Supreme Court struck down IEEPA tariffs 6-3, ruling tariff power belongs to Congress. That means potentially $175-179B in refunds owed to importers. Trump pivoted same day to Section 122 authority, raised to 15%. Canada and Mexico tariffs took effect March 4, another 10% on China. New Section 301 investigations launched against China, Mexico, EU, and 12+ more countries."
+    },
+    {
+      "layout": "content",
+      "title": "Podcast Spotlight -- Luke Gromen",
+      "bullets": [
+        "\"The Economy is About to Collapse\"",
+        "Core thesis: end of 100-year debt cycle + AI deflation = sovereign debt crisis within 6-24 months",
+        "AI is deflationary -- great for humanity, catastrophic for a debt-based system",
+        "\"February 2026 is the new July 2007\"",
+        "Endgame: massive debasement -- long-term extremely bullish for bitcoin"
+      ],
+      "speaker_notes": "Our podcast spotlight this month is Luke Gromen on the \"Economy is About to Collapse\" episode. Gromen is a macro strategist with 30 years experience, runs FFTT (Forest for the Trees). His thesis: we're simultaneously at the end of a 100-year debt cycle, the end of a 50-60 year monetary system, AND the beginning of the most deflationary technology in 10,000 years -- AI. These forces are mathematically incompatible with our debt-based system. AI doesn't need to take all white-collar jobs. Even 5-10% displacement cascades through a leveraged system -- mortgages, car loans, credit cards, student debt. The government spends $7T, takes in $5.2T. 70% goes to entitlements, 30% to interest, 20% to defense. That's 120% of revenue before anything else. There are only two exits: credit contraction worse than the Great Depression, or currency debasement. For bitcoin: the endgame is massive money printing, which is extremely bullish long-term. Near-term warning though -- BTC could hit $40K if no printing materializes soon."
+    },
+    {
+      "layout": "content",
+      "title": "Book of the Month",
+      "bullets": [
+        "The Sovereign Individual by James Dale Davidson & Lord William Rees-Mogg (1997)",
+        "Predicted: digital money, erosion of nation-states, rise of individual sovereignty",
+        "\"The nation-state will be replaced by a new form of sovereignty\"",
+        "Required reading for understanding where Bitcoin fits in the big picture"
+      ],
+      "speaker_notes": "The Sovereign Individual was written in 1997 and predicted digital money, the decline of nation-states, and the rise of individuals who operate outside government control. It connects directly to everything we talked about tonight -- the debt spiral, AI disruption, and why hard assets like bitcoin matter. The authors argued that information technology would make it impossible for governments to tax and control citizens the way they have for centuries. Bitcoin is basically the technology they were describing. If you've been coming to these meetups and want to understand the \"why\" behind all of this at a deeper level, this is the book."
+    },
+    {
+      "layout": "content",
+      "title": "Meme of the Month",
+      "_note": "Add meme image manually"
+    },
+    {
+      "layout": "content",
+      "title": "History Moment -- The Cypherpunk Manifesto (1993)",
+      "bullets": [
+        "Written by Eric Hughes, March 9, 1993",
+        "\"Privacy is necessary for an open society in the electronic age\"",
+        "Cypherpunks write code -- they don't ask for permission",
+        "Direct lineage: Cypherpunks -> Bitcoin -> Nostr -> White Noise"
+      ],
+      "speaker_notes": "On March 9, 1993 -- almost exactly 33 years ago -- Eric Hughes published the Cypherpunk Manifesto. \"Privacy is necessary for an open society in the electronic age.\" This wasn't just philosophy -- cypherpunks wrote code. PGP encryption, anonymous remailers, digital cash experiments. That movement led directly to Bitcoin, which led to Nostr, which led to White Noise -- the tool we're about to demo. The manifesto's core argument: privacy isn't secrecy. A private matter is something you don't want the whole world to know. A secret is something you don't want anybody to know. Privacy is the power to selectively reveal yourself. That's exactly what White Noise does."
+    },
+    {
+      "layout": "content",
+      "title": "Freedom Tech Spotlight -- White Noise",
+      "bullets": [
+        "Private encrypted messenger built on Nostr",
+        "No phone number, no email, no central server",
+        "Same encryption as Signal (MLS protocol) but decentralized",
+        "\"The chat with no phone number and no central server to shut down\""
+      ],
+      "speaker_notes": "White Noise is a private encrypted messenger built on Nostr. No phone number, no email, no central server. It uses MLS protocol -- the same encryption standard as Signal -- but runs on Nostr relays instead of Signal's central servers. Why does this matter? Apple just removed end-to-end encryption in the UK under government pressure. The EU's Chat Control legislation has 679 scientists warning against mass surveillance. Jeff Gardner, one of the builders, said it straight: \"These tools might make the difference between continued democracy and a descent into a global authoritarian surveillance regime.\" It's built by Max Hillebrand (former CEO of zkSNACKs/Wasabi Wallet) and funded by OpenSats and the Human Rights Foundation. Currently in alpha -- available on TestFlight, Zapstore, and Android APK. We're going to demo it live."
+    },
+    {
+      "layout": "content",
+      "title": "Freedom Tech Spotlight -- Bark/Ark",
+      "bullets": [
+        "New Bitcoin Layer 2: skip Lightning channel complexity, stay self-custodial",
+        "Hundreds of users share one on-chain UTXO via a tree of pre-signed transactions",
+        "You hold a Virtual UTXO (VTXO) -- can exit to on-chain anytime",
+        "Not replacing Lightning -- complementing it. Ark is the on-ramp."
+      ],
+      "speaker_notes": "Lightning is powerful but onboarding is painful. Opening a channel means an on-chain transaction, managing liquidity, dealing with routing failures. Most people give up and use custodial wallets. Ark is a new Layer 2 invented by Burak Keceli in 2023. The core idea: hundreds of users share a single on-chain UTXO through a tree of pre-signed off-chain transactions. Each user holds a Virtual UTXO that can be broadcast on-chain anytime to retrieve your bitcoin. Bark is the Rust implementation built by Second (Steven Roose, ex-Blockstream). Ark Labs just raised $5.2M from Tether for stablecoin integration. Key tradeoff: VTXOs expire after ~30 days and need refreshing. But you get no channel setup, no liquidity management, and you can pay any Lightning invoice directly from your Ark balance. It's not a replacement for Lightning -- it's the on-ramp that makes Lightning accessible."
+    },
+    {
+      "layout": "content",
+      "title": "Demo -- White Noise Live",
+      "bullets": [
+        "Download: whitenoise.chat",
+        "No signup -- just use your Nostr keypair (or create one)",
+        "Available on: Apple TestFlight, Zapstore, Android APK",
+        "Let's try it together"
+      ],
+      "speaker_notes": "Let's do this live. Go to whitenoise.chat on your phone. If you have a Nostr keypair, you can log in directly. If not, you can create one in the app. We're going to: 1) Install it, 2) Create or import an identity, 3) Send a message to each other. The whole point is that this took no phone number, no email, no central server. If you have to think twice before typing, you've already lost your autonomy."
+    },
+    {
+      "layout": "copy",
+      "source_index": 33,
+      "_note": "Club Direction Socratic Discussion -- update bullets manually"
+    },
+    {
+      "layout": "content",
+      "title": "Club Direction -- Bitcoin Park & Grassroots Summit",
+      "bullets": [
+        "Your organizer is going to Bitcoin Park in Nashville for the Grassroots Organizers Summit",
+        "Invite-only annual event for Bitcoin meetup organizers from across the country",
+        "Founded by Rod Roudi -- started with 15 people at a brewery in 2021, now a full campus",
+        "Goal: bring back best practices, connections, and resources for JC Bitcoin"
+      ],
+      "speaker_notes": "Quick announcement -- I'm heading to Nashville for the Grassroots Bitcoin Organizers Summit at Bitcoin Park. This is an invite-only annual event where meetup organizers from across the country get together to share what's working, what's not, and how to grow local Bitcoin communities. Bitcoin Park was started by Rod Roudi -- he held his first meetup in 2021 at a brewery with 15-20 people in the rain. That grew to 250+ and eventually became a full physical campus dedicated to Bitcoin education and community. They've now expanded to Austin. We're also part of the Grassroots Quarterly Roundtable -- virtual meetings with organizers from Massachusetts, Charlotte, Milwaukee, Miami, Tennessee, and more. The goal is to bring back ideas, resources, and connections that make JC Bitcoin better."
+    },
+    {
+      "layout": "content",
+      "title": "Club Direction -- April Marketing Push",
+      "bullets": [
+        "April is \"Bring a Skeptic\" month",
+        "Challenge: every member brings ONE friend who thinks bitcoin is a scam",
+        "Socratic format = safe space for skeptics to push back and debate",
+        "Registering with Blockstream Local -- free Jade wallets for giveaways",
+        "April event: \"What Is Bitcoin, Actually?\" -- beginner night with live wallet setup"
+      ],
+      "speaker_notes": "Club business. We're making April \"Bring a Skeptic\" month. Here's the challenge: every single person in this room brings one friend to the next meetup who thinks bitcoin is a scam, a bubble, or a waste of time. Our Socratic format is perfect for this -- it's a discussion, not a lecture. Skeptics get to push back, ask hard questions, and debate. Multiple Bitcoin meetup organizers report that their most engaged long-term members started as critics who came to argue. We're also registering with Blockstream Local, which gives us free professional education slide decks and up to 3 free Blockstream Jade hardware wallets per year for demos and giveaways. That sets up our April event: \"What Is Bitcoin, Actually?\" -- framed for outsiders, not insiders. Hands-on wallet setup, everyone leaves with sats on their phone. We raffle a Jade to one attendee."
+    },
+    {
+      "layout": "copy",
+      "source_index": 35,
+      "_note": "Golden Rules (appendix)"
+    },
+    {
+      "layout": "copy",
+      "source_index": 36,
+      "_note": "Closing image slide"
+    }
+  ]
+}

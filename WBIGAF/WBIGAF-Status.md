@@ -1,18 +1,28 @@
 # WBIGAF Status
 
-> **Last updated:** February 24, 2026
+> **Last updated:** March 15, 2026
 
 ---
 
 ## Current Work
 
+**Book Reference Documents** — COMPLETE. Three new master documents created and integrated into pipeline:
+- `toc.md` — Table of contents: 86 sub-chapters across 9 chapters, with argument block titles for Ch3.1 (23 blocks) and Ch3.2 (19 blocks). Updates at Steps 4 and 5.
+- `bibliography.md` — Master bibliography: 66 unique Chicago-format sources from Ch3.1 + Ch3.2, de-duplicated and alphabetized. Updates at Steps 2 and 3.
+- `glossary.md` — Glossary template: empty, back-burner document populated during Step 6 (drafting).
+- Pipeline integration: one line added to Steps 2, 3, 4, 5, 6 in WBIGAF.md. Architecture tree and Key Files table updated.
+
+**Argument Block Model v2** — COMPLETE. Updated spec + retrofitted Ch3.1 and Ch3.2 catalogs.
+
 **Chapter 3: Problems Bitcoin Solves** — Sub-Chapters 3.3, 3.4, 3.5 — **Step 3 Part A COMPLETE (Gap Analysis + Research Prompts)**
 
-Ch3.1 COMPLETE (deployed). Ch3.2 Draft complete (Step 6), Step 7 user review deferred. Ch3.3, 3.4, 3.5 all through Steps 1-2 (Triage + Scrape) and Step 3 Part A (Gap Analysis + Research Prompt). Research prompts ready for user to run through Gemini/ChatGPT/Perplexity.
+Ch3.1 COMPLETE (deployed, catalog retrofitted to v2). Ch3.2 Draft complete (Step 6), Step 7 user review deferred, catalog retrofitted to v2. Ch3.3, 3.4, 3.5 all through Steps 1-2 (Triage + Scrape) and Step 3 Part A (Gap Analysis + Research Prompt). Research prompts ready for user to run through Gemini/ChatGPT/Perplexity.
 
 **Next action:** User runs 3 research prompts (one per sub-chapter) through off-platform deep research tools, then pastes results back.
 
-**Website:** Compendium restructure COMPLETE. See `tasks/TODO.md` Phase 10.
+**Website:** Phase 11 Compendium Fixes COMPLETE (8 issues, 3 tiers). See `tasks/TODO.md` Phase 11.
+
+**Ch3.1 Voice DNA Review:** 4 items flagged (2 duplications, 1 jargon, 1 self-quote). User has additional opinions — next session will focus on rewriting one argument block together as a voice calibration exercise, then extrapolate to the rest.
 
 `WBIGAF/3. What Problems Does it solve/Chapter 3 Metadata/transition-ch3.md`
 
@@ -92,8 +102,9 @@ Full author voice profile built from 28-post corpus (~37,000 words of original w
 - 15 gaps identified and filled (Gemini + Claude WebSearch) → 121 new items (#500-620), 18 bibliography sources (#23-40)
 - Key finds: Polanyi, Piketty, Graeber, Fraser, Hickel (non-libertarian voices), 4 steel-manned counterarguments
 
-**Step 4 — Argument Blocks:**
+**Step 4 — Argument Blocks (retrofitted to v2 March 2026):**
 - 23 blocks built from 601 items, polemic sequence (escalating impact → kill shot)
+- v2 retrofit: argument types, appeals, conclusions/transitions, cross-chapter refs, Bitcoin resolution, inline source text, chapter grid
 - Eurodollar system gap filled (15 items, 6 sources)
 - Austrian economics additions (30 items: malinvestment, capital consumption, demographics, pensions, risk asymmetry)
 - Orphan registry: 5→3.2, 6→3.3, 1→3.4, 55→3.5, 20+→Ch5/Ch6
@@ -115,8 +126,8 @@ Full author voice profile built from 28-post corpus (~37,000 words of original w
 | Task | Status |
 |------|--------|
 | Define citation format | DONE |
-| Build per-sub-chapter bibliographies | In progress (Ch 3.1 links.md — 52 sources) |
-| Compile master bibliography | Pending (after all chapters) |
+| Build per-sub-chapter bibliographies | In progress (Ch 3.1 links.md — 52 sources, Ch 3.2 links.md — 28 sources) |
+| Compile master bibliography | In progress — `bibliography.md` created with 66 sources from Ch3.1 + Ch3.2, updates at Steps 2 and 3 |
 | Retroactively add citations to Ch1 and Ch2 | Pending (after Ch3-9) |
 | Create References chapter/appendix | Pending (after all chapters) |
 

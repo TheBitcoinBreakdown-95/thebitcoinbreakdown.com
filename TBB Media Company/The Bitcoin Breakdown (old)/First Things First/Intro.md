@@ -1,0 +1,11 @@
+- When I was 13 I was obsessed with emeralds
+- When I was watching Bush's speech where he announced the bank bailouts, and my step dad was like oh no
+- I wondered why and he said because bank bailouts aren't capitalism
+- The recession was when I was really first getting into politics
+- I became a libertarian when I was 16
+- I was an econ major in college, but I learned more through podcasts and internet research than I did in school
+- I was 20 in 2015 and Trump made me fall out of love with politics, and I spend the next 6 years growing bitter and unmotivated. I knew I was passionate about econ, but everything was fucked and there was nothing I could really do about it. Better to spend my time learning skills and contribute to a cause I cared about later one.
+    
+- Bitcoin is the most important invention since the internet
+- A huge amount of our problems are due to money printing and endless government spending
+- I lack confidence in my beliefs and constantly question everything I know, I'm usually afraid to share my opinions because I realize that everything is nuanced. Bitcoin is the first time I've ever been sure about something, and it took me hundreds of hours of research to get there.

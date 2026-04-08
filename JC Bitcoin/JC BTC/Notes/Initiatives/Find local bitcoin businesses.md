@@ -1,0 +1,3 @@
+- Orange pill app
+- Satmapp.app
+- BTCmap.org

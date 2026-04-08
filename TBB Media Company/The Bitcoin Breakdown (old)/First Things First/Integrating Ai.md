@@ -1,0 +1,6 @@
+- I need to do some kind of ai deep research into all of this to see the best workflow,
+    - Goals are something cheap, open source, easy to use and build a simple workflow and still looks professional
+    - Should I move to notion and start a true project management grid? Would that be helpful to create videos and work with ai?
+    - The goal is also to work on WBIGAF material, which a lot of that is stored on one note, how can I use my resources easily
+- I think this is finally the year to go ham, the ai is getting good, and I'm snowballing my content and practice, and in person is great but I need a beacon, and more built and organized content
+- I want to practice with ai but have no true project or thing to work on, besides writing, but I don't like how ai writes and really I want to be making videos or podcasts and talking

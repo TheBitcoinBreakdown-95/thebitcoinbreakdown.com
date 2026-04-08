@@ -1,0 +1,29 @@
+{
+  "conversations": [
+    {
+      "id": "conv-1772419832043-jkny30poh",
+      "sessionId": "dfae3b86-3add-4baf-a57d-83c530fc9397",
+      "title": "@[[tasks/To Do JC BTC/Ai Marketing Workflow.md]]",
+      "createdAt": 1772419832043,
+      "updatedAt": 1772419882901,
+      "messageCount": 2,
+      "metadata": {
+        "totalTokens": 0,
+        "totalCostUsd": 0
+      }
+    },
+    {
+      "id": "conv-1769997656470-12yg6b65h",
+      "sessionId": "c8f48a0d-4cd6-4a31-86a1-be7b5e288f2b",
+      "title": "hi",
+      "createdAt": 1769997656470,
+      "updatedAt": 1769997664913,
+      "messageCount": 2,
+      "metadata": {
+        "totalTokens": 0,
+        "totalCostUsd": 0
+      }
+    }
+  ],
+  "activeConversationId": "conv-1772419832043-jkny30poh"
+}

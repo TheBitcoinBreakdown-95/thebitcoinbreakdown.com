@@ -1,0 +1,12 @@
+- Computer basics
+    - Excel/Microsoft
+    - Not falling for scams
+- Digital advertising
+- Persuasive speaking/presentation skills
+    - Overcoming public speaking fear
+- Organizational skills
+- Bitcoin
+- Politics misc.
+- Finance misc.
+- History misc.
+- Econ misc.

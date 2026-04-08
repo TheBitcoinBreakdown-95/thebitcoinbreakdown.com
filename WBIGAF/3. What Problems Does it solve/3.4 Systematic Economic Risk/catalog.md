@@ -192,10 +192,17 @@
 
 ---
 
+### S. Author One-Liner — Bitcoin's Civilizational Value Proposition (item 266)
+
+266. Author one-liner (full): "Bitcoin solves several immense problems for civilization; it protects property rights for 8 billion people and banks the underprivileged classes of the planet, it solves financial crises, inflation, and debt slavery, it defends civil rights in a future surveillance state, it solves the shortcomings of gold, returning financial sovereignty to the individual, it puts the spending power of state actors and large corporations in check, it de-financializes our Ponzi scheme fiat-capitalist economy and gives everyone in the world access to the best savings technology ever invented, and permissionless global economic infrastructure" (Author — master Bitcoin value proposition. Claim routing to this sub-chapter: "it solves financial crises." Full one-liner routes across all Ch3 sub-chapters + Ch5, Ch7, Ch8, Ch9.)
+
+---
+
 **Inventory Summary:**
-- **138 items** across 19 themes (A-R)
+- **139 items** across 20 themes (A-S)
 - **72 items** from source notes + orphan imports (A-K)
 - **66 items** from scraping (L-R, #200-265)
+- **1 item** from author one-liner (S, #266)
 - **12 links** documented in `links.md` (2 DONE, 4 PARTIAL, 2 FAILED, 1 SKIPPED, 3 tweets with partial content)
 - **1 orphan** imported from Ch3.1 (#514)
 - **3 orphans** imported from Ch3.2 Bryan (#638, #639, #641)

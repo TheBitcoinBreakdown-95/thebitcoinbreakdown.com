@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "deepwiki": {
+      "type": "http",
+      "url": "https://mcp.deepwiki.com/mcp"
+    },
+    "kb-retrieval": {
+      "command": "C:/Users/GC/Documents/Ai Playground/AI/AI-Notes/kb-mcp/.venv/Scripts/python.exe",
+      "args": ["C:/Users/GC/Documents/Ai Playground/AI/AI-Notes/kb-mcp/kb_mcp_server.py"],
+      "env": {
+        "KB_DIR": "C:/Users/GC/Documents/Ai Playground/AI/AI-Notes/Knowledge-Distillery"
+      }
+    }
+  }
+}
