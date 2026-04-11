@@ -60,3 +60,9 @@ jc-bitcoin/jc-btc/.obsidian/
 
 # CRM -- private repo containing PII, never commit to public TBB repo
 jc-bitcoin/jc-btc/CRM/
+
+# btc-index (LanceDB vector store and Python venv)
+btc-index/.vectordb/
+btc-index/mcp/.venv/
+btc-index/mcp/__pycache__/
+btc-index/_index_meta.json

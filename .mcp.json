@@ -14,6 +14,13 @@
       "env": {
         "KB_DIR": "C:/Users/GC/Documents/Ai Playground/AI/AI-Notes/Knowledge-Distillery"
       }
+    },
+    "btc-index": {
+      "command": "C:/Users/GC/Documents/Ai Playground/TBB/btc-index/mcp/.venv/Scripts/python.exe",
+      "args": ["C:/Users/GC/Documents/Ai Playground/TBB/btc-index/mcp/btc_index_server.py"],
+      "env": {
+        "TBB_ROOT": "C:/Users/GC/Documents/Ai Playground/TBB"
+      }
     }
   }
 }
