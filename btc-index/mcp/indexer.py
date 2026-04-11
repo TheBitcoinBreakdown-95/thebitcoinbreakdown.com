@@ -220,6 +220,99 @@ def reindex_changed(tbb_root: Path) -> None:
         reindex_file(tbb_root, rel_path, stype)
 
 
+def ingest_notes(tbb_root: Path) -> None:
+    """Incrementally ingest new/changed user_note files into the existing index.
+
+    Only processes files with source_type == 'user_note'. Compares file hashes
+    against _index_meta.json and skips unchanged files. Appends new chunks to
+    the existing LanceDB table without rebuilding the entire index.
+    """
+    start = time.time()
+    old_meta = read_meta()
+
+    # Discover only user_note files
+    all_files = discover_files(tbb_root)
+    note_files = [(f, t) for f, t in all_files if t == "user_note"]
+
+    if not note_files:
+        print("No user_note files found.")
+        return
+
+    # Find new or changed files
+    new_or_changed = []
+    for fpath, stype in note_files:
+        key = str(fpath.relative_to(tbb_root)).replace("\\", "/")
+        current_hash = file_hash(fpath)
+        old_entry = old_meta.get(key, {})
+        old_hash = old_entry.get("hash", "") if isinstance(old_entry, dict) else old_entry
+        if old_hash != current_hash:
+            new_or_changed.append((fpath, stype, key, current_hash))
+
+    if not new_or_changed:
+        print(f"All {len(note_files)} user_note files already indexed. Nothing to do.")
+        return
+
+    print(f"Found {len(new_or_changed)} new/changed notes (of {len(note_files)} total)")
+
+    # Chunk all new/changed files
+    all_chunks = []
+    for fpath, stype, key, _ in new_or_changed:
+        try:
+            chunks = chunk_file(fpath, tbb_root, stype)
+            all_chunks.extend(chunks)
+        except Exception as e:
+            print(f"  WARNING: Failed to chunk {key}: {e}")
+
+    if not all_chunks:
+        print("No chunks produced from new/changed files.")
+        return
+
+    print(f"Chunked {len(all_chunks)} sections from {len(new_or_changed)} files")
+
+    # Embed
+    print(f"Embedding {len(all_chunks)} chunks...")
+    all_chunks = embed_chunks(all_chunks)
+    all_chunks = _normalize_for_lancedb(all_chunks)
+
+    # Open existing table and remove old chunks for changed files
+    db_path = get_db_path()
+    db = lancedb.connect(str(db_path))
+
+    try:
+        table = db.open_table(TABLE_NAME)
+    except Exception:
+        print("No existing index found. Running full index instead.")
+        full_index(tbb_root)
+        return
+
+    changed_keys = {key for _, _, key, _ in new_or_changed}
+    for key in changed_keys:
+        escaped = key.replace('"', '\\"')
+        try:
+            table.delete(f'file = "{escaped}"')
+        except Exception:
+            pass  # File wasn't in the table yet (new file)
+
+    # Append new chunks
+    table.add(all_chunks)
+    print(f"Added {len(all_chunks)} chunks to index")
+
+    # Rebuild FTS index to include new content
+    table.create_fts_index("text", replace=True)
+    print("Rebuilt FTS index")
+
+    # Update metadata for ingested files
+    meta = read_meta()
+    for _, _, key, current_hash in new_or_changed:
+        meta[key] = {"hash": current_hash, "source_type": "user_note"}
+    get_meta_path().write_text(json.dumps(meta, indent=2), encoding="utf-8")
+
+    elapsed = time.time() - start
+    total_in_table = len(table.to_arrow())
+    print(f"Ingest complete: {len(all_chunks)} new chunks in {elapsed:.1f}s "
+          f"(corpus total: {total_in_table} chunks)")
+
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Index btc-index corpus into LanceDB")
@@ -227,6 +320,7 @@ if __name__ == "__main__":
     parser.add_argument("--file", help="Re-index a single file (relative path from TBB root)")
     parser.add_argument("--file-type", help="Source type for --file (e.g. catalog, guide)")
     parser.add_argument("--changed", action="store_true", help="Re-index only changed files")
+    parser.add_argument("--ingest", action="store_true", help="Ingest new/changed user_note files only")
     args = parser.parse_args()
 
     tbb_root = get_tbb_root(args.tbb_root)
@@ -235,5 +329,7 @@ if __name__ == "__main__":
         reindex_file(tbb_root, args.file, stype)
     elif args.changed:
         reindex_changed(tbb_root)
+    elif args.ingest:
+        ingest_notes(tbb_root)
     else:
         full_index(tbb_root)

@@ -6,6 +6,7 @@ When the user says "save progress", "#", or "save":
 2. Read its current contents
 3. Apply the update rules below
 4. Keep mutable sections concise -- under 30 lines each
+5. After updating the worklog, check `git status` for uncommitted changes. If there are any, offer to commit with a suggested message. Do not commit automatically -- wait for the user to confirm or decline.
 
 ## Update Rules
 

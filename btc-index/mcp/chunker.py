@@ -29,6 +29,9 @@ WBIGAF_META_FILES = {
 # Directories to skip inside WBIGAF
 WBIGAF_SKIP_DIRS = {"0-project", "WBIGAF"}
 
+# Subdirectories to skip inside Bitcoin Notes (image-only, no useful text)
+NOTES_SKIP_DIRS = {"Memes"}
+
 # Patterns for chapter/sub-chapter extraction from directory names
 CHAPTER_RE = re.compile(r"^(\d+)-")
 SUBCHAPTER_RE = re.compile(r"^(\d+\.\d+)-")
@@ -110,6 +113,15 @@ def discover_files(tbb_root: Path) -> list[tuple[Path, str]]:
     if posts_dir.exists():
         for md in posts_dir.rglob("*.md"):
             files.append((md, "blog"))
+
+    # User research notes (Bitcoin Notes vault)
+    notes_dir = tbb_root / "Bitcoin Notes"
+    if notes_dir.exists():
+        for md in notes_dir.rglob("*.md"):
+            rel = md.relative_to(notes_dir)
+            if rel.parts[0] in NOTES_SKIP_DIRS:
+                continue
+            files.append((md, "user_note"))
 
     return files
 

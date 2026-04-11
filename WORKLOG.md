@@ -3,61 +3,57 @@
 **Daily To-Do:** `tasks/TODO.md`
 
 ## Last Session
-**Date:** 2026-04-07 (session 11)
+**Date:** 2026-04-11 (session 15)
 
 ### What Was Done
 
-**EP01 Golden Rules Script -- First Draft (COMPLETE)**
-- Read and synthesized 3 archive source files: Golden Rules Brain Dump.md, GR Script.md, Da Rules.md
-- Read Voice DNA profile and teaching framework to inform script structure
-- Created `tbb-media-company/podcast/episodes/ep01-golden-rules/script.md` -- speakable outline format
-  - Cold open + intro + 6 rules + close (~15-20 min target)
-  - Each rule has bullet-point talking points + one-liner drop (Voice DNA pattern: long build-up -> short declarative payoff)
-  - Cold open uses teaching framework Phase 1: Inspire ("burning question" tactic)
-  - Production notes with tone shifts per rule and signature phrases to work in
-- [x] Pull Golden Rules brain dump script from archive
-- [x] Edit into speakable outline (talking points, not prose)
-- [x] AI polish pass using Voice DNA profile
+**btc-index Phase 1 -- Committed**
+- Committed Phase 1 work: `de60ca4` (7 files, 1,049 insertions)
+- Staged: 4 Python modules, requirements.txt, .gitignore, .mcp.json
 
-**WBIGAF MCP Server -- Added to TODO.md**
-- Replaced old "Argument Block RAG System" entry with 3-phase WBIGAF MCP server plan
-  - Phase 1: Argument blocks + catalog files (schema, vector store, ingestion, MCP tools)
-  - Phase 2: Compendium + blog posts (expand to all content types)
-  - Phase 3: Episode integration (cross-reference tool, post-EP03 skill extraction)
-
-**Directory Rename Plan -- Spaces to Hyphens (PLANNED, NOT EXECUTED)**
-- Explored full scope: ~110 directories with spaces, 167 git-tracked files, 94 untracked items
-- Discovered WBIGAF ch5-9 split state: old flat files tracked-but-deleted, new subdirs untracked
-- Wrote full plan at `.claude/plans/valiant-wandering-gem.md` with 5 phases:
-  - Phase 0: Commit pending changes (162 items) to clean working tree
-  - Phase 1: `git mv` tracked dirs (~85 renames, children-first)
-  - Phase 2: `mv` untracked dirs (~35 renames)
-  - Phase 3: Update text references in ~16 files
-  - Phase 4-5: Commit + verify (Astro build, grep sweep, link spot-check)
-- Identified highest risk: unicode ellipsis in WBIGAF ch6 directory name
-- Saved memory: `feedback_no_spaces_in_paths.md`
+**btc-index Phase 2 -- COMPLETE (user note ingestion)**
+- Extended `chunker.py` `discover_files()` to scan `Bitcoin Notes/` as `user_note` source type (skips `Memes/` -- image-only)
+- Added `ingest_notes()` to `indexer.py` -- incremental pipeline that compares file hashes, only processes new/changed files, appends to existing LanceDB without full rebuild
+- Added `--ingest` CLI flag to indexer.py
+- Created `/ingest` slash command at `.claude/commands/ingest.md`
+- Ran ingest: 362 files -> 396 chunks embedded in 362s (~1 chunk/sec)
+- Corpus grew from 960 to **1,356 chunks** (181 WBIGAF/guide/blog files + 362 user notes)
+- Verified with `search_corpus` queries -- user_note content fully searchable
 
 ### What's Next
 
-**Directory Rename -- Execute the plan (next action)**
-- [ ] Phase 0: Commit 162 pending changes, create safety tag
-- [ ] Phase 1: git mv all tracked directories (WBIGAF, Ark, TBB/Website planning)
-- [ ] Phase 2: mv all untracked directories (TBB Media Company, JC Bitcoin, FreedomLab, Content)
-- [ ] Phase 3: Update text references in CLAUDE.md, TODO.md, WORKLOG.md, WBIGAF.md, etc.
-- [ ] Phase 4-5: Commit rename + verify (Astro build, grep sweep, clickable links)
+**btc-index Phase 1-2 (COMPLETE)**
+- [x] Build 4 Python files (chunker, indexer, server, normalizer stub)
+- [x] Set up venv and install dependencies
+- [x] Run initial corpus ingestion (960 chunks, 181 files, ~17 min)
+- [x] Test all 4 MCP tools (search_corpus, list_sources, get_chunk, find_related)
+- [x] Register in .mcp.json, add .gitignore entries
+- [x] Commit Phase 1 (`de60ca4`)
+- [x] Build `/ingest` command + incremental pipeline (Phase 2)
+- [x] Ingest 362 Bitcoin Notes into corpus (396 chunks)
 
-**EP01 -- User Review (after rename)**
-- [ ] User read-through of script: add riffs, cut what's wrong, mark emphasis points
+**btc-index Phase 3 (next)**
+- [ ] Build autonomous scraping loop: coordinator + scraper + checker + organizer agents
+- [ ] Run Wave 1B scraping overnight (Ch4 first, then Ch5-9)
+- [ ] Commit Phase 2 work
+
+**WBIGAF Pipeline (after btc-index)**
+- [ ] Wave 1A spot-check (2-3 sub-chapters per chapter, 13 total)
+- [ ] 3.3/3.4/3.5: Research prompts + deep research (Steps 3B-4)
+- [ ] 3.2: Publish blocks to website (Step 6)
+
+**EP01 -- Ready for User Review**
+- [ ] User read-through of rewritten script: mark where it doesn't sound like you
 - [ ] Set up Spotify for Podcasters account
 - [ ] Record EP01 (OBS, audio-only, one take)
 - [ ] Publish first podcast episode
 
-**TBB Media Company -- Legal (not blocking EP01)**
-- [ ] Review Dow Jones employment agreement (non-compete, moonlighting)
-- [ ] File DBA for "The Bitcoin Breakdown" -- Hudson County Clerk (~$50-75)
+**TBB Media Company -- Legal (parked)**
+- [x] Review Dow Jones employment agreement (non-compete, moonlighting)
+- [ ] File DBA for "The Bitcoin Breakdown"
 - [ ] Draft operating agreement
 
-**TBB Media Company -- Production Setup (alongside EP01)**
+**TBB Media Company -- Production Setup (parked)**
 - [ ] Set up YouTube channel
 - [ ] Set up Beehiiv newsletter (free tier)
 - [ ] Set up social accounts and Buffer scheduling
@@ -66,15 +62,33 @@
 - [ ] Run `/ark-expert` on Bark hArk sighash question
 - [ ] Unit economics: does 1-3% LP fee fit inside ASP fee revenue at scale?
 
-**TBB Website / WBIGAF (parked)**
+**TBB Website (parked)**
 - [ ] Update body prose text to `#A8A39A` in global.css
-- [ ] 3.2: Publish blocks to website (Step 6)
-- [ ] 3.3/3.4/3.5: Research prompts + deep research (Steps 3B-4)
-- [ ] Coordinator design: tracker format, prompt, handoff brief
 
 ---
 
 ## Session History
+
+### 2026-04-11 -- btc-index Phase 1 Commit + Phase 2 Ingest (session 14)
+- Built btc-index MCP server: 4 tools (search_corpus, list_sources, get_chunk, find_related)
+- Indexed 960 chunks from 181 files (WBIGAF, guide, blog sources)
+- Registered in .mcp.json, .vectordb/.venv/.pycache/meta gitignored
+
+### 2026-04-08 -- Voice DNA Expansion + EP01 Rewrite (session 13)
+- Analyzed Voice DNA Examples.txt (379 lines spoken/journal content) against existing profile
+- Updated Voice DNA profile with 8 new rules, 2 new voice modes, 9 new sentence skeletons
+- Rewrote EP01 Golden Rules script (~2,314 words, ~17-18 min spoken)
+
+### 2026-04-07 -- Directory Rename Spaces to Hyphens (session 12)
+- Committed 643 pending files, gitignored 6 embedded repos
+- Renamed 110+ directories via `git mv` (children-first, deepest paths first)
+- Updated path references in 12+ files, Astro build verified (64 pages, 0 errors)
+- 2 commits: `fc0e204` (pending work), `cd8088d` (renames + reference updates)
+
+### 2026-04-07 -- EP01 Script Draft, WBIGAF MCP Plan, Directory Rename Plan (session 11)
+- Created EP01 Golden Rules speakable outline script at `tbb-media-company/podcast/episodes/ep01-golden-rules/script.md`
+- Added 3-phase WBIGAF MCP server plan to TODO.md
+- Explored directory rename scope (~110 dirs with spaces), wrote 5-phase plan (not executed this session)
 
 ### 2026-04-06 -- TBB Media Company Archive Synthesis & Setup (session 10)
 - Read and synthesized 280+ files across three legacy archive folders (2025-2035, 2112, The Bitcoin Breakdown)
