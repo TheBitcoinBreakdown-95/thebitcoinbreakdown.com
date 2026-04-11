@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 2 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,8 +10,8 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://www.gemini.com/cryptopedia/what-is-bitcoin#section-where-can-i-spend-bitcoins | PENDING | Gemini Cryptopedia -- What is Bitcoin, divisibility section |
-| 2 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/ | PENDING | r/Bitcoin Newcomers FAQ -- divisibility point |
+| 1 | Article | https://www.gemini.com/cryptopedia/what-is-bitcoin#section-where-can-i-spend-bitcoins | DONE | Gemini Cryptopedia -- What is Bitcoin, divisibility section |
+| 2 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/ | FAILED | r/Bitcoin Newcomers FAQ -- divisibility point |
 
 ---
 

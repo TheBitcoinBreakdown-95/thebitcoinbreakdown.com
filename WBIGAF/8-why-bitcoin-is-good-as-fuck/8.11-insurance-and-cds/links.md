@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 2 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,8 +10,8 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | YouTube | https://www.youtube.com/watch?v=HsU2jPEl5Y0 | PENDING | Greg Foss -- "Bitcoin Will Hit $700,000 When THIS Happens" -- CDS valuation model |
-| 2 | Article | https://lookingglasseducation.com/the-bitcoin-fraternity/ | PENDING | Looking Glass Education -- "The Bitcoin Fraternity" -- Bitcoin as perfect exotic option |
+| 1 | YouTube | https://www.youtube.com/watch?v=HsU2jPEl5Y0 | PARTIAL | Greg Foss -- "Bitcoin Will Hit $700,000 When THIS Happens" -- CDS valuation model |
+| 2 | Article | https://lookingglasseducation.com/the-bitcoin-fraternity/ | DONE | Looking Glass Education -- "The Bitcoin Fraternity" -- Bitcoin as perfect exotic option |
 
 ---
 

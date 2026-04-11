@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 3 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,9 +10,9 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | YouTube | https://www.youtube.com/watch?v=UMK_A0mF8PQ | PENDING | "The most important innovation is the 21MM supply cap" -- unidentified speaker |
-| 2 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/ | PENDING | r/Bitcoin Newcomers FAQ -- limited supply section |
-| 3 | Blog | https://breedlove22.medium.com/the-number-zero-and-bitcoin-4c193336db5b | PENDING | "The Number Zero and Bitcoin" by Robert Breedlove |
+| 1 | YouTube | https://www.youtube.com/watch?v=UMK_A0mF8PQ | PARTIAL | "The most important innovation is the 21MM supply cap" -- unidentified speaker |
+| 2 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/ | FAILED | r/Bitcoin Newcomers FAQ -- limited supply section |
+| 3 | Blog | https://breedlove22.medium.com/the-number-zero-and-bitcoin-4c193336db5b | FAILED | "The Number Zero and Bitcoin" by Robert Breedlove |
 
 ---
 

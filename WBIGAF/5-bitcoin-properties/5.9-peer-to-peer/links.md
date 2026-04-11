@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 2 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,8 +10,8 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/ | PENDING | r/Bitcoin Newcomers FAQ -- peer-to-peer definition and reliability |
-| 2 | Article | https://en.wikipedia.org/wiki/Distributed_computing | PENDING | Wikipedia -- Distributed Computing, network architecture types |
+| 1 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/ | FAILED | r/Bitcoin Newcomers FAQ -- peer-to-peer definition and reliability |
+| 2 | Article | https://en.wikipedia.org/wiki/Distributed_computing | FAILED | Wikipedia -- Distributed Computing, network architecture types |
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 3 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,9 +10,9 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Reddit | https://www.reddit.com/r/Bitcoin/comments/vno0eg/describe_bitcoin_in_12_sentences_in_the_most/ | PENDING | "Describe Bitcoin in 1-2 sentences" thread -- neutrality quote |
-| 2 | Tweet | https://twitter.com/anilsaidso/status/1672325445046632451?s=46&t=KWxEkTiQ4L9C3lu9s4hJJw | PENDING | Anil Said So tweet on Bitcoin neutrality |
-| 3 | Tool | https://chat.openai.com/chat | PENDING | ChatGPT -- digital passport / borderless analogy |
+| 1 | Reddit | https://www.reddit.com/r/Bitcoin/comments/vno0eg/describe_bitcoin_in_12_sentences_in_the_most/ | FAILED | "Describe Bitcoin in 1-2 sentences" thread -- neutrality quote |
+| 2 | Tweet | https://twitter.com/anilsaidso/status/1672325445046632451?s=46&t=KWxEkTiQ4L9C3lu9s4hJJw | DONE | Anil Said So tweet on Bitcoin neutrality |
+| 3 | Tool | https://chat.openai.com/chat | FAILED | ChatGPT -- digital passport / borderless analogy |
 
 ---
 

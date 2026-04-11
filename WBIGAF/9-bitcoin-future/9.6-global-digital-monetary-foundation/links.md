@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 4 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,10 +10,10 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | YouTube | https://www.youtube.com/watch?v=MN4klUUx8fM | PENDING | "Rules not rulers" / Bitcoin as Manhattan Project of financial singularity (source of multiple quotes) |
-| 2 | Twitter/X | https://twitter.com/thewhyoffi/status/1589680669785231360?s=46&t=pgFPZR3fAcd1-7IF2DFLOw | PENDING | @thewhyoffi: Bitcoin is civilization-building, base layer of money |
-| 3 | Article | https://medium.com/@nic__carter/bitcoin-at-12-f6fce39cb9bb | PENDING | Nic Carter: Bitcoin at 12 -- monetary manifesto, scalability via layers |
-| 4 | Twitter/X | https://x.com/timevalueofbtc/status/[embedded in source] | PENDING | Nik Bhatia (@timevalueofbtc): Strategic Bitcoin Reserve as global settlement mechanism |
+| 1 | YouTube | https://www.youtube.com/watch?v=MN4klUUx8fM | PARTIAL | "Rules not rulers" / Bitcoin as Manhattan Project of financial singularity (source of multiple quotes) |
+| 2 | Twitter/X | https://twitter.com/thewhyoffi/status/1589680669785231360?s=46&t=pgFPZR3fAcd1-7IF2DFLOw | DONE | @thewhyoffi: Bitcoin is civilization-building, base layer of money |
+| 3 | Article | https://medium.com/@nic__carter/bitcoin-at-12-f6fce39cb9bb | FAILED | Nic Carter: Bitcoin at 12 -- monetary manifesto, scalability via layers |
+| 4 | Twitter/X | https://x.com/timevalueofbtc/status/[embedded in source] | FAILED | Nik Bhatia (@timevalueofbtc): Strategic Bitcoin Reserve as global settlement mechanism |
 
 ---
 

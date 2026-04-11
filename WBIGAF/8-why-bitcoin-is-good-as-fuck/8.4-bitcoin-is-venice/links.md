@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 2 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,8 +10,8 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://www.forbes.com/sites/leeorshimron/2020/06/30/bitcoin-is-the-separation-of-money-and-state/ | PENDING | Forbes -- "Bitcoin Is the Separation of Money and State" by Leeor Shimron |
-| 2 | Book | https://www.uncerto.com/book | PENDING | "Bitcoin is Venice" by Allen Farrington and Sacha Meyers -- full book |
+| 1 | Article | https://www.forbes.com/sites/leeorshimron/2020/06/30/bitcoin-is-the-separation-of-money-and-state/ | FAILED | Forbes -- "Bitcoin Is the Separation of Money and State" by Leeor Shimron |
+| 2 | Book | https://www.uncerto.com/book | DONE | "Bitcoin is Venice" by Allen Farrington and Sacha Meyers -- full book |
 
 ---
 

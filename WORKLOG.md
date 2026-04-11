@@ -3,22 +3,21 @@
 **Daily To-Do:** `tasks/TODO.md`
 
 ## Last Session
-**Date:** 2026-04-11 (session 15)
+**Date:** 2026-04-11 (session 16)
 
 ### What Was Done
 
-**btc-index Phase 1 -- Committed**
-- Committed Phase 1 work: `de60ca4` (7 files, 1,049 insertions)
-- Staged: 4 Python modules, requirements.txt, .gitignore, .mcp.json
-
-**btc-index Phase 2 -- COMPLETE (user note ingestion)**
-- Extended `chunker.py` `discover_files()` to scan `Bitcoin Notes/` as `user_note` source type (skips `Memes/` -- image-only)
-- Added `ingest_notes()` to `indexer.py` -- incremental pipeline that compares file hashes, only processes new/changed files, appends to existing LanceDB without full rebuild
-- Added `--ingest` CLI flag to indexer.py
-- Created `/ingest` slash command at `.claude/commands/ingest.md`
-- Ran ingest: 362 files -> 396 chunks embedded in 362s (~1 chunk/sec)
-- Corpus grew from 960 to **1,356 chunks** (181 WBIGAF/guide/blog files + 362 user notes)
-- Verified with `search_corpus` queries -- user_note content fully searchable
+**btc-index Phase 3 -- Wave 1B Scraping COMPLETE**
+- Built scraping pipeline: `btc-index/scraper/scraper.py` (core fetcher + html2text extraction) and `run-wave.py` (wave runner with discovery, progress, logging)
+- Installed `html2text` in btc-index venv
+- Tested on 4.1 (8 links) -- verified sources.md format, links.md status updates, chunker compatibility
+- Ran full Wave 1B: 52 sub-chapters, 239 links processed in 7.7 minutes
+- Results: 84 DONE (33%), 31 PARTIAL (12%), 123 FAILED (49%), 14 SKIP (6%)
+- Failures are structural: Bitcoin Magazine, Medium, Reddit, Twitter all Cloudflare-protected
+- Created 52 `sources.md` files totaling 1.1 MB (710K chars) of scraped content
+- All 61 `links.md` files updated with final statuses -- 0 PENDING remain
+- YouTube handled via oEmbed API (title + channel metadata)
+- Run log saved to `btc-index/scraper/wave-1b-log.json`
 
 ### What's Next
 
@@ -32,10 +31,13 @@
 - [x] Build `/ingest` command + incremental pipeline (Phase 2)
 - [x] Ingest 362 Bitcoin Notes into corpus (396 chunks)
 
-**btc-index Phase 3 (next)**
-- [ ] Build autonomous scraping loop: coordinator + scraper + checker + organizer agents
-- [ ] Run Wave 1B scraping overnight (Ch4 first, then Ch5-9)
-- [ ] Commit Phase 2 work
+**btc-index Phase 3 (SCRAPING COMPLETE, post-processing pending)**
+- [x] Build scraper.py + run-wave.py
+- [x] Run Wave 1B scraping (52 sub-chapters, 239 links)
+- [ ] Re-index corpus (run `python indexer.py` to pick up 52 new sources.md -- corpus should grow from 1,356 to ~1,500+ chunks)
+- [ ] Commit Phase 2+3 work (Phase 2 user note ingestion + Phase 3 scraper + scraped content)
+- [ ] Handle 123 failed links (Claude WebFetch retry, manual copy-paste, or accept gaps)
+- [ ] Claim extraction pass: Claude reads sources.md, generates catalog items #200+ per sub-chapter
 
 **WBIGAF Pipeline (after btc-index)**
 - [ ] Wave 1A spot-check (2-3 sub-chapters per chapter, 13 total)
@@ -68,6 +70,11 @@
 ---
 
 ## Session History
+
+### 2026-04-11 -- btc-index Phase 2 Ingest + Phase 3 Scraping (session 15)
+- Extended chunker/indexer for user note ingestion (362 files, 396 chunks)
+- Committed Phase 1: `de60ca4` (7 files, 1,049 insertions)
+- Corpus grew from 960 to 1,356 chunks (181 WBIGAF + 362 user notes)
 
 ### 2026-04-11 -- btc-index Phase 1 Commit + Phase 2 Ingest (session 14)
 - Built btc-index MCP server: 4 tools (search_corpus, list_sources, get_chunk, find_related)

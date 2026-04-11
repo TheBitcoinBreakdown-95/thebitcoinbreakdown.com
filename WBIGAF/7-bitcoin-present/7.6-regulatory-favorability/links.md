@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 11 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,17 +10,17 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://www.wsj.com/articles/biden-to-order-study-of-cryptocurrency-risk-creation-of-u-s-digital-currency-11646823600?mod=hp_lead_pos5 | PENDING | WSJ -- Biden executive order on cryptocurrency risk and digital currency study |
-| 2 | Article | https://t.co/qPpPYKjPph | PENDING | NYDIG First Amendment protections analysis (shortened URL) |
-| 3 | Article | https://ca.finance.yahoo.com/news/blackrock-teams-coinbase-crypto-market-120000847.html | PENDING | Yahoo Finance -- BlackRock teams with Coinbase; regulatory clarity quote from Oppenheimer analyst |
-| 4 | YouTube | https://youtu.be/m1vWkAwB6Oo | PENDING | "BlackRock Coming For Your Bitcoin?" YouTube video |
-| 5 | Article | https://bitcoinmagazine.com/future-geopolitical-order-and-bitcoin | PENDING | Bitcoin Magazine -- future geopolitical order and Bitcoin; US strategic advantage analysis |
-| 6 | Article | https://bitcoinmagazine.com/markets/united-states-will-back-dollar-with-bitcoin | PENDING | Bitcoin Magazine -- United States will back dollar with Bitcoin; Yellen and Gensler commentary |
-| 7 | Article | https://www.forbes.com/sites/digital-assets/2023/05/26/bitcoins-campaign-debut-portends-a-seismic-shift-in-us-politics/?sh=4cac9706359a | PENDING | Forbes -- Bitcoin's campaign debut portends seismic shift in US politics; bipartisan coalition |
-| 8 | Tweet | https://twitter.com/BitcoinNewsCom/status/1697954872237203940?s=20 | PENDING | Bitcoin News tweet on China declaring digital assets as legal property |
-| 9 | Tweet | https://x.com/saylor/status/1699475603525624055?s=46 | PENDING | Michael Saylor tweet on Bitcoin as strategic reserve asset |
-| 10 | Tweet | https://x.com/jameslavish/status/1592228100934438913?s=46 | PENDING | James Lavish thread on FASB and Bitcoin accounting |
-| 11 | Article | https://unchainedcrypto.com/bank-of-new-york-mellon-identified-as-first-bank-to-receive-sec-exemption-from-sab-121/ | PENDING | Unchained Crypto -- BNY Mellon first bank to receive SEC exemption from SAB 121 |
+| 1 | Article | https://www.wsj.com/articles/biden-to-order-study-of-cryptocurrency-risk-creation-of-u-s-digital-currency-11646823600?mod=hp_lead_pos5 | FAILED | WSJ -- Biden executive order on cryptocurrency risk and digital currency study |
+| 2 | Article | https://t.co/qPpPYKjPph | PARTIAL | NYDIG First Amendment protections analysis (shortened URL) |
+| 3 | Article | https://ca.finance.yahoo.com/news/blackrock-teams-coinbase-crypto-market-120000847.html | FAILED | Yahoo Finance -- BlackRock teams with Coinbase; regulatory clarity quote from Oppenheimer analyst |
+| 4 | YouTube | https://youtu.be/m1vWkAwB6Oo | PARTIAL | "BlackRock Coming For Your Bitcoin?" YouTube video |
+| 5 | Article | https://bitcoinmagazine.com/future-geopolitical-order-and-bitcoin | FAILED | Bitcoin Magazine -- future geopolitical order and Bitcoin; US strategic advantage analysis |
+| 6 | Article | https://bitcoinmagazine.com/markets/united-states-will-back-dollar-with-bitcoin | FAILED | Bitcoin Magazine -- United States will back dollar with Bitcoin; Yellen and Gensler commentary |
+| 7 | Article | https://www.forbes.com/sites/digital-assets/2023/05/26/bitcoins-campaign-debut-portends-a-seismic-shift-in-us-politics/?sh=4cac9706359a | FAILED | Forbes -- Bitcoin's campaign debut portends seismic shift in US politics; bipartisan coalition |
+| 8 | Tweet | https://twitter.com/BitcoinNewsCom/status/1697954872237203940?s=20 | DONE | Bitcoin News tweet on China declaring digital assets as legal property |
+| 9 | Tweet | https://x.com/saylor/status/1699475603525624055?s=46 | DONE | Michael Saylor tweet on Bitcoin as strategic reserve asset |
+| 10 | Tweet | https://x.com/jameslavish/status/1592228100934438913?s=46 | DONE | James Lavish thread on FASB and Bitcoin accounting |
+| 11 | Article | https://unchainedcrypto.com/bank-of-new-york-mellon-identified-as-first-bank-to-receive-sec-exemption-from-sab-121/ | DONE | Unchained Crypto -- BNY Mellon first bank to receive SEC exemption from SAB 121 |
 
 ---
 

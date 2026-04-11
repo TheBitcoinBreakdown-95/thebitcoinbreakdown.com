@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 3 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,9 +10,9 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | YouTube | https://youtu.be/V0oMEvB43Mc | PENDING | "Bitcoin's Lightning Network: Why It's Changing The World" |
-| 2 | Blog | https://danhedl.medium.com/planting-bitcoin-sound-money-72e80e40ff62 | PENDING | "Planting Bitcoin: Sound Money" by Dan Hedl -- open source/programmable section |
-| 3 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/ | PENDING | r/Bitcoin Newcomers FAQ -- Lightning Network and scaling |
+| 1 | YouTube | https://youtu.be/V0oMEvB43Mc | PARTIAL | "Bitcoin's Lightning Network: Why It's Changing The World" |
+| 2 | Blog | https://danhedl.medium.com/planting-bitcoin-sound-money-72e80e40ff62 | FAILED | "Planting Bitcoin: Sound Money" by Dan Hedl -- open source/programmable section |
+| 3 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/ | FAILED | r/Bitcoin Newcomers FAQ -- Lightning Network and scaling |
 
 ---
 

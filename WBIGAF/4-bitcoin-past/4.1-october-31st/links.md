@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 — Triage COMPLETE
 > **Total links:** 8 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,14 +10,14 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Blog | https://dergigi.com/2021/06/13/bitcoin-is-an-idea/ | PENDING | Gigi essay — "Bitcoin is an Idea" |
-| 2 | Tweet | https://x.com/wclementeiii/status/1704235831685169608 | PENDING | Will Clemente — debt/GDP context |
-| 3 | Article | https://bitcoinmagazine.com/culture/why-bitcoin-resembles-the-protestant-reformation | PENDING | Bitcoin Magazine — Luther parallel |
-| 4 | Blog | https://blog.bitcoin.org.hk/the-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc | PENDING | Historical analogy — Satoshi & Luther Oct 31 symbolism |
-| 5 | YouTube | https://www.youtube.com/watch?v=A6kJfvuNqtg | PENDING | Antonopoulos — "Bitcoin is punk rock" |
-| 6 | Blog | https://medium.com/@nic__carter/bitcoin-at-12-f6fce39cb9bb | PENDING | Nic Carter — "Bitcoin at 12" — Satoshean critique + restorative vision |
-| 7 | Article | https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther | PENDING | Bitcoin Magazine — Whitepaper parallels to Luther |
-| 8 | YouTube | https://www.youtube.com/watch?v=QaCQkvUdpcw | PENDING | "Satoshi's Halloween" — Samhain/Fourth Turning |
+| 1 | Blog | https://dergigi.com/2021/06/13/bitcoin-is-an-idea/ | DONE | Gigi essay — "Bitcoin is an Idea" |
+| 2 | Tweet | https://x.com/wclementeiii/status/1704235831685169608 | DONE | Will Clemente — debt/GDP context |
+| 3 | Article | https://bitcoinmagazine.com/culture/why-bitcoin-resembles-the-protestant-reformation | FAILED | Bitcoin Magazine — Luther parallel |
+| 4 | Blog | https://blog.bitcoin.org.hk/the-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc | FAILED | Historical analogy — Satoshi & Luther Oct 31 symbolism |
+| 5 | YouTube | https://www.youtube.com/watch?v=A6kJfvuNqtg | PARTIAL | Antonopoulos — "Bitcoin is punk rock" |
+| 6 | Blog | https://medium.com/@nic__carter/bitcoin-at-12-f6fce39cb9bb | FAILED | Nic Carter — "Bitcoin at 12" — Satoshean critique + restorative vision |
+| 7 | Article | https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther | FAILED | Bitcoin Magazine — Whitepaper parallels to Luther |
+| 8 | YouTube | https://www.youtube.com/watch?v=QaCQkvUdpcw | PARTIAL | "Satoshi's Halloween" — Samhain/Fourth Turning |
 
 ---
 

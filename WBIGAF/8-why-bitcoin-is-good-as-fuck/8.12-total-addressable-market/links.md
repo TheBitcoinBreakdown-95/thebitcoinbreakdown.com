@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 2 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,8 +10,8 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Twitter/X | https://x.com/anilsaidso/status/1673819021492506624?s=46 | PENDING | Anil Saidso -- Bitcoin TAM: three categories of market disruption |
-| 2 | Article | https://ten31.vc/insights/tam | PENDING | TEN31 Ventures -- Bitcoin Total Addressable Market analysis |
+| 1 | Twitter/X | https://x.com/anilsaidso/status/1673819021492506624?s=46 | DONE | Anil Saidso -- Bitcoin TAM: three categories of market disruption |
+| 2 | Article | https://ten31.vc/insights/tam | FAILED | TEN31 Ventures -- Bitcoin Total Addressable Market analysis |
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 1 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,7 +10,7 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://bitcoinmagazine.com/culture/nostr-and-bitcoin-can-change-social-media | PENDING | Bitcoin Magazine: Nostr and Bitcoin as alternative to ad-based social media |
+| 1 | Article | https://bitcoinmagazine.com/culture/nostr-and-bitcoin-can-change-social-media | FAILED | Bitcoin Magazine: Nostr and Bitcoin as alternative to ad-based social media |
 
 ---
 

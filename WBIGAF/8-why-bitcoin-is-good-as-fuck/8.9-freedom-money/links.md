@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 9 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,13 +10,13 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | YouTube | https://youtube.com/shorts/Y3VjJFVTkgY?feature=share | PENDING | Alex Gladstein -- "How I discovered Bitcoin is Freedom" (short) |
-| 2 | Article | https://time.com/5486673/bitcoin-venezuela-authoritarian/ | PENDING | Time -- Bitcoin in Venezuela / authoritarian monetary control |
-| 3 | Article | https://bitcoinmagazine.com/culture/bitcoin-lets-you-live-wherever-you-want | PENDING | Bitcoin Magazine -- "Bitcoin Lets You Live Wherever You Want" |
-| 4 | Article | https://bitcoinmagazine.com/culture/bitcoin-is-a-trojan-horse-for-freedom | PENDING | Bitcoin Magazine -- "Bitcoin is a Trojan Horse for Freedom" (Alex Gladstein) -- core source |
-| 5 | Article | https://qz.com/africa/1922466/how-bitcoin-powered-nigerias-endsars-protests | PENDING | Quartz Africa -- "How bitcoin powered Nigeria's EndSARS protests" |
-| 6 | Article | https://muse.jhu.edu/pub/1/article/970346 | PENDING | Alex Gladstein -- academic article (full title unknown) |
-| 7 | Article | https://mises.org/library/principle-sound-money | PENDING | Mises Institute -- Mises on sound money and civil liberties |
+| 1 | YouTube | https://youtube.com/shorts/Y3VjJFVTkgY?feature=share | PARTIAL | Alex Gladstein -- "How I discovered Bitcoin is Freedom" (short) |
+| 2 | Article | https://time.com/5486673/bitcoin-venezuela-authoritarian/ | DONE | Time -- Bitcoin in Venezuela / authoritarian monetary control |
+| 3 | Article | https://bitcoinmagazine.com/culture/bitcoin-lets-you-live-wherever-you-want | FAILED | Bitcoin Magazine -- "Bitcoin Lets You Live Wherever You Want" |
+| 4 | Article | https://bitcoinmagazine.com/culture/bitcoin-is-a-trojan-horse-for-freedom | FAILED | Bitcoin Magazine -- "Bitcoin is a Trojan Horse for Freedom" (Alex Gladstein) -- core source |
+| 5 | Article | https://qz.com/africa/1922466/how-bitcoin-powered-nigerias-endsars-protests | FAILED | Quartz Africa -- "How bitcoin powered Nigeria's EndSARS protests" |
+| 6 | Article | https://muse.jhu.edu/pub/1/article/970346 | DONE | Alex Gladstein -- academic article (full title unknown) |
+| 7 | Article | https://mises.org/library/principle-sound-money | FAILED | Mises Institute -- Mises on sound money and civil liberties |
 
 ---
 

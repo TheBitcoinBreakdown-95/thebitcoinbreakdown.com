@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 1 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,7 +10,7 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | http://bitcoinsimplified.org/learn-more/anonymity/ | PENDING | Bitcoin Simplified -- anonymity/pseudonymity explainer |
+| 1 | Article | http://bitcoinsimplified.org/learn-more/anonymity/ | FAILED | Bitcoin Simplified -- anonymity/pseudonymity explainer |
 
 ---
 

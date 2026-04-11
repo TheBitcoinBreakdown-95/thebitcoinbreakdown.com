@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 1 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,7 +10,7 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://dergigi.com/2021/01/14/bitcoin-is-time/ | PENDING | Dergigi: "Bitcoin Is Time" -- canonical ordering problem, centralized time-keeping, Bitcoin re-inventing time through blocks |
+| 1 | Article | https://dergigi.com/2021/01/14/bitcoin-is-time/ | DONE | Dergigi: "Bitcoin Is Time" -- canonical ordering problem, centralized time-keeping, Bitcoin re-inventing time through blocks |
 
 ---
 

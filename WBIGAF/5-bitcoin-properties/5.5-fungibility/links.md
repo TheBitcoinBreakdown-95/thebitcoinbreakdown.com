@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 1 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,7 +10,7 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Blog | https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1 | PENDING | "The Bullish Case for Bitcoin" -- fungibility section |
+| 1 | Blog | https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1 | FAILED | "The Bullish Case for Bitcoin" -- fungibility section |
 
 ---
 

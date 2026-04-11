@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 7 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,15 +10,15 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://dergigi.com/2022/04/03/inalienable-property-rights/ | PENDING | Dergigi: Inalienable Property Rights -- mining lottery description; PoW as bridge between atoms and information |
-| 2 | Tweet | https://twitter.com/dergigi/status/1565633115317469184?s=21&t=lUbh7T7dIyIiY2tOHK4fLQ | PENDING | Dergigi tweet: PoW is multi-purpose -- duration, costly signal, data integrity, conflict resolution, etc. |
-| 3 | Article | https://dergigi.com/threads/pow-is-essential | PENDING | Dergigi: "A failure to understand proof of work is a failure to understand Bitcoin" |
-| 4 | Article | https://www.fidelitydigitalassets.com/research-and-insights/understanding-proof-work | PENDING | Fidelity Digital Assets: Understanding Proof of Work |
-| 5 | Article | https://armantheparman.com/mining/ | PENDING | Arman the Parman: Bitcoin mining explainer -- energy as immutability defense |
-| 6 | Article | https://dergigi.com/2021/06/13/bitcoin-is-an-idea/ | PENDING | Dergigi: Bitcoin is an Idea -- oracle problem, energy as base truth, Satoshi's insight |
-| 7 | Article | https://dergigi.com/2022/10/02/bitcoin-is-digital-scarcity/ | PENDING | Dergigi: Bitcoin is Digital Scarcity -- electricity as feature not bug, anti-cheat mechanism, arrow of time |
-| 8 | Article | https://www.lynalden.com/proof-of-stake/ | PENDING | Lyn Alden: Proof of Stake article -- contains extensive PoW 101 technical explainer used in source |
-| 9 | YouTube | https://www.youtube.com/watch?v=DLsIcIoLSsI&t=13s | PENDING | Dergigi: "Bitcoin = Money + Time + Energy + Information" talk |
+| 1 | Article | https://dergigi.com/2022/04/03/inalienable-property-rights/ | DONE | Dergigi: Inalienable Property Rights -- mining lottery description; PoW as bridge between atoms and information |
+| 2 | Tweet | https://twitter.com/dergigi/status/1565633115317469184?s=21&t=lUbh7T7dIyIiY2tOHK4fLQ | DONE | Dergigi tweet: PoW is multi-purpose -- duration, costly signal, data integrity, conflict resolution, etc. |
+| 3 | Article | https://dergigi.com/threads/pow-is-essential | DONE | Dergigi: "A failure to understand proof of work is a failure to understand Bitcoin" |
+| 4 | Article | https://www.fidelitydigitalassets.com/research-and-insights/understanding-proof-work | DONE | Fidelity Digital Assets: Understanding Proof of Work |
+| 5 | Article | https://armantheparman.com/mining/ | DONE | Arman the Parman: Bitcoin mining explainer -- energy as immutability defense |
+| 6 | Article | https://dergigi.com/2021/06/13/bitcoin-is-an-idea/ | DONE | Dergigi: Bitcoin is an Idea -- oracle problem, energy as base truth, Satoshi's insight |
+| 7 | Article | https://dergigi.com/2022/10/02/bitcoin-is-digital-scarcity/ | DONE | Dergigi: Bitcoin is Digital Scarcity -- electricity as feature not bug, anti-cheat mechanism, arrow of time |
+| 8 | Article | https://www.lynalden.com/proof-of-stake/ | DONE | Lyn Alden: Proof of Stake article -- contains extensive PoW 101 technical explainer used in source |
+| 9 | YouTube | https://www.youtube.com/watch?v=DLsIcIoLSsI&t=13s | PARTIAL | Dergigi: "Bitcoin = Money + Time + Energy + Information" talk |
 
 ---
 

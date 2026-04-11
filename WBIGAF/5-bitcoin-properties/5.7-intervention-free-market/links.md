@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 3 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,9 +10,9 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | YouTube | https://www.youtube.com/watch?v=VN2X4bUzgEg | PENDING | "10x value to society" -- bitcoin as global peg (unidentified speaker) |
-| 2 | Article | https://bitcoinmagazine.com/culture/bitcoin-is-a-trojan-horse-for-freedom | PENDING | "Bitcoin Is a Trojan Horse for Freedom" -- Bitcoin Magazine |
-| 3 | Blog | https://netcoins.ca/blog/what-is-bitcoin/ | PENDING | Netcoins -- "What Is Bitcoin?" volatility section |
+| 1 | YouTube | https://www.youtube.com/watch?v=VN2X4bUzgEg | PARTIAL | "10x value to society" -- bitcoin as global peg (unidentified speaker) |
+| 2 | Article | https://bitcoinmagazine.com/culture/bitcoin-is-a-trojan-horse-for-freedom | FAILED | "Bitcoin Is a Trojan Horse for Freedom" -- Bitcoin Magazine |
+| 3 | Blog | https://netcoins.ca/blog/what-is-bitcoin/ | FAILED | Netcoins -- "What Is Bitcoin?" volatility section |
 
 ---
 

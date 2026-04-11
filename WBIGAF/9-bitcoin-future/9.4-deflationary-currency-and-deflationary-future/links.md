@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 1 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,7 +10,7 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Chat | https://chatgpt.com/share/68210b50-244c-8001-9217-cdb4107f626c | PENDING | Shared ChatGPT conversation on Bitcoin inevitability / deflationary thesis |
+| 1 | Chat | https://chatgpt.com/share/68210b50-244c-8001-9217-cdb4107f626c | DONE | Shared ChatGPT conversation on Bitcoin inevitability / deflationary thesis |
 
 ---
 

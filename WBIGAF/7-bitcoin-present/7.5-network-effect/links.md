@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 1 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,7 +10,7 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | YouTube | https://www.youtube.com/watch?v=kfSJQmAYNAs | PENDING | "Why Bitcoin Has Already Won (Protocol Wars)" -- TCP/IP vs. OSI analogy |
+| 1 | YouTube | https://www.youtube.com/watch?v=kfSJQmAYNAs | PARTIAL | "Why Bitcoin Has Already Won (Protocol Wars)" -- TCP/IP vs. OSI analogy |
 
 ---
 

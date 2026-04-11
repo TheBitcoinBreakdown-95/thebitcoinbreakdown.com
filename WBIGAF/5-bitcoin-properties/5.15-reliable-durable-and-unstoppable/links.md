@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 9 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,15 +10,15 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://www.cnbc.com/2024/03/05/bitcoin-all-time-high.html | PENDING | CNBC -- Bitcoin all-time high, Alex Thorn quote |
-| 2 | Article | https://www.tftc.io/bitcoin-resilience-internet-disruption/ | PENDING | TFTC -- Bitcoin resilience to Internet disruption |
-| 3 | Blog | https://dergigi.com/2021/06/13/bitcoin-is-an-idea/ | PENDING | "Bitcoin Is an Idea" by Dergigi -- survival and unstoppability |
-| 4 | Article | http://www.btctimes.com/news/co-creator-meta-diem-praises-bitcoin | PENDING | BTC Times -- David Marcus (Meta/Diem) praises Bitcoin |
-| 5 | YouTube | https://www.youtube.com/watch?v=_g1jvDu9tSg | PENDING | Bitcoin community optimizes for security (unidentified source) |
-| 6 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11e7uod/5_years_ago_andreas_antonopoulos_explained_why_a/ | PENDING | 5 years ago Andreas Antonopoulos explained why a double spend is very unlikely |
-| 7 | Blog | https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1 | PENDING | "The Bullish Case for Bitcoin" -- durability section |
-| 8 | Blog | https://nakamoto.com/what-are-the-key-properties-of-bitcoin/ | PENDING | nakamoto.com -- key properties of Bitcoin, forward compatibility |
-| 9 | Blog | https://pierre-rochard.medium.com/the-utility-of-saving-c56f7c170fc1 | PENDING | "The Utility of Saving" by Pierre Rochard -- monetary uncertainty |
+| 1 | Article | https://www.cnbc.com/2024/03/05/bitcoin-all-time-high.html | DONE | CNBC -- Bitcoin all-time high, Alex Thorn quote |
+| 2 | Article | https://www.tftc.io/bitcoin-resilience-internet-disruption/ | DONE | TFTC -- Bitcoin resilience to Internet disruption |
+| 3 | Blog | https://dergigi.com/2021/06/13/bitcoin-is-an-idea/ | DONE | "Bitcoin Is an Idea" by Dergigi -- survival and unstoppability |
+| 4 | Article | http://www.btctimes.com/news/co-creator-meta-diem-praises-bitcoin | DONE | BTC Times -- David Marcus (Meta/Diem) praises Bitcoin |
+| 5 | YouTube | https://www.youtube.com/watch?v=_g1jvDu9tSg | PARTIAL | Bitcoin community optimizes for security (unidentified source) |
+| 6 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11e7uod/5_years_ago_andreas_antonopoulos_explained_why_a/ | FAILED | 5 years ago Andreas Antonopoulos explained why a double spend is very unlikely |
+| 7 | Blog | https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1 | FAILED | "The Bullish Case for Bitcoin" -- durability section |
+| 8 | Blog | https://nakamoto.com/what-are-the-key-properties-of-bitcoin/ | FAILED | nakamoto.com -- key properties of Bitcoin, forward compatibility |
+| 9 | Blog | https://pierre-rochard.medium.com/the-utility-of-saving-c56f7c170fc1 | FAILED | "The Utility of Saving" by Pierre Rochard -- monetary uncertainty |
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 3 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,10 +10,10 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://mises.org/what-has-government-done-our-money | PENDING | Mises Institute: Murray Rothbard's "What Has Government Done to Our Money?" -- cited twice in source for Bitcoin/Austrian econ context |
-| 2 | Article | https://mises.org/library/principle-sound-money | PENDING | Mises Institute: "The Principle of Sound Money" -- Mises extended quote on sound money, gold standard, civil liberties |
-| 3 | YouTube | https://www.youtube.com/watch?v=HAzExlEsIKk | PENDING | Thomas E. Woods Jr.: "Smashing Myths and Restoring Sound Money" -- history of commodity money, why fiat is bad, deflation not catastrophic |
-| 4 | Article | https://libertyclassroom.com/free-market-money/ | PENDING | Liberty Classroom: Free Market Money resource |
+| 1 | Article | https://mises.org/what-has-government-done-our-money | FAILED | Mises Institute: Murray Rothbard's "What Has Government Done to Our Money?" -- cited twice in source for Bitcoin/Austrian econ context |
+| 2 | Article | https://mises.org/library/principle-sound-money | FAILED | Mises Institute: "The Principle of Sound Money" -- Mises extended quote on sound money, gold standard, civil liberties |
+| 3 | YouTube | https://www.youtube.com/watch?v=HAzExlEsIKk | PARTIAL | Thomas E. Woods Jr.: "Smashing Myths and Restoring Sound Money" -- history of commodity money, why fiat is bad, deflation not catastrophic |
+| 4 | Article | https://libertyclassroom.com/free-market-money/ | FAILED | Liberty Classroom: Free Market Money resource |
 
 ---
 

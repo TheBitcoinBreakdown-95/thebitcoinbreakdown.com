@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 6 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,12 +10,12 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Twitter/X | https://x.com/danieleripoll/status/1705738270506938605?s=20 | PENDING | Daniel Ripoll thread -- "Bitcoin as vortex of incentives," four survival needs |
-| 2 | Article | https://dergigi.com/2021/06/13/bitcoin-is-an-idea/ | PENDING | Gigi (Dergigi) -- "Bitcoin is an Idea" -- incentive structure analysis |
-| 3 | Article | https://breedlove22.medium.com/the-number-zero-and-bitcoin-4c193336db5b | PENDING | Robert Breedlove -- "The Number Zero and Bitcoin" -- Schelling point / Nash equilibrium |
-| 4 | Article | https://www.investopedia.com/terms/n/nash-equilibrium.asp | PENDING | Investopedia -- Nash Equilibrium definition |
-| 5 | Twitter/X | https://x.com/DylanLeClair_/status/1434988779492757509 | PENDING | Dylan LeClair -- Bitcoin nation state game theory |
-| 6 | Article | https://www.wsj.com/articles/cryptocurrency-is-coming-to-your-credit-cards-11657374215?mod=hp_featst_pos4 | PENDING | WSJ -- Visa and Mastercard betting on crypto for everyday payments |
+| 1 | Twitter/X | https://x.com/danieleripoll/status/1705738270506938605?s=20 | DONE | Daniel Ripoll thread -- "Bitcoin as vortex of incentives," four survival needs |
+| 2 | Article | https://dergigi.com/2021/06/13/bitcoin-is-an-idea/ | DONE | Gigi (Dergigi) -- "Bitcoin is an Idea" -- incentive structure analysis |
+| 3 | Article | https://breedlove22.medium.com/the-number-zero-and-bitcoin-4c193336db5b | FAILED | Robert Breedlove -- "The Number Zero and Bitcoin" -- Schelling point / Nash equilibrium |
+| 4 | Article | https://www.investopedia.com/terms/n/nash-equilibrium.asp | FAILED | Investopedia -- Nash Equilibrium definition |
+| 5 | Twitter/X | https://x.com/DylanLeClair_/status/1434988779492757509 | DONE | Dylan LeClair -- Bitcoin nation state game theory |
+| 6 | Article | https://www.wsj.com/articles/cryptocurrency-is-coming-to-your-credit-cards-11657374215?mod=hp_featst_pos4 | FAILED | WSJ -- Visa and Mastercard betting on crypto for everyday payments |
 
 ---
 

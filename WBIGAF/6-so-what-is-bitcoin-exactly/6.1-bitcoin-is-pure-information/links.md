@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 2 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,8 +10,8 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://21-ways.com/3/ | PENDING | Dergigi's "21 Ways" -- Chapter 3 on Bitcoin's informational nature and censorship resistance |
-| 2 | Tweet | https://x.com/danieleripoll/status/1750934731703918830?s=46 | PENDING | Twitter/X thread on dematerialization trend and Bitcoin as digital money |
+| 1 | Article | https://21-ways.com/3/ | DONE | Dergigi's "21 Ways" -- Chapter 3 on Bitcoin's informational nature and censorship resistance |
+| 2 | Tweet | https://x.com/danieleripoll/status/1750934731703918830?s=46 | DONE | Twitter/X thread on dematerialization trend and Bitcoin as digital money |
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **Pipeline step:** Step 1 -- Triage COMPLETE
 > **Total links:** 1 primary
-> **Scrape status:** All PENDING
+> **Scrape status:** Scrape complete
 
 ---
 
@@ -10,7 +10,7 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://bitcoinmagazine.com/culture/how-bitcoin-will-make-housing-affordable | PENDING | Bitcoin Magazine: How Bitcoin makes housing affordable (de-financialization argument) |
+| 1 | Article | https://bitcoinmagazine.com/culture/how-bitcoin-will-make-housing-affordable | FAILED | Bitcoin Magazine: How Bitcoin makes housing affordable (de-financialization argument) |
 
 ---
 
