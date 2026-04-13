@@ -25,6 +25,38 @@ from urllib.parse import urlparse
 import html2text
 import httpx
 
+# Patchright (stealth Playwright fork) -- loaded lazily for browser fallback
+_pw_context_manager = None
+_pw_browser = None
+
+
+def _get_browser():
+    """Lazily launch a Patchright Chromium instance (reused across calls)."""
+    global _pw_context_manager, _pw_browser
+    if _pw_browser is None:
+        from patchright.sync_api import sync_playwright
+        _pw_context_manager = sync_playwright()
+        pw = _pw_context_manager.start()
+        _pw_browser = pw.chromium.launch(headless=True)
+    return _pw_browser
+
+
+def close_browser():
+    """Clean up browser resources. Call at end of wave."""
+    global _pw_context_manager, _pw_browser
+    if _pw_browser is not None:
+        try:
+            _pw_browser.close()
+        except Exception:
+            pass
+        _pw_browser = None
+    if _pw_context_manager is not None:
+        try:
+            _pw_context_manager.__exit__(None, None, None)
+        except Exception:
+            pass
+        _pw_context_manager = None
+
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
@@ -79,6 +111,28 @@ SKIP_EXTENSIONS = frozenset({
 
 YOUTUBE_DOMAINS = frozenset({
     "youtube.com", "www.youtube.com", "youtu.be", "m.youtube.com",
+})
+
+TWITTER_DOMAINS = frozenset({
+    "x.com", "twitter.com", "www.twitter.com",
+})
+
+# Domains worth retrying with a real browser on httpx failure
+BROWSER_RETRY_DOMAINS = CLOUDFLARE_DOMAINS | TWITTER_DOMAINS | frozenset({
+    "en.wikipedia.org", "www.cnbc.com", "cnbc.com",
+    "fee.org", "www.fee.org", "mises.org", "www.mises.org",
+    "dergigi.com", "www.dergigi.com",
+    "quillette.com", "www.quillette.com",
+    "www.investopedia.com", "investopedia.com",
+    "www.forbes.com", "forbes.com",
+})
+
+# Truly paywalled -- don't waste browser time
+PAYWALL_DOMAINS = frozenset({
+    "www.wsj.com", "wsj.com",
+    "www.barrons.com", "barrons.com",
+    "www.ft.com", "ft.com",
+    "www.marketwatch.com", "marketwatch.com",
 })
 
 # HTML elements to strip before conversion (reduces navigation noise)
@@ -190,6 +244,178 @@ def _fetch_youtube(url: str, client: httpx.Client) -> tuple[str, str, str]:
     except Exception:
         pass
     return "skipped", "", "YouTube (oEmbed failed)"
+
+
+def _fetch_tweet_fxtwitter(url: str) -> tuple[str, str, str]:
+    """Fetch tweet text via fxtwitter public API (no auth, ~0.5s)."""
+    match = re.search(r'(?:x\.com|twitter\.com)/(\w+)/status/(\d+)', url)
+    if not match:
+        return "failed", "", "Could not parse tweet URL"
+
+    handle, status_id = match.group(1), match.group(2)
+
+    try:
+        resp = httpx.get(
+            f"https://api.fxtwitter.com/{handle}/status/{status_id}",
+            headers={"User-Agent": USER_AGENT},
+            timeout=15.0,
+        )
+        if resp.status_code == 200:
+            tweet = resp.json().get("tweet", {})
+            text = tweet.get("text", "")
+            # Strip t.co tracking links
+            text = re.sub(r'https://t\.co/\w+', '', text).strip()
+            if not text:
+                return "failed", "", "fxtwitter returned empty text"
+
+            author = tweet.get("author", {})
+            name = author.get("name", handle)
+            content = f"**@{handle}** ({name})\n\n{text}"
+            return "done", content, ""
+        elif resp.status_code == 404:
+            return "failed", "", "Tweet not found (deleted or private)"
+        else:
+            return "failed", "", f"fxtwitter HTTP {resp.status_code}"
+    except Exception as e:
+        return "failed", "", f"fxtwitter error: {str(e)[:80]}"
+
+
+_THREAD_PATTERN = re.compile(
+    r'(?:^|\s)1/\s*$'       # ends with "1/"
+    r'|(?:^|\s)\(1/\d+\)'   # contains "(1/N)"
+    r'|^1/\d+\s'            # starts with "1/N "
+    r'|\bthread\b'          # contains "thread"
+)
+
+
+def _is_thread_start(text: str) -> bool:
+    """Detect if tweet text looks like the start of a multi-tweet thread."""
+    return bool(_THREAD_PATTERN.search(text.lower()))
+
+
+def _fetch_thread_browser(url: str) -> tuple[str, str, str]:
+    """Fetch a full tweet thread via Patchright browser."""
+    context = None
+    try:
+        browser = _get_browser()
+        context = browser.new_context(
+            user_agent=USER_AGENT,
+            viewport={"width": 1280, "height": 900},
+        )
+        page = context.new_page()
+
+        page.goto(url, wait_until="domcontentloaded", timeout=30000)
+        page.wait_for_selector(
+            '[data-testid="tweetText"]', timeout=15000
+        )
+        page.wait_for_timeout(2000)
+
+        articles = page.query_selector_all("article")
+        tweets = []
+        username_match = re.search(
+            r'(?:x\.com|twitter\.com)/([^/]+)/status', url
+        )
+        username = username_match.group(1) if username_match else "unknown"
+
+        for article in articles:
+            el = article.query_selector('[data-testid="tweetText"]')
+            if el:
+                tweets.append(el.inner_text())
+
+        context.close()
+        context = None
+
+        if not tweets:
+            return "failed", "", "No tweet text found in browser"
+
+        content = f"**@{username}** (tweet thread)\n\n"
+        for i, t in enumerate(tweets, 1):
+            content += f"**Tweet {i}:**\n{t}\n\n"
+
+        return "done", content.strip(), ""
+
+    except Exception as e:
+        if context is not None:
+            try:
+                context.close()
+            except Exception:
+                pass
+        err = str(e)[:120]
+        if "Timeout" in err:
+            return "failed", "", "Browser timeout"
+        return "failed", "", f"Browser error: {err}"
+
+
+def fetch_tweet(url: str) -> tuple[str, str, str]:
+    """Fetch a tweet: fxtwitter API first, Patchright browser for threads."""
+    status, content, error = _fetch_tweet_fxtwitter(url)
+
+    if status == "failed":
+        # fxtwitter failed entirely -- try browser as last resort
+        return _fetch_thread_browser(url)
+
+    # fxtwitter succeeded -- check if this is a thread start
+    if _is_thread_start(content):
+        # Try browser to get the full thread
+        b_status, b_content, b_error = _fetch_thread_browser(url)
+        if b_status == "done" and len(b_content) > len(content):
+            return b_status, b_content, b_error
+        # Browser failed or got less -- keep fxtwitter text, mark partial
+        return "partial", content, "Thread detected, only first tweet captured"
+
+    return status, content, error
+
+
+def fetch_url_browser(url: str) -> tuple[str, str, str]:
+    """Fetch a JS-rendered page using Patchright (stealth Chromium)."""
+    context = None
+    try:
+        browser = _get_browser()
+        context = browser.new_context(
+            user_agent=USER_AGENT,
+            viewport={"width": 1280, "height": 900},
+        )
+        page = context.new_page()
+
+        page.goto(url, wait_until="networkidle", timeout=30000)
+        # Extra wait for JS-heavy pages
+        page.wait_for_timeout(2000)
+
+        html = page.content()
+        context.close()
+        context = None
+
+        if len(html) < 200:
+            return "failed", "", "Browser got empty/minimal page"
+
+        # Reuse the same html2text pipeline
+        h2t = _make_h2t()
+        clean = _strip_noise(html)
+        markdown = h2t.handle(clean)
+        markdown = re.sub(r"\n{4,}", "\n\n\n", markdown)
+        markdown = markdown.strip()
+
+        if len(markdown) > MAX_CONTENT_CHARS:
+            markdown = (
+                markdown[:MAX_CONTENT_CHARS]
+                + "\n\n[... truncated at 20,000 characters ...]"
+            )
+
+        if len(markdown) < 100:
+            return "partial", markdown, "Minimal text after browser render"
+
+        return "done", markdown, ""
+
+    except Exception as e:
+        if context is not None:
+            try:
+                context.close()
+            except Exception:
+                pass
+        err = str(e)[:120]
+        if "Timeout" in err or "timeout" in err:
+            return "failed", "", "Browser timeout"
+        return "failed", "", f"Browser error: {err}"
 
 
 def fetch_url(
@@ -366,7 +592,8 @@ def write_sources_md(
 # Output: links.md status update
 # ---------------------------------------------------------------------------
 
-def update_links_md(links_path: Path, results: list[dict]):
+def update_links_md(links_path: Path, results: list[dict],
+                    retry_mode: bool = False):
     """Update link statuses in the links.md table in-place."""
     text = links_path.read_text(encoding="utf-8", errors="replace")
 
@@ -383,19 +610,23 @@ def update_links_md(links_path: Path, results: list[dict]):
         else:
             status_map[r["num"]] = "FAILED"
 
+    # Which old statuses to replace
+    old_markers = {"FAILED"} if retry_mode else {"PENDING"}
+
     new_lines = []
     for line in text.splitlines():
-        if "PENDING" in line and line.strip().startswith("|"):
+        if line.strip().startswith("|") and any(
+            m in line for m in old_markers
+        ):
             parts = line.split("|")
-            # Table: | # | Type | URL | Status | Notes |
-            # parts: ['', ' # ', ' Type ', ' URL ', ' Status ', ' Notes ', '']
             if len(parts) >= 6:
                 try:
                     num = int(parts[1].strip())
                     if num in status_map:
-                        parts[4] = parts[4].replace(
-                            "PENDING", status_map[num]
-                        )
+                        for m in old_markers:
+                            parts[4] = parts[4].replace(
+                                m, status_map[num]
+                            )
                         line = "|".join(parts)
                 except (ValueError, IndexError):
                     pass
@@ -419,9 +650,15 @@ def update_links_md(links_path: Path, results: list[dict]):
 # Main: scrape one sub-chapter
 # ---------------------------------------------------------------------------
 
-def scrape_sub_chapter(sub_path: Path, tbb_root: Path) -> dict:
+def scrape_sub_chapter(
+    sub_path: Path, tbb_root: Path, retry_failed: bool = False
+) -> dict:
     """
-    Scrape all PENDING links for one sub-chapter.
+    Scrape links for one sub-chapter.
+
+    When retry_failed=False (default): processes PENDING links via httpx.
+    When retry_failed=True: re-processes FAILED links using Patchright
+    browser fallback (tweets get dedicated handler).
 
     Returns a summary dict with counts, timing, and output path.
     Designed to be called by run-wave.py or standalone.
@@ -432,40 +669,73 @@ def scrape_sub_chapter(sub_path: Path, tbb_root: Path) -> dict:
         return {"status": "skip", "reason": "No links.md"}
 
     title, all_links = parse_links_md(links_path)
-    pending = [l for l in all_links if l["status"].upper() == "PENDING"]
 
-    if not pending:
+    if retry_failed:
+        target_status = "FAILED"
+        targets = [l for l in all_links if l["status"].upper() == "FAILED"]
+    else:
+        target_status = "PENDING"
+        targets = [l for l in all_links if l["status"].upper() == "PENDING"]
+
+    if not targets:
         return {
             "status": "skip",
-            "reason": "No PENDING links",
+            "reason": f"No {target_status} links",
             "total": len(all_links),
         }
 
     rel_path = str(sub_path.relative_to(tbb_root)).replace("\\", "/")
+    mode_label = "RETRY (browser)" if retry_failed else "SCRAPE (httpx)"
 
     print(f"\n{'=' * 60}")
     print(f"  {title}")
     print(f"  {rel_path}")
-    print(f"  {len(pending)} PENDING of {len(all_links)} total links")
+    print(f"  {len(targets)} {target_status} of {len(all_links)} total [{mode_label}]")
     print(f"{'=' * 60}")
 
     h2t = _make_h2t()
     results = []
     start_time = time.time()
 
-    with httpx.Client(
-        headers=BROWSER_HEADERS,
-        follow_redirects=True,
-        timeout=TIMEOUT,
-    ) as client:
-        for i, link in enumerate(pending, 1):
+    if retry_failed:
+        # Browser-based retry path
+        for i, link in enumerate(targets, 1):
             url = link["url"]
-            label = f"[{i}/{len(pending)}] #{link['num']} {link['type']}"
+            parsed = urlparse(url)
+            domain = parsed.netloc.lower().removeprefix("www.")
+            label = f"[{i}/{len(targets)}] #{link['num']} {link['type']}"
             url_display = url[:70] + ("..." if len(url) > 70 else "")
             print(f"  {label}: {url_display}", end="", flush=True)
 
             t0 = time.time()
-            status, content, error = fetch_url(url, client, h2t)
+
+            # Skip paywalled and truly dead domains
+            if domain in PAYWALL_DOMAINS or parsed.netloc.lower() in PAYWALL_DOMAINS:
+                status, content, error = (
+                    "skipped", "", f"Paywalled ({domain})"
+                )
+            elif domain in SKIP_DOMAINS or parsed.netloc.lower() in SKIP_DOMAINS:
+                status, content, error = (
+                    "skipped", "", f"Audio/app platform ({domain})"
+                )
+            elif any(parsed.path.lower().endswith(ext) for ext in SKIP_EXTENSIONS):
+                status, content, error = (
+                    "skipped", "", "Direct file download"
+                )
+            elif domain in YOUTUBE_DOMAINS or parsed.netloc.lower() in YOUTUBE_DOMAINS:
+                # Keep YouTube as metadata-only
+                with httpx.Client(
+                    headers=BROWSER_HEADERS, timeout=TIMEOUT
+                ) as yt_client:
+                    status, content, error = _fetch_youtube(url, yt_client)
+            elif (
+                domain in TWITTER_DOMAINS
+                or parsed.netloc.lower() in TWITTER_DOMAINS
+            ):
+                status, content, error = fetch_tweet(url)
+            else:
+                status, content, error = fetch_url_browser(url)
+
             elapsed = time.time() - t0
 
             results.append({
@@ -488,22 +758,60 @@ def scrape_sub_chapter(sub_path: Path, tbb_root: Path) -> dict:
             reason = f" -- {error}" if error else ""
             print(f"{tag}{chars}{reason} ({elapsed:.1f}s)")
 
-            # Polite delay between requests
-            if i < len(pending):
+            if i < len(targets):
                 time.sleep(POLITE_DELAY)
+    else:
+        # Original httpx path
+        with httpx.Client(
+            headers=BROWSER_HEADERS,
+            follow_redirects=True,
+            timeout=TIMEOUT,
+        ) as client:
+            for i, link in enumerate(targets, 1):
+                url = link["url"]
+                label = f"[{i}/{len(targets)}] #{link['num']} {link['type']}"
+                url_display = url[:70] + ("..." if len(url) > 70 else "")
+                print(f"  {label}: {url_display}", end="", flush=True)
+
+                t0 = time.time()
+                status, content, error = fetch_url(url, client, h2t)
+                elapsed = time.time() - t0
+
+                results.append({
+                    "num": link["num"],
+                    "type": link["type"],
+                    "url": url,
+                    "notes": link["notes"],
+                    "status": status,
+                    "content": content,
+                    "error": error,
+                })
+
+                tag = {
+                    "done": " OK",
+                    "partial": " PARTIAL",
+                    "failed": " FAIL",
+                    "skipped": " SKIP",
+                }.get(status, " ???")
+                chars = f" {len(content):,}ch" if content else ""
+                reason = f" -- {error}" if error else ""
+                print(f"{tag}{chars}{reason} ({elapsed:.1f}s)")
+
+                if i < len(targets):
+                    time.sleep(POLITE_DELAY)
 
     total_time = time.time() - start_time
 
     # Write outputs
     sources_path = write_sources_md(sub_path, results, title)
-    update_links_md(links_path, results)
+    update_links_md(links_path, results, retry_mode=retry_failed)
 
     summary = {
         "status": "done",
         "sub_chapter": rel_path,
         "title": title,
         "total_links": len(all_links),
-        "attempted": len(pending),
+        "attempted": len(targets),
         "done": sum(1 for r in results if r["status"] == "done"),
         "partial": sum(1 for r in results if r["status"] == "partial"),
         "failed": sum(1 for r in results if r["status"] == "failed"),
@@ -514,6 +822,7 @@ def scrape_sub_chapter(sub_path: Path, tbb_root: Path) -> dict:
         "sources_path": str(sources_path.relative_to(tbb_root)).replace(
             "\\", "/"
         ),
+        "mode": "retry" if retry_failed else "scrape",
     }
 
     print(
@@ -534,20 +843,26 @@ def scrape_sub_chapter(sub_path: Path, tbb_root: Path) -> dict:
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python scraper.py <sub-chapter-path>")
-        print(
-            "Example: python scraper.py "
-            "WBIGAF/4-bitcoin-past/4.1-october-31st"
-        )
-        sys.exit(1)
+    import argparse as _ap
+    _parser = _ap.ArgumentParser(description="Scrape one sub-chapter")
+    _parser.add_argument("path", help="Sub-chapter path relative to TBB root")
+    _parser.add_argument(
+        "--retry-failed", action="store_true",
+        help="Re-process FAILED links using Patchright browser fallback",
+    )
+    _args = _parser.parse_args()
 
     tbb_root = Path(__file__).resolve().parent.parent.parent
-    sub_path = tbb_root / sys.argv[1]
+    sub_path = tbb_root / _args.path
 
     if not sub_path.exists():
         print(f"Error: path not found: {sub_path}")
         sys.exit(1)
 
-    result = scrape_sub_chapter(sub_path, tbb_root)
-    print(f"\n{json.dumps(result, indent=2, default=str)}")
+    try:
+        result = scrape_sub_chapter(
+            sub_path, tbb_root, retry_failed=_args.retry_failed
+        )
+        print(f"\n{json.dumps(result, indent=2, default=str)}")
+    finally:
+        close_browser()

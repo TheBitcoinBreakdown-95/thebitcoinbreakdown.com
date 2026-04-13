@@ -1,0 +1,15 @@
+# onbitcoin.substack.com -- Scraped Content
+
+**URL:** https://onbitcoin.substack.com/p/home-mining-electrical-setup
+**Category:** scrapable
+**Scrape status:** DONE
+**Source notes:** BTC\Mining.md
+**Scraped:** 2026-04-12
+
+---
+
+[](/)[ON BITCOIN](/)SubscribeSign inHome Bitcoin mining electrical setup A simple guide on the basic electrical setup needed to mine Bitcoin at home with an ASIC miner.[](https://substack.com/@onnetwork)[Craig](https://substack.com/@onnetwork)Apr 01, 2022∙ Paid13215Share[](https://substackcdn.com/image/fetch/$s_!yuUJ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F67cabff8-f402-47ed-a748-1730baff0ad2_899x496.png) _**I’m not an electrician. My advice is to always hire a professional when it comes to working with electricity and installing what you need to setup your home mining operation.**_
+
+> _**Electricity is VERY DANGEROUS and getting it wrong can cause death, fires and serious injury.**_
+
+Thanks for reading ON BITCOIN! Subscribe for free to receive new posts and support my work.SubscribeWhen I first started learning about Bitcoin and Bitcoin mining, I quickly realized that it requires a broad understanding of [many technologies](https://onbitcoin.substack.com/p/2-before-bitcoin?s=w) including cryptography, software, mining hardware, networking, energy and electrical infrastructure.I’ve spent over 20 years in software technology but had limited access to electricity and power systems analysis. I remember helping my dad in the 80’s wire our cottage with 120V power but that was the extent of my knowledge until recently.Bitcoin has renewed my thirst for knowledge on power distribution and I’ve been learning about mining focused electrical systems ever since. If you’re very new to power distribution or have had limited exposure, this post is intended be an introduction focused on power and Bitcoin mining to share what I have learned about electricity and give you a good understanding of the most important concepts and system designs. Before we jump in, we need to understand the basics of electricity starting with **Voltage** , **Current** and **Power**.Continue reading this post for free, courtesy of Craig.Claim my free post[Or purchase a paid subscription.](https://onbitcoin.substack.com/subscribe?simple=true&next=https%3A%2F%2Fonbitcoin.substack.com%2Fp%2Fhome-mining-electrical-setup&utm_source=paywall&utm_medium=web&utm_content=50968643&just_signed_up=falsesimple=true&utm_source=paywall&utm_medium=email&utm_content=50968643&next=https://onbitcoin.substack.com/p/home-mining-electrical-setup)PreviousNext© 2026 Craig On Bitcoin · [Privacy](https://substack.com/privacy) ∙ [Terms](https://substack.com/tos) ∙ [Collection notice](https://substack.com/ccpa#personal-data-collected)[ Start your Substack](https://substack.com/signup?utm_source=substack&utm_medium=web&utm_content=footer)[Get the app](https://substack.com/app/app-store-redirect?utm_campaign=app-marketing&utm_content=web-footer-button)[Substack](https://substack.com) is the home for great culture

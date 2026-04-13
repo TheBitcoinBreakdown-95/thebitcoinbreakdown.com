@@ -144,7 +144,7 @@ def scrape_url_list(
         return []
 
     total = len(actionable)
-    est_per_url = 8 if category == "tweet" else 4
+    est_per_url = 2 if category == "tweet" else 4
     est_minutes = max(1, total * est_per_url // 60)
 
     print(f"\n  {category.upper()} WAVE: {total} URLs (~{est_minutes} min)")

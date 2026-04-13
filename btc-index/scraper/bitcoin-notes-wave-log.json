@@ -1,0 +1,28 @@
+[
+  {
+    "wave": "bitcoin-notes",
+    "timestamp": "2026-04-12T21:15:51.211794",
+    "categories": {
+      "tweet": {
+        "total": 133,
+        "done": 122,
+        "partial": 0,
+        "failed": 11,
+        "total_chars": 75521
+      }
+    }
+  },
+  {
+    "wave": "bitcoin-notes",
+    "timestamp": "2026-04-12T21:42:38.763502",
+    "categories": {
+      "scrapable": {
+        "total": 564,
+        "done": 372,
+        "partial": 32,
+        "failed": 158,
+        "total_chars": 5093292
+      }
+    }
+  }
+]

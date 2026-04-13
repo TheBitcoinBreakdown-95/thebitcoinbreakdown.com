@@ -75,6 +75,24 @@ These all fail due to Cloudflare Turnstile CAPTCHA in headless mode.
 
 ---
 
+## Tweets -- Deleted/Suspended (11 URLs, fxtwitter + Patchright both failed)
+
+Bitcoin Notes wave (2026-04-12). Likely deleted tweets or suspended accounts.
+
+- https://twitter.com/bitcoin200t/status/1539602114082590720
+- https://twitter.com/danieleripoll/status/1723425597794443668
+- https://twitter.com/dergigi/status/1636677865944100864
+- https://twitter.com/pwuille/status/1259990906997858304
+- https://twitter.com/reardencode/status/1788074956225651060
+- https://twitter.com/wef/status/808328302213689344
+- https://x.com/Bryan8094215482/status/1810006201650077957
+- https://x.com/arkade_os/status/2013249214013440084
+- https://x.com/bitman_pow/status/1724729512024216038
+- https://x.com/rewkang/status/1970782770805813392
+- https://x.com/spirit_satoshi/status/1772274850159030646
+
+---
+
 ## Not Scrapable (4 items -- skip)
 
 ### Embedded PDFs (no URL)

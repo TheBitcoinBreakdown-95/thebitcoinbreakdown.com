@@ -3,26 +3,22 @@
 **Daily To-Do:** `tasks/TODO.md`
 
 ## Last Session
-**Date:** 2026-04-11 (session 20)
+**Date:** 2026-04-12 (session 21)
 
 ### What Was Done
 
-**TBB Media Company -- EP02-EP05 Scripts + Business Strategy + Workflow Update**
-- Wrote 4 podcast scripts (EP02-EP05) matching EP01's format, pulled from WBIGAF/source library:
-  - EP02: Hello World (5-10 min) -- personal intro, bitcoin journey 2012-2021, why TBB exists
-  - EP03: Why Bitcoin? The 10-Minute Case (10-15 min) -- emotional/practical elevator pitch
-  - EP04: What is Money, Really? (15-20 min) -- barter->gold->fiat->bitcoin, Collapse of Trust framework
-  - EP05: Bitcoin Will Save the World (15-20 min) -- Cantillon effect, CFA Franc, CBDCs, the mission
-- Each script has: cold open, "Yo it's GC" intro, timed sections, close, production notes (tone shifts, signature phrases, rhythm, what NOT to do)
-- Reviewed full monetization plan: 11 revenue streams across content + services
-  - 3-tier estimates: Very Low $8K, Low $33K, Medium $94K (Bitcoin-only)
-- Added "Expanded 2112 Vision" to `synthesis.md`: dual content engine model (TBB + FreedomLab -> 2112 services umbrella)
-  - Phased expansion beyond Bitcoin into AI / privacy / self-hosting / basics
-  - Expanded revenue estimates: Very Low $14K, Low $54K, Medium $145K
-  - Decision: launch Bitcoin services first, layer on others as demand materializes
-- Updated production workflow in both `CLAUDE.md` and `synthesis.md`: added RANT step (step 2 of 6)
-  - Record raw brain dump -> transcribe with Whisper -> AI combines best lines with source research -> final script
-  - Solves the "brain-dumping > scripting" preference while still producing polished output
+**btc-index Phase 3B -- Bitcoin Notes Scraping Execution**
+- Committed Phase 3B pipeline files (`c9e3517`): bitcoin-notes-prep.py, run-bitcoin-notes.py, URL lists, failed-urls.md
+- Fixed `__pycache__` gitignore for scraper directory, installed `brotli` package (fixed garbled Brotli-compressed responses)
+- Upgraded `scraper.py:fetch_tweet()` to use fxtwitter API first (~0.5s/tweet), Patchright browser as fallback (~8s)
+  - Added User-Agent header to fix fxtwitter 403s
+  - Added thread detection: regex identifies thread starters ("1/", "(1/N)", "thread"), tries Patchright for full thread, marks PARTIAL if browser fails
+  - Single-point fix in scraper.py benefits both Bitcoin Notes and WBIGAF retry paths
+- Ran full article wave: **372 done (66%), 32 partial, 158 failed** -- 5.1M chars in 42.5 min
+- Ran full tweet wave: **122 done (92%), 11 failed** -- 75K chars in 8.4 min
+  - 11 failed tweets are deleted/suspended accounts (unrecoverable), logged in failed-urls.md
+- Track 2 (WBIGAF failures): exhausted free methods on 4 non-Medium URLs (httpx, Patchright, Wayback Machine -- all failed)
+- Consolidated Apify candidate list: 36 unique Medium + 2 Investopedia + 1 Quartz = 39 URLs (Yahoo Finance 404 = dead)
 
 ### What's Next
 
@@ -41,19 +37,21 @@
 - [x] Run Wave 1B scraping (52 sub-chapters, 239 links)
 - [x] Add Patchright browser fallback + --retry-failed mode
 - [x] Run retry wave (73 recovered, 28 still failed, 8 paywalled skipped)
-- [ ] Try Apify free tier on 11 Medium articles from `btc-index/scraper/failed-urls.md`
-- [ ] Try WebFetch/Apify on 4 non-Medium failures (Investopedia x2, Yahoo Finance, Quartz)
+- [x] Try free methods on 4 non-Medium failures (httpx, Patchright, Wayback -- all failed)
+- [ ] Run Apify on consolidated Medium list (36 unique) + Investopedia x2 + Quartz (39 total)
 - [ ] Update links.md statuses + sources.md content for recoveries
 
 **btc-index Phase 3B -- Bitcoin Notes URL Wave**
 - [x] Build URL extraction + normalization + verified dedup + categorization (`bitcoin-notes-prep.py`)
 - [x] Build Bitcoin Notes scraper runner (`run-bitcoin-notes.py`)
 - [x] Generate URL list files (scrapable: 564, tweets: 133, medium: 31)
-- [ ] Smoke-test article scraping (`--category scrapable --limit 20`)
-- [ ] Run full article wave (564 URLs, ~37 min)
-- [ ] Smoke-test tweet scraping (`--category tweet --limit 10`)
-- [ ] Run full tweet wave (133 URLs, ~17 min)
-- [ ] Run Apify on 31 Medium URLs (needs token in .env)
+- [x] Smoke-test article scraping (`--category scrapable --limit 20`)
+- [x] Run full article wave -- 372 done, 32 partial, 158 failed, 5.1M chars
+- [x] Upgrade fetch_tweet to fxtwitter API + thread detection
+- [x] Run full tweet wave -- 122 done, 11 failed (deleted), 75K chars
+- [ ] Re-run tweet wave to capture threads (thread detection now marks PARTIAL)
+- [ ] Browser retry on 158 article failures (Cloudflare domains)
+- [ ] Run Apify on 36 Medium URLs (consolidated with WBIGAF list)
 - [ ] Decide on GitHub URLs (53) -- extract READMEs or skip?
 - [ ] Decide on Reddit URLs (9) -- Patchright or skip?
 
@@ -95,6 +93,12 @@
 ---
 
 ## Session History
+
+### 2026-04-11 -- EP02-EP05 Scripts + 2112 Vision + Rant Workflow (session 20)
+- Wrote 4 podcast scripts (EP02-EP05) matching EP01's format from WBIGAF/source library
+- Reviewed full monetization plan: 11 revenue streams, 3-tier estimates ($8K-$94K Bitcoin-only)
+- Added Expanded 2112 Vision to synthesis.md: dual content engine, phased expansion, $14K-$145K estimates
+- Updated production workflow: added RANT step (record brain dump -> transcribe -> AI script)
 
 ### 2026-04-12 -- btc-index Bitcoin Notes URL Pipeline Built (session 19)
 - Built `bitcoin-notes-prep.py`: full extraction + normalization + verified dedup + categorization pipeline

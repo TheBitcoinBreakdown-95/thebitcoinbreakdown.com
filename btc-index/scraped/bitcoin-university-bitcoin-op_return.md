@@ -1,0 +1,101 @@
+# bitcoin.university -- Scraped Content
+
+**URL:** https://bitcoin.university/bitcoin-op_return
+**Category:** scrapable
+**Scrape status:** DONE
+**Source notes:** BTC\OP Return Arguments & Knots.md
+**Scraped:** 2026-04-12
+
+---
+
+[ ](https://bitcoin.university/)
+
+Select Page
+
+# Defending Bitcoin’s 80-Byte OP_RETURN Limit: Preserving Purpose Over Perks
+
+by [M/N](https://bitcoin.university/author/nauman09/ "Posts by M/N") | May 8, 2025 | [Bitcoin](https://bitcoin.university/category/bitcoin/) | [0 comments](https://bitcoin.university/bitcoin-op_return/#respond)
+
+Bitcoin finds itself at a familiar crossroads in 2025. A new proposal – to **remove the longstanding 80-byte limit on OP_RETURN data** – has ignited debate over Bitcoin’s very soul. Proponents claim it’s a harmless clean-up of an “arbitrary” restriction, while critics warn it risks turning Bitcoin’s blockchain into a junk drawer of data at odds with its primary role as sound money. In this post, **we** take a principled stance **opposing** the removal of the 80-byte OP_RETURN cap. We’ll revisit the historical origins of OP_RETURN and why it was capped, examine the lessons of the 2014 “OP_RETURN Wars” that shaped Bitcoin’s design, and delve into the current 2025 controversy (GitHub PR #32359) – including key players on both sides and their arguments. Finally, we’ll explain why lifting the limit threatens Bitcoin with spam, bloat, legal hazards, and ideological drift, and end with a call to action for those who wish to uphold Bitcoin’s original ethos by running node software like Bitcoin Knots.
+
+## From Data Hacks to OP_RETURN: A Short History
+
+In Bitcoin’s early days, the script system technically allowed arbitrary data to be included in transactions, but there was no standard way to do so. Nevertheless, creative users _found_ ways – often by hacking the script in unintended fashions. By 2013, people had begun embedding messages, song lyrics, and other non-financial data in the blockchain. One famous May 2013 transaction even stored all the lyrics to Rick Astley’s “Never Gonna Give You Up” as an on-chain joke. At the time, such transactions were **non-standard** – Bitcoin nodes wouldn’t relay them – but miners _could_ include them in blocks if they saw fit. This meant arbitrary data was starting to live _forever_ on Bitcoin’s ledger, hitchhiking on what were supposed to be financial transactions.
+
+Bitcoin’s developers grew concerned that these “creative” uses of the blockchain were bloating the system in harmful ways. In particular, users were encoding data in **spendable outputs** – for example, using fake addresses or abusing opcodes like OP_CHECKMULTISIG – effectively creating **unspendable UTXOs** that lingered in the UTXO set indefinitely. Every unspendable UTXO is a piece of toxic waste, permanently increasing the size of the UTXO database that every full node must store and track. This was antithetical to Bitcoin’s scalability principles.
+
+**OP_RETURN** was introduced in 2014 as a solution. It’s a special script opcode that _deliberately marks an output as provably unspendable_ , while allowing a small amount of arbitrary data to be attached. By marking the output invalid, OP_RETURN lets nodes **drop that output from the UTXO set** , avoiding the buildup of “toxic” UTXOs. In March 2014, Bitcoin Core 0.9.0 officially made OP_RETURN a standard, relayable part of transactions. As the release notes made explicit, this was **not** an endorsement of packing data into Bitcoin blocks for fun or profit – it was a pressure relief valve. The developers wrote:
+
+> “This change is not an endorsement of storing data in the blockchain. The OP_RETURN change creates a provably-prunable output, to avoid data storage schemes – some of which were already deployed – that were storing arbitrary data as forever-unspendable TX outputs, bloating Bitcoin’s UTXO database. Storing arbitrary data in the blockchain is still a bad idea; it is less costly and far more efficient to store non-currency data elsewhere.”
+
+In other words, _if_ you absolutely must store a short message or hash in Bitcoin, OP_RETURN gives you a safe, prunable way to do it – but Bitcoin’s creators wanted to discourage on-chain data altogether. As a nod to that philosophy, they imposed a **size limit** on OP_RETURN data.
+
+## The 2014 “OP_RETURN Wars” and the 80-Byte Limit
+
+How big should an OP_RETURN payload be? This question sparked heated debate in 2014 – often dubbed the “OP_RETURN Wars” in Bitcoin’s history. Early discussions suggested **80 bytes** as a reasonable limit, large enough for a cryptographic hash or small piece of metadata. However, fearing spam and abuse even with that amount, Bitcoin Core developers initially settled on **40 bytes** for the OP_RETURN relay limit when it launched in v0.9.0. This compromise was a _cultural_ stance as much as a technical one: Bitcoin’s community (at least the developers and many early adopters) wanted to **minimize non-financial blockchain use**. As BitMEX Research later noted, _“Some Bitcoiners and Bitcoin developers simply did not want this type of activity on the Bitcoin blockchain and they successfully discouraged it…primarily in around March 2014”_. The pushback against on-chain “dapps” and token schemes on Bitcoin was strong – so strong that many projects pivoted to other platforms (Ethereum, launched in 2015, eagerly absorbed use-cases that Bitcoin had shunned).
+
+Yet the limit did not stay at 40 bytes for long. After further discussion and seeing the need for slightly more data in certain legitimate use-cases, Bitcoin Core devs raised the OP_RETURN cap to **80 bytes** in Bitcoin Core 0.11.0 (Feb 2015). In 0.12.0 (Jan 2016) it became effectively **83 bytes** due to counting the opcode itself in the limit, which meant still 80 bytes of usable data. Thus, by 2016 the dust settled on an **80-byte (payload) OP_RETURN limit** , which remains the de-facto standard to this day. Eighty bytes – about enough for a couple of sentences or a hash – was deemed large enough to be useful for things like asset tags, timestamps, or small notes, but _too small_ to embed images, songs, or other bulk data. This served as a gentle deterrent. Those who _insisted_ on storing bigger data were effectively told: “Not here, please.” Bitcoin’s blockchain was to remain lean, focused on financial transactions.
+
+The result of the 2014 OP_RETURN Wars was a Bitcoin culture that treated the blockchain as **sacred financial space** , not a general-purpose data store. Jeff Garzik, a Bitcoin Core contributor at the time, encapsulated this view when he criticized Counterparty (one of the protocols embedding data) on the forums in March 2014: _“You don’t need to store data in the blockchain… Timestamping hash(data) is just as secure, while more efficient. Furthermore, a secondary chain can be provably pegged to Bitcoin.”_ If you want to innovate with tokens or metadata, fine – but do it _off_ the main chain or use hashes/pointers, rather than dumping raw data on Bitcoin. Thanks to this philosophy and the OP_RETURN limit, Bitcoin navigated the 2014–2015 era without succumbing to massive blockchain spam, even as protocols like Omni (Mastercoin) and Counterparty managed to piggyback on Bitcoin in a limited way (e.g. Omni used OP_RETURN for USDT stablecoin transactions, but constrained by 80 bytes per output).
+
+By keeping on-chain data small, Bitcoin’s UTXO set health was preserved and node operators weren’t on the hook for storing gratuitous content. It’s arguable that this conservative stance also encouraged the rise of alternative platforms better suited for arbitrary data and smart contracts (Ethereum, etc.), thereby keeping Bitcoin’s base layer optimized for what it does best: **simple, robust monetary transactions**.
+
+## OP_RETURN Under Siege: The 2023–2025 Ordinals Boom
+
+Fast forward to the 2020s, and Bitcoin faced a new wave of data insertion – this time through _witness data_ (thanks to SegWit and Taproot upgrades). In early 2023, a project called **Ordinals** introduced “inscriptions,” allowing users to attach arbitrary data (images, text, even video games) to individual satoshis by abusing the Taproot script witness field. Suddenly, the 4 MB block weight limit (1 MB base + 3 MB witness) was being **maxed out by digital artifacts** : in February 2023, the Luxor mining pool mined a record-breaking 3.96 MB block containing just 63 transactions – mostly filled by a single giant JPEG of a “Taproot Wizard.” Average block sizes shot up to 3–3.5 MB after Ordinals launched. Bitcoiners watched in dismay as _non-financial_ transactions crowded the mempool, fees spiked, and the age-old “block size debate” was suddenly back in a new form – this time not arguing about _max block weight_ , but about whether Bitcoin’s block space was being put to good use at all.
+
+Ordinals demonstrated that even with an 80-byte OP_RETURN cap, determined users _could_ still inject megabytes of data into Bitcoin by other means. To some, this Ordinals episode proved the futility of trying to curb non-monetary usage – if people are willing to pay miner fees, they will find a way. Others saw Ordinals as an **exploit of technical loopholes** – a way to do something Bitcoin was never meant to support. Long-time Core developer Luke Dashjr went so far as to label Ordinals transactions “spam” and crafted custom policy patches to **filter or prune** these “undesirable” transactions from his node.
+
+This is the backdrop as we enter 2025: a tension between Bitcoin’s _purist camp_ (who want to minimize junk data on-chain) and a more _laissez-faire camp_ (who emphasize that if block space is paid for, any data is fair game). **OP_RETURN’s 80-byte limit** stands as one of the last deliberate checkpoints discouraging the “data flood.” And now, that checkpoint is under direct challenge.
+
+## The 2025 Debate: Removing the 80-Byte Limit (PR #32359)
+
+In April 2025, Bitcoin Core developer **Peter Todd** opened GitHub Pull Request #32359, proposing to **remove the 80-byte limit on OP_RETURN outputs** (and related limits on how many such outputs are allowed per transaction). The PR – titled _“Remove arbitrary limits on OP_Return (datacarrier) outputs”_ – argued that these restrictions have outlived their purpose and that Bitcoin Core should stop enforcing them in its default policy. This proposal immediately ignited a firestorm on the Bitcoin-Dev mailing list and social media, being dubbed by some as the _“OP_RETURN War 2.0.”_ Bitcoin Core maintainers indicated the change would likely be included in the **next release** , making it a pressing reality rather than a mere thought experiment.
+
+On one side, we have **Core developers and supporters of the PR** , including Peter Todd (the PR author), Antoine “Darosior” Poinsot (who advocated for the change on the mailing list), Greg Sanders (Blockstream engineer, a.k.a. _instagibbs_), and others. On the other side, we have vocal **critics** including veteran dev Luke Dashjr, some miners and node operators, and public figures like Samson Mow (JAN3 CEO), who see this as a dangerous step driven by special interests. Let’s break down the main arguments **for** and **against** removing the OP_RETURN limit, as voiced by each side.
+
+### Arguments For Removing the Limit
+
+Proponents of lifting the 80-byte cap make several key arguments:
+
+  * **The Limit is Arbitrary and Ineffective:** The 80-byte ceiling is deemed an _arbitrary relic_. It was a “nudge” to discourage on-chain data, but in today’s context it **no longer works** – users bypass it easily. As Core contributor Greg Sanders wrote, _“Large-data inscriptions are happening regardless and can be done in more or less abusive ways; the cap merely channels them into more opaque forms that cause damage to the network.”_ In other words, the limit isn’t preventing blockchain bloat – it’s just _encouraging people to hide data elsewhere_ (like in Taproot outputs or multiple small transactions), which can be even worse.
+  * **Prevents Perverse Workarounds (UTXO Bloat):** Removing the cap could actually **protect the UTXO set** better. Right now, because OP_RETURN maxes out at 80 bytes and only one output per tx (standard), some protocols resort to uglier hacks: e.g., splitting data across many outputs or using fake _spendable_ outputs with data encoded in public keys. Those tricks _do_ create unspendable UTXOs (the very thing OP_RETURN was meant to avoid). Antoine Poinsot noted an example: the Citrea sidechain bridge was found using unspendable Taproot outputs to store data that didn’t fit in OP_RETURN. Proponents argue that by **dropping the limit** , these projects would simply use a single OP_RETURN output (prunable, non-UTXO) for their data, resulting in _“a cleaner UTXO set”_ and less overall spam.
+  * **Consistency and Simpler Code:** The datacarrier limit is described as a kludge complicating the codebase and network policy. Removing it would _“streamline Bitcoin Core’s codebase”_ and make transaction relay more consistent. Currently, miners often mine transactions that violate this limit (since consensus doesn’t require it), creating inconsistency: nodes might not relay a tx that a miner will include anyway. Lifting the cap aligns node relay policy with what the network actually accepts, reducing surprises.
+  * **Let the Fee Market Decide:** Philosophically, advocates say Bitcoin should have **“transparent, minimal rules rather than editorial preference”**. If someone wants to pay for a kilobyte of block space to store data, the protocol should not arbitrarily say “no” – the miner fee is the natural deterrent. By retiring a deterrent that no longer deters, Bitcoin Core would be re-affirming neutrality and letting the fee market arbitrate what data is worth storing.
+  * **Support for Innovation:** Some supporters (including developers like Sjors Provoost and even Bitcoin veterans like Pieter Wuille, according to community summaries) suggest that a more permissive OP_RETURN could **open doors for technical innovation** on Bitcoin. For example, improved protocols for timestamping, cross-chain bridges, or Layer-2 systems might make use of larger OP_RETURN outputs to embed proofs or metadata.
+
+
+In summary, the pro-removal camp contends that **the 80-byte limit is an anachronism** – it doesn’t stop abuse, it actually encourages worse forms of it. They argue that removing the cap will _reduce_ harm (by funneling data into prunable outputs), simplify node operations, and stick to Bitcoin’s core values of neutrality and fee-based resource allocation.
+
+### Arguments Against Removing the Limit
+
+On the other side of the aisle, critics of the change present **powerful counterarguments** and express deep concern that this move undermines Bitcoin. Key points include:
+
+  * **Preserving Bitcoin’s Financial Focus:** Detractors see Bitcoin first and foremost as a **monetary network, not a general data storage network**. The 80-byte limit is a symbolic and practical guardrail that has kept Bitcoin _lean and payment-centric_. Removing it would send a message that _any and all data_ is welcome on-chain, fundamentally shifting Bitcoin’s purpose.
+  * **Risk of Spam and Blockchain Bloat:** The most immediate worry is that without the 80-byte cap, we’ll see a surge of **spam transactions and bloated blocks**. If it becomes easier and more “officially allowed” to embed kilobytes of data per transaction, some users (or attackers) may start doing so liberally – from posting files and images to new fad protocols that stuff data into OP_RETURN.
+  * **Illegal and Indecent Content:** With bigger OP_RETURNs, the **type of content** people can embed might cross into dangerous territory. Today, 80 bytes might let you store a short message or a hash of a file; 8 000 bytes (for example) could let you store an actual image or illicit material. Researchers have found Bitcoin transactions containing links to illicit imagery and raw data that could be construed as such. Limiting data volume helps reduce that risk.
+  * **Ideological Drift and “Feature Creep”:** Many opponents feel this change reflects a broader **ideological drift** in Core’s recent decisions – drifting away from Bitcoin’s minimalist, resilient design towards appeasing niche use-cases. They worry it’s driven by special interests rather than broad community demand.
+  * **Security and DoS Concerns:** Some technical arguments against removal revolve around potential **Denial-of-Service (DoS)** vectors. Unlimited data outputs could increase parsing overhead or inadvertently create new attack surfaces if not carefully managed.
+
+
+In short, the anti-removal camp believes **the benefits of the 80-byte cap far outweigh any inconvenience it causes**. It’s a simple rule that for years has gently enforced Bitcoin’s focus and kept gross abuse at bay. Removing it, in their view, opens Pandora’s box to spam, legal nightmares, and a dilution of Bitcoin’s identity as _sound money, not a data dumping ground_.
+
+## Why the 80-Byte Limit Must Stay: Upholding Bitcoin’s Ethos
+
+Having weighed both sides, **we firmly stand with the critics** : **the 80-byte OP_RETURN limit should _not_ be removed.** The arguments in favor, while not entirely without merit, are ultimately not convincing when measured against the clear risks and the principles at stake.
+
+Yes, it’s true that people can and have bypassed the limit via other means. But the answer to that is _not_ to surrender and throw the doors wide open. As Luke Dashjr wrote on the developer mailing list, _“The bugs should be fixed, not the abuse embraced.”_ If Taproot’s script limits or witness discount unintentionally enabled megabyte-sized inscriptions, then **those** aspects should be scrutinized – not OP_RETURN. By removing the cap, Bitcoin Core would effectively be _embracing_ the very behavior it once discouraged.
+
+The cap’s normative power signals to the ecosystem: “Bitcoin is not for arbitrary large data.” Even if some users circumvent it, most projects have abided by the 80-byte rule or kept their on-chain footprints minimal. Removing the cap sends the opposite signal, effectively greenlighting data insertion. We could see a wave of new **“Bitcoin 2.0”** ventures exploiting the new freedom – NFTs, tokens, or attempts to store media files on-chain, all claiming legitimacy because “Core allows it now.” The result would be a bloated chain and a dilution of Bitcoin’s core utility. Remember, **block space is a scarce public resource** ; we need to protect it from free-riders and spam.
+
+Consider also the **legal dimension**. By keeping data tiny and mostly abstract (e.g. hashes), Bitcoin has largely stayed under regulators’ radar regarding illicit content on-chain. Encouraging larger data increases the chance of truly illegal material getting embedded. It would only take one high-profile incident to force nodes into awkward legal positions. Bitcoin has wisely avoided that scenario by limiting data – a case of technological design helping to steer social outcomes.
+
+From an **ideological standpoint** , the 80-byte limit aligns with Bitcoin’s founding intent. The conservative stance in 2014 helped keep Bitcoin’s base layer simple and reliable, channeling experimentation to layers above. That minimalism is a feature, not a bug. Bitcoin does one thing well. We tamper with that focus at our peril.
+
+Technically, consensus rules wouldn’t change – blocks remain limited to 4 M weight units. But **policy defaults shape network usage**. If Core’s defaults change, wallet developers, explorers, and users will follow. Non-Core nodes feel pressured to conform. We shouldn’t be cavalier about modifying defaults that carry such influence.
+
+## A Stand for Bitcoin’s Integrity: Run Bitcoin Knots (Call to Action)
+
+Bitcoin’s strength has always come from its **users and node operators** , not any single group of developers. If you believe, as we do, that removing the OP_RETURN cap is a mistake that endangers Bitcoin’s ethos, you _can_ make your voice heard. One direct action is to choose alternative node software that retains conservative policies ([How To Run A BITCOIN NODE: Knots on Desktop, Umbrel and Start9](https://www.youtube.com/watch?v=zT4NuAaH3EM
+
+[... truncated at 20,000 characters ...]
