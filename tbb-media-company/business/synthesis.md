@@ -107,18 +107,75 @@ Bitcoin won't win by default. It requires cultural literacy, storytelling, usabi
 ### Pricing Philosophy
 Charge what the time is worth ($100/hr). Undercutting = operating at a lower frequency. Offer a charity track (free webinars, free resource guides) for those who can't pay -- but that's not the base offering.
 
+### Expanded 2112 Vision (Back-of-Mind)
+
+**Core idea:** 2112 Capital Solutions is the services umbrella, not just a Bitcoin consultancy. TBB and FreedomLab are dual content engines that funnel into paid 2112 services across multiple categories.
+
+**Structure:**
+```
+CONTENT ENGINES (audience building, free/low-cost)
+  TBB ──────────── Bitcoin education (podcast, blog, compendium, YouTube)
+  FreedomLab ───── Freedom tech education (lessons, workshops, in-person)
+
+SERVICES UMBRELLA (paid, where the revenue is)
+  2112 Capital Solutions LLC
+    ├── Bitcoin (self-custody, nodes, consulting) ← launch first
+    ├── AI (local setup, workflow consulting, team training) ← layer on
+    ├── Privacy (Tor, VPN, encrypted comms, audits) ← layer on
+    ├── Self-hosting (email, Matrix, mining, Linux) ← layer on
+    ├── Computer basics (digital literacy, security hygiene) ← layer on
+    └── Corporate training (bundled across all categories) ← layer on
+```
+
+**Phasing:** Launch with Bitcoin services only (through TBB funnel). Prove the model. Add FreedomLab-sourced services one category at a time as demand materializes. Don't build a menu in advance.
+
+**Why it works:**
+- FreedomLab already has 26+ lesson pages covering the expanded topics (Bitcoin nodes, Lightning, Tor, VPNs, encrypted messaging, Linux, self-hosted AI, Matrix, mining, hardware wallets). That content is the top-of-funnel.
+- Cross-pollination: Bitcoin-curious people also care about privacy. AI-curious people discover self-hosting. Each service category feeds the others.
+- Corporate sell improves: "Digital security + AI literacy + Bitcoin fundamentals" is a full-day workshop, not a niche ask.
+- Two content engines double the addressable market without splitting the brand.
+
+**Expanded service lines (when demand appears):**
+| Service | Price | Category |
+|---------|-------|----------|
+| Local AI setup (Ollama, self-hosted LLMs) | $200-500 | AI |
+| AI workflow consulting | $100/hr | AI |
+| AI fluency training (teams) | $1-3K/day | AI / Corporate |
+| Privacy audit / consultation | $100/hr | Privacy |
+| Encrypted comms setup (Signal, Matrix, SimpleX) | $100-200 | Privacy |
+| VPN/Tor configuration | $100-200 | Privacy |
+| Linux migration / setup | $200-500 | Self-hosting |
+| Self-hosted email (Mailcow) | $500-1,000 | Self-hosting |
+| Digital sovereignty package (bundle) | $1,500-3,000 | Premium |
+| Computer basics / digital literacy | $75/hr | Basics |
+| Security hygiene workshop | $100-200 | Basics |
+
+**Revenue estimates (annual, once streams active):**
+| Tier | Bitcoin-only | Expanded 2112 |
+|------|-------------|---------------|
+| Very Low | $7,900 | $14,050 |
+| Low | $32,650 | $54,200 |
+| Medium | $94,400 | $144,900 |
+
+**Risk:** Dilution. One person, five service categories. Mitigated by phasing and by keeping the public brands focused (TBB = Bitcoin, FreedomLab = freedom tech, 2112 stays behind the scenes as the billing entity).
+
+**LLC note:** NJ LLC likely filed with "any lawful business purpose" -- verify by checking original articles of organization. If so, no amendment needed. May want additional DBAs as service categories grow.
+
+*Added 2026-04-10. Revisit after Bitcoin services model is proven.*
+
 ---
 
 ## 5. Content Strategy
 
 ### Production Flow (validated through planning)
 1. **Pick** (5-10 min) -- choose ONE topic from existing library
-2. **Outline** (15-20 min) -- speakable talking points, not prose
-3. **Record** (20-40 min) -- one take, OBS, no editing pressure
-4. **Post-produce** (15-20 min, AI-assisted) -- transcribe, show notes, social, newsletter
-5. **Publish** (15 min) -- upload, schedule, distribute
+2. **Rant** (10-20 min) -- raw brain dump on the topic, unstructured, transcribe with Whisper
+3. **Script** (30-60 min, AI-assisted) -- AI combines best lines from rant + source library research into speakable outline
+4. **Record** (20-40 min) -- one take, OBS, no editing pressure
+5. **Post-produce** (15-20 min, AI-assisted) -- transcribe, show notes, social, newsletter
+6. **Publish** (15 min) -- upload, schedule, distribute
 
-**Total: 1-3 hours per episode.** Fits alongside full-time job.
+**Total: 2-3 hours per episode.** The rant step adds 10-20 min but produces a better, more authentic script and doubles as speaking practice. Fits alongside full-time job.
 
 ### Style & Voice
 - Brain-dumping (speech-to-text) > scripting -- feels more natural

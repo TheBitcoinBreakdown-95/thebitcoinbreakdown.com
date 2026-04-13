@@ -81,33 +81,42 @@ The production and services arm of The Bitcoin Breakdown. Two goals:
    - Episode roadmap (podcast/episode-roadmap.md)
    - Or a new topic informed by the above
 
-2. SCRIPT (30-60 min, AI-assisted)
-   AI pulls relevant material from files.
-   AI drafts a speakable outline (talking points, not prose) using Voice DNA profile.
+2. RANT (10-20 min)
+   Record a raw, unstructured brain dump on the topic. Talk through your
+   thoughts, opinions, arguments, stories -- whatever comes out. Don't worry
+   about structure, polish, or being wrong. This is practice and idea
+   generation, not the final product. Can be done at a desk, on a walk, or
+   wherever the energy is. Transcribe with Whisper and hand the transcript
+   to AI.
+
+3. SCRIPT (30-60 min, AI-assisted)
+   AI combines the best lines and ideas from the rant with research pulled
+   from the WBIGAF/TBB source library. Output is a speakable outline in
+   Voice DNA style -- talking points, not prose.
    User reads, marks up, adds riffs, cuts what's wrong.
    Voice DNA location: WBIGAF/0-project/voice-dna/voice-dna-profile.md
-   Style: brain-dumping > scripting. Don't over-script.
+   The script should sound like you because it started as you.
 
-3. RECORD (30-45 min)
+4. RECORD (30-45 min)
    Option A: Audio only (podcast) -- read outline, riff naturally
    Option B: Slides + voiceover (YouTube) -- PowerPoint/Excalidraw walkthrough
    Option C: Screen share (how-to) -- live walkthrough with narration
    Tools: OBS + existing mic + phone/Camo Studio
    One take preferred. Re-record only if major issues.
 
-4. POST-PRODUCTION (AI-assisted, 15-20 min human review)
+5. POST-PRODUCTION (AI-assisted, 15-20 min human review)
    Transcribe (Whisper or YouTube auto-captions)
    AI generates: show notes, 3-5 social posts, newsletter snippet, blog post draft
    User reviews and approves
 
-5. PUBLISH (15 min)
+6. PUBLISH (15 min)
    Upload to podcast host + YouTube
    Schedule social posts
    Send newsletter (when subscriber base exists)
    Optionally publish as TBB blog post with embedded audio/video
 ```
 
-**Target per episode: 2-3 hours total.** At 5-10 hrs/week = 1-3 episodes. Even 2/month builds momentum.
+**Target per episode: 2-3 hours total.** The rant step adds 10-20 min but produces a better script and doubles as speaking practice. At 5-10 hrs/week = 1-3 episodes. Even 2/month builds momentum.
 
 ---
 
