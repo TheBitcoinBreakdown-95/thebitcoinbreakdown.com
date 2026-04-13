@@ -65,4 +65,5 @@ jc-bitcoin/jc-btc/CRM/
 btc-index/.vectordb/
 btc-index/mcp/.venv/
 btc-index/mcp/__pycache__/
+btc-index/scraper/__pycache__/
 btc-index/_index_meta.json
