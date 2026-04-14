@@ -1,12 +1,13 @@
 # digicash.support.nl -- Scraped Content
 
 **URL:** https://digicash.support.nl/
-**Category:** scrapable
-**Scrape status:** FAILED
-**Source notes:** BTC\THE  CYPHERNOMICON Cypherpunks FAQ and More,.md, Books\CYPHERNOMICON.txt
-**Scraped:** 2026-04-12
-**Error:** Connection refused
+**Category:** wayback-dead
+**Scrape status:** DONE
+**Source notes:** 
+**Scraped:** 2026-04-13
 
 ---
 
-*No content extracted. Reason: Connection refused*
+*Archived version from 1998-01-13 via Wayback Machine*
+
+<BODY BGCOLOR="#FFFFFF" LINK="#009999" VLINK="#009999"> <!-- <B>This document is designed to be viewed using <B>Netscape 2.0</B>'s Frame features. If you are seeing this message, you are using a <I>Frame challenged</I> browser. <P> A Frame capable browser can be obtained from <A HREF="http://home.netscape.com/">Netscape Communications</A></B> --> <P> <H2>DigiCash Website Index:</H2> <P> <A HREF="/digicash/index.html">DigiCash</A><BR> <A HREF="/digicash/digicash/profile/index.html">Profile</A><BR> <A HREF="/digicash/digicash/usa/index.html">Office USA</A><BR> <A HREF="/digicash/digicash/europe/index.html">Office Europe</A><BR> <A HREF="/digicash/digicash/asia-pacific/index.html">Office Asia-Pacific</A><BR> <A HREF="/digicash/personnel/people/index.html">People at DigiCash</A><BR> <A HREF="/digicash/personnel/jobs/index.html">Jobs at DigiCash</A><BR> <P> <A HREF="/ecash/ecash.html">ecash</A><BR> <A HREF="/ecash/intro/index.html">Introduction to ecash</A><BR> <A HREF="/ecash/new_users/index.html">New ecash users</A><BR> <A HREF="/ecash/new_merchants/index.html">New ecash merchants</A><BR> <A HREF="/ecash/new_issuers/index.html">New ecash issuers</A><BR> <A HREF="/ecash/issuers/index.html">Current Issuers</A><BR> <A HREF="/ecash/issuers/db/">Deutsche Bank</A><BR> <A HREF="/ecash/issuers/mtb/">Mark Twain Bank</A><BR> <A HREF="/ecash/issuers/eunet/">EUnet / Merita</A><BR> <A HREF="/ecash/issuers/advance/">Advance Bank</A><BR> <A HREF="/ecash/issuers/dnb/">Den norske Bank</A><BR> <A HREF="/ecash/issuers/ba/">Bank Austria</A><BR> <A HREF="/ecash/issuers/nri/">Nomura Research Institute</A><BR> <A HREF="/ecash/demo/index.html">ecash demonstration</A><BR> <A HREF="/ecash/users/index.html">ecash users</A><BR> <A HREF="/ecash/merchants/index.html">ecash merchants</A><BR> <A HREF="/ecash/docs/index.html">ecash documentation</A><BR> <P> <A HREF="/smartcards/index.html">Smart cards</A><BR> <A HREF="/smartcards/blue/">Blue</A><BR> <A HREF="/smartcards/roadtoll/">Roadtoll</A><BR> <A HREF="/smartcards/multicard/">Multicard</A><BR> <P> <A HREF="/projects/index.html">Projects and Research</A><BR> <A HREF="/projects/euprojects/">EU Projects</A><BR> <A HREF="/projects/cafe/">CAFE</A><BR> <A HREF="/projects/opera/">OPERA</A><BR> <A HREF="/projects/soscard/">SOSCARD</A><BR> <A HREF="/projects/crisp/">CRISP</A><BR> <A HREF="/projects/semper/">SEMPER</A><BR> <A HREF="/projects/million/">MILLION</A><BR> <A HREF="/projects/imprimatur/">IMPRIMATUR</A><BR> <A HREF="/projects/rand.html">Research</A><BR> <A HREF="/news/archive/bigbro.html">Security Without Identification</A><BR> <A HREF="/news/archive/sciam.html">Achieving Electronic Privacy</A><BR> <A HREF="/news/archive/digbig.html">Digital Signatures</A><BR> <A HREF="/news/archive/encrypt.html">Blind Signatures</A><BR> <A HREF="/news/archive/voting.html">Electronic Voting</A><BR> <A HREF="/projects/links/index.html">Technololy Links</A><BR> <P> <A HREF="/news/index.html">News</A><BR> <A HREF="/news/releases/">Press Releases</A><BR> <A HREF="/news/room/current.html">Current Press</A><BR> <A HREF="/news/room/archive.html">Press Archive</A><BR> <A HREF="/news/agenda/">Conference Agenda</A><BR> <A HREF="/news/awards/">Awards</A><BR> <A HREF="/news/publications/>Publications</A><BR> <P> </BODY>

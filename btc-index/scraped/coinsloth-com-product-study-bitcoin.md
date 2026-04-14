@@ -1,12 +1,13 @@
 # coinsloth.com -- Scraped Content
 
 **URL:** https://coinsloth.com/product/study-bitcoin
-**Category:** scrapable
-**Scrape status:** FAILED
-**Source notes:** BTC\Stickers.md
-**Scraped:** 2026-04-12
-**Error:** HTTP 500 (server error)
+**Category:** retry-direct
+**Scrape status:** DONE
+**Source notes:** 
+**Scraped:** 2026-04-13
 
 ---
 
-*No content extracted. Reason: HTTP 500 (server error)*
+There has been a critical error on this website.
+
+[Learn more about troubleshooting WordPress.](https://wordpress.org/documentation/article/faq-troubleshooting/)

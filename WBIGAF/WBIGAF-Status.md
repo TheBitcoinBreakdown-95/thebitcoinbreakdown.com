@@ -40,9 +40,9 @@ Ch3.1 COMPLETE (deployed, catalog retrofitted to v2). Ch3.2 Draft complete (Step
 | 6 | What is Bitcoin Exactly | 7 | 8,590 | Pending (add "How Bitcoin Works" sub-chapter) |
 | 7 | Bitcoin Present | 7 | 5,687 | Pending |
 | 8 | Why BTC is Good AF | 13 | 22,256 | Pending |
-| 9 | Bitcoin Future | 8 | 1,826 | Pending |
+| 9 | Bitcoin Future | 9 | 2,576 | Pending (9.10 Step 1 done) |
 
-**67 total sub-chapters** across Ch3-9. Each sub-chapter = one WBIGAF source file, expanded to whatever length the arguments merit.
+**68 total sub-chapters** across Ch3-9. Each sub-chapter = one WBIGAF source file, expanded to whatever length the arguments merit.
 
 ---
 
@@ -54,7 +54,7 @@ Ch3.1 COMPLETE (deployed, catalog retrofitted to v2). Ch3.2 Draft complete (Step
 4. Ch 4: Bitcoin Past (6 sub-chapters, 8,392 source words)
 5. Ch 6: What is Bitcoin Exactly (7 sub-chapters — 6 source + NEW "How Bitcoin Works")
 6. Ch 7: Bitcoin Present (7 sub-chapters, 5,687 source words)
-7. Ch 9: Bitcoin Future (8 sub-chapters, 1,826 source words)
+7. Ch 9: Bitcoin Future (9 sub-chapters, 2,576 source words -- 9.10 System-Agnostic Money added)
 
 ---
 

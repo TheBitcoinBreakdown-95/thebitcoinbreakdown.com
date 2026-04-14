@@ -11,9 +11,9 @@
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
 | 1 | Blog | https://danhedl.medium.com/bitcoins-distribution-was-fair-e2ef7bbbc892 | FAILED | "Bitcoin's Distribution Was Fair" by Dan Hedl |
-| 2 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/ | FAILED | r/Bitcoin Newcomers FAQ -- open source and accountable |
-| 3 | Article | https://b.tc/conference/opensource | FAILED | Bitcoin Conference -- open source philosophy |
-| 4 | Article | https://nakamoto.com/what-are-the-key-properties-of-bitcoin/ | FAILED | nakamoto.com -- key properties of Bitcoin, open collaboration |
+| 2 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/ | DONE | r/Bitcoin Newcomers FAQ -- open source and accountable |
+| 3 | Article | https://b.tc/conference/opensource | PARTIAL | Bitcoin Conference -- open source philosophy |
+| 4 | Article | https://nakamoto.com/what-are-the-key-properties-of-bitcoin/ | PARTIAL | nakamoto.com -- key properties of Bitcoin, open collaboration |
 
 ---
 

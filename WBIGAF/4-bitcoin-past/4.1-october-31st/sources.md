@@ -296,3 +296,873 @@ Some privacy related extensions may cause issues on x.com. Please disable them a
 
 *YouTube video -- transcript not available via automated scraping.*
 
+---
+
+### Link #3 -- Bitcoin Magazine — Luther parallel
+
+**Source:** bitcoinmagazine.com
+**URL:** https://bitcoinmagazine.com/culture/why-bitcoin-resembles-the-protestant-reformation
+**Type:** Article
+**Scrape status:** DONE
+
+---
+
+BITCOIN ALPHA IN YOUR INBOX EVERY WEEKDAY[FREE NEWSLETTER](https://bitcoinmagazine.com/newsletter)
+
+×
+
+Bitcoin Magazine News
+
+Bitcoin Magazine
+
+Portfolio Tracker & Media
+
+[ Get it ](https://play.google.com/store/apps/details?id=com.anonymous.bmapp)
+
+__
+
+[ __ Facebook ](https://www.facebook.com/BitcoinMagazine "Facebook") [ __ Instagram ](https://www.instagram.com/bitcoinmagazine "Instagram") [ __ Linkedin ](https://www.linkedin.com/company/bitcoin-magazine/ "Linkedin") [ __ Rumble ](https://rumble.com/c/BitcoinMagazine "Rumble") [ __ Twitter ](https://twitter.com/bitcoinmagazine "Twitter") [ __ Youtube ](https://www.youtube.com/channel/UCtOV5M-T3GcsJAq8QKaf0lg "Youtube")
+
+__
+
+  * [__NEWS __](https://bitcoinmagazine.com/articles)
+    * [BUSINESS](https://bitcoinmagazine.com/business)
+    * [CULTURE](https://bitcoinmagazine.com/culture)
+    * [MARKETS](https://bitcoinmagazine.com/markets)
+    * [POLITICS](https://bitcoinmagazine.com/politics)
+    * [TAKES](https://bitcoinmagazine.com/takes)
+    * [TECHNICAL](https://bitcoinmagazine.com/technical)
+  * [__GUIDES](https://bitcoinmagazine.com/guides)
+  * [__GLOSSARY](https://bitcoinmagazine.com/bitcoin-glossary)
+  * [__CHARTS](https://www.bitcoinmagazinepro.com/charts/)
+  * [__BITCOIN PRICE](https://bitcoinmagazine.com/bitcoin-price)
+  * [__STORE](https://store.bitcoinmagazine.com/)
+  * __TOOLS __
+    * [BITCOIN PROFIT CALCULATOR](https://bitcoinmagazine.com/bitcoin-profit-calculator)
+    * [BITCOIN CAGR CALCULATOR](https://bitcoinmagazine.com/bitcoin-cagr-calculator)
+    * [BITCOIN MINING CALCULATOR](https://bitcoinmagazine.com/bitcoin-mining-calculator)
+    * [SATOSHI TO USD CALCULATOR](https://bitcoinmagazine.com/satoshi-to-usd-calculator)
+    * [BITCOIN ETF TRACKER](https://bitcoinmagazine.com/bitcoin-etf-tracker)
+  * __ABOUT __
+    * [ABOUT BITCOIN MAGAZINE](https://bitcoinmagazine.com/about)
+    * [ADVERTISE](https://b.tc/advertise)
+    * [EDITORIAL POLICY](https://bitcoinmagazine.com/editorial-policy)
+    * [JOBS](https://jobs.b.tc/)
+    * [PRIVACY POLICY](https://bitcoinmagazine.com/privacy-policy)
+    * [TERMS OF USE](https://bitcoinmagazine.com/terms-of-use)
+    * [CONTACT US](https://bitcoinmagazine.com/contact)
+  * __BTC INC __
+    * [PRINT](https://store.bitcoinmagazine.com/collections/magazines)
+    * [BOOKS](https://store.bitcoinmagazine.com/collections/books)
+    * [CONFERENCE](https://b.tc/conference)
+    * [CORPORATIONS](https://b.tc/corporations)
+    * [UTXO](https://www.utxo.management/)
+    * [PRO](https://www.bitcoinmagazinepro.com/)
+  * [ PREDICT BITCOIN](https://bitcoinmagazine.com/duelbits-predict)
+
+
+__
+
+Search
+
+__
+
+[](https://bitcoinmagazine.com/)
+
+  * [STORE](https://store.bitcoinmagazine.com/)
+  * [PRINT](https://store.bitcoinmagazine.com/collections/magazines)
+  * [BOOKS](https://store.bitcoinmagazine.com/collections/books)
+  * [CONFERENCE](https://b.tc/conference)
+  * [CORPORATIONS](https://bitcoinforcorporations.com/)
+  * [UTXO](https://www.utxo.management/)
+  * [PRO](https://www.bitcoinmagazinepro.com/)
+
+
+[__Facebook](https://www.facebook.com/BitcoinMagazine "Facebook")
+
+[ __Twitter](https://twitter.com/bitcoinmagazine "Twitter")
+
+[ __Youtube](https://www.youtube.com/channel/UCtOV5M-T3GcsJAq8QKaf0lg "Youtube")
+
+[ __Rumble](https://rumble.com/c/BitcoinMagazine "Rumble")
+
+[ __Linkedin](https://www.linkedin.com/company/bitcoin-magazine "Linkedin")
+
+[ __Instagram](https://www.instagram.com/bitcoinmagazine "Instagram")
+
+[](https://bitcoinmagazine.com/)
+
+  * [](https://goldbarwhiskey.com/s/btcbanners)
+
+  * [](https://a2.adform.net/C/?bn=87940429;C=1;adfibeg=0;cdata=LxfhMMJk4zWI6vy5Q0aeQL9v8WxuzBLtkCq0adONLJ9_BLyrLe9rMv34zlUCciu2K9mEQGQcj9xXYH9uJdQQKHtt2n4OwTFiOOkXWFHbX2_hQW6FXjSrzw2;;CREFURL=https%3a%2f%2fbitcoinmagazine.com%2fculture%2fwhy-bitcoin-resembles-the-protestant-reformation)
+
+__
+
+  * [](https://a2.adform.net/C/?bn=87940432;C=1;adfibeg=0;cdata=JgKyhwynSzeI6vy5Q0aeQL9v8WxuzBLt_4MeGe0c2bKMChPqsch3lg1AIuNNWKtvK9mEQGQcj9xXYH9uJdQQKHtt2n4OwTFiOOkXWFHbX2_hQW6FXjSrzw2;;CREFURL=https%3a%2f%2fbitcoinmagazine.com%2fculture%2fwhy-bitcoin-resembles-the-protestant-reformation)
+
+__
+
+  * [](https://store.bitcoinmagazine.com/collections/books)
+
+  * [](https://store.bitcoinmagazine.com/pages/bitcoin-magazine-annual-subscription-bitcoin-2026-conference-pass)
+
+  * [](http://2026.b.tc/earn-your-pass)
+
+  * [](https://goldbarwhiskey.com/s/btcbanners)
+
+  * __
+
+
+__
+
+__
+
+  * [__NEWS __](https://bitcoinmagazine.com/articles)
+    * [BUSINESS](https://bitcoinmagazine.com/business)
+    * [CULTURE](https://bitcoinmagazine.com/culture)
+    * [MARKETS](https://bitcoinmagazine.com/markets)
+    * [POLITICS](https://bitcoinmagazine.com/politics)
+    * [TAKES](https://bitcoinmagazine.com/takes)
+    * [TECHNICAL](https://bitcoinmagazine.com/technical)
+  * [__VIDEOS](https://bitcoinmagazine.com/video)
+  * __LEARN __
+    * [GUIDES](https://bitcoinmagazine.com/guides)
+    * [GLOSSARY](https://bitcoinmagazine.com/bitcoin-glossary)
+  * [__CHARTS](https://www.bitcoinmagazinepro.com/charts/)
+  * [__BITCOIN PRICE](https://bitcoinmagazine.com/bitcoin-price)
+  * __TOOLS __
+    * [BITCOIN PROFIT CALCULATOR](https://bitcoinmagazine.com/bitcoin-profit-calculator)
+    * [BITCOIN CAGR CALCULATOR](https://bitcoinmagazine.com/bitcoin-cagr-calculator)
+    * [BITCOIN MINING CALCULATOR](https://bitcoinmagazine.com/bitcoin-mining-calculator)
+    * [SATOSHI TO USD CALCULATOR](https://bitcoinmagazine.com/satoshi-to-usd-calculator)
+    * [BITCOIN ETF TRACKER](https://bitcoinmagazine.com/bitcoin-etf-tracker)
+  * [__STORE](https://store.bitcoinmagazine.com/)
+  * [PREDICT BITCOIN ](https://bitcoinmagazine.com/duelbits-predict)
+
+
+Search __
+
+[Home](https://bitcoinmagazine.com/) __[CULTURE](https://bitcoinmagazine.com/culture "View all posts in CULTURE") __Financial Protestants: How The Bitcoin Revolution Resembles The Reformation
+
+[CULTURE](https://bitcoinmagazine.com/culture)
+
+# Financial Protestants: How The Bitcoin Revolution Resembles The Reformation
+
+[](https://bitcoinmagazine.com/authors/ulric-pattillo "Ulric Pattillo")
+
+By [Ulric Pattillo](https://bitcoinmagazine.com/authors/ulric-pattillo)
+
+July 28, 2021
+
+[ ](https://bitcoinmagazine.com/wp-content/uploads/2024/11/img_5735.jpg)
+
+__
+
+Share
+
+[__Facebook](https://www.facebook.com/sharer.php?u=https%3A%2F%2Fbitcoinmagazine.com%2Fculture%2Fwhy-bitcoin-resembles-the-protestant-reformation "Facebook")[ __Twitter](https://twitter.com/intent/tweet?text=Financial+Protestants%3A+How+The+Bitcoin+Revolution+Resembles+The+Reformation&url=https%3A%2F%2Fbitcoinmagazine.com%2Fculture%2Fwhy-bitcoin-resembles-the-protestant-reformation&via=bitcoinmagazine "Twitter")[ __Linkedin](https://www.linkedin.com/shareArticle?mini=true&url=https://bitcoinmagazine.com/culture/why-bitcoin-resembles-the-protestant-reformation&title=Financial+Protestants%3A+How+The+Bitcoin+Revolution+Resembles+The+Reformation "Linkedin")[ __ReddIt](https://reddit.com/submit?url=https://bitcoinmagazine.com/culture/why-bitcoin-resembles-the-protestant-reformation&title=Financial+Protestants%3A+How+The+Bitcoin+Revolution+Resembles+The+Reformation "ReddIt")
+
+[ __Email](mailto:?subject=Financial Protestants: How The Bitcoin Revolution Resembles The Reformation&body=https://bitcoinmagazine.com/culture/why-bitcoin-resembles-the-protestant-reformation "Email")[ __Telegram](https://telegram.me/share/url?url=https://bitcoinmagazine.com/culture/why-bitcoin-resembles-the-protestant-reformation&text=Financial+Protestants%3A+How+The+Bitcoin+Revolution+Resembles+The+Reformation "Telegram")[ __Copy URL](https://bitcoinmagazine.com/culture/why-bitcoin-resembles-the-protestant-reformation "Copy URL")
+__
+
+[ Prefer us on Google ](https://www.google.com/preferences/source?q=bitcoinmagazine.com) [ Download App ](https://apps.apple.com/us/app/bitcoin-magazine-news/id6749723428) [ Download App ](https://play.google.com/store/apps/details?id=com.anonymous.bmapp)
+
+The European Renaissance is generally held in high regard in the Bitcoin community as a model of a contrarian, revolutionary impact on the world. This movement was driven by humanist thought leadership and philosophy, scientific discovery, geographic exploration and artistic evolution. Likewise, Bitcoiners have been champions of pushing the boundaries of society’s status quo, looking to make real, lasting and positive change for all people in the world.
+
+A major component of the Renaissance is often left untold, but, in my opinion, carries an even greater parallel to the events we are witnessing in the present day. The Protestant Reformation was responsible for much of the social and political liberation in Europe, paving the way for a number of advantages for the people of that time and their descendants. These benefits include a weakening of the centralized political power (the Roman Catholic Church), the increase of localized (decentralized) church organization, seeding the concept of separation of church and state, and the lawful printing of the Bible in common languages, which enabled the intellectual freedom to choose the faith or not. The rest of my essay will illustrate important historical features of the Protestant Reformation and draw parallels to the journey the Bitcoin Revolution is on with a hopeful conclusion.
+
+## All Roads Lead To Rome
+
+The Protestant Reformation was initiated by Martin Luther, a German monk disillusioned with the Church’s clerical culture of false piety and power abuse over the millions of Europeans under their sovereign rule. The Church was able to amass an unrivaled fortune through the promotion of religious sacraments that enabled a person to “earn” one’s way into Heaven. These sacraments, while allegedly divine in motive, all came with a temporal price. Paying indulgence was a fee to save dead relatives from Purgatory. The greater the payment, the more the Pope was willing to grant more years of supernatural clemency for the dead.
+
+Individuals were compelled to partake in pilgrimages to massive Cathedrals across Europe to witness alleged ancient relics from Biblical and early church history. This generated economic activity in the municipality to build, maintain, and further enrich the Church’s domain. Relics, if there ever was a real one, were easily counterfeited, stolen and fabricated. French theologian John Calvin famously remarked that there were enough shards of the “True Cross” of Christ in the middle ages to build a boat. Regardless of these relics’ true origin, they were all used as a way to generate tourism revenue, promising spiritual experiences and reduction of time in purgatory for passed relatives.
+
+Additionally, the church financed cathedral building projects through the selling of church positions such as Bishop and Archbishop to wealthy families for their sons. The leadership of the church at this time grew to be saturated with wealthy opportunists, as opposed to humble servant leaders. 
+
+## A Spark Of Knowledge, An Abundance Of Freedom
+
+The renowned “95 Theses” of Luther was posted on the church door in Wittenberg, Germany on October 31, 1517. This was an antiquated bulletin board medium of communication and intended for a specific church leadership audience as it was written in Latin, not the local German dialect. It was essentially an encrypted message to discuss his concerns with leadership. Unbeknownst to Luther, some local seminary students reviewed it as well. Compelled by its shocking revelations and perspectives, they felt this letter should be known by all. Leveraging a local Gutenberg Printing Press, they were able to print thousands of copies that spread the message throughout all of Germany in two weeks. Like an ancient WikiLeaks, this was one of the first times in history where we see how the individual was empowered against an oppressive central authority through the use of technology.
+
+Bitcoin’s creator, Satoshi Nakamoto, is often compared to Johannes Gutenberg because they both invented technologies that empower the masses against central authority. I propose a more accurate comparison to Satoshi would actually be Martin Luther. Both provided a spark to the latent energy in groups of people that grew tired of the wholesale theft that defined the systems of their respective times. The Bitcoin Revolution and the Protestant Reformation both provide a way to opt out of the oppression in authority. 
+
+## Number Go Up, Strength Go Up
+
+Protestants found support in their shared faith with others that agreed with Luther’s contention with the centralized Church. They organized local (decentralized) places of worship that were void of the bureaucracy that held their spiritual faith hostage for the purpose of wealth and power consolidation. Those freethinkers 500 years ago realized they did not need to funnel their meager earned value to the wealthy central authority to have an organized, healthy system of faith. 
+
+Similarly, Bitcoiners have found various ways to act against the rulers of the present day: central banks and their fiat currency. Many participate in the emerging digital economies like the Lightning Network or manage their own full node to help secure the Bitcoin network. Miners spend costly amounts of energy to generate bitcoin rewards while the mainstream world continues to protest the alleged fake money. 
+
+> _“Cryptocurrency has created opportunities to scam investors, assist criminals and worsen the climate crisis. The threats posted by crypto show that Congress and federal regulators can’t continue to hide out, hoping that crypto will go away. It won’t. It’s time to confront these issues head-on.”_ -Elizabeth Warren, June 9, 2021
+
+Even the simple act of HODLing is being a “protestant” against the established power. Exchanging your time, energy or money for bitcoin is a proclamation saying “the current financial system is broken and must change!”
+
+## Monopoly: The Language Edition
+
+As mentioned before, the “95 Theses” was reprinted in the native german tongue for the commoners. Although the German Gutenberg Bible was first printed in the mid-1400s, the Catholic Church had used the Latin Vulgate since the fifth century. This created an ever increasing divergence of religious knowledge between the Latin-versed clergy class and the commoners across Europe. Only the highly-educated, the clergy and some affluent individuals understood the Latin. If you were of common upbringing or too busy to learn the language, you were unable to read religious scripture to determine for yourself if you believed the teachings and practices. For over a millenia, the people of Europe were unable to challenge Church authority and decisions according to religious doctrines in the Bible. They had no counterparty because of the monopoly on information.
+
+The Protestant Reformation reformed Middle-Age Roman Catholic Christianity from an aloof, unapproachable intercessor to God (clergy-as-middlemen) and instead developed a format that brought the faith of the individual to a local and personal level. With the increase of the Bible being written in common tongue, it gave way to more individual clarity in theological teachings. Various alternative church government structures were formed at the town, provincial and even national level as people tried to reform their faith under leadership they felt they could trust and govern. Generally speaking, a nationally sponsored religion is an abomination to individual rights, but it was a vast improvement to the Catholic Church’s unchecked international supremacy. The people gained traction in the institutions they participated in. They truly had “skin in the game” and were participants in their faith because of the Reformation, rather than subjects to the rulers of their faith.
+
+## Bitcoin Is Free Speech
+
+In this current day, the separation of church and state is an obvious first principle of a free society. That freedom is protected in the United States under the First Amendment. Freedom of speech is also protected under the First Amendment. Money is a form of communication, like language, to indicate wants and needs. Bitcoiners have already known this for years and the rest of the world is increasingly understanding this as well. 
+
+The U.S. Constitution that protects religion, press, peaceful assembly and speech must also protect the many forms of those ideas. A newspaper owned by a major corporation is not the only format of press that should be protected. As technology progresses, the newer mediums like blogs and online video streamers should also be protected. Bitcoin, as the highest form of monetary energy, is therefore the most accurate and powerful form of monetary communication. This power is most seen in the individuals that use Bitcoin instead of fiat currency that mostly empowers the political domains that control it.
+
+Bitcoin is governed by the protocols of the Bitcoin network. There are no exceptions for the wealthy or affluent. Whether you own 1 BTC or 1000 BTC, everyone plays by the same rules. This is a clear parallel to the Reformation when Protestants sought to dethrone the Vatican and its manipulation of religious practices for the benefit of those in positions of authority. Rather, these brave trailblazers sought to rely on the text of the Bible for their highest authority. Whether accepted or not, it is unchanging for everyone, regardless of their power or wealth. 
+
+### Wolves in Wolf Clothing
+
+Many socio-economic factors played into the Protestant Reformation. It was not void of its fair share of opportunists. The Catholic Church had sway over monarchs because it was the church that controlled the masses. For hundreds of years monarchs across Europe had to tread carefully when crossing the Vatican, as it was not unheard of for the Pope to [deprive them of their role as head of state](https://en.m.wikipedia.org/wiki/Papal_deposing_power) for any number of reasons. King Henry VIII took advantage of the socially weakened Catholic Church during this time in history to establish the Church of England and the 1534 Act of Supremacy, declaring the monarch as “the only Supreme Head on Earth.” Was this decision made based on his moral opposition to the Vatican? Perhaps. Was this decision politically opportunistic? Most definitely!
+
+Comparably, Bitcoin and cryptocurrency will not be void of bad actors seeking illegitimate gain. From the rubble of fiat institutions, there will be some entities that the good people of Earth will likely wish would disappear. This is natural. But what is also natural in Bitcoin is that bad actors have no additional leverage over the Bitcoin protocols than anyone else. It will truly be up to society how powerful such pariahs might become through the free market. In a decentralized financial world you cannot hide behind endless debt and central bank friends to exert monetary power. 
+
+## Persevere In The Truth And Freedom
+
+Politics may have been a factor for some, but the essence of the Protestant Reformation was about who decides what is true and how to reconcile who we are with who God is. When knowledge and information was able to spread, people realized they had power. As commoners gained access to Bibles, they realized they were not forced to practice their religion in the way the Church had mandated. They even had the right to not believe at all! Through the varied perspectives of the Biblical message, multiple denominations are able to exist freely and in a decentralized manner. Through their differences, the study of contended principles are enhanced while discovering common essential tenets that bind the Christian faith as a whole.
+
+It is an obvious parallel with the battle facing the Bitcoin network today. The masses are illiterate to the world religion of this day: fiat currency. We are told inflation is the key to economic prosperity. We are told assets and hard resource prices do not matter when assessing the strength of a currency. We are told quantitative easing is not bringing us closer to a communist economic model
+
+[... truncated at 20,000 characters ...]
+
+
+---
+
+### Link #4 -- Historical analogy — Satoshi & Luther Oct 31 symbolism
+
+**Source:** blog.bitcoin.org.hk
+**URL:** https://blog.bitcoin.org.hk/the-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc
+**Type:** Blog
+**Scrape status:** DONE
+
+---
+
+[Sitemap](/sitemap/sitemap.xml)
+
+[Open in app](https://play.google.com/store/apps/details?id=com.medium.reader&referrer=utm_source%3DmobileNavBar&source=post_page---top_nav_layout_nav-----------------------------------------)
+
+Sign up
+
+[Sign in](https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fthe-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc&source=post_page---top_nav_layout_nav-----------------------global_nav------------------)
+
+[](https://medium.com/?source=post_page---top_nav_layout_nav-----------------------------------------)
+
+Get app
+
+[Write](https://medium.com/m/signin?operation=register&redirect=https%3A%2F%2Fmedium.com%2Fnew-story&source=---top_nav_layout_nav-----------------------new_post_topnav------------------)
+
+[Search](https://medium.com/search?source=post_page---top_nav_layout_nav-----------------------------------------)
+
+Sign up
+
+[Sign in](https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fthe-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc&source=post_page---top_nav_layout_nav-----------------------global_nav------------------)
+
+## [Bitcoin Bytes](https://blog.bitcoin.org.hk/?source=post_page---publication_nav-b5082c9dd7f8-9af4aedb10cc---------------------------------------)
+
+·
+
+Follow publication
+
+[](https://blog.bitcoin.org.hk/?source=post_page---post_publication_sidebar-b5082c9dd7f8-9af4aedb10cc---------------------------------------)
+
+Community Blog of The Bitcoin Assocation of Hong Kong
+
+Follow publication
+
+# The Historical Analogy Behind the Bitcoin Whitepaper
+
+[](https://leoaw.medium.com/?source=post_page---byline--9af4aedb10cc---------------------------------------)
+
+[Leo Weese 獅 草地](https://leoaw.medium.com/?source=post_page---byline--9af4aedb10cc---------------------------------------)
+
+Follow
+
+3 min read
+
+·
+
+Oct 30, 2019
+
+[](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fvote%2Fbitcoin-bytes%2F9af4aedb10cc&operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fthe-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc&user=Leo+Weese+%E7%8D%85+%E8%8D%89%E5%9C%B0&userId=71c5f3f78207&source=---header_actions--9af4aedb10cc---------------------clap_footer------------------)
+
+32
+
+[](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2F9af4aedb10cc&operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fthe-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc&source=---header_actions--9af4aedb10cc---------------------bookmark_footer------------------)
+
+[Listen](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2Fplans%3Fdimension%3Dpost_audio_button%26postId%3D9af4aedb10cc&operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fthe-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc&source=---header_actions--9af4aedb10cc---------------------post_audio_button------------------)
+
+Share
+
+On 31 October 2008 Satoshi Nakamoto published the [Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf) on the [cryptography mailing list](https://satoshi.nakamotoinstitute.org/emails/cryptography/1/) at 18:10 UTC.
+
+> I’ve been working on a new electronic cash system that’s fully  
+> peer-to-peer, with no trusted third party.
+
+Press enter or click to view image in full size
+
+The Whitepaper at the ‘Genesis Block’ in Hong Kong
+
+Satoshi consciously curated the time and circumstances around Bitcoin’s release, including the symbolism behind the publishing date of the Whitepaper (for longer reading, check out Dan Held’s ‘[Planting Bitcoin](https://www.danheld.com/blog/2019/1/6/planting-bitcoin-seasonnbsp24)‘ series).
+
+The evening of October 31 was originally celebrated by the Celtics as Samhain since the Neolithic period, and has always been a symbol of death and renewal. On that day, about halfway between the autumn equinox and winter solstice, the world is believed to open its doors to the Underworld.
+
+To appeal to the customs of Europeans north of the alps and make Christianity more easy to adopt, Pope Gregory IV moved All Saints Day to coincide with Samhain in 835. This festival, in pop culture better known as Halloween (from All Hallows’ Eve or Allhalloween), is dedicated to commemorate the departed, martyrs and saints.
+
+While today mainly non-religious festivities such as trick-or-treating, costume parties and horror movies are associated with this holiday, All Saints Day, Día de Muertos or Totensonntag has long been a significant religious holiday in the Christian world.
+
+## Get Leo Weese 獅 草地’s stories in your inbox
+
+Join Medium for free to get updates from this writer.
+
+Subscribe
+
+Subscribe
+
+Remember me for faster sign in
+
+Satoshi was not the first one to use the symbolism of this day of renewal for a political agenda. On 31 October 1517 Martin Luther nailed his Ninety-five Theses onto the doors of the Castle Church (dedicated to All Saints) of Wittenberg.
+
+Where Satoshi took offense with bank bail-outs, central banking and possibly the debt nature of money, Luther took offense with a different kind of debt: He was outraged at the concept of plenary indulgences, where _sinners_ would be able to reduce their time in purgatory through payments or unpaid work. Under Pope Clement VI these indulgences were considered ‘treasury of the church’, essentially financially keeping the lavish lifestyle of the Vatican afloat with the ‘sins’ of the believers.
+
+> They will be condemned eternally, together with their teachers, who believe themselves sure of their salvation because they have letters of pardon. — Thesis 32
+
+Luther directly attacks the authority of the Pope, starting a process of reformation that would, 100 years later, lead to Europe’s most bloody conflict ever, the Thirty Year War.
+
+Both Satoshi and Luther chose October 31st to announce their ideas to their respective audiences. Both carefully chose this day for its symbolism of death and renewal. Both saw the bondage that had constraint the people, and both suggested to get rid of the central authority to ‘forgive us of our debt.’
+
+Luther’s ideas became incredibly popular, spread around the world through the newly invented printing press. They were eventually brutally fought over between 1618 and 1648, a time that killed as many of 30% of Europe’s inhabitants and changed the course of Europe forever.
+
+Luther never recanted his ideas, and it stands to reason Satoshi minted Bitcoin’s Genesis Block (itself a biblical reference) on January 3 to commemorate Luther’s excommunication from the catholic church in 1521. Once Luther was excommunicated, recantation was pointless. Once the first block was minted and its software released, Bitcoin could not be recalled.
+
+It took 131 years from publishing his thesis in 1517 to the Peace of Westphalia in 1648, and it will take approximately 131 years from minting the first bitcoin to minting the last satoshi, when the block subsidy approaches zero in 2140.
+
+Hopefully Bitcoin can spread around the world in a more peaceful way, but it remains highly likely that Satoshi consciously followed into Luther’s steps of symbolically announcing a Reformation of the world.
+
+[Bitcoin](https://medium.com/tag/bitcoin?source=post_page-----9af4aedb10cc---------------------------------------)
+
+[Reformation](https://medium.com/tag/reformation?source=post_page-----9af4aedb10cc---------------------------------------)
+
+[Blockchain](https://medium.com/tag/blockchain?source=post_page-----9af4aedb10cc---------------------------------------)
+
+[Satoshi](https://medium.com/tag/satoshi?source=post_page-----9af4aedb10cc---------------------------------------)
+
+[Luther](https://medium.com/tag/luther?source=post_page-----9af4aedb10cc---------------------------------------)
+
+[](https://blog.bitcoin.org.hk/?source=post_page---post_publication_info--9af4aedb10cc---------------------------------------)
+
+[](https://blog.bitcoin.org.hk/?source=post_page---post_publication_info--9af4aedb10cc---------------------------------------)
+
+Follow
+
+## [Published in Bitcoin Bytes](https://blog.bitcoin.org.hk/?source=post_page---post_publication_info--9af4aedb10cc---------------------------------------)
+
+[213 followers](/followers?source=post_page---post_publication_info--9af4aedb10cc---------------------------------------)
+
+·[Last published Apr 25, 2024](/the-strange-case-of-the-bitcoin-virus-aebec90d34bb?source=post_page---post_publication_info--9af4aedb10cc---------------------------------------)
+
+Community Blog of The Bitcoin Assocation of Hong Kong
+
+Follow
+
+[](https://leoaw.medium.com/?source=post_page---post_author_info--9af4aedb10cc---------------------------------------)
+
+[](https://leoaw.medium.com/?source=post_page---post_author_info--9af4aedb10cc---------------------------------------)
+
+Follow
+
+## [Written by Leo Weese 獅 草地](https://leoaw.medium.com/?source=post_page---post_author_info--9af4aedb10cc---------------------------------------)
+
+[768 followers](https://leoaw.medium.com/followers?source=post_page---post_author_info--9af4aedb10cc---------------------------------------)
+
+·[189 following](https://medium.com/@leoaw/following?source=post_page---post_author_info--9af4aedb10cc---------------------------------------)
+
+Passionate about privacy, encryption, bitcoin and the everlasting Hong Kong thriller. PGP/OTR please!
+
+Follow
+
+## No responses yet
+
+[](https://policy.medium.com/medium-rules-30e5502c4eb4?source=post_page---post_responses--9af4aedb10cc---------------------------------------)
+
+Write a response
+
+[What are your thoughts?](https://medium.com/m/signin?operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fthe-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc&source=---post_responses--9af4aedb10cc---------------------respond_sidebar------------------)
+
+Cancel
+
+Respond
+
+## More from Leo Weese 獅 草地 and Bitcoin Bytes
+
+[](https://blog.bitcoin.org.hk/?source=post_page---author_recirc--9af4aedb10cc----0---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+In
+
+[Bitcoin Bytes](https://blog.bitcoin.org.hk/?source=post_page---author_recirc--9af4aedb10cc----0---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+by
+
+[Leo Weese 獅 草地](https://leoaw.medium.com/?source=post_page---author_recirc--9af4aedb10cc----0---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+## [Recover your Bitcoin in Breadwallet (BRD)I, like many others, was a big fan of Breadwallet (later called BRD), an easy to use bitcoin wallet for iOS and Android. I like, many…](/recover-your-bitcoin-in-breadwallet-brd-72f8e504d986?source=post_page---author_recirc--9af4aedb10cc----0---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+Dec 14, 2022
+
+[5](/recover-your-bitcoin-in-breadwallet-brd-72f8e504d986?source=post_page---author_recirc--9af4aedb10cc----0---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[](https://medium.com/m/signin?operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fthe-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc&source=---author_recirc--9af4aedb10cc----0-----------------explicit_signal----c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2F72f8e504d986&operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Frecover-your-bitcoin-in-breadwallet-brd-72f8e504d986&source=---author_recirc--9af4aedb10cc----0-----------------bookmark_preview----c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[](https://blog.bitcoin.org.hk/?source=post_page---author_recirc--9af4aedb10cc----1---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+In
+
+[Bitcoin Bytes](https://blog.bitcoin.org.hk/?source=post_page---author_recirc--9af4aedb10cc----1---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+by
+
+[Leo Weese 獅 草地](https://leoaw.medium.com/?source=post_page---author_recirc--9af4aedb10cc----1---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+## [Where does Bitcoin Maximalism come from?Hating on Bitcoin is as old as the Blockchain. Bitcoin Maximalism is a term loaded with emotions that is used either as a badge of pride…](/where-does-bitcoin-maximalism-come-from-af916e4bbf60?source=post_page---author_recirc--9af4aedb10cc----1---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+Oct 17, 2018
+
+[84](/where-does-bitcoin-maximalism-come-from-af916e4bbf60?source=post_page---author_recirc--9af4aedb10cc----1---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[](https://medium.com/m/signin?operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fthe-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc&source=---author_recirc--9af4aedb10cc----1-----------------explicit_signal----c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2Faf916e4bbf60&operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fwhere-does-bitcoin-maximalism-come-from-af916e4bbf60&source=---author_recirc--9af4aedb10cc----1-----------------bookmark_preview----c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[](https://blog.bitcoin.org.hk/?source=post_page---author_recirc--9af4aedb10cc----2---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+In
+
+[Bitcoin Bytes](https://blog.bitcoin.org.hk/?source=post_page---author_recirc--9af4aedb10cc----2---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+by
+
+[Leo Weese 獅 草地](https://leoaw.medium.com/?source=post_page---author_recirc--9af4aedb10cc----2---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+## [Book Review: The CryptopiansThe Cryptopians: Idealism, Greed, Lies, and the Making of the First Big Cryptocurrency Craze is an incredibly well researched and detailed…](/book-review-the-cryptopians-f04c72b5f30f?source=post_page---author_recirc--9af4aedb10cc----2---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+Mar 24, 2022
+
+[36](/book-review-the-cryptopians-f04c72b5f30f?source=post_page---author_recirc--9af4aedb10cc----2---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[](https://medium.com/m/signin?operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fthe-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc&source=---author_recirc--9af4aedb10cc----2-----------------explicit_signal----c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2Ff04c72b5f30f&operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fbook-review-the-cryptopians-f04c72b5f30f&source=---author_recirc--9af4aedb10cc----2-----------------bookmark_preview----c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[](https://leoaw.medium.com/?source=post_page---author_recirc--9af4aedb10cc----3---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[Leo Weese 獅 草地](https://leoaw.medium.com/?source=post_page---author_recirc--9af4aedb10cc----3---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+## [From Hong Kong to Berlin by trainVia Shenzhen, Urumqi, Almaty, Bishkek, Moscow and Warsaw](https://leoaw.medium.com/from-hong-kong-to-berlin-by-train-b1f283110322?source=post_page---author_recirc--9af4aedb10cc----3---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+Jul 26, 2017
+
+[36](https://leoaw.medium.com/from-hong-kong-to-berlin-by-train-b1f283110322?source=post_page---author_recirc--9af4aedb10cc----3---------------------c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[](https://medium.com/m/signin?operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fthe-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc&source=---author_recirc--9af4aedb10cc----3-----------------explicit_signal----c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2Fb1f283110322&operation=register&redirect=https%3A%2F%2Fleoaw.medium.com%2Ffrom-hong-kong-to-berlin-by-train-b1f283110322&source=---author_recirc--9af4aedb10cc----3-----------------bookmark_preview----c67d307e_c96b_4484_bd54_bcdfb748432c--------------)
+
+[See all from Leo Weese 獅 草地](https://leoaw.medium.com/?source=post_page---author_recirc--9af4aedb10cc---------------------------------------)
+
+[See all from Bitcoin Bytes](https://blog.bitcoin.org.hk/?source=post_page---author_recirc--9af4aedb10cc---------------------------------------)
+
+## Recommended from Medium
+
+[](https://medium.com/write-a-catalyst?source=post_page---read_next_recirc--9af4aedb10cc----0---------------------6c4580a3_1aba_4452_bb8d_f00b941b8b36--------------)
+
+In
+
+[Write A Catalyst](https://medium.com/write-a-catalyst?source=post_page---read_next_recirc--9af4aedb10cc----0---------------------6c4580a3_1aba_4452_bb8d_f00b941b8b36--------------)
+
+by
+
+[Dr. Patricia Schmidt](https://medium.com/@creatorschmidt?source=post_page---read_next_recirc--9af4aedb10cc----0---------------------6c4580a3_1aba_4452_bb8d_f00b941b8b36--------------)
+
+## [As a Neuroscientist, I Quit These 5 Morning Habits That Destroy Your BrainMost people do #1 within 10 minutes of waking (and it sabotages your entire day)](https://medium.com/write-a-catalyst/as-a-neuroscientist-i-quit-these-5-morning-habits-that-destroy-your-brain-3efe1f410226?source=post_page---read_next_recirc--9af4aedb10cc----0---------------------6c4580a3_1aba_4452_bb8d_f00b941b8b36--------------)
+
+Jan 14
+
+[46K938](https://medium.com/write-a-catalyst/as-a-neuroscientist-i-quit-these-5-morning-habits-that-destroy-your-brain-3efe1f410226?source=post_page---read_next_recirc--9af4aedb10cc----0---------------------6c4580a3_1aba_4452_bb8d_f00b941b8b36--------------)
+
+[](https://medium.com/m/signin?operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fthe-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc&source=---read_next_recirc--9af4aedb10cc----0-----------------explicit_signal----6c4580a3_1aba_4452_bb8d_f00b941b8b36--------------)
+
+[](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2F3efe1f410226&operation=register&redirect=https%3A%2F%2Fmedium.com%2Fwrite-a-catalyst%2Fas-a-neuroscientist-i-quit-these-5-morning-habits-that-destroy-your-brain-3efe1f410226&source=---read_next_recirc--9af4aedb10cc----0-----------------bookmark_preview----6c4580a3_1aba_4452_bb8d_f00b941b8b36--------------)
+
+[](https://code.likeagirl.io/?source=post_page---read_next_recirc--9af4aedb10cc----1---------------------6c4580a3_1aba_4452_bb8d_f00b941b8b36--------------)
+
+In
+
+[Code Like A Girl](https://code.likeagirl.io/?source=post_page---read_next_recirc--9af4aedb10cc----1---------------------6c4580a3_1aba_4452_bb8d_f00b941b8b36--------------)
+
+by
+
+[Shruti Mangawa](https://medium.com/@sshrutimangawa?source=post_page---read_next_recirc--9af4aedb10cc----1---------------------6c4580a3_1aba_4452_bb8d_f00b941b8b36--------------)
+
+## [Why Reading More Books Wasn’t Making Me SmarterI Realized I Had Been Reading Wrong My Entire Life](https://code.likeagirl.io/why-reading-more-books-wasnt-making-me-smarter-5fad5a2cad03?source=post_page---read_next_recirc--9af4aedb10cc----1---------------------6c4580a3_1aba_4452_bb8d_f00b941b8b36--------------)
+
+Dec 11, 2025
+
+[12.4K526](https://code.likeagirl.io/why-reading-more-books-wasnt-making-me-smarter-5fad5a2cad03?source=post_page---read_next_recirc--9af4aedb10cc----1---------------------6c4580a3_1aba_4452_bb8d_f00b941b8b36--------------)
+
+[](https://medium.com/m/signin?operation=register&redirect=https%3A%2F%2Fblog.bitcoin.org.hk%2Fthe-historical-analogy-behind-the-bitcoin-whitepaper-9af4aedb10cc&source=---read_next_recirc--9af4aedb10cc----1-----------------explicit_signal----6c4580a3_1aba_44
+
+[... truncated at 20,000 characters ...]
+
+
+---
+
+### Link #6 -- Nic Carter — "Bitcoin at 12" — Satoshean critique + restorative vision
+
+**Source:** medium.com
+**URL:** https://medium.com/@nic__carter/bitcoin-at-12-f6fce39cb9bb
+**Type:** Blog
+**Scrape status:** FAILED (Browser timeout)
+
+---
+
+*No content extracted. Reason: Browser timeout*
+
+
+---
+
+### Link #7 -- Bitcoin Magazine — Whitepaper parallels to Luther
+
+**Source:** bitcoinmagazine.com
+**URL:** https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther
+**Type:** Article
+**Scrape status:** DONE
+
+---
+
+BITCOIN ALPHA IN YOUR INBOX EVERY WEEKDAY[FREE NEWSLETTER](https://bitcoinmagazine.com/newsletter)
+
+×
+
+Bitcoin Magazine News
+
+Bitcoin Magazine
+
+Portfolio Tracker & Media
+
+[ Get it ](https://play.google.com/store/apps/details?id=com.anonymous.bmapp)
+
+__
+
+[ __ Facebook ](https://www.facebook.com/BitcoinMagazine "Facebook") [ __ Instagram ](https://www.instagram.com/bitcoinmagazine "Instagram") [ __ Linkedin ](https://www.linkedin.com/company/bitcoin-magazine/ "Linkedin") [ __ Rumble ](https://rumble.com/c/BitcoinMagazine "Rumble") [ __ Twitter ](https://twitter.com/bitcoinmagazine "Twitter") [ __ Youtube ](https://www.youtube.com/channel/UCtOV5M-T3GcsJAq8QKaf0lg "Youtube")
+
+__
+
+  * [__NEWS __](https://bitcoinmagazine.com/articles)
+    * [BUSINESS](https://bitcoinmagazine.com/business)
+    * [CULTURE](https://bitcoinmagazine.com/culture)
+    * [MARKETS](https://bitcoinmagazine.com/markets)
+    * [POLITICS](https://bitcoinmagazine.com/politics)
+    * [TAKES](https://bitcoinmagazine.com/takes)
+    * [TECHNICAL](https://bitcoinmagazine.com/technical)
+  * [__GUIDES](https://bitcoinmagazine.com/guides)
+  * [__GLOSSARY](https://bitcoinmagazine.com/bitcoin-glossary)
+  * [__CHARTS](https://www.bitcoinmagazinepro.com/charts/)
+  * [__BITCOIN PRICE](https://bitcoinmagazine.com/bitcoin-price)
+  * [__STORE](https://store.bitcoinmagazine.com/)
+  * __TOOLS __
+    * [BITCOIN PROFIT CALCULATOR](https://bitcoinmagazine.com/bitcoin-profit-calculator)
+    * [BITCOIN CAGR CALCULATOR](https://bitcoinmagazine.com/bitcoin-cagr-calculator)
+    * [BITCOIN MINING CALCULATOR](https://bitcoinmagazine.com/bitcoin-mining-calculator)
+    * [SATOSHI TO USD CALCULATOR](https://bitcoinmagazine.com/satoshi-to-usd-calculator)
+    * [BITCOIN ETF TRACKER](https://bitcoinmagazine.com/bitcoin-etf-tracker)
+  * __ABOUT __
+    * [ABOUT BITCOIN MAGAZINE](https://bitcoinmagazine.com/about)
+    * [ADVERTISE](https://b.tc/advertise)
+    * [EDITORIAL POLICY](https://bitcoinmagazine.com/editorial-policy)
+    * [JOBS](https://jobs.b.tc/)
+    * [PRIVACY POLICY](https://bitcoinmagazine.com/privacy-policy)
+    * [TERMS OF USE](https://bitcoinmagazine.com/terms-of-use)
+    * [CONTACT US](https://bitcoinmagazine.com/contact)
+  * __BTC INC __
+    * [PRINT](https://store.bitcoinmagazine.com/collections/magazines)
+    * [BOOKS](https://store.bitcoinmagazine.com/collections/books)
+    * [CONFERENCE](https://b.tc/conference)
+    * [CORPORATIONS](https://b.tc/corporations)
+    * [UTXO](https://www.utxo.management/)
+    * [PRO](https://www.bitcoinmagazinepro.com/)
+  * [ PREDICT BITCOIN](https://bitcoinmagazine.com/duelbits-predict)
+
+
+__
+
+Search
+
+__
+
+[](https://bitcoinmagazine.com/)
+
+  * [STORE](https://store.bitcoinmagazine.com/)
+  * [PRINT](https://store.bitcoinmagazine.com/collections/magazines)
+  * [BOOKS](https://store.bitcoinmagazine.com/collections/books)
+  * [CONFERENCE](https://b.tc/conference)
+  * [CORPORATIONS](https://bitcoinforcorporations.com/)
+  * [UTXO](https://www.utxo.management/)
+  * [PRO](https://www.bitcoinmagazinepro.com/)
+
+
+[__Facebook](https://www.facebook.com/BitcoinMagazine "Facebook")
+
+[ __Twitter](https://twitter.com/bitcoinmagazine "Twitter")
+
+[ __Youtube](https://www.youtube.com/channel/UCtOV5M-T3GcsJAq8QKaf0lg "Youtube")
+
+[ __Rumble](https://rumble.com/c/BitcoinMagazine "Rumble")
+
+[ __Linkedin](https://www.linkedin.com/company/bitcoin-magazine "Linkedin")
+
+[ __Instagram](https://www.instagram.com/bitcoinmagazine "Instagram")
+
+[](https://bitcoinmagazine.com/)
+
+  * [](https://goldbarwhiskey.com/s/btcbanners)
+
+  * [](https://a2.adform.net/C/?bn=87940429;C=1;adfibeg=0;cdata=LxfhMMJk4zWI6vy5Q0aeQL9v8WxuzBLtgBvWGRrD1ZjVKZEOhpaZmB__9Ke1GCPkK9mEQGQcj9xXYH9uJdQQKHtt2n4OwTFiOOkXWFHbX2_hQW6FXjSrzw2;;CREFURL=https%3a%2f%2fbitcoinmagazine.com%2fculture%2fthe-bitcoin-whitepaper-and-its-parallels-to-martin-luther)
+
+__
+
+  * [](https://a2.adform.net/C/?bn=87940432;C=1;adfibeg=0;cdata=JgKyhwynSzeI6vy5Q0aeQL9v8WxuzBLtOF9UyLoPPhe7R60SEK0GyzE6kDwfSSGbK9mEQGQcj9xXYH9uJdQQKHtt2n4OwTFiOOkXWFHbX2_hQW6FXjSrzw2;;CREFURL=https%3a%2f%2fbitcoinmagazine.com%2fculture%2fthe-bitcoin-whitepaper-and-its-parallels-to-martin-luther)
+
+__
+
+  * [](https://store.bitcoinmagazine.com/collections/books)
+
+  * [](https://store.bitcoinmagazine.com/pages/bitcoin-magazine-annual-subscription-bitcoin-2026-conference-pass)
+
+  * [](http://2026.b.tc/earn-your-pass)
+
+  * [](https://goldbarwhiskey.com/s/btcbanners)
+
+  * __
+
+
+__
+
+__
+
+  * [__NEWS __](https://bitcoinmagazine.com/articles)
+    * [BUSINESS](https://bitcoinmagazine.com/business)
+    * [CULTURE](https://bitcoinmagazine.com/culture)
+    * [MARKETS](https://bitcoinmagazine.com/markets)
+    * [POLITICS](https://bitcoinmagazine.com/politics)
+    * [TAKES](https://bitcoinmagazine.com/takes)
+    * [TECHNICAL](https://bitcoinmagazine.com/technical)
+  * [__VIDEOS](https://bitcoinmagazine.com/video)
+  * __LEARN __
+    * [GUIDES](https://bitcoinmagazine.com/guides)
+    * [GLOSSARY](https://bitcoinmagazine.com/bitcoin-glossary)
+  * [__CHARTS](https://www.bitcoinmagazinepro.com/charts/)
+  * [__BITCOIN PRICE](https://bitcoinmagazine.com/bitcoin-price)
+  * __TOOLS __
+    * [BITCOIN PROFIT CALCULATOR](https://bitcoinmagazine.com/bitcoin-profit-calculator)
+    * [BITCOIN CAGR CALCULATOR](https://bitcoinmagazine.com/bitcoin-cagr-calculator)
+    * [BITCOIN MINING CALCULATOR](https://bitcoinmagazine.com/bitcoin-mining-calculator)
+    * [SATOSHI TO USD CALCULATOR](https://bitcoinmagazine.com/satoshi-to-usd-calculator)
+    * [BITCOIN ETF TRACKER](https://bitcoinmagazine.com/bitcoin-etf-tracker)
+  * [__STORE](https://store.bitcoinmagazine.com/)
+  * [PREDICT BITCOIN ](https://bitcoinmagazine.com/duelbits-predict)
+
+
+Search __
+
+[Home](https://bitcoinmagazine.com/) __[CULTURE](https://bitcoinmagazine.com/culture "View all posts in CULTURE") __The Reformation of Money: Bitcoin’s Whitepaper And Its Parallels To Martin Luther
+
+[CULTURE](https://bitcoinmagazine.com/culture)
+
+# The Reformation of Money: Bitcoin’s Whitepaper And Its Parallels To Martin Luther
+
+[](https://bitcoinmagazine.com/authors/robert-hall "Robert Hall")
+
+By [Robert Hall](https://bitcoinmagazine.com/authors/robert-hall)
+
+October 31, 2023
+
+[ ](https://bitcoinmagazine.com/wp-content/uploads/2024/11/satoshi.jpg)
+
+__
+
+Share
+
+[__Facebook](https://www.facebook.com/sharer.php?u=https%3A%2F%2Fbitcoinmagazine.com%2Fculture%2Fthe-bitcoin-whitepaper-and-its-parallels-to-martin-luther "Facebook")[ __Twitter](https://twitter.com/intent/tweet?text=The+Reformation+of+Money%3A+Bitcoin%E2%80%99s+Whitepaper+And+Its+Parallels+To+Martin+Luther&url=https%3A%2F%2Fbitcoinmagazine.com%2Fculture%2Fthe-bitcoin-whitepaper-and-its-parallels-to-martin-luther&via=bitcoinmagazine "Twitter")[ __Linkedin](https://www.linkedin.com/shareArticle?mini=true&url=https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther&title=The+Reformation+of+Money%3A+Bitcoin%E2%80%99s+Whitepaper+And+Its+Parallels+To+Martin+Luther "Linkedin")[ __ReddIt](https://reddit.com/submit?url=https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther&title=The+Reformation+of+Money%3A+Bitcoin%E2%80%99s+Whitepaper+And+Its+Parallels+To+Martin+Luther "ReddIt")
+
+[ __Email](mailto:?subject=The Reformation of Money: Bitcoin’s Whitepaper And Its Parallels To Martin Luther&body=https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther "Email")[ __Telegram](https://telegram.me/share/url?url=https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther&text=The+Reformation+of+Money%3A+Bitcoin%E2%80%99s+Whitepaper+And+Its+Parallels+To+Martin+Luther "Telegram")[ __Copy URL](https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther "Copy URL")
+__
+
+[ Prefer us on Google ](https://www.google.com/preferences/source?q=bitcoinmagazine.com) [ Download App ](https://apps.apple.com/us/app/bitcoin-magazine-news/id6749723428) [ Download App ](https://play.google.com/store/apps/details?id=com.anonymous.bmapp)
+
+It’s that time of year when the leaves are changing, the chill of winter is in the air, and many of us in the Western world are once again gearing up for the holiday season. Thanksgiving and Christmas are important holidays for many and one of the best times to gather with family. Still, I would argue that one of the most important holidays is only celebrated by .01 percent of the global population.
+
+That’s right, I am talking about Whitepaper Day. It was 15 years ago today that one of the most important documents ever written was released to the world. The importance of this document is akin to[ Martin Luther, who published his 95 Theses in Wittenberg, Germany, on October 31, 1517](https://education.nationalgeographic.org/resource/protestant-reformation/).
+
+Satoshi Nakamoto must have been a student of history because there is little chance this was a coincidence and Satoshi must have understood the significance of publishing the Whitepaper on this day. The parallels between the Whitepaper and the 95 Theses simply can’t be ignored.
+
+Martin Luther’s 95 Theses directly challenged the established moral authority and teachings of the Catholic Church that were never questioned by the average person in those days due to blind obedience to the powers that be.
+
+To the typical citizen back then, the Church had the final say on everything and was never to be questioned. This system worked for a very long time until, one day, people started asking questions.
+
+Such meaningful changes to how people see the world, such as what occurred during the Reformation, don’t happen in a vacuum. There was a series of events that led people to this paradigm shift.
+
+[The Catholic Church in the 1500s operated more like a government than a religious institution](https://www.youtube.com/watch?v=MDU0S-e6sfw). Popes in those days were in charge of massive bureaucracies that dealt with everything from forging alliances, building armies, and[ preying on the fears of their congregants to create a corrupt money-making enterprise.](https://www.historyextra.com/period/medieval/indulgences-catholic-church-what-why-sold-absolution-sin-reformaton/)
+
+Essentially, over the centuries, the Catholic Church diverged from the original mission of spreading the Gospel and obeying God’s commandments and became more focused on worldly issues of money and power.
+
+The same paradigm shift about money and power is occurring right now and is present in the genesis block.[ “ The Times 03/Jan/2009 Chancellor on brink of second bailout for banks](https://bitcoinmagazine.com/culture/bitcoin-genesis-block-14th-birthday-reflection)” is more than an observation of the news: It is a realization that the global monetary system is irreparably broken.
+
+Man has proven time and time again over the centuries that when given absolute power over the lives of others, even the most pious and well-meaning among us will become corrupt. It is a fatal flaw of the human condition. The only thing that we as humans can do is to mitigate this urge as much as possible.
+
+This is what makes the Bitcoin Whitepaper such a profound and essential part of world history.
+
+### Money Makes The World Go Round
+
+Everybody knows, young and old, that money makes the world go round. This is why most people roll out of bed and head to a job they hate to earn little pieces of paper that their governments say have value. People do this because they want what the pieces of paper represent.
+
+These pieces of paper represent time, labor, and desires for goods and services that can benefit their lives. Just like in the days of Martin Luther, the masses were content with the Church having all the power. People today are content with governments controlling the money printer. But a few are starting to ask questions and notice things.
+
+The surging inflation of the last two years is becoming hard for the average consumer to ignore, and the burgeoning global debt crisis is an intractable problem that central banks can only solve by printing more political currency units, thus further devaluing them in a vicious debt spiral until monetary collapse.
+
+The publication of the Bitcoin whitepaper and the widespread dissemination of this information has shown the world that there is a better way to create money, in a way that takes the power and temptation away from our so-called leaders to print new money at will for their own benefit. Bitcoin binds this innate temptation towards corruption in an unbreakable chain of positive incentives, decentralization, transparency, and hard-capped supply, enabled by the ingenious difficulty adjustment and backed by the world’s energy.
+
+These features never existed in the barter system, the gold standard, or the fiat system we are living under right now. Today, we have the opportunity to remake the world with better money that works for everyone and not just the elite. This is a social experiment that has never been tried in human history and is one that we can ill afford not to try.
+
+We have seen the results of other types of money. Why not try money that can’t be created out of thin air or confiscated by governments? What else do we have to lose? Our backs are against the wall, folks; it’s either freedom or tyranny. Liberty or death. Which way will humanity go?
+
+On this glorious Whitepaper day, choose hope over despair. Stand up to the powers that be like Martin Luther did so long ago and change the world with each action you take.
+
+Remember, “ It does not take a majority to prevail… but rather an irate, tireless minority, keen on setting brushfires of freedom in the minds of men.” – Samuel Adams
+
+  * Tags
+  * [Martin Luther](https://bitcoinmagazine.com/tags/martin-luther)
+  * [Satoshi Nakamoto](https://bitcoinmagazine.com/tags/satoshi-nakamoto)
+  * [Whitepaper](https://bitcoinmagazine.com/tags/whitepaper)
+
+
+__
+
+Share
+
+[__Facebook](https://www.facebook.com/sharer.php?u=https%3A%2F%2Fbitcoinmagazine.com%2Fculture%2Fthe-bitcoin-whitepaper-and-its-parallels-to-martin-luther "Facebook")[ __Twitter](https://twitter.com/intent/tweet?text=The+Reformation+of+Money%3A+Bitcoin%E2%80%99s+Whitepaper+And+Its+Parallels+To+Martin+Luther&url=https%3A%2F%2Fbitcoinmagazine.com%2Fculture%2Fthe-bitcoin-whitepaper-and-its-parallels-to-martin-luther&via=bitcoinmagazine "Twitter")[ __Linkedin](https://www.linkedin.com/shareArticle?mini=true&url=https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther&title=The+Reformation+of+Money%3A+Bitcoin%E2%80%99s+Whitepaper+And+Its+Parallels+To+Martin+Luther "Linkedin")[ __ReddIt](https://reddit.com/submit?url=https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther&title=The+Reformation+of+Money%3A+Bitcoin%E2%80%99s+Whitepaper+And+Its+Parallels+To+Martin+Luther "ReddIt")
+
+[ __Email](mailto:?subject=The Reformation of Money: Bitcoin’s Whitepaper And Its Parallels To Martin Luther&body=https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther "Email")[ __Telegram](https://telegram.me/share/url?url=https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther&text=The+Reformation+of+Money%3A+Bitcoin%E2%80%99s+Whitepaper+And+Its+Parallels+To+Martin+Luther "Telegram")[ __Copy URL](https://bitcoinmagazine.com/culture/the-bitcoin-whitepaper-and-its-parallels-to-martin-luther "Copy URL")
+__
+
+Previous article
+
+[Bitcoin’s Fifteen Years Of Evolution: A Look Beyond the Original Whitepaper](https://bitcoinmagazine.com/technical/bitcoins-fifteen-years-of-evolution-a-look-beyond-the-original-whitepaper)
+
+Next article
+
+[SEC Chair Gary Gensler Celebrates The 15th Anniversary of The Bitcoin White Paper](https://bitcoinmagazine.com/markets/sec-chair-gary-gensler-celebrates-the-15th-anniversary-of-the-bitcoin-white-paper)
+
+[](https://bitcoinmagazine.com/authors/robert-hall "Robert Hall")
+
+[Robert Hall](https://bitcoinmagazine.com/authors/robert-hall)<https://bitcoinandmarketing.com>
+
+Robert Hall is a son, father, content creator, and small business owner. Robert is passionate about Bitcoin and dedicated to helping people adopt the world's hardest money through conversation and the written word. Robert earned a bachelors of arts degree in Political Science in 2007. This has helped him better understand how Bitcoin can transform the political and macroeconomic landscape for the betterment of humanity. He first discovered Bitcoin in 2017 when the cancel culture phenomenon started to take hold across the internet. As someone who believes in the absolute right to free speech, this shook him to the core and sent him down the never-ending Bitcoin rabbit hole. Bitcoin topics Robert writes about mainly focus on economics, and the impact Bitcoin will have on the world now and in the future. On the Bitcoin standard, the future is incredibly bright! Stay humble. Stack sats. We win. https://app.sigle.io/21milbtc.btc (my blog)
+
+[__](https://twitter.com/BTC_Apostle "Twitter")
+
+RELATED ARTICLES
+
+[CULTURE](https://bitcoinmagazine.com/culture)
+
+[](https://bitcoinmagazine.com/culture/relics-of-a-revolution-part-i-standing-outside-in-the-cold "Relics of a Revolution, Part I: Standing Outside in the Cold")
+
+### [Relics of a Revolution, Part I: Standing Outside in the Cold](https://bitcoinmagazine.com/culture/relics-of-a-revolution-part-i-standing-outside-in-the-cold "Relics of a Revolution, Part I: Standing Outside in the Cold")
+
+April 9, 2026
+
+[CULTURE](https://bitcoinmagazine.com/culture)
+
+[](https://bitcoinmagazine.com/culture/the-amazing-life-of-chun-wang-from-og-bitcoin-miner-to-astronaut "The Amazing Life of Chun Wang: From OG Bitcoin Miner to Astronaut")
+
+### [The Amazing Life of Chun Wang: From OG Bitcoin Miner to Astronaut](https://bitcoinmagazine.com/culture/the-amazing-life-of-chun-wang-from-og-bitcoin-miner-to-astronaut "The Amazing Life of Chun Wang: From OG Bitcoin Miner to Astronaut")
+
+March 24, 2026
+
+[CULTURE](https://bitcoinmagazine.com/culture)
+
+[](https://bitcoinmagazine.com/culture/samourai-letter-5-the-skinwalker "Samourai Letter #5: The Skinwalker")
+
+### [Samourai Letter #5: The Skinwalker](https://bitcoinmagazine.com/culture/samourai-letter-5-the-skinwalker "Samourai Letter #5: The Skinwalker")
+
+March 12, 2026
+
+____
+
+Bitcoin Portfolio Tracker & Media Updates 
+
+[ ](https://play.google.com/store/apps/details?id=com.anonymous.bmapp) [ ](https://apps.apple.com/us/app/bitcoin-magazine-news/id6749723428)
+
+  * [](https://goldbarwhiskey.com/s/btcbanners)
+
+  * [](https://a2.adform.net/C/?bn=87940430;C=0)
+
+  * [](https://a2.adform.net/C/?bn=87940431;C=0)
+
+  * [](https://store.bitcoinmagazine.com/collections/books)
+
+  * [](https://store.bitcoinmagazine.com/pages/bitcoin-magazine-annual-subscription-bitcoin-2026-conference-pass)
+
+  * [](https://store.bitcoinmagazine.com/pages/bitcoin-magazine-annual-subscription-bitcoin-2026-conference-pass)
+
+  * [](http://2026.b.tc/earn-your-pass)
+
+  * [](https://goldbarwhiskey.com/s/btcbanners)
+
+  * [](https://a2.adform.net/C/?bn=87940430;C=0)
+
+
+Bitcoin BTC/USD
+
+$73,358.00
+
+24hr %:
+
+0.2%
+
+24hr High:
+
+$73,721.00
+
+24hr Low:
+
+$72,626.00
+
+Error loading data. Check console for details.
+
+[VIEW 150+ BITCOIN CHARTS](https://www.bitcoinmagazinepro.com/charts/)
+
+#### LATEST NEWS
+
+[](https://bitcoinmagazine.com/print/the-core-issue-the-role-and-history-of-bitcoin-core-maintainers "The Core Issue: The Role and History of Bitcoin Core Maintainers")
+
+### [The Core Issue: The Role and History of Bitcoin Core Maintainers](https://bitcoinmagazine.com/print/the-core-issue-the-role-and-history-of-bitcoin-core-maintainers "The Core Issue: The Role and History of Bitcoin Core Maintainers")
+
+April 11, 2026
+
+[](https://bitcoinmagazine.com/news/bitcoin-policy-institute-warns-of-quantum "Bitcoin Policy Institute Warns Quantum Advances Are Compressing Timeline for Network Upgrades")
+
+### [Bitcoin Policy Institute Warns Quantum Advances Are Compressing Timel
+
+[... truncated at 20,000 characters ...]
+
+---
+
+### Link #6 -- Nic Carter — "Bitcoin at 12" — Satoshean critique + restorative vision
+
+**Source:** medium.com
+**URL:** https://medium.com/@nic__carter/bitcoin-at-12-f6fce39cb9bb
+**Type:** Blog
+**Scrape status:** FAILED (Browser timeout)
+
+---
+
+*No content extracted. Reason: Browser timeout*

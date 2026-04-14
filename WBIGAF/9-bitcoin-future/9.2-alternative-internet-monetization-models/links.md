@@ -10,7 +10,7 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://bitcoinmagazine.com/culture/nostr-and-bitcoin-can-change-social-media | FAILED | Bitcoin Magazine: Nostr and Bitcoin as alternative to ad-based social media |
+| 1 | Article | https://bitcoinmagazine.com/culture/nostr-and-bitcoin-can-change-social-media | DONE | Bitcoin Magazine: Nostr and Bitcoin as alternative to ad-based social media |
 
 ---
 

@@ -1,12 +1,12 @@
 # bitrefill.com -- Scraped Content
 
 **URL:** https://bitrefill.com/
-**Category:** scrapable
+**Category:** wayback-waf
 **Scrape status:** FAILED
-**Source notes:** BTC\Pay with bitcoin.md
-**Scraped:** 2026-04-12
-**Error:** HTTP 403 (access denied)
+**Source notes:** 
+**Scraped:** 2026-04-13
+**Error:** No Wayback snapshot found
 
 ---
 
-*No content extracted. Reason: HTTP 403 (access denied)*
+*No content extracted. Reason: No Wayback snapshot found*

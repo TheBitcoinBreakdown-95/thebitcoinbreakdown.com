@@ -10,11 +10,11 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Blog | https://blog.getalby.com/bitcoin-drives-monetization-of-ai/ | FAILED | Alby: Bitcoin drives AI monetization, pay-as-you-go models |
+| 1 | Blog | https://blog.getalby.com/bitcoin-drives-monetization-of-ai/ | DONE | Alby: Bitcoin drives AI monetization, pay-as-you-go models |
 | 2 | Twitter/X | https://twitter.com/ibobbyshell/status/1689689635457245184?s=46 | DONE | Tweet: AI adopting Bitcoin vs dollar stablecoin -- advantages |
-| 3 | Chat | https://chat.openai.com/c/793fb088-0f06-4a74-875f-88b939fb31c5 | FAILED | ChatGPT conversation: AI advantages of Bitcoin over stablecoin |
+| 3 | Chat | https://chat.openai.com/c/793fb088-0f06-4a74-875f-88b939fb31c5 | DONE | ChatGPT conversation: AI advantages of Bitcoin over stablecoin |
 | 4 | Email/Gmail | https://mail.google.com/mail/u/0/#inbox | DONE | Source article forwarded via email (likely Alby blog) |
-| 5 | Chat | https://chat.openai.com/ | FAILED | ChatGPT root reference (secondary) |
+| 5 | Chat | https://chat.openai.com/ | DONE | ChatGPT root reference (secondary) |
 
 ---
 

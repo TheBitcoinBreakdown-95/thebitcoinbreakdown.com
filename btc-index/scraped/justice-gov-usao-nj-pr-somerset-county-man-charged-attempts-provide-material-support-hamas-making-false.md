@@ -1,12 +1,12 @@
 # justice.gov -- Scraped Content
 
 **URL:** https://justice.gov/usao-nj/pr/somerset-county-man-charged-attempts-provide-material-support-hamas-making-false
-**Category:** scrapable
+**Category:** wayback-dead
 **Scrape status:** FAILED
-**Source notes:** BTC\Terrorists Turn to Bitcoin for Funding, and They’re Learning Fast.md
-**Scraped:** 2026-04-12
-**Error:** Connection refused
+**Source notes:** 
+**Scraped:** 2026-04-13
+**Error:** No Wayback snapshot found
 
 ---
 
-*No content extracted. Reason: Connection refused*
+*No content extracted. Reason: No Wayback snapshot found*

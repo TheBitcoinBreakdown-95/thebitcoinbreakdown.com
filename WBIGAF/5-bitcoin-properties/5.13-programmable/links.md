@@ -12,7 +12,7 @@
 |---|------|-----|--------|-------|
 | 1 | YouTube | https://youtu.be/V0oMEvB43Mc | PARTIAL | "Bitcoin's Lightning Network: Why It's Changing The World" |
 | 2 | Blog | https://danhedl.medium.com/planting-bitcoin-sound-money-72e80e40ff62 | FAILED | "Planting Bitcoin: Sound Money" by Dan Hedl -- open source/programmable section |
-| 3 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/ | FAILED | r/Bitcoin Newcomers FAQ -- Lightning Network and scaling |
+| 3 | Reddit | https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/ | DONE | r/Bitcoin Newcomers FAQ -- Lightning Network and scaling |
 
 ---
 

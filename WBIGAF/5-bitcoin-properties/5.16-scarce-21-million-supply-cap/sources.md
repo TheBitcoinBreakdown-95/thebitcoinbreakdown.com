@@ -50,3 +50,35 @@
 
 *No content extracted. Reason: HTTP 403 (access denied)*
 
+---
+
+### Link #2 -- r/Bitcoin Newcomers FAQ -- limited supply section
+
+**Source:** www.reddit.com
+**URL:** https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/
+**Type:** Reddit
+**Scrape status:** DONE
+
+---
+
+You've been blocked by network security.
+
+To continue, log in to your Reddit account or use your developer token  
+  
+If you think you've been blocked by mistake, file a ticket below and we'll look into it.
+
+[Log in ](https://www.reddit.com/login/)[File a ticket](https://support.reddithelp.com/hc/en-us/requests/new?ticket_form_id=21879292693140)
+
+
+---
+
+### Link #3 -- "The Number Zero and Bitcoin" by Robert Breedlove
+
+**Source:** breedlove22.medium.com
+**URL:** https://breedlove22.medium.com/the-number-zero-and-bitcoin-4c193336db5b
+**Type:** Blog
+**Scrape status:** FAILED (Browser timeout)
+
+---
+
+*No content extracted. Reason: Browser timeout*

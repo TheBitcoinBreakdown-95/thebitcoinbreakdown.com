@@ -71,3 +71,29 @@ Some privacy related extensions may cause issues on x.com. Please disable them a
 
 *No content extracted. Reason: HTTP 400*
 
+---
+
+### Link #3 -- Nic Carter: Bitcoin at 12 -- monetary manifesto, scalability via layers
+
+**Source:** medium.com
+**URL:** https://medium.com/@nic__carter/bitcoin-at-12-f6fce39cb9bb
+**Type:** Article
+**Scrape status:** FAILED (Browser timeout)
+
+---
+
+*No content extracted. Reason: Browser timeout*
+
+
+---
+
+### Link #4 -- Nik Bhatia (@timevalueofbtc): Strategic Bitcoin Reserve as global settlement mechanism
+
+**Source:** x.com
+**URL:** https://x.com/timevalueofbtc/status/[embedded in source]
+**Type:** Twitter/X
+**Scrape status:** FAILED (Browser timeout (tweet may require login))
+
+---
+
+*No content extracted. Reason: Browser timeout (tweet may require login)*

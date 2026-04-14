@@ -11,7 +11,7 @@
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
 | 1 | Blog | https://notgrubles.medium.com/one-does-not-simply-censor-bitcoin-89dc4a32ba2b | FAILED | "One Does Not Simply Censor Bitcoin" by notgrubles |
-| 2 | Reddit | https://www.reddit.com/r/Bitcoin/ | FAILED | r/Bitcoin community (source attribution) |
+| 2 | Reddit | https://www.reddit.com/r/Bitcoin/ | DONE | r/Bitcoin community (source attribution) |
 | 3 | Blog | https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1 | FAILED | "The Bullish Case for Bitcoin" by Vijay Boyapati -- censorship resistance section |
 
 ---

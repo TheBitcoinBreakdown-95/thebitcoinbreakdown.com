@@ -15,7 +15,7 @@
 | 3 | Article | https://breedlove22.medium.com/the-number-zero-and-bitcoin-4c193336db5b | FAILED | Robert Breedlove -- "The Number Zero and Bitcoin" -- Schelling point / Nash equilibrium |
 | 4 | Article | https://www.investopedia.com/terms/n/nash-equilibrium.asp | FAILED | Investopedia -- Nash Equilibrium definition |
 | 5 | Twitter/X | https://x.com/DylanLeClair_/status/1434988779492757509 | DONE | Dylan LeClair -- Bitcoin nation state game theory |
-| 6 | Article | https://www.wsj.com/articles/cryptocurrency-is-coming-to-your-credit-cards-11657374215?mod=hp_featst_pos4 | FAILED | WSJ -- Visa and Mastercard betting on crypto for everyday payments |
+| 6 | Article | https://www.wsj.com/articles/cryptocurrency-is-coming-to-your-credit-cards-11657374215?mod=hp_featst_pos4 | SKIP | WSJ -- Visa and Mastercard betting on crypto for everyday payments |
 
 ---
 

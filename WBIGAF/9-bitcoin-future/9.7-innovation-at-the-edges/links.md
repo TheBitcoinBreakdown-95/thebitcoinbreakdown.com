@@ -13,8 +13,8 @@
 | 1 | Twitter/X | https://twitter.com/callebtc/status/1618332559175450626?s=46&t=Ytm2R7j2GK1h7zWgaq4Xnw | DONE | @callebtc: Built Lightning app with 10k users from bedroom on two Raspberry Pis |
 | 2 | Article | https://fee.org/articles/decentralization-why-dumb-networks-are-better/ | DONE | FEE: Why dumb networks are better -- innovation at the edges thesis |
 | 3 | Twitter/X | https://x.com/dillonhealybtc/status/1695045387667529838 | DONE | @dillonhealybtc: comprehensive list of Bitcoin projects (Lightning, Ark, RGB, etc.) |
-| 4 | Article | https://bitcoinmagazine.com/culture/bitcoin-blockchain-is-fighting-fraud-in-guatemalas-presidential-elections | FAILED | Bitcoin Magazine: Bitcoin blockchain fighting election fraud in Guatemala |
-| 5 | Website | https://developer.tbd.website/projects/ssi/ | FAILED | TBD developer: Self-Sovereign Identity (SSI) project |
+| 4 | Article | https://bitcoinmagazine.com/culture/bitcoin-blockchain-is-fighting-fraud-in-guatemalas-presidential-elections | DONE | Bitcoin Magazine: Bitcoin blockchain fighting election fraud in Guatemala |
+| 5 | Website | https://developer.tbd.website/projects/ssi/ | DONE | TBD developer: Self-Sovereign Identity (SSI) project |
 
 ---
 

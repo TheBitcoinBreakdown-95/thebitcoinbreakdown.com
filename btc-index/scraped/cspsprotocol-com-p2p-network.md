@@ -1,12 +1,12 @@
 # cspsprotocol.com -- Scraped Content
 
 **URL:** https://cspsprotocol.com/p2p-network
-**Category:** scrapable
-**Scrape status:** FAILED
-**Source notes:** BTC\What is a P2P Network.md
-**Scraped:** 2026-04-12
-**Error:** Connection refused
+**Category:** wayback-dead
+**Scrape status:** PARTIAL
+**Source notes:** 
+**Scraped:** 2026-04-13
+**Error:** Minimal text from Wayback archive
 
 ---
 
-*No content extracted. Reason: Connection refused*
+Please wait while your request is being verified...

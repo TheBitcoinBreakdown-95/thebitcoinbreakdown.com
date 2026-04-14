@@ -181,3 +181,4 @@
 - 9.7 Innovation at the Edges
 - 9.8 Nothing Stops This Train
 - 9.9 The Digital Gold Rush
+- 9.10 System-Agnostic Money

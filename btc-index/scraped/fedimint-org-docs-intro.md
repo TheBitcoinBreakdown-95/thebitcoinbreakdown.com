@@ -1,12 +1,12 @@
 # fedimint.org -- Scraped Content
 
 **URL:** https://fedimint.org/docs/intro
-**Category:** scrapable
+**Category:** wayback-404
 **Scrape status:** FAILED
-**Source notes:** BTC\Fedi Mints.md
-**Scraped:** 2026-04-12
-**Error:** HTTP 404 (page not found)
+**Source notes:** 
+**Scraped:** 2026-04-13
+**Error:** No Wayback snapshot found
 
 ---
 
-*No content extracted. Reason: HTTP 404 (page not found)*
+*No content extracted. Reason: No Wayback snapshot found*

@@ -13,7 +13,7 @@
 | 1 | Blog | https://tomerstrolight.medium.com/the-legendary-treasure-of-satoshi-nakamoto-c3621c5b2106 | DONE | Strolight — full article text already in source file (Cloudflare-blocked live, but complete text pre-captured) |
 | 2 | Blog | https://hackernoon.com/the-genesis-block-and-the-phantom-a-story-of-satoshi-nakamoto | DONE | HackerNoon — key quotes already captured in source file |
 | 3 | Article | https://miningsyndicate.com/blogs/news/the-story-of-satoshi-nakamoto-bitcoin-s-founder | PARTIAL | Mining Syndicate — one quote captured in source file; full article not fetched (tools blocked) |
-| 4 | YouTube | https://www.youtube.com/watch?v=_txHXuo2ApE | FAILED | "Unmasking the Creator of Bitcoin" — all fetch tools blocked; video transcript not extractable |
+| 4 | YouTube | https://www.youtube.com/watch?v=_txHXuo2ApE | PARTIAL | "Unmasking the Creator of Bitcoin" — all fetch tools blocked; video transcript not extractable |
 | 5 | Reference | https://bitcoin.org/en/bitcoin-paper | SKIP | Bitcoin whitepaper — already well-known, text available |
 | 6 | Tweet | https://x.com/robustus/status/1742546410212413917 | DONE | Robustus — full tweet text already captured in source file |
 | 7 | Secondary | https://cepr.org/voxeu/columns/euro-area-bank-bailout-policies-after-global-financial-crisis-sowed-seeds-next-crisis | PARTIAL | CEPR — referenced in source file for bailout context; full article not fetched (tools blocked) |

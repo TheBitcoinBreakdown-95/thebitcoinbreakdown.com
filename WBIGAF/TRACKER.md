@@ -1,8 +1,9 @@
 # WBIGAF Pipeline Tracker
 
-> **Last updated:** 2026-03-20
+> **Last updated:** 2026-04-10
 > **Active executors:** 0/3
 > **Current wave:** Wave 1A COMPLETE. Next: spot-check, then Wave 1B (scrape) or Wave 2 (Ch3/Ch4 pull-forward)
+> **btc-index:** Phase 1 COMPLETE -- 960 chunks indexed (181 files, 7.7 MB LanceDB). 4 MCP tools operational.
 
 ## Pipeline Steps
 

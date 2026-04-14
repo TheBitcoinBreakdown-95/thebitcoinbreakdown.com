@@ -1,12 +1,12 @@
 # offlinebitcoins.com -- Scraped Content
 
 **URL:** https://offlinebitcoins.com/
-**Category:** scrapable
+**Category:** wayback-dead
 **Scrape status:** FAILED
-**Source notes:** BTC\Dice.md
-**Scraped:** 2026-04-12
-**Error:** Connection refused
+**Source notes:** 
+**Scraped:** 2026-04-13
+**Error:** Wayback returned minimal content
 
 ---
 
-*No content extracted. Reason: Connection refused*
+*No content extracted. Reason: Wayback returned minimal content*

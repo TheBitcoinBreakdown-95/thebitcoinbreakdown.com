@@ -1,10 +1,10 @@
 # investopedia.com -- Scraped Content
 
 **URL:** https://investopedia.com/articles/forex-currencies/091416/what-would-it-take-us-dollar-collapse.asp
-**Category:** scrapable
+**Category:** retry-direct
 **Scrape status:** FAILED
-**Source notes:** BTC\Competitors.md, BTC\Rants.md
-**Scraped:** 2026-04-12
+**Source notes:** 
+**Scraped:** 2026-04-13
 **Error:** Browser timeout
 
 ---

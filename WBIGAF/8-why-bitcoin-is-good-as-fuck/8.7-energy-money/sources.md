@@ -61,3 +61,38 @@
 
 *No content extracted. Reason: HTTP 403 (access denied)*
 
+---
+
+### Link #3 -- Zenodo record for Bitcoin energy research papers
+
+**Source:** zenodo.org
+**URL:** https://zenodo.org/records/14686888
+**Type:** Article
+**Scrape status:** DONE
+
+---
+
+# 403 Forbidden
+
+* * *
+
+Access to this resource has been blocked due to unusual traffic from your network.
+
+If you believe this is a mistake, please contact [support@zenodo.org](mailto:support@zenodo.org) with the reference information below.
+
+**Reference:** `5c55aca0e33fa5fb662fbce42b870a10`  
+**Timestamp:** `2026-04-11T23:07:12+02:00`
+
+
+---
+
+### Link #4 -- "The Thermodynamic Monetary Transition: How Bitcoin's 30 Universal Laws Signal Humanity's Shift"
+
+**Source:** shanakaanslemperera.medium.com
+**URL:** https://shanakaanslemperera.medium.com/the-thermodynamic-monetary-transition-how-bitcoins-30-universal-laws-signal-humanity-s-shift-from-a23a3a3783ec
+**Type:** Article
+**Scrape status:** FAILED (Browser timeout)
+
+---
+
+*No content extracted. Reason: Browser timeout*

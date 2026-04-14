@@ -337,3 +337,865 @@ Subscribe to: [Post Comments (Atom)](https://themonetaryfuture.blogspot.com/feed
 
 *YouTube video -- transcript not available via automated scraping.*
 
+---
+
+### Link #1 -- Wikipedia definition of the Internet (no single centralized governance)
+
+**Source:** en.wikipedia.org
+**URL:** https://en.wikipedia.org/wiki/Internet
+**Type:** Article
+**Scrape status:** DONE
+
+---
+
+Jump to content
+
+[ ](/wiki/Main_Page)
+
+[ Search ](/wiki/Special:Search "Search Wikipedia \[alt-f\]")
+
+Search
+
+
+  * [ Donate](https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en)
+  * [Create account](/w/index.php?title=Special:CreateAccount&returnto=Internet "You are encouraged to create an account and log in; however, it is not mandatory")
+  * [Log in](/w/index.php?title=Special:UserLogin&returnto=Internet "You're encouraged to log in; however, it's not mandatory. \[alt-o\]")
+
+
+Personal tools
+
+  * [ Donate](https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en)
+  * [ Create account](/w/index.php?title=Special:CreateAccount&returnto=Internet "You are encouraged to create an account and log in; however, it is not mandatory")
+  * [ Log in](/w/index.php?title=Special:UserLogin&returnto=Internet "You're encouraged to log in; however, it's not mandatory. \[alt-o\]")
+
+
+# Internet
+
+224 languages
+
+  * [Acèh](https://ace.wikipedia.org/wiki/Intern%C3%A8t "Internèt – Acehnese")
+  * [Afrikaans](https://af.wikipedia.org/wiki/Internet "Internet – Afrikaans")
+  * [Alemannisch](https://als.wikipedia.org/wiki/Internet "Internet – Alemannic")
+  * [አማርኛ](https://am.wikipedia.org/wiki/%E1%8B%B5%E1%88%A8_%E1%8C%88%E1%8C%BD_%E1%88%98%E1%88%A8%E1%89%A5 "ድረ ገጽ መረብ – Amharic")
+  * [Aragonés](https://an.wikipedia.org/wiki/Internet "Internet – Aragonese")
+  * [Ænglisc](https://ang.wikipedia.org/wiki/Genett "Genett – Old English")
+  * [अंगिका](https://anp.wikipedia.org/wiki/%E0%A4%87%E0%A4%82%E0%A4%9F%E0%A4%B0%E0%A4%A8%E0%A5%87%E0%A4%9F "इंटरनेट – Angika")
+  * [العربية](https://ar.wikipedia.org/wiki/%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA "إنترنت – Arabic")
+  * [ܐܪܡܝܐ](https://arc.wikipedia.org/wiki/%DC%90%DC%A2%DC%9B%DC%AA%DC%A2%DC%9B "ܐܢܛܪܢܛ – Aramaic")
+  * [الدارجة](https://ary.wikipedia.org/wiki/%D8%A3%D9%86%D8%AA%D8%B1%D9%86%D9%8A%D8%AA "أنترنيت – Moroccan Arabic")
+  * [مصرى](https://arz.wikipedia.org/wiki/%D8%A7%D9%86%D8%AA%D8%B1%D9%86%D8%AA "انترنت – Egyptian Arabic")
+  * [অসমীয়া](https://as.wikipedia.org/wiki/%E0%A6%87%E0%A6%A3%E0%A7%8D%E0%A6%9F%E0%A6%BE%E0%A7%B0%E0%A6%A8%E0%A7%87%E0%A6%9F "ইণ্টাৰনেট – Assamese")
+  * [Asturianu](https://ast.wikipedia.org/wiki/Internet "Internet – Asturian")
+  * [अवधी](https://awa.wikipedia.org/wiki/%E0%A4%87%E0%A4%82%E0%A4%9F%E0%A4%B0%E0%A4%A8%E0%A5%87%E0%A4%9F "इंटरनेट – Awadhi")
+  * [Azərbaycanca](https://az.wikipedia.org/wiki/%C4%B0nternet "İnternet – Azerbaijani")
+  * [تۆرکجه](https://azb.wikipedia.org/wiki/%D8%A7%D9%8A%D9%86%D8%AA%D8%B1%D9%86%D8%AA "اينترنت – South Azerbaijani")
+  * [Башҡортса](https://ba.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Bashkir")
+  * [Boarisch](https://bar.wikipedia.org/wiki/Internetz "Internetz – Bavarian")
+  * [Žemaitėška](https://bat-smg.wikipedia.org/wiki/Internets "Internets – Samogitian")
+  * [Bikol Central](https://bcl.wikipedia.org/wiki/Internet "Internet – Central Bikol")
+  * [Беларуская (тарашкевіца)](https://be-tarask.wikipedia.org/wiki/%D0%86%D0%BD%D1%82%D1%8D%D1%80%D0%BD%D1%8D%D1%82 "Інтэрнэт – Belarusian \(Taraškievica orthography\)")
+  * [Беларуская](https://be.wikipedia.org/wiki/%D0%86%D0%BD%D1%82%D1%8D%D1%80%D0%BD%D1%8D%D1%82 "Інтэрнэт – Belarusian")
+  * [Betawi](https://bew.wikipedia.org/wiki/Intern%C3%A8t "Internèt – Betawi")
+  * [Български](https://bg.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Bulgarian")
+  * [भोजपुरी](https://bh.wikipedia.org/wiki/%E0%A4%87%E0%A4%82%E0%A4%9F%E0%A4%B0%E0%A4%A8%E0%A5%87%E0%A4%9F "इंटरनेट – Bhojpuri")
+  * [Bamanankan](https://bm.wikipedia.org/wiki/%C6%90nt%C9%9Brin%C9%9Bti "Ɛntɛrinɛti – Bambara")
+  * [বাংলা](https://bn.wikipedia.org/wiki/%E0%A6%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BE%E0%A6%B0%E0%A6%A8%E0%A7%87%E0%A6%9F "ইন্টারনেট – Bangla")
+  * [Brezhoneg](https://br.wikipedia.org/wiki/Kenrouedad "Kenrouedad – Breton")
+  * [Bosanski](https://bs.wikipedia.org/wiki/Internet "Internet – Bosnian")
+  * [Буряад](https://bxr.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Russia Buriat")
+  * [Català](https://ca.wikipedia.org/wiki/Internet "Internet – Catalan")
+  * [閩東語 / Mìng-dĕ̤ng-ngṳ̄](https://cdo.wikipedia.org/wiki/H%C3%B4-li%C3%A8ng-u%C5%8Dng "Hô-lièng-uōng – Mindong")
+  * [Нохчийн](https://ce.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BC%D0%B0%D1%88%D0%B0 "Интермаша – Chechen")
+  * [Cebuano](https://ceb.wikipedia.org/wiki/Internet "Internet – Cebuano")
+  * [ᏣᎳᎩ](https://chr.wikipedia.org/wiki/%E1%8E%A0%E1%8F%8F%E1%8E%B3%E1%8F%95%E1%8F%AB%E1%8F%92%E1%8E%A2 "ᎠᏏᎳᏕᏫᏒᎢ – Cherokee")
+  * [کوردی](https://ckb.wikipedia.org/wiki/%D8%A6%DB%8C%D9%86%D8%AA%DB%95%D8%B1%D9%86%DB%8E%D8%AA "ئینتەرنێت – Central Kurdish")
+  * [Qırımtatarca](https://crh.wikipedia.org/wiki/%C4%B0nternet "İnternet – Crimean Tatar")
+  * [Čeština](https://cs.wikipedia.org/wiki/Internet "Internet – Czech")
+  * [Kaszëbsczi](https://csb.wikipedia.org/wiki/Internet "Internet – Kashubian")
+  * [Словѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ](https://cu.wikipedia.org/wiki/%D0%92%D1%81%D1%94%D0%BB%D1%94%D0%BD%D1%81%D0%BA%D0%B0%D1%A7_%D0%BC%D1%80%D1%94%D0%B6%D0%B0 "Всєлєнскаѧ мрєжа – Church Slavic")
+  * [Чӑвашла](https://cv.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Chuvash")
+  * [Cymraeg](https://cy.wikipedia.org/wiki/Y_rhyngrwyd "Y rhyngrwyd – Welsh")
+  * [Dansk](https://da.wikipedia.org/wiki/Internet "Internet – Danish")
+  * [Deutsch](https://de.wikipedia.org/wiki/Internet "Internet – German")
+  * [Thuɔŋjäŋ](https://din.wikipedia.org/wiki/Arekw%C3%ABl "Arekwël – Dinka")
+  * [Zazaki](https://diq.wikipedia.org/wiki/%C4%B0nternet "İnternet – Dimli")
+  * [ཇོང་ཁ](https://dz.wikipedia.org/wiki/%E0%BD%A1%E0%BD%BC%E0%BD%84%E0%BD%A6%E0%BC%8B%E0%BD%A0%E0%BD%96%E0%BE%B2%E0%BD%BA%E0%BD%A3%E0%BC%8D_Internet "ཡོངས་འབྲེལ། Internet – Dzongkha")
+  * [Ελληνικά](https://el.wikipedia.org/wiki/%CE%94%CE%B9%CE%B1%CE%B4%CE%AF%CE%BA%CF%84%CF%85%CE%BF "Διαδίκτυο – Greek")
+  * [Emiliàn e rumagnòl](https://eml.wikipedia.org/wiki/La_Raid_d%C3%A4l_Raid "La Raid däl Raid – Emiliano-Romagnolo")
+  * [Esperanto](https://eo.wikipedia.org/wiki/Interreto "Interreto – Esperanto")
+  * [Español](https://es.wikipedia.org/wiki/Internet "Internet – Spanish")
+  * [Eesti](https://et.wikipedia.org/wiki/Internet "Internet – Estonian")
+  * [Euskara](https://eu.wikipedia.org/wiki/Internet "Internet – Basque")
+  * [Estremeñu](https://ext.wikipedia.org/wiki/Internet "Internet – Extremaduran")
+  * [فارسی](https://fa.wikipedia.org/wiki/%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA "اینترنت – Persian")
+  * [Suomi](https://fi.wikipedia.org/wiki/Internet "Internet – Finnish")
+  * [Võro](https://fiu-vro.wikipedia.org/wiki/Internet "Internet – Võro")
+  * [Føroyskt](https://fo.wikipedia.org/wiki/Internet "Internet – Faroese")
+  * [Français](https://fr.wikipedia.org/wiki/Internet "Internet – French")
+  * [Nordfriisk](https://frr.wikipedia.org/wiki/Internet "Internet – Northern Frisian")
+  * [Furlan](https://fur.wikipedia.org/wiki/Internet "Internet – Friulian")
+  * [Frysk](https://fy.wikipedia.org/wiki/Ynternet "Ynternet – Western Frisian")
+  * [Gaeilge](https://ga.wikipedia.org/wiki/An_tIdirl%C3%ADon "An tIdirlíon – Irish")
+  * [贛語](https://gan.wikipedia.org/wiki/%E4%BA%92%E8%81%AF%E7%B6%B2 "互聯網 – Gan")
+  * [Kriyòl gwiyannen](https://gcr.wikipedia.org/wiki/Ent%C3%A8rn%C3%A8t "Entèrnèt – Guianan Creole")
+  * [Gàidhlig](https://gd.wikipedia.org/wiki/Eadar-l%C3%ACon "Eadar-lìon – Scottish Gaelic")
+  * [Galego](https://gl.wikipedia.org/wiki/Internet "Internet – Galician")
+  * [Avañe'ẽ](https://gn.wikipedia.org/wiki/Internet "Internet – Guarani")
+  * [ગુજરાતી](https://gu.wikipedia.org/wiki/%E0%AA%87%E0%AA%A8%E0%AB%8D%E0%AA%9F%E0%AA%B0%E0%AA%A8%E0%AB%87%E0%AA%9F "ઇન્ટરનેટ – Gujarati")
+  * [Gaelg](https://gv.wikipedia.org/wiki/Eddyr-voggyl "Eddyr-voggyl – Manx")
+  * [Hausa](https://ha.wikipedia.org/wiki/Yanar_gizo "Yanar gizo – Hausa")
+  * [客家語 / Hak-kâ-ngî](https://hak.wikipedia.org/wiki/Mi%C3%B3ng-chi-mi%C3%B3ng-lu "Mióng-chi-mióng-lu – Hakka Chinese")
+  * [עברית](https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%A0%D7%98 "אינטרנט – Hebrew")
+  * [हिन्दी](https://hi.wikipedia.org/wiki/%E0%A4%85%E0%A4%82%E0%A4%A4%E0%A4%B0%E0%A4%9C%E0%A4%BE%E0%A4%B2 "अंतरजाल – Hindi")
+  * [Fiji Hindi](https://hif.wikipedia.org/wiki/Internet "Internet – Fiji Hindi")
+  * [Hrvatski](https://hr.wikipedia.org/wiki/Internet "Internet – Croatian")
+  * [Hornjoserbsce](https://hsb.wikipedia.org/wiki/Internet "Internet – Upper Sorbian")
+  * [Kreyòl ayisyen](https://ht.wikipedia.org/wiki/Ent%C3%A8net "Entènet – Haitian Creole")
+  * [Magyar](https://hu.wikipedia.org/wiki/Internet "Internet – Hungarian")
+  * [Հայերեն](https://hy.wikipedia.org/wiki/%D5%80%D5%A1%D5%B4%D5%A1%D6%81%D5%A1%D5%B6%D6%81 "Համացանց – Armenian")
+  * [Interlingua](https://ia.wikipedia.org/wiki/Internet "Internet – Interlingua")
+  * [Jaku Iban](https://iba.wikipedia.org/wiki/Internet "Internet – Iban")
+  * [Bahasa Indonesia](https://id.wikipedia.org/wiki/Internet "Internet – Indonesian")
+  * [Interlingue](https://ie.wikipedia.org/wiki/Internet "Internet – Interlingue")
+  * [Igbo](https://ig.wikipedia.org/wiki/Intanet "Intanet – Igbo")
+  * [Ilokano](https://ilo.wikipedia.org/wiki/Internet "Internet – Iloko")
+  * [Ido](https://io.wikipedia.org/wiki/Interreto "Interreto – Ido")
+  * [Íslenska](https://is.wikipedia.org/wiki/Interneti%C3%B0 "Internetið – Icelandic")
+  * [Italiano](https://it.wikipedia.org/wiki/Internet "Internet – Italian")
+  * [ᐃᓄᒃᑎᑐᑦ / inuktitut](https://iu.wikipedia.org/wiki/%E1%96%83%E1%95%86%E1%93%B4%E1%90%85%E1%94%AD%E1%92%83%E1%91%AF%E1%91%A6_%E1%91%8E%E1%91%8E%E1%95%8B%E1%96%85%E1%93%AF%E1%92%AA%E1%94%AA%E1%91%A6 "ᖃᕆᓴᐅᔭᒃᑯᑦ ᑎᑎᕋᖅᓯᒪᔪᑦ – Inuktitut")
+  * [日本語](https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88 "インターネット – Japanese")
+  * [Patois](https://jam.wikipedia.org/wiki/Intanet "Intanet – Jamaican Creole English")
+  * [Jawa](https://jv.wikipedia.org/wiki/Intern%C3%A8t "Internèt – Javanese")
+  * [ქართული](https://ka.wikipedia.org/wiki/%E1%83%98%E1%83%9C%E1%83%A2%E1%83%94%E1%83%A0%E1%83%9C%E1%83%94%E1%83%A2%E1%83%98 "ინტერნეტი – Georgian")
+  * [Qaraqalpaqsha](https://kaa.wikipedia.org/wiki/Internet "Internet – Kara-Kalpak")
+  * [Taqbaylit](https://kab.wikipedia.org/wiki/Internet "Internet – Kabyle")
+  * [Қазақша](https://kk.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Kazakh")
+  * [ភាសាខ្មែរ](https://km.wikipedia.org/wiki/%E1%9E%A2%E1%9F%8A%E1%9E%B8%E1%9E%93%E1%9E%92%E1%9E%BE%E1%9E%8E%E1%9F%81%E1%9E%8F "អ៊ីនធើណេត – Khmer")
+  * [ಕನ್ನಡ](https://kn.wikipedia.org/wiki/%E0%B2%85%E0%B2%82%E0%B2%A4%E0%B2%B0%E0%B2%9C%E0%B2%BE%E0%B2%B2 "ಅಂತರಜಾಲ – Kannada")
+  * [한국어](https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%EB%84%B7 "인터넷 – Korean")
+  * [کٲشُر](https://ks.wikipedia.org/wiki/%D8%A7%D9%90%D9%86%D9%B9%D9%8E%D8%B1%D9%86%D8%A0%D9%B9 "اِنٹَرنؠٹ – Kashmiri")
+  * [Ripoarisch](https://ksh.wikipedia.org/wiki/Engorn%C3%A4t "Engornät – Colognian")
+  * [Kurdî](https://ku.wikipedia.org/wiki/%C3%8Enternet "Înternet – Kurdish")
+  * [Коми](https://kv.wikipedia.org/wiki/%D3%A6%D1%82%D1%83%D0%B2%D0%B2%D0%B5%D0%B7 "Ӧтуввез – Komi")
+  * [Kernowek](https://kw.wikipedia.org/wiki/Kesrosweyth "Kesrosweyth – Cornish")
+  * [Кыргызча](https://ky.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Kyrgyz")
+  * [Latina](https://la.wikipedia.org/wiki/Interrete "Interrete – Latin")
+  * [Lëtzebuergesch](https://lb.wikipedia.org/wiki/Internet "Internet – Luxembourgish")
+  * [Лезги](https://lez.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Lezghian")
+  * [Lingua Franca Nova](https://lfn.wikipedia.org/wiki/Interede "Interede – Lingua Franca Nova")
+  * [Limburgs](https://li.wikipedia.org/wiki/Internet "Internet – Limburgish")
+  * [Ligure](https://lij.wikipedia.org/wiki/Internet "Internet – Ligurian")
+  * [Lombard](https://lmo.wikipedia.org/wiki/Internet "Internet – Lombard")
+  * [Lingála](https://ln.wikipedia.org/wiki/%C6%90nt%C9%9Brn%C9%9B%CC%81t%C9%9B "Ɛntɛrnɛ́tɛ – Lingala")
+  * [ລາວ](https://lo.wikipedia.org/wiki/%E0%BA%AD%E0%BA%B4%E0%BA%99%E0%BB%80%E0%BA%95%E0%BA%B5%E0%BB%80%E0%BA%99%E0%BA%B1%E0%BA%94 "ອິນເຕີເນັດ – Lao")
+  * [Lietuvių](https://lt.wikipedia.org/wiki/Internetas "Internetas – Lithuanian")
+  * [Latgaļu](https://ltg.wikipedia.org/wiki/%C5%A0k%C4%81rsteiklys "Škārsteiklys – Latgalian")
+  * [Latviešu](https://lv.wikipedia.org/wiki/Internets "Internets – Latvian")
+  * [Madhurâ](https://mad.wikipedia.org/wiki/Internet "Internet – Madurese")
+  * [Basa Banyumasan](https://map-bms.wikipedia.org/wiki/Internet "Internet – Banyumasan")
+  * [Мокшень](https://mdf.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D1%81%D1%8C "Интернетсь – Moksha")
+  * [Malagasy](https://mg.wikipedia.org/wiki/Aterineto "Aterineto – Malagasy")
+  * [Олык марий](https://mhr.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Eastern Mari")
+  * [Minangkabau](https://min.wikipedia.org/wiki/Internet "Internet – Minangkabau")
+  * [Македонски](https://mk.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Macedonian")
+  * [മലയാളം](https://ml.wikipedia.org/wiki/%E0%B4%87%E0%B4%A8%E0%B5%8D%E0%B4%B1%E0%B5%BC%E0%B4%A8%E0%B5%86%E0%B4%B1%E0%B5%8D%E0%B4%B1%E0%B5%8D "ഇന്റർനെറ്റ് – Malayalam")
+  * [Монгол](https://mn.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D1%8D%D1%82 "Интернэт – Mongolian")
+  * [ꯃꯤꯇꯩ ꯂꯣꯟ](https://mni.wikipedia.org/wiki/%EA%AF%82%EA%AF%A5%EA%AF%A1%EA%AF%81%EA%AF%A6%EA%AF%9C "ꯂꯥꯡꯁꯦꯜ – Manipuri")
+  * [मराठी](https://mr.wikipedia.org/wiki/%E0%A4%AE%E0%A4%B9%E0%A4%BE%E0%A4%9C%E0%A4%BE%E0%A4%B2 "महाजाल – Marathi")
+  * [Bahasa Melayu](https://ms.wikipedia.org/wiki/Internet "Internet – Malay")
+  * [Mirandés](https://mwl.wikipedia.org/wiki/Anternete "Anternete – Mirandese")
+  * [မြန်မာဘာသာ](https://my.wikipedia.org/wiki/%E1%80%A1%E1%80%84%E1%80%BA%E1%80%90%E1%80%AC%E1%80%94%E1%80%80%E1%80%BA "အင်တာနက် – Burmese")
+  * [Эрзянь](https://myv.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Erzya")
+  * [مازِرونی](https://mzn.wikipedia.org/wiki/%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA "اینترنت – Mazanderani")
+  * [Napulitano](https://nap.wikipedia.org/wiki/Internet "Internet – Neapolitan")
+  * [Nedersaksies](https://nds-nl.wikipedia.org/wiki/Internet "Internet – Low Saxon")
+  * [Plattdüütsch](https://nds.wikipedia.org/wiki/Internet "Internet – Low German")
+  * [नेपाली](https://ne.wikipedia.org/wiki/%E0%A4%87%E0%A4%A8%E0%A5%8D%E0%A4%9F%E0%A4%B0%E0%A4%A8%E0%A5%87%E0%A4%9F "इन्टरनेट – Nepali")
+  * [नेपाल भाषा](https://new.wikipedia.org/wiki/%E0%A4%87%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%B0%E0%A4%A8%E0%A5%87%E0%A4%A4 "इन्तरनेत – Newari")
+  * [Nederlands](https://nl.wikipedia.org/wiki/Internet "Internet – Dutch")
+  * [Norsk nynorsk](https://nn.wikipedia.org/wiki/Internett "Internett – Norwegian Nynorsk")
+  * [Norsk bokmål](https://no.wikipedia.org/wiki/Internett "Internett – Norwegian Bokmål")
+  * [Nouormand](https://nrm.wikipedia.org/wiki/Enternette "Enternette – Norman")
+  * [Occitan](https://oc.wikipedia.org/wiki/Internet "Internet – Occitan")
+  * [Livvinkarjala](https://olo.wikipedia.org/wiki/Internet "Internet – Livvi-Karelian")
+  * [Oromoo](https://om.wikipedia.org/wiki/Mantagoo "Mantagoo – Oromo")
+  * [ଓଡ଼ିଆ](https://or.wikipedia.org/wiki/%E0%AC%87%E0%AC%A3%E0%AD%8D%E0%AC%9F%E0%AC%B0%E0%AC%A8%E0%AD%87%E0%AC%9F "ଇଣ୍ଟରନେଟ – Odia")
+  * [Ирон](https://os.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Ossetic")
+  * [ਪੰਜਾਬੀ](https://pa.wikipedia.org/wiki/%E0%A8%87%E0%A9%B0%E0%A8%9F%E0%A8%B0%E0%A8%A8%E0%A9%88%E0%A9%B1%E0%A8%9F "ਇੰਟਰਨੈੱਟ – Punjabi")
+  * [Pangasinan](https://pag.wikipedia.org/wiki/Internet "Internet – Pangasinan")
+  * [Kapampangan](https://pam.wikipedia.org/wiki/Aptas "Aptas – Pampanga")
+  * [Papiamentu](https://pap.wikipedia.org/wiki/Internet "Internet – Papiamento")
+  * [Polski](https://pl.wikipedia.org/wiki/Internet "Internet – Polish")
+  * [Piemontèis](https://pms.wikipedia.org/wiki/Internet "Internet – Piedmontese")
+  * [پنجابی](https://pnb.wikipedia.org/wiki/%D8%A7%D9%86%D9%B9%D8%B1%D9%86%DB%8C%D9%B9 "انٹرنیٹ – Western Punjabi")
+  * [پښتو](https://ps.wikipedia.org/wiki/%D8%A7%D9%86%D9%BC%D8%B1%D9%86%DB%90%D9%BC "انټرنېټ – Pashto")
+  * [Português](https://pt.wikipedia.org/wiki/Internet "Internet – Portuguese")
+  * [Runa Simi](https://qu.wikipedia.org/wiki/Internet "Internet – Quechua")
+  * [ရခိုင်](https://rki.wikipedia.org/wiki/%E1%80%A1%E1%80%84%E1%80%BA%E1%80%90%E1%80%AC%E1%80%94%E1%80%80%E1%80%BA "အင်တာနက် – Arakanese")
+  * [Rumantsch](https://rm.wikipedia.org/wiki/Internet "Internet – Romansh")
+  * [Română](https://ro.wikipedia.org/wiki/Internet "Internet – Romanian")
+  * [Armãneashti](https://roa-rup.wikipedia.org/wiki/Internet "Internet – Aromanian")
+  * [Русский](https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Russian")
+  * [Русиньскый](https://rue.wikipedia.org/wiki/%D0%86%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Інтернет – Rusyn")
+  * [संस्कृतम्](https://sa.wikipedia.org/wiki/%E0%A4%85%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%B0%E0%A5%8D%E0%A4%9C%E0%A4%BE%E0%A4%B2%E0%A4%AE%E0%A5%8D "अन्तर्जालम् – Sanskrit")
+  * [Саха тыла](https://sah.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D1%8D%D1%80%D0%B8%D0%BD%D0%B8%D1%8D%D1%82 "Интэриниэт – Yakut")
+  * [ᱥᱟᱱᱛᱟᱲᱤ](https://sat.wikipedia.org/wiki/%E1%B1%A4%E1%B1%B1%E1%B1%B4%E1%B1%9A%E1%B1%A8%E1%B1%B1%E1%B1%AE%E1%B1%B4 "ᱤᱱᱴᱚᱨᱱᱮᱴ – Santali")
+  * [Sardu](https://sc.wikipedia.org/wiki/%C3%8Cnternet "Ìnternet – Sardinian")
+  * [Sicilianu](https://scn.wikipedia.org/wiki/Internet "Internet – Sicilian")
+  * [Scots](https://sco.wikipedia.org/wiki/Internet "Internet – Scots")
+  * [سنڌي](https://sd.wikipedia.org/wiki/%D8%A7%D9%86%D9%BD%D8%B1%D9%86%D9%8A%D9%BD "انٽرنيٽ – Sindhi")
+  * [Sängö](https://sg.wikipedia.org/wiki/Gb%C3%A2ndasango "Gbândasango – Sango")
+  * [Srpskohrvatski / српскохрватски](https://sh.wikipedia.org/wiki/Internet "Internet – Serbo-Croatian")
+  * [සිංහල](https://si.wikipedia.org/wiki/%E0%B6%85%E0%B6%B1%E0%B7%8A%E0%B6%AD%E0%B6%BB%E0%B7%8A%E0%B6%A2%E0%B7%8F%E0%B6%BD%E0%B6%BA "අන්තර්ජාලය – Sinhala")
+  * [Simple English](https://simple.wikipedia.org/wiki/Internet "Internet – Simple English")
+  * [Slovenčina](https://sk.wikipedia.org/wiki/Internet "Internet – Slovak")
+  * [Slovenščina](https://sl.wikipedia.org/wiki/Internet "Internet – Slovenian")
+  * [ChiShona](https://sn.wikipedia.org/wiki/Danhautande "Danhautande – Shona")
+  * [Soomaaliga](https://so.wikipedia.org/wiki/Xuubcaarada_caalamiga_\(Internet\) "Xuubcaarada caalamiga \(Internet\) – Somali")
+  * [Shqip](https://sq.wikipedia.org/wiki/Interneti "Interneti – Albanian")
+  * [Српски / srpski](https://sr.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82 "Интернет – Serbian")
+  * [Seeltersk](https://stq.wikipedia.org/wiki/Internet "Internet – Saterland Frisian")
+  * [Sunda](https://su.wikipedia.org/wiki/Intern%C3%A9t "Internét – Sundanese")
+  * [Svenska](https://sv.wikipedia.org/wiki/Internet "Internet – Swedish")
+  * [Kiswahili](https://sw.wikipedia.org/wiki/Intaneti "Intaneti – Swahili")
+  * [ꠍꠤꠟꠐꠤ](https://syl.wikipedia.org/wiki/%EA%A0%81%EA%A0%98%EA%A0%86%EA%A0%90%EA%A0%A3%EA%A0%9E%EA%A0%98%EA%A0%A6%EA%A0%90 "ꠁꠘ꠆ꠐꠣꠞꠘꠦꠐ – Sylheti")
+  * [Ślůnski](https://szl.wikipedia.org/wiki/Internec "Internec – Silesian")
+  * [தமிழ்](https://ta.wikipedia.org/wiki/%E0%AE%87%E0%AE%A3%E0%AF%88%E0%AE%AF%E0%AE%AE%E0%AF%8D "இணையம் – Tamil")
+  * [ತುಳು](https://tcy.wikipedia.org/wiki/%E0%B2%85%E0%B2%82%E0%B2%A4%E0%B2%B0%E0%B3%8D%E0%B2%9C%E0%B2%BE%E0%B2%B2%E0%B3%8A "ಅಂತರ್ಜಾಲೊ – Tulu")
+  * [తెలుగు](https://te.wikipedia.org/wiki/%E0%B0%85%E0%B0%82%E0%B0%A4%E0%B0%B0%E0%B1%8D%E0%B0%9C%E0%B0%BE%E0%B0%B2%E0%B0%82 "అంతర్జాలం – Telugu")
+  * [Tetun](https://tet.wikiped
+
+[... truncated at 20,000 characters ...]
+
+
+---
+
+### Link #4 -- CCN: Why Bitcoin is a new asset class; Andreas quote on bitcoin as network for propagating value
+
+**Source:** www.ccn.com
+**URL:** https://www.ccn.com/why-bitcoin-is-a-new-asset-class/
+**Type:** Article
+**Scrape status:** DONE
+
+---
+
+Please enable cookies.
+
+# Sorry, you have been blocked
+
+## You are unable to access ccn.com
+
+## Why have I been blocked?
+
+This website is using a security service to protect itself from online attacks. The action you just performed triggered the security solution. There are several actions that could trigger this block including submitting a certain word or phrase, a SQL command or malformed data.
+
+## What can I do to resolve this?
+
+You can email the site owner to let them know you were blocked. Please include what you were doing when this page came up and the Cloudflare Ray ID found at the bottom of this page.
+
+Cloudflare Ray ID: **9eaced2c1e8443bd** • Your IP: Click to reveal 104.248.239.60 • Performance & security by [Cloudflare](https://www.cloudflare.com/5xx-error-landing)
+
+
+---
+
+### Link #5 -- Forbes: Bitcoin as TCP/IP of money; Howard quote; immutable ledger for establishing time flow
+
+**Source:** www.forbes.com
+**URL:** https://www.forbes.com/sites/kjartanrist/2022/07/06/despite-the-crypto-dip-bitcoin-infrastructure-startups-are-ripe-for-investment/?sh=1f007df57891
+**Type:** Article
+**Scrape status:** PARTIAL (Minimal text after browser render)
+
+---
+
+*No content extracted. Reason: Minimal text after browser render*
+
+
+---
+
+### Link #6 -- Tapiero interview: Bitcoin as monetary and societal revolution; $1T vs gold's $12T market
+
+**Source:** bitcoinnews.com
+**URL:** https://bitcoinnews.com/tapiero-bitcoin-monetary-and-societal-revolution/
+**Type:** Article
+**Scrape status:** PARTIAL (Minimal text after browser render)
+
+---
+
+404
+
+# This page doesn't exist
+
+Please check the URL in the address bar and try again.
+
+
+---
+
+### Link #7 -- Jon Postel's IEN-2: principle of internet layering; foundation for Bitcoin layering analogy
+
+**Source:** www.rfc-editor.org
+**URL:** https://www.rfc-editor.org/ien/ien2.txt
+**Type:** Article
+**Scrape status:** DONE
+
+---
+
+IEN # 2                            Comments on Internet Protocol and TCP
+    
+    
+    
+    IEN # 2                                                       Jon Postel
+    Supercedes: None                                                     ISI
+    Replaces: None                                            15 August 1977
+    
+    
+                 2.3.3.2  Comments on Internet Protocol and TCP
+    
+    Introduction
+    
+    This memo suggests an approach to protocols used in internetwork systems
+    somewhat different from the main thrust of the work on the Transmission
+    Control Protocol (TCP) [1].  The position taken here is that
+    internetwork communication should be view as having two components: the
+    hop by hop relaying of a message, and the end to end  control of the
+    conversation.  This leads to a proposal for a hop by hop oriented
+    internet protocol, an end to end oriented host level protocol, and the
+    interface between them.
+    
+    Discussion
+    
+    We are screwing up in our design of internet protocols by violating the
+    principle of layering. Specifically we are trying to use TCP to do two
+    things: serve as a host level end to end protocol, and to serve as an
+    internet packaging and routing protocol. These two things should be
+    provided in a layered and modular way. I suggest that a new distinct
+    internetwork protocol is needed, and that TCP be used strictly as a host
+    level end to end protocol. I also believe that if TCP is used only in
+    this cleaner way it can be simplified somewhat. A third item must be
+    specified as well -- the interface between the internet host to host
+    protocol and the internet hop by hop protocol.
+    
+      An analogy may be drawn between the internet situation and the
+      ARPANET.  The endpoints of message transmissions are hosts in both
+      cases, and they exchange messages conforming to a host to host
+      protocol. In the ARPA subnet there is a IMP to IMP protocol that is
+      primarily a hop by hop protocol, to parallel this the internet system
+      should have a hop by hop internet protocol.  In the ARPANET a host and
+      an IMP interact through an inteface, commonly called 1822, which
+      specifies the format of messages crossing the boundary, an equivalent
+      interface in needed in the internet system.
+    
+    In the rest of this memo i outline first a possible internet host - hop
+    interface, second an internet hop by hop protocol, and third some
+    modifications to TCP so that it can serve as an internet host level
+    protocol.
+    
+    Internet Host - Hop Interface
+    
+    
+    
+    
+    
+    Section 2.3.3.2                                                 [page 1]
+    
+                                                                   15 Aug 77
+    IEN # 2                            Comments on Internet Protocol and TCP
+    Discussion
+    Internet Host - Hop Interface
+    
+    
+    
+      It is difficult to present a protocol and an interface separately.  In
+      this section i present the fields and functions used in the internet
+      host - hop interface.  The discussion will however explain some of the
+      operation of the internet hop by hop protocol as well.
+    
+      I suggest an internet hop by hop protocol that provides only those
+      functions needed to address and route messages in an arbitrarily
+      structured network, to allow for fragmentation and reassembly of
+      fragments, to provide various types of service, and a moderate level
+      of error control.
+    
+      The internet host - hop interface is described by discussing the use
+      made of each of the fields in the interface message header.
+    
+      Version
+    
+        As time goes by the internetwork system may evolve to a point where
+        the interface format (or the protocol) must be changed. This field
+        provides the handle for simultaneously supporting two (or more)
+        versions of the protocol.
+    
+      Data Identifier and Acknowledgement Identifier
+    
+        When a message is sent from a host to a hop module, or between hop
+        modules, or from a hop module to a host, it must be acknowledged.
+        To allow several messages to be in transit simultaneously an
+        identifier is used to associate data messages and acknowledgements.
+    
+      Type of Service
+    
+        Because different applications may call for different aspects of
+        communication performance to be emphasised a type of service field
+        is necessary.  For example one application may call for reliable
+        delivery and be willing to suffer longer delays or lower throughput
+        for it.  Another application may not be able to tolerate the
+        slightest delay but be unconcerned about reliability.  The type of
+        service field has the following assigned values:
+    
+          0 - reliable delivery requested
+    
+            This means that at each hop the message (or fragment) is
+            retransmitted to the next hop until an acknowledgement is
+            received.
+    
+          1 - no retransmission
+    
+    
+    
+    
+    
+    Section 2.3.3.2                                                 [page 2]
+    
+                                                                   15 Aug 77
+    IEN # 2                            Comments on Internet Protocol and TCP
+                                                                  Discussion
+    Internet Host - Hop Interface
+    
+    
+    
+            This means that at each hop the message (or fragment) is
+            transmitted exactly once to the next hop, if it is afflicted
+            with errors, too bad.
+    
+      Addresses
+    
+        Addresses are variable length strings of 4 bit chunks prefixed by a
+        length.  As address chunks are processed they are removed from their
+        position at the head of the address chunk string and placed at the
+        end of the string.  This chunk by chunk circular shifting of the
+        address allows each node in the hop by hop processing of a message
+        to examine the part of the address it consumes with out knowing how
+        much address preceeds or follows that part.
+    
+      Fragmentation
+    
+        Fragmentation is an internet protocol problem rather than a host
+        level problem. Fragmentation is necessary because of the differing
+        sizes of maximum message allowed by the various networks making up
+        the internetwork system. The possibility of a large message being
+        routed or delivered in a network with a smaller maximum message size
+        requires that the internet protocols provide for fragmentation.
+    
+        Any where along the transmission path an internet protocol node may
+        fragment a message (which already may be a fragment). Only at a
+        point where all fragments must pass can reassembly of the fragments
+        be done. Usually the only point that meets this constraint is the
+        destination host.
+    
+        To understand a little about the fragmentation information carried
+        in the internet protocol header we examine the information needed to
+        reassemble fragments and the possible ways to provide that
+        information.
+    
+          What does the reassembler need to know?
+    
+            What message is this a fragment of?  - Message Identifier
+    
+            Where in the message does this fragment go?  - Fragment Number
+            and Size
+    
+            Are all the fragments of this message here?  - Number of
+            Fragments or Last Fragment Flag
+    
+          What can the fragmenter (original or intermeadiate) provide?
+    
+    
+    
+    
+    
+    Section 2.3.3.2                                                 [page 3]
+    
+                                                                   15 Aug 77
+    IEN # 2                            Comments on Internet Protocol and TCP
+    Discussion
+    Internet Host - Hop Interface
+    
+    
+    
+            It may be easier to say what it can not do:
+    
+              It can't keep a count of total fragments carried in each
+              fragment because some fragments may get split while others do
+              not in a alternate routing environment.
+    
+              It can't know what fragment identifiers have already been
+              used.
+    
+            It can do these things:
+    
+              It can pass on a last fragment flag.
+    
+              It can pass on fragment numbers that are hierarchial or based
+              of data length such as data sequence numbers.
+    
+              It can pass on a message identifier.
+    
+              It can pass on a data length.
+    
+          The difficult issue is how best to identify where this fragment
+          fits with respect to other fragments when trying to reassemble a
+          message. Two schemes seem workable: a hierachial fragment naming
+          scheme, and a sequence number scheme.
+    
+            The hierachial scheme would call for a fragment name to be
+            composed of a variable number of chunks. Each time a fragment
+            was split each new fragment would get a copy of the old fragment
+            name with an added chunk specifing the order between the just
+            created fragments. These fragment names would then be equivalent
+            to the names of the leaves of a tree. At the destination the
+            reassembly would proceed by combining sibling leaves and
+            replacing the mother node by the combined fragment. This scheme
+            would require a last fragment flag for each set of siblings
+            unless the degree of branching were fixed. The variable length
+            fragment names are a complexity it would be nice to avoid.
+    
+            The sequence number scheme would call for each fragment to carry
+            a fragment sequence number and a data length. Each original
+            message could start with the fragment sequence number zero. When
+            it was necessary to fragment a message the first fragment would
+            carry the original fragment sequence number, while the second
+            fragment would carry a fragment sequence number equal to the
+            fragment sequence number of the first fragment plus the data
+            length of the first fragment, and so on.  The last fragment
+    
+    
+    
+    
+    
+    Section 2.3.3.2                                                 [page 4]
+    
+                                                                   15 Aug 77
+    IEN # 2                            Comments on Internet Protocol and TCP
+                                                                  Discussion
+    Internet Host - Hop Interface
+    
+    
+    
+            would have to carry a last fragment flag. At the reassembly
+            point adjacent fragments could be combined until the message was
+            complete. Two messages are adjacent when the fragment sequence
+            number of the second is equal to the fragment sequence number of
+            the first plus the data length of the first.
+    
+        Message Identifier
+    
+          Each message to be fragmented must have an identifier unique to
+          this end to end address pair, so that the fragments of one message
+          may be distinguished from the fragments of another message.
+    
+          There is no need to coordinate the choice of this identifier
+          between the source and destination.  The source should choose the
+          identifiers on messages it sends so as to avoid having two
+          distinct messages to the same destination concurrently in
+          circulation with the same identifier.
+    
+          The choice of message identifier could be clock based or a simple
+          sequence and the same sequence could be spread across all outgoing
+          messages or separate sequences could be used for each destination
+          address.
+    
+      Data
+    
+        Ah the data, at last a space for the reason we are going through all
+        this nonsense.  There is a data length field, and then that much
+        data.
+    
+      Error Control
+    
+        Only hop to hop error control should be attempted in the internet
+        protocol. Specific host level protocols such as TCP can provide for
+        end to end error control. The same checksum field is used to protect
+        the communication between the source host and the first hop, and
+        between the last hop and the destination host, as is used between
+        hops.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    Section 2.3.3.2                                                 [page 5]
+    
+                                                                   15 Aug 77
+    IEN # 2                            Comments on Internet Protocol and TCP
+    Discussion
+    Internet Host - Hop Interface
+    
+    
+    
+      Message Format
+    
+        The internet protocol message format has the following fields:
+    
+          Version
+          Flags
+          Data Identifier
+          Acknowledgement Identifier
+          Type of Service
+          Destination Address
+          Fragment Information
+            Message Identifier
+            Fragment Sequence Number
+            Last Fragment Flag
+          Data Length
+          Data
+          Checksum
+    
+        The Version field is a 4 bit field which indicates the version of
+        the internet protocol the remainder of the message conforms to. This
+        proposal describes version 0.
+    
+        The Type of Service field is  a 4 bit field specifing which handling
+        type is desired.
+    
+        The Flags are a set of bits which specify the presence or absence of
+        values in certain fields, in particular there is a data flag which
+        indicates the data identifier field is meaningful (and that the data
+        length is nonzero), and a acknowledgement flag which indicates the
+        acknowledgement identifier field is meaningful.
+    
+        The Data Identifier is a 16 bit field that distinguishes this
+        message from other active messages on this host to hop, hop to hop,
+        or hop to host, link.
+    
+        The Acknowledgement Identifier is a 16 bit field that specifies
+        which message among the active messages on this host to hop, hop to
+        hop, or hop to host, link this acknowledgement pertains to.
+    
+        The Destination Address field is a variable length extensible
+        address composed of 4 bit chunks. The first chunk is the length of
+        the address in chunks, except that the value 0 indicates that the
+        next two chunks as a 8 bit number indicate the length.
+    
+          This address extension scheme actually goes on indefinitely: we
+    
+    
+    
+    
+    
+    Section 2.3.3.2                                                 [page 6]
+    
+                                                                   15 Aug 77
+    IEN # 2                            Comments on Internet Protocol and TCP
+                                                                  Discussion
+    Internet Host - Hop Interface
+    
+    
+    
+          start with the length of the length equal to one, ll=1, if the
+          value of the length is zero, l=0, then the next  two chunks,
+          ll_ll+1, are taken to be the length, if that length value is zero,
+          l=0, then the next ll_ll+1 chunks are taken to be the length, and
+          so on.
+    
+        The Fragmentation Information consists of three things: the message
+        identifier which is a 16 bit field, the fragment sequence number
+        which is a 16 bit field, and the last fragment flag which requires
+        one bit.
+    
+        The Data Length is a 16 bit field whose value is the number of
+        octets in the Data field.
+    
+        The Data field is as many octets of arbitrary data as specified in
+        the data length field.
+    
+        The Checksum is a 16 bit field whose value is a hop by hop computed
+        checksum that covers the entire message.
+    
+    Internet Hop Protocol
+    
+      The internet hop by hop protocol has nearly been described, at least
+      by implication, in the preceeding section.  In this section i will try
+      to add a few details about the use of the fields in the hop by hop
+      protocol.
+    
+      The Type of Service field specifies the handling type is desired. The
+      intent here is for the hop module to tailor its treatment of this
+      messages according to the value of this field.  As previously
+      indicated one kind of tailoring is a trade off between delay and
+      reliability.  I expect substantially more thought will be needed
+      before a reasonable set of cases can be established for type of
+      service.
+    
+      The Flags are bits which specify the presence or absence of values in
+      certain fields:
+    
+        data flag - indicates the data identifier is meaningful
+    
+        acknowledgement flag - indicates the acknowledgement identifier is
+        meaningful.
+    
+      The Data Identifier field distinguishes this message from other active
+      messages on this host to hop, hop to hop, or hop to host, link.
+    
+    
+    
+    
+    
+    Section 2.3.3.2                                                 [page 7]
+    
+                                                                   15 Aug 77
+    IEN # 2                            Comments on Internet Protocol and TCP
+    Discussion
+    Internet Hop Protocol
+    
+    
+    
+        The intention is that for each hop module to select its own data
+        identifier to put on a messages for transmission to the next hop
+        module.  That each hop modules should choose identifiers to avoid
+        having two active messages on this link with the same identifier
+        should be obvious.
+    
+      The Acknowledgement Identifier specifies which message among the
+      active messages on this host to hop, hop to hop, or hop to host, link
+      this acknowledgement pertains to.
+    
+        The hop module copies the data identifier of a message, lets call it
+        A, it receives into the acknowledgement identifier field and sets
+        the acknowledgement identifier flag in a message, lets call it B,
+        traveling to the sender of message A to acknowledge correct receipt
+        and take responsibility for message A.
+    
+      The Destination Address field is processed by the hop module and the
+      portion of the address consumed by the hop module is (chunk by chunk)
+      circular shifted to the end of the address, bring the part of the
+      address to be processed by the next hop to the beginning of the
+      address string.
+    
+      Fragmentation is performed if nesessary.  Reassembly is left for the
+      destination host.
+    
+        Fragment Handling Procedures
+    
+          Necessary Fragment Information Fields
+    
+            Message Identifier
+            Data Length
+            Fragment Sequence Number
+              (initially zero in each new message)
+            Last Fragment Flag
+              (initially set in each new message)
+    
+          Fragmentation Procedure
+    
+            Split the data.
+    
+            Copy the internet header from original message (or fragment) to
+            each fragment.
+    
+            Replace the data length field of each fragment by the new data
+            length.
+    
+    
+    
+    
+    
+    Section 2.3.3.2                                                 [page 8]
+    
+                                                                   15 Aug 77
+    IEN # 2                            Comments on Internet Protocol and TCP
+                                                                  Discussion
+    Internet Hop Protocol
+    
+    
+    
+            Replace the fragment sequence number in each fragment by the
+            correct value.
+    
+             
+
+[... truncated at 20,000 characters ...]
+
+
+---
+
+### Link #9 -- ChatGPT-generated explanation of TCP/UDP/IP layers (puzzle-pieces analogy)
+
+**Source:** chat.openai.com
+**URL:** https://chat.openai.com/
+**Type:** Tool
+**Scrape status:** DONE
+
+---
+
+Skip to content
+
+[New chat](/)
+
+Search chats
+
+[Images](/images)
+
+## Chat history
+
+ChatGPT
+
+Log inLog in
+
+Sign up for free
+
+# 
+
+Ready when you are.
+
+# 
+
+Ready when you are.
+
+  
+
+
+Voice
+
+By messaging ChatGPT, an AI chatbot, you agree to our [Terms](https://openai.com/terms) and have read our [Privacy Policy](https://openai.com/privacy).
+
+
+---
+
+### Link #10 -- TBB's own blog post on Bitcoin as internet of money (Aug 7, 2023)
+
+**Source:** thebitcoinbreakdown.com
+**URL:** https://thebitcoinbreakdown.com/bitcoin-is-the-internet-of-money/
+**Type:** Blog
+**Scrape status:** DONE
+
+---
+
+Skip to content
+
+[The Bitcoin Breakdown](/) [TBB](/) [₿](/)
+
+  * [ Compendium ](/guide)
+  * [ AI ](/ai)
+  * [ Media ](/media)
+  * [ Learn More ](/learn-more)
+  * [ About ](/about)
+
+
+404
+
+# Block Not Found
+
+The page you're looking for doesn't exist, has been moved, or is still being mined. 
+
+[Return Home](/)
+
+BLOCK HEIGHT 944,638 HASH RATE 955.3 EH/s MEMPOOL 37,891 TX DIFFICULTY 138.97T AVG FEE 1 sat/vB SUPPLY 20,014,493 BTC BLOCK HEIGHT 944,638 HASH RATE 955.3 EH/s MEMPOOL 37,891 TX DIFFICULTY 138.97T AVG FEE 1 sat/vB SUPPLY 20,014,493 BTC

@@ -10,16 +10,16 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://en.wikipedia.org/wiki/Internet | FAILED | Wikipedia definition of the Internet (no single centralized governance) |
+| 1 | Article | https://en.wikipedia.org/wiki/Internet | DONE | Wikipedia definition of the Internet (no single centralized governance) |
 | 2 | Blog | https://themonetaryfuture.blogspot.com/2013/11/bitcoin-internet-of-money.html | DONE | "Bitcoin: Internet of Money" -- open API, programmable money, Silicon Valley examples |
 | 3 | YouTube | https://youtu.be/rc744Z9IjhY | PARTIAL | Andreas Antonopoulos: "Bitcoin: Introduction to the Internet of Money" |
-| 4 | Article | https://www.ccn.com/why-bitcoin-is-a-new-asset-class/ | FAILED | CCN: Why Bitcoin is a new asset class; Andreas quote on bitcoin as network for propagating value |
-| 5 | Article | https://www.forbes.com/sites/kjartanrist/2022/07/06/despite-the-crypto-dip-bitcoin-infrastructure-startups-are-ripe-for-investment/?sh=1f007df57891 | FAILED | Forbes: Bitcoin as TCP/IP of money; Howard quote; immutable ledger for establishing time flow |
-| 6 | Article | https://bitcoinnews.com/tapiero-bitcoin-monetary-and-societal-revolution/ | FAILED | Tapiero interview: Bitcoin as monetary and societal revolution; $1T vs gold's $12T market |
-| 7 | Article | https://www.rfc-editor.org/ien/ien2.txt | FAILED | Jon Postel's IEN-2: principle of internet layering; foundation for Bitcoin layering analogy |
+| 4 | Article | https://www.ccn.com/why-bitcoin-is-a-new-asset-class/ | DONE | CCN: Why Bitcoin is a new asset class; Andreas quote on bitcoin as network for propagating value |
+| 5 | Article | https://www.forbes.com/sites/kjartanrist/2022/07/06/despite-the-crypto-dip-bitcoin-infrastructure-startups-are-ripe-for-investment/?sh=1f007df57891 | PARTIAL | Forbes: Bitcoin as TCP/IP of money; Howard quote; immutable ledger for establishing time flow |
+| 6 | Article | https://bitcoinnews.com/tapiero-bitcoin-monetary-and-societal-revolution/ | PARTIAL | Tapiero interview: Bitcoin as monetary and societal revolution; $1T vs gold's $12T market |
+| 7 | Article | https://www.rfc-editor.org/ien/ien2.txt | DONE | Jon Postel's IEN-2: principle of internet layering; foundation for Bitcoin layering analogy |
 | 8 | Article | https://fee.org/articles/decentralization-why-dumb-networks-are-better/ | DONE | FEE: Dumb networks are better; TCP/IP as efficient pipeline; Bitcoin as internet of money; edge intelligence |
-| 9 | Tool | https://chat.openai.com/ | FAILED | ChatGPT-generated explanation of TCP/UDP/IP layers (puzzle-pieces analogy) |
-| 10 | Blog | https://thebitcoinbreakdown.com/bitcoin-is-the-internet-of-money/ | FAILED | TBB's own blog post on Bitcoin as internet of money (Aug 7, 2023) |
+| 9 | Tool | https://chat.openai.com/ | DONE | ChatGPT-generated explanation of TCP/UDP/IP layers (puzzle-pieces analogy) |
+| 10 | Blog | https://thebitcoinbreakdown.com/bitcoin-is-the-internet-of-money/ | DONE | TBB's own blog post on Bitcoin as internet of money (Aug 7, 2023) |
 | 11 | YouTube | https://www.youtube.com/watch?v=MN4klUUx8fM | PARTIAL | Referenced in "Refrences" section -- video not titled in source |
 
 ---

@@ -15,7 +15,7 @@
 | 3 | YouTube | https://www.youtube.com/watch?v=_0mykANOMGQ | PARTIAL | Unidentified Bitcoin/decentralization video |
 | 4 | Blog | https://dergigi.com/2021/06/13/bitcoin-is-an-idea/ | DONE | "Bitcoin Is an Idea" by Dergigi |
 | 5 | Blog | https://steemit.com/ripple/@mooncryption/the-truth-behind-ripple-and-why-i-sold-it-all | DONE | "The Truth Behind Ripple and Why I Sold It All" -- includes decentralization explainer |
-| 6 | Article | https://bitcoinmagazine.com/culture/bitcoin-is-pure-anarchy | FAILED | "Bitcoin Is Pure Anarchy" -- Bitcoin Magazine |
+| 6 | Article | https://bitcoinmagazine.com/culture/bitcoin-is-pure-anarchy | DONE | "Bitcoin Is Pure Anarchy" -- Bitcoin Magazine |
 
 ---
 

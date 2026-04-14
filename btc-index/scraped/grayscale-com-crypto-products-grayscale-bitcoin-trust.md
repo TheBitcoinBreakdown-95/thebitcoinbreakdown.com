@@ -1,12 +1,12 @@
 # grayscale.com -- Scraped Content
 
 **URL:** https://grayscale.com/crypto-products/grayscale-bitcoin-trust
-**Category:** scrapable
+**Category:** wayback-404
 **Scrape status:** FAILED
-**Source notes:** BTC\The Spot ETF 2024.md
-**Scraped:** 2026-04-12
-**Error:** HTTP 404 (page not found)
+**Source notes:** 
+**Scraped:** 2026-04-13
+**Error:** No Wayback snapshot found
 
 ---
 
-*No content extracted. Reason: HTTP 404 (page not found)*
+*No content extracted. Reason: No Wayback snapshot found*

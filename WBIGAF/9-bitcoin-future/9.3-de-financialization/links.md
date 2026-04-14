@@ -10,7 +10,7 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://bitcoinmagazine.com/culture/how-bitcoin-will-make-housing-affordable | FAILED | Bitcoin Magazine: How Bitcoin makes housing affordable (de-financialization argument) |
+| 1 | Article | https://bitcoinmagazine.com/culture/how-bitcoin-will-make-housing-affordable | DONE | Bitcoin Magazine: How Bitcoin makes housing affordable (de-financialization argument) |
 
 ---
 

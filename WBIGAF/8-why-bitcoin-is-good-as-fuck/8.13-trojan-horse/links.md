@@ -11,7 +11,7 @@
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
 | 1 | YouTube | https://youtu.be/3xH1vBuDbBA | PARTIAL | Alex Gladstein and Lex Fridman -- "Number go up: Bitcoin is a Trojan Horse" |
-| 2 | Article | https://bitcoinmagazine.com/culture/bitcoin-is-a-trojan-horse-for-freedom/ | FAILED | Alex Gladstein -- "Bitcoin is a Trojan Horse for Freedom" -- core source |
+| 2 | Article | https://bitcoinmagazine.com/culture/bitcoin-is-a-trojan-horse-for-freedom/ | DONE | Alex Gladstein -- "Bitcoin is a Trojan Horse for Freedom" -- core source |
 
 ---
 

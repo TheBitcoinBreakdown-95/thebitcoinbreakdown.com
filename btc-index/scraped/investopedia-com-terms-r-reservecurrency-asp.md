@@ -1,10 +1,10 @@
 # investopedia.com -- Scraped Content
 
 **URL:** https://investopedia.com/terms/r/reservecurrency.asp
-**Category:** scrapable
+**Category:** retry-direct
 **Scrape status:** FAILED
-**Source notes:** BTC\Rants.md
-**Scraped:** 2026-04-12
+**Source notes:** 
+**Scraped:** 2026-04-13
 **Error:** Browser timeout
 
 ---

@@ -1,0 +1,294 @@
+{
+  "timestamp": "2026-04-13T00:29:51.402834",
+  "categories": [
+    "waf"
+  ],
+  "total_urls": 47,
+  "recovered": 20,
+  "not_found": 27,
+  "total_chars": 250445,
+  "results": [
+    {
+      "url": "https://americanliterature.com/history/franklin-d-roosevelt/legislative/executive-order-6102",
+      "status": "done",
+      "chars": 7793,
+      "error": ""
+    },
+    {
+      "url": "https://americanthinker.com/blog/2021/10/ready_for_the_government_to_control_how_you_spend_your_money.html",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://ark-invest.com/big-ideas-2023/bitcoin",
+      "status": "done",
+      "chars": 5272,
+      "error": ""
+    },
+    {
+      "url": "https://atlanticcouncil.org/blogs/econographics/strengthening-ties-china-and-the-gcc",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://beincrypto.com/crypto-adoption-higher-minorities-lgbtq-america",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://bitcoin.stackexchange.com/questions/106783/will-a-hard-fork-be-required-to-change-timestamp-fields",
+      "status": "done",
+      "chars": 11831,
+      "error": ""
+    },
+    {
+      "url": "https://bitcoin.stackexchange.com/questions/29554/explanation-of-what-an-op-return-transaction-looks-like",
+      "status": "done",
+      "chars": 20098,
+      "error": ""
+    },
+    {
+      "url": "https://bitcoin.stackexchange.com/questions/408/does-hoarding-really-hurt-bitcoin",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://bitcoin.stackexchange.com/questions/79182/january-19th-2038-rip-unix-timestamps",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://bitcoin.stackexchange.com/users/403/theymos",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://bitcoinrollups.org/",
+      "status": "done",
+      "chars": 20098,
+      "error": ""
+    },
+    {
+      "url": "https://bitrefill.com/",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://blockchain.info/",
+      "status": "done",
+      "chars": 2462,
+      "error": ""
+    },
+    {
+      "url": "https://blog.chain.link/dlc-link-chainlink-grant-bitcoin-discreet-log-contracts",
+      "status": "done",
+      "chars": 10316,
+      "error": ""
+    },
+    {
+      "url": "https://blog.trezor.io/how-bitcoin-boomed-in-2021-a64cccca6f71",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://bloom.bg/dg-ws-core-bcom-m1",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://cmegroup.com/education/featured-reports/an-in-depth-look-at-the-economics-of-bitcoin.html",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://coinsutra.com/paid-blockchain-cryptocurrency-online-courses-certifications",
+      "status": "done",
+      "chars": 20098,
+      "error": ""
+    },
+    {
+      "url": "https://cs.berkeley.edu/~raph/remailer-list.html",
+      "status": "failed",
+      "chars": 0,
+      "error": "Wayback returned minimal content"
+    },
+    {
+      "url": "https://cygnus.com/~gnu/export.html",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://dcjournal.com/the-end-of-the-money-middlemen",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://fintel.io/fg/us/gbtc/CommonSharesOutstanding",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://foundation.xyz/2023/02/making-sense-of-stealth-addresses",
+      "status": "done",
+      "chars": 17377,
+      "error": ""
+    },
+    {
+      "url": "https://gate.io/learn/articles/13-lines-of-code-help-bitcoin-implement-smart-contracts-understand-the-op-cat-soft-fork/1681",
+      "status": "done",
+      "chars": 20098,
+      "error": ""
+    },
+    {
+      "url": "https://group30.org/publications/detail/4950",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://hrf.org/latest/cisa-research-paper",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://hrw.org/news/2017/12/12/chinas-chilling-social-credit-blacklist",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://inleo.io/@edicted/rune-lending-followup",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://login.xyz",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://mantis.co.uk/~mathew",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://mantis.co.uk/pgp/pgp.html",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://njump.me/nevent1qvzqqqqqqypzqgvra9r4sjqapufyl0vnc4kv4fz70e29em4c655y37vz206f0wt4qywhwumn8ghj7mn0wd68ytnzd96xxmmfdejhytnnda3kjctv9uq32amnwvaz7tmwdaehgu3wdau8gu3wv3jhvtcqyp0x6urd9zf37nl6p6r6ycvnphrx24gel0jgl5f0ck5dgmg9uhw4q4mkjnz",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3141240",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://politico.com/news/2022/01/16/bitcoin-crashes-the-midterms-527126",
+      "status": "done",
+      "chars": 10858,
+      "error": ""
+    },
+    {
+      "url": "https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2023.4885",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://qz.com/1642441/extradition-law-why-hong-kong-protesters-didnt-use-own-metro-cards",
+      "status": "done",
+      "chars": 8595,
+      "error": ""
+    },
+    {
+      "url": "https://qz.com/africa/1922466/how-bitcoin-powered-nigerias-endsars-protests",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://rfc-editor.org/ien/ien2.txt",
+      "status": "done",
+      "chars": 19787,
+      "error": ""
+    },
+    {
+      "url": "https://sec.gov/Archives/edgar/data/1588489/000119312524003901/d144925ds3a.htm",
+      "status": "done",
+      "chars": 20098,
+      "error": ""
+    },
+    {
+      "url": "https://sec.gov/news/press-release/2023-139",
+      "status": "done",
+      "chars": 8073,
+      "error": ""
+    },
+    {
+      "url": "https://seekingalpha.com/symbol/BTC-USD",
+      "status": "done",
+      "chars": 8682,
+      "error": ""
+    },
+    {
+      "url": "https://seekingalpha.com/symbol/ETH-USD",
+      "status": "done",
+      "chars": 8663,
+      "error": ""
+    },
+    {
+      "url": "https://theafricareport.com/131083/african-countries-are-adopting-crypto-faster-than-their-global-counterparts",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    },
+    {
+      "url": "https://thesaifhouse.wpcomstaging.com/2017/05/19/economics-of-bitcoin-as-a-settlement-network",
+      "status": "done",
+      "chars": 13388,
+      "error": ""
+    },
+    {
+      "url": "https://thoughtco.com/postal-service-losses-by-year-3321043",
+      "status": "done",
+      "chars": 11301,
+      "error": ""
+    },
+    {
+      "url": "https://udemy.com/course/bitcoin-certification",
+      "status": "done",
+      "chars": 5557,
+      "error": ""
+    },
+    {
+      "url": "https://weforum.org/great-reset",
+      "status": "failed",
+      "chars": 0,
+      "error": "No Wayback snapshot"
+    }
+  ]
+}

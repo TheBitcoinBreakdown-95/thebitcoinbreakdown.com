@@ -10,7 +10,7 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://bitcoinmagazine.com/culture/bitcoin-is-superior-lending-collateral | FAILED | Bitcoin Magazine -- Bitcoin as superior collateral, 12 characteristics |
+| 1 | Article | https://bitcoinmagazine.com/culture/bitcoin-is-superior-lending-collateral | DONE | Bitcoin Magazine -- Bitcoin as superior collateral, 12 characteristics |
 | 2 | PDF | https://fwc.widen.net/s/7m292p96jw/1125481.1.0---fda-bitcoin-as-an-aspirational-store-of-value-revisited-v4 | DONE | Fidelity -- "Bitcoin as an Aspirational Store of Value Revisited" |
 | 3 | Twitter/X | https://x.com/BitcoinNewsCom/status/1832424716403155424 | DONE | Lyn Alden quote: "Bitcoin is basically gold on steroids" |
 

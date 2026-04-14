@@ -61,3 +61,15 @@ Try again
 
 Some privacy related extensions may cause issues on x.com. Please disable them and try again.
 
+---
+
+### Link #1 -- WSJ -- "If Currency Reserves Aren't Really Money, the World Is in for a Shock"; cited as a standout article
+
+**Source:** www.wsj.com
+**URL:** https://www.wsj.com/articles/if-currency-reserves-arent-really-money-the-world-is-in-for-a-shock-11646311306
+**Type:** Article
+**Scrape status:** SKIPPED (Paywalled (wsj.com))
+
+---
+
+*No content extracted. Reason: Paywalled (wsj.com)*

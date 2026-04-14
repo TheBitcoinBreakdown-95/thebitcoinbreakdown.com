@@ -1,12 +1,12 @@
 # login.xyz -- Scraped Content
 
 **URL:** https://login.xyz
-**Category:** scrapable
+**Category:** wayback-waf
 **Scrape status:** FAILED
-**Source notes:** BTC\SSIDID.md
-**Scraped:** 2026-04-12
-**Error:** HTTP 403 (access denied)
+**Source notes:** 
+**Scraped:** 2026-04-13
+**Error:** No Wayback snapshot found
 
 ---
 
-*No content extracted. Reason: HTTP 403 (access denied)*
+*No content extracted. Reason: No Wayback snapshot found*

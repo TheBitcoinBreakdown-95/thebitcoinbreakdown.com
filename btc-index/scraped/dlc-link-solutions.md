@@ -1,12 +1,12 @@
 # dlc.link -- Scraped Content
 
 **URL:** https://dlc.link/solutions
-**Category:** scrapable
+**Category:** wayback-dead
 **Scrape status:** FAILED
-**Source notes:** BTC\DLC.md
-**Scraped:** 2026-04-12
-**Error:** Connection refused
+**Source notes:** 
+**Scraped:** 2026-04-13
+**Error:** No Wayback snapshot found
 
 ---
 
-*No content extracted. Reason: Connection refused*
+*No content extracted. Reason: No Wayback snapshot found*

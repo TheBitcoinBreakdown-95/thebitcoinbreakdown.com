@@ -10,11 +10,11 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://bitcoinmagazine.com/business/scoring-bitcoin-points-like-digital-airline-miles | FAILED | Bitcoin Magazine: Bitcoin as universal internet points / interoperability layer |
+| 1 | Article | https://bitcoinmagazine.com/business/scoring-bitcoin-points-like-digital-airline-miles | DONE | Bitcoin Magazine: Bitcoin as universal internet points / interoperability layer |
 | 2 | Twitter/X | https://twitter.com/obi/status/1606271916037357569?s=46&t=crpOuniIDKinep2hVcqQnA | DONE | @obi tweet on Bitcoin as unified value across virtual/real borders |
-| 3 | Reddit | https://www.reddit.com/r/Bitcoin/comments/10k2zdi/super_mario_coins_paid_out_in_sats/?utm_source=share&utm_medium=web2x&context=3 | FAILED | Super Mario coins paid out in sats |
+| 3 | Reddit | https://www.reddit.com/r/Bitcoin/comments/10k2zdi/super_mario_coins_paid_out_in_sats/?utm_source=share&utm_medium=web2x&context=3 | DONE | Super Mario coins paid out in sats |
 | 4 | YouTube | https://www.youtube.com/watch?v=PqAbIvNkRUc | PARTIAL | Guy Swann: Artificial Intelligence and Bitcoin |
-| 5 | Article | https://bitcoinmagazine.com/culture/bitcoin-freedom-institutional-plan-world | FAILED | Bitcoin Magazine: Crypto Anarchist Manifesto / Bitcoin as institutional freedom plan |
+| 5 | Article | https://bitcoinmagazine.com/culture/bitcoin-freedom-institutional-plan-world | DONE | Bitcoin Magazine: Crypto Anarchist Manifesto / Bitcoin as institutional freedom plan |
 | 6 | Twitter/X | https://x.com/dillonhealybtc/status/1695045387667529838 | DONE | @dillonhealybtc: comprehensive list of Bitcoin projects and protocols |
 
 ---

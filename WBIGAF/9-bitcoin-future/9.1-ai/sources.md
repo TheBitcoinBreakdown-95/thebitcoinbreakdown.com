@@ -96,3 +96,109 @@ Create account
 
 *No content extracted. Reason: HTTP 403 (access denied)*
 
+---
+
+### Link #1 -- Alby: Bitcoin drives AI monetization, pay-as-you-go models
+
+**Source:** blog.getalby.com
+**URL:** https://blog.getalby.com/bitcoin-drives-monetization-of-ai/
+**Type:** Blog
+**Scrape status:** DONE
+
+---
+
+[](../)
+
+#### [Log In](https://getalby.com/login)
+
+# Oops. It looks like the page you're trying to reach doesn't exist or has been moved.
+
+#### [Go to home](../)
+
+
+---
+
+### Link #3 -- ChatGPT conversation: AI advantages of Bitcoin over stablecoin
+
+**Source:** chat.openai.com
+**URL:** https://chat.openai.com/c/793fb088-0f06-4a74-875f-88b939fb31c5
+**Type:** Chat
+**Scrape status:** DONE
+
+---
+
+Skip to content
+
+[New chat](/)
+
+Search chats
+
+[Images](/images)
+
+## Chat history
+
+ChatGPT
+
+Log inLog in
+
+Sign up for free
+
+# 
+
+What’s on the agenda today?
+
+# 
+
+What’s on the agenda today?
+
+  
+
+
+Voice
+
+By messaging ChatGPT, an AI chatbot, you agree to our [Terms](https://openai.com/terms) and have read our [Privacy Policy](https://openai.com/privacy).
+
+Unable to load conversation 793fb088-0f06-4a74-875f-88b939fb31c5
+
+
+---
+
+### Link #5 -- ChatGPT root reference (secondary)
+
+**Source:** chat.openai.com
+**URL:** https://chat.openai.com/
+**Type:** Chat
+**Scrape status:** DONE
+
+---
+
+Skip to content
+
+[New chat](/)
+
+Search chats
+
+[Images](/images)
+
+## Chat history
+
+ChatGPT
+
+Log inLog in
+
+Sign up for free
+
+# 
+
+What’s on your mind today?
+
+# 
+
+What’s on your mind today?
+
+  
+
+
+Voice
+
+By messaging ChatGPT, an AI chatbot, you agree to our [Terms](https://openai.com/terms) and have read our [Privacy Policy](https://openai.com/privacy).

@@ -12,7 +12,7 @@
 |---|------|-----|--------|-------|
 | 1 | Article | https://www.swanbitcoin.com/culture/ten-million-bitcoiners-the-intransigent-minority/ | DONE | Swan Bitcoin -- "Ten Million Bitcoiners: The Intransigent Minority"; Minority Rule framework |
 | 2 | Tweet | https://twitter.com/BitPaine/status/1717363243507953875 | DONE | BitPaine on bear market bleeding BTC to "religious zealots who plan never to sell" |
-| 3 | Article | https://bitcoinmagazine.com/markets/data-suggests-bitcoin-holders-remain-steadfast | FAILED | Bitcoin Magazine data on holder conviction during downturns |
+| 3 | Article | https://bitcoinmagazine.com/markets/data-suggests-bitcoin-holders-remain-steadfast | DONE | Bitcoin Magazine data on holder conviction during downturns |
 | 4 | Article | https://www.investopedia.com/terms/e/endowment-effect.asp | FAILED | Investopedia -- Endowment Effect definition |
 | 5 | Tweet | https://x.com/ericyakes/status/1968335817555976419?s=46 | DONE | Eric Yakes on Bitcoin as the only asset with a revolution behind it |
 

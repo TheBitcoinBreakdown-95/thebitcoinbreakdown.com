@@ -26,7 +26,7 @@ from pathlib import Path
 
 # Import from sibling module
 sys.path.insert(0, str(Path(__file__).parent))
-from scraper import parse_links_md, scrape_sub_chapter
+from scraper import parse_links_md, scrape_sub_chapter, close_browser
 
 TBB_ROOT = Path(__file__).resolve().parent.parent.parent
 WBIGAF_ROOT = TBB_ROOT / "WBIGAF"
@@ -71,6 +71,9 @@ def discover_sub_chapters(chapters=None) -> list[dict]:
             pending = sum(
                 1 for l in links if l["status"].upper() == "PENDING"
             )
+            failed = sum(
+                1 for l in links if l["status"].upper() == "FAILED"
+            )
 
             subs.append({
                 "chapter": ch_num,
@@ -79,6 +82,7 @@ def discover_sub_chapters(chapters=None) -> list[dict]:
                 "path": sub_dir,
                 "total_links": len(links),
                 "pending_links": pending,
+                "failed_links": failed,
             })
 
     return subs
@@ -88,31 +92,42 @@ def discover_sub_chapters(chapters=None) -> list[dict]:
 # Wave execution
 # ---------------------------------------------------------------------------
 
-def run_wave(subs: list[dict], dry_run: bool = False) -> list[dict]:
+def run_wave(subs: list[dict], dry_run: bool = False,
+             retry_failed: bool = False) -> list[dict]:
     """Run the scraping wave across all discovered sub-chapters."""
-    actionable = [s for s in subs if s["pending_links"] > 0]
+    if retry_failed:
+        actionable = [s for s in subs if s.get("failed_links", 0) > 0]
+        link_key = "failed_links"
+        mode_label = "RETRY (Patchright browser)"
+    else:
+        actionable = [s for s in subs if s["pending_links"] > 0]
+        link_key = "pending_links"
+        mode_label = "SCRAPE (httpx)"
 
     if not actionable:
-        print("\nNothing to scrape -- all links are already processed.")
+        status = "FAILED" if retry_failed else "PENDING"
+        print(f"\nNothing to process -- no {status} links found.")
         return []
 
-    total_links = sum(s["pending_links"] for s in actionable)
-    est_minutes = max(1, total_links * 5 // 60)
+    total_links = sum(s[link_key] for s in actionable)
+    # Browser is slower: ~8s per link vs ~3s for httpx
+    secs_per_link = 8 if retry_failed else 5
+    est_minutes = max(1, total_links * secs_per_link // 60)
 
     print(f"\n{'#' * 60}")
-    print(f"  WAVE 1B SCRAPING RUN")
+    print(f"  WAVE 1B -- {mode_label}")
     print(f"  Sub-chapters: {len(actionable)} (of {len(subs)} discovered)")
-    print(f"  Total PENDING links: {total_links}")
+    print(f"  Total links: {total_links}")
     print(f"  Estimated time: ~{est_minutes} minutes")
     print(f"  Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"{'#' * 60}")
 
     if dry_run:
-        print("\n  DRY RUN -- what would be scraped:\n")
+        print(f"\n  DRY RUN -- what would be {'retried' if retry_failed else 'scraped'}:\n")
         for s in actionable:
             print(
                 f"  Ch{s['sub_chapter']:5s} {s['title'][:40]:40s} "
-                f"{s['pending_links']:3d} links"
+                f"{s[link_key]:3d} links"
             )
         print(f"\n  Total: {total_links} links across {len(actionable)} "
               f"sub-chapters")
@@ -133,11 +148,13 @@ def run_wave(subs: list[dict], dry_run: bool = False) -> list[dict]:
 
         print(
             f"\n  [{i}/{len(actionable)}] {sub['sub_chapter']} "
-            f"{sub['title'][:35]} -- {sub['pending_links']} links{eta}"
+            f"{sub['title'][:35]} -- {sub[link_key]} links{eta}"
         )
 
         try:
-            summary = scrape_sub_chapter(sub["path"], TBB_ROOT)
+            summary = scrape_sub_chapter(
+                sub["path"], TBB_ROOT, retry_failed=retry_failed
+            )
             results.append(summary)
 
             if isinstance(summary.get("attempted"), int):
@@ -182,8 +199,9 @@ def run_wave(subs: list[dict], dry_run: bool = False) -> list[dict]:
     total_skipped = sum(r.get("skipped", 0) for r in results)
     total_chars = sum(r.get("total_chars", 0) for r in results)
 
+    label = "RETRY COMPLETE" if retry_failed else "WAVE 1B COMPLETE"
     print(f"\n{'#' * 60}")
-    print(f"  WAVE 1B COMPLETE")
+    print(f"  {label}")
     print(f"  Sub-chapters processed: {len(results)}")
     print(
         f"  Links: {total_done} done, {total_partial} partial, "
@@ -253,6 +271,10 @@ def main():
         "--dry-run", action="store_true",
         help="Show what would be scraped without fetching",
     )
+    parser.add_argument(
+        "--retry-failed", action="store_true",
+        help="Re-process FAILED links using Patchright browser fallback",
+    )
     args = parser.parse_args()
 
     # Parse chapter range
@@ -279,14 +301,23 @@ def main():
         sys.exit(1)
 
     # Discovery summary
-    actionable = [s for s in subs if s["pending_links"] > 0]
+    if args.retry_failed:
+        actionable = [s for s in subs if s.get("failed_links", 0) > 0]
+        link_key = "failed_links"
+        label = "failed"
+    else:
+        actionable = [s for s in subs if s["pending_links"] > 0]
+        link_key = "pending_links"
+        label = "pending"
+
     done_count = len(subs) - len(actionable)
 
     print(f"\n  Discovered {len(subs)} sub-chapters "
-          f"({len(actionable)} with pending links, {done_count} complete):")
+          f"({len(actionable)} with {label} links, {done_count} complete):")
     for s in subs:
-        if s["pending_links"] > 0:
-            status = f"{s['pending_links']} pending"
+        count = s.get(link_key, 0)
+        if count > 0:
+            status = f"{count} {label}"
         else:
             status = "done"
         print(
@@ -295,7 +326,13 @@ def main():
         )
 
     # Execute
-    results = run_wave(subs, dry_run=args.dry_run)
+    try:
+        results = run_wave(
+            subs, dry_run=args.dry_run, retry_failed=args.retry_failed
+        )
+    finally:
+        if args.retry_failed:
+            close_browser()
 
     if results:
         save_log(results)

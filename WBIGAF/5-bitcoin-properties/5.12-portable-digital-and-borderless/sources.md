@@ -351,3 +351,155 @@ Similarly, it’s easier for governments to work collectively against “real”
 
 [... truncated at 20,000 characters ...]
 
+---
+
+### Link #1 -- r/Bitcoin Newcomers FAQ -- borderless property
+
+**Source:** www.reddit.com
+**URL:** https://www.reddit.com/r/Bitcoin/comments/11sswss/bitcoin_newcomers_faq_please_read/
+**Type:** Reddit
+**Scrape status:** DONE
+
+---
+
+You've been blocked by network security.
+
+To continue, log in to your Reddit account or use your developer token  
+  
+If you think you've been blocked by mistake, file a ticket below and we'll look into it.
+
+[Log in ](https://www.reddit.com/login/)[File a ticket](https://support.reddithelp.com/hc/en-us/requests/new?ticket_form_id=21879292693140)
+
+
+---
+
+### Link #3 -- "The Bullish Case for Bitcoin" -- portability section
+
+**Source:** vijayboyapati.medium.com
+**URL:** https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1
+**Type:** Blog
+**Scrape status:** DONE
+
+---
+
+[Sitemap](/sitemap/sitemap.xml)
+
+[Open in app](https://play.google.com/store/apps/details?id=com.medium.reader&referrer=utm_source%3DmobileNavBar&source=post_page---top_nav_layout_nav-----------------------------------------)
+
+Sign up
+
+[Sign in](https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fvijayboyapati.medium.com%2Fthe-bullish-case-for-bitcoin-6ecc8bdecc1&source=post_page---top_nav_layout_nav-----------------------global_nav------------------)
+
+[](https://medium.com/?source=post_page---top_nav_layout_nav-----------------------------------------)
+
+Get app
+
+[Write](https://medium.com/m/signin?operation=register&redirect=https%3A%2F%2Fmedium.com%2Fnew-story&source=---top_nav_layout_nav-----------------------new_post_topnav------------------)
+
+[Search](https://medium.com/search?source=post_page---top_nav_layout_nav-----------------------------------------)
+
+Sign up
+
+[Sign in](https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fvijayboyapati.medium.com%2Fthe-bullish-case-for-bitcoin-6ecc8bdecc1&source=post_page---top_nav_layout_nav-----------------------global_nav------------------)
+
+# The Bullish Case for Bitcoin
+
+[](/?source=post_page---byline--6ecc8bdecc1---------------------------------------)
+
+[Vijay Boyapati](/?source=post_page---byline--6ecc8bdecc1---------------------------------------)
+
+41 min read
+
+·
+
+Mar 2, 2018
+
+[](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fvote%2Fp%2F6ecc8bdecc1&operation=register&redirect=https%3A%2F%2Fvijayboyapati.medium.com%2Fthe-bullish-case-for-bitcoin-6ecc8bdecc1&user=Vijay+Boyapati&userId=9efdc740067f&source=---header_actions--6ecc8bdecc1---------------------clap_footer------------------)
+
+\--
+
+184
+
+[](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2F6ecc8bdecc1&operation=register&redirect=https%3A%2F%2Fvijayboyapati.medium.com%2Fthe-bullish-case-for-bitcoin-6ecc8bdecc1&source=---header_actions--6ecc8bdecc1---------------------bookmark_footer------------------)
+
+[Listen](https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2Fplans%3Fdimension%3Dpost_audio_button%26postId%3D6ecc8bdecc1&operation=register&redirect=https%3A%2F%2Fvijayboyapati.medium.com%2Fthe-bullish-case-for-bitcoin-6ecc8bdecc1&source=---header_actions--6ecc8bdecc1---------------------post_audio_button------------------)
+
+Share
+
+**UPDATE:** First published as a long-form article in 2018, The Bullish Case for Bitcoin has become the most read non-technical introduction to Bitcoin. An updated and significantly expanded edition of The Bullish Case for Bitcoin was published as a book in 2021 and it can now be purchased for a discounted price at my [online store](https://www.bullishcaseforbitcoin.com/store), along with art, clothing, and merchandise associated with the book. The foreword was written by Michael Saylor, with testimonials from Jack Dorsey (former CEO of Twitter), Cynthia Lummis (US Senator), and Adam Back (cypherpunk).
+
+Press enter or click to view image in full size
+
+With the price of a bitcoin surging to new highs in 2017, the bullish case for investors might seem so obvious it does not need stating. Alternatively it may seem foolish to invest in a digital asset that isn’t backed by any commodity or government and whose price rise has prompted some to compare it to the tulip mania or the dot-com bubble. Neither is true; the bullish case for Bitcoin is compelling but far from obvious. There are significant risks to investing in Bitcoin, but, as I will argue, there is still an immense opportunity.
+
+### Genesis
+
+Never in the history of the world had it been possible to transfer value between distant peoples without relying on a trusted intermediary, such as a bank or government. In 2008 Satoshi Nakamoto, whose identity is still unknown, published a [9 page solution](https://bitcoin.org/bitcoin.pdf) to a long-standing problem of computer science known as the Byzantine General’s Problem. Nakamoto’s solution and the system he built from it — Bitcoin — allowed, for the first time ever, value to be quickly transferred, at great distance, in a completely trustless way. The ramifications of the creation of Bitcoin are so profound for both economics and computer science that Nakamoto should rightly be the first person to qualify for both a Nobel prize in Economics _and_ the Turing award.
+
+For an investor the salient fact of the invention of Bitcoin is the creation of a new scarce digital good — bitcoins. Bitcoins are transferable digital tokens that are created on the Bitcoin network in a process known as “mining”. Bitcoin mining is roughly analogous to gold mining except that production follows a designed, predictable schedule. By design, only 21 million bitcoins will ever be mined and most of these already have been — approximately 16.8 million bitcoins have been mined at the time of writing. Every four years the number of bitcoins produced by mining halves and the production of new bitcoins will end completely by the year 2140.
+
+Press enter or click to view image in full size
+
+Bitcoins are not backed by any physical commodity, nor are they guaranteed by any government or company, which raises the obvious question for a new bitcoin investor: why do they have any value at all? Unlike stocks, bonds, real-estate or even commodities such as oil and wheat, bitcoins cannot be valued using standard discounted cash flow analysis or by demand for their use in the production of higher order goods. Bitcoins fall into an entirely different category of goods, known as monetary goods, whose value is set game-theoretically. I.e., each market participant values the good based on their appraisal of whether and how much other participants will value it. To understand the game-theoretic nature of monetary goods, we need to explore the origins of money.
+
+## **The Origins of Money**
+
+In the earliest human societies, trade between groups of people occurred through barter. The incredible inefficiencies inherent to barter trade drastically limited the scale and geographical scope at which trade could occur. A major disadvantage with barter based trade is the double coincidence of wants problem. An apple grower may desire trade with a fisherman, for example, but if the fisherman does not desire apples at the same moment, the trade will not take place. Over time humans evolved a desire to hold certain collectible items for their rarity and symbolic value (examples include shells, animal teeth and flint). Indeed, as Nick Szabo argues in his brilliant [essay on the origins of money](http://nakamotoinstitute.org/shelling-out/), the human desire for collectibles provided a distinct evolutionary advantage for early man over his nearest biological competitors, _Homo neanderthalensis_.
+
+> The primary and ultimate evolutionary function of collectibles was as a medium for storing and transferring wealth.
+
+Collectibles served as a sort of “proto-money” by making trade possible between otherwise antagonistic tribes and by allowing wealth to be transferred between generations. Trade and transfer of collectibles were quite infrequent in paleolithic societies, and these goods served more as a “store of value” rather than the “medium of exchange” role that we largely recognize modern money to play. Szabo explains:
+
+> Compared to modern money, primitive money had a very low velocity — it might be transferred only a handful of times in an average individual’s lifetime. Nevertheless, a durable collectible, what today we would call an heirloom, could persist for many generations and added substantial value at each transfer — often making the transfer even possible at all.
+
+Early man faced an important game-theoretic dilemma when deciding which collectibles to gather or create: which objects would be desired by other humans? By correctly anticipating which objects might be demanded for their collectible value, a tremendous benefit was conferred on the possessor in their ability to complete trade and to acquire wealth. Some Native American tribes, such as the Narragansetts, specialized in the manufacture of otherwise useless collectibles simply for their value in trade. It is worth noting that the earlier the anticipation of future demand for a collectible good, the greater the advantage conferred to its possessor; it can be acquired more cheaply than when it is widely demanded and its trade value appreciates as the population which demands it expands. Furthermore, acquiring a good in hopes that it will be demanded as a future store of value hastens its adoption for that very purpose. This seeming circularity is actually a feedback loop that drives societies to quickly converge on a single store of value. In game-theoretic terms, this is known as a “[Nash Equilibrium](https://www.investopedia.com/terms/n/nash-equilibrium.asp)”. Achieving a Nash Equilibrium for a store of value is a major boon to any society, as it greatly facilitates trade and the division of labor, paving the way for the advent of civilization.
+
+Press enter or click to view image in full size
+
+Over the millennia, as human societies grew and trade routes developed, the stores of value that had emerged in individual societies came to compete against each other. Merchants and traders would face a choice of whether to save the proceeds of their trade in the store of value of their own society or the store of value of the society they were trading with, or some balance of both. The benefit of maintaining savings in a foreign store of value was the enhanced ability to complete trade in the associated foreign society. Merchants holding savings in a foreign store of value also had an incentive to encourage its adoption within their own society, as this would increase the purchasing power of their savings. The benefits of an imported store of value accrued not only to the merchants doing the importing, but also to the societies themselves. Two societies converging on a single store of value would see a substantial decrease in the cost of completing trade with each other and an attendant increase in trade-based wealth. Indeed, the 19th century was the first time when most of the world converged on a single store of value — gold — and this period saw the greatest explosion of trade in the history of the world. Of this halcyon period, Lord Keynes wrote:
+
+> What an extraordinary episode in the economic progress of man that age was … for any man of capacity or character at all exceeding the average, into the middle and upper classes, for whom life offered, at a low cost and with the least trouble, conveniences, comforts, and amenities beyond the compass of the richest and most powerful monarchs of other ages. The inhabitant of London could order by telephone, sipping his morning tea in bed, the various products of the whole earth, in such quantity as he might see fit, and reasonably expect their early delivery upon his doorstep
+
+## The attributes of a good store of value
+
+When stores of value compete against each other, it is the specific attributes that make a good store of value that allows one to out-compete another at the margin and increase demand for it over time. While many goods have been used as stores of value or “proto-money”, certain attributes emerged that were particularly demanded and allowed goods with these attributes to out-compete others. An ideal store of value will be:
+
+  * Durable: the good must not be perishable or easily destroyed. Thus wheat is not an ideal store of value
+  * Portable: the good must be easy to transport and store, making it possible to secure it against loss or theft and allowing it to facilitate long-distance trade. A cow is thus less ideal than a gold bracelet.
+  * Fungible: one specimen of the good should be interchangeable with another of equal quantity. Without fungibility, the coincidence of wants problem remains unsolved. Thus gold is better than diamonds, which are irregular in shape and quality.
+  * Verifiable: the good must be easy to quickly identify and verify as authentic. Easy verification increases the confidence of its recipient in trade and increases the likelihood a trade will be consummated.
+  * Divisible: the good must be easy to subdivide. While this attribute was less important in early societies where trade was infrequent, it became more important as trade flourished and the quantities exchanged became smaller and more precise.
+  * Scarce: As Nick Szabo termed it, a monetary good must have “unforgeable costliness”. In other words, the good must not be abundant or easy to either obtain or produce in quantity. Scarcity is perhaps the most important attribute of a store of value as it taps into the innate human desire to collect that which is rare. It is the source of the original value of the store of value.
+  * Established history: the longer the good is perceived to have been valuable by society, the greater its appeal as a store of value. A long-established store of value will be hard to displace by a new upstart except by force of conquest or if the arriviste is endowed with a significant advantage among the other attributes listed above.
+  * Censorship-resistant: a new attribute, which has become increasingly important in our modern, digital society with pervasive surveillance, is censorship-resistance. That is, how difficult is it for an external party such as a corporation or state to prevent the owner of the good from keeping and using it. Goods that are censorship-resistant are ideal to those living under regimes that are trying to enforce capital controls or to outlaw various forms of peaceful trade.
+
+
+The table below grades Bitcoin, gold and fiat money (such as dollars) against the attributes listed above and is followed by an explanation of each grade:
+
+Press enter or click to view image in full size
+
+### Durability:
+
+Gold is the undisputed King of durability. The vast majority of gold that has ever been mined or minted, including the gold of the Pharaohs, remains extant today and will likely be available a thousand years hence. Gold coins that were used as money in antiquity still maintain significant value today. Fiat currency and bitcoins are fundamentally digital records that may take physical form (such as paper bills). Thus it is not their physical manifestation whose durability should be considered (since a tattered dollar bill may be exchanged for a new one), but the durability of the institution that issues them. In the case of fiat currencies, many governments have come and gone over the centuries, and their currencies disappeared with them. The Papiermark, Rentenmark and Reichsmark of the Weimar Republic no longer have value because the institution that issued them no longer exists. If history is a guide, it would be folly to consider fiat currencies durable in the long term — the US dollar and British Pound are relative anomalies in this regard. Bitcoins, having no issuing authority, may be considered durable so long as the network that secures them remains in place. Given that Bitcoin is still in its infancy, it is too early to draw strong conclusions about its durability. However, there are encouraging signs that, despite prominent instances of nation-states attempting to regulate Bitcoin and years of attacks by hackers, the network has continued to function, displaying a remarkable degree of “[anti-fragility](https://en.wikipedia.org/wiki/Antifragility)”.
+
+### Portability:
+
+Bitcoins are the most portable store of value ever used by man. Private keys representing hundreds of millions of dollars can be stored on a tiny USB drive and easily carried anywhere. Furthermore, equally valuable sums can be transmitted between people on opposite ends of the earth near instantly. Fiat currencies, being fundamentally digital, are also highly portable. However, government regulations and capital controls mean that large transfers of value usually take days or may not be possible at all. Cash can be used to avoid capital controls, but then the risk of storage and cost of transportation become significant. Gold, being physical in form and incredibly dense, is by far the least portable. It is no wonder that the majority of bullion is never transported. When bullion is transferred between a buyer and a seller it is typically only the title to the gold that is transferred, not the physical bullion itself. Transmitting physical gold across large distances is costly, risky and time-consuming.
+
+### Fungibility:
+
+Gold provides the standard for fungibility. When melted down, an ounce of gold is essentially indistinguishable from any other ounce, and gold has always traded this way on the market. Fiat currencies, on the other hand, are only as fungible as the issuing institutions allow them to be. While it may be the case that a fiat banknote is usually treated like any other by merchants accepting them, there are instances where large-denomination notes have been treated differently to small ones. For instance, India’s government, in an attempt to stamp out India’s untaxed gray market, completely demonetized their 500 and 1000 rupee banknotes. The demonetization caused 500 and 1000 rupee notes to trade at a discount to their face value, making them no longer truly fungible with their lower denomination sibling notes. Bitcoins are fungible at the network level, meaning that every bitcoin, when transmitted, is treated the same on the Bitcoin network. However, because bitcoins are traceable on the blockchain, a particular bitcoin may become tainted by its use in illicit trade and merchants or exchanges may be compelled not to accept such tainted bitcoins. Without improvements to the privacy and anonymity of Bitcoin’s network protocol, bitcoins cannot be considered as fungible as gold.
+
+### Verifiability:
+
+For most intents and purposes, both fiat currencies and gold are fairly easy to verify for authenticity. However, despite providing features on their banknotes to prevent counterfeiting, nation-states and their citizens still face the potential to be duped by counterfeit bills. Gold is also not immune from being counterfeited. Sophisticated criminals have used [gold-plated tungsten](http://www.cbc.ca/beta/news/canada/ottawa/fake-gold-wafer-rbc-canadian-mint-1.4368801) as a way of fooling gold investors into paying for false gold. Bitcoins, on the other hand, can be verified with mathematical certainty. Using cryptographic signatures, the owner of a bitcoin can publicly prove she owns the bitcoins she says she does.
+
+### Divisibility:
+
+Bitcoins can be divided down to a hundred millionth of a bitcoin and transmitted at such infinitesimal amounts (network fees can, however, make transmission of tiny amounts uneconomic). Fiat currencies are typically divisible down to pocket change, which has little purchasing power, making fiat divisible enough in practice. Gold, while physically divisible, becomes difficult to use when divided into small enough quantities that it could be useful for lower-value day-to-day trade.
+
+### Scarcity:
+
+The attribute that most clearly distinguishes Bitcoin from fiat currencies and gold is its predetermined scarcity. By design, at most 21 million bitcoins can ever be created. This gives the owner of bitcoins a known percentage of the total possible supply. For instance, an owner of 10 bitcoins would know that at most 2.1 million people on earth (less than 0.03% of the world’s population) could ever have as many bitcoins as they had. Gold, while remaining quite scarce through history, is not immune to increases in supply. If it were ever the case that a new method of mining or acquiring gold became economic, the supply of gold could rise dramatically (examples include [sea-floor](https://news.nationalgeographic.com/2016/07/deep-sea-mining-five-facts/) or [asteroid mining](http://web.mit.edu/12.000/www/m2016/finalwebsite/solutions/asteroids.html)). Finally, fiat currencies, while only a relatively recent invention of 
+
+[... truncated at 20,000 characters ...]

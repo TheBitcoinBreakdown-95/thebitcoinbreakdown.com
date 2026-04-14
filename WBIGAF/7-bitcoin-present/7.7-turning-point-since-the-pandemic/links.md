@@ -10,7 +10,7 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://www.wsj.com/articles/if-currency-reserves-arent-really-money-the-world-is-in-for-a-shock-11646311306 | FAILED | WSJ -- "If Currency Reserves Aren't Really Money, the World Is in for a Shock"; cited as a standout article |
+| 1 | Article | https://www.wsj.com/articles/if-currency-reserves-arent-really-money-the-world-is-in-for-a-shock-11646311306 | SKIP | WSJ -- "If Currency Reserves Aren't Really Money, the World Is in for a Shock"; cited as a standout article |
 | 2 | Tweet | https://twitter.com/gladstein/status/1499799340025479169?s=21 | DONE | Alex Gladstein on weaponization of FX reserves as a turning point in history |
 | 3 | Tweet | https://twitter.com/gladstein/status/1501086548862771201?s=21 | DONE | Alex Gladstein follow-up tweet on end of dollar-based global financial system |
 

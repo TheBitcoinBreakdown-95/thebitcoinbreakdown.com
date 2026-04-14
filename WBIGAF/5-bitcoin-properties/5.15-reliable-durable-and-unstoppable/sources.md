@@ -776,3 +776,67 @@ Success! You now have access to additional content.
 
 *No content extracted. Reason: HTTP 403 (access denied)*
 
+---
+
+### Link #6 -- 5 years ago Andreas Antonopoulos explained why a double spend is very unlikely
+
+**Source:** www.reddit.com
+**URL:** https://www.reddit.com/r/Bitcoin/comments/11e7uod/5_years_ago_andreas_antonopoulos_explained_why_a/
+**Type:** Reddit
+**Scrape status:** DONE
+
+---
+
+You've been blocked by network security.
+
+To continue, log in to your Reddit account or use your developer token  
+  
+If you think you've been blocked by mistake, file a ticket below and we'll look into it.
+
+[Log in ](https://www.reddit.com/login/)[File a ticket](https://support.reddithelp.com/hc/en-us/requests/new?ticket_form_id=21879292693140)
+
+
+---
+
+### Link #7 -- "The Bullish Case for Bitcoin" -- durability section
+
+**Source:** vijayboyapati.medium.com
+**URL:** https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1
+**Type:** Blog
+**Scrape status:** FAILED (Browser timeout)
+
+---
+
+*No content extracted. Reason: Browser timeout*
+
+
+---
+
+### Link #8 -- nakamoto.com -- key properties of Bitcoin, forward compatibility
+
+**Source:** nakamoto.com
+**URL:** https://nakamoto.com/what-are-the-key-properties-of-bitcoin/
+**Type:** Blog
+**Scrape status:** PARTIAL (Minimal text after browser render)
+
+---
+
+[](/)
+
+# 404
+
+PAGE NOT FOUND
+
+
+---
+
+### Link #9 -- "The Utility of Saving" by Pierre Rochard -- monetary uncertainty
+
+**Source:** pierre-rochard.medium.com
+**URL:** https://pierre-rochard.medium.com/the-utility-of-saving-c56f7c170fc1
+**Type:** Blog
+**Scrape status:** FAILED (Browser timeout)
+
+---
+
+*No content extracted. Reason: Browser timeout*

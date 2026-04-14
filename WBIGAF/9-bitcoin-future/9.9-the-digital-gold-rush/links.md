@@ -10,12 +10,12 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1 | FAILED | Vijay Boyapati: The Bullish Case for Bitcoin -- asymmetric bet, global bubble thesis |
+| 1 | Article | https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1 | DONE | Vijay Boyapati: The Bullish Case for Bitcoin -- asymmetric bet, global bubble thesis |
 | 2 | Blog | https://dergigi.com/2020/04/27/dear-family-dear-friends/ | DONE | Gigi: Dear Family, Dear Friends -- practical advice for Bitcoin newcomers |
-| 3 | Article | https://bitcoinmagazine.com/culture/bitcoin-is-a-trojan-horse-for-freedom | FAILED | Bitcoin Magazine: Bitcoin as Trojan Horse for freedom -- TAM across gold, equities, real estate, bonds |
-| 4 | Reddit | https://www.reddit.com/r/Bitcoin/comments/wl9tzm/wouldnt_bitcoin_eventually_just_make_the_rich/ | FAILED | Reddit: "We're not here to get rich, we're here to not get poor" |
-| 5 | Reddit | https://www.reddit.com/r/Bitcoin/comments/sffc3x/i_dont_get_the_whole_bitcoin_is_the_future_of/ | FAILED | Reddit: BTC as collateral -- no dilution, no counterparty risk |
-| 6 | Reddit | https://www.reddit.com/r/Bitcoin/comments/16rv346/how_many_of_you_would_consider_moving_for/ | FAILED | Reddit: Tax efficiency -- 0% federal tax on long-term capital gains up to $58,475 |
+| 3 | Article | https://bitcoinmagazine.com/culture/bitcoin-is-a-trojan-horse-for-freedom | DONE | Bitcoin Magazine: Bitcoin as Trojan Horse for freedom -- TAM across gold, equities, real estate, bonds |
+| 4 | Reddit | https://www.reddit.com/r/Bitcoin/comments/wl9tzm/wouldnt_bitcoin_eventually_just_make_the_rich/ | DONE | Reddit: "We're not here to get rich, we're here to not get poor" |
+| 5 | Reddit | https://www.reddit.com/r/Bitcoin/comments/sffc3x/i_dont_get_the_whole_bitcoin_is_the_future_of/ | DONE | Reddit: BTC as collateral -- no dilution, no counterparty risk |
+| 6 | Reddit | https://www.reddit.com/r/Bitcoin/comments/16rv346/how_many_of_you_would_consider_moving_for/ | DONE | Reddit: Tax efficiency -- 0% federal tax on long-term capital gains up to $58,475 |
 | 7 | Twitter/X | https://x.com/jameslavish/status/1837892240183836910 | DONE | James Lavish: Negative Vanna Gamma squeeze (technical market mechanics) |
 | 8 | Twitter/X | https://x.com/HHorsley/status/1855045742764999015 | DONE | HHorsley: Bitcoin reflexivity vs. equity multiple dynamics |
 

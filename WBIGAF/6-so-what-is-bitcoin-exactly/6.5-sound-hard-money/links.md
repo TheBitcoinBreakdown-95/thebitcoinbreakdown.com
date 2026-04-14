@@ -10,10 +10,10 @@
 
 | # | Type | URL | Status | Notes |
 |---|------|-----|--------|-------|
-| 1 | Article | https://mises.org/what-has-government-done-our-money | FAILED | Mises Institute: Murray Rothbard's "What Has Government Done to Our Money?" -- cited twice in source for Bitcoin/Austrian econ context |
-| 2 | Article | https://mises.org/library/principle-sound-money | FAILED | Mises Institute: "The Principle of Sound Money" -- Mises extended quote on sound money, gold standard, civil liberties |
+| 1 | Article | https://mises.org/what-has-government-done-our-money | DONE | Mises Institute: Murray Rothbard's "What Has Government Done to Our Money?" -- cited twice in source for Bitcoin/Austrian econ context |
+| 2 | Article | https://mises.org/library/principle-sound-money | DONE | Mises Institute: "The Principle of Sound Money" -- Mises extended quote on sound money, gold standard, civil liberties |
 | 3 | YouTube | https://www.youtube.com/watch?v=HAzExlEsIKk | PARTIAL | Thomas E. Woods Jr.: "Smashing Myths and Restoring Sound Money" -- history of commodity money, why fiat is bad, deflation not catastrophic |
-| 4 | Article | https://libertyclassroom.com/free-market-money/ | FAILED | Liberty Classroom: Free Market Money resource |
+| 4 | Article | https://libertyclassroom.com/free-market-money/ | DONE | Liberty Classroom: Free Market Money resource |
 
 ---
 

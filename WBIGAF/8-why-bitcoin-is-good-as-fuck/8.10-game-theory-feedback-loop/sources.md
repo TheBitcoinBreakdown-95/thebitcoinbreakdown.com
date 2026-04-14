@@ -269,3 +269,43 @@ Some privacy related extensions may cause issues on x.com. Please disable them a
 
 *No content extracted. Reason: HTTP 401 (Cloudflare/JS-protected)*
 
+---
+
+### Link #3 -- Robert Breedlove -- "The Number Zero and Bitcoin" -- Schelling point / Nash equilibrium
+
+**Source:** breedlove22.medium.com
+**URL:** https://breedlove22.medium.com/the-number-zero-and-bitcoin-4c193336db5b
+**Type:** Article
+**Scrape status:** FAILED (Browser timeout)
+
+---
+
+*No content extracted. Reason: Browser timeout*
+
+
+---
+
+### Link #4 -- Investopedia -- Nash Equilibrium definition
+
+**Source:** www.investopedia.com
+**URL:** https://www.investopedia.com/terms/n/nash-equilibrium.asp
+**Type:** Article
+**Scrape status:** FAILED (Browser timeout)
+
+---
+
+*No content extracted. Reason: Browser timeout*
+
+
+---
+
+### Link #6 -- WSJ -- Visa and Mastercard betting on crypto for everyday payments
+
+**Source:** www.wsj.com
+**URL:** https://www.wsj.com/articles/cryptocurrency-is-coming-to-your-credit-cards-11657374215?mod=hp_featst_pos4
+**Type:** Article
+**Scrape status:** SKIPPED (Paywalled (wsj.com))
+
+---
+
+*No content extracted. Reason: Paywalled (wsj.com)*

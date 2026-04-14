@@ -3,22 +3,51 @@
 **Daily To-Do:** `tasks/TODO.md`
 
 ## Last Session
-**Date:** 2026-04-12 (session 21)
+**Date:** 2026-04-13 (session 23)
 
 ### What Was Done
 
-**btc-index Phase 3B -- Bitcoin Notes Scraping Execution**
-- Committed Phase 3B pipeline files (`c9e3517`): bitcoin-notes-prep.py, run-bitcoin-notes.py, URL lists, failed-urls.md
-- Fixed `__pycache__` gitignore for scraper directory, installed `brotli` package (fixed garbled Brotli-compressed responses)
-- Upgraded `scraper.py:fetch_tweet()` to use fxtwitter API first (~0.5s/tweet), Patchright browser as fallback (~8s)
-  - Added User-Agent header to fix fxtwitter 403s
-  - Added thread detection: regex identifies thread starters ("1/", "(1/N)", "thread"), tries Patchright for full thread, marks PARTIAL if browser fails
-  - Single-point fix in scraper.py benefits both Bitcoin Notes and WBIGAF retry paths
-- Ran full article wave: **372 done (66%), 32 partial, 158 failed** -- 5.1M chars in 42.5 min
-- Ran full tweet wave: **122 done (92%), 11 failed** -- 75K chars in 8.4 min
-  - 11 failed tweets are deleted/suspended accounts (unrecoverable), logged in failed-urls.md
-- Track 2 (WBIGAF failures): exhausted free methods on 4 non-Medium URLs (httpx, Patchright, Wayback Machine -- all failed)
-- Consolidated Apify candidate list: 36 unique Medium + 2 Investopedia + 1 Quartz = 39 URLs (Yahoo Finance 404 = dead)
+**btc-index Phase 3B -- Wayback Machine Recovery + Phase B Retries**
+- Built `run-wayback.py`: queries archive.org Availability API, fetches via /web/{timestamp}id_/ endpoint (raw HTML, no toolbar injection)
+  - Bug found: Wayback API does exact domain matching -- `coindesk.com` misses but `www.coindesk.com` hits. Added www-toggle fallback.
+- **Phase A -- Wayback Machine pass (98 URLs across 3 categories):**
+  - Dead servers: 8/23 recovered, 80K chars (EconTalk, earn.com/Quantifying Decentralization, digicash.support.nl, programmingbitcoin.com)
+  - 404 pages: 7/28 recovered, 28K chars (BitcoinFoundation, CoinDesk Wall Street narrative, WhiteHouse.gov joint statement)
+  - WAF/403 blocked: 20/47 recovered, 250K chars (Executive Order 6102, StackExchange x2, bitcoinrollups.org, SEC filings x2, Politico, Quartz HK, RFC IEN-2, SeekingAlpha x2, Saifedean settlement network)
+- **Phase B -- Timeout/error retries (14 URLs):**
+  - 9/14 recovered, 45K chars (DTCC via Wayback, FRED via browser, founders.archives.gov Washington letter 15K, developer.tbd.website via Wayback)
+  - Investopedia x2 still timing out (Apify candidate)
+- **GitHub README fix:** 3 repos (bitcoin/bips, bip420, hamstr) used README.mediawiki or README.MD -- fetched directly, 47K chars
+- **Totals: 47 URLs recovered, ~450K new chars added to corpus**
+- Corpus: 744 files -- 580 DONE, 38 PARTIAL, 124 FAILED (down from ~193 FAILED)
+
+### Next Session Pickup Prompt
+
+```
+check worklog and continue.
+
+FIRST TASK: Commit all uncommitted work (673 files). Suggested split:
+1. btc-index scraping pipeline + scraped content + WBIGAF links/sources updates + worklogs (focused commit)
+2. Everything else (Bitcoin Notes, Voice DNA, WBIGAF new chapters, Ark notes, misc)
+Stage specific files by name per git workflow rules. Do NOT use git add -A.
+
+THEN continue btc-index Phase 3B failure recovery:
+C. Check notebook context -- for remaining ~68 Wayback misses, check if the Bitcoin Note that linked the URL already has the content inline (quote, summary, argument). If so, the scrape is unnecessary and those can be marked as covered.
+D. Apify batch on 36 Medium URLs + Investopedia x2 (last resort, user-approved)
+
+After recovery:
+- Re-index full corpus (btc-index ingest)
+
+Session 23 completed Phases A + B:
+- Built run-wayback.py (Wayback Machine API + www-toggle fix)
+- Wayback pass: 35/98 recovered (358K chars) across dead/404/WAF categories
+- Phase B retries: 9/14 recovered (45K chars) via Wayback + browser fallback
+- GitHub README fix: 3 repos (bitcoin/bips, bip420, hamstr) used README.mediawiki/.MD -- 47K chars
+- Total: 47 URLs recovered, ~450K new chars
+- Corpus: 744 files, 580 DONE / 38 PARTIAL / 124 FAILED
+
+Key scraper scripts (all in btc-index/scraper/): scraper.py, run-wave.py, run-bitcoin-notes.py, run-github.py, run-reddit.py, gen-failure-doc.py, run-wayback.py
+```
 
 ### What's Next
 
@@ -49,11 +78,15 @@
 - [x] Run full article wave -- 372 done, 32 partial, 158 failed, 5.1M chars
 - [x] Upgrade fetch_tweet to fxtwitter API + thread detection
 - [x] Run full tweet wave -- 122 done, 11 failed (deleted), 75K chars
-- [ ] Re-run tweet wave to capture threads (thread detection now marks PARTIAL)
-- [ ] Browser retry on 158 article failures (Cloudflare domains)
-- [ ] Run Apify on 36 Medium URLs (consolidated with WBIGAF list)
-- [ ] Decide on GitHub URLs (53) -- extract READMEs or skip?
-- [ ] Decide on Reddit URLs (9) -- Patchright or skip?
+- [x] Confirm threads captured (thread detection worked, no re-run needed)
+- [x] GitHub extraction -- 44/48 done, 515K chars (run-github.py)
+- [x] Reddit extraction -- 8/8 done, 160K chars (run-reddit.py)
+- [x] Build consolidated failure doc (207 URLs, 9 categories, 4-phase recovery plan)
+- [x] Wayback Machine pass on 98 URLs (Phase A) -- 35 recovered, 358K chars
+- [x] Retry timeout/error URLs with Wayback + browser (Phase B, 14 URLs) -- 9 recovered, 45K chars
+- [x] Fix GitHub README.mediawiki/.MD lookups -- 3 repos, 47K chars
+- [ ] Check notebook context for remaining failures (Phase C)
+- [ ] Run Apify on 36 Medium URLs + WAF survivors (Phase D, last resort)
 
 **Post-Scraping**
 - [ ] Re-index entire corpus (WBIGAF sources.md + Bitcoin Notes scraped content)
@@ -94,73 +127,18 @@
 
 ## Session History
 
-### 2026-04-11 -- EP02-EP05 Scripts + 2112 Vision + Rant Workflow (session 20)
-- Wrote 4 podcast scripts (EP02-EP05) matching EP01's format from WBIGAF/source library
-- Reviewed full monetization plan: 11 revenue streams, 3-tier estimates ($8K-$94K Bitcoin-only)
-- Added Expanded 2112 Vision to synthesis.md: dual content engine, phased expansion, $14K-$145K estimates
-- Updated production workflow: added RANT step (record brain dump -> transcribe -> AI script)
+### 2026-04-12 -- GitHub/Reddit Extraction + Failure Consolidation (session 22)
+- Confirmed tweet threads captured (thread detection worked -- top files are full multi-tweet threads)
+- Built + ran `run-github.py`: 44/48 done, 515K chars in 31.6s (BIPs, READMEs, PRs, gists)
+- Built + ran `run-reddit.py`: 8/8 done via JSON API, 160K chars in 28.3s (zero failures)
+- Built `gen-failure-doc.py` and generated `consolidated-failures.md`: 207 URLs across 9 categories
+- Failure triage: 41 truly dead (skip), 58 Wayback candidates, 52 WAF/403, 20 timeout, 36 Medium (Apify queue)
 
-### 2026-04-12 -- btc-index Bitcoin Notes URL Pipeline Built (session 19)
-- Built `bitcoin-notes-prep.py`: full extraction + normalization + verified dedup + categorization pipeline
-- URL normalizer: strips trailing slashes, tracking params, anchors; forces https/lowercase/no-www; domain-aware param rules
-- Verified dedup: compares normalized Bitcoin Notes URLs against WBIGAF links.md DONE/PARTIAL rows AND confirms content exists in sources.md (fixes Session 18 flaw)
-- Results: 1,093 raw -> 1,043 unique -> only 20 verified overlap with WBIGAF
-- Final categorization: 564 scrapable, 133 tweets, 31 Medium, 53 GitHub, 9 Reddit, 233 skip
-- Built `run-bitcoin-notes.py`: scraper runner with --resume, --category, --limit flags
-- Dry run verified, output files generated
+### 2026-04-12 -- btc-index Phase 3B Scraping + Failure Triage (session 21)
+- Committed Phase 3B pipeline files (`c9e3517`): bitcoin-notes-prep.py, run-bitcoin-notes.py, URL lists, failed-urls.md
+- Fixed `__pycache__` gitignore, installed `brotli`, upgraded `scraper.py:fetch_tweet()` to fxtwitter API + thread detection
+- Ran full article wave: 372 done (66%), 32 partial, 158 failed -- 5.1M chars in 42.5 min
+- Ran full tweet wave: 122 done (92%), 11 failed (deleted accounts) -- 75K chars in 8.4 min
+- Consolidated Apify candidate list: 36 unique Medium + 2 Investopedia + 1 Quartz = 39 URLs
 
-### 2026-04-12 -- btc-index Bitcoin Notes URL Scoping + Apify Eval (session 18)
-- Scoped Bitcoin Notes URL corpus: 1,090 unique URLs across 365 note files
-- Categorized URLs: ~640 scrapable, 181 tweets, 103 YouTube, 86 paywalled, 55 GitHub, 16 junk, 9 Medium
-- Evaluated Apify for Cloudflare/CAPTCHA bypass; decision: run existing pipeline first, Apify free tier on failures
-- Identified dedup flaw: naive method matched against article body text, not source URLs with DONE status
-
-### 2026-04-11 -- btc-index Patchright Retry Wave (session 17)
-- Added Patchright browser fallback + tweet handler + domain routing to scraper.py
-- Ran retry wave: 73 recovered, 11 partial, 28 failed, 8 skipped (paywalled)
-- Overall WBIGAF scrape success: 45% -> ~80% (757K new chars)
-- Created failed-urls.md: 15 actionable URLs (11 Medium, 4 other)
-
-### 2026-04-11 -- btc-index Wave 1B Scraping (session 16)
-- Built scraping pipeline: scraper.py (httpx + html2text) and run-wave.py (batch orchestrator)
-- Ran full Wave 1B: 52 sub-chapters, 239 links in 7.7 minutes
-- Results: 84 DONE (33%), 31 PARTIAL (12%), 123 FAILED (49%), 14 SKIP (6%)
-- Failures structural: Cloudflare-protected sites (Bitcoin Magazine, Medium, Reddit, Twitter)
-- Created 52 sources.md files totaling 710K chars
-
-### 2026-04-11 -- btc-index Phase 2 Ingest + Phase 3 Scraping (session 15)
-- Extended chunker/indexer for user note ingestion (362 files, 396 chunks)
-- Committed Phase 1: `de60ca4` (7 files, 1,049 insertions)
-- Corpus grew from 960 to 1,356 chunks (181 WBIGAF + 362 user notes)
-
-### 2026-04-11 -- btc-index Phase 1 Commit + Phase 2 Ingest (session 14)
-- Built btc-index MCP server: 4 tools (search_corpus, list_sources, get_chunk, find_related)
-- Indexed 960 chunks from 181 files (WBIGAF, guide, blog sources)
-- Registered in .mcp.json, .vectordb/.venv/.pycache/meta gitignored
-
-### 2026-04-08 -- Voice DNA Expansion + EP01 Rewrite (session 13)
-- Analyzed Voice DNA Examples.txt (379 lines spoken/journal content) against existing profile
-- Updated Voice DNA profile with 8 new rules, 2 new voice modes, 9 new sentence skeletons
-- Rewrote EP01 Golden Rules script (~2,314 words, ~17-18 min spoken)
-
-### 2026-04-07 -- Directory Rename Spaces to Hyphens (session 12)
-- Committed 643 pending files, gitignored 6 embedded repos
-- Renamed 110+ directories via `git mv` (children-first, deepest paths first)
-- Updated path references in 12+ files, Astro build verified (64 pages, 0 errors)
-- 2 commits: `fc0e204` (pending work), `cd8088d` (renames + reference updates)
-
-### 2026-04-07 -- EP01 Script Draft, WBIGAF MCP Plan, Directory Rename Plan (session 11)
-- Created EP01 Golden Rules speakable outline script at `tbb-media-company/podcast/episodes/ep01-golden-rules/script.md`
-- Added 3-phase WBIGAF MCP server plan to TODO.md
-- Explored directory rename scope (~110 dirs with spaces), wrote 5-phase plan (not executed this session)
-
-### 2026-04-06 -- TBB Media Company Archive Synthesis & Setup (session 10)
-- Read and synthesized 280+ files across three legacy archive folders (2025-2035, 2112, The Bitcoin Breakdown)
-- Created 3 reference files: synthesis.md, teaching-framework.md, episode-roadmap.md
-- Updated TBB Media Company/CLAUDE.md (173 -> 299 lines) and Phase 14 in TODO.md
-- Key decisions: 2112 Capital Solutions LLC as umbrella, TBB as DBA, EP01 Golden Rules first, S-Corp deferred
-
-### 2026-03-28 -- ArkFloat Published to Website (session 8)
-- Published ArkFloat whitepaper as blog post and standalone HTML
-- Added subtitle field to content schema, updated media grid layout
-- 4 commits pushed, site deployed via GitHub Actions
+*Sessions 8-20 archived to WORKLOG-ARCHIVE.md on 2026-04-13*
