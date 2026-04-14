@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Bitcoin -- Bodega Zine Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: #f5f0e6; color: #1a1a1a; line-height: 1.6; }
+
+  /* --- NAV --- */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; background: #1a1a1a; position: sticky; top: 0; z-index: 10; }
+  .nav-logo { font-family: 'Fraunces', serif; font-weight: 900; font-size: 16px; color: #ff9900; }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a { text-decoration: none; color: #999; font-size: 13px; font-weight: 500; transition: color 0.15s; }
+  .nav-links a:hover { color: #ff9900; }
+
+  /* --- HERO --- */
+  .hero { padding: 48px 32px 40px; background: #1a1a1a; color: #f5f0e6; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: end; }
+  .hero h1 { font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(48px, 8vw, 96px); line-height: 0.92; letter-spacing: -2px; color: #f5f0e6; }
+  .hero h1 .orange { color: #ff9900; }
+  .hero-sub { margin-top: 20px; font-size: 16px; color: #888; max-width: 480px; line-height: 1.65; }
+  .hero-sidebar { border-left: 3px solid #ff9900; padding-left: 20px; }
+  .hero-sidebar .label { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: #666; margin-bottom: 12px; }
+  .hero-sidebar .detail { margin-bottom: 16px; }
+  .hero-sidebar .detail-key { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #ff9900; }
+  .hero-sidebar .detail-val { font-size: 15px; color: #ccc; margin-top: 2px; }
+  .hero-cta { display: inline-block; padding: 12px 28px; background: #ff9900; color: #1a1a1a; font-size: 13px; font-weight: 700; text-decoration: none; margin-top: 8px; transition: background 0.15s; }
+  .hero-cta:hover { background: #f5f0e6; }
+
+  /* --- TICKER STRIP --- */
+  .ticker { background: #ff9900; padding: 10px 0; overflow: hidden; white-space: nowrap; }
+  .ticker-track { display: inline-block; animation: scroll 25s linear infinite; }
+  .ticker span { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; color: #1a1a1a; letter-spacing: 2px; text-transform: uppercase; padding: 0 32px; }
+  @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* --- MAIN CONTENT --- */
+  .main { max-width: 1100px; margin: 0 auto; padding: 48px 32px; display: grid; grid-template-columns: 1fr 320px; gap: 48px; }
+
+  /* Left column */
+  .content-main h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 28px; color: #1a1a1a; margin-bottom: 24px; letter-spacing: -0.5px; }
+  .content-main h2 span { color: #ff9900; }
+
+  .event-stack { display: flex; flex-direction: column; gap: 12px; }
+  .event-item { display: grid; grid-template-columns: 80px 1fr auto; gap: 16px; align-items: center; padding: 20px; background: #fff; border: 2px solid #1a1a1a; transition: all 0.15s; }
+  .event-item:hover { border-color: #ff9900; transform: translateX(4px); }
+  .event-date-block { text-align: center; }
+  .event-month { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #888; }
+  .event-day { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 900; color: #1a1a1a; line-height: 1; }
+  .event-info h3 { font-size: 17px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px; }
+  .event-info p { font-size: 13px; color: #888; }
+  .event-type { font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; color: #fff; background: #1a1a1a; padding: 4px 10px; display: inline-block; }
+  .event-type.beer { background: #ff9900; color: #1a1a1a; }
+  .event-type.workshop { background: #2563eb; }
+
+  /* About section */
+  .about-zine { margin-top: 48px; padding: 32px; background: #fff; border: 2px solid #1a1a1a; position: relative; }
+  .about-zine::before { content: 'ABOUT'; position: absolute; top: -10px; left: 20px; font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 3px; background: #ff9900; color: #1a1a1a; padding: 2px 10px; }
+  .about-zine p { font-size: 15px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+  .about-zine p strong { color: #1a1a1a; }
+
+  /* Right sidebar */
+  .sidebar { }
+  .sidebar-block { margin-bottom: 24px; padding: 20px; background: #fff; border: 2px solid #1a1a1a; }
+  .sidebar-block.featured { border-color: #ff9900; background: #1a1a1a; color: #f5f0e6; }
+  .sidebar-title { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: #888; margin-bottom: 12px; }
+  .sidebar-block.featured .sidebar-title { color: #ff9900; }
+
+  .format-item { padding: 12px 0; border-bottom: 1px solid #eee; }
+  .format-item:last-child { border-bottom: none; }
+  .format-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 16px; color: #1a1a1a; }
+  .format-desc { font-size: 13px; color: #888; margin-top: 2px; }
+
+  .sidebar-block.featured .format-item { border-bottom-color: #333; }
+  .sidebar-block.featured .format-name { color: #ff9900; }
+  .sidebar-block.featured .format-desc { color: #888; }
+
+  /* Quick facts in sidebar */
+  .fact { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+  .fact:last-child { border-bottom: none; }
+  .fact-key { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+  .fact-val { font-size: 13px; font-weight: 600; color: #1a1a1a; }
+
+  /* Quote strip */
+  .quote-strip { padding: 40px 32px; background: #1a1a1a; text-align: center; }
+  .quote-strip p { font-family: 'Fraunces', serif; font-size: clamp(20px, 3vw, 32px); font-weight: 400; font-style: italic; color: #ff9900; max-width: 600px; margin: 0 auto; line-height: 1.4; }
+
+  /* CTA */
+  .cta-bar { padding: 48px 32px; background: #ff9900; text-align: center; }
+  .cta-bar h2 { font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(28px, 5vw, 48px); color: #1a1a1a; line-height: 1; margin-bottom: 8px; }
+  .cta-bar p { font-family: 'DM Mono', monospace; font-size: 12px; color: rgba(26,26,26,0.6); letter-spacing: 1px; margin-bottom: 24px; }
+  .cta-bar a { display: inline-block; padding: 14px 36px; background: #1a1a1a; color: #ff9900; font-size: 13px; font-weight: 700; text-decoration: none; transition: all 0.15s; }
+  .cta-bar a:hover { background: #f5f0e6; color: #1a1a1a; }
+
+  /* Footer */
+  footer { padding: 20px 32px; background: #1a1a1a; display: flex; justify-content: space-between; align-items: center; }
+  footer p { font-size: 11px; color: #555; }
+  footer a { color: #ff9900; text-decoration: none; }
+  .footer-links { display: flex; gap: 16px; }
+  .footer-links a { font-size: 11px; color: #666; text-decoration: none; }
+  .footer-links a:hover { color: #ff9900; }
+
+  .direction-label { position: fixed; top: 12px; right: 12px; background: #1a1a1a; color: #ff9900; padding: 6px 14px; font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; z-index: 100; border: 2px solid #ff9900; }
+
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .main { grid-template-columns: 1fr; }
+    .event-item { grid-template-columns: 60px 1fr; }
+    .event-type { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="direction-label">Direction 7: Bodega Zine</div>
+
+<nav>
+  <div class="nav-logo">JC Bitcoin</div>
+  <div class="nav-links">
+    <a href="#">Events</a>
+    <a href="#">About</a>
+    <a href="#">Resources</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Jersey City<br><span class="orange">Bitcoin</span></h1>
+      <p class="hero-sub">A free monthly meetup for anyone curious about Bitcoin. No experience required, no price talk, no gatekeeping.</p>
+    </div>
+    <div class="hero-sidebar">
+      <div class="label">Quick Info</div>
+      <div class="detail">
+        <div class="detail-key">When</div>
+        <div class="detail-val">Second Thursday, monthly</div>
+      </div>
+      <div class="detail">
+        <div class="detail-key">Where</div>
+        <div class="detail-val">Zeppelin Hall, Jersey City</div>
+      </div>
+      <div class="detail">
+        <div class="detail-key">Since</div>
+        <div class="detail-val">Spring 2022</div>
+      </div>
+      <a href="#" class="hero-cta">What is JC Bitcoin?</a>
+    </div>
+  </div>
+</div>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span>No price talk</span>
+    <span>--</span>
+    <span>Education only</span>
+    <span>--</span>
+    <span>All are welcome</span>
+    <span>--</span>
+    <span>Second Thursday monthly</span>
+    <span>--</span>
+    <span>Zeppelin Hall JC</span>
+    <span>--</span>
+    <span>Free forever</span>
+    <span>--</span>
+    <span>No price talk</span>
+    <span>--</span>
+    <span>Education only</span>
+    <span>--</span>
+    <span>All are welcome</span>
+    <span>--</span>
+    <span>Second Thursday monthly</span>
+    <span>--</span>
+    <span>Zeppelin Hall JC</span>
+    <span>--</span>
+    <span>Free forever</span>
+    <span>--</span>
+  </div>
+</div>
+
+<div class="main">
+  <div class="content-main">
+    <h2>Upcoming <span>Events</span></h2>
+    <div class="event-stack">
+      <div class="event-item">
+        <div class="event-date-block">
+          <div class="event-month">Apr</div>
+          <div class="event-day">10</div>
+        </div>
+        <div class="event-info">
+          <h3>Socratic Seminar #7</h3>
+          <p>Protocol updates, ecosystem news, open discussion</p>
+        </div>
+        <div class="event-type">Seminar</div>
+      </div>
+      <div class="event-item">
+        <div class="event-date-block">
+          <div class="event-month">May</div>
+          <div class="event-day">01</div>
+        </div>
+        <div class="event-info">
+          <h3>Bitcoin & Beer</h3>
+          <p>Casual hangout at the beer garden, all levels</p>
+        </div>
+        <div class="event-type beer">Social</div>
+      </div>
+      <div class="event-item">
+        <div class="event-date-block">
+          <div class="event-month">May</div>
+          <div class="event-day">15</div>
+        </div>
+        <div class="event-info">
+          <h3>Self-Custody Workshop</h3>
+          <p>Hardware wallets, keys, transaction verification</p>
+        </div>
+        <div class="event-type workshop">Workshop</div>
+      </div>
+    </div>
+
+    <div class="about-zine">
+      <p><strong>Jersey City Bitcoin</strong> started in 2022 as a few friends who wanted to learn together. Today we're 100+ members meeting monthly at Zeppelin Hall -- the beer garden with the big parking lot and the easy PATH access from NYC.</p>
+      <p>We believe Bitcoin education should be <strong>free, accessible, and free from hype</strong>. No price predictions, no trading signals, no shilling. Just honest conversation about sound money.</p>
+      <p>The schlep matters. We picked a spot that's easy to reach from everywhere -- NJ Transit, PATH from Manhattan, or just drive and park for free. No excuses not to show up.</p>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="sidebar-block featured">
+      <div class="sidebar-title">Our Formats</div>
+      <div class="format-item">
+        <div class="format-name">Socratic Seminar</div>
+        <div class="format-desc">Deep protocol discussion, Chatham House rules, bring questions</div>
+      </div>
+      <div class="format-item">
+        <div class="format-name">Bitcoin & Beer</div>
+        <div class="format-desc">No agenda. Just bitcoiners, drinks, and conversation</div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-title">Quick Facts</div>
+      <div class="fact">
+        <div class="fact-key">Members</div>
+        <div class="fact-val">100+</div>
+      </div>
+      <div class="fact">
+        <div class="fact-key">Founded</div>
+        <div class="fact-val">2022</div>
+      </div>
+      <div class="fact">
+        <div class="fact-key">Venue</div>
+        <div class="fact-val">Zeppelin Hall</div>
+      </div>
+      <div class="fact">
+        <div class="fact-key">Parking</div>
+        <div class="fact-val">Free</div>
+      </div>
+      <div class="fact">
+        <div class="fact-key">Admission</div>
+        <div class="fact-val">Free. Always.</div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-title">Connect</div>
+      <p style="font-size: 13px; color: #888; line-height: 1.6;">
+        <a href="#" style="color: #ff9900; text-decoration: none; font-weight: 600;">Telegram</a> for community chat<br>
+        <a href="#" style="color: #ff9900; text-decoration: none; font-weight: 600;">Twitter</a> for announcements<br>
+        <a href="#" style="color: #ff9900; text-decoration: none; font-weight: 600;">Eventbrite</a> for RSVPs<br>
+        <a href="#" style="color: #ff9900; text-decoration: none; font-weight: 600;">GitHub</a> for open source
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="quote-strip">
+  <p>"We don't predict the price. We study the protocol."</p>
+</div>
+
+<div class="cta-bar">
+  <h2>Pull up. Say hi.</h2>
+  <p>88 Liberty View Dr, Jersey City, NJ 07302</p>
+  <a href="#">RSVP to the Next Meetup</a>
+</div>
+
+<footer>
+  <p>JC Bitcoin -- est. 2022 -- <a href="#">open source</a></p>
+  <div class="footer-links">
+    <a href="#">Telegram</a>
+    <a href="#">Twitter</a>
+    <a href="#">GitHub</a>
+    <a href="#">Nostr</a>
+  </div>
+</footer>
+
+</body>
+</html>

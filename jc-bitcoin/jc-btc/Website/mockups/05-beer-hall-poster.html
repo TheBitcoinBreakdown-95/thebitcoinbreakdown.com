@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Bitcoin -- Beer Hall Poster Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #13120e; color: #f5f0e6; line-height: 1.5; }
+
+  /* --- NAV --- */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; background: #13120e; border-bottom: 3px solid #ff9900; position: sticky; top: 0; z-index: 10; }
+  .nav-stamp { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 3px; color: #ff9900; border: 2px solid #ff9900; padding: 4px 12px; display: inline-block; transform: rotate(-1deg); }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a { text-decoration: none; color: #8b7355; font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; transition: color 0.15s; }
+  .nav-links a:hover { color: #ff9900; }
+
+  /* --- HERO POSTER --- */
+  .hero-poster { padding: 60px 32px 48px; text-align: center; position: relative; overflow: hidden; min-height: 85vh; display: flex; flex-direction: column; justify-content: center; background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,153,0,0.04) 0%, transparent 60%);
+  }
+  .hero-poster::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity: 0.025; pointer-events: none; }
+
+  .hero-location { font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 6px; color: #8b7355; margin-bottom: 20px; }
+
+  .hero-title { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; line-height: 0.88; letter-spacing: -2px; position: relative; }
+  .hero-title .line1 { font-size: clamp(60px, 14vw, 160px); color: #f5f0e6; display: block; }
+  .hero-title .line2 { font-size: clamp(60px, 14vw, 160px); color: #f5f0e6; display: block; }
+  .hero-title .line3 { font-size: clamp(70px, 16vw, 180px); color: #ff9900; display: block; }
+
+  .hero-tagline { font-size: 16px; color: #8b7355; margin-top: 32px; font-weight: 400; letter-spacing: 0.5px; }
+
+  .hero-details { margin-top: 40px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+  .hero-detail { text-align: center; }
+  .hero-detail-label { font-family: 'Oswald', sans-serif; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 3px; color: #665a42; margin-bottom: 4px; }
+  .hero-detail-value { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; color: #f5f0e6; text-transform: uppercase; letter-spacing: 1px; }
+
+  .hero-stamp { display: inline-block; border: 3px solid #ff9900; padding: 8px 28px; margin-top: 40px; transform: rotate(-2deg); }
+  .hero-stamp span { font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: #ff9900; }
+
+  /* --- EVENT POSTERS --- */
+  .posters-section { padding: 32px; max-width: 1200px; margin: 0 auto; }
+  .posters-header { font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 4px; color: #665a42; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #2a2520; }
+
+  .poster-card { background: #1a1810; border: 1px solid #2a2520; padding: 40px; margin-bottom: 16px; display: grid; grid-template-columns: 140px 1fr auto; gap: 32px; align-items: center; transition: transform 0.2s; position: relative; overflow: hidden; }
+  .poster-card:hover { transform: translateX(4px); }
+  .poster-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: #ff9900; }
+
+  .poster-date { text-align: center; }
+  .poster-month { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 3px; color: #8b7355; }
+  .poster-day { font-family: 'Oswald', sans-serif; font-size: 56px; font-weight: 700; color: #ff9900; line-height: 1; letter-spacing: -2px; }
+  .poster-year { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #555040; }
+
+  .poster-info h3 { font-family: 'Oswald', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #f5f0e6; line-height: 1.05; margin-bottom: 8px; }
+  .poster-info p { font-size: 14px; color: #8b7355; line-height: 1.6; max-width: 500px; }
+  .poster-type { font-family: 'Oswald', sans-serif; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #ff9900; margin-bottom: 6px; }
+
+  .poster-rsvp { font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #ff9900; text-decoration: none; border: 2px solid #ff9900; padding: 10px 24px; transition: all 0.15s; white-space: nowrap; }
+  .poster-rsvp:hover { background: #ff9900; color: #13120e; }
+
+  /* --- ABOUT (the venue) --- */
+  .venue-section { padding: 80px 32px; max-width: 1200px; margin: 0 auto; }
+  .venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .venue-text h2 { font-family: 'Oswald', sans-serif; font-size: clamp(28px, 4vw, 48px); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; line-height: 1; margin-bottom: 20px; }
+  .venue-text h2 span { color: #ff9900; }
+  .venue-text p { font-size: 15px; color: #8b7355; line-height: 1.75; margin-bottom: 16px; }
+  .venue-image { background: #1a1810; border: 1px solid #2a2520; height: 340px; display: flex; align-items: center; justify-content: center; position: relative; }
+  .venue-image-label { font-family: 'Oswald', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: #665a42; }
+  .venue-image .stamp { position: absolute; bottom: 16px; right: 16px; border: 2px solid #ff9900; padding: 4px 12px; transform: rotate(3deg); }
+  .venue-image .stamp span { font-family: 'Oswald', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #ff9900; }
+
+  /* --- FORMATS --- */
+  .formats-section { padding: 48px 32px 80px; max-width: 1200px; margin: 0 auto; }
+  .formats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .format-poster { background: #1a1810; border: 1px solid #2a2520; padding: 40px; position: relative; }
+  .format-poster::after { content: attr(data-num); position: absolute; top: 16px; right: 20px; font-family: 'Oswald', sans-serif; font-size: 80px; font-weight: 700; color: rgba(255,153,0,0.06); line-height: 1; }
+  .format-poster h3 { font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #ff9900; margin-bottom: 12px; }
+  .format-poster p { font-size: 14px; color: #8b7355; line-height: 1.7; }
+  .format-poster .freq { font-family: 'Oswald', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: #665a42; margin-bottom: 12px; }
+
+  /* --- CTA --- */
+  .cta-section { padding: 80px 32px; text-align: center; border-top: 3px solid #ff9900; position: relative; }
+  .cta-section h2 { font-family: 'Oswald', sans-serif; font-size: clamp(36px, 6vw, 64px); font-weight: 700; text-transform: uppercase; color: #f5f0e6; letter-spacing: 1px; line-height: 1; margin-bottom: 12px; }
+  .cta-section h2 span { color: #ff9900; }
+  .cta-section p { font-size: 14px; color: #665a42; margin-bottom: 32px; font-family: 'JetBrains Mono', monospace; letter-spacing: 1px; }
+  .cta-section a { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: #13120e; text-decoration: none; background: #ff9900; padding: 16px 40px; display: inline-block; transition: all 0.15s; }
+  .cta-section a:hover { background: #f5f0e6; }
+
+  /* --- FOOTER --- */
+  footer { padding: 24px 32px; text-align: center; border-top: 1px solid #2a2520; }
+  footer p { font-family: 'Oswald', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: #665a42; }
+  footer a { color: #ff9900; text-decoration: none; }
+
+  /* Label */
+  .direction-label { position: fixed; top: 12px; right: 12px; background: #ff9900; color: #13120e; padding: 6px 14px; font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; z-index: 100; transform: rotate(-1deg); }
+
+  @media (max-width: 768px) {
+    .poster-card { grid-template-columns: 1fr; gap: 16px; }
+    .poster-date { text-align: left; display: flex; align-items: baseline; gap: 8px; }
+    .poster-day { font-size: 36px; }
+    .venue-grid { grid-template-columns: 1fr; }
+    .formats-grid { grid-template-columns: 1fr; }
+    .hero-details { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="direction-label">Direction 5: Beer Hall Poster</div>
+
+<nav>
+  <div class="nav-stamp">JC BTC</div>
+  <div class="nav-links">
+    <a href="#">Events</a>
+    <a href="#">About</a>
+    <a href="#">Resources</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<div class="hero-poster">
+  <div class="hero-location">Zeppelin Hall &middot; Jersey City, NJ</div>
+  <div class="hero-title">
+    <span class="line1">Jersey</span>
+    <span class="line2">City</span>
+    <span class="line3">Bitcoin</span>
+  </div>
+  <div class="hero-tagline">Education, community, and sound money -- no hype required.</div>
+  <div class="hero-details">
+    <div class="hero-detail">
+      <div class="hero-detail-label">When</div>
+      <div class="hero-detail-value">2nd Thursday</div>
+    </div>
+    <div class="hero-detail">
+      <div class="hero-detail-label">Where</div>
+      <div class="hero-detail-value">Zeppelin Hall</div>
+    </div>
+    <div class="hero-detail">
+      <div class="hero-detail-label">Since</div>
+      <div class="hero-detail-value">2022</div>
+    </div>
+  </div>
+  <div class="hero-stamp"><span>All Are Welcome</span></div>
+</div>
+
+<!-- EVENT POSTERS -->
+<div class="posters-section">
+  <div class="posters-header">Upcoming Events</div>
+
+  <div class="poster-card">
+    <div class="poster-date">
+      <div class="poster-month">Apr</div>
+      <div class="poster-day">10</div>
+      <div class="poster-year">2026</div>
+    </div>
+    <div class="poster-info">
+      <div class="poster-type">Socratic Seminar</div>
+      <h3>Monthly Socratic #7</h3>
+      <p>Deep-dive into recent Bitcoin developments, protocol changes, and ecosystem news. Open discussion, Chatham House rules.</p>
+    </div>
+    <a href="#" class="poster-rsvp">RSVP</a>
+  </div>
+
+  <div class="poster-card">
+    <div class="poster-date">
+      <div class="poster-month">May</div>
+      <div class="poster-day">01</div>
+      <div class="poster-year">2026</div>
+    </div>
+    <div class="poster-info">
+      <div class="poster-type">Social</div>
+      <h3>Bitcoin & Beer</h3>
+      <p>No agenda. Just bitcoiners, cold drinks, and good conversation at the beer garden. Beginners especially welcome.</p>
+    </div>
+    <a href="#" class="poster-rsvp">RSVP</a>
+  </div>
+
+  <div class="poster-card">
+    <div class="poster-date">
+      <div class="poster-month">May</div>
+      <div class="poster-day">15</div>
+      <div class="poster-year">2026</div>
+    </div>
+    <div class="poster-info">
+      <div class="poster-type">Workshop</div>
+      <h3>Self-Custody<br>Workshop</h3>
+      <p>Hands-on hardware wallet setup, transaction verification, key management. Bring your laptop.</p>
+    </div>
+    <a href="#" class="poster-rsvp">RSVP</a>
+  </div>
+</div>
+
+<!-- VENUE -->
+<div class="venue-section">
+  <div class="venue-grid">
+    <div class="venue-text">
+      <h2>Home Base:<br><span>Zeppelin Hall</span></h2>
+      <p>A 6,000 sq ft German beer garden in the heart of Jersey City. Big tables, great food, plenty of parking, and a 5-minute walk from the Liberty State Park PATH station.</p>
+      <p>We picked it because it's easy to get to from everywhere -- NJ Transit, PATH from Manhattan, or just drive and park for free. The schlep matters.</p>
+    </div>
+    <div class="venue-image">
+      <span class="venue-image-label">[ Venue Photo ]</span>
+      <div class="stamp"><span>Since 2022</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FORMATS -->
+<div class="formats-section">
+  <div class="formats-grid">
+    <div class="format-poster" data-num="01">
+      <div class="freq">Monthly &middot; 2nd Thursday</div>
+      <h3>Socratic Seminar</h3>
+      <p>Structured discussion on Bitcoin protocol, economics, and philosophy. We go through recent developments, debate ideas, and learn from each other. Come with questions.</p>
+    </div>
+    <div class="format-poster" data-num="02">
+      <div class="freq">Monthly &middot; Rotating</div>
+      <h3>Bitcoin & Beer</h3>
+      <p>Unstructured hangout. Meet other bitcoiners, share stories, ask anything. The only requirement is curiosity. The only agenda is conversation.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Pull up<br>a <span>chair.</span></h2>
+  <p>88 LIBERTY VIEW DR &middot; JERSEY CITY, NJ 07302</p>
+  <a href="#">RSVP to the Next Meetup</a>
+</div>
+
+<footer>
+  <p style="margin-bottom: 8px;"><a href="#">Telegram</a> &middot; <a href="#">Twitter</a> &middot; <a href="#">GitHub</a> &middot; <a href="#">Nostr</a></p>
+  <p>Jersey City Bitcoin &middot; Est. 2022 &middot; No Price Talk. Just Signal.</p>
+</footer>
+
+</body>
+</html>

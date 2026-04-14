@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Bitcoin -- Liberty Stencil Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Barlow', sans-serif; background: #000; color: #e8e4dc; line-height: 1.6; }
+
+  /* --- NAV --- */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; background: #000; border-bottom: 3px solid #ff9900; position: sticky; top: 0; z-index: 10; }
+  .nav-brand { display: flex; align-items: center; gap: 14px; }
+  .nav-logo-circle { width: 40px; height: 40px; border-radius: 50%; background: #ff9900; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .nav-logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+  .nav-text { display: flex; flex-direction: column; }
+  .nav-title { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: #ff9900; letter-spacing: 2px; line-height: 1; }
+  .nav-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #666; letter-spacing: 2px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a { text-decoration: none; color: #888; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: color 0.15s; }
+  .nav-links a:hover { color: #ff9900; }
+
+  /* --- HERO --- */
+  .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; padding: 60px 32px; position: relative; overflow: hidden; }
+
+  /* Faint Liberty silhouette watermark */
+  .hero-watermark { position: absolute; right: -5%; top: 50%; transform: translateY(-50%); width: 500px; height: 500px; border-radius: 50%; background: rgba(255,153,0,0.03); display: flex; align-items: center; justify-content: center; }
+  .hero-watermark-inner { width: 460px; height: 460px; border-radius: 50%; border: 1px solid rgba(255,153,0,0.05); }
+
+  .hero-content { max-width: 800px; position: relative; z-index: 1; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; }
+  .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #ff9900; }
+  .hero-badge-text { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #666; letter-spacing: 2px; text-transform: uppercase; }
+
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 10vw, 120px); line-height: 0.92; letter-spacing: 2px; color: #e8e4dc; margin-bottom: 24px; }
+  .hero h1 .liberty { color: #ff9900; position: relative; }
+  .hero h1 .liberty::after { content: ''; position: absolute; bottom: 4px; left: 0; width: 100%; height: 4px; background: #ff9900; }
+
+  .hero p { font-size: 17px; color: #888; max-width: 520px; line-height: 1.7; margin-bottom: 32px; font-weight: 400; }
+
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-solid { padding: 14px 32px; background: #ff9900; color: #000; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; transition: all 0.15s; }
+  .btn-solid:hover { background: #e8e4dc; }
+  .btn-border { padding: 14px 32px; background: transparent; color: #ff9900; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; border: 2px solid #ff9900; transition: all 0.15s; }
+  .btn-border:hover { background: rgba(255,153,0,0.08); }
+
+  /* --- ORANGE STRIP --- */
+  .strip { background: #ff9900; padding: 20px 32px; display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+  .strip-item { text-align: center; }
+  .strip-value { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: #000; letter-spacing: 1px; }
+  .strip-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: rgba(0,0,0,0.5); letter-spacing: 2px; text-transform: uppercase; }
+
+  /* --- SECTION --- */
+  section { padding: 80px 32px; max-width: 1100px; margin: 0 auto; }
+  .section-rule { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .section-rule-line { width: 32px; height: 3px; background: #ff9900; }
+  .section-rule-text { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: #ff9900; }
+  .section-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 48px); color: #e8e4dc; letter-spacing: 1px; margin-bottom: 36px; }
+
+  /* --- EVENT CARDS --- */
+  .event-grid { display: flex; flex-direction: column; gap: 8px; }
+  .event-card { display: grid; grid-template-columns: 100px 3px 1fr auto; gap: 20px; align-items: center; padding: 24px; background: #0a0a0a; border: 1px solid #1a1a1a; transition: all 0.2s; }
+  .event-card:hover { border-color: #ff9900; }
+  .event-date { text-align: center; }
+  .event-month { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #666; }
+  .event-day { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: #ff9900; line-height: 1; }
+  .event-divider { width: 3px; height: 100%; background: #ff9900; align-self: stretch; }
+  .event-info h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #e8e4dc; margin-bottom: 4px; }
+  .event-info p { font-size: 14px; color: #666; }
+  .event-tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: #000; background: #ff9900; padding: 3px 10px; margin-bottom: 6px; display: inline-block; }
+  .event-tag.social { background: #e8e4dc; }
+  .event-tag.workshop { background: #60A5FA; color: #fff; }
+  .event-rsvp { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #ff9900; text-decoration: none; border: 2px solid #ff9900; padding: 10px 20px; transition: all 0.15s; white-space: nowrap; }
+  .event-rsvp:hover { background: #ff9900; color: #000; }
+
+  /* --- ABOUT --- */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .about-text p { font-size: 16px; color: #888; line-height: 1.75; margin-bottom: 16px; }
+  .about-text p strong { color: #e8e4dc; }
+
+  /* Logo display */
+  .logo-display { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 48px; background: #0a0a0a; border: 1px solid #1a1a1a; }
+  .logo-circle { width: 200px; height: 200px; border-radius: 50%; background: #ff9900; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; overflow: hidden; }
+  .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+  .logo-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 4px; color: #e8e4dc; }
+  .logo-tagline { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #666; letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+
+  /* --- FORMATS --- */
+  .formats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .format-block { padding: 32px; background: #0a0a0a; border: 1px solid #1a1a1a; border-top: 3px solid #ff9900; }
+  .format-block h3 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: #ff9900; letter-spacing: 1px; margin-bottom: 8px; }
+  .format-block p { font-size: 14px; color: #888; line-height: 1.65; }
+  .format-block .freq { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #555; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+
+  /* --- QUOTE --- */
+  .quote-section { padding: 48px 32px; position: relative; }
+  .quote-section::before { content: ''; position: absolute; left: 50%; top: 0; width: 3px; height: 48px; background: #ff9900; transform: translateX(-50%); }
+  .quote-inner { max-width: 600px; margin: 0 auto; text-align: center; padding-top: 16px; }
+  .quote-inner p { font-family: 'Bebas Neue', sans-serif; font-size: clamp(24px, 4vw, 40px); color: #ff9900; letter-spacing: 1px; line-height: 1.15; }
+
+  /* --- CTA --- */
+  .cta { padding: 80px 32px; text-align: center; position: relative; }
+  .cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #ff9900; }
+  .cta h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 6vw, 72px); color: #e8e4dc; letter-spacing: 2px; margin-bottom: 8px; }
+  .cta h2 span { color: #ff9900; }
+  .cta .venue { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #555; letter-spacing: 2px; margin-bottom: 28px; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  /* --- FOOTER --- */
+  footer { padding: 20px 32px; border-top: 1px solid #1a1a1a; display: flex; justify-content: space-between; align-items: center; }
+  footer p { font-size: 11px; color: #444; }
+  footer a { color: #ff9900; text-decoration: none; }
+  .footer-links { display: flex; gap: 16px; }
+  .footer-links a { font-size: 11px; color: #555; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+  .footer-links a:hover { color: #ff9900; }
+
+  .direction-label { position: fixed; top: 12px; right: 12px; background: #ff9900; color: #000; padding: 6px 14px; font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 2px; z-index: 100; }
+
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .formats-row { grid-template-columns: 1fr; }
+    .event-card { grid-template-columns: 70px 3px 1fr; }
+    .event-rsvp { display: none; }
+    .strip { gap: 24px; }
+    .hero-watermark { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="direction-label">Direction 8: Liberty Stencil</div>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-logo-circle">
+      <img src="../../Presentation/jc_bitcoin_logo.png" alt="JC Bitcoin logo">
+    </div>
+    <div class="nav-text">
+      <div class="nav-title">Jersey City Bitcoin</div>
+      <div class="nav-sub">est. 2022</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#">About</a>
+    <a href="#">Events</a>
+    <a href="#">Resources</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-watermark"><div class="hero-watermark-inner"></div></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <div class="hero-badge-text">Zeppelin Hall -- Jersey City, NJ</div>
+    </div>
+    <h1>BITCOIN EDUCATION<br>IN THE SHADOW OF<br><span class="liberty">LADY LIBERTY</span></h1>
+    <p>A free monthly meetup where Jersey City learns Bitcoin together. No price talk. No trading. No gatekeeping. Just education, community, and sound money -- within sight of the statue that welcomed the world.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-solid">What is JC Bitcoin?</a>
+      <a href="#" class="btn-border">Next Event</a>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="strip-item">
+    <div class="strip-value">100+</div>
+    <div class="strip-label">Members</div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-value">Monthly</div>
+    <div class="strip-label">Since 2022</div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-value">Zeppelin Hall</div>
+    <div class="strip-label">Home Base</div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-value">Free</div>
+    <div class="strip-label">Always</div>
+  </div>
+</div>
+
+<section>
+  <div class="section-rule">
+    <div class="section-rule-line"></div>
+    <div class="section-rule-text">Upcoming</div>
+  </div>
+  <h2 class="section-heading">Next Events</h2>
+  <div class="event-grid">
+    <div class="event-card">
+      <div class="event-date">
+        <div class="event-month">Apr</div>
+        <div class="event-day">10</div>
+      </div>
+      <div class="event-divider"></div>
+      <div class="event-info">
+        <div class="event-tag">Socratic Seminar</div>
+        <h3>Monthly Socratic #7</h3>
+        <p>Protocol updates, ecosystem news, open discussion. Chatham House rules.</p>
+      </div>
+      <a href="#" class="event-rsvp">RSVP</a>
+    </div>
+    <div class="event-card">
+      <div class="event-date">
+        <div class="event-month">May</div>
+        <div class="event-day">01</div>
+      </div>
+      <div class="event-divider"></div>
+      <div class="event-info">
+        <div class="event-tag social">Social</div>
+        <h3>Bitcoin & Beer</h3>
+        <p>Casual hangout at the beer garden. All levels welcome. No agenda.</p>
+      </div>
+      <a href="#" class="event-rsvp">RSVP</a>
+    </div>
+    <div class="event-card">
+      <div class="event-date">
+        <div class="event-month">May</div>
+        <div class="event-day">15</div>
+      </div>
+      <div class="event-divider"></div>
+      <div class="event-info">
+        <div class="event-tag workshop">Workshop</div>
+        <h3>Self-Custody Workshop</h3>
+        <p>Hardware wallets, key management, transaction verification. Bring your laptop.</p>
+      </div>
+      <a href="#" class="event-rsvp">RSVP</a>
+    </div>
+  </div>
+</section>
+
+<div class="quote-section">
+  <div class="quote-inner">
+    <p>"WE DON'T PREDICT THE PRICE.<br>WE STUDY THE PROTOCOL."</p>
+  </div>
+</div>
+
+<section>
+  <div class="section-rule">
+    <div class="section-rule-line"></div>
+    <div class="section-rule-text">About</div>
+  </div>
+  <h2 class="section-heading">The Meetup</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p><strong>Jersey City Bitcoin</strong> started in 2022 as a handful of friends who wanted to learn together. Today we're 100+ members meeting monthly at Zeppelin Hall -- the beer garden with the big parking lot, the long community tables, and a 5-minute walk from the Liberty State Park PATH station.</p>
+      <p>We meet in the shadow of the Statue of Liberty -- the symbol that welcomed millions to a new world. We think <strong>Bitcoin is the next chapter of that story</strong>: financial freedom, self-sovereignty, and the right to transact without permission.</p>
+      <p>Two formats. Come to one, come to both. The only requirement is curiosity.</p>
+    </div>
+    <div class="logo-display">
+      <div class="logo-circle">
+        <img src="../../Presentation/jc_bitcoin_logo.png" alt="JC Bitcoin logo">
+      </div>
+      <div class="logo-name">Jersey City Bitcoin</div>
+      <div class="logo-tagline">Est. 2022 -- Education. Community. Sound Money.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-rule">
+    <div class="section-rule-line"></div>
+    <div class="section-rule-text">Formats</div>
+  </div>
+  <h2 class="section-heading">Two Ways In</h2>
+  <div class="formats-row">
+    <div class="format-block">
+      <div class="freq">Monthly -- 2nd Thursday</div>
+      <h3>Socratic Seminar</h3>
+      <p>Structured deep-dive into Bitcoin protocol, economics, and philosophy. We discuss recent developments under Chatham House rules. Come with questions, leave with understanding.</p>
+    </div>
+    <div class="format-block">
+      <div class="freq">Monthly -- Rotating</div>
+      <h3>Bitcoin & Beer</h3>
+      <p>No slides, no agenda, no pressure. Just bitcoiners at all levels sharing stories and conversation over good food and cold drinks. This is where friendships form.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <h2>PULL UP A <span>CHAIR.</span></h2>
+  <p class="venue">ZEPPELIN HALL -- 88 LIBERTY VIEW DR -- JERSEY CITY, NJ 07302</p>
+  <div class="cta-buttons">
+    <a href="#" class="btn-solid">RSVP on Eventbrite</a>
+    <a href="#" class="btn-border">Join Telegram</a>
+  </div>
+</div>
+
+<footer>
+  <p>Jersey City Bitcoin -- est. 2022 -- <a href="#">open source</a></p>
+  <div class="footer-links">
+    <a href="#">Telegram</a>
+    <a href="#">Twitter</a>
+    <a href="#">GitHub</a>
+    <a href="#">Nostr</a>
+  </div>
+</footer>
+
+</body>
+</html>

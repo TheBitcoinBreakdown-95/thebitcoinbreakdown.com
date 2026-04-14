@@ -1,27 +1,40 @@
 # WORKLOG
 
-**Last saved:** 2026-04-04
-**Status:** CRM built and seeded. 37 Bitcoin Park 2026 organizer contacts imported.
+**Last saved:** 2026-04-11
+**Status:** Website redesign brainstorm in progress. 8 mockup directions built. Deciding visual direction before implementation.
 
 ## Current State
 
+### Website Redesign (active 2026-04-11)
+- **Goal:** New website for JC Bitcoin, PR to new repo under Jersey-City-Bitcoin org
+- **Mockups:** 8 HTML mockups in `Website/mockups/` (01 through 08)
+- **Research done:** Competitive audit (jerseycitybitcoin.com, bitcoinpark.com, austinbitcoinclub.com, bitdevs.org), open-meetup template analysis (bitcoinbayfoundation/open-meetup -- Next.js/Tailwind)
+- **Values decided:** Warmth + credibility for newcomers, story-first CTA ("learn what JC Bitcoin is"), both audiences (new + existing), no price talk
+- **Directions explored:**
+  - 01-03: Generic (clean community, dark luxury lite, dark warm hybrid) -- rejected as "vibecoded"
+  - 04: Transit Map -- wayfinding/departure board concept (liked)
+  - 05: Beer Hall Poster -- Oswald condensed, event poster energy (liked)
+  - 06: Skyline Blueprint -- architectural/navy, JC coordinates
+  - 07: Bodega Zine -- light background, newspaper layout, Fraunces serif
+  - 08: Liberty Stencil -- logo-driven, Bebas Neue, Lady Liberty narrative (latest)
+- **Tech stack:** TBD (Astro vs Jekyll vs fork open-meetup template)
+- **Next:** User reviewing mockups 4-8, then pick direction and move to design doc + build
+
 ### CRM (built 2026-04-04)
-- **Repo:** `Jersey-City-Bitcoin/jcbtc-crm` (private) — live on GitHub
-- **Local path:** `JC BTC/CRM/` (gitignored from public TBB repo)
+- **Repo:** `Jersey-City-Bitcoin/jcbtc-crm` (private) -- live on GitHub
+- **Local path:** `CRM/` (gitignored from public TBB repo)
 - **Contacts:** 37 contacts from bp2026 organizer list (jcbtc-001 through jcbtc-037)
-- **Scripts:** `import_luma.py`, `import_organizers.py`, `normalize.py`
-- **Command:** `/import-contacts` — ad-hoc filing (natural language, CSV, vCard)
 
 ### Presentation Scripts (last worked 2026-03-06)
-- `create_template.py` — working, builds correct 7-slide template deck
-- `rebuild_deck.py` — still needs rewrite (uses wrong colors/fonts)
-- `add_logos.py`, `google_slides_auth.py` — working
+- `create_template.py` -- working
+- `rebuild_deck.py` -- still needs rewrite
 
 ## Next
-1. First Luma import — export attendees from meetup #5 or #6, drop in `CRM/sources/`, run `import_luma.py`
-2. Migrate scattered contacts — `Notes/2023-2025/Names.md`, `Notes/Sponsorship/`, `Notes/Initiatives/Businesses.md`
-3. Enrich existing 37 organizer contacts with emails/handles as acquired
-4. Rewrite `rebuild_deck.py` using corrected styles from `create_template.py`
+1. **Website:** Pick visual direction from mockups, write design doc, decide tech stack, build, open PR
+2. First Luma import -- export attendees from meetup #5 or #6, drop in `CRM/sources/`, run `import_luma.py`
+3. Migrate scattered contacts -- `Notes/2023-2025/Names.md`, `Notes/Sponsorship/`, `Notes/Initiatives/Businesses.md`
+4. Enrich existing 37 organizer contacts with emails/handles as acquired
+5. Rewrite `rebuild_deck.py` using corrected styles from `create_template.py`
 
 ---
 
@@ -92,3 +105,15 @@ Verified via thumbnails + API master inspection (2026-03-06):
 - Built contact + event schema (YAML frontmatter Markdown), Luma CSV importer, organizer TSV importer, normalization utils
 - Added `/import-contacts` Claude command
 - Seeded with 37 contacts from Bitcoin Park 2026 organizer list
+
+**2026-04-11 — Website redesign brainstorm**
+- User is now collaborator on Jersey-City-Bitcoin GitHub org, wants to build new site and PR it
+- Ran KB search, competitive audit (4 live sites), explored open-meetup template (bitcoinbayfoundation)
+- Values session: warmth + credibility, story-first, no price talk, both new and existing audiences
+- Built 8 HTML mockup directions in `Website/mockups/`:
+  - 01-03 rejected as generic "vibecoded" dark+orange templates
+  - 04 Transit Map, 05 Beer Hall Poster, 06 Skyline Blueprint, 07 Bodega Zine, 08 Liberty Stencil
+  - User liked Transit Map and Beer Hall concepts for being "out of the box"
+  - Liberty Stencil (08) built from actual logo analysis: Bebas Neue, Lady Liberty narrative, orange strips
+- Moved mockups from old spaced path (`JC Bitcoin/JC BTC/Website/`) to correct `jc-bitcoin/jc-btc/Website/`
+- Session paused at: user reviewing mockups 4-8 to pick direction

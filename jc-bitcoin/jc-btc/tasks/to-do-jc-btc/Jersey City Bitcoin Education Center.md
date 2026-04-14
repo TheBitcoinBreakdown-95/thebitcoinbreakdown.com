@@ -13,6 +13,7 @@
 - We aim to build locally, educate our community, train educators, and open source our best practices to streamline local adoption all over the world.
 - By inspiring curiosity, we will bridge our community to bitcoin infrastructure
 - Activism is crucial as it helps us fight against convenience and centralized control while empowering individuals with knowledge and skills necessary in the face of emerging CBDCs and state power struggles.
+- something underrated but important is the webs of trust, meeting, networking, knowing other bitcoiners just in case we need to use our skills, selfishly building up my network of smart people who think like me and have a lot of money
  
 North Star:  
 Bitcoin's architecture is incorruptible, but its adoption is not automatic.

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Bitcoin -- Clean Community Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #ffffff; color: #1a1a1a; line-height: 1.6; }
+
+  /* Nav */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 10; }
+  .nav-logo { font-weight: 700; font-size: 18px; color: #ff9900; letter-spacing: 1px; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { text-decoration: none; color: #555; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: #ff9900; }
+
+  /* Hero */
+  .hero { background: linear-gradient(135deg, #fff8ee 0%, #ffffff 50%, #fff4e0 100%); padding: 80px 32px; text-align: center; }
+  .hero-overline { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #ff9900; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 700; color: #1a1a1a; margin-bottom: 16px; line-height: 1.15; }
+  .hero h1 span { color: #ff9900; }
+  .hero p { font-size: 18px; color: #666; max-width: 600px; margin: 0 auto 32px; line-height: 1.7; }
+  .hero-cta { display: inline-block; padding: 14px 36px; background: #ff9900; color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 6px; letter-spacing: 0.5px; transition: background 0.2s, transform 0.2s; }
+  .hero-cta:hover { background: #e68a00; transform: translateY(-2px); }
+
+  /* Stats bar */
+  .stats { display: flex; justify-content: center; gap: 48px; padding: 32px; background: #1a1a1a; color: #fff; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 28px; font-weight: 700; color: #ff9900; }
+  .stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #999; margin-top: 4px; }
+
+  /* Section */
+  section { padding: 64px 32px; max-width: 1100px; margin: 0 auto; }
+  .section-title { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #ff9900; margin-bottom: 8px; }
+  .section-heading { font-size: 28px; font-weight: 700; margin-bottom: 32px; color: #1a1a1a; }
+
+  /* Cards */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .card { background: #fafafa; border: 1px solid #eee; border-radius: 8px; padding: 28px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .card:hover { border-color: #ff9900; box-shadow: 0 4px 20px rgba(255, 153, 0, 0.08); }
+  .card-date { font-size: 12px; font-weight: 600; color: #ff9900; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .card h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .card p { font-size: 14px; color: #666; line-height: 1.6; }
+  .card-tag { display: inline-block; font-size: 11px; font-weight: 500; padding: 4px 10px; background: #fff3e0; color: #ff9900; border-radius: 4px; margin-bottom: 12px; }
+
+  /* About section */
+  .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .about-text h2 { font-size: 28px; font-weight: 700; margin-bottom: 16px; }
+  .about-text p { font-size: 16px; color: #555; line-height: 1.8; margin-bottom: 16px; }
+  .about-image { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 8px; height: 300px; display: flex; align-items: center; justify-content: center; color: #ff9900; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; }
+
+  /* CTA Section */
+  .cta-section { background: #1a1a1a; padding: 64px 32px; text-align: center; color: #fff; }
+  .cta-section h2 { font-size: 32px; font-weight: 700; margin-bottom: 12px; }
+  .cta-section p { color: #999; font-size: 16px; margin-bottom: 28px; }
+  .cta-button { display: inline-block; padding: 14px 36px; background: #ff9900; color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background 0.2s; }
+  .cta-button:hover { background: #e68a00; }
+
+  /* Footer */
+  footer { padding: 32px; text-align: center; border-top: 1px solid #eee; color: #999; font-size: 13px; }
+  footer a { color: #ff9900; text-decoration: none; }
+
+  /* Label */
+  .direction-label { position: fixed; top: 12px; right: 12px; background: #ff9900; color: #fff; padding: 6px 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; z-index: 100; }
+
+  @media (max-width: 768px) {
+    .about-content { grid-template-columns: 1fr; }
+    .stats { flex-wrap: wrap; gap: 24px; }
+    .nav-links { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="direction-label">Direction 1: Clean Community</div>
+
+<nav>
+  <div class="nav-logo">JC BITCOIN</div>
+  <div class="nav-links">
+    <a href="#">About</a>
+    <a href="#">Events</a>
+    <a href="#">Resources</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-overline">Jersey City's Bitcoin Community</div>
+  <h1>Learn. Connect. <span>Stack.</span></h1>
+  <p>A welcoming community of bitcoiners in Jersey City, NJ. Whether you're just curious or running a node, there's a seat for you at the table.</p>
+  <a href="#" class="hero-cta">What is JC Bitcoin?</a>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">100+</div>
+    <div class="stat-label">Community Members</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">Monthly</div>
+    <div class="stat-label">Meetups Since 2022</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">2</div>
+    <div class="stat-label">Event Formats</div>
+  </div>
+</div>
+
+<section>
+  <div class="section-title">Upcoming</div>
+  <h2 class="section-heading">Next Events</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-tag">Socratic Seminar</div>
+      <div class="card-date">April 10, 2026</div>
+      <h3>Monthly Socratic Seminar #7</h3>
+      <p>Deep-dive discussion on recent Bitcoin developments, protocol changes, and ecosystem news. Chatham House rules apply.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">Beer Meetup</div>
+      <div class="card-date">May 1, 2026</div>
+      <h3>Bitcoin & Beer at Zeppelin Hall</h3>
+      <p>Casual hangout for bitcoiners of all levels. Great food, cold drinks, and good conversation. No agenda, no pressure.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">Special Event</div>
+      <div class="card-date">May 15, 2026</div>
+      <h3>Hands-On Wallet Workshop</h3>
+      <p>Learn to set up a hardware wallet, verify transactions, and take self-custody of your bitcoin. Beginners welcome.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="about-content">
+    <div class="about-text">
+      <div class="section-title">About Us</div>
+      <h2>Bitcoin Education for Everyone</h2>
+      <p>Jersey City Bitcoin started in 2022 as a small group of friends who wanted to learn together. Today we're 100+ members strong, meeting monthly at Zeppelin Hall in Jersey City.</p>
+      <p>We believe Bitcoin education should be free, accessible, and free from hype. No price predictions, no trading signals, no shilling -- just honest conversation about the most important monetary technology of our time.</p>
+    </div>
+    <div class="about-image">[ Community Photo ]</div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>Come say hello.</h2>
+  <p>Second Thursday of every month at Zeppelin Hall, Jersey City.</p>
+  <a href="#" class="cta-button">RSVP on Eventbrite</a>
+</div>
+
+<footer>
+  <p>Jersey City Bitcoin &mdash; est. 2022 &mdash; <a href="#">Telegram</a> &middot; <a href="#">Twitter</a> &middot; <a href="#">GitHub</a></p>
+</footer>
+
+</body>
+</html>

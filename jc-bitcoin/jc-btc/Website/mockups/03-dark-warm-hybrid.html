@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Bitcoin -- Dark + Warm Hybrid Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #0a0a0a; color: #e8e0d4; line-height: 1.6; }
+
+  /* Nav */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; border-bottom: 1px solid rgba(255, 153, 0, 0.08); background: rgba(10,10,10,0.95); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); }
+  .nav-logo { font-weight: 700; font-size: 16px; color: #ff9900; letter-spacing: 1px; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { text-decoration: none; color: #888; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; }
+  .nav-links a:hover { color: #ff9900; }
+
+  /* Hero */
+  .hero { padding: 100px 32px 80px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 40%; left: 50%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255, 153, 0, 0.04) 0%, transparent 70%); transform: translate(-50%, -50%); pointer-events: none; }
+  .hero-overline { font-size: 12px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: #ff9900; margin-bottom: 20px; opacity: 0.8; }
+  .hero h1 { font-size: clamp(32px, 6vw, 60px); font-weight: 700; color: #f0ece4; margin-bottom: 20px; line-height: 1.12; }
+  .hero h1 span { color: #ff9900; }
+  .hero p { font-size: 17px; font-weight: 400; color: #999; max-width: 560px; margin: 0 auto 36px; line-height: 1.7; }
+  .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .hero-cta { display: inline-block; padding: 14px 32px; background: #ff9900; color: #0a0a0a; font-size: 13px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: 0.5px; transition: all 0.3s; }
+  .hero-cta:hover { background: #ffad33; transform: translateY(-2px); box-shadow: 0 4px 20px rgba(255, 153, 0, 0.2); }
+  .hero-cta-ghost { display: inline-block; padding: 14px 32px; background: transparent; color: #ff9900; font-size: 13px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: 0.5px; border: 1px solid rgba(255, 153, 0, 0.3); transition: all 0.3s; }
+  .hero-cta-ghost:hover { border-color: #ff9900; background: rgba(255, 153, 0, 0.05); }
+
+  /* Stats */
+  .stats { display: flex; justify-content: center; gap: 48px; padding: 40px 32px; border-top: 1px solid rgba(255, 153, 0, 0.06); border-bottom: 1px solid rgba(255, 153, 0, 0.06); background: #080808; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 26px; font-weight: 700; color: #ff9900; }
+  .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-top: 4px; font-weight: 500; }
+
+  /* Section */
+  section { padding: 72px 32px; max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #ff9900; margin-bottom: 8px; }
+  .section-heading { font-size: 26px; font-weight: 700; margin-bottom: 36px; color: #f0ece4; }
+
+  /* Cards */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .card { background: #111; border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 6px; padding: 28px; transition: all 0.3s; }
+  .card:hover { border-color: rgba(255, 153, 0, 0.2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .card-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; background: rgba(255, 153, 0, 0.08); color: #ff9900; border-radius: 3px; margin-bottom: 12px; }
+  .card-date { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #666; margin-bottom: 10px; }
+  .card h3 { font-size: 19px; font-weight: 600; margin-bottom: 10px; color: #e8e0d4; transition: color 0.2s; }
+  .card:hover h3 { color: #ff9900; }
+  .card p { font-size: 14px; color: #888; line-height: 1.65; }
+
+  /* About */
+  .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .about-text h2 { font-size: 26px; font-weight: 700; margin-bottom: 16px; color: #f0ece4; }
+  .about-text p { font-size: 15px; color: #999; line-height: 1.75; margin-bottom: 16px; }
+  .about-image { background: #111; border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 6px; height: 300px; display: flex; align-items: center; justify-content: center; color: #555; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+
+  /* Formats */
+  .formats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+  .format-card { background: #111; border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 6px; padding: 24px; }
+  .format-card h4 { font-size: 16px; font-weight: 600; color: #ff9900; margin-bottom: 8px; }
+  .format-card p { font-size: 14px; color: #888; line-height: 1.6; }
+
+  /* Quote */
+  .quote-section { padding: 48px 32px; text-align: center; max-width: 700px; margin: 0 auto; }
+  .quote-section p { font-size: 20px; font-weight: 400; color: #ff9900; font-style: italic; line-height: 1.6; opacity: 0.9; }
+  .quote-divider { width: 40px; height: 2px; background: rgba(255, 153, 0, 0.3); margin: 0 auto 20px; }
+
+  /* CTA */
+  .cta-section { padding: 72px 32px; text-align: center; background: #080808; border-top: 1px solid rgba(255, 153, 0, 0.06); }
+  .cta-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 10px; color: #f0ece4; }
+  .cta-section .location { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #666; margin-bottom: 28px; letter-spacing: 1px; }
+  .cta-button { display: inline-block; padding: 14px 36px; background: #ff9900; color: #0a0a0a; font-size: 13px; font-weight: 600; text-decoration: none; border-radius: 4px; transition: all 0.3s; }
+  .cta-button:hover { background: #ffad33; transform: translateY(-2px); box-shadow: 0 4px 20px rgba(255, 153, 0, 0.2); }
+
+  /* Footer */
+  footer { padding: 36px 32px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.04); }
+  footer p { font-size: 13px; color: #555; }
+  footer a { color: #ff9900; text-decoration: none; }
+  footer a:hover { opacity: 0.7; }
+
+  /* Label */
+  .direction-label { position: fixed; top: 12px; right: 12px; background: #ff9900; color: #0a0a0a; padding: 6px 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; z-index: 100; }
+
+  @media (max-width: 768px) {
+    .about-content { grid-template-columns: 1fr; }
+    .formats { grid-template-columns: 1fr; }
+    .stats { flex-wrap: wrap; gap: 24px; }
+    .nav-links { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="direction-label">Direction 3: Dark + Warm Hybrid</div>
+
+<nav>
+  <div class="nav-logo">JC BITCOIN</div>
+  <div class="nav-links">
+    <a href="#">About</a>
+    <a href="#">Events</a>
+    <a href="#">Resources</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-overline">Jersey City Bitcoin</div>
+  <h1>Where Jersey City<br>Learns <span>Bitcoin</span></h1>
+  <p>A free, open community of curious people exploring the most important monetary technology of our generation. No hype. No trading. Just learning.</p>
+  <div class="hero-buttons">
+    <a href="#" class="hero-cta">What is JC Bitcoin?</a>
+    <a href="#" class="hero-cta-ghost">Next Event</a>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">100+</div>
+    <div class="stat-label">Members</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">Monthly</div>
+    <div class="stat-label">Since 2022</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">2</div>
+    <div class="stat-label">Event Formats</div>
+  </div>
+</div>
+
+<section>
+  <div class="section-label">Upcoming</div>
+  <h2 class="section-heading">Next Events</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-tag">Socratic Seminar</div>
+      <div class="card-date">Apr 10, 2026</div>
+      <h3>Monthly Socratic Seminar #7</h3>
+      <p>Deep-dive into recent Bitcoin developments, protocol changes, and ecosystem news. Open discussion format with Chatham House rules.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">Beer Meetup</div>
+      <div class="card-date">May 1, 2026</div>
+      <h3>Bitcoin & Beer at Zeppelin Hall</h3>
+      <p>Casual hangout for bitcoiners of all levels. Great food, cold drinks, and honest conversation. No agenda required.</p>
+    </div>
+    <div class="card">
+      <div class="card-tag">Workshop</div>
+      <div class="card-date">May 15, 2026</div>
+      <h3>Self-Custody Workshop</h3>
+      <p>Hands-on hardware wallet setup, transaction verification, and the fundamentals of holding your own keys.</p>
+    </div>
+  </div>
+</section>
+
+<div class="quote-section">
+  <div class="quote-divider"></div>
+  <p>"We don't predict the price. We study the protocol."</p>
+</div>
+
+<section>
+  <div class="about-content">
+    <div class="about-text">
+      <div class="section-label">About</div>
+      <h2>Education Without the Noise</h2>
+      <p>Jersey City Bitcoin started in 2022 as a few friends who wanted to learn together. Today we're 100+ members strong, meeting monthly at Zeppelin Hall -- the beer garden with the big parking lot and easy PATH access from NYC.</p>
+      <p>We run two formats. Come to one, come to both.</p>
+      <div class="formats">
+        <div class="format-card">
+          <h4>Socratic Seminar</h4>
+          <p>Structured discussion on protocol development, economics, and philosophy. Bring questions, leave with understanding.</p>
+        </div>
+        <div class="format-card">
+          <h4>Bitcoin & Beer</h4>
+          <p>Unstructured hangout. Meet other bitcoiners, share stories, ask anything. The only agenda is good conversation.</p>
+        </div>
+      </div>
+    </div>
+    <div class="about-image">[ Community Photo ]</div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>Second Thursday. Every month.</h2>
+  <div class="location">ZEPPELIN HALL -- 88 LIBERTY VIEW DR -- JERSEY CITY, NJ 07302</div>
+  <a href="#" class="cta-button">RSVP on Eventbrite</a>
+</div>
+
+<footer>
+  <p style="margin-bottom: 8px;"><a href="#">Telegram</a> &middot; <a href="#">Twitter</a> &middot; <a href="#">GitHub</a> &middot; <a href="#">Nostr</a></p>
+  <p>Jersey City Bitcoin -- est. 2022 -- No price talk. Just signal.</p>
+</footer>
+
+</body>
+</html>

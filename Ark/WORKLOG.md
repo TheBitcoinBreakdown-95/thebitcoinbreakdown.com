@@ -1,8 +1,35 @@
 # ArkPool Research -- WORKLOG
 
-## Session 2 -- 2026-03-21
+## Last Session -- 2026-04-07
 
 **What was done:**
+- Protocol spec upgraded from v0.2 to v0.3 with four targeted edits:
+  - Reframed "For the Ark Ecosystem" impact section: distinguishes throughput ceiling (ArkFloat solves) from bootstrapping problem (it doesn't)
+  - Added "Fee Adequacy" subsection to Viability: capital asymmetry vs Lightning, managed-service pricing ceiling, OOR scale economics argument
+  - Expanded Cold Start risk: small ASP adverse selection spiral, Lightning Pool precedent mitigation, honest caveat that mitigation may not function (tail risk dominates expected value for early-stage ASPs)
+  - Updated prior-art acknowledgment (PR #198 and Discoco-Labs Pool fork identified)
+- Thorough prior-art web search confirmed: no project named ArkFloat exists. ben2077/Discoco-Labs PR #198 (closed, unmerged) is the only partial implementation of the core mechanism. Second's 3-part liquidity research series is closest active work but stops at economic analysis.
+- Comprehensive problem audit: 55+ issues cataloged across spec and 11 research note files
+- Consolidated into 22 numbered problems (P1-P22) across 7 categories
+- Designed 8-phase brainstorming pipeline: Operationalize -> Research -> Reframing (human checkpoint) -> Council of Experts -> Skeptic -> Check-in (human checkpoint) -> Verification -> Summary
+- Brainstorm plan finalized with locked decisions:
+  1. Two-pass approach (A+B on all 22 first, then C-H on survivors)
+  2. Compressed pipeline for Tier 5 (timing/context problems)
+  3. Flexible pacing at human checkpoints
+
+**Key findings:**
+- LP yield structurally thin at current market fee rates (~0.3% blended). Breakeven at ~0.35-0.40%.
+- Fee adequacy argument: Ark fees justifiably higher than Lightning routing fees (ASP fronts 100% capital, user gets zero-infra managed service)
+- Scale economics improve LP viability: OOR transactions have zero on-chain footprint, margin improves at volume. But benefit accrues to large ASPs, not small ones.
+- Small ASP adverse selection spiral is real and unaddressed: need capital most, can afford it least, higher fees to service LP debt make them less competitive.
+
+**Files created/modified:**
+- Modified: `repo-idea/protocol-spec.md` (v0.3 edits)
+- Created: `repo-idea/repo-notes/problems-brainstorming/brainstorm-plan.md`
+
+## Session History
+
+### 2026-03-21 -- Session 2: Spec v0.2 and viability assessment
 - Wrote viability assessment (rewrote 3x as framing improved)
 - Fixed repayment model: principal from capital cycle, interest from fee revenue
 - All figures BTC-denominated
@@ -15,41 +42,18 @@
 - Rewrote protocol spec as v0.2: compact intro-problem-cause-solution-impact framework
 - Dropped Approach A, went straight to per-round integration (Approach B)
 - Committed all research to git (TBB repo, commit cfaae75, 21 files, 7,412 lines)
+- Critical corrections: Arkade 7-day expiry (not 28), Bark 30-day (not 28), lockup multipliers derived not sourced
+- Unresolved: LP principal protection problem (per-round exit risk)
 
-**Critical corrections:**
-- Arkade default VTXO expiry: 7 days (config.go:241). NOT 28 days.
-- Bark default VTXO expiry: 30 days (captaind.default.toml:14). NOT 28 days.
-- Lockup multiplier at 7-day: ~1.3x. At 30-day: ~5.6x. NOT from any published spec -- derived.
-- 1.3x change multiplier is our own estimate. Not sourced.
-- V2 revocation not implemented in either codebase. Requires unspecified ZK system.
-- Bark refresh fees: 0-0.8% PPM tiered by VTXO age (from code). Arkade fees: zero by default, operator-configured via CEL expressions.
-- "ArkPool" name semi-taken (old ARK.io DPoS delegate pool at arkpool.net, unrelated).
-
-**Unresolved design problem (carry to next session):**
-The per-round integration (Approach B) exposes LPs to unilateral exit risk. When a user exits on-chain, their portion of the LP's forfeit claim is voided. The LP's principal recovery depends on user behavior.
-
-Three models explored, none fully satisfactory:
-1. **Secured loan (old Approach A):** ASP posts collateral escrow. LP is safe. But posting 110% collateral to borrow 100% means net negative capital gain -- only works if ASP has idle reserves separate from operating capital.
-2. **Unsecured round participation (Approach B):** LP funds round directly, repaid from forfeits. No collateral. LP bears exit risk. Higher yield compensates but principal is not guaranteed.
-3. **Hybrid (A+B):** ASP posts partial collateral + LP enters round. Collapses back into one of the above depending on collateral ratio. Not a real third option.
-
-The core tension: full collateral = LP safe but ASP gains nothing. No collateral = ASP gains capital but LP exposed. Partial collateral = partial exposure. No clean solution found yet.
-
-**Key questions for next session:**
-- Is there a tree construction where LP claims are structurally senior to user exit paths?
-- Can the LP's portion be isolated in the tree so unilateral exits don't affect it?
-- Is the secured loan model (Approach A) actually fine if we frame it as "ASP posts idle reserves, not operating capital"?
-- Should we accept that the LP takes actuarial risk and just price it correctly?
-- Is there a mechanism where the ASP absorbs exit shortfall from its other expiring trees (the LP waits a few rounds)?
-
-**Documents (18 research + spec + viability + HTML):**
-All committed to git. Protocol spec is v0.2 (per-round integration focus).
-
-**To-do:**
-- [ ] Resolve the LP principal protection problem (the big one)
-- [ ] Update protocol spec with chosen approach
+## To-Do
+- [ ] Execute brainstorm Pass 1: Phases A+B on all 22 problems (start with Tier 1: P1, P2, P5, P14)
+- [ ] Human triage checkpoint after Pass 1 landscape is complete
+- [ ] Execute brainstorm Pass 2: Phases C-H on survivors
+- [ ] Update protocol spec to v0.4 with brainstorm results
+- [ ] Update prior-art-and-resources.md with PR #198 and Discoco-Labs Pool fork findings
+- [ ] Sync arkpool-spec.html with latest protocol-spec.md
+- [ ] Resolve LP principal protection problem
 - [ ] Write the code (Phase 1 CLI)
 - [ ] Formal whitepaper (after code)
 - [ ] Decide on name
 - [ ] Publish: GitHub repo, issue #197 comment, Delving Bitcoin post
-- [ ] Sync arkpool-spec.html with latest protocol-spec.md

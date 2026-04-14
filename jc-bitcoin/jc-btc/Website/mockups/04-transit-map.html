@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Bitcoin -- Transit Map Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.5; }
+
+  /* --- NAV --- */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; border-bottom: 2px solid #222; background: #0a0a0a; position: sticky; top: 0; z-index: 10; }
+  .nav-brand { display: flex; align-items: center; gap: 14px; }
+  .route-badge { width: 38px; height: 38px; border-radius: 50%; background: #ff9900; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; color: #fff; letter-spacing: -0.5px; }
+  .nav-name { font-weight: 700; font-size: 15px; color: #fff; letter-spacing: 0.5px; }
+  .nav-links { display: flex; gap: 6px; }
+  .nav-links a { text-decoration: none; color: #999; font-size: 12px; font-weight: 600; padding: 6px 14px; border: 1px solid transparent; transition: all 0.15s; text-transform: uppercase; letter-spacing: 1px; }
+  .nav-links a:hover { color: #fff; border-color: #ff9900; }
+  .nav-links a.active { background: #ff9900; color: #fff; }
+
+  /* --- HERO --- */
+  .hero { padding: 80px 32px 60px; position: relative; }
+  .hero-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: start; }
+
+  /* Route line */
+  .route-line { display: flex; flex-direction: column; align-items: center; padding-top: 8px; }
+  .route-dot { width: 20px; height: 20px; border-radius: 50%; background: #ff9900; position: relative; }
+  .route-dot::after { content: ''; position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; border-radius: 50%; background: #0a0a0a; transform: translate(-50%, -50%); }
+  .route-dot.solid::after { display: none; }
+  .route-stem { width: 4px; background: #ff9900; flex: 1; min-height: 40px; }
+
+  .hero-content h1 { font-size: clamp(42px, 7vw, 80px); font-weight: 900; color: #fff; line-height: 0.95; letter-spacing: -2px; margin-bottom: 20px; }
+  .hero-content h1 .orange { color: #ff9900; }
+  .hero-content p { font-size: 17px; color: #888; max-width: 500px; line-height: 1.65; margin-bottom: 28px; }
+  .hero-meta { display: flex; gap: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #666; letter-spacing: 1px; }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+  .hero-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: #ff9900; }
+
+  /* --- DEPARTURE BOARD --- */
+  .board-section { padding: 48px 32px; max-width: 1200px; margin: 0 auto; }
+  .board-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #222; }
+  .board-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: #ff9900; }
+  .board-subtitle { font-size: 11px; color: #555; font-family: 'JetBrains Mono', monospace; }
+
+  .departure-row { display: grid; grid-template-columns: 100px 120px 1fr 140px; gap: 16px; align-items: center; padding: 18px 0; border-bottom: 1px solid #1a1a1a; transition: background 0.15s; }
+  .departure-row:hover { background: rgba(255, 153, 0, 0.03); }
+  .dep-date { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; color: #fff; }
+  .dep-type { display: inline-flex; align-items: center; gap: 6px; }
+  .dep-type-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dep-type-dot.seminar { background: #ff9900; }
+  .dep-type-dot.beer { background: #FBBF24; }
+  .dep-type-dot.workshop { background: #60A5FA; }
+  .dep-type-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: #888; }
+  .dep-name { font-size: 16px; font-weight: 600; color: #e0e0e0; }
+  .dep-name span { font-size: 13px; font-weight: 400; color: #666; display: block; margin-top: 2px; }
+  .dep-action { text-align: right; }
+  .dep-action a { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #ff9900; text-decoration: none; padding: 6px 16px; border: 1px solid rgba(255,153,0,0.3); transition: all 0.15s; }
+  .dep-action a:hover { background: #ff9900; color: #fff; }
+
+  /* --- ROUTE MAP (About) --- */
+  .route-section { padding: 80px 32px; max-width: 1200px; margin: 0 auto; }
+  .route-section h2 { font-size: 32px; font-weight: 900; color: #fff; letter-spacing: -1px; margin-bottom: 48px; }
+  .route-section h2 .orange { color: #ff9900; }
+
+  .route-stops { position: relative; padding-left: 48px; }
+  .route-stops::before { content: ''; position: absolute; left: 9px; top: 0; bottom: 0; width: 4px; background: #ff9900; }
+
+  .stop { position: relative; padding-bottom: 48px; }
+  .stop:last-child { padding-bottom: 0; }
+  .stop-dot { position: absolute; left: -48px; top: 4px; width: 22px; height: 22px; border-radius: 50%; background: #ff9900; border: 4px solid #0a0a0a; z-index: 1; }
+  .stop h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .stop p { font-size: 15px; color: #888; line-height: 1.65; max-width: 500px; }
+  .stop-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #ff9900; margin-bottom: 4px; }
+
+  /* --- INFO PANEL --- */
+  .info-panel { padding: 48px 32px; max-width: 1200px; margin: 0 auto; }
+  .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: #222; }
+  .info-cell { background: #111; padding: 32px; }
+  .info-cell-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 8px; }
+  .info-cell-value { font-size: 28px; font-weight: 800; color: #fff; letter-spacing: -1px; }
+  .info-cell-value.orange { color: #ff9900; }
+  .info-cell-note { font-size: 12px; color: #555; margin-top: 4px; }
+
+  /* --- CTA --- */
+  .cta-section { padding: 80px 32px; text-align: center; border-top: 2px solid #222; }
+  .cta-section h2 { font-size: clamp(28px, 5vw, 48px); font-weight: 900; color: #fff; letter-spacing: -1px; margin-bottom: 8px; }
+  .cta-section p { font-size: 15px; color: #666; margin-bottom: 32px; }
+  .cta-section p span { font-family: 'JetBrains Mono', monospace; color: #888; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { padding: 14px 32px; background: #ff9900; color: #fff; font-size: 12px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; transition: all 0.15s; }
+  .btn-primary:hover { background: #fff; color: #0a0a0a; }
+  .btn-ghost { padding: 14px 32px; background: transparent; color: #ff9900; font-size: 12px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; border: 1px solid rgba(255,153,0,0.3); transition: all 0.15s; }
+  .btn-ghost:hover { border-color: #ff9900; background: rgba(255,153,0,0.05); }
+
+  /* --- FOOTER --- */
+  footer { padding: 24px 32px; border-top: 2px solid #222; display: flex; justify-content: space-between; align-items: center; }
+  footer p { font-size: 11px; color: #555; font-family: 'JetBrains Mono', monospace; }
+  footer a { color: #ff9900; text-decoration: none; }
+  .footer-links { display: flex; gap: 16px; }
+  .footer-links a { font-size: 11px; color: #666; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+  .footer-links a:hover { color: #ff9900; }
+
+  /* Label */
+  .direction-label { position: fixed; top: 12px; right: 12px; background: #ff9900; color: #fff; padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; z-index: 100; border-radius: 50px; }
+
+  /* Legend */
+  .legend { display: flex; gap: 20px; align-items: center; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+
+  @media (max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .route-line { display: none; }
+    .departure-row { grid-template-columns: 80px 1fr; gap: 8px; }
+    .dep-type, .dep-action { display: none; }
+    .info-grid { grid-template-columns: 1fr; }
+    .footer { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="direction-label">Direction 4: Transit Map</div>
+
+<nav>
+  <div class="nav-brand">
+    <div class="route-badge">JCB</div>
+    <div class="nav-name">Jersey City Bitcoin</div>
+  </div>
+  <div class="nav-links">
+    <a href="#" class="active">Schedule</a>
+    <a href="#">Route Map</a>
+    <a href="#">Stations</a>
+    <a href="#">Info</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid">
+    <div class="route-line">
+      <div class="route-dot solid"></div>
+      <div class="route-stem" style="min-height: 160px;"></div>
+      <div class="route-dot"></div>
+    </div>
+    <div class="hero-content">
+      <h1>Your next<br>stop: <span class="orange">Bitcoin.</span></h1>
+      <p>A free monthly meetup in Jersey City for anyone curious about Bitcoin. No experience needed. No price talk. Just honest education and good people.</p>
+      <div class="hero-meta">
+        <span><span class="dot"></span> EST. 2022</span>
+        <span><span class="dot"></span> ZEPPELIN HALL</span>
+        <span><span class="dot"></span> 2ND THURSDAY MONTHLY</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DEPARTURE BOARD -->
+<div class="board-section">
+  <div class="board-header">
+    <div class="board-title">Upcoming Departures</div>
+    <div class="legend">
+      <div class="legend-item"><span class="dep-type-dot seminar"></span> Seminar</div>
+      <div class="legend-item"><span class="dep-type-dot beer"></span> Social</div>
+      <div class="legend-item"><span class="dep-type-dot workshop"></span> Workshop</div>
+    </div>
+  </div>
+
+  <div class="departure-row">
+    <div class="dep-date">APR 10</div>
+    <div class="dep-type"><span class="dep-type-dot seminar"></span><span class="dep-type-label">Seminar</span></div>
+    <div class="dep-name">Socratic Seminar #7<span>Protocol updates, ecosystem news, open discussion</span></div>
+    <div class="dep-action"><a href="#">RSVP</a></div>
+  </div>
+  <div class="departure-row">
+    <div class="dep-date">MAY 01</div>
+    <div class="dep-type"><span class="dep-type-dot beer"></span><span class="dep-type-label">Social</span></div>
+    <div class="dep-name">Bitcoin & Beer<span>Casual hangout at Zeppelin Hall -- all levels welcome</span></div>
+    <div class="dep-action"><a href="#">RSVP</a></div>
+  </div>
+  <div class="departure-row">
+    <div class="dep-date">MAY 15</div>
+    <div class="dep-type"><span class="dep-type-dot workshop"></span><span class="dep-type-label">Workshop</span></div>
+    <div class="dep-name">Self-Custody Workshop<span>Hardware wallets, key management, transaction verification</span></div>
+    <div class="dep-action"><a href="#">RSVP</a></div>
+  </div>
+  <div class="departure-row">
+    <div class="dep-date">JUN 12</div>
+    <div class="dep-type"><span class="dep-type-dot seminar"></span><span class="dep-type-label">Seminar</span></div>
+    <div class="dep-name">Socratic Seminar #8<span>Topics TBD -- check back closer to date</span></div>
+    <div class="dep-action"><a href="#">RSVP</a></div>
+  </div>
+</div>
+
+<!-- ROUTE MAP (About) -->
+<div class="route-section">
+  <h2>The <span class="orange">JCB</span> Line</h2>
+  <div class="route-stops">
+    <div class="stop">
+      <div class="stop-dot"></div>
+      <div class="stop-label">First Stop</div>
+      <h3>Show Up</h3>
+      <p>Second Thursday of every month at Zeppelin Hall -- the beer garden with free parking and PATH access from NYC. Walk in, grab a drink, find us.</p>
+    </div>
+    <div class="stop">
+      <div class="stop-dot"></div>
+      <div class="stop-label">Learn</div>
+      <h3>Socratic Seminars</h3>
+      <p>Structured deep-dives into Bitcoin protocol, economics, and philosophy. We discuss recent developments under Chatham House rules. Bring questions.</p>
+    </div>
+    <div class="stop">
+      <div class="stop-dot"></div>
+      <div class="stop-label">Connect</div>
+      <h3>Bitcoin & Beer</h3>
+      <p>No agenda, no slides, no pressure. Just bitcoiners at all levels talking over good food and cold drinks. This is where friendships form.</p>
+    </div>
+    <div class="stop">
+      <div class="stop-dot"></div>
+      <div class="stop-label">Build</div>
+      <h3>Workshops & Demos</h3>
+      <p>Hands-on technical training. Wallet setup, node running, Lightning payments, Nostr. We learn by doing.</p>
+    </div>
+    <div class="stop">
+      <div class="stop-dot"></div>
+      <div class="stop-label">Destination</div>
+      <h3>Sovereignty</h3>
+      <p>The goal isn't to sell you on Bitcoin. It's to give you the knowledge to decide for yourself. We don't predict the price. We study the protocol.</p>
+    </div>
+  </div>
+</div>
+
+<!-- INFO PANEL -->
+<div class="info-panel">
+  <div class="info-grid">
+    <div class="info-cell">
+      <div class="info-cell-label">Members</div>
+      <div class="info-cell-value orange">100+</div>
+      <div class="info-cell-note">Telegram community</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-cell-label">Running Since</div>
+      <div class="info-cell-value">2022</div>
+      <div class="info-cell-note">Spring, Jersey City</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-cell-label">Station</div>
+      <div class="info-cell-value" style="font-size: 20px;">Zeppelin Hall</div>
+      <div class="info-cell-note">88 Liberty View Dr, JC 07302</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Board the <span style="color:#ff9900;">JCB</span> line.</h2>
+  <p><span>NEXT DEPARTURE: APR 10, 2026 -- ZEPPELIN HALL</span></p>
+  <div class="cta-buttons">
+    <a href="#" class="btn-primary">RSVP on Eventbrite</a>
+    <a href="#" class="btn-ghost">Join Telegram</a>
+  </div>
+</div>
+
+<footer>
+  <p>Jersey City Bitcoin &mdash; est. 2022 &mdash; <a href="#">GitHub</a></p>
+  <div class="footer-links">
+    <a href="#">Telegram</a>
+    <a href="#">Twitter</a>
+    <a href="#">Nostr</a>
+    <a href="#">Eventbrite</a>
+  </div>
+</footer>
+
+</body>
+</html>
