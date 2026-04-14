@@ -2,10 +2,11 @@
 
 **URL:** https://dlc.link/solutions
 **Category:** wayback-dead
-**Scrape status:** FAILED
+**Scrape status:** COVERED
+**Coverage:** Content inline in Bitcoin Note: DLC.md
 **Source notes:** 
 **Scraped:** 2026-04-13
-**Error:** No Wayback snapshot found
+**Error:** Covered by notebook context (881 chars in source note)
 
 ---
 

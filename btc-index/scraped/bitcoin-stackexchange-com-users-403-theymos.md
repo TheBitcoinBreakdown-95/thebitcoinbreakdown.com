@@ -2,10 +2,11 @@
 
 **URL:** https://bitcoin.stackexchange.com/users/403/theymos
 **Category:** wayback-waf
-**Scrape status:** FAILED
+**Scrape status:** COVERED
+**Coverage:** Content inline in Bitcoin Note: OP_RETURN.md
 **Source notes:** 
 **Scraped:** 2026-04-13
-**Error:** No Wayback snapshot found
+**Error:** Covered by notebook context (1,464 chars in source note)
 
 ---
 

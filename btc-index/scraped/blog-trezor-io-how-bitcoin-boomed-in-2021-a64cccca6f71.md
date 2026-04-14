@@ -2,10 +2,11 @@
 
 **URL:** https://blog.trezor.io/how-bitcoin-boomed-in-2021-a64cccca6f71
 **Category:** wayback-waf
-**Scrape status:** FAILED
+**Scrape status:** COVERED
+**Coverage:** Content inline in Bitcoin Note: Wins.md
 **Source notes:** 
 **Scraped:** 2026-04-13
-**Error:** No Wayback snapshot found
+**Error:** Covered by notebook context (7,961 chars in source note)
 
 ---
 

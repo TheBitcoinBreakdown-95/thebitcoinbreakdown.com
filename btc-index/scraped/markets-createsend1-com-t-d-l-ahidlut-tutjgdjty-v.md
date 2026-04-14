@@ -2,10 +2,11 @@
 
 **URL:** https://markets.createsend1.com/t/d-l-ahidlut-tutjgdjty-v
 **Category:** scrapable
-**Scrape status:** FAILED
+**Scrape status:** COVERED
+**Coverage:** Content inline in Bitcoin Note: Wins.md
 **Source notes:** BTC\Wins.md
 **Scraped:** 2026-04-12
-**Error:** HTTP 401 (access denied)
+**Error:** Covered by notebook context (7,989 chars in source note)
 
 ---
 

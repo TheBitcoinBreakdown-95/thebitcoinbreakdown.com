@@ -11,6 +11,7 @@ articles, and blog posts. Each source type has its own chunking strategy:
   - guide:         Per ## header (compendium articles)
   - blog:          Per ## header (blog posts)
   - user_note:     Per ## header, or full file if no headers (Phase 2)
+  - scraped_article: Individual scraped articles (btc-index/scraped/*.md)
 """
 
 import hashlib
@@ -122,6 +123,12 @@ def discover_files(tbb_root: Path) -> list[tuple[Path, str]]:
             if rel.parts[0] in NOTES_SKIP_DIRS:
                 continue
             files.append((md, "user_note"))
+
+    # Scraped articles (btc-index/scraped/*.md)
+    scraped_dir = tbb_root / "btc-index" / "scraped"
+    if scraped_dir.exists():
+        for md in scraped_dir.glob("*.md"):
+            files.append((md, "scraped_article"))
 
     return files
 
@@ -320,6 +327,57 @@ def chunk_at_h3(filepath: Path, tbb_root: Path, source_type: str,
     return chunks
 
 
+def chunk_scraped_article(filepath: Path, tbb_root: Path, source_type: str,
+                          chapter, sub_chapter) -> list[dict]:
+    """Chunk an individual scraped article from btc-index/scraped/.
+
+    Skips FAILED and COVERED files (no useful content). Strips the metadata
+    header and chunks the article body at H2 headers if present, otherwise
+    treats as a single chunk.
+    """
+    text = filepath.read_text(encoding="utf-8", errors="replace")
+
+    # Skip files with no useful content
+    if "**Scrape status:** FAILED" in text or "**Scrape status:** COVERED" in text:
+        return []
+
+    # Find the --- separator and take everything after it
+    sep_idx = text.find("\n---\n")
+    if sep_idx == -1:
+        sep_idx = text.find("\n---")
+    if sep_idx != -1:
+        body = text[sep_idx:].lstrip("-\n").strip()
+    else:
+        body = text
+
+    # Skip empty or stub content
+    if not body or len(body) < 50:
+        return []
+    if body.startswith("*No content extracted"):
+        return []
+
+    # Extract URL from metadata for the heading path
+    url = ""
+    for line in text.split("\n")[:10]:
+        if "**URL:**" in line:
+            url = line.split("**URL:**")[-1].strip()
+            break
+
+    lines = body.splitlines()
+    sections = _chunk_at_header_level(lines, "## ")
+
+    # If only one section (no H2 headers), use the whole content
+    chunks = []
+    for heading, start, end, section_text in sections:
+        if heading == "Preamble" and len(sections) == 1:
+            heading = filepath.stem
+        chunks.append(_make_chunk(
+            filepath, tbb_root, source_type, chapter, sub_chapter,
+            heading, start, end, section_text
+        ))
+    return chunks
+
+
 # Dispatch table: source_type -> chunking function
 CHUNK_DISPATCH = {
     "wbigaf_source": chunk_full_file,
@@ -329,6 +387,7 @@ CHUNK_DISPATCH = {
     "guide": chunk_at_h2,
     "blog": chunk_at_h2,
     "user_note": chunk_at_h2,
+    "scraped_article": chunk_scraped_article,
 }
 
 

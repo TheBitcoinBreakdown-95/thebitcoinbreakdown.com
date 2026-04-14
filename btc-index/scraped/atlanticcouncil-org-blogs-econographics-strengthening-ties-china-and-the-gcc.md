@@ -2,10 +2,11 @@
 
 **URL:** https://atlanticcouncil.org/blogs/econographics/strengthening-ties-china-and-the-gcc
 **Category:** wayback-waf
-**Scrape status:** FAILED
+**Scrape status:** COVERED
+**Coverage:** Content inline in Bitcoin Note: THE FUTURE GEOPOLITICAL ORDER AND BITCOIN AN INITIAL ASSESSMENT.md
 **Source notes:** 
 **Scraped:** 2026-04-13
-**Error:** No Wayback snapshot found
+**Error:** Covered by notebook context (21,824 chars in source note)
 
 ---
 

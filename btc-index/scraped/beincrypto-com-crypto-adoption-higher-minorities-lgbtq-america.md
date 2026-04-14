@@ -2,10 +2,11 @@
 
 **URL:** https://beincrypto.com/crypto-adoption-higher-minorities-lgbtq-america
 **Category:** wayback-waf
-**Scrape status:** FAILED
+**Scrape status:** COVERED
+**Coverage:** Content inline in Bitcoin Note: Progressive Case for Bitcoin.md
 **Source notes:** 
 **Scraped:** 2026-04-13
-**Error:** No Wayback snapshot found
+**Error:** Covered by notebook context (464 chars in source note)
 
 ---
 

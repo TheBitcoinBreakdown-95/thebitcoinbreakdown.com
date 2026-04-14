@@ -2,10 +2,11 @@
 
 **URL:** https://offlinebitcoins.com/
 **Category:** wayback-dead
-**Scrape status:** FAILED
+**Scrape status:** COVERED
+**Coverage:** Content inline in Bitcoin Note: Dice.md
 **Source notes:** 
 **Scraped:** 2026-04-13
-**Error:** Wayback returned minimal content
+**Error:** Covered by notebook context (5,115 chars in source note)
 
 ---
 

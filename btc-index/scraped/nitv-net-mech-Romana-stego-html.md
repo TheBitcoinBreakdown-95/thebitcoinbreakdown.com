@@ -2,10 +2,11 @@
 
 **URL:** https://nitv.net/~mech/Romana/stego.html
 **Category:** scrapable
-**Scrape status:** FAILED
+**Scrape status:** COVERED
+**Coverage:** Content inline in Bitcoin Note: THE  CYPHERNOMICON Cypherpunks FAQ and More,.md
 **Source notes:** BTC\THE  CYPHERNOMICON Cypherpunks FAQ and More,.md, Books\CYPHERNOMICON.txt
 **Scraped:** 2026-04-12
-**Error:** HTTP 403 (access denied)
+**Error:** Covered by notebook context (63,075 chars in source note)
 
 ---
 

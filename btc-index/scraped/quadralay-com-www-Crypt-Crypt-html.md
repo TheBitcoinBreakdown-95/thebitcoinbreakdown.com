@@ -2,10 +2,11 @@
 
 **URL:** https://quadralay.com/www/Crypt/Crypt.html
 **Category:** retry-direct
-**Scrape status:** FAILED
+**Scrape status:** COVERED
+**Coverage:** Content inline in Bitcoin Note: THE  CYPHERNOMICON Cypherpunks FAQ and More,.md
 **Source notes:** 
 **Scraped:** 2026-04-13
-**Error:** Browser error: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://quadralay.com/www/Crypt/Crypt.html
+**Error:** Covered by notebook context (68,138 chars in source note)
 Call log:
   - navigating to "http
 

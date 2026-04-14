@@ -2,10 +2,11 @@
 
 **URL:** https://bitcoin.stackexchange.com/questions/408/does-hoarding-really-hurt-bitcoin
 **Category:** wayback-waf
-**Scrape status:** FAILED
+**Scrape status:** COVERED
+**Coverage:** Content inline in Bitcoin Note: Deflation.md
 **Source notes:** 
 **Scraped:** 2026-04-13
-**Error:** No Wayback snapshot found
+**Error:** Covered by notebook context (2,123 chars in source note)
 
 ---
 

@@ -2,10 +2,11 @@
 
 **URL:** https://inleo.io/@edicted/rune-lending-followup
 **Category:** wayback-waf
-**Scrape status:** FAILED
+**Scrape status:** COVERED
+**Coverage:** Content inline in Bitcoin Note: Thorchain.md
 **Source notes:** 
 **Scraped:** 2026-04-13
-**Error:** No Wayback snapshot found
+**Error:** Covered by notebook context (1,806 chars in source note)
 
 ---
 
