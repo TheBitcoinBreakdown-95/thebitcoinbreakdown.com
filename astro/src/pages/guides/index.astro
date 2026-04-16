@@ -1,28 +1,45 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Divider from '../../components/Divider.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allGuides = await getCollection('guides', ({ data }) => !data.draft);
+const sortedGuides = allGuides.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
-<BaseLayout title="Guides" description="Step-by-step Bitcoin guides for beginners and advanced users.">
-  <section class="section-page section">
-    <div class="container">
+<BaseLayout title="Guides" description="Step-by-step Bitcoin and Lightning guides -- from wallet setup to running your own node.">
+  <section class="blog-page section">
+    <div class="container--wide">
       <header class="page-header reveal">
         <h1>Guides</h1>
+        <p class="section-desc">Step-by-step technical guides. Copy-paste code, real commands, tested instructions.</p>
       </header>
 
-      <div class="prose reveal">
-        <p>
-          Step-by-step guides to help you navigate the Bitcoin ecosystem. From setting up your first wallet to running your own node.
-        </p>
-
-        <Divider />
-
-        <div class="empty-state">
-          <div class="empty-icon">&#8383;</div>
-          <h3 class="empty-title">Coming soon</h3>
-          <p class="empty-desc">Guides are being written. Check back soon.</p>
+      {sortedGuides.length > 0 ? (
+        <div class="card-grid stagger">
+          {sortedGuides.map((post) => (
+            <div class="reveal">
+              <PostCard
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                slug={post.id}
+                tags={post.data.tags}
+                image={post.data.image}
+                basePath="/guides"
+              />
+            </div>
+          ))}
         </div>
-      </div>
+      ) : (
+        <div class="empty-state">
+          <div class="empty-icon">&#9881;</div>
+          <h3 class="empty-title">No guides yet</h3>
+          <p class="empty-desc">Guides are on the way. Check back soon.</p>
+        </div>
+      )}
     </div>
   </section>
 </BaseLayout>
@@ -30,5 +47,9 @@ import Divider from '../../components/Divider.astro';
 <style>
   .page-header {
     margin-bottom: var(--space-6);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--space-3);
   }
 </style>

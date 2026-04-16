@@ -7,6 +7,7 @@ const allPosts = await getCollection('posts', ({ data }) => !data.draft);
 const speeches = allPosts.filter(p => p.data.category === 'speeches').sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 const memes = allPosts.filter(p => p.data.category === 'memes');
 const blogPosts = allPosts.filter(p => p.data.category === 'blog');
+const allGuides = await getCollection('guides', ({ data }) => !data.draft);
 ---
 
 <BaseLayout title="Media" description="Speeches, talks, memes, and other Bitcoin content from The Bitcoin Breakdown.">
@@ -14,7 +15,7 @@ const blogPosts = allPosts.filter(p => p.data.category === 'blog');
     <div class="container">
       <header class="page-header reveal">
         <h1 class="media-title" data-type>Media</h1>
-        <p class="media-subtitle">Speeches, talks, memes, and blog posts.</p>
+        <p class="media-subtitle">Speeches, talks, memes, guides, and blog posts.</p>
       </header>
     </div>
   </section>
@@ -47,6 +48,14 @@ const blogPosts = allPosts.filter(p => p.data.category === 'blog');
           <div class="media-card-count">{blogPosts.length} {blogPosts.length === 1 ? 'entry' : 'entries'}</div>
           <span class="media-card-cta">View posts &rarr;</span>
         </a>
+
+        <a href="/guides" class="media-card reveal tbb-link">
+          <div class="media-num" aria-hidden="true">04</div>
+          <h2 class="media-card-title">Guides</h2>
+          <p class="media-card-desc">Step-by-step technical guides. Lightning, nodes, self-custody -- copy-paste instructions that work.</p>
+          <div class="media-card-count">{allGuides.length} {allGuides.length === 1 ? 'guide' : 'guides'}</div>
+          <span class="media-card-cta">View guides &rarr;</span>
+        </a>
       </div>
     </div>
   </section>
@@ -76,7 +85,7 @@ const blogPosts = allPosts.filter(p => p.data.category === 'blog');
   /* ── Media Grid ── */
   .media-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-4);
   }
 
@@ -148,12 +157,6 @@ const blogPosts = allPosts.filter(p => p.data.category === 'blog');
 
   .media-card:hover .media-card-cta {
     color: var(--gold);
-  }
-
-  @media (max-width: 900px) {
-    .media-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 
   @media (max-width: 600px) {
